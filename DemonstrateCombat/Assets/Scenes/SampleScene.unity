@@ -950,6 +950,8 @@ MonoBehaviour:
   pushBackEnemyModifier: 0.5
   drag: 25
   floatDistance: 1
+  bufferSize: 0.1
+  bufferPunishTime: 0.03
   player: {fileID: 1337885603}
   col: {fileID: 980419071}
   attackSprite: {fileID: 980419074}

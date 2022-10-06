@@ -11,6 +11,9 @@ public class Melee : MonoBehaviour
     private List<Collider2D> hitThisSwing = new List<Collider2D>();
 
     private float activeTime;
+    private float buffer;
+    private float bufferPunish;
+    private bool inBuffer;
 
     /* Exposed Variables */
     [SerializeField]
@@ -27,6 +30,10 @@ public class Melee : MonoBehaviour
     private float drag = 25f;
     [SerializeField]
     private float floatDistance = 1.0f;
+    [SerializeField]
+    private float bufferSize = 5f;
+    [SerializeField]
+    private float bufferPunishTime = 2f;
 
     [Header("References")]
     [SerializeField]
@@ -55,9 +62,41 @@ public class Melee : MonoBehaviour
 
     private void Update()
     {
-        if (player.PrimaryFireDown && player.CanSwing)
+        if (player.PrimaryFireDown)
         {
-            StartSwing();
+            if (player.CanSwing)
+            {
+                StartSwing();
+            }
+            else if (!inBuffer && bufferPunish <= 0)
+            {
+                inBuffer = true;
+                buffer = bufferSize;
+            }
+        }
+        else if (inBuffer)
+        {
+            if (player.CanSwing)
+            {
+                StartSwing();
+                inBuffer = false;
+                buffer = 0f;
+                bufferPunish = 0f;
+            }
+
+            if (buffer > 0f)
+            {
+                buffer -= Time.deltaTime;
+            }
+            else
+            {
+                inBuffer = false;
+                bufferPunish = bufferPunishTime;
+            }
+        }
+        else if (bufferPunish > 0)
+        {
+            bufferPunish -= Time.deltaTime;
         }
     }
 
