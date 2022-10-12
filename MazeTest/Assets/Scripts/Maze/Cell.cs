@@ -11,6 +11,8 @@ public class Cell : MonoBehaviour
 
     private Maze m;
 
+    [SerializeField]
+    private Color cellColour;
     //int i = 0;
 
     private bool inMaze = false;
@@ -34,6 +36,11 @@ public class Cell : MonoBehaviour
             Debug.Log("Index doesn't exist on cell " + gameObject.name);
             return null;
         }
+    }
+
+    void Update()
+    {
+        floor.GetComponent<Renderer>().material.color = cellColour;
     }
 
     public bool isInMaze()
@@ -73,21 +80,22 @@ public class Cell : MonoBehaviour
     public void generateMaze(Color c, Maze.runningGenerator thisGen)
     {
         inMaze = true;
-        floor.GetComponent<Renderer>().material.color = c;
+        //floor.GetComponent<Renderer>().material.color = c;
+        cellColour = c;
         //swap function running
         int temp = (int) (m.running + 1) % (int)Maze.runningGenerator.length;
         m.running = (Maze.runningGenerator)temp;
-        Debug.Log(m.running + " from " + c+", pre loop");
+        /*Debug.Log(m.running + " from " + c+", pre loop");
         temp = 0;
         while (m.running != thisGen)
         {
             temp++;
-            Debug.Log(m.running + " from " + c + ", loop iteration " + temp);
+            //Debug.Log(m.running + " from " + c + ", loop iteration " + temp);
             if (temp >= 1000) 
             {
                 break;
             }
-        }
+        }*/
         //Debug.Log("Cell " + gameObject.name + " is being connected to the maze");
         //pick a cell around it.
         Cell nextCell;

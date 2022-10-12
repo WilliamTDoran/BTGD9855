@@ -71,7 +71,7 @@ public class Maze : MonoBehaviour
 
     private IEnumerator coRunning()
     {
-        getCell((int)width / 2 + 1, (int)height / 2).generateMaze(new Color(0, 1, 0, 1), runningGenerator.Green);
+        getCell((int)width - 1, (int)height - 1).generateMaze(new Color(0, 1, 0, 1), runningGenerator.Green);
         yield return null;
     }
 
@@ -79,5 +79,20 @@ public class Maze : MonoBehaviour
     public Cell getCell(int x, int y)
     {
         return rows[y].getCell(x);
+    }
+
+
+    public void Update()
+    {
+        if (Input.GetButtonDown("Debug Next"))
+        {
+            Debug.Log("New Maze time!");
+            foreach (Row r in rows)
+            {
+                Destroy(r.gameObject);
+            }
+            initMaze();
+            Debug.Log("New Maze Generated!");
+        }
     }
 }
