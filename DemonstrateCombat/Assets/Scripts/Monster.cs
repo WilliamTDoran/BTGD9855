@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Monster : GameActor
 {
@@ -9,6 +10,13 @@ public class Monster : GameActor
     private Color baseColor;
 
     private MonsterSight sight;
+
+    /* for blood meter */
+    [SerializeField]
+    private int health;
+    [SerializeField]
+    private Slider bloodmeter;
+    /*~~~~~~~~~~~~~~~~~~~~~~~*/
 
     /* Exposed Variables */
     [SerializeField]
@@ -52,9 +60,16 @@ public class Monster : GameActor
         {
             rb.AddForce(direction * speed, ForceMode2D.Force);
         }
-    }
+        /* for blood meter */
+        if (health < 1)
+        {
+            //enemy dies player gets blood
+            bloodmeter.value = bloodmeter.value + 10;
+        }
+    /*~~~~~~~~~~~~~~~~~~~~~~~*/
+}
 
-    private void LateUpdate()
+private void LateUpdate()
     {
         if (immune)
         {
