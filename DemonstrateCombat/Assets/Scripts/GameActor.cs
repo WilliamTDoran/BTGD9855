@@ -21,8 +21,15 @@ public class GameActor : MonoBehaviour
     /* Exposed Variables */
     [SerializeField]
     protected float speed;
+    [Tooltip ("Not used for player")]
+    [SerializeField]
+    protected int hitPoints;
+    public int HitPoints { get { return hitPoints; } set { hitPoints = value; } }
     [SerializeField]
     protected float lifetime;
+    [SerializeField]
+    protected int bloodPerKill;
+    public int BloodPerKill { get { return bloodPerKill; } }
     [SerializeField]
     protected float fadeTime;
     [SerializeField]

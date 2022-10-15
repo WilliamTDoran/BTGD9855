@@ -23,6 +23,8 @@ public class Melee : MonoBehaviour
     [SerializeField]
     private float coolDownTime;
     [SerializeField]
+    private int damageAmount;
+    [SerializeField]
     private float pushBackAmount = 50f;
     [SerializeField]
     private float pushBackEnemyModifier = 0.5f;
@@ -113,7 +115,7 @@ public class Melee : MonoBehaviour
         else if (other.CompareTag("Monster"))
         {
             GameActor target = other.gameObject.GetComponent<GameActor>();
-            CombatManager.Instance.HarmTarget(player, target);
+            CombatManager.Instance.HarmTarget(player, target, damageAmount);
 
             Pushback(other, pushBackEnemyModifier);
         }

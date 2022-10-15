@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Monster : GameActor
 {
@@ -11,18 +10,13 @@ public class Monster : GameActor
 
     private MonsterSight sight;
 
-    /* for blood meter */
-    [SerializeField]
-    private int health;
-    [SerializeField]
-    private Slider bloodmeter;
-    /*~~~~~~~~~~~~~~~~~~~~~~~*/
-
     /* Exposed Variables */
     [SerializeField]
     private float hitStunDuration = 0.5f;
     [SerializeField]
     private float hitStunDrag = 10f;
+    [SerializeField]
+    private int damage;
     [SerializeField]
     private SpriteRenderer render;
     [SerializeField]
@@ -60,14 +54,7 @@ public class Monster : GameActor
         {
             rb.AddForce(direction * speed, ForceMode2D.Force);
         }
-        /* for blood meter */
-        if (health < 1)
-        {
-            //enemy dies player gets blood
-            bloodmeter.value = bloodmeter.value + 10;
-        }
-    /*~~~~~~~~~~~~~~~~~~~~~~~*/
-}
+    }
 
 private void LateUpdate()
     {
@@ -79,13 +66,18 @@ private void LateUpdate()
         {
             render.material.color = baseColor;
         }
+
+        if (hitPoints <= 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void HitTarget(GameActor target)
     {
         StartHitStun(target);
 
-        CombatManager.Instance.HarmTarget(this, target);
+        CombatManager.Instance.HarmTarget(this, target, damage);
     }
 
     private IEnumerator HitStun(GameActor target)

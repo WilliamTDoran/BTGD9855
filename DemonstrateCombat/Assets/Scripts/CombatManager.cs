@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CombatManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class CombatManager : MonoBehaviour
     private static CombatManager instance;
 
     public static CombatManager Instance { get { return instance; } }
+
+    [SerializeField]
+    private Slider bloodSlider;
 
     private void Awake()
     {
@@ -22,12 +26,13 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    public void HarmTarget(GameActor attacker, GameActor target)
+    public void HarmTarget(GameActor attacker, GameActor target, int damage)
     {
         if (!target.Immune)
         {
             Debug.Log("Send Damage to " + target.gameObject.name + " from " + attacker.gameObject.name);
             ApplyKnockback(attacker, target);
+            ApplyDamage(attacker, target, damage);
             StartImmuneCountdown(target, target.ImmuneDuration);
         }
     }
@@ -65,5 +70,22 @@ public class CombatManager : MonoBehaviour
     {
         StopCoroutine(immuneCoroutine);
         immuneCoroutine = null;
+    }
+
+    private void ApplyDamage(GameActor attacker, GameActor target, int damage)
+    {
+        if (target.gameObject.CompareTag("Player"))
+        {
+            bloodSlider.value -= damage;
+        }
+        else
+        {
+            target.HitPoints -= damage;
+
+            if (attacker.gameObject.CompareTag("Player") && target.HitPoints <= 0)
+            {
+                bloodSlider.value += target.BloodPerKill;
+            }
+        }
     }
 }
