@@ -12,29 +12,32 @@ public class Maze : MonoBehaviour
     [SerializeField]
     float scale = 1;
 
+    [SerializeField]
+    [Tooltip("-1 for random")]
+    private int mazeSeed = -1;
+
     //Just to store the rows
     [SerializeField]
     GameObject sampleRow;
 
-    private IEnumerator generation1;
-
-
-    public enum runningGenerator
-    {
-        Green,
-        Red,
-        length
-    }
-
-    public runningGenerator running = runningGenerator.Green;
+    BiomeGenerator biomeGen;
 
     //stores a a bunch of rows of cells
     Row[] rows;
 
+    void Awake()
+    {
+        if (mazeSeed != -1)
+        {
+            Random.InitState(mazeSeed);
+        }
+    }
+
     //Hey! We need a maze here.
     void Start()
     {
-        //GameObject.Find("Floor").transform.localScale = new Vector3(scale*5*width,height*scale*5, 1);
+        biomeGen = new BiomeGenerator(this);
+        
         initMaze();
     }
 
@@ -58,21 +61,18 @@ public class Maze : MonoBehaviour
                 rows[i].initRow(width, i, scale);
             }
         }
-
+        
+        //runs the maze generation algorithm
         generateMaze();
     }
 
     public void generateMaze()
     {
-        generation1 = coRunning();
-        StartCoroutine(generation1);
-        getCell((int)width / 2 - 1, (int)height / 2).generateMaze(new Color(1, 0, 0, 1), runningGenerator.Red);
-    }
-
-    private IEnumerator coRunning()
-    {
-        getCell((int)width - 1, (int)height - 1).generateMaze(new Color(0, 1, 0, 1), runningGenerator.Green);
-        yield return null;
+        biomeGen.generateBiomes((int)width / 2, (int)height / 2);
+        Cell mid = getCell((int)width / 2, (int)height / 2);
+        mid.setBiome((BiomeGenerator.Biome)2);
+        getCell((int)width / 2 + 1, (int)height / 2).generateMaze();
+        getCell((int)width / 2 - 1, (int)height / 2).generateMaze();
     }
 
     //helper function, return cell (x,y) from the maze.

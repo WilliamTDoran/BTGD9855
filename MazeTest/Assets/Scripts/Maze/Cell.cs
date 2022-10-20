@@ -11,9 +11,7 @@ public class Cell : MonoBehaviour
 
     private Maze m;
 
-    [SerializeField]
-    private Color cellColour;
-    //int i = 0;
+    private BiomeGenerator.Biome cellColour = BiomeGenerator.Biome.length;
 
     private bool inMaze = false;
 
@@ -38,9 +36,19 @@ public class Cell : MonoBehaviour
         }
     }
 
+    public BiomeGenerator.Biome getBiome()
+    {
+        return cellColour;
+    }
+
+    public void setBiome(BiomeGenerator.Biome b)
+    {
+        cellColour = b;
+    }
+
     void Update()
     {
-        floor.GetComponent<Renderer>().material.color = cellColour;
+        floor.GetComponent<Renderer>().material.color = (Color) BiomeGenerator.BIOMECOLOR[(int)cellColour];
     }
 
     public bool isInMaze()
@@ -77,37 +85,20 @@ public class Cell : MonoBehaviour
 
     //The main loop of the maze Algorithm
     //Note to self: later may need to make into coroutine
-    public void generateMaze(Color c, Maze.runningGenerator thisGen)
+    public void generateMaze()
     {
         inMaze = true;
-        //floor.GetComponent<Renderer>().material.color = c;
-        cellColour = c;
-        //swap function running
-        int temp = (int) (m.running + 1) % (int)Maze.runningGenerator.length;
-        m.running = (Maze.runningGenerator)temp;
-        /*Debug.Log(m.running + " from " + c+", pre loop");
-        temp = 0;
-        while (m.running != thisGen)
-        {
-            temp++;
-            //Debug.Log(m.running + " from " + c + ", loop iteration " + temp);
-            if (temp >= 1000) 
-            {
-                break;
-            }
-        }*/
-        //Debug.Log("Cell " + gameObject.name + " is being connected to the maze");
         //pick a cell around it.
         Cell nextCell;
         int dir;
         for (int j = 0; j < 4; j++) 
         {
-            dir = (int)Random.Range(0, 4);
+            dir = (int) Random.Range(0, 4);
             nextCell = getWall(dir).getLink().getCell(); //Rigged to return itself if not possible
             //Make sure it's in the maze. If not select a new cell
             for (int i = 0; i < 4; i++)
             {
-                if (!nextCell.isInMaze())
+                if (!nextCell.isInMaze() && nextCell.getBiome() == cellColour)
                 {
                     break;
                 }
@@ -116,13 +107,13 @@ public class Cell : MonoBehaviour
                 nextCell = getWall(dir).getLink().getCell();
             }
             //if all are, this is a deadend. go back up the generate maze loop
-            if (nextCell.isInMaze())
+            if (nextCell.isInMaze() || nextCell.getBiome() != cellColour)
             {
                 return;
             }
             //Connect the cell that's not connected
             walls[dir].hit(false);
-            nextCell.generateMaze(c, thisGen);
+            nextCell.generateMaze();
         }
         return;
     }
