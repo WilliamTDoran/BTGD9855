@@ -19,8 +19,6 @@ public class PlayerBody : GameActor
 
     /* Exposed Variables */
     [SerializeField]
-    private List<Sprite> positions = new List<Sprite>();
-    [SerializeField]
     private SpriteRenderer render;
     [SerializeField]
     private Color colorWhenHit;
@@ -28,7 +26,6 @@ public class PlayerBody : GameActor
 
     private void Start()
     {
-        render.sprite = positions[0];
         baseColor = render.material.color;
 
         canMove = true;
@@ -60,7 +57,16 @@ public class PlayerBody : GameActor
             facingAngle = Vector2.SignedAngle(Vector2.right, controller.IntendedDirection);
             facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
             spriteSwitch = (int)(facingAngle / 45f);
-            render.sprite = positions[spriteSwitch];
+            render.transform.rotation = Quaternion.AngleAxis(45f * spriteSwitch, transform.forward);
+
+            if (facingAngle >= 90 && facingAngle <= 270)
+            {
+                render.flipY = true;
+            }
+            else
+            {
+                render.flipY = false;
+            }
         }
     }    
 
