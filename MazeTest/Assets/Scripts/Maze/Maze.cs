@@ -20,6 +20,13 @@ public class Maze : MonoBehaviour
     [SerializeField]
     GameObject sampleRow;
 
+    [SerializeField]
+    int toRemove = 5;
+
+
+    [SerializeField]
+    public Color[] BIOMECOLOR = { new Color(1.00f, 0.30f, 0.22f, 1.0f), new Color(0, 1, 0), new Color(1, 0, 0), new Color(1, 1, 1) };
+
     BiomeGenerator biomeGen;
 
     //stores a a bunch of rows of cells
@@ -30,6 +37,11 @@ public class Maze : MonoBehaviour
         if (mazeSeed != -1)
         {
             Random.InitState(mazeSeed);
+        } else
+        {
+            int seed = Random.Range(0, 2147483647);
+            Debug.Log("The randomization seed is: "+seed);
+            Random.InitState(seed);
         }
     }
 
@@ -73,6 +85,9 @@ public class Maze : MonoBehaviour
         mid.setBiome((BiomeGenerator.Biome)2);
         getCell((int)width / 2 + 1, (int)height / 2).generateMaze();
         getCell((int)width / 2 - 1, (int)height / 2).generateMaze();
+        mid.getWall((int)Wall.wLocation.east).hit(false);
+        mid.getWall((int)Wall.wLocation.west).hit(false);
+        extraRemoval(toRemove);
     }
 
     //helper function, return cell (x,y) from the maze.
@@ -81,18 +96,33 @@ public class Maze : MonoBehaviour
         return rows[y].getCell(x);
     }
 
+    public void extraRemoval(int toRemove)
+    {
+        for (int i=0; i<toRemove; i++)
+        {
+            Cell c = getCell(Random.Range(0, width), Random.Range(0, height));
+            int wallRemoved = Random.Range(0, 4);
+            Wall w = c.getWall(wallRemoved);
+            Cell other = w.getLink().getCell();
+            if (c.getBiome() == other.getBiome() && c != other)
+            {
+                w.hit(false);
+            } 
+        }
+    }
+
 
     public void Update()
     {
         if (Input.GetButtonDown("Debug Next"))
         {
-            Debug.Log("New Maze time!");
+            //Debug.Log("New Maze time!");
             foreach (Row r in rows)
             {
                 Destroy(r.gameObject);
             }
             initMaze();
-            Debug.Log("New Maze Generated!");
+            //Debug.Log("New Maze Generated!");
         }
     }
 }

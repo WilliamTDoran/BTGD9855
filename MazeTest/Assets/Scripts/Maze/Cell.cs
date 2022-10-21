@@ -48,7 +48,7 @@ public class Cell : MonoBehaviour
 
     void Update()
     {
-        floor.GetComponent<Renderer>().material.color = (Color) BiomeGenerator.BIOMECOLOR[(int)cellColour];
+        floor.GetComponent<Renderer>().material.color = (Color) m.BIOMECOLOR[(int)cellColour];
     }
 
     public bool isInMaze()

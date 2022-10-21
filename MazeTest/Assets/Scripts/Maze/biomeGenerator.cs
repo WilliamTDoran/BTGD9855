@@ -14,8 +14,6 @@ public class BiomeGenerator
 
     Maze m;
 
-    public static Color[] BIOMECOLOR = { new Color(0, 0, 1), new Color(0, 1, 0), new Color(1, 0, 0), new Color(1, 1, 1) };
-
     private Wall[][] biomesAdding;
 
     public BiomeGenerator(Maze temp)
@@ -61,7 +59,7 @@ public class BiomeGenerator
         Cell next = m.getCell(centerX, centerY);
         Cell temp = next.getWall((int)Wall.wLocation.east).getLink().getCell();
         addToList(0, next.getWall((int)Wall.wLocation.east));
-        Debug.Log(temp.getBiome());
+        //Debug.Log(temp.getBiome());
         temp = next.getWall((int)Wall.wLocation.west).getLink().getCell();
         addToList(1, next.getWall((int)Wall.wLocation.west));
         
