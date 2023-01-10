@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// All active gameObjects in scene inherit from this parent class, which holds a number of crucial variables that almost every attribute needs
+/// This facilitates easy access and communication between discrete objects, and avoids repetition of shared attributes various entity types.
+/// 
+/// Version 1.0 (1/10/2023), Will Doran
+/// </summary>
 public class GameActor : MonoBehaviour
 {
     protected Rigidbody rb;
