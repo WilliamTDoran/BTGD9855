@@ -236,17 +236,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db622a7c9fa6b7744bbfffc6ea6988b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 15
-  height: 15
-  scale: 1.5
+  traits:
+    width: 15
+    height: 15
+    scale: 1.5
   mazeSeed: -1
   sampleRow: {fileID: 3985245215676089212, guid: ee78c11f6f19f724b84ac746fcad03bf, type: 3}
   toRemove: 55
-  BIOMECOLOR:
-  - {r: 0.6226415, g: 0.14394487, b: 0.09045921, a: 1}
-  - {r: 0.05838374, g: 0.13009006, b: 0.3773585, a: 1}
-  - {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
+  CharacterBiome: 0
+  biomeVariables:
+  - NextCellChance: 0
+    RandomCellChance: 0
+    colour: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
+    wallsRemoved: 0
+  - NextCellChance: 0
+    RandomCellChance: 0
+    colour: {r: 0.5471698, g: 0, b: 0, a: 1}
+    wallsRemoved: 0
+  - NextCellChance: 0
+    RandomCellChance: 0
+    colour: {r: 0.04083301, g: 0.2879394, b: 0.5849056, a: 1}
+    wallsRemoved: 0
 --- !u!4 &1299535819
 Transform:
   m_ObjectHideFlags: 0
@@ -340,7 +350,7 @@ Transform:
   m_GameObject: {fileID: 1318669467}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10, y: -10, z: 5}
-  m_LocalScale: {x: 50, y: 30, z: 1}
+  m_LocalScale: {x: 100, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
