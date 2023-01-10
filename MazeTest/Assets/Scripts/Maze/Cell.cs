@@ -9,9 +9,8 @@ public class Cell : MonoBehaviour
     [Tooltip("North, East, South, West order please.")]
     private Wall[] walls;
 
-    private Maze m;
-
-    private BiomeGenerator.Biome cellColour = BiomeGenerator.Biome.length;
+    [SerializeField]
+    private BiomeGenerator.Biome biome = BiomeGenerator.Biome.length;
 
     private bool inMaze = false;
 
@@ -20,7 +19,7 @@ public class Cell : MonoBehaviour
 
     void Awake()
     {
-        m = GameObject.FindGameObjectsWithTag("Maze")[0].GetComponent<Maze>();
+        Maze.m = GameObject.FindGameObjectsWithTag("Maze")[0].GetComponent<Maze>();
     }
 
     //hey, what wall you need?
@@ -38,17 +37,17 @@ public class Cell : MonoBehaviour
 
     public BiomeGenerator.Biome getBiome()
     {
-        return cellColour;
+        return biome;
     }
 
     public void setBiome(BiomeGenerator.Biome b)
     {
-        cellColour = b;
+        biome = b;
     }
 
     void Update()
     {
-        floor.GetComponent<Renderer>().material.color = (Color) m.BIOMECOLOR[(int)cellColour];
+        floor.GetComponent<Renderer>().material.color = Maze.m.biomeVariables[(int)biome].colour;
     }
 
     public bool isInMaze()
@@ -98,7 +97,7 @@ public class Cell : MonoBehaviour
             //Make sure it's in the maze. If not select a new cell
             for (int i = 0; i < 4; i++)
             {
-                if (!nextCell.isInMaze() && nextCell.getBiome() == cellColour)
+                if (!nextCell.isInMaze() && nextCell.getBiome() == biome)
                 {
                     break;
                 }
@@ -107,7 +106,7 @@ public class Cell : MonoBehaviour
                 nextCell = getWall(dir).getLink().getCell();
             }
             //if all are, this is a deadend. go back up the generate maze loop
-            if (nextCell.isInMaze() || nextCell.getBiome() != cellColour)
+            if (nextCell.isInMaze() || nextCell.getBiome() != biome)
             {
                 return;
             }

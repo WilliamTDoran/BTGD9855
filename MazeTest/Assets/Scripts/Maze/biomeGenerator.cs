@@ -2,6 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class BiomeVariables
+{
+    public float NextCellChance;
+    public float RandomCellChance;
+    public Color colour;
+    public float wallsRemoved;
+}
+
 public class BiomeGenerator
 {
     public enum Biome
@@ -12,14 +21,11 @@ public class BiomeGenerator
         length
     }
 
-    Maze m;
-
     private Wall[][] biomesAdding;
 
-    public BiomeGenerator(Maze temp)
+    public BiomeGenerator()
     {
-        m = temp;
-        biomesAdding = new Wall[(int)Biome.length - 1][];
+        biomesAdding = new Wall[(int)Biome.length][];
         for (int i = 0; i < biomesAdding.Length; i++)
         {
             biomesAdding[i] = new Wall[0];
@@ -56,18 +62,25 @@ public class BiomeGenerator
 
     public void generateBiomes(int centerX, int centerY)
     {
-        Cell next = m.getCell(centerX, centerY);
-        Cell temp = next.getWall((int)Wall.wLocation.east).getLink().getCell();
-        addToList(0, next.getWall((int)Wall.wLocation.east));
-        //Debug.Log(temp.getBiome());
-        temp = next.getWall((int)Wall.wLocation.west).getLink().getCell();
-        addToList(1, next.getWall((int)Wall.wLocation.west));
+
+        //set up biome generator
+        Cell next = Maze.m.getCell(centerX, centerY);
+        int one = (((int)next.getBiome()) + 1) % 3;
+        Debug.Log(one);
+        int two = (((int)next.getBiome()) + 2) % 3;
+        Debug.Log(two);
+        addToList(one, next.getWall((int)Wall.wLocation.east));
+        addToList(two, next.getWall((int)Wall.wLocation.west));
         
-        for (int done = 0; done < biomesAdding.Length; done += 0)
+        //generating biomes
+        for (int done = 1; done < biomesAdding.Length; done += 0)
         {
+            //Skip biomes with nothing more to add
             for (int nextBiome = 0; nextBiome < biomesAdding.Length; nextBiome++)
             {
                 if (biomesAdding[nextBiome].Length == 0) continue;
+
+
                 //pick cell from list
                 do
                 {
@@ -75,6 +88,8 @@ public class BiomeGenerator
                     next = biomesAdding[nextBiome][cellChosen].getLink().getCell();
                     removeFromList(nextBiome, cellChosen);
                 } while (next.getBiome() != Biome.length && biomesAdding[nextBiome].Length > 0);
+
+
                 if (biomesAdding[nextBiome].Length == 0 && next.getBiome() != Biome.length)
                 {
                     done++;
@@ -82,6 +97,7 @@ public class BiomeGenerator
                 {
                     //add biome color
                     next.setBiome((Biome) nextBiome);
+
                     // add adjacent walls to list
                     for (int i=0; i<4; i++)
                     {
