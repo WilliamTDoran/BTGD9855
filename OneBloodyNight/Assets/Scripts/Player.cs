@@ -33,7 +33,7 @@ public class Player : GameActor
         canMove = true;
         canAttack = true;
 
-        controllerObj = GameObject.Find("ControllerHub");
+        controllerObj = GameObject.Find("PlayerController");
         controller = controllerObj.GetComponent<PlayerController>();
 
         Debug.Assert(controller != null, "No controller set on: " + gameObject.name);
