@@ -7,7 +7,7 @@ using UnityEngine;
 /// 
 /// Version 0.1 (1/10/2023), Will Doran
 /// </summary>
-public class PlayerBody : GameActor
+public class Player : GameActor
 {
     private GameObject controllerObj; //gameObject with the playercontroller script on it
     private PlayerController controller; //said playercontroller script
