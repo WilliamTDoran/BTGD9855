@@ -59,7 +59,7 @@ public class Maze : MonoBehaviour
     void Start()
     {
         biomeGen = new BiomeGenerator();
-        
+
         initMaze();
     }
 
@@ -86,6 +86,7 @@ public class Maze : MonoBehaviour
         
         //runs the maze generation algorithm
         generateMaze();
+        transform.position = new Vector3(-1 * traits.scale * (traits.width/2), traits.scale * (traits.height/2), 0.001f);
     }
 
     public void generateMaze()
@@ -124,7 +125,7 @@ public class Maze : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetButtonDown("Debug Next"))
+        /*if (Input.GetButtonDown("Debug Next"))
         {
             //Debug.Log("New Maze time!");
             foreach (Row r in rows)
@@ -133,6 +134,6 @@ public class Maze : MonoBehaviour
             }
             initMaze();
             //Debug.Log("New Maze Generated!");
-        }
+        }*/
     }
 }
