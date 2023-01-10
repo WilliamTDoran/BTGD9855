@@ -86,7 +86,7 @@ public class Maze : MonoBehaviour
         
         //runs the maze generation algorithm
         generateMaze();
-        transform.position = new Vector3(-1 * traits.scale * (traits.width/2), traits.scale * (traits.height/2), 0);
+        transform.position = new Vector3(-1 * traits.scale * (traits.width/2), traits.scale * (traits.height/2), 0.001f);
     }
 
     public void generateMaze()
