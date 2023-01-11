@@ -247,13 +247,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traits:
-    width: 11
-    height: 11
-    scale: 5
+    width: 16
+    height: 16
+    scale: 12
     CharacterBiome: 0
   mazeSeed: -1
   sampleRow: {fileID: 3985245215676089212, guid: ee78c11f6f19f724b84ac746fcad03bf, type: 3}
-  toRemove: 5
+  toRemove: 40
   biomeVariables:
   - NextCellChance: 0
     RandomCellChance: 0
@@ -335,7 +335,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 16
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e75030eb4d97ad146a901501da773cee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 14
   immuneDuration: 0
 --- !u!65 &1692689744
 BoxCollider:
