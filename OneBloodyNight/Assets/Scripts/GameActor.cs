@@ -13,11 +13,13 @@ public class GameActor : MonoBehaviour
     protected Rigidbody rb;
     protected Collider col;
 
-    protected bool canMove;
+    protected bool canMove; //whether the actor can (willingly) move
     public bool CanMove { get { return canMove; } set { canMove = value; } }
-    protected bool canAttack;
+
+    protected bool canAttack; //whether the actor can initiate attacks
     public bool CanAttack { get { return canAttack; } set { canAttack = value; } }
-    protected bool immune;
+
+    protected bool immune; //whether the actor can take damage
     public bool Immune { get { return immune; } set { immune = value; } }
 
     /* Exposed Variables */

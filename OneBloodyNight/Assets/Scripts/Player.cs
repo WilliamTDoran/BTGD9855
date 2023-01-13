@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// This class is the parent of all three player types, and holds the majority of functions shared by every type of character, including getting and interpreting control inputs
 /// 
-/// Version 0.1 (1/10/2023), Will Doran
+/// Version 1.0 (1/13/2023), Will Doran
 /// </summary>
 public class Player : GameActor
 {
@@ -59,7 +59,7 @@ public class Player : GameActor
         load1Down = controller.Load1Down;
         load2Down = controller.Load2Down;
 
-        //This is a potentially deprecated script for handling the direction
+        //This is a potentially deprecated bit of code for handling the direction
         /*if (controller.IntendedDirection != Vector3.zero && canMove)
         {
             facingAngle = Vector2.SignedAngle(Vector2.right, controller.IntendedDirection);
