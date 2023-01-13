@@ -8,6 +8,8 @@ using UnityEngine;
 public class Attack : GameActor
 {
     /* Exposed Variables */
+    [Header("Attack Statistics")]
+
     [Tooltip("The amount of damage dealt by the attack")]
     [SerializeField]
     private int damage; //the amount of damage dealt by the attack
@@ -33,4 +35,19 @@ public class Attack : GameActor
     private bool forceStill; //whether the attacker is forced to stand still while using this attack
     public bool ForceStill { get { return forceStill; } set { forceStill = value; } }
     /*~~~~~~~~~~~~~~~~~~~~*/
+    [Header("Debug")]
+
+    [Tooltip("Hide or show the hitbox of the attack when attacking")]
+    [SerializeField]
+    private bool showHitbox = false;
+
+    [Tooltip("Reference to the hitbox renderer. Must be not null to show hitbox")]
+    [SerializeField]
+    private MeshRenderer hitboxMesh;
+    /*~~~~~~~~~~~~~~~~~~~~*/
+
+    private void OnEnable()
+    {
+        hitboxMesh.enabled = showHitbox;
+    }
 }

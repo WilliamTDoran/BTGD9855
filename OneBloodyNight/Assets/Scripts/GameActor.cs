@@ -23,11 +23,11 @@ public class GameActor : MonoBehaviour
     public bool Immune { get { return immune; } set { immune = value; } }
 
     /* Exposed Variables */
-    [Tooltip("Maximum movement speed")]
+    [Tooltip("Maximum movement speed - IRRELEVANT FOR NON-MOVING ENTITIES")]
     [SerializeField]
     protected float speed;
 
-    [Tooltip("Duration of immmunity after taking damage")]
+    [Tooltip("Duration of immmunity after taking damage - IRRELEVANT FOR NON-ATTACKABLE ENTITIES")]
     [SerializeField]
     protected float immuneDuration;
     public float ImmuneDuration { get { return immuneDuration; } }
