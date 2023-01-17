@@ -2,6 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+
+public enum Biome
+{
+    strgoi,
+    yara,
+    impundulu,
+    length
+}
+
+
+[System.Serializable]
+public class MazeVariables
+{
+    public int width;
+    public int height;
+    public float scale;
+    public Biome CharacterBiome;
+}
+
+
 [System.Serializable]
 public class BiomeVariables
 {
@@ -14,47 +36,25 @@ public class BiomeVariables
     public PlacableObject[] objects;
 }
 
-public enum Biome
-{
-    strgoi,
-    yara,
-    impundulu,
-    length
-}
-
-[System.Serializable]
-public class MazeVariables
-{
-    public int width;
-    public int height;
-    public float scale;
-    public Biome CharacterBiome;
-}
 
 [System.Serializable]
 public class PlacableObject
 {
-    public placeFormation[] formation; // not implemented // todo later: object pool this somehow. discuss ideas with Will
-    [Tooltip("Minimum amount of objects that should be placed")]
-    public int minPlaced; // not implemented
-    [Tooltip("Maximum amount of objects that should be placed")]
-    public int maxPlaced; // not implemented
-    public float cellDifficulty; // cells can't weigh more than maxCellWeight
-    public short maxPerCell;
-    [HideInInspector]
-    internal int placed;
+    public GameObject formation;
+    public float cellDifficulty; // cells can't weigh more than maxCellDifficulty
+    public int maxPlaced;
+    public float minPlaced;
 }
 
-[System.Serializable]
-public class placeFormation
+public class Spawn
 {
-    public placedObject[] objects;
-}
-
-[System.Serializable]
-public class placedObject
-{
-    public GameObject obj;
-    public float x;
-    public float y;
+    internal int x;
+    internal int y;
+    internal GameObject obj;
+    internal Spawn(int x, int y, GameObject obj)
+    {
+        this.x = x;
+        this.y = y;
+        this.obj = obj;
+    }
 }

@@ -98,14 +98,22 @@ public class Maze : MonoBehaviour
 
     public void generateMaze()
     {
+        //Biomes
         Cell mid = getCell((int)traits.width / 2, (int)traits.height / 2);
         mid.setBiome(traits.CharacterBiome);
         biomeGen.generateBiomes((int)traits.width / 2, (int)traits.height / 2);
+
+        //Maze generation
         getCell((int)traits.width / 2 + 1, (int)traits.height / 2).generateMaze();
         getCell((int)traits.width / 2 - 1, (int)traits.height / 2).generateMaze();
         mid.getWall((int)Wall.wLocation.east).hit(false);
         mid.getWall((int)Wall.wLocation.west).hit(false);
+
+        //Wall removal
         extraRemoval(toRemove);
+
+        //Object Placer
+        PlaceObject.place(Biome.yara, biomeVariables[(int)Biome.yara].objects[0]);
     }
 
     //helper function, return cell (x,y) from the maze.
@@ -132,7 +140,7 @@ public class Maze : MonoBehaviour
 
     public void Update()
     {
-        /*if (Input.GetButtonDown("Debug Next"))
+        /*if (Input.GetButtonDown("RegenerateMaze"))
         {
             //Debug.Log("New Maze time!");
             foreach (Row r in rows)
