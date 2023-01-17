@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.IO.LowLevel.Unsafe;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -10,6 +12,15 @@ using UnityEngine;
 /// </summary>
 public class GameActor : MonoBehaviour
 {
+    private GameObject controllerObj; //gameObject with the playercontroller script on it
+    protected PlayerController controller; //said playercontroller script
+
+    protected bool interactDown;
+    protected bool basicAttackDown;
+    protected bool advancedAttackDown;
+    protected bool load1Down;
+    protected bool load2Down;
+
     protected Rigidbody rb;
     protected Collider col;
 
@@ -40,5 +51,23 @@ public class GameActor : MonoBehaviour
 
         Debug.Assert(rb != null, "No rigidbody set on: " + gameObject.name);
         Debug.Assert(col != null, "No collider set on: " + gameObject.name);
+    }
+
+    protected virtual void Start()
+    {
+        controllerObj = GameObject.Find("PlayerController");
+        controller = controllerObj.GetComponent<PlayerController>();
+
+        Debug.Assert(controller != null, "No controller set on: " + gameObject.name);
+        Debug.Assert(rb != null, "No rigidbody set on: " + gameObject.name);
+    }
+
+    protected virtual void Update()
+    {
+        interactDown = controller.InteractDown;
+        basicAttackDown = controller.BasicFireDown;
+        advancedAttackDown = controller.AdvancedFireDown;
+        load1Down = controller.Load1Down;
+        load2Down = controller.Load2Down;
     }
 }

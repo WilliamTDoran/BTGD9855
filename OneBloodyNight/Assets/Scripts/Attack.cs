@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class Attack : GameActor
 {
+    private string swingTrigger = "Swing";
+
     /* Exposed Variables */
     [Header("Attack Statistics")]
 
@@ -35,6 +37,16 @@ public class Attack : GameActor
     private bool forceStill; //whether the attacker is forced to stand still while using this attack
     public bool ForceStill { get { return forceStill; } set { forceStill = value; } }
     /*~~~~~~~~~~~~~~~~~~~~*/
+    [Header("References")]
+
+    [Tooltip("The GameActor who is making the attack")]
+    [SerializeField]
+    private GameActor attacker;
+
+    [Tooltip("The attack's own animator")]
+    [SerializeField]
+    private Animator animator;
+    /*~~~~~~~~~~~~~~~~~~~~*/
     [Header("Debug")]
 
     [Tooltip("Hide or show the hitbox of the attack when attacking")]
@@ -46,8 +58,39 @@ public class Attack : GameActor
     private MeshRenderer hitboxMesh;
     /*~~~~~~~~~~~~~~~~~~~~*/
 
-    private void OnEnable()
+    protected override void Update()
     {
-        hitboxMesh.enabled = showHitbox;
+        base.Update();
+
+        if (basicAttackDown && attacker.CanAttack)
+        {
+            StartSwing();
+        }
+    }
+
+    private void StartSwing()
+    {
+        if (showHitbox)
+        {
+            hitboxMesh.enabled = true;
+        }
+
+        animator.SetTrigger(swingTrigger);
+        attacker.CanAttack = false;
+
+        if (forceStill)
+        {
+            attacker.CanMove = false;
+        }
+    }
+
+    public void EndSwing()
+    {
+        attacker.CanAttack = false;
+
+        if (forceStill && !(attacker.CanMove))
+        {
+            attacker.CanMove = true;
+        }
     }
 }

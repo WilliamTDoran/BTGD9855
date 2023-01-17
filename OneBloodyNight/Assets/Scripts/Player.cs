@@ -9,15 +9,6 @@ using UnityEngine;
 /// </summary>
 public class Player : GameActor
 {
-    private GameObject controllerObj; //gameObject with the playercontroller script on it
-    private PlayerController controller; //said playercontroller script
-
-    private bool interactDown;
-    private bool basicAttackDown;
-    private bool advancedAttackDown;
-    private bool load1Down;
-    private bool load2Down;
-
     private float facingAngle;
     public float FacingAngle { get { return facingAngle; } }
 
@@ -28,16 +19,11 @@ public class Player : GameActor
     /// <summary>
     /// Standard Start function. Initializes a couple values, creates references to useful objects. You know the drill.
     /// </summary>
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         canMove = true;
         canAttack = true;
-
-        controllerObj = GameObject.Find("PlayerController");
-        controller = controllerObj.GetComponent<PlayerController>();
-
-        Debug.Assert(controller != null, "No controller set on: " + gameObject.name);
-        Debug.Assert(rb != null, "No rigidbody set on: " + gameObject.name);
     }
 
     /// <summary>
@@ -51,14 +37,8 @@ public class Player : GameActor
         }
     }
 
-    private void Update()
-    {
-        interactDown = controller.InteractDown;
-        basicAttackDown = controller.BasicFireDown;
-        advancedAttackDown = controller.AdvancedFireDown;
-        load1Down = controller.Load1Down;
-        load2Down = controller.Load2Down;
-
+    //private void Update()
+    //{
         //This is a potentially deprecated bit of code for handling the direction
         /*if (controller.IntendedDirection != Vector3.zero && canMove)
         {
@@ -76,5 +56,5 @@ public class Player : GameActor
                 render.flipY = false;
             }
         }*/
-    }
+    //}
 }
