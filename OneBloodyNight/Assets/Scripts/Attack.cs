@@ -108,9 +108,14 @@ public class Attack : GameActor
 
         attacker.CanAttack = true;
 
-        if (forceStill && !attacker.CanMove)
+        if (forceStill)
         {
             attacker.CanMove = true;
+        }
+
+        if (showHitbox)
+        {
+            hitboxMesh.enabled = false;
         }
     }
 }
