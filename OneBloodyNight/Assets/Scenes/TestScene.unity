@@ -554,11 +554,7 @@ MonoBehaviour:
     colour: {r: 0.6415094, g: 0, b: 0, a: 1}
     wallsRemoved: 0
     maxCellDifficulty: 0
-    objects:
-    - formation: {fileID: 8813698199761548738, guid: 59ca1720d052cd74f9de7b3d2b56fad0, type: 3}
-      cellDifficulty: 0
-      maxPlaced: 10
-      minPlaced: 5
+    objects: []
   - NextCellChance: 0
     RandomCellChance: 0
     colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
