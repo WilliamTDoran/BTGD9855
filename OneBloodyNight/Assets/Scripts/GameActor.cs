@@ -50,8 +50,8 @@ public class GameActor : MonoBehaviour
 
     [Tooltip("Facing Angle Debug Text")]
     [SerializeField]
-    protected TextMeshPro facingDebugText;
-    public TextMeshPro FacingDebugText { get { return facingDebugText; } }
+    protected TextMeshProUGUI facingDebugText;
+    public TextMeshProUGUI FacingDebugText { get { return facingDebugText; } }
     /* -~-~-~-~-~-~-~-~- */
 
     private void Awake()
