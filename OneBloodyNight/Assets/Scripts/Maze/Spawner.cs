@@ -31,6 +31,7 @@ public class Spawner : MonoBehaviour
             spawns = new Spawn[0];
         }
         Debug.Log("Adding Object");
+        obj.transform.parent = transform;
         for(int i=0; i < obj.transform.childCount; i++)
         {
             Debug.Log("Pass "+i);

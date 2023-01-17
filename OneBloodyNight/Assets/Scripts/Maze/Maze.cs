@@ -10,7 +10,7 @@ public class Maze : MonoBehaviour
     internal static Maze m;
 
     [SerializeField]
-    MazeVariables traits;
+    internal MazeVariables traits;
 
     [SerializeField]
     int toRemove = 5;
@@ -59,7 +59,7 @@ public class Maze : MonoBehaviour
     }
     internal int getWorldPosY(int y)
     {
-        return (int)Mathf.Round(traits.scale * (traits.height / 2) - y * traits.scale);
+        return -getWorldPosX(y);
     }
 
     //Hey! We need a maze here.
@@ -114,6 +114,7 @@ public class Maze : MonoBehaviour
 
         //Object Placer
         //PlaceObject.place(Biome.yara, biomeVariables[(int)Biome.yara].objects[0]);
+        PlaceObject.placeAll(traits.CharacterBiome);
     }
 
     //helper function, return cell (x,y) from the maze.
