@@ -10,12 +10,16 @@ public class Cell : MonoBehaviour
     private Wall[] walls;
 
     [SerializeField]
-    private BiomeGenerator.Biome biome = BiomeGenerator.Biome.length;
+    private Biome biome = Biome.length;
+    internal short difficulty;
+    internal short placed;
 
     private bool inMaze = false;
 
     [SerializeField]
     private GameObject floor;
+
+    internal Spawner spawner;
 
     void Awake()
     {
@@ -34,12 +38,12 @@ public class Cell : MonoBehaviour
         }
     }
 
-    public BiomeGenerator.Biome getBiome()
+    public Biome getBiome()
     {
         return biome;
     }
 
-    public void setBiome(BiomeGenerator.Biome b)
+    public void setBiome(Biome b)
     {
         biome = b;
     }
@@ -86,6 +90,7 @@ public class Cell : MonoBehaviour
     public void generateMaze()
     {
         inMaze = true;
+        difficulty = 0;
         //pick a cell around it.
         Cell nextCell;
         int dir;

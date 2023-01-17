@@ -2,14 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class MazeVariables
-{
-    public int width;
-    public int height;
-    public float scale;
-    public BiomeGenerator.Biome CharacterBiome;
-}
+
 
 
 public class Maze : MonoBehaviour
@@ -20,6 +13,9 @@ public class Maze : MonoBehaviour
     MazeVariables traits;
 
     [SerializeField]
+    int toRemove = 5;
+
+    [SerializeField]
     [Tooltip("-1 for random")]
     private int mazeSeed = -1;
 
@@ -28,31 +24,42 @@ public class Maze : MonoBehaviour
     GameObject sampleRow;
 
     [SerializeField]
-    int toRemove = 5;
-
-    [SerializeField]
     internal BiomeVariables[] biomeVariables;
+    internal int width() { return traits.width; }
+    internal int height() { return traits.height; }
 
-    //[SerializeField]
-    //public Color[] BIOMECOLOR = { new Color(1.00f, 0.30f, 0.22f, 1.0f), new Color(0, 1, 0), new Color(1, 0, 0), new Color(1, 1, 1) };
 
     BiomeGenerator biomeGen;
 
-    //stores a a bunch of rows of cells
     Row[] rows;
 
     void Awake()
     {
         m = this;
+        seedRand();
+    }
+
+    void seedRand()
+    {
         if (mazeSeed != -1)
         {
             Random.InitState(mazeSeed);
-        } else
+        }
+        else
         {
             int seed = Random.Range(0, 2147483647);
-            Debug.Log("The randomization seed is: "+seed);
+            Debug.Log("The randomization seed is: " + seed);
             Random.InitState(seed);
         }
+    }
+
+    internal int getWorldPosX(int x)
+    {
+        return (int)Mathf.Round(-1 * traits.scale * (traits.width / 2) + x * traits.scale);
+    }
+    internal int getWorldPosY(int y)
+    {
+        return (int)Mathf.Round(traits.scale * (traits.height / 2) - y * traits.scale);
     }
 
     //Hey! We need a maze here.

@@ -2,25 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class BiomeVariables
-{
-    public float NextCellChance;
-    public float RandomCellChance;
-    public Color colour;
-    public float wallsRemoved;
-}
 
 public class BiomeGenerator
 {
-    public enum Biome
-    {
-        strgoi,
-        yara,
-        impundulu,
-        length
-    }
-
     private Wall[][] biomesAdding;
 
     public BiomeGenerator()
