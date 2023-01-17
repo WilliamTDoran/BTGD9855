@@ -28,6 +28,10 @@ public class Attack : GameActor
     private float pushbackAmount; //the amount of pushback on the attacker
     public float PushbackAmount { get { return pushbackAmount; } set { pushbackAmount = value; } }
 
+    [Tooltip("Drag on player rb when pushing back. Don't fuck with this unless you know what you're doing")]
+    [SerializeField]
+    private float drag = 25f;
+
     [Tooltip("Multiplier for pushback when hitting a wall instead of a gameactor. 1 is identical.")]
     [SerializeField]
     private float wallPushbackScalar; //multiplier for pushback when hitting a wall instead of a gameactor. 1 is identical.
@@ -71,24 +75,29 @@ public class Attack : GameActor
         {
             StartSwing();
         }
+
+        canAttackDebugText.text = attacker.CanAttack + "";
     }
 
     private void StartSwing()
     {
-        PositionAttack();
-
-        if (showHitbox)
+        if (attacker.CanAttack)
         {
-            hitboxMesh.enabled = true;
-        }
+            PositionAttack();
 
-        animator.SetTrigger(swingTrigger);
-        attacker.CanAttack = false;
+            if (showHitbox)
+            {
+                hitboxMesh.enabled = true;
+            }
 
-        if (forceStill)
-        {
-            attacker.CanMove = false;
-            attacker.Rb.velocity = Vector3.zero;
+            if (forceStill)
+            {
+                attacker.CanMove = false;
+                attacker.Rb.velocity = Vector3.zero;
+            }
+
+            attacker.CanAttack = false;
+            animator.SetTrigger(swingTrigger);
         }
     }
 
@@ -107,8 +116,6 @@ public class Attack : GameActor
     {
         Debug.Log("End Swing");
 
-        attacker.CanAttack = true;
-
         if (forceStill)
         {
             attacker.CanMove = true;
@@ -118,6 +125,10 @@ public class Attack : GameActor
         {
             hitboxMesh.enabled = false;
         }
+
+        attacker.Rb.drag = 0;
+
+        attacker.CanAttack = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -143,6 +154,7 @@ public class Attack : GameActor
     {
         //Causes pushback on the player when you strike something. Vector points halfway between player facing and the line between the player and the struck target
         Vector3 direction = attacker.Rb.position - other.ClosestPoint(attacker.Rb.position);
+        direction.z = 0;
         direction.Normalize();
 
         direction -= playerFacingDirection;
@@ -150,6 +162,6 @@ public class Attack : GameActor
         direction *= (pushbackAmount * multiplier);
 
         attacker.Rb.AddForce(direction, ForceMode.Impulse);
-        attacker.Rb.drag = 1;
+        attacker.Rb.drag = drag;
     }
 }

@@ -52,6 +52,11 @@ public class GameActor : MonoBehaviour
     [SerializeField]
     protected TextMeshProUGUI facingDebugText;
     public TextMeshProUGUI FacingDebugText { get { return facingDebugText; } }
+
+    [Tooltip("Can Attack Debug Text")]
+    [SerializeField]
+    protected TextMeshProUGUI canAttackDebugText;
+    public TextMeshProUGUI CanAttackDebugText { get { return canAttackDebugText; } }
     /* -~-~-~-~-~-~-~-~- */
 
     private void Awake()

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6075285678484360259}
   - component: {fileID: 1880031612610397835}
   - component: {fileID: 7966801379018876792}
-  - component: {fileID: 8695940795377137743}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -33,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8464197219554758243}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6075285678484360259
 MeshFilter:
@@ -97,19 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab777ea75c20254989dbe063fc1817f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &8695940795377137743
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4572668078304398934}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7496538930894098658
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +108,7 @@ GameObject:
   - component: {fileID: 5706732068632537421}
   m_Layer: 0
   m_Name: Cell
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,9 +125,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 881619635175495849}
   - {fileID: 252131432655609660}
   - {fileID: 7568221800315634776}
-  - {fileID: 881619635175495849}
   - {fileID: 4476200774693337774}
   - {fileID: 6341241319073925798}
   m_Father: {fileID: 0}
@@ -176,6 +162,10 @@ PrefabInstance:
     - target: {fileID: 3275213643913388252, guid: a41e1c470294d1c4b81b1ba36a5ef91a, type: 3}
       propertyPath: m_Name
       value: South Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275213643913388252, guid: a41e1c470294d1c4b81b1ba36a5ef91a, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 6487495626512013320, guid: a41e1c470294d1c4b81b1ba36a5ef91a, type: 3}
       propertyPath: m_RootOrder
@@ -250,9 +240,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: East Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1590194693726434557, guid: e5bd546971a24e047aa2872cd464cd30, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7019513355448093737, guid: e5bd546971a24e047aa2872cd464cd30, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7019513355448093737, guid: e5bd546971a24e047aa2872cd464cd30, type: 3}
       propertyPath: m_LocalPosition.x
@@ -365,11 +359,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4012899352576037432, guid: 08c5e402d6f87014d9a1f1a182e5c165, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4012899352576037432, guid: 08c5e402d6f87014d9a1f1a182e5c165, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.10000002
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4012899352576037432, guid: 08c5e402d6f87014d9a1f1a182e5c165, type: 3}
       propertyPath: m_LocalPosition.z
@@ -377,11 +371,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4012899352576037432, guid: 08c5e402d6f87014d9a1f1a182e5c165, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4012899352576037432, guid: 08c5e402d6f87014d9a1f1a182e5c165, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668963021827009260, guid: 08c5e402d6f87014d9a1f1a182e5c165, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 6037137155508454459, guid: 08c5e402d6f87014d9a1f1a182e5c165, type: 3}
       propertyPath: linked
@@ -423,6 +421,10 @@ PrefabInstance:
     - target: {fileID: 4048769641044141251, guid: 69306ff7e055c7c469210b81afbb4afd, type: 3}
       propertyPath: m_Name
       value: North Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048769641044141251, guid: 69306ff7e055c7c469210b81afbb4afd, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 5713886069088066583, guid: 69306ff7e055c7c469210b81afbb4afd, type: 3}
       propertyPath: m_RootOrder
