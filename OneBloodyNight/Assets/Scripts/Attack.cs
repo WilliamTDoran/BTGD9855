@@ -36,6 +36,10 @@ public class Attack : GameActor
     [SerializeField]
     private bool forceStill; //whether the attacker is forced to stand still while using this attack
     public bool ForceStill { get { return forceStill; } set { forceStill = value; } }
+
+    [Tooltip("Scalar that defines how far from the player the attack hitbox is")]
+    [SerializeField]
+    private float floatDistance;
     /*~~~~~~~~~~~~~~~~~~~~*/
     [Header("References")]
 
@@ -70,6 +74,8 @@ public class Attack : GameActor
 
     private void StartSwing()
     {
+        PositionAttack();
+
         if (showHitbox)
         {
             hitboxMesh.enabled = true;
@@ -81,14 +87,28 @@ public class Attack : GameActor
         if (forceStill)
         {
             attacker.CanMove = false;
+            attacker.Rb.velocity = Vector3.zero;
         }
+    }
+
+    private void PositionAttack()
+    {
+        Quaternion facingAngleRotation = Quaternion.Euler(0, 0, attacker.FacingAngle + 90f);
+        Vector3 v3Facing = facingAngleRotation * Vector3.down; //Adding the 90f is a really silly way to handle this but damn it if it doesn't work...
+        Vector3 playerFacingDirection = new Vector2(v3Facing.x, v3Facing.y);
+        playerFacingDirection.Normalize();
+
+        transform.localPosition = playerFacingDirection * floatDistance;
+        transform.rotation = facingAngleRotation;
     }
 
     public void EndSwing()
     {
-        attacker.CanAttack = false;
+        Debug.Log("End Swing");
 
-        if (forceStill && !(attacker.CanMove))
+        attacker.CanAttack = true;
+
+        if (forceStill && !attacker.CanMove)
         {
             attacker.CanMove = true;
         }

@@ -9,9 +9,6 @@ using UnityEngine;
 /// </summary>
 public class Player : GameActor
 {
-    private float facingAngle;
-    public float FacingAngle { get { return facingAngle; } }
-
     /* Exposed Variables */
     private Transform renderBox;
     /*~~~~~~~~~~~~~~~~~~~*/
@@ -36,25 +33,4 @@ public class Player : GameActor
             rb.velocity = controller.IntendedDirection * speed;
         }
     }
-
-    //private void Update()
-    //{
-        //This is a potentially deprecated bit of code for handling the direction
-        /*if (controller.IntendedDirection != Vector3.zero && canMove)
-        {
-            facingAngle = Vector2.SignedAngle(Vector2.right, controller.IntendedDirection);
-            facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
-            spriteSwitch = (int)(facingAngle / 45f);
-            render.transform.rotation = Quaternion.AngleAxis(45f * spriteSwitch, transform.forward);
-
-            if (facingAngle >= 90 && facingAngle <= 270)
-            {
-                render.flipY = true;
-            }
-            else
-            {
-                render.flipY = false;
-            }
-        }*/
-    //}
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.IO.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -21,7 +22,11 @@ public class GameActor : MonoBehaviour
     protected bool load1Down;
     protected bool load2Down;
 
+    private float facingAngle;
+    public float FacingAngle { get { return facingAngle; } }
+
     protected Rigidbody rb;
+    public Rigidbody Rb { get { return rb; } }
     protected Collider col;
 
     protected bool canMove; //whether the actor can (willingly) move
@@ -42,6 +47,11 @@ public class GameActor : MonoBehaviour
     [SerializeField]
     protected float immuneDuration;
     public float ImmuneDuration { get { return immuneDuration; } }
+
+    [Tooltip("Facing Angle Debug Text")]
+    [SerializeField]
+    protected TextMeshPro facingDebugText;
+    public TextMeshPro FacingDebugText { get { return facingDebugText; } }
     /* -~-~-~-~-~-~-~-~- */
 
     private void Awake()
@@ -69,5 +79,16 @@ public class GameActor : MonoBehaviour
         advancedAttackDown = controller.AdvancedFireDown;
         load1Down = controller.Load1Down;
         load2Down = controller.Load2Down;
+
+        if (controller.IntendedDirection != Vector3.zero && canMove)
+        {
+            facingAngle = Vector3.SignedAngle(Vector3.right, controller.IntendedDirection, Vector3.forward);
+            facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
+        }
+
+        if (facingDebugText != null)
+        {
+            facingDebugText.text = facingAngle + "";
+        }
     }
 }
