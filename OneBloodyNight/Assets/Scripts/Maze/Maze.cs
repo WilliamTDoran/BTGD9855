@@ -113,7 +113,7 @@ public class Maze : MonoBehaviour
         extraRemoval(toRemove);
 
         //Object Placer
-        PlaceObject.place(Biome.yara, biomeVariables[(int)Biome.yara].objects[0]);
+        //PlaceObject.place(Biome.yara, biomeVariables[(int)Biome.yara].objects[0]);
     }
 
     //helper function, return cell (x,y) from the maze.
