@@ -8,6 +8,7 @@ using UnityEngine;
 public class Attack : GameActor
 {
     private string swingTrigger = "Swing";
+    private Vector3 playerFacingDirection;
 
     /* Exposed Variables */
     [Header("Attack Statistics")]
@@ -19,13 +20,13 @@ public class Attack : GameActor
 
     [Tooltip("The amount of knockback dealt by the attack")]
     [SerializeField]
-    private float knockback; //the amount of knockback dealt by the attack
-    public float Knockback { get { return knockback; } set { knockback = value; } }
+    private float knockbackAmount; //the amount of knockback dealt by the attack
+    public float KnockbackAmount { get { return knockbackAmount; } set { knockbackAmount = value; } }
 
     [Tooltip("The amount of pushback on the attacker")]
     [SerializeField]
-    private float pushback; //the amount of pushback on the attacker
-    public float Pushback { get { return pushback; } set { pushback = value; } }
+    private float pushbackAmount; //the amount of pushback on the attacker
+    public float PushbackAmount { get { return pushbackAmount; } set { pushbackAmount = value; } }
 
     [Tooltip("Multiplier for pushback when hitting a wall instead of a gameactor. 1 is identical.")]
     [SerializeField]
@@ -117,5 +118,38 @@ public class Attack : GameActor
         {
             hitboxMesh.enabled = false;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Hit Detected");
+
+        if (other.CompareTag("Wall"))
+        {
+            Debug.Log("Wall Hit " + other.gameObject.name);
+
+            Pushback(other, 1.0f);
+        }
+        /*else if (other.CompareTag("Monster"))
+        {
+            GameActor target = other.gameObject.GetComponent<GameActor>();
+            //CombatManager.Instance.HarmTarget(player, target, damageAmount);
+
+            Pushback(other, wallPushbackScalar);
+        }*/
+    }
+
+    private void Pushback(Collider other, float multiplier)
+    {
+        //Causes pushback on the player when you strike something. Vector points halfway between player facing and the line between the player and the struck target
+        Vector3 direction = attacker.Rb.position - other.ClosestPoint(attacker.Rb.position);
+        direction.Normalize();
+
+        direction -= playerFacingDirection;
+        direction.Normalize();
+        direction *= (pushbackAmount * multiplier);
+
+        attacker.Rb.AddForce(direction, ForceMode.Impulse);
+        attacker.Rb.drag = 1;
     }
 }
