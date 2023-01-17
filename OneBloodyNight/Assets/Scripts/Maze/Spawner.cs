@@ -26,15 +26,12 @@ public class Spawner : MonoBehaviour
 
     internal void addSpawnLocations(GameObject obj)
     {
-        if (spawns == null)
-        {
-            spawns = new Spawn[0];
-        }
-        Debug.Log("Adding Object");
+        if (spawns == null) spawns = new Spawn[0];
+        //Debug.Log("Adding Object");
         obj.transform.parent = transform;
         for(int i=0; i < obj.transform.childCount; i++)
         {
-            Debug.Log("Pass "+i);
+            //Debug.Log("Pass "+i);
             Transform c = obj.transform.GetChild(i);
             Spawn[] s = new Spawn[spawns.Length + 1];
             for (int j = 0; j<spawns.Length; j++)
@@ -44,13 +41,30 @@ public class Spawner : MonoBehaviour
             s[spawns.Length] = new Spawn((int)c.position.x, (int)c.position.y, c.gameObject);
             spawns = s;
         }
+
+        load();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Collision enter! " + other.gameObject.name);
         if (other.tag == "Loaded")
         {
+            load();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+
+        if (other.tag == "Loaded")
+        {
+            unload();
+        }
+    }
+
+    private void load()
+    {
+        //Debug.Log("Collision enter! " + other.gameObject.name);
             //Debug.Log("in");
             if (spawns == null)
             {
@@ -59,17 +73,17 @@ public class Spawner : MonoBehaviour
             //Load spawns in
             foreach (Spawn s in spawns)
             {
-                s.obj.transform.position = new Vector3(s.x, s.y, s.obj.transform.position.z);
+                //Debug.Log(s.obj.name + " just moved from " + s.obj.transform.position.x + ", " + s.obj.transform.position.y + " to ");
+                //s.obj.transform.position = new Vector3(s.x, s.y, s.obj.transform.position.z);
+                //Debug.Log(s.obj.transform.position.x + ", " + s.obj.transform.position.y + " to ");
                 s.obj.SetActive(true);
             }
-        }
     }
 
-    private void OnTriggerExit(Collider other)
+
+    private void unload()
     {
         //Debug.Log("Collision exit! " + other.gameObject.name);
-        if (other.tag == "Loaded")
-        {
             //Debug.Log("in");
             if (spawns == null)
             {
@@ -81,6 +95,5 @@ public class Spawner : MonoBehaviour
                 //s.obj.transform.position = new Vector3(s.x, s.y, s.obj.transform.position.z);
                 s.obj.SetActive(false);
             }
-        }
     }
 }
