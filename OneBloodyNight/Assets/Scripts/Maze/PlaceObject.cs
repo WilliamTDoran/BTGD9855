@@ -6,9 +6,26 @@ using Random = UnityEngine.Random;
 
 public class PlaceObject
 {
+    public static void PlaceObjects(Biome startBiome)
+    {
+        for(int biome = 0; biome < (int)Biome.length; biome++) 
+        {
+            if (biome == (int)startBiome) continue;
+            BiomeVariables bv = Maze.m.biomeVariables[biome];
+            for (int i=0; i<bv.objects.Length; i++)
+            {
+                massPlace((Biome)biome, bv.objects[i]);
+            }
+        }
+    }
+
     public static void massPlace(Biome b, PlacableObject obj)
     {
         int max = (int)Math.Floor(Random.Range(obj.minPlaced, obj.maxPlaced));
+        for (int i=0; i<max; i++)
+        {
+            place(b, obj);
+        }
     }
 
     public static void place(Biome b, PlacableObject obj)

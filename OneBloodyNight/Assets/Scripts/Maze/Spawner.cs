@@ -35,6 +35,7 @@ public class Spawner : MonoBehaviour
         {
             Debug.Log("Pass "+i);
             Transform c = obj.transform.GetChild(i);
+            obj.transform.SetParent(transform, true);
             Spawn[] s = new Spawn[spawns.Length + 1];
             for (int j = 0; j<spawns.Length; j++)
             {
