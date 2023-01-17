@@ -47,7 +47,7 @@ public class Spawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Loaded")
+        if (other.tag == "Player")
         {
             load();
         }
@@ -56,7 +56,7 @@ public class Spawner : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
 
-        if (other.tag == "Loaded")
+        if (other.tag == "Player")
         {
             unload();
         }
