@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 /// <summary>
@@ -15,4 +16,16 @@ public class PlayerStrigoi : Player
     [SerializeField]
     private Attack basicAttack;
     /*~~~~~~~~~~~~~~~~~~~*/
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if (basicAttackDown && canAttack)
+        {
+            basicAttack.StartSwing();
+        }
+
+        canAttackDebugText.text = canAttack + "";
+    }
 }

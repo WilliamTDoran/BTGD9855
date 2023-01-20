@@ -67,19 +67,7 @@ public class Attack : GameActor
     private MeshRenderer hitboxMesh;
     /*~~~~~~~~~~~~~~~~~~~~*/
 
-    protected override void Update()
-    {
-        base.Update();
-
-        if (basicAttackDown && attacker.CanAttack)
-        {
-            StartSwing();
-        }
-
-        canAttackDebugText.text = attacker.CanAttack + "";
-    }
-
-    private void StartSwing()
+    public void StartSwing()
     {
         if (attacker.CanAttack)
         {
