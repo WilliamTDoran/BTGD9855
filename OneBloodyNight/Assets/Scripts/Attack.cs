@@ -85,11 +85,6 @@ public class Attack : GameActor
         {
             PositionAttack();
 
-            if (showHitbox)
-            {
-                hitboxMesh.enabled = true;
-            }
-
             if (forceStill)
             {
                 attacker.CanMove = false;
@@ -110,6 +105,16 @@ public class Attack : GameActor
 
         transform.localPosition = playerFacingDirection * floatDistance;
         transform.rotation = facingAngleRotation;
+    }
+
+    public void SwingBoxActive()
+    {
+        Debug.Log("Swing Box Active");
+
+        if (showHitbox)
+        {
+            hitboxMesh.enabled = true;
+        }
     }
 
     public void EndSwing()
