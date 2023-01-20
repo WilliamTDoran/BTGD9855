@@ -21,6 +21,10 @@ public class Monster : GameActor
     {
         base.Start();
 
+        canAttack = true;
+        canMove = true;
+        facingAngle = 0;
+
         StartCoroutine(DebugAttackCycle());
     }
 
@@ -28,9 +32,11 @@ public class Monster : GameActor
     {
         while (true)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
 
             basicAttack.StartSwing();
+
+            Debug.Log("Werewolf Swing Done");
         }
     }
 }

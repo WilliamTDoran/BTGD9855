@@ -8,7 +8,7 @@ using UnityEngine;
 public class Attack : GameActor
 {
     private string swingTrigger = "Swing";
-    private Vector3 playerFacingDirection;
+    private Vector3 attackerFacingDirection;
 
     /* Exposed Variables */
     [Header("Attack Statistics")]
@@ -88,10 +88,10 @@ public class Attack : GameActor
     {
         Quaternion facingAngleRotation = Quaternion.Euler(0, 0, attacker.FacingAngle + 90f);
         Vector3 v3Facing = facingAngleRotation * Vector3.down; //Adding the 90f is a really silly way to handle this but damn it if it doesn't work...
-        Vector3 playerFacingDirection = new Vector2(v3Facing.x, v3Facing.y);
-        playerFacingDirection.Normalize();
+        Vector3 attackerFacingDirection = new Vector3(v3Facing.x, v3Facing.y, 0);
+        attackerFacingDirection.Normalize();
 
-        transform.localPosition = playerFacingDirection * floatDistance;
+        transform.localPosition = attackerFacingDirection * floatDistance;
         transform.rotation = facingAngleRotation;
     }
 
@@ -145,12 +145,12 @@ public class Attack : GameActor
 
     private void Pushback(Collider other, float multiplier)
     {
-        //Causes pushback on the player when you strike something. Vector points halfway between player facing and the line between the player and the struck target
+        //Causes pushback on the attacker when you strike something. Vector points halfway between attacker facing and the line between the attacker and the struck target
         Vector3 direction = attacker.Rb.position - other.ClosestPoint(attacker.Rb.position);
         direction.z = 0;
         direction.Normalize();
 
-        direction -= playerFacingDirection;
+        direction -= attackerFacingDirection;
         direction.Normalize();
         direction *= (pushbackAmount * multiplier);
 

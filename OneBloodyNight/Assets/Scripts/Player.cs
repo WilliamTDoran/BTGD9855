@@ -33,4 +33,20 @@ public class Player : GameActor
             rb.velocity = controller.IntendedDirection * speed;
         }
     }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if (controller.IntendedDirection != Vector3.zero && canMove)
+        {
+            facingAngle = Vector3.SignedAngle(Vector3.right, controller.IntendedDirection, Vector3.forward);
+            facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
+        }
+
+        if (facingDebugText != null)
+        {
+            facingDebugText.text = facingAngle + "";
+        }
+    }
 }

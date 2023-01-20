@@ -22,7 +22,7 @@ public class GameActor : MonoBehaviour
     protected bool load1Down;
     protected bool load2Down;
 
-    private float facingAngle;
+    protected float facingAngle;
     public float FacingAngle { get { return facingAngle; } }
 
     protected Rigidbody rb;
@@ -84,16 +84,5 @@ public class GameActor : MonoBehaviour
         advancedAttackDown = controller.AdvancedFireDown;
         load1Down = controller.Load1Down;
         load2Down = controller.Load2Down;
-
-        if (controller.IntendedDirection != Vector3.zero && canMove)
-        {
-            facingAngle = Vector3.SignedAngle(Vector3.right, controller.IntendedDirection, Vector3.forward);
-            facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
-        }
-
-        if (facingDebugText != null)
-        {
-            facingDebugText.text = facingAngle + "";
-        }
     }
 }
