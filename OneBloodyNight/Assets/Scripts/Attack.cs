@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,6 +46,10 @@ public class Attack : GameActor
     [Tooltip("Scalar that defines how far from the player the attack hitbox is")]
     [SerializeField]
     private float floatDistance;
+
+    [Tooltip("List of ignored attack tags. Essentially, anything that this attack *shouldn't* be able to hit.")]
+    [SerializeField]
+    private string[] untargetableTags;
     /*~~~~~~~~~~~~~~~~~~~~*/
     [Header("References")]
 
@@ -128,7 +133,23 @@ public class Attack : GameActor
     {
         Debug.Log("Hit Detected");
 
-        CombatManager.Instance.Attack(attacker, this, other, damage, knockbackAmount);
+        bool proceed = true;
+
+        if (untargetableTags.Length > 0)
+        {
+            for (int i = 0; i < untargetableTags.Length; i++)
+            {
+                if (other.CompareTag(untargetableTags[i]))
+                {
+                    proceed = false;
+                }
+            }
+        }
+
+        if (proceed)
+        {
+            CombatManager.Instance.Attack(attacker, this, other, damage, knockbackAmount);
+        }
     }
 
     public void Pushback(Collider other, float multiplier)

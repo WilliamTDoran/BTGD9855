@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 666896816}
   m_Layer: 0
   m_Name: TestWerewolf
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1560,6 +1560,8 @@ MonoBehaviour:
   wallPushbackScalar: 2
   forceStill: 1
   floatDistance: 1
+  untargetableTags:
+  - Player
   attacker: {fileID: 1692689746}
   animator: {fileID: 1181192923}
   showHitbox: 1
@@ -2004,6 +2006,9 @@ MonoBehaviour:
   wallPushbackScalar: 2
   forceStill: 1
   floatDistance: 2
+  untargetableTags:
+  - Wall
+  - Monster
   attacker: {fileID: 666896813}
   animator: {fileID: 1729815160}
   showHitbox: 1
