@@ -18,7 +18,10 @@ public class Bloodmeter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("AdvancedFire"))
+        {
+            bloodmeter.value = bloodmeter.value - 50;
+        }
     }
 
     private IEnumerator DMG()
@@ -30,5 +33,10 @@ public class Bloodmeter : MonoBehaviour
             yield return new WaitForSeconds(0.25f);//slows down the damage rate
         }
         yield return null;//Player is dead
+    }
+
+    private void changeBlood()
+    {
+        
     }
 }
