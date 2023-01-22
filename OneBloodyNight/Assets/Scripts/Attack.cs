@@ -128,22 +128,10 @@ public class Attack : GameActor
     {
         Debug.Log("Hit Detected");
 
-        if (other.CompareTag("Wall"))
-        {
-            Debug.Log("Wall Hit " + other.gameObject.name);
-
-            Pushback(other, 1.0f);
-        }
-        /*else if (other.CompareTag("Monster"))
-        {
-            GameActor target = other.gameObject.GetComponent<GameActor>();
-            //CombatManager.Instance.HarmTarget(player, target, damageAmount);
-
-            Pushback(other, wallPushbackScalar);
-        }*/
+        CombatManager.Instance.Attack(attacker, this, other, damage, knockbackAmount);
     }
 
-    private void Pushback(Collider other, float multiplier)
+    public void Pushback(Collider other, float multiplier)
     {
         //Causes pushback on the attacker when you strike something. Vector points halfway between attacker facing and the line between the attacker and the struck target
         Vector3 direction = attacker.Rb.position - other.ClosestPoint(attacker.Rb.position);

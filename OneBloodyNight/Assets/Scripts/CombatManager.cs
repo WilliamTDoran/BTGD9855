@@ -21,13 +21,29 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    public void HarmTarget(GameActor attacker, GameActor target, int amount, float knockBackAmount)
+    public void Attack(GameActor attacker, Attack used, Collider target, int damageAmount, float knockbackAmount)
+    {
+        GameActor targetActor = target.gameObject.GetComponent<GameActor>();
+
+        if (target.CompareTag("Wall"))
+        {
+            Debug.Log("Wall Hit " + target.gameObject.name);
+
+            used.Pushback(target, 1.0f);
+        }
+        else if (target.CompareTag("Monster"))
+        {
+            HarmMonster(attacker, targetActor.gameObject.GetComponent<Monster>(), damageAmount);
+            ApplyKnockback(attacker, targetActor, knockbackAmount);
+        }
+    }
+    
+    private void HarmMonster(GameActor attacker, Monster target, int amount)
     {
         if (!target.Immune)
         {
-            //target.HitPoints -= amount;
+            target.CurHitPoints -= amount;
             Debug.Log("Send Damage to " + target.gameObject.name + " from " + attacker.gameObject.name);
-            ApplyKnockback(attacker, target, knockBackAmount);
         }
     }
 
