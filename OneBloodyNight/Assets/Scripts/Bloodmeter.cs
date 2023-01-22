@@ -7,6 +7,10 @@ public class Bloodmeter : MonoBehaviour
 {
     public Slider bloodmeter;
     private int currentBlood;
+    public int AbilityCost;
+    public int damage;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +24,7 @@ public class Bloodmeter : MonoBehaviour
     {
         if (Input.GetButtonDown("AdvancedFire"))
         {
-            bloodmeter.value = bloodmeter.value - 50;
+            bloodmeter.value = bloodmeter.value - AbilityCost;
         }
     }
 
