@@ -1037,30 +1037,17 @@ MonoBehaviour:
   mazeSeed: -1
   sampleRow: {fileID: 3985245215676089212, guid: ee78c11f6f19f724b84ac746fcad03bf, type: 3}
   biomeVariables:
-  - NextCellChance: 0
-    RandomCellChance: 0
-    colour: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
-    wallsRemoved: 0
-    maxCellDifficulty: 0
-    objects:
-    - formation: {fileID: 0}
-      cellDifficulty: 0
-      maxPlaced: 0
-      minPlaced: 0
-    - formation: {fileID: 0}
-      cellDifficulty: 0
-      maxPlaced: 0
-      minPlaced: 0
-  - NextCellChance: 0
-    RandomCellChance: 0
-    colour: {r: 0.6415094, g: 0, b: 0, a: 1}
-    wallsRemoved: 0
+  - colour: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
     maxCellDifficulty: 0
     objects: []
-  - NextCellChance: 0
-    RandomCellChance: 0
-    colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
-    wallsRemoved: 0
+  - colour: {r: 0.6415094, g: 0, b: 0, a: 1}
+    maxCellDifficulty: 1000
+    objects:
+    - formation: {fileID: 8813698199761548738, guid: 59ca1720d052cd74f9de7b3d2b56fad0, type: 3}
+      cellDifficulty: 0
+      maxPlaced: 5
+      minPlaced: 10
+  - colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
     maxCellDifficulty: 0
     objects: []
 --- !u!4 &750604040
