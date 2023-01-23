@@ -11,6 +11,8 @@ public class Attack : GameActor
     private string swingTrigger = "Swing";
     private Vector3 attackerFacingDirection;
 
+    private List<GameObject> hitThisSwing;
+
     /* Exposed Variables */
     [Header("Attack Statistics")]
 
@@ -29,7 +31,11 @@ public class Attack : GameActor
     private float pushbackAmount; //the amount of pushback on the attacker
     public float PushbackAmount { get { return pushbackAmount; } set { pushbackAmount = value; } }
 
-    [Tooltip("Drag on player rb when pushing back. Don't fuck with this unless you know what you're doing")]
+    [Tooltip("Return drag. Don't fuck with this unless you know what you're doing")]
+    [SerializeField]
+    private float returnDrag;
+
+    [Tooltip("Drag on rb when pushing back. Don't fuck with this unless you know what you're doing")]
     [SerializeField]
     private float drag = 25f;
 
@@ -124,7 +130,7 @@ public class Attack : GameActor
             hitboxMesh.enabled = false;
         }
 
-        attacker.Rb.drag = 0;
+        attacker.Rb.drag = returnDrag;
 
         attacker.CanAttack = true;
     }
@@ -146,8 +152,14 @@ public class Attack : GameActor
             }
         }
 
+        if (hitThisSwing.Contains(other.gameObject))
+        {
+            proceed = false;
+        }
+
         if (proceed)
         {
+            hitThisSwing.Add(other.gameObject);
             CombatManager.Instance.Attack(attacker, this, other, damage, knockbackAmount);
         }
     }

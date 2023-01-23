@@ -1543,14 +1543,16 @@ MonoBehaviour:
   facingDebugText: {fileID: 0}
   canAttackDebugText: {fileID: 561208345}
   damage: 5
-  knockbackAmount: 18
+  knockbackAmount: 25
   pushbackAmount: 10
+  returnDrag: 0
   drag: 25
   wallPushbackScalar: 2
   forceStill: 1
   floatDistance: 1
   untargetableTags:
   - Player
+  - Floor
   attacker: {fileID: 1692689746}
   animator: {fileID: 1181192923}
   showHitbox: 1
@@ -1991,13 +1993,15 @@ MonoBehaviour:
   damage: 5
   knockbackAmount: 10
   pushbackAmount: 0
-  drag: 0
+  returnDrag: 18
+  drag: 25
   wallPushbackScalar: 0
   forceStill: 1
   floatDistance: 2
   untargetableTags:
   - Wall
   - Monster
+  - Floor
   attacker: {fileID: 666896813}
   animator: {fileID: 1729815160}
   showHitbox: 1

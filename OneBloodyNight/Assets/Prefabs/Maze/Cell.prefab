@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2242715887265903012}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Wall
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 5706732068632537421}
   m_Layer: 0
   m_Name: Cell
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

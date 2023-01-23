@@ -26,7 +26,7 @@ public class Monster : GameActor
         canMove = true;
         facingAngle = 0;
 
-        //StartCoroutine(DebugAttackCycle());
+        StartCoroutine(DebugAttackCycle());
     }
 
     private IEnumerator DebugAttackCycle()
