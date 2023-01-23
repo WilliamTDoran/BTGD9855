@@ -12,8 +12,8 @@ public class Maze : MonoBehaviour
     [SerializeField]
     internal MazeVariables traits;
 
-    [SerializeField]
-    int toRemove = 5;
+    //[SerializeField]
+    //int toRemove = 5;
 
     [SerializeField]
     [Tooltip("-1 for random")]
@@ -115,10 +115,13 @@ public class Maze : MonoBehaviour
 
         //Wall removal
         //extraRemoval(toRemove);
+        Debug.Log("There are: " + deadEnds.Count + "Dead ends");
+        MazeWallRemoval removal = new MazeWallRemoval();
+        removal.removeWalls(Biome.impundulu);
+        removal.removeWalls(Biome.yara);
 
         //Object Placer
         //PlaceObject.place(Biome.yara, biomeVariables[(int)Biome.yara].objects[0]);
-        Debug.Log("There are: "+deadEnds.Count+"Dead ends");
         PlaceObject.placeAll(traits.CharacterBiome);
     }
 
