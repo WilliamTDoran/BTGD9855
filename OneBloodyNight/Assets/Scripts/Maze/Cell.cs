@@ -112,6 +112,7 @@ public class Cell : MonoBehaviour
             //if all are, this is a deadend. go back up the generate maze loop
             if (nextCell.isInMaze() || nextCell.getBiome() != biome)
             {
+                //Maze.m.deadEnds.Add(this);
                 return;
             }
             //Connect the cell that's not connected

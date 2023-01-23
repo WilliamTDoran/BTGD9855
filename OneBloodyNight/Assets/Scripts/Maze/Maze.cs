@@ -29,6 +29,9 @@ public class Maze : MonoBehaviour
     internal int height() { return traits.height; }
 
 
+    //[HideInInspector]
+    //internal List<Cell> deadEnds;
+
     BiomeGenerator biomeGen;
 
     Row[] rows;
@@ -77,6 +80,7 @@ public class Maze : MonoBehaviour
         transform.localScale = new Vector3(traits.scale, traits.scale, 1);
         //create a bunch of rows
         rows = new Row[traits.height];
+        //deadEnds = new List<Cell>();
         for (int i = 0; i < rows.Length; i++) 
         {
             GameObject temp = Instantiate(sampleRow, new Vector3(0, -1*i* traits.scale, 0), Quaternion.identity, transform);
@@ -138,18 +142,35 @@ public class Maze : MonoBehaviour
         }
     }
 
+    internal void clearVars()
+    {
+        rows = null;
+    }
+
+    public void RegenMaze()
+    {
+        Debug.Log("New Maze time!");
+        if (rows != null)
+        {
+            foreach (Row r in rows)
+            {
+                DestroyImmediate(r.gameObject);
+            }
+        }
+        if (biomeGen == null)
+        {
+            biomeGen = new BiomeGenerator();
+        }
+        initMaze();
+        Debug.Log("New Maze Generated!");
+    }
+
 
     public void Update()
     {
-        /*if (Input.GetButtonDown("RegenerateMaze"))
+        if (Input.GetButtonDown("RegenerateMaze"))
         {
-            //Debug.Log("New Maze time!");
-            foreach (Row r in rows)
-            {
-                Destroy(r.gameObject);
-            }
-            initMaze();
-            //Debug.Log("New Maze Generated!");
-        }*/
+            RegenMaze();
+        }
     }
 }
