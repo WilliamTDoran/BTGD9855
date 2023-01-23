@@ -36,6 +36,10 @@ public class CombatManager : MonoBehaviour
             HarmMonster(attacker, targetActor.gameObject.GetComponent<Monster>(), damageAmount);
             ApplyKnockback(attacker, targetActor, knockbackAmount);
         }
+        else if (target.CompareTag("Player"))
+        {
+            ApplyKnockback(attacker, targetActor, knockbackAmount);
+        }
     }
     
     private void HarmMonster(GameActor attacker, Monster target, int amount)
@@ -49,6 +53,8 @@ public class CombatManager : MonoBehaviour
 
     private void ApplyKnockback(GameActor attacker, GameActor target, float amount)
     {
+        Debug.Log("Send knockback to " + target.gameObject.name + " from " + attacker.gameObject.name);
+
         Rigidbody attackerRigidBody = attacker.Rb;
         Rigidbody targetRigidBody = target.Rb;
 
@@ -57,7 +63,7 @@ public class CombatManager : MonoBehaviour
 
         direction *= amount;
 
-        targetRigidBody.velocity += direction;
+        targetRigidBody.AddForce(direction * amount, ForceMode.Impulse);
     }
 
     private IEnumerator ImmuneCountdown(GameActor target, float immuneDuration)
