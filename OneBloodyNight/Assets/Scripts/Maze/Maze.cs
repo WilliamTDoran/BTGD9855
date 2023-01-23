@@ -29,8 +29,8 @@ public class Maze : MonoBehaviour
     internal int height() { return traits.height; }
 
 
-    //[HideInInspector]
-    //internal List<Cell> deadEnds;
+    [HideInInspector]
+    internal List<Cell> deadEnds;
 
     BiomeGenerator biomeGen;
 
@@ -80,7 +80,7 @@ public class Maze : MonoBehaviour
         transform.localScale = new Vector3(traits.scale, traits.scale, 1);
         //create a bunch of rows
         rows = new Row[traits.height];
-        //deadEnds = new List<Cell>();
+        deadEnds = new List<Cell>();
         for (int i = 0; i < rows.Length; i++) 
         {
             GameObject temp = Instantiate(sampleRow, new Vector3(0, -1*i* traits.scale, 0), Quaternion.identity, transform);
@@ -114,10 +114,11 @@ public class Maze : MonoBehaviour
         mid.getWall((int)Wall.wLocation.west).hit(false);
 
         //Wall removal
-        extraRemoval(toRemove);
+        //extraRemoval(toRemove);
 
         //Object Placer
         //PlaceObject.place(Biome.yara, biomeVariables[(int)Biome.yara].objects[0]);
+        Debug.Log("There are: "+deadEnds.Count+"Dead ends");
         PlaceObject.placeAll(traits.CharacterBiome);
     }
 
@@ -127,7 +128,7 @@ public class Maze : MonoBehaviour
         return rows[y].getCell(x);
     }
 
-    public void extraRemoval(int toRemove)
+    /*public void extraRemoval(int toRemove)
     {
         for (int i=0; i<toRemove; i++)
         {
@@ -140,7 +141,7 @@ public class Maze : MonoBehaviour
                 w.hit(false);
             } 
         }
-    }
+    }*/
 
     internal void clearVars()
     {

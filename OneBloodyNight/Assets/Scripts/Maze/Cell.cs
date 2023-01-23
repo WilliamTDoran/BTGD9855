@@ -109,16 +109,28 @@ public class Cell : MonoBehaviour
                 dir %= 4;
                 nextCell = getWall(dir).getLink().getCell();
             }
-            //if all are, this is a deadend. go back up the generate maze loop
+            //if all are, this is cell is done. go back up the generate maze loop
             if (nextCell.isInMaze() || nextCell.getBiome() != biome)
             {
-                //Maze.m.deadEnds.Add(this);
+                int openWalls = 0;
+                for (int i = 0; i < walls.Length; i++)
+                {
+                    if (walls[i].getState() == Wall.wState.destroyed)
+                    {
+                        openWalls++;
+                    }
+                }
+                if (openWalls <= 1) // if it's a dead end
+                {
+                    Maze.m.deadEnds.Add(this);
+                }
                 return;
             }
             //Connect the cell that's not connected
             walls[dir].hit(false);
             nextCell.generateMaze();
         }
+        
         return;
     }
 }
