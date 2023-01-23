@@ -1041,15 +1041,15 @@ MonoBehaviour:
     maxCellDifficulty: 0
     objects: []
   - colour: {r: 0.6415094, g: 0, b: 0, a: 1}
-    wallsRemoved: 10
-    maxCellDifficulty: 1000
+    wallsRemoved: 15
+    maxCellDifficulty: 1
     objects:
     - formation: {fileID: 8813698199761548738, guid: 59ca1720d052cd74f9de7b3d2b56fad0, type: 3}
-      cellDifficulty: 0
+      cellDifficulty: 1
       maxPlaced: 5
       minPlaced: 10
   - colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
-    wallsRemoved: 0
+    wallsRemoved: 200
     maxCellDifficulty: 0
     objects: []
 --- !u!4 &750604040
@@ -1060,8 +1060,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750604038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -130, y: 130, z: 0.001}
+  m_LocalScale: {x: 13, y: 13, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
