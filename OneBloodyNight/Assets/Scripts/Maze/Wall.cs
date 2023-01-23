@@ -70,7 +70,7 @@ public class Wall : MonoBehaviour
     }
 
     //If the wall is hit by a projectile
-    public void hit(bool extra)
+    public void remove(bool extra)
     {
         if (state == wState.interior)
         {
@@ -79,7 +79,7 @@ public class Wall : MonoBehaviour
             gameObject.SetActive(false);
             if (!extra && linked != null)
             {
-                linked.hit(true);
+                linked.remove(true);
             }
         }
     }

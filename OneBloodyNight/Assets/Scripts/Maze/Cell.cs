@@ -7,7 +7,7 @@ public class Cell : MonoBehaviour
     //The 4 walls of the cell
     [SerializeField]
     [Tooltip("North, East, South, West order please.")]
-    private Wall[] walls;
+    internal Wall[] walls;
 
     [SerializeField]
     private Biome biome = Biome.length;
@@ -127,7 +127,7 @@ public class Cell : MonoBehaviour
                 return;
             }
             //Connect the cell that's not connected
-            walls[dir].hit(false);
+            walls[dir].remove(false);
             nextCell.generateMaze();
         }
         
