@@ -11,7 +11,7 @@ public class Attack : GameActor
     private string swingTrigger = "Swing";
     private Vector3 attackerFacingDirection;
 
-    private List<GameObject> hitThisSwing;
+    private List<GameObject> hitThisSwing = new List<GameObject>();
 
     /* Exposed Variables */
     [Header("Attack Statistics")]
@@ -133,6 +133,8 @@ public class Attack : GameActor
         attacker.Rb.drag = returnDrag;
 
         attacker.CanAttack = true;
+
+        hitThisSwing = new List<GameObject>();
     }
 
     private void OnTriggerEnter(Collider other)
