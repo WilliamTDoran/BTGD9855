@@ -668,6 +668,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cdf68681346bd04089200fcfbf561f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodmeter: {fileID: 1084522853}
+  werewolfDMG: 100
 --- !u!4 &646149349
 Transform:
   m_ObjectHideFlags: 0

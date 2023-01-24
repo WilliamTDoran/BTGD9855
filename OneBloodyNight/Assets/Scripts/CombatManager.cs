@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CombatManager : MonoBehaviour
 {
+    public Slider bloodmeter;
+    public  int werewolfDMG;
+
     private IEnumerator immuneCoroutine;
 
     private static CombatManager instance;
@@ -38,6 +42,7 @@ public class CombatManager : MonoBehaviour
         }
         else if (target.CompareTag("Player"))
         {
+            bloodmeter.value = bloodmeter.value - werewolfDMG;
             ApplyKnockback(attacker, targetActor, knockbackAmount);
         }
     }
