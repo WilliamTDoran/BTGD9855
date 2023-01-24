@@ -11,7 +11,7 @@ public class Attack : GameActor
     private string swingTrigger = "Swing";
     private Vector3 attackerFacingDirection;
 
-    private List<GameObject> hitThisSwing = new List<GameObject>();
+    private List<Collider> hitThisSwing = new List<Collider>();
 
     /* Exposed Variables */
     [Header("Attack Statistics")]
@@ -131,10 +131,8 @@ public class Attack : GameActor
         }
 
         attacker.Rb.drag = returnDrag;
-
+        hitThisSwing.Clear();
         attacker.CanAttack = true;
-
-        hitThisSwing = new List<GameObject>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -154,14 +152,14 @@ public class Attack : GameActor
             }
         }
 
-        if (hitThisSwing.Contains(other.gameObject))
+        if (hitThisSwing.Contains(other))
         {
             proceed = false;
         }
 
         if (proceed)
         {
-            hitThisSwing.Add(other.gameObject);
+            hitThisSwing.Add(other);
             CombatManager.Instance.Attack(attacker, this, other, damage, knockbackAmount);
         }
     }
