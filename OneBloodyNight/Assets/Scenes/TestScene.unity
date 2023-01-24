@@ -1031,7 +1031,7 @@ MonoBehaviour:
   traits:
     width: 21
     height: 21
-    scale: 13
+    scale: 16
     CharacterBiome: 0
   mazeSeed: -1
   sampleRow: {fileID: 3985245215676089212, guid: ee78c11f6f19f724b84ac746fcad03bf, type: 3}
@@ -1049,9 +1049,29 @@ MonoBehaviour:
       maxPlaced: 5
       minPlaced: 10
   - colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
-    wallsRemoved: 200
-    maxCellDifficulty: 0
-    objects: []
+    wallsRemoved: 150
+    maxCellDifficulty: 1
+    objects:
+    - formation: {fileID: 1216559942331405162, guid: 8a2f415d56b154e4880a5929ed331b68, type: 3}
+      cellDifficulty: 1
+      maxPlaced: 1
+      minPlaced: 11
+    - formation: {fileID: 429449037080162900, guid: 903bc6f751d8aea45bf384db2ce25317, type: 3}
+      cellDifficulty: 1
+      maxPlaced: 1
+      minPlaced: 11
+    - formation: {fileID: 5497687525376946307, guid: 9e80778d293d34e4f96860b4002bbec0, type: 3}
+      cellDifficulty: 1
+      maxPlaced: 1
+      minPlaced: 11
+    - formation: {fileID: 5271325139786336067, guid: 9c47686b9f44021489ceafb4f3d76365, type: 3}
+      cellDifficulty: 1
+      maxPlaced: 1
+      minPlaced: 11
+    - formation: {fileID: 7177762433684976189, guid: f3e0a66ea69490247a156acd3ce8c97d, type: 3}
+      cellDifficulty: 1
+      maxPlaced: 1
+      minPlaced: 11
 --- !u!4 &750604040
 Transform:
   m_ObjectHideFlags: 0
@@ -2140,9 +2160,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -271902819
+  m_SortingLayer: 4
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 7c4962dff856ffe43b1999bae90e9730, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

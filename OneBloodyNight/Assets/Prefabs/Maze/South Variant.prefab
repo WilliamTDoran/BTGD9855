@@ -59,5 +59,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: South Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7107134182704935900, guid: 08c5e402d6f87014d9a1f1a182e5c165, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08c5e402d6f87014d9a1f1a182e5c165, type: 3}
