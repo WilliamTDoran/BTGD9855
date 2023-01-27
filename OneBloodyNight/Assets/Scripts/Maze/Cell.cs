@@ -50,7 +50,7 @@ public class Cell : MonoBehaviour
 
     void Update()
     {
-        floor.GetComponent<Renderer>().material.color = Maze.m.biomeVariables[(int)biome].colour;
+        //floor.GetComponent<Renderer>().material.color = Maze.m.biomeVariables[(int)biome].colour;
     }
 
     public bool isInMaze()
