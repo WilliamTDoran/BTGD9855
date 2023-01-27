@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
             spawns = s;
         }
 
-        load();
+        unload();
     }
 
     private void OnTriggerEnter(Collider other)

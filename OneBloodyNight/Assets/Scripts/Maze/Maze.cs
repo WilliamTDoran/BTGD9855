@@ -83,7 +83,7 @@ public class Maze : MonoBehaviour
         deadEnds = new List<Cell>();
         for (int i = 0; i < rows.Length; i++) 
         {
-            GameObject temp = Instantiate(sampleRow, new Vector3(0, -1*i* traits.scale, 0), Quaternion.identity, transform);
+            GameObject temp = Instantiate(sampleRow, transform.position+new Vector3(0, -1*i* traits.scale, 0), Quaternion.identity, transform);
             temp.name = "Row " + i;
             rows[i] = temp.GetComponent<Row>();
             if (i > 0) 
