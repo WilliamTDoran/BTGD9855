@@ -650,7 +650,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Lore Books
 --- !u!222 &490923162
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1321,7 +1321,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 'Quit
+
+'
 --- !u!222 &1768714059
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1489,7 +1491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16, y: -337}
+  m_AnchoredPosition: {x: 16, y: 74}
   m_SizeDelta: {x: 605.4376, y: 160.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1861720608
@@ -1817,7 +1819,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 'Start Game
+
+'
 --- !u!222 &2030555775
 CanvasRenderer:
   m_ObjectHideFlags: 0
