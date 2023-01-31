@@ -1129,7 +1129,7 @@ MonoBehaviour:
     width: 21
     height: 21
     scale: 16
-    forceCloser: 0.1
+    forceCloser: 0
     CharacterBiome: 0
   mazeSeed: -1
   sampleRow: {fileID: 3985245215676089212, guid: ee78c11f6f19f724b84ac746fcad03bf, type: 3}
