@@ -9,6 +9,8 @@ using UnityEngine;
 /// </summary>
 public class Monster : GameActor
 {
+    private Player player;
+
     private int curHitPoints;
     public int CurHitPoints { get { return curHitPoints; } set { curHitPoints = value; } }
 
@@ -24,9 +26,6 @@ public class Monster : GameActor
 
     [SerializeField]
     private bool debugFollow;
-
-    [SerializeField]
-    private Player player;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     protected override void Start()
@@ -38,6 +37,8 @@ public class Monster : GameActor
         facingAngle = 0;
 
         StartCoroutine(DebugAttackCycle());
+
+        player = Player.plr;
     }
 
     protected override void Update()

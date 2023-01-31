@@ -13,7 +13,10 @@ public class Player : GameActor
     private Transform renderBox;
     internal static Player plr;
     /*~~~~~~~~~~~~~~~~~~~*/
-
+    
+    /// <summary>
+    /// Used for ease of reference
+    /// </summary>
     protected override void Awake()
     {
         base.Awake();
