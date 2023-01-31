@@ -71,7 +71,7 @@ AnimationClip:
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -121,10 +121,10 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 13.15
-    functionName: 
+  - time: 13.283334
+    functionName: AnimationDone
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 11500000, guid: 50b9adc1bd9eb9740977d7f8b6e54d4f, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
