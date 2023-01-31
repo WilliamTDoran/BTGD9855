@@ -194,7 +194,10 @@ public class Attack : GameActor
         if (proceed)
         {
             hitThisSwing.Add(other); //Records the detected collider as already hit by this attack
-            CombatManager.Instance.Attack(attacker, this, other, damage, knockbackAmount); //Calls to CombatManager to run the attack
+            if (CombatManager.Instance.Attack(attacker, this, other, damage, knockbackAmount)) //Calls to CombatManager to run the attack)
+            {
+                
+            }
         }
     }
 
