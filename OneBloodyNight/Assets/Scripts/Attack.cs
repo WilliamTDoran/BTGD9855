@@ -15,6 +15,8 @@ public class Attack : GameActor
 
     private List<Collider> hitThisSwing = new List<Collider>(); //A list of everything already hit during this attack. Used to avoid double-hitting the same collider
 
+    private bool successful = false;
+
     /* Exposed Variables */
     [Header("Attack Statistics")]
 
@@ -85,6 +87,8 @@ public class Attack : GameActor
     /// </summary>
     public void StartSwing()
     {
+        successful = false;
+
         if (attacker.CanAttack)
         {
             PositionAttack(); //The attack hitbox always exists, and needs to have its relative position to the attacker updated each time

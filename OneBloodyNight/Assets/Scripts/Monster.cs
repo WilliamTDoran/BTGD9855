@@ -24,6 +24,9 @@ public class Monster : GameActor
 
     [SerializeField]
     private bool debugFollow;
+
+    [SerializeField]
+    private Player player;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     protected override void Start()
@@ -35,6 +38,14 @@ public class Monster : GameActor
         facingAngle = 0;
 
         StartCoroutine(DebugAttackCycle());
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        facingAngle = Vector3.SignedAngle(Vector3.right, controller.IntendedDirection, Vector3.forward);
+        facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
     }
 
     private void FixedUpdate()
@@ -59,6 +70,12 @@ public class Monster : GameActor
 
     private void DebugCharge()
     {
+        if (canMove && !player.Immune)
+        {
+            Vector3 direction = player.Rb.position - rb.position;
+            direction.Normalize();
 
+            rb.AddForce(direction * speed, ForceMode.Force);
+        }
     }
 }

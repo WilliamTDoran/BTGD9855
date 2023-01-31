@@ -25,7 +25,7 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    public void Attack(GameActor attacker, Attack used, Collider target, int damageAmount, float knockbackAmount)
+    public bool Attack(GameActor attacker, Attack used, Collider target, int damageAmount, float knockbackAmount)
     {
         GameActor targetActor = target.gameObject.GetComponent<GameActor>();
 
@@ -34,17 +34,25 @@ public class CombatManager : MonoBehaviour
             Debug.Log("Wall Hit " + target.gameObject.name);
 
             used.Pushback(target, 1.0f);
+
+            return false;
         }
         else if (target.CompareTag("Monster"))
         {
             HarmMonster(attacker, targetActor.gameObject.GetComponent<Monster>(), damageAmount);
             ApplyKnockback(attacker, targetActor, knockbackAmount);
+
+            return true;
         }
         else if (target.CompareTag("Player"))
         {
             bloodmeter.value = bloodmeter.value - werewolfDMG;
             ApplyKnockback(attacker, targetActor, knockbackAmount);
+
+            return true;
         }
+
+        return false;
     }
     
     private void HarmMonster(GameActor attacker, Monster target, int amount)
