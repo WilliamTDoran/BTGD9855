@@ -6,14 +6,6 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     //Buttons
-    [SerializeField]
-    private GameObject startButton;
-    [SerializeField]
-    private GameObject LoreButton;
-    [SerializeField]
-    private GameObject optionButton;
-    [SerializeField]
-    private GameObject quitButton;
 
     //Screens
     [SerializeField]
@@ -25,10 +17,6 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //startButton.SetActive(false);
-        //LoreButton.SetActive(false);
-        //optionButton.SetActive(false);
-        //quitButton.SetActive(false);
 
         optionScreen.SetActive(false);
         loreScreen.SetActive(false);
@@ -77,11 +65,4 @@ public class Menu : MonoBehaviour
         optionScreen.SetActive(false);
     }
 
-    public void AnimationDone()
-    {
-        startButton.SetActive(true);
-        LoreButton.SetActive(true);
-        optionButton.SetActive(true);
-        quitButton.SetActive(true);
-    }
 }
