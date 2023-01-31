@@ -59,7 +59,7 @@ public class GameActor : MonoBehaviour
     public TextMeshProUGUI CanAttackDebugText { get { return canAttackDebugText; } }
     /* -~-~-~-~-~-~-~-~- */
 
-    private void Awake()
+    virtual protected void Awake()
     {
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();

@@ -11,7 +11,14 @@ public class Player : GameActor
 {
     /* Exposed Variables */
     private Transform renderBox;
+    internal static Player plr;
     /*~~~~~~~~~~~~~~~~~~~*/
+
+    protected override void Awake()
+    {
+        base.Awake();
+        plr = this;
+    }
 
     /// <summary>
     /// Standard Start function. Initializes a couple values, creates references to useful objects. You know the drill.
