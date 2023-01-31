@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
+//8E964B
+
 /// <summary>
 /// This is a universal control interface that can be drawn from as needed, allowing for multiple characters to use the same controls.
 /// This returns nothing; instead, the various public variables can be drawn from a script with reference to this
