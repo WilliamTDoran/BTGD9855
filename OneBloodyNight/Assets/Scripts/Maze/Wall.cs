@@ -84,6 +84,20 @@ public class Wall : MonoBehaviour
         }
     }
 
+    internal void placeNorthSprites(Biome b)
+    {
+        GameObject[] allSprites = Maze.m.biomeVariables[(int)b].NorthernWallSprites;
+        if (allSprites.Length > 1)
+        {
+            int picked = Random.Range(0, allSprites.Length);
+            GameObject temp = Instantiate(allSprites[picked], new Vector3(transform.position.x, transform.position.y, 5), Quaternion.identity, transform);
+            picked = Random.Range(0, allSprites.Length);
+            temp = Instantiate(allSprites[picked], new Vector3(transform.position.x + 4f-Maze.m.traits.forceCloser, transform.position.y, 5), Quaternion.identity, transform);
+            picked = Random.Range(0, allSprites.Length);
+            temp = Instantiate(allSprites[picked], new Vector3(transform.position.x - 4f + Maze.m.traits.forceCloser, transform.position.y, 5), Quaternion.identity, transform);
+        }
+    }
+
     public Cell getCell()
     {
         return transform.parent.gameObject.GetComponent<Cell>();

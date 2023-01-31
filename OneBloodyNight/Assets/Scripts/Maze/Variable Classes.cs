@@ -19,6 +19,7 @@ public class MazeVariables
     public int width;
     public int height;
     public float scale;
+    public float forceCloser;
     public Biome CharacterBiome;
 }
 
@@ -33,6 +34,7 @@ public class BiomeVariables
     public int maxCellDifficulty;
     [Tooltip("Array of the objects to be placed in the maze")]
     public PlacableObject[] objects;
+    public GameObject[] NorthernWallSprites;
 }
 
 

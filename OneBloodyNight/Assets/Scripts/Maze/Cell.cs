@@ -120,6 +120,11 @@ public class Cell : MonoBehaviour
                         openWalls++;
                     }
                 }
+                walls[(int)Wall.wLocation.north].placeNorthSprites(getBiome());
+                if (getBiome() == Biome.impundulu)
+                {
+                    transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().color = Color.cyan;
+                }
                 if (openWalls <= 1) // if it's a dead end
                 {
                     Maze.m.deadEnds.Add(this);
