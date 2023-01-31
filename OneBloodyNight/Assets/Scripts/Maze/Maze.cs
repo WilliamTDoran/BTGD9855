@@ -56,14 +56,14 @@ public class Maze : MonoBehaviour
         }
     }
 
-    internal int getWorldPosX(int x)
+    /*internal int getWorldPosX(int x)
     {
         return (int)Mathf.Round(-1 * traits.scale * (traits.width / 2) + x * traits.scale);
     }
     internal int getWorldPosY(int y)
     {
         return -getWorldPosX(y);
-    }
+    }*/
 
     //Hey! We need a maze here.
     void Start()
@@ -97,7 +97,8 @@ public class Maze : MonoBehaviour
         
         //runs the maze generation algorithm
         generateMaze();
-        transform.position = new Vector3(-1 * traits.scale * (traits.width/2), traits.scale * (traits.height/2), 0.001f);
+        transform.position = new Vector3(-1 * traits.scale * (traits.width / 2), traits.scale * (traits.height / 2), 0.001f);
+        Player.plr.transform.position = new Vector3(getCell(traits.width/2, traits.height/ 2).transform.position.x, getCell(traits.width / 2, traits.height / 2).transform.position.y, Player.plr.transform.position.z);
     }
 
     public void generateMaze()
