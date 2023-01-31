@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 304685547332972367}
   - component: {fileID: 1639891290779563456}
   m_Layer: 0
-  m_Name: Pitchfork
+  m_Name: Werewolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 389962586570908446}
   m_Layer: 0
-  m_Name: EnemyFormation 4
+  m_Name: N_EnemyFormation 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
