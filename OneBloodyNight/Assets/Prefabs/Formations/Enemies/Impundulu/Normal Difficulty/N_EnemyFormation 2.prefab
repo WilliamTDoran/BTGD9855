@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 227622601469216576}
   - component: {fileID: 9156691105335591110}
   - component: {fileID: 973710966774059072}
+  - component: {fileID: 5664156992600222662}
+  - component: {fileID: 9074949976547440296}
   m_Layer: 0
   m_Name: Pitchfork 1
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +99,41 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5664156992600222662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2377609920894614219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e643940dec982a41b1528d60b0a084c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4000
+  immuneDuration: 0.5
+  facingDebugText: {fileID: 0}
+  canAttackDebugText: {fileID: 0}
+  maxHitPoints: 25
+  basicAttack: {fileID: 0}
+  debugFollow: 1
+--- !u!54 &9074949976547440296
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2377609920894614219}
+  serializedVersion: 2
+  m_Mass: 18
+  m_Drag: 18
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
 --- !u!1 &3303943050976469417
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,9 +146,11 @@ GameObject:
   - component: {fileID: 1181027951556083430}
   - component: {fileID: 304685547332972367}
   - component: {fileID: 1639891290779563456}
+  - component: {fileID: 3797038097593781281}
+  - component: {fileID: 6697995132093468993}
   m_Layer: 0
   m_Name: Shieldman
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +233,41 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3797038097593781281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303943050976469417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e643940dec982a41b1528d60b0a084c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2500
+  immuneDuration: 0.5
+  facingDebugText: {fileID: 0}
+  canAttackDebugText: {fileID: 0}
+  maxHitPoints: 50
+  basicAttack: {fileID: 0}
+  debugFollow: 1
+--- !u!54 &6697995132093468993
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303943050976469417}
+  serializedVersion: 2
+  m_Mass: 18
+  m_Drag: 18
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
 --- !u!1 &4643786296102203388
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,9 +280,11 @@ GameObject:
   - component: {fileID: 2464173751181265677}
   - component: {fileID: 3424901718646058122}
   - component: {fileID: 3172375144241624268}
+  - component: {fileID: 4228555203760859894}
+  - component: {fileID: 4289433439358804042}
   m_Layer: 0
   m_Name: Shieldman 1
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -291,6 +367,41 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4228555203760859894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4643786296102203388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e643940dec982a41b1528d60b0a084c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2500
+  immuneDuration: 0.5
+  facingDebugText: {fileID: 0}
+  canAttackDebugText: {fileID: 0}
+  maxHitPoints: 50
+  basicAttack: {fileID: 0}
+  debugFollow: 1
+--- !u!54 &4289433439358804042
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4643786296102203388}
+  serializedVersion: 2
+  m_Mass: 18
+  m_Drag: 18
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
 --- !u!1 &8061940559988512507
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,9 +414,11 @@ GameObject:
   - component: {fileID: 1136782689590602968}
   - component: {fileID: 7247334741733574314}
   - component: {fileID: 815742325291748940}
+  - component: {fileID: 8792978813879899096}
+  - component: {fileID: 7231049193424612670}
   m_Layer: 0
   m_Name: Pitchfork
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -388,6 +501,41 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8792978813879899096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8061940559988512507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e643940dec982a41b1528d60b0a084c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4000
+  immuneDuration: 0.5
+  facingDebugText: {fileID: 0}
+  canAttackDebugText: {fileID: 0}
+  maxHitPoints: 25
+  basicAttack: {fileID: 0}
+  debugFollow: 1
+--- !u!54 &7231049193424612670
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8061940559988512507}
+  serializedVersion: 2
+  m_Mass: 18
+  m_Drag: 18
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
 --- !u!1 &8258326494958717592
 GameObject:
   m_ObjectHideFlags: 0

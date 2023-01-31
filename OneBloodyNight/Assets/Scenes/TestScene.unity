@@ -863,7 +863,7 @@ Transform:
   m_GameObject: {fileID: 666896812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.655, y: 1.403, z: 0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1729815159}
@@ -1154,28 +1154,60 @@ MonoBehaviour:
     - {fileID: 3111108264678135816, guid: 588a373411c00f047b8c4e37bebac1ae, type: 3}
   - colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
     wallsRemoved: 150
-    maxCellDifficulty: 1
+    maxCellDifficulty: 10
     objects:
     - formation: {fileID: 1216559942331405162, guid: 8a2f415d56b154e4880a5929ed331b68, type: 3}
       cellDifficulty: 1
-      maxPlaced: 1
-      minPlaced: 11
+      maxPlaced: 20
+      minPlaced: 7
     - formation: {fileID: 429449037080162900, guid: 903bc6f751d8aea45bf384db2ce25317, type: 3}
       cellDifficulty: 1
-      maxPlaced: 1
-      minPlaced: 11
+      maxPlaced: 20
+      minPlaced: 7
     - formation: {fileID: 5497687525376946307, guid: 9e80778d293d34e4f96860b4002bbec0, type: 3}
       cellDifficulty: 1
-      maxPlaced: 1
-      minPlaced: 11
+      maxPlaced: 20
+      minPlaced: 7
     - formation: {fileID: 5271325139786336067, guid: 9c47686b9f44021489ceafb4f3d76365, type: 3}
       cellDifficulty: 1
-      maxPlaced: 1
-      minPlaced: 11
+      maxPlaced: 20
+      minPlaced: 7
     - formation: {fileID: 7177762433684976189, guid: f3e0a66ea69490247a156acd3ce8c97d, type: 3}
       cellDifficulty: 1
-      maxPlaced: 1
-      minPlaced: 11
+      maxPlaced: 20
+      minPlaced: 7
+    - formation: {fileID: 8258326494958717592, guid: e7533ae2d12db2d4d8cedb59fb368f71, type: 3}
+      cellDifficulty: 2
+      maxPlaced: 50
+      minPlaced: 25
+    - formation: {fileID: 8258326494958717592, guid: e89a3e5544f7fb74e9d0bc19c1fe414b, type: 3}
+      cellDifficulty: 2
+      maxPlaced: 50
+      minPlaced: 25
+    - formation: {fileID: 8258326494958717592, guid: f344596fff99d5c469681bc476134e63, type: 3}
+      cellDifficulty: 2
+      maxPlaced: 50
+      minPlaced: 25
+    - formation: {fileID: 8258326494958717592, guid: d1e5d37eedb4e1043a1a4d8073e8361c, type: 3}
+      cellDifficulty: 6
+      maxPlaced: 25
+      minPlaced: 15
+    - formation: {fileID: 8258326494958717592, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
+      cellDifficulty: 6
+      maxPlaced: 25
+      minPlaced: 15
+    - formation: {fileID: 8258326494958717592, guid: 9a9d96e3f819a2245a1d6d98af4e85dd, type: 3}
+      cellDifficulty: 6
+      maxPlaced: 25
+      minPlaced: 15
+    - formation: {fileID: 8258326494958717592, guid: 1bba256061924674e8f8aa460f504244, type: 3}
+      cellDifficulty: 6
+      maxPlaced: 25
+      minPlaced: 15
+    - formation: {fileID: 8258326494958717592, guid: 39bfccc3956c05f489f79eb15d318553, type: 3}
+      cellDifficulty: 6
+      maxPlaced: 25
+      minPlaced: 15
     NorthernWallSprites:
     - {fileID: 3111108264678135816, guid: 83f44c9c754e9fe438a0dd0ac03839a4, type: 3}
     - {fileID: 3111108264678135816, guid: 588a373411c00f047b8c4e37bebac1ae, type: 3}
