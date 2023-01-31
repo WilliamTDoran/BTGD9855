@@ -1,0 +1,1332 @@
+fileFormatVersion: 2
+guid: 74261aa3c649e214097920627eb62d92
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 970
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce091f9a30ff4dc4bb02a0f609538bd9
+      internalID: -311917896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_1
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 970
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af2918fd89c9cf47b87e91876227975
+      internalID: 921017729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_2
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 970
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f73db14d6c4dba4b8c791d8f8962e49
+      internalID: -2076006802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 970
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 277bdfec752fdc343877f51480b5d562
+      internalID: 967232954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 970
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f1d2d638a4f6b40ba019291a7fe8af
+      internalID: -1013678859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 970
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447071b7c1d360d4aad5dbed92343a7f
+      internalID: 1261141587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_6
+      rect:
+        serializedVersion: 2
+        x: 1990
+        y: 970
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f81a4e361afb1949ba03a9c6bd7817e
+      internalID: 1520748754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_7
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 970
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70ffcec50fab714eae1504e7efcc568
+      internalID: -1242373173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_8
+      rect:
+        serializedVersion: 2
+        x: 2650
+        y: 970
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f32e4f17514b14bace3e829169192b
+      internalID: 817245976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_9
+      rect:
+        serializedVersion: 2
+        x: 2980
+        y: 970
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3931969006bc0524192ac529cc2d3301
+      internalID: -1221454914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_10
+      rect:
+        serializedVersion: 2
+        x: 3310
+        y: 970
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce2af0efda718c4b856bb2fb8dd2436
+      internalID: -1896307957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_11
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 970
+        width: 321
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f49acf13d6b22340a1cc761724f3b45
+      internalID: -2080972703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_12
+      rect:
+        serializedVersion: 2
+        x: 3970
+        y: 970
+        width: 321
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cef5a3a5f779cb4f9d8f49bf4a54c91
+      internalID: 774203834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_13
+      rect:
+        serializedVersion: 2
+        x: 4300
+        y: 970
+        width: 321
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eded4f9aab804c47bb59ea3e2ab625b
+      internalID: 1834337523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_14
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 650
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ae9712d4507874fb3c583a087a5f3f
+      internalID: 1310875048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_15
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 650
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e68137b2bf57a74da3cb35e7780449e
+      internalID: 1750857189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_16
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 650
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f382720d78d8646878ffffadeb9f78
+      internalID: 1351583629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_17
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 650
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f52be6f846aff743aa16cd5bc70951f
+      internalID: -32640919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_18
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 650
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ccb429fbb0c4b49821e54a7c7a0749
+      internalID: 1821730180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_19
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 650
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c44bb0e840ed25468503d69218a0b2b
+      internalID: 74845818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_20
+      rect:
+        serializedVersion: 2
+        x: 1990
+        y: 650
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bee60df259cdff45a84497534912ca8
+      internalID: -1929582342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_21
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 650
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcbb74c4f3888d0498919e6ebbaca5dc
+      internalID: -1304334086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_22
+      rect:
+        serializedVersion: 2
+        x: 2650
+        y: 650
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed21cc45048e2a64e9f730fc8ca22f7c
+      internalID: -1915147176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_23
+      rect:
+        serializedVersion: 2
+        x: 2980
+        y: 650
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ab727a79858444fae6c649c72120c9
+      internalID: -304874593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_24
+      rect:
+        serializedVersion: 2
+        x: 3310
+        y: 650
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05c9de2bf8f123640908da74a8f93bc2
+      internalID: 1968901677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_25
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 650
+        width: 321
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c82df9cc7b0dc144b1e8e2ba6a70502
+      internalID: 1438673420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_26
+      rect:
+        serializedVersion: 2
+        x: 3970
+        y: 650
+        width: 321
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87e8efa605298f449a8d5d417291b01
+      internalID: -1878854944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_27
+      rect:
+        serializedVersion: 2
+        x: 4300
+        y: 650
+        width: 321
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c838aa49cbf2344bf1ed4db1799f01
+      internalID: -1874547207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_28
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 330
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0705b44709ac71343a075a1bf329ea47
+      internalID: -743968104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_29
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 330
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe23a83a0491e8742aad93cbcd9f9efe
+      internalID: -1603475651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_30
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 330
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb8efa778f3d6a4a8ca062a63d15d84
+      internalID: -1070735255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_31
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 330
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b68dcc55c09968348a911935742bf9ed
+      internalID: 1614219812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_32
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 330
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92976cfd7d4be69478cf72b50ab23371
+      internalID: 584348441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_33
+      rect:
+        serializedVersion: 2
+        x: 1660
+        y: 330
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 138076d4ab0a4d14fb93dd2801c0cc73
+      internalID: 893855300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_34
+      rect:
+        serializedVersion: 2
+        x: 1990
+        y: 330
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1422822478d9644e965d7254351a5f4
+      internalID: 157552368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_35
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 330
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 293c2ca2ac40f304db84149ffe378cfb
+      internalID: -838599786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_36
+      rect:
+        serializedVersion: 2
+        x: 2650
+        y: 330
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf8f0f5201159941b399d38856a1ca9
+      internalID: -2050085487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_37
+      rect:
+        serializedVersion: 2
+        x: 2980
+        y: 330
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 159ef6851decd6b4ba2b74fe1ab369d4
+      internalID: -1304275926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_38
+      rect:
+        serializedVersion: 2
+        x: 3310
+        y: 330
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2608d4ce37e6e24686d5a6b8757817d
+      internalID: -1384572981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_39
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 330
+        width: 321
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b560cbbcf2a2e4baff9295ae3a47ce
+      internalID: 1188173302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_40
+      rect:
+        serializedVersion: 2
+        x: 3970
+        y: 330
+        width: 321
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f892dc50355a6cf418e35fb4188e6885
+      internalID: 1450164380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_41
+      rect:
+        serializedVersion: 2
+        x: 4300
+        y: 330
+        width: 321
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f681065b6754984091b8798c1a802d1
+      internalID: 705064262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 155
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc1e318d48c24b41997aa95b6a4d9bf
+      internalID: -724567220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_43
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 0
+        width: 155
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 278823a2653cf664c867ad83ec2061db
+      internalID: 1819197486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_44
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 155
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57266e8af801e3b4c9c30e631f618ad5
+      internalID: 1356606403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_45
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 155
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c5d0d41e495ec4bbafbd736a933743
+      internalID: 1534817798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_46
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 105
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1b04a7d8029c0488cc182d385b29b1
+      internalID: -1558375625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_47
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 0
+        width: 105
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad4fedf2dd52f94fa04857dc4d99f4a
+      internalID: -152628981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_48
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 160
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4e7ab1eecc30543954fc26789d99bc
+      internalID: -228888929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_49
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 0
+        width: 161
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90bc940b6f8b16943af408d24f098310
+      internalID: 228286912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_50
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 0
+        width: 160
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3097bb68bd7142148aa0b894f1258b83
+      internalID: -860975221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_51
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 321
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa1d313e36349a408353ac075298b11
+      internalID: 1105269032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_52
+      rect:
+        serializedVersion: 2
+        x: 3280
+        y: 0
+        width: 320
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b06371fb2e0a8f4aa779a32f41b5865
+      internalID: -977336038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_53
+      rect:
+        serializedVersion: 2
+        x: 3680
+        y: 0
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e59f6e8d00f654a8586e538fc40f1a
+      internalID: 2100194962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpunduluTilesheet_54
+      rect:
+        serializedVersion: 2
+        x: 4080
+        y: 0
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f08f96e5498520640b1c84187c2c28dd
+      internalID: -440968616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ImpunduluTilesheet_2: -2076006802
+      ImpunduluTilesheet_27: -1874547207
+      ImpunduluTilesheet_21: -1304334086
+      ImpunduluTilesheet_26: -1878854944
+      ImpunduluTilesheet_38: -1384572981
+      ImpunduluTilesheet_3: 967232954
+      ImpunduluTilesheet_19: 74845818
+      ImpunduluTilesheet_50: -860975221
+      ImpunduluTilesheet_8: 817245976
+      ImpunduluTilesheet_1: 921017729
+      ImpunduluTilesheet_14: 1310875048
+      ImpunduluTilesheet_17: -32640919
+      ImpunduluTilesheet_0: -311917896
+      ImpunduluTilesheet_24: 1968901677
+      ImpunduluTilesheet_9: -1221454914
+      ImpunduluTilesheet_51: 1105269032
+      ImpunduluTilesheet_42: -724567220
+      ImpunduluTilesheet_48: -228888929
+      ImpunduluTilesheet_54: -440968616
+      ImpunduluTilesheet_49: 228286912
+      ImpunduluTilesheet_22: -1915147176
+      ImpunduluTilesheet_20: -1929582342
+      ImpunduluTilesheet_33: 893855300
+      ImpunduluTilesheet_5: 1261141587
+      ImpunduluTilesheet_40: 1450164380
+      ImpunduluTilesheet_23: -304874593
+      ImpunduluTilesheet_12: 774203834
+      ImpunduluTilesheet_10: -1896307957
+      ImpunduluTilesheet_15: 1750857189
+      ImpunduluTilesheet_53: 2100194962
+      ImpunduluTilesheet_28: -743968104
+      ImpunduluTilesheet_25: 1438673420
+      ImpunduluTilesheet_35: -838599786
+      ImpunduluTilesheet_30: -1070735255
+      ImpunduluTilesheet_43: 1819197486
+      ImpunduluTilesheet_7: -1242373173
+      ImpunduluTilesheet_34: 157552368
+      ImpunduluTilesheet_16: 1351583629
+      ImpunduluTilesheet_44: 1356606403
+      ImpunduluTilesheet_45: 1534817798
+      ImpunduluTilesheet_29: -1603475651
+      ImpunduluTilesheet_31: 1614219812
+      ImpunduluTilesheet_6: 1520748754
+      ImpunduluTilesheet_47: -152628981
+      ImpunduluTilesheet_52: -977336038
+      ImpunduluTilesheet_46: -1558375625
+      ImpunduluTilesheet_4: -1013678859
+      ImpunduluTilesheet_32: 584348441
+      ImpunduluTilesheet_37: -1304275926
+      ImpunduluTilesheet_41: 705064262
+      ImpunduluTilesheet_18: 1821730180
+      ImpunduluTilesheet_36: -2050085487
+      ImpunduluTilesheet_39: 1188173302
+      ImpunduluTilesheet_11: -2080972703
+      ImpunduluTilesheet_13: 1834337523
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
