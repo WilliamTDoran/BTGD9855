@@ -48,6 +48,7 @@ public class Menu : MonoBehaviour
     public void LoreBooks()
     {
         loreScreen.SetActive(true);
+
     }
 
     public void Continue()
@@ -63,6 +64,7 @@ public class Menu : MonoBehaviour
     public void Back()
     {
         optionScreen.SetActive(false);
+        loreScreen.SetActive(false);
     }
 
 }
