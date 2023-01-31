@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Parent class for all monster types. Some monsters can be driven just from this, complex ones inherit their own classes
+/// 
+/// Version 1.0 (1/20/23), William Doran
+/// </summary>
 public class Monster : GameActor
 {
     private int curHitPoints;
@@ -16,6 +21,9 @@ public class Monster : GameActor
     [Tooltip("A reference to the strigoi's basic attack object")]
     [SerializeField]
     private Attack basicAttack;
+
+    [SerializeField]
+    private bool debugFollow;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     protected override void Start()
@@ -29,6 +37,14 @@ public class Monster : GameActor
         StartCoroutine(DebugAttackCycle());
     }
 
+    private void FixedUpdate()
+    {
+        if (debugFollow)
+        {
+            DebugCharge();
+        }
+    }
+
     private IEnumerator DebugAttackCycle()
     {
         while (true)
@@ -39,5 +55,10 @@ public class Monster : GameActor
 
             Debug.Log("Werewolf Swing Done");
         }
+    }
+
+    private void DebugCharge()
+    {
+
     }
 }
