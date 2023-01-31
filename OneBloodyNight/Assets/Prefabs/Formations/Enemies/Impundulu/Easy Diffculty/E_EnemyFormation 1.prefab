@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 2128224409894141807}
   - component: {fileID: 8863411364423499206}
   - component: {fileID: 7127879220948251442}
+  - component: {fileID: 7054616054374795384}
   m_Layer: 0
   m_Name: Basic Attack
   m_TagString: Untagged
@@ -144,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 4972673622385150646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.6050003, y: 1.403, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7185683794415699514}
@@ -233,6 +234,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7054616054374795384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4972673622385150646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b9a14802aa44946bc3ec11c26ab924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  immuneDuration: 0
+  facingDebugText: {fileID: 0}
+  canAttackDebugText: {fileID: 0}
+  damage: 0
+  knockbackAmount: 0
+  pushbackAmount: 0
+  returnDrag: 0
+  drag: 25
+  wallPushbackScalar: 0
+  forceStill: 0
+  floatDistance: 0
+  untargetableTags: []
+  attacker: {fileID: 0}
+  animator: {fileID: 0}
+  showHitbox: 0
+  hitboxMesh: {fileID: 0}
 --- !u!1 &8258326494958717592
 GameObject:
   m_ObjectHideFlags: 0
