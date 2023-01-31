@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-
+/*
 [CustomEditor(typeof(Maze)), CanEditMultipleObjects]
 public class MazeEditor : Editor
 {
@@ -38,4 +38,4 @@ public class MazeEditor : Editor
         GUILayout.EndHorizontal();
         base.OnInspectorGUI();
     }
-}
+}*/
