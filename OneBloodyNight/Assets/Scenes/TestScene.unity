@@ -1233,7 +1233,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodmeter: {fileID: 1084522853}
-  werewolfDMG: 100
 --- !u!4 &646149349
 Transform:
   m_ObjectHideFlags: 0
@@ -3207,7 +3206,7 @@ MonoBehaviour:
   immuneDuration: 0
   facingDebugText: {fileID: 0}
   canAttackDebugText: {fileID: 561208345}
-  damage: 5
+  damage: 50
   knockbackAmount: 10
   pushbackAmount: 0
   returnDrag: 18
