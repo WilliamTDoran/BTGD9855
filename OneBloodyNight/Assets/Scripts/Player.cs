@@ -59,4 +59,9 @@ public class Player : GameActor
             facingDebugText.text = facingAngle + "";
         }
     }
+
+    internal override void OnSuccessfulAttack()
+    {
+        base.OnSuccessfulAttack();
+    }
 }

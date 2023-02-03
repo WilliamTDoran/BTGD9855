@@ -2938,7 +2938,7 @@ MonoBehaviour:
   facingDebugText: {fileID: 1378920225}
   canAttackDebugText: {fileID: 561208345}
   basicAttack: {fileID: 1181192922}
-  berserkMaxTime: 10
+  berserkMaxTime: 3
 --- !u!95 &1692689747
 Animator:
   serializedVersion: 4

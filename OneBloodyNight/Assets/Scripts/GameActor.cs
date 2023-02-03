@@ -85,4 +85,9 @@ public class GameActor : MonoBehaviour
         load1Down = controller.Load1Down;
         load2Down = controller.Load2Down;
     }
+
+    internal virtual void OnSuccessfulAttack()
+    {
+
+    }
 }

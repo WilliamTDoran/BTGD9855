@@ -24,7 +24,7 @@ public class PlayerStrigoi : Player
     [Header("Statistics")]
     [Tooltip("How long before berserk expires")]
     [SerializeField]
-    private float berserkMaxTime = 10.0f;
+    private float berserkMaxTime = 3.0f;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     /// <summary>
@@ -43,9 +43,21 @@ public class PlayerStrigoi : Player
         canAttackDebugText.text = canAttack + "";
     }
 
+    internal override void OnSuccessfulAttack()
+    {
+        base.OnSuccessfulAttack();
+
+        berserkCounter = berserkMaxTime;
+    }
+
     private IEnumerator Berserk(float maxTime)
     {
-        yield return new WaitForSeconds(maxTime);
+        while (berserkCounter > 0)
+        {
+            yield return new WaitForEndOfFrame();
+            berserkCounter -= Time.deltaTime;
+            berserkUptime += Time.deltaTime;
+        }
     }
 
     private void StartBerserk()
