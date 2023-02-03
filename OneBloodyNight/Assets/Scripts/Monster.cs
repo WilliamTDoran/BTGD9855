@@ -20,9 +20,14 @@ public class Monster : GameActor
     private int maxHitPoints;
     public int MaxHitPoints { get { return maxHitPoints; } set { maxHitPoints = value; } }
 
-    [Tooltip("A reference to the strigoi's basic attack object")]
+    [Tooltip("A reference to the monster's basic attack object")]
     [SerializeField]
     private Attack basicAttack;
+
+    [Tooltip("The amount of blood the player recovers when killing the enemy")]
+    [SerializeField]
+    private float bloodOnKill = 50.0f;
+    public float BloodOnKill { get { return bloodOnKill; } }
 
     [SerializeField]
     private bool debugFollow;
@@ -46,11 +51,14 @@ public class Monster : GameActor
     {
         base.Update();
 
+        //Debug.Log(gameObject.name + " " + curHitPoints);
+
         facingAngle = Vector3.SignedAngle(Vector3.right, controller.IntendedDirection, Vector3.forward);
         facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
 
         if (curHitPoints <= 0)
         {
+            Bloodmeter.instance.bloodmeter.value += bloodOnKill;
             gameObject.SetActive(false);
         }
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 /// <summary>
@@ -9,18 +10,23 @@ using UnityEngine;
 /// </summary>
 public class Player : GameActor
 {
-    /* Exposed Variables */
     private Transform renderBox;
     internal static Player plr;
-    /*~~~~~~~~~~~~~~~~~~~*/
-    
+
     /// <summary>
     /// Used for ease of reference
     /// </summary>
     protected override void Awake()
     {
         base.Awake();
-        plr = this;
+        if (plr != null & plr != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            plr = this;
+        }
     }
 
     /// <summary>

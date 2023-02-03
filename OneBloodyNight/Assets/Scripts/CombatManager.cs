@@ -11,8 +11,6 @@ using UnityEngine.UI;
 /// </summary>
 public class CombatManager : MonoBehaviour
 {
-    public Slider bloodmeter; //reference to the bloodmeter. (Should this be here? Wasn't the plan to have a public changeBlood method?)
-
     private IEnumerator immuneCoroutine; //drives i-frames
 
     private static CombatManager instance; //static reference
@@ -65,7 +63,7 @@ public class CombatManager : MonoBehaviour
         }
         else if (target.CompareTag("Player")) //Reduces blood meter and spins off knockback for players
         {
-            bloodmeter.value = bloodmeter.value - damageAmount;
+            Bloodmeter.instance.bloodmeter.value = Bloodmeter.instance.bloodmeter.value - damageAmount;
             ApplyKnockback(attacker, targetActor, knockbackAmount);
 
             return true;

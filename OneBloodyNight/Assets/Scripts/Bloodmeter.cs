@@ -9,10 +9,23 @@ public class Bloodmeter : MonoBehaviour
     private int currentBlood;
     public int AbilityCost;
     public int damage;
-    
-    
+
+    internal static Bloodmeter instance;
+
+    private void Awake()
+    {
+        if (instance != null & instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         bloodmeter.value = bloodmeter.maxValue;
         Debug.Log("Done");
@@ -20,7 +33,7 @@ public class Bloodmeter : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetButtonDown("AdvancedFire"))
         {
