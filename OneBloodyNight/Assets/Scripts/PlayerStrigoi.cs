@@ -16,6 +16,7 @@ public class PlayerStrigoi : Player
     private IEnumerator berserkCoroutine; //runs berserk time going down
 
     private int basicAttackBaseDamage; //used for returning to default after berserk
+    private float baseSpeed; //used for returning to default after berserk
 
     /* Exposed Variables */
     [Header("Strigoi Exclusive")]
@@ -23,6 +24,14 @@ public class PlayerStrigoi : Player
     [Tooltip("A reference to the strigoi's basic attack object")]
     [SerializeField]
     private Attack basicAttack;
+
+    [Tooltip("The standard material for default Strigoi appearance")]
+    [SerializeField]
+    private Material basicMaterial;
+
+    [Tooltip("The material for when the Strigoi is invisible")]
+    [SerializeField]
+    private Material invisibleMaterial;
 
     [Header("Statistics")]
     [Tooltip("How long before berserk expires")]
@@ -32,6 +41,10 @@ public class PlayerStrigoi : Player
     [Tooltip("How much the basic attack's damage increases every second while berserk")]
     [SerializeField]
     private int damageUpPerSecond = 1;
+
+    [Tooltip("How much the Strigoi's movement speed increases every second while berserk")]
+    [SerializeField]
+    private int speedUpPerSecond = 1;
 
     [Header("Debug")]
     [SerializeField]
@@ -69,6 +82,7 @@ public class PlayerStrigoi : Player
         base.Start();
 
         basicAttackBaseDamage = basicAttack.Damage;
+        baseSpeed = speed;
     }
 
     internal override void OnSuccessfulAttack()
@@ -92,6 +106,7 @@ public class PlayerStrigoi : Player
             berserkUptime += Time.deltaTime;
 
             basicAttack.Damage = basicAttackBaseDamage + (int)(berserkUptime * damageUpPerSecond);
+            speed = baseSpeed + (int)(berserkUptime * speedUpPerSecond);
 
             berserkUpDebugText.text = "True";
             berserkCounterDebugText.text = berserkCounter + "";

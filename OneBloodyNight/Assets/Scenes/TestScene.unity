@@ -4030,6 +4030,7 @@ MonoBehaviour:
   immuneDuration: 0
   facingDebugText: {fileID: 1378920225}
   canAttackDebugText: {fileID: 561208345}
+  spriteRenderer: {fileID: 1692689748}
   basicAttack: {fileID: 1181192922}
   berserkMaxTime: 3
   damageUpPerSecond: 1

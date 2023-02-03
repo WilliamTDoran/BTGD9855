@@ -13,6 +13,12 @@ public class Player : GameActor
     private Transform renderBox;
     internal static Player plr;
 
+    /* Exposed Variables */
+    [Tooltip("Sprite Renderer reference")]
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
+    /*~~~~~~~~~~~~~~~~~~~*/
+
     /// <summary>
     /// Used for ease of reference
     /// </summary>
