@@ -58,6 +58,9 @@ public class PlayerStrigoi : Player
 
     [SerializeField]
     protected TextMeshProUGUI berserkDamageDebugText;
+
+    [SerializeField]
+    protected TextMeshProUGUI berserkSpeedDebugText;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     /// <summary>
@@ -75,6 +78,7 @@ public class PlayerStrigoi : Player
 
         canAttackDebugText.text = canAttack + "";
         berserkDamageDebugText.text = basicAttack.Damage + "";
+        berserkSpeedDebugText.text = speed + "";
     }
 
     protected override void Start()
@@ -95,6 +99,38 @@ public class PlayerStrigoi : Player
         {
             StartBerserk();
         }
+    }
+
+    protected override void AdvancedFire(int bullet)
+    {
+        base.AdvancedFire(bullet);
+
+        switch(bullet)
+        {
+            case 0:
+                break;
+
+            case 1:
+                Invisibility();
+                break;
+
+            case 2:
+                BatSwarm();
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    private void Invisibility()
+    {
+
+    }
+
+    private void BatSwarm()
+    {
+
     }
 
     private IEnumerator Berserk(float maxTime)

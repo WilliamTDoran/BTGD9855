@@ -13,6 +13,8 @@ public class Player : GameActor
     private Transform renderBox;
     internal static Player plr;
 
+    private int loadedBullet = 0;
+
     /* Exposed Variables */
     [Tooltip("Sprite Renderer reference")]
     [SerializeField]
@@ -70,6 +72,40 @@ public class Player : GameActor
         {
             facingDebugText.text = facingAngle + "";
         }
+
+        if (load1Down)
+        {
+            if (loadedBullet == 1)
+            {
+                loadedBullet = 0;
+            }
+            else
+            {
+                loadedBullet = 1;
+            }
+        }
+
+        if (load2Down)
+        {
+            if (loadedBullet == 2)
+            {
+                loadedBullet = 0;
+            }
+            else
+            {
+                loadedBullet = 2;
+            }
+        }
+
+        if (advancedAttackDown && canAttack)
+        {
+            AdvancedFire(loadedBullet);
+        }
+    }
+
+    protected virtual void AdvancedFire(int bullet)
+    {
+
     }
 
     internal override void OnSuccessfulAttack()

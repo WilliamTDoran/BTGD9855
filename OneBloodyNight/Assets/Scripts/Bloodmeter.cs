@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Bloodmeter : MonoBehaviour
 {
@@ -33,13 +34,13 @@ public class Bloodmeter : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetButtonDown("AdvancedFire"))
         {
             bloodmeter.value = bloodmeter.value - AbilityCost;
         }
-    }
+    }*/
 
     private IEnumerator DMG()
     {
@@ -52,8 +53,12 @@ public class Bloodmeter : MonoBehaviour
         yield return null;//Player is dead
     }
 
-    private void changeBlood()
+    internal void changeBlood(float difference)
     {
-        
+        float targetValue = bloodmeter.value;
+
+        targetValue = Math.Clamp(targetValue + difference, 0, bloodmeter.maxValue);
+
+        bloodmeter.value = targetValue;
     }
 }
