@@ -32,6 +32,7 @@ public class Monster : GameActor
     {
         base.Start();
 
+        curHitPoints = maxHitPoints;
         canAttack = true;
         canMove = true;
         facingAngle = 0;
@@ -47,6 +48,11 @@ public class Monster : GameActor
 
         facingAngle = Vector3.SignedAngle(Vector3.right, controller.IntendedDirection, Vector3.forward);
         facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
+
+        if (curHitPoints <= 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void FixedUpdate()

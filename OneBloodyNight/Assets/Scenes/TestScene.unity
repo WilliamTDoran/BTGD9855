@@ -2105,7 +2105,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -22.735504, y: -24.1}
+  m_AnchoredPosition: {x: -22.735504, y: -24.099976}
   m_SizeDelta: {x: 654.1092, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084522852
@@ -2400,7 +2400,7 @@ MonoBehaviour:
   immuneDuration: 0
   facingDebugText: {fileID: 0}
   canAttackDebugText: {fileID: 561208345}
-  damage: 20
+  damage: 5
   knockbackAmount: 25
   pushbackAmount: 10
   returnDrag: 0
