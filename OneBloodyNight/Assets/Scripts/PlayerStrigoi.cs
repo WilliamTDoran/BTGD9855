@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,12 +9,18 @@ using UnityEngine;
 /// It has a basic attack which is a quick slash,
 /// an activated ability which is invisibility,
 /// and a passive effect which is an increasing power as it fights.
+/// 
+/// Version 1.0 (1/20/23), Will Doran
+/// Version 1.1 (2/3/23),  Will Doran
 /// </summary>
 public class PlayerStrigoi : Player
 {
+    private IEnumerator berserkCoroutine; //runs bloodthirst
+    private IEnumerator invisibilityCoroutine; //runs invisibility duration
+    private IEnumerator batSwarmCoroutine; //runs swarm
+
     private float berserkCounter; //current berserk time, reset on call
     private float berserkUptime; //true berserk time, used for calculating incremental buffs
-    private IEnumerator berserkCoroutine; //runs berserk time going down
 
     private int basicAttackBaseDamage; //used for returning to default after berserk
     private float baseSpeed; //used for returning to default after berserk
@@ -125,12 +132,12 @@ public class PlayerStrigoi : Player
 
     private void Invisibility()
     {
-
+        throw new NotImplementedException();
     }
 
     private void BatSwarm()
     {
-
+        throw new NotImplementedException();
     }
 
     private IEnumerator Berserk(float maxTime)
@@ -157,6 +164,17 @@ public class PlayerStrigoi : Player
         berserkCounterDebugText.text = "0.0";
         berserkUptimeDebugText.text = "0.0";
     }
+
+    private IEnumerator Invisible()
+    {
+        throw new NotImplementedException();
+    }
+
+    private IEnumerator Swarmed()
+    {
+        throw new NotImplementedException();
+    }
+
 
     private void StartBerserk()
     {

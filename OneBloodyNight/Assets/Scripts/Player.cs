@@ -15,6 +15,9 @@ public class Player : GameActor
 
     private int loadedBullet = 0;
 
+    private bool visible; //used for strigoi invisibility. placed here rather that in playerstrigoi to avoid an ugly complicated if-chain in monsters
+    public bool Visible { get { return visible; } set { visible = value; } }
+
     /* Exposed Variables */
     [Tooltip("Sprite Renderer reference")]
     [SerializeField]
