@@ -117,6 +117,7 @@ MonoBehaviour:
   canAttackDebugText: {fileID: 0}
   maxHitPoints: 15
   basicAttack: {fileID: 0}
+  bloodOnKill: 50
   debugFollow: 0
 --- !u!54 &1394717437448689283
 Rigidbody:
@@ -149,7 +150,7 @@ GameObject:
   - component: {fileID: 4785764856354414354}
   - component: {fileID: 3464485721504710000}
   m_Layer: 0
-  m_Name: Shieldman
+  m_Name: Pitchfork
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,6 +252,7 @@ MonoBehaviour:
   canAttackDebugText: {fileID: 0}
   maxHitPoints: 50
   basicAttack: {fileID: 0}
+  bloodOnKill: 50
   debugFollow: 1
 --- !u!54 &3464485721504710000
 Rigidbody:
@@ -385,6 +387,7 @@ MonoBehaviour:
   canAttackDebugText: {fileID: 0}
   maxHitPoints: 15
   basicAttack: {fileID: 0}
+  bloodOnKill: 50
   debugFollow: 0
 --- !u!54 &1957691051435735892
 Rigidbody:
