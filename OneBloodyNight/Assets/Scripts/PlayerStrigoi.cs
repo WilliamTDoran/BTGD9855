@@ -150,6 +150,7 @@ public class PlayerStrigoi : Player
         }
 
         basicAttack.Damage = basicAttackBaseDamage;
+        speed = baseSpeed;
         berserkUptime = 0;
 
         berserkUpDebugText.text = "False";
