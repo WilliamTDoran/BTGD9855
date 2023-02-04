@@ -176,6 +176,31 @@ public class PlayerStrigoi : Player
     }
 
 
+    
+    private void StartInvisible()
+    {
+        invisibilityCoroutine = Invisible();
+        StartCoroutine(invisibilityCoroutine);
+    }
+
+    private void StopInvisible()
+    {
+        StopCoroutine(invisibilityCoroutine);
+        invisibilityCoroutine = null;
+    }
+
+    private void StartBatSwarm()
+    {
+        batSwarmCoroutine = Swarmed();
+        StartCoroutine(batSwarmCoroutine);
+    }
+
+    private void StopBatSwarm()
+    {
+        StopCoroutine(batSwarmCoroutine);
+        batSwarmCoroutine = null;
+    }
+
     private void StartBerserk()
     {
         berserkCoroutine = Berserk(berserkMaxTime);
