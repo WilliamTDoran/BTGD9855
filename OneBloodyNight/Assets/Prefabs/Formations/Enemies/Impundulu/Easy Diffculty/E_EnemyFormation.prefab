@@ -118,6 +118,7 @@ MonoBehaviour:
   canAttackDebugText: {fileID: 0}
   maxHitPoints: 50
   basicAttack: {fileID: 9125373688514382790}
+  bloodOnKill: 15
   debugFollow: 1
 --- !u!54 &7379097250019031326
 Rigidbody:
