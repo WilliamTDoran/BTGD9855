@@ -34,7 +34,9 @@ public class BiomeVariables
     public int maxCellDifficulty;
     [Tooltip("Array of the objects to be placed in the maze")]
     public PlacableObject[] objects;
-    public GameObject[] NorthernWallSprites;
+    //public GameObject[] NorthernWallSprites;
+    public ArtVars North;
+    public ArtVars East;
 }
 
 
@@ -45,6 +47,14 @@ public class PlacableObject
     public float cellDifficulty; // cells can't weigh more than maxCellDifficulty
     public int maxPlaced;
     public float minPlaced;
+}
+
+
+[System.Serializable]
+public class ArtVars
+{
+    public int offSet;
+    public GameObject[] Sprites;
 }
 
 public class Spawn
