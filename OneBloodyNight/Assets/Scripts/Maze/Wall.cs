@@ -87,7 +87,7 @@ public class Wall : MonoBehaviour
     internal void placeNorthSprites(Biome b)
     {
         GameObject[] allSprites = Maze.m.biomeVariables[(int)b].North.Sprites;
-        if (allSprites.Length > 1)
+        if (allSprites.Length >= 1)
         {
             int picked = Random.Range(0, allSprites.Length);
             GameObject temp = Instantiate(allSprites[picked], new Vector3(transform.position.x + Maze.m.biomeVariables[(int)b].North.offSet, transform.position.y, allSprites[picked].transform.position.z), Quaternion.identity, transform);
@@ -99,7 +99,7 @@ public class Wall : MonoBehaviour
     internal void placeEastSprites(Biome b)
     {
         GameObject[] allSprites = Maze.m.biomeVariables[(int)b].East.Sprites;
-        if (allSprites.Length > 1)
+        if (allSprites.Length >= 1)
         {
             int picked = Random.Range(0, allSprites.Length);
             GameObject temp = Instantiate(allSprites[picked], new Vector3(transform.position.x, transform.position.y + Maze.m.biomeVariables[(int)b].East.offSet, allSprites[picked].transform.position.z), Quaternion.identity, transform);

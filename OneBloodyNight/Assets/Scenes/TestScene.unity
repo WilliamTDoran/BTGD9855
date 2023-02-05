@@ -1919,11 +1919,13 @@ MonoBehaviour:
     maxCellDifficulty: 0
     objects: []
     North:
-      offSet: 0
-      Sprites: []
+      offSet: 3
+      Sprites:
+      - {fileID: 3111108264678135816, guid: 865eaccaf9b23134fb6e77f99f9caff0, type: 3}
     East:
-      offSet: 0
-      Sprites: []
+      offSet: 3
+      Sprites:
+      - {fileID: 3111108264678135816, guid: 83f44c9c754e9fe438a0dd0ac03839a4, type: 3}
   - colour: {r: 0.6415094, g: 0, b: 0, a: 1}
     wallsRemoved: 15
     maxCellDifficulty: 1
@@ -1933,11 +1935,13 @@ MonoBehaviour:
       maxPlaced: 5
       minPlaced: 10
     North:
-      offSet: 0
-      Sprites: []
+      offSet: 3
+      Sprites:
+      - {fileID: 3111108264678135816, guid: 83f44c9c754e9fe438a0dd0ac03839a4, type: 3}
     East:
-      offSet: 0
-      Sprites: []
+      offSet: 3
+      Sprites:
+      - {fileID: 3111108264678135816, guid: 865eaccaf9b23134fb6e77f99f9caff0, type: 3}
   - colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
     wallsRemoved: 150
     maxCellDifficulty: 10

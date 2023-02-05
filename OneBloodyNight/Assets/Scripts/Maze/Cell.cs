@@ -122,6 +122,14 @@ public class Cell : MonoBehaviour
                 }
                 walls[(int)Wall.wLocation.north].placeNorthSprites(getBiome());
                 walls[(int)Wall.wLocation.east].placeEastSprites(getBiome());
+                if (walls[(int)Wall.wLocation.west].getLink().getCell() == this)
+                {
+                    walls[(int)Wall.wLocation.west].placeEastSprites(getBiome());
+                }
+                if (walls[(int)Wall.wLocation.south].getLink().getCell() == this)
+                {
+                    walls[(int)Wall.wLocation.south].placeNorthSprites(getBiome());
+                }
                 if (getBiome() == Biome.yara)
                 {
                     transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().color = Color.cyan;
