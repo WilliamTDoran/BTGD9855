@@ -763,6 +763,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.20605421
       objectReference: {fileID: 0}
+    - target: {fileID: 6433334526854671892, guid: e89a3e5544f7fb74e9d0bc19c1fe414b, type: 3}
+      propertyPath: returnDrag
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 8258326494958717592, guid: e89a3e5544f7fb74e9d0bc19c1fe414b, type: 3}
       propertyPath: m_Name
       value: E_EnemyFormation 1
