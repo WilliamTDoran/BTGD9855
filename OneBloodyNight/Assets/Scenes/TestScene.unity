@@ -701,11 +701,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 389962586570908446, guid: e89a3e5544f7fb74e9d0bc19c1fe414b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -51.21
+      value: -114
       objectReference: {fileID: 0}
     - target: {fileID: 389962586570908446, guid: e89a3e5544f7fb74e9d0bc19c1fe414b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.7
+      value: 6.3
       objectReference: {fileID: 0}
     - target: {fileID: 389962586570908446, guid: e89a3e5544f7fb74e9d0bc19c1fe414b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -738,34 +738,6 @@ PrefabInstance:
     - target: {fileID: 389962586570908446, guid: e89a3e5544f7fb74e9d0bc19c1fe414b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1639891290779563456, guid: e89a3e5544f7fb74e9d0bc19c1fe414b, type: 3}
-      propertyPath: m_Size.x
-      value: 3.2225723
-      objectReference: {fileID: 0}
-    - target: {fileID: 1639891290779563456, guid: e89a3e5544f7fb74e9d0bc19c1fe414b, type: 3}
-      propertyPath: m_Size.y
-      value: 5.623693
-      objectReference: {fileID: 0}
-    - target: {fileID: 1639891290779563456, guid: e89a3e5544f7fb74e9d0bc19c1fe414b, type: 3}
-      propertyPath: m_Size.z
-      value: 22.919952
-      objectReference: {fileID: 0}
-    - target: {fileID: 1639891290779563456, guid: e89a3e5544f7fb74e9d0bc19c1fe414b, type: 3}
-      propertyPath: m_Center.x
-      value: 1.1112862
-      objectReference: {fileID: 0}
-    - target: {fileID: 1639891290779563456, guid: e89a3e5544f7fb74e9d0bc19c1fe414b, type: 3}
-      propertyPath: m_Center.y
-      value: -0.4002502
-      objectReference: {fileID: 0}
-    - target: {fileID: 1639891290779563456, guid: e89a3e5544f7fb74e9d0bc19c1fe414b, type: 3}
-      propertyPath: m_Center.z
-      value: -0.20605421
-      objectReference: {fileID: 0}
-    - target: {fileID: 6433334526854671892, guid: e89a3e5544f7fb74e9d0bc19c1fe414b, type: 3}
-      propertyPath: returnDrag
-      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8258326494958717592, guid: e89a3e5544f7fb74e9d0bc19c1fe414b, type: 3}
       propertyPath: m_Name
@@ -2748,6 +2720,7 @@ MonoBehaviour:
   bloodmeter: {fileID: 1084522853}
   AbilityCost: 50
   damage: 0
+  bloodLossRate: 3
 --- !u!114 &1084522853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3025,7 +2998,7 @@ MonoBehaviour:
   immuneDuration: 0
   facingDebugText: {fileID: 0}
   canAttackDebugText: {fileID: 561208345}
-  damage: 5
+  damage: 10
   knockbackAmount: 25
   pushbackAmount: 10
   returnDrag: 0
@@ -4029,7 +4002,7 @@ GameObject:
   - component: {fileID: 1692689748}
   - component: {fileID: 1692689747}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player Strigoi
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4095,8 +4068,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aebdbdceafb315547a8ac95bfea68d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 18
-  immuneDuration: 1
+  speed: 13
+  immuneDuration: 0.2
   facingDebugText: {fileID: 1378920225}
   canAttackDebugText: {fileID: 561208345}
   spriteRenderer: {fileID: 1692689748}
@@ -4196,11 +4169,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 389962586570908446, guid: 39bfccc3956c05f489f79eb15d318553, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.79
+      value: -117.9
       objectReference: {fileID: 0}
     - target: {fileID: 389962586570908446, guid: 39bfccc3956c05f489f79eb15d318553, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.84
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 389962586570908446, guid: 39bfccc3956c05f489f79eb15d318553, type: 3}
       propertyPath: m_LocalPosition.z

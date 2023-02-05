@@ -29,9 +29,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2787053292191355379}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.18, y: 0.11, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7405, y: -0.2334, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7185683794415699514}
@@ -98,8 +98,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1.4423347, y: 0.45395648, z: 1}
-  m_Center: {x: -0.25760353, y: -0.09652799, z: 0}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4674795741249548081
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -126,7 +126,7 @@ Animator:
   m_GameObject: {fileID: 2787053292191355379}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ad01a5d2d1a61e04989c9aa1d86c650c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 704fd771a355aa64fa1dd9dbafb820e7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -152,14 +152,14 @@ MonoBehaviour:
   immuneDuration: 0
   facingDebugText: {fileID: 0}
   canAttackDebugText: {fileID: 0}
-  damage: 10
-  knockbackAmount: 20
-  pushbackAmount: 0
-  returnDrag: 0
-  drag: 25
+  damage: 20
+  knockbackAmount: 15
+  pushbackAmount: 2
+  returnDrag: 18
+  drag: 23
   wallPushbackScalar: 3
   forceStill: 1
-  floatDistance: 3
+  floatDistance: 4
   untargetableTags:
   - Wall
   - Floor
@@ -267,8 +267,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.1863441, y: 2.2181482, z: 1}
+  m_Center: {x: 0.043481827, y: -0.09891796, z: 0}
 --- !u!54 &534081044089424010
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -297,13 +297,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e643940dec982a41b1528d60b0a084c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
+  speed: 2500
   immuneDuration: 0.5
   facingDebugText: {fileID: 0}
   canAttackDebugText: {fileID: 0}
   maxHitPoints: 25
   basicAttack: {fileID: 6433334526854671892}
-  bloodOnKill: 15
+  bloodOnKill: 10
   debugFollow: 1
 --- !u!1 &8258326494958717592
 GameObject:
