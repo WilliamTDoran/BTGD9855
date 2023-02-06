@@ -38,7 +38,7 @@ public class SkillTree : MonoBehaviour
 
     private void PlrSpeed()
     {
-        Strigoi.baseSpeed += 3;
+        Strigoi.BaseSpeed += 3;
     }
 
     private void AttackPwr()

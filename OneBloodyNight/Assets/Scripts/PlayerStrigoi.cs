@@ -23,7 +23,8 @@ public class PlayerStrigoi : Player
     private float berserkUptime; //true berserk time, used for calculating incremental buffs
 
     private int basicAttackBaseDamage; //used for returning to default after berserk
-    public float baseSpeed; //used for returning to default after berserk
+    private float baseSpeed; //used for returning to default after berserk
+    public float BaseSpeed { get { return baseSpeed; } set { baseSpeed = value; } }
 
     /* Exposed Variables */
     [Header("Strigoi Exclusive")]
@@ -40,19 +41,6 @@ public class PlayerStrigoi : Player
     [SerializeField]
     private Material invisibleMaterial;
 
-    [Header("Statistics")]
-    [Tooltip("How long before berserk expires")]
-    [SerializeField]
-    private float berserkMaxTime = 3.0f;
-
-    [Tooltip("How much the basic attack's damage increases every second while berserk")]
-    [SerializeField]
-    private int damageUpPerSecond = 1;
-
-    [Tooltip("How much the Strigoi's movement speed increases every second while berserk")]
-    [SerializeField]
-    private int speedUpPerSecond = 1;
-
     [Header("Debug")]
     [SerializeField]
     protected TextMeshProUGUI berserkUpDebugText;
@@ -68,6 +56,25 @@ public class PlayerStrigoi : Player
 
     [SerializeField]
     protected TextMeshProUGUI berserkSpeedDebugText;
+
+    [Header("Statistics")]
+    [Header("Bloodthirst")]
+    [Tooltip("How long before berserk expires")]
+    [SerializeField]
+    private float berserkMaxTime = 3.0f;
+
+    [Tooltip("How much the basic attack's damage increases every second while berserk")]
+    [SerializeField]
+    private int damageUpPerSecond = 1;
+
+    [Tooltip("How much the Strigoi's movement speed increases every second while berserk")]
+    [SerializeField]
+    private int speedUpPerSecond = 1;
+
+    [Header("Invisibility")]
+    [Tooltip("Duration of invisibility in seconds")]
+    [SerializeField]
+    private float invisibilityDuration = 3;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     /// <summary>
@@ -108,9 +115,9 @@ public class PlayerStrigoi : Player
         }
     }
 
-    protected override void AdvancedFire(int bullet)
+    protected override void AdvancedFire(ref int bullet)
     {
-        base.AdvancedFire(bullet);
+        base.AdvancedFire(ref bullet);
 
         switch(bullet)
         {
@@ -118,10 +125,12 @@ public class PlayerStrigoi : Player
                 break;
 
             case 1:
+                bullet = 0;
                 Invisibility();
                 break;
 
             case 2:
+                bullet = 0;
                 BatSwarm();
                 break;
 
@@ -132,7 +141,9 @@ public class PlayerStrigoi : Player
 
     private void Invisibility()
     {
-        throw new NotImplementedException();
+        Bloodmeter.instance.changeBlood(-abilityOneCost);
+
+        StartInvisible();
     }
 
     private void BatSwarm()
@@ -167,7 +178,11 @@ public class PlayerStrigoi : Player
 
     private IEnumerator Invisible()
     {
-        throw new NotImplementedException();
+        spriteRenderer.material = invisibleMaterial;
+
+        yield return new WaitForSeconds(invisibilityDuration);
+
+        spriteRenderer.material = basicMaterial;
     }
 
     private IEnumerator Swarmed()
@@ -187,6 +202,8 @@ public class PlayerStrigoi : Player
     {
         StopCoroutine(invisibilityCoroutine);
         invisibilityCoroutine = null;
+
+        spriteRenderer.material = basicMaterial;
     }
 
     private void StartBatSwarm()

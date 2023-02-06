@@ -5814,17 +5814,20 @@ MonoBehaviour:
   facingDebugText: {fileID: 1378920225}
   canAttackDebugText: {fileID: 561208345}
   spriteRenderer: {fileID: 1692689748}
+  abilityOneCost: 50
+  abilityTwoCost: 50
   basicAttack: {fileID: 1181192922}
   basicMaterial: {fileID: 2100000, guid: 053872da44d313045b55ece660ff3209, type: 2}
   invisibleMaterial: {fileID: 2100000, guid: 64b0d744dccde5f458fa051eb3da40cd, type: 2}
-  berserkMaxTime: 3
-  damageUpPerSecond: 1
-  speedUpPerSecond: 1
   berserkUpDebugText: {fileID: 134647538}
   berserkCounterDebugText: {fileID: 1200952460}
   berserkUptimeDebugText: {fileID: 236630519}
   berserkDamageDebugText: {fileID: 986233609}
   berserkSpeedDebugText: {fileID: 1893677678}
+  berserkMaxTime: 3
+  damageUpPerSecond: 1
+  speedUpPerSecond: 1
+  invisibilityDuration: 3
 --- !u!95 &1692689747
 Animator:
   serializedVersion: 4

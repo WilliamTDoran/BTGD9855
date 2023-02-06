@@ -9,8 +9,6 @@ using UnityEngine;
 /// </summary>
 public class Monster : GameActor
 {
-    internal static Monster instance;
-
     private Player player;
 
     private int curHitPoints;

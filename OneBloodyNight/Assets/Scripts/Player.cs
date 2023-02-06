@@ -15,13 +15,21 @@ public class Player : GameActor
 
     private int loadedBullet = 0;
 
-    private bool visible; //used for strigoi invisibility. placed here rather that in playerstrigoi to avoid an ugly complicated if-chain in monsters
+    private bool visible = true; //used for strigoi invisibility. placed here rather that in playerstrigoi to avoid an ugly complicated if-chain in monsters
     public bool Visible { get { return visible; } set { visible = value; } }
 
     /* Exposed Variables */
     [Tooltip("Sprite Renderer reference")]
     [SerializeField]
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
+
+    [Tooltip("The cost of Ability 1 (Q/LB)")]
+    [SerializeField]
+    protected float abilityOneCost;
+
+    [Tooltip("The cost of Ability 2 (E/RB)")]
+    [SerializeField]
+    protected float abilityTwoCost;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     /// <summary>
@@ -102,11 +110,11 @@ public class Player : GameActor
 
         if (advancedAttackDown && canAttack)
         {
-            AdvancedFire(loadedBullet);
+            AdvancedFire(ref loadedBullet);
         }
     }
 
-    protected virtual void AdvancedFire(int bullet)
+    protected virtual void AdvancedFire(ref int bullet)
     {
 
     }
