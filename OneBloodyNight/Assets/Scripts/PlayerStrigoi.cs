@@ -33,6 +33,10 @@ public class PlayerStrigoi : Player
     [SerializeField]
     private Attack basicAttack;
 
+    [Tooltip("A reference to the attack hitbox for the bat swarm")]
+    [SerializeField]
+    private Attack swarmAttack;
+
     [Tooltip("The standard material for default Strigoi appearance")]
     [SerializeField]
     private Material basicMaterial;

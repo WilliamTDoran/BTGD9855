@@ -2591,7 +2591,7 @@ Animator:
   m_GameObject: {fileID: 666666509}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ad01a5d2d1a61e04989c9aa1d86c650c, type: 2}
+  m_Controller: {fileID: 9100000, guid: a40ed6bc6131c924993306eaa2949b14, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6030,6 +6030,7 @@ MonoBehaviour:
   abilityOneCost: 50
   abilityTwoCost: 50
   basicAttack: {fileID: 1181192922}
+  swarmAttack: {fileID: 0}
   basicMaterial: {fileID: 2100000, guid: 053872da44d313045b55ece660ff3209, type: 2}
   invisibleMaterial: {fileID: 2100000, guid: 64b0d744dccde5f458fa051eb3da40cd, type: 2}
   berserkUpDebugText: {fileID: 134647538}
