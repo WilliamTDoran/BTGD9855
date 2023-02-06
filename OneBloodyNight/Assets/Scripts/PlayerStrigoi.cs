@@ -23,7 +23,7 @@ public class PlayerStrigoi : Player
     private float berserkUptime; //true berserk time, used for calculating incremental buffs
 
     private int basicAttackBaseDamage; //used for returning to default after berserk
-    private float baseSpeed; //used for returning to default after berserk
+    public float baseSpeed; //used for returning to default after berserk
 
     /* Exposed Variables */
     [Header("Strigoi Exclusive")]

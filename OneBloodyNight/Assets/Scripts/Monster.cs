@@ -9,6 +9,8 @@ using UnityEngine;
 /// </summary>
 public class Monster : GameActor
 {
+    internal static Monster instance;
+
     private Player player;
 
     private int curHitPoints;
@@ -26,7 +28,7 @@ public class Monster : GameActor
 
     [Tooltip("The amount of blood the player recovers when killing the enemy")]
     [SerializeField]
-    private float bloodOnKill = 50.0f;
+    public float bloodOnKill = 50.0f;
     public float BloodOnKill { get { return bloodOnKill; } }
 
     [SerializeField]
