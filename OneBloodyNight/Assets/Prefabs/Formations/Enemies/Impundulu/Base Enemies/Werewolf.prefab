@@ -392,7 +392,7 @@ MonoBehaviour:
   returnDrag: 18
   drag: 25
   wallPushbackScalar: 2
-  forceStill: 0
+  forceStill: 1
   floatDistance: 2
   untargetableTags:
   - Wall
