@@ -88,6 +88,7 @@ public class PlayerStrigoi : Player
         if (basicAttackDown && canAttack)
         {
             basicAttack.StartSwing();
+            StopInvisible();
         }
 
         canAttackDebugText.text = canAttack + "";
@@ -179,9 +180,11 @@ public class PlayerStrigoi : Player
     private IEnumerator Invisible()
     {
         spriteRenderer.material = invisibleMaterial;
+        Visible = false;
 
         yield return new WaitForSeconds(invisibilityDuration);
 
+        Visible = true;
         spriteRenderer.material = basicMaterial;
     }
 
@@ -203,6 +206,7 @@ public class PlayerStrigoi : Player
         StopCoroutine(invisibilityCoroutine);
         invisibilityCoroutine = null;
 
+        Visible = true;
         spriteRenderer.material = basicMaterial;
     }
 

@@ -65,7 +65,7 @@ public class Monster : GameActor
 
     private void FixedUpdate()
     {
-        if (debugFollow)
+        if (debugFollow && player.Visible)
         {
             DebugCharge();
         }
