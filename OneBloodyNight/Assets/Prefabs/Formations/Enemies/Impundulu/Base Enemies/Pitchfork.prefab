@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4341806058427926357}
   - component: {fileID: 3308542684186556959}
   - component: {fileID: 1506505331822888184}
+  - component: {fileID: 2771159159247393256}
   m_Layer: 0
   m_Name: Pitchfork
   m_TagString: Monster
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: -271902819
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b5ce02f63e95dbf4d860b2ab0497c90b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9a3242c8a2e239e448c9ced6210cc37c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -137,6 +138,26 @@ MonoBehaviour:
   basicAttack: {fileID: 8342049976024423553}
   bloodOnKill: 10
   debugFollow: 1
+--- !u!95 &2771159159247393256
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529972682658337596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2b420bc784153c54e9b2e01df4254f3d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &877845514278036326
 GameObject:
   m_ObjectHideFlags: 0

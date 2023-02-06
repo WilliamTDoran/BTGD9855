@@ -5814,6 +5814,7 @@ MonoBehaviour:
   facingDebugText: {fileID: 1378920225}
   canAttackDebugText: {fileID: 561208345}
   spriteRenderer: {fileID: 1692689748}
+  baseSpeed: 0
   basicAttack: {fileID: 1181192922}
   basicMaterial: {fileID: 2100000, guid: 053872da44d313045b55ece660ff3209, type: 2}
   invisibleMaterial: {fileID: 2100000, guid: 64b0d744dccde5f458fa051eb3da40cd, type: 2}
