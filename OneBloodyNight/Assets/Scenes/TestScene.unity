@@ -2557,7 +2557,7 @@ GameObject:
   - component: {fileID: 666666515}
   - component: {fileID: 666666514}
   - component: {fileID: 666666513}
-  - component: {fileID: 666666512}
+  - component: {fileID: 666666517}
   - component: {fileID: 666666511}
   m_Layer: 0
   m_Name: Bat Swarm
@@ -2601,37 +2601,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &666666512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666666509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06b9a14802aa44946bc3ec11c26ab924, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  immuneDuration: 0
-  facingDebugText: {fileID: 0}
-  canAttackDebugText: {fileID: 0}
-  damage: 1
-  knockbackAmount: 0
-  pushbackAmount: 0
-  returnDrag: 0
-  drag: 25
-  wallPushbackScalar: 0
-  forceStill: 0
-  floatDistance: 0
-  untargetableTags:
-  - Player
-  - Floor
-  attacker: {fileID: 1692689746}
-  animator: {fileID: 666666511}
-  showHitbox: 1
-  hitboxMesh: {fileID: 666666515}
 --- !u!54 &666666513
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2711,6 +2680,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666666509}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &666666517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666666509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8783b3a9448f0418295a25076458f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  immuneDuration: 0
+  facingDebugText: {fileID: 0}
+  canAttackDebugText: {fileID: 0}
+  damage: 1
+  knockbackAmount: 0
+  pushbackAmount: 0
+  returnDrag: 0
+  drag: 25
+  wallPushbackScalar: 0
+  forceStill: 0
+  floatDistance: 0
+  untargetableTags:
+  - Player
+  - Wall
+  attacker: {fileID: 1692689746}
+  animator: {fileID: 666666511}
+  showHitbox: 1
+  hitboxMesh: {fileID: 666666515}
 --- !u!1 &667031182
 GameObject:
   m_ObjectHideFlags: 0
