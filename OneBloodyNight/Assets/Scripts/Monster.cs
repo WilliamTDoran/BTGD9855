@@ -79,6 +79,9 @@ public class Monster : GameActor
         {
             yield return new WaitForSeconds(2);
 
+            facingAngle = Vector3.SignedAngle(Vector3.right, (player.Rb.position - rb.position), Vector3.forward);
+            facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
+
             basicAttack.StartSwing(refCode1);
             canAttack = false;
         }
