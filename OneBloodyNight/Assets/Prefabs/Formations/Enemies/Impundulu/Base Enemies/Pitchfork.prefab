@@ -130,13 +130,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e643940dec982a41b1528d60b0a084c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2500
+  speed: 3000
   immuneDuration: 0.5
-  facingDebugText: {fileID: 0}
-  canAttackDebugText: {fileID: 0}
-  maxHitPoints: 25
+  maxHitPoints: 50
   basicAttack: {fileID: 8342049976024423553}
-  bloodOnKill: 10
+  bloodOnKill: 15
   debugFollow: 1
 --- !u!95 &2771159159247393256
 Animator:
@@ -308,8 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   immuneDuration: 0
-  facingDebugText: {fileID: 0}
-  canAttackDebugText: {fileID: 0}
+  maxHitPoints: 0
   damage: 20
   knockbackAmount: 15
   pushbackAmount: 2

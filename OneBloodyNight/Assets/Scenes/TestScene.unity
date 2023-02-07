@@ -2683,8 +2683,8 @@ MonoBehaviour:
   speed: 0
   immuneDuration: 0
   maxHitPoints: 0
-  damage: 2
-  knockbackAmount: 0
+  damage: 5
+  knockbackAmount: 5
   pushbackAmount: 0
   returnDrag: 0
   drag: 25
@@ -3045,11 +3045,7 @@ MonoBehaviour:
   - colour: {r: 0.6415094, g: 0, b: 0, a: 1}
     wallsRemoved: 15
     maxCellDifficulty: 1
-    objects:
-    - formation: {fileID: 8813698199761548738, guid: 59ca1720d052cd74f9de7b3d2b56fad0, type: 3}
-      cellDifficulty: 1
-      maxPlaced: 1
-      minPlaced: 1
+    objects: []
     North:
       offSet: 4
       Sprites:
@@ -3113,6 +3109,18 @@ MonoBehaviour:
       cellDifficulty: 6
       maxPlaced: 25
       minPlaced: 15
+    - formation: {fileID: 7827793329945432230, guid: 697324ff21419b747b7a083bd61a0445, type: 3}
+      cellDifficulty: 10
+      maxPlaced: 18
+      minPlaced: 10
+    - formation: {fileID: 7827793329945432230, guid: 914bb515ae1488949a6509e6a89ac75a, type: 3}
+      cellDifficulty: 10
+      maxPlaced: 18
+      minPlaced: 10
+    - formation: {fileID: 7827793329945432230, guid: 70ec3aa08d209df44955d43ced03d093, type: 3}
+      cellDifficulty: 10
+      maxPlaced: 18
+      minPlaced: 10
     North:
       offSet: 4
       Sprites:
@@ -3132,32 +3140,6 @@ MonoBehaviour:
       - {fileID: 3111108264678135816, guid: c6b31c188c086ee4093ec15f3ddb63eb, type: 3}
       - {fileID: 3111108264678135816, guid: 8d7a92b38b43adf4a8e2c15aaad281e4, type: 3}
       - {fileID: 3111108264678135816, guid: 81b26c1f5c82e26419945689b98c54bf, type: 3}
-      - {fileID: 3111108264678135816, guid: 22636b898a1590440b47e7670b41f5af, type: 3}
-      - {fileID: 3111108264678135816, guid: dbd69f968819ea74494aaca7131c61ff, type: 3}
-      - {fileID: 3111108264678135816, guid: 8b635d26701d6f84bb0035d64442673b, type: 3}
-      - {fileID: 3111108264678135816, guid: 8a549da46964d3d44ad9394c36506050, type: 3}
-      - {fileID: 3111108264678135816, guid: 0ee395ebe60482f4a84c2b319b111883, type: 3}
-      - {fileID: 3111108264678135816, guid: f394f9af8f834434ea8956f73fcef557, type: 3}
-      - {fileID: 3111108264678135816, guid: d9e44e58c0758374a8ce8a683b8f1d64, type: 3}
-      - {fileID: 3111108264678135816, guid: 22c89f7b38679c246a54fc3c6e3306a4, type: 3}
-      - {fileID: 3111108264678135816, guid: e1ede59f1122a8844b20dd98a687167a, type: 3}
-      - {fileID: 3111108264678135816, guid: e9447bf2910374641a69dd2ceb741944, type: 3}
-      - {fileID: 3111108264678135816, guid: a26a51559a1ee154cadfcb92f76d397c, type: 3}
-      - {fileID: 3111108264678135816, guid: ca6d5c8f94852314fa76e8c00f505a6b, type: 3}
-      - {fileID: 3111108264678135816, guid: 174c04d8df597b84f993aea049b00e26, type: 3}
-      - {fileID: 3111108264678135816, guid: 60c686d30493385408f726d5eda8cb48, type: 3}
-      - {fileID: 3111108264678135816, guid: ab5465e5f32c2be46abfdbbb381dab15, type: 3}
-      - {fileID: 3111108264678135816, guid: d429e8f77fdb7ce4898288109649c394, type: 3}
-      - {fileID: 3111108264678135816, guid: 374bbb40072194e4e8f0daac68bd2db0, type: 3}
-      - {fileID: 3111108264678135816, guid: 6f5b55a9281a8c64aa5f7939177cca53, type: 3}
-      - {fileID: 3111108264678135816, guid: c15f48788f56d05438fb46ee66326c57, type: 3}
-      - {fileID: 3111108264678135816, guid: 3e08f11e2bd4f7a4b93a1c576a3337a6, type: 3}
-      - {fileID: 3111108264678135816, guid: dc86a0b7c7244964f86e0b75eca1554d, type: 3}
-      - {fileID: 3111108264678135816, guid: 9ffab3641fa20594d87a3721836e1736, type: 3}
-      - {fileID: 3111108264678135816, guid: 2e5cc79224b311d45bac0114f50ecf90, type: 3}
-      - {fileID: 3111108264678135816, guid: 29eca5ce4e48f9845beb1f6761d963e4, type: 3}
-      - {fileID: 3111108264678135816, guid: 5fd1fb7763812f846b43fe202be748b3, type: 3}
-      - {fileID: 3111108264678135816, guid: 9fb468c4484d9f74d91e95daa643deec, type: 3}
     East:
       offSet: 4
       Sprites:
@@ -4475,9 +4457,9 @@ MonoBehaviour:
   speed: 0
   immuneDuration: 0
   maxHitPoints: 0
-  damage: 10
-  knockbackAmount: 25
-  pushbackAmount: 10
+  damage: 20
+  knockbackAmount: 40
+  pushbackAmount: 4
   returnDrag: 0
   drag: 25
   wallPushbackScalar: 2
@@ -6190,8 +6172,8 @@ MonoBehaviour:
   immuneDuration: 0.2
   maxHitPoints: 0
   spriteRenderer: {fileID: 1692689748}
-  abilityOneCost: 50
-  abilityTwoCost: 50
+  abilityOneCost: 60
+  abilityTwoCost: 80
   facingDebugText: {fileID: 1378920225}
   canAttackDebugText: {fileID: 561208345}
   basicAttack: {fileID: 1181192922}
@@ -6203,10 +6185,10 @@ MonoBehaviour:
   berserkUptimeDebugText: {fileID: 236630519}
   berserkDamageDebugText: {fileID: 986233609}
   berserkSpeedDebugText: {fileID: 1893677678}
-  berserkMaxTime: 3
-  damageUpPerSecond: 1
+  berserkMaxTime: 2.4
+  damageUpPerSecond: 4
   speedUpPerSecond: 1
-  invisibilityDuration: 3
+  invisibilityDuration: 4
 --- !u!95 &1692689747
 Animator:
   serializedVersion: 4
