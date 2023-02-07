@@ -2450,8 +2450,8 @@ MonoBehaviour:
   speed: 15
   immuneDuration: 0
   maxHitPoints: 0
-  damage: 20
-  knockbackAmount: 0
+  damage: 100
+  knockbackAmount: 20
   pushbackAmount: 0
   returnDrag: 0
   drag: 25
@@ -2948,8 +2948,8 @@ MonoBehaviour:
   speed: 15
   immuneDuration: 0
   maxHitPoints: 0
-  damage: 20
-  knockbackAmount: 0
+  damage: 100
+  knockbackAmount: 20
   pushbackAmount: 0
   returnDrag: 0
   drag: 25
@@ -4011,8 +4011,8 @@ MonoBehaviour:
   speed: 15
   immuneDuration: 0
   maxHitPoints: 0
-  damage: 20
-  knockbackAmount: 0
+  damage: 100
+  knockbackAmount: 20
   pushbackAmount: 0
   returnDrag: 0
   drag: 25
@@ -4157,8 +4157,8 @@ MonoBehaviour:
   speed: 15
   immuneDuration: 0
   maxHitPoints: 0
-  damage: 20
-  knockbackAmount: 0
+  damage: 100
+  knockbackAmount: 20
   pushbackAmount: 0
   returnDrag: 0
   drag: 25
@@ -4419,8 +4419,8 @@ MonoBehaviour:
   speed: 15
   immuneDuration: 0
   maxHitPoints: 0
-  damage: 20
-  knockbackAmount: 0
+  damage: 100
+  knockbackAmount: 20
   pushbackAmount: 0
   returnDrag: 0
   drag: 25
@@ -6780,8 +6780,8 @@ MonoBehaviour:
   speed: 15
   immuneDuration: 0
   maxHitPoints: 0
-  damage: 20
-  knockbackAmount: 0
+  damage: 100
+  knockbackAmount: 20
   pushbackAmount: 0
   returnDrag: 0
   drag: 25
@@ -8486,8 +8486,8 @@ MonoBehaviour:
   speed: 15
   immuneDuration: 0
   maxHitPoints: 0
-  damage: 20
-  knockbackAmount: 0
+  damage: 100
+  knockbackAmount: 20
   pushbackAmount: 0
   returnDrag: 0
   drag: 25
@@ -9240,8 +9240,8 @@ MonoBehaviour:
   speed: 15
   immuneDuration: 0
   maxHitPoints: 0
-  damage: 20
-  knockbackAmount: 0
+  damage: 100
+  knockbackAmount: 20
   pushbackAmount: 0
   returnDrag: 0
   drag: 25

@@ -65,7 +65,7 @@ public class CombatManager : MonoBehaviour
         }
         else if (target.CompareTag("Player")) //Reduces blood meter and spins off knockback for players
         {
-            Bloodmeter.instance.bloodmeter.value = Bloodmeter.instance.bloodmeter.value - damageAmount;
+            Bloodmeter.instance.changeBlood(-damageAmount);
             ApplyKnockback(attacker, targetActor, knockbackAmount);
 
             return true;
