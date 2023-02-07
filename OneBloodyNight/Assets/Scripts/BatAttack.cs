@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class BatAttack : Attack
 {
-    
+    public void EndOpen()
+    {
+
+    }
 }
