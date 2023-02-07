@@ -7,6 +7,9 @@ public class ImpunduluBoss : Boss
 {
     private IEnumerator spinAttackCoroutine;
     private IEnumerator randomBehaviorCoroutine;
+    private IEnumerator randomAttackingCoroutine;
+
+    private Vector3 faceDirection;
 
     [SerializeField]
     private Projectile[] feathers;
@@ -18,11 +21,22 @@ public class ImpunduluBoss : Boss
     {
         base.Start();
 
-        StartSpinAttack();
+        StartRandomBehavior();
+    }
+
+    private void FixedUpdate()
+    {
+        if (canMove)
+        {
+            rb.AddForce(faceDirection, ForceMode.Force);
+        }
     }
 
     private IEnumerator SpinAttack()
     {
+        StopRandomBehavior();
+        canMove = false;
+
         for (int i = 0; i < 8; i++)
         {
             yield return new WaitForSeconds(timeBetweenFeathers);
@@ -31,12 +45,39 @@ public class ImpunduluBoss : Boss
             feathers[i].gameObject.SetActive(true);
             feathers[i].Fire();
         }
+
+        canMove = true;
+        StartRandomBehavior();
     }
 
     private IEnumerator RandomBehavior()
     {
-        throw new NotImplementedException();
+        StartRandomAttacking();
+
+        while (true)
+        {
+            canMove = true;
+            faceDirection = PickDirection() * speed;
+            yield return new WaitForSeconds(UnityEngine.Random.Range(0.8f, 1.5f));
+            canMove = false;
+            rb.velocity = Vector3.zero;
+            yield return new WaitForSeconds(UnityEngine.Random.Range(0.2f, 0.8f));
+        }
     }
+
+    private Vector3 PickDirection()
+    {
+        Vector3 direction = new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f), 0);
+        direction.Normalize();
+        return direction;
+    }
+
+    private IEnumerator RandomAttacking()
+    {
+        yield return new WaitForSeconds(UnityEngine.Random.Range(1.5f, 4.0f));
+        StartSpinAttack();
+    }
+
 
 
     private void StartSpinAttack()
@@ -61,5 +102,17 @@ public class ImpunduluBoss : Boss
     {
         StopCoroutine(randomBehaviorCoroutine);
         randomBehaviorCoroutine = null;
+    }
+
+    private void StartRandomAttacking()
+    {
+        randomAttackingCoroutine = RandomAttacking();
+        StartCoroutine(randomAttackingCoroutine);
+    }
+
+    private void StopRandomAttacking()
+    {
+        StopCoroutine(randomAttackingCoroutine);
+        randomAttackingCoroutine = null;
     }
 }
