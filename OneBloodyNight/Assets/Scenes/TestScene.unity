@@ -3033,11 +3033,11 @@ MonoBehaviour:
     maxCellDifficulty: 0
     objects: []
     North:
-      offSet: 3
+      offSet: 4
       Sprites:
       - {fileID: 3111108264678135816, guid: 83f44c9c754e9fe438a0dd0ac03839a4, type: 3}
     East:
-      offSet: 3
+      offSet: 4
       Sprites:
       - {fileID: 3111108264678135816, guid: 83f44c9c754e9fe438a0dd0ac03839a4, type: 3}
     Corner:
@@ -3049,14 +3049,14 @@ MonoBehaviour:
     objects:
     - formation: {fileID: 8813698199761548738, guid: 59ca1720d052cd74f9de7b3d2b56fad0, type: 3}
       cellDifficulty: 1
-      maxPlaced: 5
-      minPlaced: 10
+      maxPlaced: 1
+      minPlaced: 1
     North:
-      offSet: 3
+      offSet: 4
       Sprites:
       - {fileID: 3111108264678135816, guid: 83f44c9c754e9fe438a0dd0ac03839a4, type: 3}
     East:
-      offSet: 3
+      offSet: 4
       Sprites:
       - {fileID: 3111108264678135816, guid: 865eaccaf9b23134fb6e77f99f9caff0, type: 3}
     Corner:
@@ -3115,7 +3115,7 @@ MonoBehaviour:
       maxPlaced: 25
       minPlaced: 15
     North:
-      offSet: 3
+      offSet: 4
       Sprites:
       - {fileID: 3111108264678135816, guid: 83f44c9c754e9fe438a0dd0ac03839a4, type: 3}
       - {fileID: 3111108264678135816, guid: 588a373411c00f047b8c4e37bebac1ae, type: 3}
@@ -3160,7 +3160,7 @@ MonoBehaviour:
       - {fileID: 3111108264678135816, guid: 5fd1fb7763812f846b43fe202be748b3, type: 3}
       - {fileID: 3111108264678135816, guid: 9fb468c4484d9f74d91e95daa643deec, type: 3}
     East:
-      offSet: 3
+      offSet: 4
       Sprites:
       - {fileID: 3111108264678135816, guid: 865eaccaf9b23134fb6e77f99f9caff0, type: 3}
       - {fileID: 3111108264678135816, guid: a836778a2792839479788f2bdb2fe31b, type: 3}

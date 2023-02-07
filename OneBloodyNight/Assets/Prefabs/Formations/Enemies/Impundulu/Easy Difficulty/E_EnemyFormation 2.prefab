@@ -43,6 +43,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cult Leader
       objectReference: {fileID: 0}
+    - target: {fileID: 2518543072169705319, guid: ee804f2ac4626334a90d6e7f4f12d2cd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7823582071012284660, guid: ee804f2ac4626334a90d6e7f4f12d2cd, type: 3}
       propertyPath: m_RootOrder
       value: 0
