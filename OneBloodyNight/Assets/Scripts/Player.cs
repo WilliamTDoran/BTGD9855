@@ -108,7 +108,7 @@ public class Player : GameActor
             }
         }
 
-        if (advancedAttackDown && canAttack)
+        if (advancedAttackDown)
         {
             AdvancedFire(ref loadedBullet);
         }
@@ -119,8 +119,8 @@ public class Player : GameActor
 
     }
 
-    internal override void OnSuccessfulAttack()
+    internal override void OnSuccessfulAttack(string code)
     {
-        base.OnSuccessfulAttack();
+        base.OnSuccessfulAttack(code);
     }
 }

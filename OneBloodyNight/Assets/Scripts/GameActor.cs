@@ -86,7 +86,13 @@ public class GameActor : MonoBehaviour
         load2Down = controller.Load2Down;
     }
 
-    internal virtual void OnSuccessfulAttack()
+
+    internal virtual void OnAttackEnd(string code)
+    {
+
+    }
+
+    internal virtual void OnSuccessfulAttack(string code)
     {
 
     }

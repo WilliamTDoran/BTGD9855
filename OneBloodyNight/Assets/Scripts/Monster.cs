@@ -11,6 +11,8 @@ public class Monster : GameActor
 {
     private Player player;
 
+    private string refCode1 = "basic";
+
     private int curHitPoints;
     public int CurHitPoints { get { return curHitPoints; } set { curHitPoints = value; } }
 
@@ -77,7 +79,7 @@ public class Monster : GameActor
         {
             yield return new WaitForSeconds(2);
 
-            basicAttack.StartSwing();
+            basicAttack.StartSwing(refCode1);
 
             Debug.Log("Werewolf Swing Done");
         }

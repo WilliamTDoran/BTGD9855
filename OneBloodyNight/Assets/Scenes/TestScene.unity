@@ -2553,11 +2553,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 666666510}
+  - component: {fileID: 666666517}
   - component: {fileID: 666666516}
   - component: {fileID: 666666515}
   - component: {fileID: 666666514}
   - component: {fileID: 666666513}
-  - component: {fileID: 666666517}
   - component: {fileID: 666666511}
   m_Layer: 0
   m_Name: Bat Swarm

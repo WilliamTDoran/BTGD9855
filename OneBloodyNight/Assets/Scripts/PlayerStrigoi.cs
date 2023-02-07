@@ -15,6 +15,9 @@ using UnityEngine;
 /// </summary>
 public class PlayerStrigoi : Player
 {
+    private string basicCode = "basic";
+    private string batCode = "bat";
+
     private IEnumerator berserkCoroutine; //runs bloodthirst
     private IEnumerator invisibilityCoroutine; //runs invisibility duration
     private IEnumerator batSwarmCoroutine; //runs swarm
@@ -81,25 +84,6 @@ public class PlayerStrigoi : Player
     private float invisibilityDuration = 3;
     /*~~~~~~~~~~~~~~~~~~~*/
 
-    /// <summary>
-    /// Standard update, inherits from Player and GameActor
-    /// Drives attack controls
-    /// </summary>
-    protected override void Update()
-    {
-        base.Update();
-
-        if (basicAttackDown && canAttack)
-        {
-            basicAttack.StartSwing();
-            StopInvisible();
-        }
-
-        canAttackDebugText.text = canAttack + "";
-        berserkDamageDebugText.text = basicAttack.Damage + "";
-        berserkSpeedDebugText.text = speed + "";
-    }
-
     protected override void Start()
     {
         base.Start();
@@ -108,16 +92,23 @@ public class PlayerStrigoi : Player
         baseSpeed = speed;
     }
 
-    internal override void OnSuccessfulAttack()
+    /// <summary>
+    /// Standard update, inherits from Player and GameActor
+    /// Drives attack controls
+    /// </summary>
+    protected override void Update()
     {
-        base.OnSuccessfulAttack();
+        base.Update();
 
-        berserkCounter = berserkMaxTime;
-
-        if (berserkUptime <= 0)
+        if (basicAttackDown && canAttack && GameManager.instance.GCD(false))
         {
-            StartBerserk();
+            basicAttack.StartSwing(basicCode);
+            StopInvisible();
         }
+
+        canAttackDebugText.text = canAttack + "";
+        berserkDamageDebugText.text = basicAttack.Damage + "";
+        berserkSpeedDebugText.text = speed + "";
     }
 
     protected override void AdvancedFire(ref int bullet)
@@ -130,13 +121,19 @@ public class PlayerStrigoi : Player
                 break;
 
             case 1:
-                bullet = 0;
-                Invisibility();
+                if (GameManager.instance.GCD(true))
+                {
+                    bullet = 0;
+                    Invisibility();
+                }
                 break;
 
             case 2:
-                bullet = 0;
-                BatSwarm();
+                if (GameManager.instance.GCD(true))
+                {
+                    bullet = 0;
+                    BatSwarm();
+                }
                 break;
 
             default:
@@ -180,6 +177,19 @@ public class PlayerStrigoi : Player
         berserkCounterDebugText.text = "0.0";
         berserkUptimeDebugText.text = "0.0";
     }
+
+    internal override void OnSuccessfulAttack(string code)
+    {
+        base.OnSuccessfulAttack(code);
+
+        berserkCounter = berserkMaxTime;
+
+        if (berserkUptime <= 0)
+        {
+            StartBerserk();
+        }
+    }
+
 
     private IEnumerator Invisible()
     {

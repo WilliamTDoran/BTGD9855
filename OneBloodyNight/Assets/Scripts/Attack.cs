@@ -10,6 +10,7 @@ using UnityEngine;
 /// </summary>
 public class Attack : GameActor
 {
+    private string attackerGrantedCode; 
     private string swingTrigger = "Swing"; //Literally just a string for referencing the animator trigger
     private Vector3 attackerFacingDirection; //The direction the attacker is facing, as determined by the most recent direction they've moved
 
@@ -83,21 +84,17 @@ public class Attack : GameActor
     /// <summary>
     /// A publically accessible method used to initiate the attack. Called by the attack, and spins off the animator and some helper functions
     /// </summary>
-    public void StartSwing()
+    public void StartSwing(string code)
     {
-        if (attacker.CanAttack)
+        PositionAttack(); //The attack hitbox always exists, and needs to have its relative position to the attacker updated each time
+
+        if (forceStill) //Some attacks force the attacker to stand still
         {
-            PositionAttack(); //The attack hitbox always exists, and needs to have its relative position to the attacker updated each time
-
-            if (forceStill) //Some attacks force the attacker to stand still
-            {
-                attacker.CanMove = false;
-                attacker.Rb.velocity = Vector3.zero; //Otherwise you drift
-            }
-
-            attacker.CanAttack = false;
-            animator.SetTrigger(swingTrigger); //Each attack has its own animation controller that is used to dictate its windup and active time
+            attacker.CanMove = false;
+            attacker.Rb.velocity = Vector3.zero; //Otherwise you drift
         }
+
+        animator.SetTrigger(swingTrigger); //Each attack has its own animation controller that is used to dictate its windup and active time
     }
 
     /// <summary>
@@ -156,7 +153,7 @@ public class Attack : GameActor
 
         attacker.Rb.drag = returnDrag; //Returns the drag to the starting position (no change if no pushback)
         hitThisSwing.Clear(); //Clears the list of Colliders hit (largely just a precaution)
-        attacker.CanAttack = true;
+        attacker.OnAttackEnd(attackerGrantedCode);
     }
 
     /// <summary>
@@ -190,9 +187,11 @@ public class Attack : GameActor
         if (proceed)
         {
             hitThisSwing.Add(other); //Records the detected collider as already hit by this attack
-            if (CombatManager.Instance.Attack(attacker, this, other, damage, knockbackAmount)) //Calls to CombatManager to run the attack
+
+            //Calls to CombatManager to run the attack. Returns true if it hits a useful target, spinning off any requisite follower functions on attacker
+            if (CombatManager.Instance.Attack(attacker, this, other, damage, knockbackAmount)) 
             {
-                attacker.OnSuccessfulAttack();
+                attacker.OnSuccessfulAttack(attackerGrantedCode);
             }
         }
     }
