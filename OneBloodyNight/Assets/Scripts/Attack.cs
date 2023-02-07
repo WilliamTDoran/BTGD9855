@@ -86,6 +86,8 @@ public class Attack : GameActor
     /// </summary>
     public void StartSwing(string code)
     {
+        attackerGrantedCode = code;
+
         PositionAttack(); //The attack hitbox always exists, and needs to have its relative position to the attacker updated each time
 
         if (forceStill) //Some attacks force the attacker to stand still

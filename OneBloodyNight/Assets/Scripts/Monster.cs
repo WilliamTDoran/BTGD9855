@@ -73,6 +73,14 @@ public class Monster : GameActor
         }
     }
 
+    internal override void OnAttackEnd(string code)
+    {
+        base.OnAttackEnd(code);
+
+        canAttack = true;
+        Debug.Log("Werewolf Swing Done");
+    }
+
     private IEnumerator DebugAttackCycle()
     {
         while (true)
@@ -80,8 +88,7 @@ public class Monster : GameActor
             yield return new WaitForSeconds(2);
 
             basicAttack.StartSwing(refCode1);
-
-            Debug.Log("Werewolf Swing Done");
+            canAttack = false;
         }
     }
 

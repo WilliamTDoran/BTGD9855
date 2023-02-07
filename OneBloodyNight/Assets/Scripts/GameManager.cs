@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 /// <summary>
 /// The game manager, running a variety of miscellaneous functions and holding various references for ease of access
@@ -12,7 +13,7 @@ public class GameManager : MonoBehaviour
 {
     internal static GameManager instance;
 
-    private static bool globalCooldownVar;
+    private static bool globalCooldownVar = false;
     private IEnumerator gcdCoroutine;
 
     /* Exposed Variables */
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private GameObject debugCanvas;
+    [SerializeField]
+    private TextMeshProUGUI gcdDebugText;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     private void Awake()
@@ -38,6 +41,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        gcdDebugText.text = globalCooldownVar + "";
+
         if (Input.GetKeyDown(KeyCode.F1))
         {
             debugCanvas.SetActive(!debugCanvas.activeInHierarchy);
