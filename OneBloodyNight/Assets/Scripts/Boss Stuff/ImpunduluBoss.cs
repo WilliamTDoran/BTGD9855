@@ -15,6 +15,9 @@ public class ImpunduluBoss : Boss
     private Projectile[] feathers;
 
     [SerializeField]
+    private RemoteAttack[] lightnings;
+
+    [SerializeField]
     private float timeBetweenFeathers = 0.6f;
 
     protected override void Start()
@@ -75,7 +78,17 @@ public class ImpunduluBoss : Boss
     private IEnumerator RandomAttacking()
     {
         yield return new WaitForSeconds(UnityEngine.Random.Range(1.5f, 4.0f));
-        StartSpinAttack();
+
+        if (UnityEngine.Random.Range(-1.0f,1.0f) < 0)
+        {
+            StartSpinAttack();
+        }
+        else
+        {
+            lightnings[0].Initiate(Player.plr.Rb.position);
+            StopRandomBehavior();
+            StartRandomBehavior();
+        }
     }
 
 

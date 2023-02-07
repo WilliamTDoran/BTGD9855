@@ -74,11 +74,11 @@ public class Attack : GameActor
 
     [Tooltip("Hide or show the hitbox of the attack when attacking")]
     [SerializeField]
-    private bool showHitbox = false;
+    protected bool showHitbox = false;
 
     [Tooltip("Reference to the hitbox renderer. Must be not null to show hitbox")]
     [SerializeField]
-    private MeshRenderer hitboxMesh;
+    protected MeshRenderer hitboxMesh;
     /*~~~~~~~~~~~~~~~~~~~~*/
 
     /// <summary>
