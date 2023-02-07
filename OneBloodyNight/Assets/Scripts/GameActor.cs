@@ -72,7 +72,6 @@ public class GameActor : MonoBehaviour
         controller = controllerObj.GetComponent<PlayerController>();
 
         Debug.Assert(controller != null, "No controller set on: " + gameObject.name);
-        Debug.Assert(rb != null, "No rigidbody set on: " + gameObject.name);
     }
 
     protected virtual void Update()

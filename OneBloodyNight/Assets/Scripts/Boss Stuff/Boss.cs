@@ -21,6 +21,8 @@ public class Boss : GameActor
     {
         base.Awake();
 
+        immune = false;
+
         Transition(currentPhase);
     }
 

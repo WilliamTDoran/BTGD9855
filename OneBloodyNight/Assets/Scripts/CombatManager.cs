@@ -80,7 +80,7 @@ public class CombatManager : MonoBehaviour
     /// <param name="attacker">the GameActor who owns the Attack</param>
     /// <param name="target">the Monster being targeted</param>
     /// <param name="amount">the amount to reduce curHitPoints</param>
-    private void HarmMonster(GameActor attacker, Monster target, int amount)
+    private void HarmMonster(GameActor attacker, GameActor target, int amount)
     {
         if (!target.Immune) //can't damage an immune target
         {
