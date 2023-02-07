@@ -139,6 +139,11 @@ public class Cell : MonoBehaviour
     {
         walls[(int)Wall.wLocation.north].placeNorthSprites(getBiome());
         walls[(int)Wall.wLocation.east].placeEastSprites(getBiome());
+        CornerType corner = Corner();
+        if (Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites.Length > (int)corner)
+        {
+            GameObject temp = Instantiate(Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[(int)corner], new Vector3(transform.position.x + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet, transform.position.y + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet, Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[(int)corner].transform.position.z), Quaternion.identity, transform);
+        }
         if (walls[(int)Wall.wLocation.west].edge())
         {
             walls[(int)Wall.wLocation.west].placeEastSprites(getBiome());
@@ -155,27 +160,27 @@ public class Cell : MonoBehaviour
 
     internal CornerType Corner()
     {
-        bool[] tempName;
-        tempName = new bool[4];
-        tempName[3] = walls[(int)Wall.wLocation.north].getState() != Wall.wState.destroyed;
-        tempName[2] = walls[(int)Wall.wLocation.east].getState() != Wall.wState.destroyed;
-        tempName[0] = walls[(int)Wall.wLocation.north].getState() != Wall.wState.exterior && (walls[(int)Wall.wLocation.north].getLink().getCell().walls[(int)Wall.wLocation.east].getState() != Wall.wState.destroyed);
-        tempName[1] = walls[(int)Wall.wLocation.east].getState() != Wall.wState.exterior && (walls[(int)Wall.wLocation.east].getLink().getCell().walls[(int)Wall.wLocation.north].getState() != Wall.wState.destroyed);
-        if (tempName[0] && tempName[1] && tempName[2] && tempName[3]) return CornerType.All;
-        if (!tempName[0] && tempName[1] && tempName[2] && tempName[3]) return CornerType.missingNorth;
-        if (tempName[0] && !tempName[1] && tempName[2] && tempName[3]) return CornerType.missingEast;
-        if (tempName[0] && tempName[1] && !tempName[2] && tempName[3]) return CornerType.missingSouth;
-        if (tempName[0] && tempName[1] && tempName[2] && !tempName[3]) return CornerType.missingWest;
-        if (tempName[0] && !tempName[1] && tempName[2] && !tempName[3]) return CornerType.lineVertical;
-        if (!tempName[0] && tempName[1] && !tempName[2] && tempName[3]) return CornerType.lineHorizontal;
-        if (tempName[0] && !tempName[1] && !tempName[2] && tempName[3]) return CornerType.cornerNorthWest;
-        if (tempName[0] && tempName[1] && !tempName[2] && !tempName[3]) return CornerType.cornerNorthEast;
-        if (!tempName[0] && tempName[1] && tempName[2] && !tempName[3]) return CornerType.cornerSouthEast;
-        if (!tempName[0] && !tempName[1] && tempName[2] && tempName[3]) return CornerType.cornerSouthWest;
-        if (tempName[0] && !tempName[1] && !tempName[2] && !tempName[3]) return CornerType.endNorth;
-        if (!tempName[0] && tempName[1] && !tempName[2] && !tempName[3]) return CornerType.endEast;
-        if (!tempName[0] && !tempName[1] && tempName[2] && !tempName[3]) return CornerType.endSouth;
-        if (!tempName[0] && !tempName[1] && !tempName[2] && tempName[3]) return CornerType.endWest;
+        bool[] intersection;
+        intersection = new bool[4];
+        intersection[3] = walls[(int)Wall.wLocation.north].getState() != Wall.wState.destroyed;
+        intersection[2] = walls[(int)Wall.wLocation.east].getState() != Wall.wState.destroyed;
+        intersection[0] = walls[(int)Wall.wLocation.north].getState() != Wall.wState.exterior && (walls[(int)Wall.wLocation.north].getLink().getCell().walls[(int)Wall.wLocation.east].getState() != Wall.wState.destroyed);
+        intersection[1] = walls[(int)Wall.wLocation.east].getState() != Wall.wState.exterior && (walls[(int)Wall.wLocation.east].getLink().getCell().walls[(int)Wall.wLocation.north].getState() != Wall.wState.destroyed);
+        if (intersection[0] && intersection[1] && intersection[2] && intersection[3]) return CornerType.All;
+        if (!intersection[0] && intersection[1] && intersection[2] && intersection[3]) return CornerType.missingNorth;
+        if (intersection[0] && !intersection[1] && intersection[2] && intersection[3]) return CornerType.missingEast;
+        if (intersection[0] && intersection[1] && !intersection[2] && intersection[3]) return CornerType.missingSouth;
+        if (intersection[0] && intersection[1] && intersection[2] && !intersection[3]) return CornerType.missingWest;
+        if (intersection[0] && !intersection[1] && intersection[2] && !intersection[3]) return CornerType.lineVertical;
+        if (!intersection[0] && intersection[1] && !intersection[2] && intersection[3]) return CornerType.lineHorizontal;
+        if (intersection[0] && !intersection[1] && !intersection[2] && intersection[3]) return CornerType.cornerNorthWest;
+        if (intersection[0] && intersection[1] && !intersection[2] && !intersection[3]) return CornerType.cornerNorthEast;
+        if (!intersection[0] && intersection[1] && intersection[2] && !intersection[3]) return CornerType.cornerSouthEast;
+        if (!intersection[0] && !intersection[1] && intersection[2] && intersection[3]) return CornerType.cornerSouthWest;
+        if (intersection[0] && !intersection[1] && !intersection[2] && !intersection[3]) return CornerType.endNorth;
+        if (!intersection[0] && intersection[1] && !intersection[2] && !intersection[3]) return CornerType.endEast;
+        if (!intersection[0] && !intersection[1] && intersection[2] && !intersection[3]) return CornerType.endSouth;
+        if (!intersection[0] && !intersection[1] && !intersection[2] && intersection[3]) return CornerType.endWest;
         return CornerType.None;
     }
 }

@@ -15,21 +15,21 @@ public enum Biome
 
 internal enum CornerType
 {
-    All,
+    All, //48
     missingNorth,
-    missingEast,
+    missingEast, //50
     missingSouth,
-    missingWest,
-    lineVertical,
-    lineHorizontal,
+    missingWest, //49
+    lineVertical, //a few
+    lineHorizontal, 
     cornerNorthWest,
     cornerNorthEast,
-    cornerSouthEast,
-    cornerSouthWest,
+    cornerSouthEast, // 43
+    cornerSouthWest, // 42
     endNorth,
-    endEast,
+    endEast, //47
     endSouth,
-    endWest,
+    endWest, //46
     None
 }
 
@@ -57,6 +57,7 @@ public class BiomeVariables
     public PlacableObject[] objects;
     public ArtVars North;
     public ArtVars East;
+    public ArtVars Corner;
 }
 
 
