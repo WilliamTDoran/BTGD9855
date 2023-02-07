@@ -1823,7 +1823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &466767312
 Transform:
   m_ObjectHideFlags: 0
@@ -2682,8 +2682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   immuneDuration: 0
-  facingDebugText: {fileID: 0}
-  canAttackDebugText: {fileID: 0}
+  maxHitPoints: 0
   damage: 2
   knockbackAmount: 0
   pushbackAmount: 0
@@ -4475,8 +4474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   immuneDuration: 0
-  facingDebugText: {fileID: 0}
-  canAttackDebugText: {fileID: 0}
+  maxHitPoints: 0
   damage: 10
   knockbackAmount: 25
   pushbackAmount: 10
@@ -6190,11 +6188,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 13
   immuneDuration: 0.2
-  facingDebugText: {fileID: 1378920225}
-  canAttackDebugText: {fileID: 561208345}
+  maxHitPoints: 0
   spriteRenderer: {fileID: 1692689748}
   abilityOneCost: 50
   abilityTwoCost: 50
+  facingDebugText: {fileID: 1378920225}
+  canAttackDebugText: {fileID: 561208345}
   basicAttack: {fileID: 1181192922}
   swarmAttack: {fileID: 666666517}
   basicMaterial: {fileID: 2100000, guid: 053872da44d313045b55ece660ff3209, type: 2}
