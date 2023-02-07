@@ -54,6 +54,9 @@ TagManager:
   - name: Walls
     uniqueID: 2945691341
     locked: 0
+  - name: Props but over the walls
+    uniqueID: 403998635
+    locked: 0
   - name: Enemies
     uniqueID: 4023064477
     locked: 0
