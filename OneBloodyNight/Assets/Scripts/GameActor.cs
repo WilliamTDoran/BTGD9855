@@ -47,19 +47,9 @@ public class GameActor : MonoBehaviour
     [SerializeField]
     protected float immuneDuration;
     public float ImmuneDuration { get { return immuneDuration; } }
-
-    [Tooltip("Facing Angle Debug Text")]
-    [SerializeField]
-    protected TextMeshProUGUI facingDebugText;
-    public TextMeshProUGUI FacingDebugText { get { return facingDebugText; } }
-
-    [Tooltip("Can Attack Debug Text")]
-    [SerializeField]
-    protected TextMeshProUGUI canAttackDebugText;
-    public TextMeshProUGUI CanAttackDebugText { get { return canAttackDebugText; } }
     /* -~-~-~-~-~-~-~-~- */
 
-    virtual protected void Awake()
+    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody>();
         col = GetComponent<Collider>();

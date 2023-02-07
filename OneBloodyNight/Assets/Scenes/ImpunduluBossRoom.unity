@@ -665,12 +665,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f2ff1764e88cd419f7c77558e2a4e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  speed: 0
+  immuneDuration: 0
+  phases: []
 --- !u!1 &141719559
 GameObject:
   m_ObjectHideFlags: 0
@@ -5454,8 +5451,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1466547970}
+  - component: {fileID: 1466547971}
   m_Layer: 0
-  m_Name: Stage 1
+  m_Name: Phase 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5476,6 +5474,19 @@ Transform:
   m_Father: {fileID: 127064944}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1466547971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466547969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e4f223121428c6428fcc4b3191858e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transition: 1
 --- !u!1 &1474178314
 GameObject:
   m_ObjectHideFlags: 0

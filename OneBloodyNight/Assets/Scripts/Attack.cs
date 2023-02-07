@@ -93,10 +93,13 @@ public class Attack : GameActor
         if (forceStill) //Some attacks force the attacker to stand still
         {
             attacker.CanMove = false;
-            attacker.Rb.velocity = Vector3.zero; //Otherwise you drift
+            attacker.Rb.velocity = Vector3.zero; //need this otherwise you tokyo drift from momentum
         }
 
-        animator.SetTrigger(swingTrigger); //Each attack has its own animation controller that is used to dictate its windup and active time
+        if (animator != null) //projectiles don't need an animator
+        {
+            animator.SetTrigger(swingTrigger); //Each attack has its own animation controller that is used to dictate its windup and active time
+        }
     }
 
     /// <summary>

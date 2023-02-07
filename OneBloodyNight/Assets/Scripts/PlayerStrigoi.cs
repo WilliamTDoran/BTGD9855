@@ -12,6 +12,7 @@ using UnityEngine;
 /// 
 /// Version 1.0 (1/20/23), Will Doran
 /// Version 1.1 (2/3/23),  Will Doran
+/// Version 2.0 (2/7/23),  Will Doran
 /// </summary>
 public class PlayerStrigoi : Player
 {

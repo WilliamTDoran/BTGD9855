@@ -7,6 +7,7 @@ using UnityEngine;
 /// This class is the parent of all three player types, and holds the majority of functions shared by every type of character, including getting and interpreting control inputs
 /// 
 /// Version 1.0 (1/13/2023), Will Doran
+/// Version 1.1 (2/7/2023),  Will Doran
 /// </summary>
 public class Player : GameActor
 {
@@ -30,6 +31,16 @@ public class Player : GameActor
     [Tooltip("The cost of Ability 2 (E/RB)")]
     [SerializeField]
     protected float abilityTwoCost;
+
+    [Tooltip("Facing Angle Debug Text")]
+    [SerializeField]
+    protected TextMeshProUGUI facingDebugText;
+    public TextMeshProUGUI FacingDebugText { get { return facingDebugText; } }
+
+    [Tooltip("Can Attack Debug Text")]
+    [SerializeField]
+    protected TextMeshProUGUI canAttackDebugText;
+    public TextMeshProUGUI CanAttackDebugText { get { return canAttackDebugText; } }
     /*~~~~~~~~~~~~~~~~~~~*/
 
     /// <summary>
