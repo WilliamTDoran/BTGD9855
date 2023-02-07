@@ -13,15 +13,7 @@ public class Monster : GameActor
 
     private string refCode1 = "basic";
 
-    private int curHitPoints;
-    public int CurHitPoints { get { return curHitPoints; } set { curHitPoints = value; } }
-
     /* Exposed Variables */
-    [Tooltip("The Monster's maximum possible hit points (also the hit points it spawns with)")]
-    [SerializeField]
-    private int maxHitPoints;
-    public int MaxHitPoints { get { return maxHitPoints; } set { maxHitPoints = value; } }
-
     [Tooltip("A reference to the monster's basic attack object")]
     [SerializeField]
     private Attack basicAttack;
@@ -39,7 +31,7 @@ public class Monster : GameActor
     {
         base.Start();
 
-        curHitPoints = maxHitPoints;
+        CurHitPoints = MaxHitPoints;
         canAttack = true;
         canMove = true;
         facingAngle = 0;
@@ -58,7 +50,7 @@ public class Monster : GameActor
         facingAngle = Vector3.SignedAngle(Vector3.right, controller.IntendedDirection, Vector3.forward);
         facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
 
-        if (curHitPoints <= 0)
+        if (CurHitPoints <= 0)
         {
             Bloodmeter.instance.bloodmeter.value += bloodOnKill;
             gameObject.SetActive(false);

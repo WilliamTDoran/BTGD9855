@@ -50,6 +50,8 @@ public class CombatManager : MonoBehaviour
         {
             Debug.Log("Wall Hit " + target.gameObject.name);
 
+            used.OnHitWall();
+
             used.Pushback(target, 1.0f);
 
             return false;

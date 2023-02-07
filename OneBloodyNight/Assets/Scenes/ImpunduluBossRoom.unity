@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 18515361}
   m_Layer: 0
   m_Name: ImpunduluTilesetWithShading_46 (4)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,6 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 35703429}
   - component: {fileID: 35703430}
+  - component: {fileID: 35703431}
   m_Layer: 0
   m_Name: HitboxWall (5)
   m_TagString: Wall
@@ -252,6 +253,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.751353, y: 2.125161, z: 10}
   m_Center: {x: 0.009883463, y: 0.3558145, z: 0}
+--- !u!54 &35703431
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35703428}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &51756564
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,6 +518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 76680294}
   - component: {fileID: 76680295}
+  - component: {fileID: 76680296}
   m_Layer: 0
   m_Name: HitboxWall (3)
   m_TagString: Wall
@@ -536,6 +554,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.038166, y: 48.34058, z: 10}
   m_Center: {x: -0.003419876, y: 0, z: 0}
+--- !u!54 &76680296
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76680293}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &112686699
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,7 +669,7 @@ GameObject:
   - component: {fileID: 127064946}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -648,11 +682,19 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127064942}
   m_LocalRotation: {x: 0, y: 0.008726558, z: 0, w: 0.999962}
-  m_LocalPosition: {x: 13.53, y: 19.33, z: -1}
+  m_LocalPosition: {x: 15.67, y: 23.78, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1466547970}
+  - {fileID: 414111548}
+  - {fileID: 1489522194}
+  - {fileID: 556239798}
+  - {fileID: 616608128}
+  - {fileID: 1367510911}
+  - {fileID: 1013497829}
+  - {fileID: 335686676}
+  - {fileID: 556438438}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
@@ -670,7 +712,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   immuneDuration: 0
-  phases: []
+  maxHitPoints: 200
+  phases:
+  - {fileID: 1466547971}
   currentPhase: 0
   feathers:
   - {fileID: 414111549}
@@ -681,6 +725,7 @@ MonoBehaviour:
   - {fileID: 1013497824}
   - {fileID: 335686671}
   - {fileID: 556438433}
+  timeBetweenFeathers: 0.4
 --- !u!212 &127064946
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -879,6 +924,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &179898458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 179898460}
+  - component: {fileID: 179898459}
+  m_Layer: 0
+  m_Name: CombatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &179898459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179898458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cdf68681346bd04089200fcfbf561f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &179898460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179898458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &181142735
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,6 +978,7 @@ GameObject:
   m_Component:
   - component: {fileID: 181142736}
   - component: {fileID: 181142737}
+  - component: {fileID: 181142738}
   m_Layer: 0
   m_Name: HitboxWall (2)
   m_TagString: Wall
@@ -924,6 +1014,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.0034065, y: 46.72244, z: 10}
   m_Center: {x: 0.5139599, y: -0.8090725, z: 0}
+--- !u!54 &181142738
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181142735}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &186361605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,7 +1210,7 @@ GameObject:
   - component: {fileID: 216200827}
   m_Layer: 0
   m_Name: ImpunduluTilesetWithShading_46 (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1186,6 +1292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 238849017}
   - component: {fileID: 238849018}
+  - component: {fileID: 238849019}
   m_Layer: 0
   m_Name: HitboxWall (1)
   m_TagString: Wall
@@ -1221,6 +1328,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 69.06337, y: 2.246667, z: 10}
   m_Center: {x: 0.73381805, y: -1.8215032, z: 0}
+--- !u!54 &238849019
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238849016}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &241205020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,8 +1545,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76106d47db866c14db86de1a1c2c6c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 15
   immuneDuration: 0
+  maxHitPoints: 0
   damage: 20
   knockbackAmount: 0
   pushbackAmount: 0
@@ -1431,7 +1555,7 @@ MonoBehaviour:
   drag: 25
   wallPushbackScalar: 0
   forceStill: 0
-  floatDistance: 1
+  floatDistance: 1.5
   untargetableTags:
   - Monster
   - Floor
@@ -1509,7 +1633,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!33 &335686675
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1525,13 +1649,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335686670}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.74236, y: -1.9610405, z: 0}
+  m_LocalRotation: {x: -0, y: -0.008726558, z: -0, w: 0.999962}
+  m_LocalPosition: {x: -64.28003, y: -21.29104, z: -0.121862605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 127064944}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &346504966
 GameObject:
@@ -1897,13 +2021,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414111546}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.74236, y: -1.9610405, z: 0}
+  m_LocalRotation: {x: -0, y: -0.008726558, z: -0, w: 0.999962}
+  m_LocalPosition: {x: -64.28003, y: -21.29104, z: -0.121862605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 127064944}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &414111549
 MonoBehaviour:
@@ -1917,8 +2041,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76106d47db866c14db86de1a1c2c6c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 15
   immuneDuration: 0
+  maxHitPoints: 0
   damage: 20
   knockbackAmount: 0
   pushbackAmount: 0
@@ -1926,7 +2051,7 @@ MonoBehaviour:
   drag: 25
   wallPushbackScalar: 0
   forceStill: 0
-  floatDistance: 1
+  floatDistance: 1.5
   untargetableTags:
   - Monster
   - Floor
@@ -2012,7 +2137,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &483179334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,8 +2461,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76106d47db866c14db86de1a1c2c6c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 15
   immuneDuration: 0
+  maxHitPoints: 0
   damage: 20
   knockbackAmount: 0
   pushbackAmount: 0
@@ -2345,7 +2471,7 @@ MonoBehaviour:
   drag: 25
   wallPushbackScalar: 0
   forceStill: 0
-  floatDistance: 1
+  floatDistance: 1.5
   untargetableTags:
   - Monster
   - Floor
@@ -2423,7 +2549,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!33 &556239797
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2439,13 +2565,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556239792}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.74236, y: -1.9610405, z: 0}
+  m_LocalRotation: {x: -0, y: -0.008726558, z: -0, w: 0.999962}
+  m_LocalPosition: {x: -64.28003, y: -21.29104, z: -0.121862605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 127064944}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &556438432
 GameObject:
@@ -2480,8 +2606,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76106d47db866c14db86de1a1c2c6c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 15
   immuneDuration: 0
+  maxHitPoints: 0
   damage: 20
   knockbackAmount: 0
   pushbackAmount: 0
@@ -2489,7 +2616,7 @@ MonoBehaviour:
   drag: 25
   wallPushbackScalar: 0
   forceStill: 0
-  floatDistance: 1
+  floatDistance: 1.5
   untargetableTags:
   - Monster
   - Floor
@@ -2567,7 +2694,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!33 &556438437
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2583,13 +2710,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 556438432}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.74236, y: -1.9610405, z: 0}
+  m_LocalRotation: {x: -0, y: -0.008726558, z: -0, w: 0.999962}
+  m_LocalPosition: {x: -64.28003, y: -21.29104, z: -0.121862605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 127064944}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &557492138
 GameObject:
@@ -2909,8 +3036,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76106d47db866c14db86de1a1c2c6c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 15
   immuneDuration: 0
+  maxHitPoints: 0
   damage: 20
   knockbackAmount: 0
   pushbackAmount: 0
@@ -2918,7 +3046,7 @@ MonoBehaviour:
   drag: 25
   wallPushbackScalar: 0
   forceStill: 0
-  floatDistance: 1
+  floatDistance: 1.5
   untargetableTags:
   - Monster
   - Floor
@@ -2996,7 +3124,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!33 &616608127
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3012,13 +3140,57 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 616608122}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.74236, y: -1.9610405, z: 0}
+  m_LocalRotation: {x: -0, y: -0.008726558, z: -0, w: 0.999962}
+  m_LocalPosition: {x: -64.28003, y: -21.29104, z: -0.121862605}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 127064944}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &649444591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 649444593}
+  - component: {fileID: 649444592}
+  m_Layer: 0
+  m_Name: PlayerController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &649444592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649444591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff50930de74b5244dab590bb87781b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &649444593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649444591}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &649693146
 GameObject:
@@ -3536,7 +3708,7 @@ GameObject:
   - component: {fileID: 762431805}
   m_Layer: 0
   m_Name: ImpunduluTilesetWithShading_46 (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3820,6 +3992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 798938282}
   - component: {fileID: 798938283}
+  - component: {fileID: 798938284}
   m_Layer: 0
   m_Name: HitboxWall (4)
   m_TagString: Wall
@@ -3855,6 +4028,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.751353, y: 2.125161, z: 10}
   m_Center: {x: 0.009883463, y: 0.3558145, z: 0}
+--- !u!54 &798938284
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798938281}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &806869216
 GameObject:
   m_ObjectHideFlags: 0
@@ -3865,6 +4054,7 @@ GameObject:
   m_Component:
   - component: {fileID: 806869217}
   - component: {fileID: 806869218}
+  - component: {fileID: 806869219}
   m_Layer: 0
   m_Name: HitboxWall (6)
   m_TagString: Wall
@@ -3900,6 +4090,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.751353, y: 2.125161, z: 10}
   m_Center: {x: 0.009883463, y: 0.3558145, z: 0}
+--- !u!54 &806869219
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806869216}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &811499448
 GameObject:
   m_ObjectHideFlags: 0
@@ -4652,8 +4858,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76106d47db866c14db86de1a1c2c6c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 15
   immuneDuration: 0
+  maxHitPoints: 0
   damage: 20
   knockbackAmount: 0
   pushbackAmount: 0
@@ -4661,7 +4868,7 @@ MonoBehaviour:
   drag: 25
   wallPushbackScalar: 0
   forceStill: 0
-  floatDistance: 1
+  floatDistance: 1.5
   untargetableTags:
   - Monster
   - Floor
@@ -4739,7 +4946,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!33 &1013497828
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4755,13 +4962,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013497823}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.74236, y: -1.9610405, z: 0}
+  m_LocalRotation: {x: -0, y: -0.008726558, z: -0, w: 0.999962}
+  m_LocalPosition: {x: -64.28003, y: -21.29104, z: -0.121862605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 127064944}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1066198011
 GameObject:
@@ -5265,7 +5472,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1148783475
 GameObject:
@@ -5488,7 +5695,7 @@ GameObject:
   - component: {fileID: 1207585664}
   m_Layer: 0
   m_Name: ImpunduluTilesetWithShading_46 (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6181,8 +6388,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76106d47db866c14db86de1a1c2c6c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 15
   immuneDuration: 0
+  maxHitPoints: 0
   damage: 20
   knockbackAmount: 0
   pushbackAmount: 0
@@ -6190,7 +6398,7 @@ MonoBehaviour:
   drag: 25
   wallPushbackScalar: 0
   forceStill: 0
-  floatDistance: 1
+  floatDistance: 1.5
   untargetableTags:
   - Monster
   - Floor
@@ -6268,7 +6476,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!33 &1367510910
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6284,13 +6492,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367510905}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.74236, y: -1.9610405, z: 0}
+  m_LocalRotation: {x: -0, y: -0.008726558, z: -0, w: 0.999962}
+  m_LocalPosition: {x: -64.28003, y: -21.29104, z: -0.121862605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 127064944}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1393654765
 GameObject:
@@ -6683,6 +6891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1474178315}
   - component: {fileID: 1474178316}
+  - component: {fileID: 1474178317}
   m_Layer: 0
   m_Name: HitboxWall
   m_TagString: Wall
@@ -6718,6 +6927,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 70.53101, y: 5.912436, z: 10}
   m_Center: {x: 0, y: 0.01138163, z: 0}
+--- !u!54 &1474178317
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474178314}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1489522188
 GameObject:
   m_ObjectHideFlags: 0
@@ -6751,8 +6976,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76106d47db866c14db86de1a1c2c6c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 15
   immuneDuration: 0
+  maxHitPoints: 0
   damage: 20
   knockbackAmount: 0
   pushbackAmount: 0
@@ -6760,7 +6986,7 @@ MonoBehaviour:
   drag: 25
   wallPushbackScalar: 0
   forceStill: 0
-  floatDistance: 1
+  floatDistance: 1.5
   untargetableTags:
   - Monster
   - Floor
@@ -6838,7 +7064,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!33 &1489522193
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6854,13 +7080,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489522188}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -50.74236, y: -1.9610405, z: 0}
+  m_LocalRotation: {x: -0, y: -0.008726558, z: -0, w: 0.999962}
+  m_LocalPosition: {x: -64.28003, y: -21.29104, z: -0.121862605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 127064944}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1501674503
 GameObject:
@@ -6874,7 +7100,7 @@ GameObject:
   - component: {fileID: 1501674505}
   m_Layer: 0
   m_Name: ImpunduluTilesetWithShading_46
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7976,7 +8202,7 @@ GameObject:
   - component: {fileID: 1944520336}
   m_Layer: 0
   m_Name: ImpunduluTilesetWithShading_46 (5)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

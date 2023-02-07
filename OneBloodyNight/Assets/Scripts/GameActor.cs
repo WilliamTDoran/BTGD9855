@@ -38,6 +38,9 @@ public class GameActor : MonoBehaviour
     protected bool immune; //whether the actor can take damage
     public bool Immune { get { return immune; } set { immune = value; } }
 
+    private int curHitPoints;
+    public int CurHitPoints { get { return curHitPoints; } set { curHitPoints = value; } }
+
     /* Exposed Variables */
     [Tooltip("Maximum movement speed - IRRELEVANT FOR NON-MOVING ENTITIES")]
     [SerializeField]
@@ -47,6 +50,11 @@ public class GameActor : MonoBehaviour
     [SerializeField]
     protected float immuneDuration;
     public float ImmuneDuration { get { return immuneDuration; } }
+
+    [Tooltip("The Monster's maximum possible hit points (also the hit points it spawns with)")]
+    [SerializeField]
+    private int maxHitPoints;
+    public int MaxHitPoints { get { return maxHitPoints; } set { maxHitPoints = value; } }
     /* -~-~-~-~-~-~-~-~- */
 
     protected virtual void Awake()

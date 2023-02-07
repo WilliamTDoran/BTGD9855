@@ -18,7 +18,7 @@ public class Projectile : Attack
     {
         PositionAttack();
 
-        direction = new Vector3(0, 0, 1) * speed;
+        direction = new Vector3(0, -1, 0) * speed;
 
         canMove = true;
     }
