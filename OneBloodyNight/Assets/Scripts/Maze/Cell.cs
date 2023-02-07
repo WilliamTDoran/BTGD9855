@@ -120,20 +120,7 @@ public class Cell : MonoBehaviour
                         openWalls++;
                     }
                 }
-                walls[(int)Wall.wLocation.north].placeNorthSprites(getBiome());
-                walls[(int)Wall.wLocation.east].placeEastSprites(getBiome());
-                if (walls[(int)Wall.wLocation.west].getLink().getCell() == this)
-                {
-                    walls[(int)Wall.wLocation.west].placeEastSprites(getBiome());
-                }
-                if (walls[(int)Wall.wLocation.south].getLink().getCell() == this)
-                {
-                    walls[(int)Wall.wLocation.south].placeNorthSprites(getBiome());
-                }
-                if (getBiome() == Biome.yara)
-                {
-                    transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().color = Color.cyan;
-                }
+                drawWalls();
                 if (openWalls <= 1) // if it's a dead end
                 {
                     Maze.m.deadEnds.Add(this);
@@ -147,4 +134,58 @@ public class Cell : MonoBehaviour
         
         return;
     }
+
+    internal void drawWalls()
+    {
+        walls[(int)Wall.wLocation.north].placeNorthSprites(getBiome());
+        walls[(int)Wall.wLocation.east].placeEastSprites(getBiome());
+        if (walls[(int)Wall.wLocation.west].edge())
+        {
+            walls[(int)Wall.wLocation.west].placeEastSprites(getBiome());
+        }
+        if (walls[(int)Wall.wLocation.south].edge())
+        {
+            walls[(int)Wall.wLocation.south].placeNorthSprites(getBiome());
+        }
+        if (getBiome() == Biome.yara)
+        {
+            transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().color = Color.cyan;
+        }
+    }
+
+    internal CornerType Corner()
+    {
+        bool[] tempName;
+        tempName = new bool[4];
+        tempName[3] = walls[(int)Wall.wLocation.north].getState() != Wall.wState.destroyed;
+        tempName[2] = walls[(int)Wall.wLocation.east].getState() != Wall.wState.destroyed;
+        tempName[0] = walls[(int)Wall.wLocation.north].getState() != Wall.wState.exterior && (walls[(int)Wall.wLocation.north].getLink().getCell().walls[(int)Wall.wLocation.east].getState() != Wall.wState.destroyed);
+        tempName[1] = walls[(int)Wall.wLocation.east].getState() != Wall.wState.exterior && (walls[(int)Wall.wLocation.east].getLink().getCell().walls[(int)Wall.wLocation.north].getState() != Wall.wState.destroyed);
+        if (tempName[0] && tempName[1] && tempName[2] && tempName[3]) return CornerType.All;
+        if (!tempName[0] && tempName[1] && tempName[2] && tempName[3]) return CornerType.missingNorth;
+        if (tempName[0] && !tempName[1] && tempName[2] && tempName[3]) return CornerType.missingEast;
+        if (tempName[0] && tempName[1] && !tempName[2] && tempName[3]) return CornerType.missingSouth;
+        if (tempName[0] && tempName[1] && tempName[2] && !tempName[3]) return CornerType.missingWest;
+        if (tempName[0] && !tempName[1] && tempName[2] && !tempName[3]) return CornerType.lineVertical;
+        if (!tempName[0] && tempName[1] && !tempName[2] && tempName[3]) return CornerType.lineHorizontal;
+        if (tempName[0] && !tempName[1] && !tempName[2] && tempName[3]) return CornerType.cornerNorthWest;
+        if (tempName[0] && tempName[1] && !tempName[2] && !tempName[3]) return CornerType.cornerNorthEast;
+        if (!tempName[0] && tempName[1] && tempName[2] && !tempName[3]) return CornerType.cornerSouthEast;
+        if (!tempName[0] && !tempName[1] && tempName[2] && tempName[3]) return CornerType.cornerSouthWest;
+        if (tempName[0] && !tempName[1] && !tempName[2] && !tempName[3]) return CornerType.endNorth;
+        if (!tempName[0] && tempName[1] && !tempName[2] && !tempName[3]) return CornerType.endEast;
+        if (!tempName[0] && !tempName[1] && tempName[2] && !tempName[3]) return CornerType.endSouth;
+        if (!tempName[0] && !tempName[1] && !tempName[2] && tempName[3]) return CornerType.endWest;
+        return CornerType.None;
+    }
 }
+
+/*
+ * 
+ *  *-*-*
+ *  | | |
+ *  *-*-*
+ *  | | |
+ *  *-*-*
+ * 
+ * */

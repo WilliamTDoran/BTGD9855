@@ -55,6 +55,11 @@ public class Wall : MonoBehaviour
         state = s;
     }
 
+    internal bool edge()
+    {
+        return state == wState.exterior;
+    }
+
     //links two walls
     public void linkWall(Wall other)
     {

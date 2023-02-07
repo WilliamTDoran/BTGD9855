@@ -13,6 +13,27 @@ public enum Biome
 }
 
 
+internal enum CornerType
+{
+    All,
+    missingNorth,
+    missingEast,
+    missingSouth,
+    missingWest,
+    lineVertical,
+    lineHorizontal,
+    cornerNorthWest,
+    cornerNorthEast,
+    cornerSouthEast,
+    cornerSouthWest,
+    endNorth,
+    endEast,
+    endSouth,
+    endWest,
+    None
+}
+
+
 [System.Serializable]
 public class MazeVariables
 {

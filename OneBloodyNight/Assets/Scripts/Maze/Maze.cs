@@ -113,6 +113,7 @@ public class Maze : MonoBehaviour
         getCell((int)traits.width / 2 - 1, (int)traits.height / 2).generateMaze();
         mid.getWall((int)Wall.wLocation.east).remove(false);
         mid.getWall((int)Wall.wLocation.west).remove(false);
+        mid.drawWalls();
 
         //Wall removal
         //extraRemoval(toRemove);
