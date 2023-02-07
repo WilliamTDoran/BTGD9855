@@ -140,7 +140,7 @@ public class Attack : GameActor
     /// Ends the swing, and undoes any ongoing conditions (forced still, etc.) related to the attack
     /// Called by the animator at the end of the swing animation
     /// </summary>
-    public void EndSwing()
+    internal void EndSwing()
     {
         Debug.Log("End Swing");
 

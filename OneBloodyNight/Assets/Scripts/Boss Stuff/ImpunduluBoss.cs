@@ -11,6 +11,8 @@ public class ImpunduluBoss : Boss
 
     private Vector3 faceDirection;
 
+    private int lightningCycle = 0;
+
     [SerializeField]
     private Projectile[] feathers;
 
@@ -86,6 +88,9 @@ public class ImpunduluBoss : Boss
         else
         {
             lightnings[0].Initiate(Player.plr.Rb.position);
+
+            lightningCycle = lightningCycle > 2 ? 0 : lightningCycle + 1;
+
             StopRandomBehavior();
             StartRandomBehavior();
         }
