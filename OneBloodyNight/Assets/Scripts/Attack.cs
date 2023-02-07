@@ -198,6 +198,10 @@ public class Attack : GameActor
             {
                 attacker.OnSuccessfulAttack(attackerGrantedCode);
             }
+            else if (other.CompareTag("Wall"))
+            {
+                attacker.OnHitWall();
+            }
         }
     }
 

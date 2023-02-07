@@ -86,4 +86,9 @@ public class GameActor : MonoBehaviour
     {
 
     }
+
+    internal virtual void OnHitWall() //only used for projectile. a bit fucky and redundant frankly
+    {
+
+    }
 }

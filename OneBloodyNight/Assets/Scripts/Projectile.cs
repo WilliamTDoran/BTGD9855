@@ -22,4 +22,17 @@ public class Projectile : Attack
 
         canMove = true;
     }
+
+    internal override void OnHitWall()
+    {
+        base.OnHitWall();
+
+        FinishFlight();
+    }
+
+    internal void FinishFlight()
+    {
+        canMove = false;
+        gameObject.SetActive(false);
+    }
 }
