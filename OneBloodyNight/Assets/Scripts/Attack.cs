@@ -88,7 +88,7 @@ public class Attack : GameActor
     {
         attackerGrantedCode = code;
 
-        PositionAttack(); //The attack hitbox always exists, and needs to have its relative position to the attacker updated each time
+        if (attackerGrantedCode != "bat") { PositionAttack(); }//The attack hitbox always exists, and needs to have its relative position to the attacker updated each time. The bats thing is a hacky workaround that will likely get improved later
 
         if (forceStill) //Some attacks force the attacker to stand still
         {
@@ -164,7 +164,7 @@ public class Attack : GameActor
     /// <param name="other">A collider being overlapped. Each overlapped collider calls this function once</param>
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hit Detected");
+        Debug.Log("Hit Detected: " + other.gameObject.name);
 
         bool proceed = true; //In many cases, a detected trigger shouldn't actually move forward to a full attack. This handles that
 

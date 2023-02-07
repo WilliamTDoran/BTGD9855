@@ -2557,8 +2557,8 @@ GameObject:
   - component: {fileID: 666666517}
   - component: {fileID: 666666516}
   - component: {fileID: 666666515}
-  - component: {fileID: 666666514}
   - component: {fileID: 666666513}
+  - component: {fileID: 666666518}
   - component: {fileID: 666666511}
   m_Layer: 0
   m_Name: Bat Swarm
@@ -2576,7 +2576,7 @@ Transform:
   m_GameObject: {fileID: 666666509}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 1, z: 4}
+  m_LocalScale: {x: 6, y: 1, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1692689742}
@@ -2618,19 +2618,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &666666514
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666666509}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &666666515
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2690,14 +2677,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 666666509}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e8783b3a9448f0418295a25076458f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 06b9a14802aa44946bc3ec11c26ab924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
   immuneDuration: 0
   facingDebugText: {fileID: 0}
   canAttackDebugText: {fileID: 0}
-  damage: 1
+  damage: 2
   knockbackAmount: 0
   pushbackAmount: 0
   returnDrag: 0
@@ -2708,10 +2695,25 @@ MonoBehaviour:
   untargetableTags:
   - Player
   - Wall
+  - Floor
   attacker: {fileID: 1692689746}
   animator: {fileID: 666666511}
   showHitbox: 1
   hitboxMesh: {fileID: 666666515}
+--- !u!136 &666666518
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666666509}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 0.5
+  m_Height: 20
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &667031182
 GameObject:
   m_ObjectHideFlags: 0
@@ -6194,7 +6196,7 @@ MonoBehaviour:
   abilityOneCost: 50
   abilityTwoCost: 50
   basicAttack: {fileID: 1181192922}
-  swarmAttack: {fileID: 0}
+  swarmAttack: {fileID: 666666517}
   basicMaterial: {fileID: 2100000, guid: 053872da44d313045b55ece660ff3209, type: 2}
   invisibleMaterial: {fileID: 2100000, guid: 64b0d744dccde5f458fa051eb3da40cd, type: 2}
   berserkUpDebugText: {fileID: 134647538}

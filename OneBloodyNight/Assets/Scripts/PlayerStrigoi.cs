@@ -25,6 +25,8 @@ public class PlayerStrigoi : Player
     private float berserkCounter; //current berserk time, reset on call
     private float berserkUptime; //true berserk time, used for calculating incremental buffs
 
+    private int swarmCounter = 0; //current number of swarm ticks used
+
     private int basicAttackBaseDamage; //used for returning to default after berserk
     private float baseSpeed; //used for returning to default after berserk
     public float BaseSpeed { get { return baseSpeed; } set { baseSpeed = value; } }
@@ -82,6 +84,10 @@ public class PlayerStrigoi : Player
     [Tooltip("Duration of invisibility in seconds")]
     [SerializeField]
     private float invisibilityDuration = 3;
+
+    [Header("Bat Swarm")]
+    [Tooltip("Number of swarm ticks before expiry")]
+    private int batSwarmDuration = 20;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     protected override void Start()
@@ -151,7 +157,11 @@ public class PlayerStrigoi : Player
 
     private void BatSwarm()
     {
-        throw new NotImplementedException();
+        Bloodmeter.instance.changeBlood(-abilityTwoCost);
+
+        swarmCounter = 0;
+        swarmAttack.ForceStill = true;
+        swarmAttack.StartSwing(batCode);
     }
 
     private IEnumerator Berserk(float maxTime)
@@ -187,6 +197,16 @@ public class PlayerStrigoi : Player
         {
             canAttack = true;
         }
+        else if (code == batCode)
+        {
+            swarmAttack.ForceStill = false;
+
+            if (swarmCounter <= batSwarmDuration)
+            {
+                swarmCounter++;
+                swarmAttack.StartSwing(batCode);
+            }
+        }
     }
 
     internal override void OnSuccessfulAttack(string code)
@@ -212,13 +232,6 @@ public class PlayerStrigoi : Player
         Visible = true;
         spriteRenderer.material = basicMaterial;
     }
-
-    private IEnumerator Swarmed()
-    {
-        throw new NotImplementedException();
-    }
-
-
     
     private void StartInvisible()
     {
@@ -233,18 +246,6 @@ public class PlayerStrigoi : Player
 
         Visible = true;
         spriteRenderer.material = basicMaterial;
-    }
-
-    private void StartBatSwarm()
-    {
-        batSwarmCoroutine = Swarmed();
-        StartCoroutine(batSwarmCoroutine);
-    }
-
-    private void StopBatSwarm()
-    {
-        StopCoroutine(batSwarmCoroutine);
-        batSwarmCoroutine = null;
     }
 
     private void StartBerserk()
