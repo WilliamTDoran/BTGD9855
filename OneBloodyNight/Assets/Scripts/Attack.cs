@@ -106,7 +106,7 @@ public class Attack : GameActor
     /// Positions the attack somewhere in a 360 degree circle around the attacker. 
     /// Determined by finding the correct normalized position, then applying a distance scalar
     /// </summary>
-    private void PositionAttack()
+    protected void PositionAttack()
     {
         //Determines the angle the attack is facing, with 0 being screen-right, 90 being screen-down
         Quaternion facingAngleRotation = Quaternion.Euler(0, 0, attacker.FacingAngle + 90f); //Adding 90f is silly, but it works to align the numbers. Partially antiquated.
