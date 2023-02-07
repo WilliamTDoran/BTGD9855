@@ -120,7 +120,6 @@ public class Cell : MonoBehaviour
                         openWalls++;
                     }
                 }
-                drawWalls();
                 if (openWalls <= 1) // if it's a dead end
                 {
                     Maze.m.deadEnds.Add(this);

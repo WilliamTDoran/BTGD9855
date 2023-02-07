@@ -113,7 +113,6 @@ public class Maze : MonoBehaviour
         getCell((int)traits.width / 2 - 1, (int)traits.height / 2).generateMaze();
         mid.getWall((int)Wall.wLocation.east).remove(false);
         mid.getWall((int)Wall.wLocation.west).remove(false);
-        mid.drawWalls();
 
         //Wall removal
         //extraRemoval(toRemove);
@@ -121,6 +120,14 @@ public class Maze : MonoBehaviour
         MazeWallRemoval removal = new MazeWallRemoval();
         removal.removeWalls(Biome.impundulu);
         removal.removeWalls(Biome.yara);
+
+        for (int i=0; i<width(); i++)
+        { 
+            for (int j = 0; j < height(); j++)
+            {
+                getCell(i,j).drawWalls();
+            }
+        }
 
         //Object Placer
         //PlaceObject.place(Biome.yara, biomeVariables[(int)Biome.yara].objects[0]);

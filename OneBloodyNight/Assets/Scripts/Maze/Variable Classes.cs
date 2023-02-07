@@ -57,6 +57,7 @@ public class BiomeVariables
     public PlacableObject[] objects;
     public ArtVars North;
     public ArtVars East;
+    [Tooltip("Use the following order: All, missingNorth, missingEast, missingSouth, missingWest, lineVertical, lineHorizontal, cornerNorthWest, cornerNorthEast, cornerSouthEast, cornerSouthWest, endNorth, endEast, endSouth, endWest, None")]
     public ArtVars Corner;
 }
 
