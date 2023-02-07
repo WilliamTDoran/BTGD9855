@@ -58,7 +58,7 @@ public class CombatManager : MonoBehaviour
         }
         else if (target.CompareTag("Monster")) //Spins off damage and knockback functions for monsters
         {
-            HarmMonster(attacker, targetActor.gameObject.GetComponent<Monster>(), damageAmount);
+            HarmMonster(attacker, targetActor.gameObject.GetComponent<GameActor>(), damageAmount);
             ApplyKnockback(attacker, targetActor, knockbackAmount);
 
             return true;
