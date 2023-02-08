@@ -32,6 +32,7 @@ public class Projectile : Attack
 
     internal void FinishFlight()
     {
+        EndSwing();
         canMove = false;
         gameObject.SetActive(false);
     }
