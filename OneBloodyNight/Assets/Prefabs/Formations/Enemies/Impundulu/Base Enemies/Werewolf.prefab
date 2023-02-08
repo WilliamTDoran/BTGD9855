@@ -217,7 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5000
   immuneDuration: 0.5
-  maxHitPoints: 200
+  maxHitPoints: 160
   basicAttack: {fileID: 3237701248447046877}
   bloodOnKill: 35
   debugFollow: 1
@@ -373,13 +373,14 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   damage: 40
-  knockbackAmount: 10
+  knockbackAmount: 40
+  hitstunDuration: 0.2
   pushbackAmount: 2
   returnDrag: 18
   drag: 25
   wallPushbackScalar: 2
   forceStill: 1
-  floatDistance: 2.5
+  floatDistance: 2.7
   untargetableTags:
   - Wall
   - Monster
