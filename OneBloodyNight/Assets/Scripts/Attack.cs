@@ -29,6 +29,11 @@ public class Attack : GameActor
     private float knockbackAmount; //the amount of knockback dealt by the attack
     public float KnockbackAmount { get { return knockbackAmount; } set { knockbackAmount = value; } }
 
+    [Tooltip("The duration of hitstun. A duration of 0 means no hitstun")]
+    [SerializeField]
+    private float hitstunDuration; //the amount of hitstun dealt by the attack
+    public float HitstunDuration { get { return hitstunDuration; } }
+
     [Tooltip("The amount of pushback on the attacker")]
     [SerializeField]
     private float pushbackAmount; //the amount of pushback on the attacker
@@ -40,7 +45,7 @@ public class Attack : GameActor
 
     [Tooltip("Drag on rb when pushing back. Don't fuck with this unless you know what you're doing")]
     [SerializeField]
-    private float drag = 25f; //the drag value that's set during pushback to avoid weird drift
+    private float drag = 20f; //the drag value that's set during pushback to avoid weird drift
 
     [Tooltip("Multiplier for pushback when hitting a wall instead of a gameactor. 1 is identical.")]
     [SerializeField]

@@ -50,8 +50,8 @@ public class PlayerController : MonoBehaviour
     /// <returns>A Vector3 with intended direction stored in X,Y. Z is 0</returns>
     private Vector3 CheckDirection()
     {
-        float xDirection = Input.GetAxis("Horizontal");
-        float yDirection = Input.GetAxis("Vertical");
+        float xDirection = Input.GetAxisRaw("Horizontal");
+        float yDirection = Input.GetAxisRaw("Vertical");
 
         Vector3 newDirection = new Vector3(xDirection, yDirection, 0);
 

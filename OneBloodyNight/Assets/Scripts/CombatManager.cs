@@ -12,6 +12,7 @@ using UnityEngine.UI;
 public class CombatManager : MonoBehaviour
 {
     private IEnumerator immuneCoroutine; //drives i-frames
+    private IEnumerator hitstunCoroutine; //drives hitstun
 
     private static CombatManager instance; //static reference
     public static CombatManager Instance { get { return instance; } }
@@ -60,6 +61,8 @@ public class CombatManager : MonoBehaviour
         {
             HarmMonster(attacker, targetActor.gameObject.GetComponent<GameActor>(), damageAmount);
             ApplyKnockback(attacker, targetActor, knockbackAmount);
+            StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
+            StartHitstun(targetActor, used.HitstunDuration);
 
             return true;
         }
@@ -67,6 +70,8 @@ public class CombatManager : MonoBehaviour
         {
             Bloodmeter.instance.changeBlood(-damageAmount);
             ApplyKnockback(attacker, targetActor, knockbackAmount);
+            StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
+            StartHitstun(targetActor, used.HitstunDuration);
 
             return true;
         }
@@ -109,7 +114,7 @@ public class CombatManager : MonoBehaviour
 
         direction *= amount; //scales the knockback
 
-        targetRigidBody.AddForce(direction * amount, ForceMode.Impulse); //applies force
+        targetRigidBody.AddForce(direction, ForceMode.Impulse); //applies force
     }
 
     /// <summary>
@@ -127,6 +132,19 @@ public class CombatManager : MonoBehaviour
         target.Immune = false;
     }
 
+    /// <summary>
+    /// Prevents the target from taking action after being hit for a certain time.
+    /// </summary>
+    /// <returns>Functional return IEnumerator</returns>
+    private IEnumerator Hitstun(GameActor target, float hitstunDuration)
+    {
+        target.Stunned = true;
+
+        yield return new WaitForSeconds(hitstunDuration);
+
+        target.Stunned = false;
+    }
+
 
     private void StartImmuneCountdown(GameActor target, float immuneDuration)
     {
@@ -138,5 +156,17 @@ public class CombatManager : MonoBehaviour
     {
         StopCoroutine(immuneCoroutine);
         immuneCoroutine = null;
+    }
+
+    private void StartHitstun(GameActor target, float hitstunDuration)
+    {
+        hitstunCoroutine = Hitstun(target, hitstunDuration);
+        StartCoroutine(hitstunCoroutine);
+    }
+
+    private void StopHitstun()
+    {
+        StopCoroutine(hitstunCoroutine);
+        hitstunCoroutine = null;
     }
 }

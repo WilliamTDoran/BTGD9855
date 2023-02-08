@@ -35,6 +35,9 @@ public class GameActor : MonoBehaviour
     protected bool canAttack; //whether the actor can initiate attacks
     public bool CanAttack { get { return canAttack; } set { canAttack = value; } }
 
+    protected bool stunned; //whether the actor is affected by hitstun
+    public bool Stunned { get { return stunned; } set { stunned = value; } }
+
     protected bool immune; //whether the actor can take damage
     public bool Immune { get { return immune; } set { immune = value; } }
 
@@ -83,7 +86,7 @@ public class GameActor : MonoBehaviour
         load2Down = controller.Load2Down;
     }
 
-
+    //These are basically just here serving the same function as an interface cause I don't want to double up on both virtual inherited classes and also interfaces
     internal virtual void OnAttackEnd(string code)
     {
 
@@ -94,7 +97,7 @@ public class GameActor : MonoBehaviour
 
     }
 
-    internal virtual void OnHitWall() //only used for projectile. a bit fucky and redundant frankly
+    internal virtual void OnHitWall()
     {
 
     }

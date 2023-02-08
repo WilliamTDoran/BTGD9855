@@ -67,6 +67,7 @@ public class Player : GameActor
         base.Start();
         canMove = true;
         canAttack = true;
+        speed *= 10;
     }
 
     /// <summary>
@@ -74,9 +75,10 @@ public class Player : GameActor
     /// </summary>
     private void FixedUpdate()
     {
-        if (canMove)
+        if (canMove && !stunned)
         {
-            rb.velocity = controller.IntendedDirection * speed;
+            //rb.velocity = controller.IntendedDirection * speed;
+            rb.AddForce(controller.IntendedDirection * speed, ForceMode.Force);
         }
     }
 

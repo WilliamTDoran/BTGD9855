@@ -107,7 +107,7 @@ public class PlayerStrigoi : Player
     {
         base.Update();
 
-        if (basicAttackDown && canAttack && !GameManager.instance.GCD(false))
+        if (basicAttackDown && canAttack && !stunned && !GameManager.instance.GCD(false))
         {
             basicAttack.StartSwing(basicCode);
             canAttack = false;
@@ -129,7 +129,7 @@ public class PlayerStrigoi : Player
                 break;
 
             case 1:
-                if (!GameManager.instance.GCD(true))
+                if (!stunned && !GameManager.instance.GCD(true))
                 {
                     bullet = 0;
                     Invisibility();
@@ -137,7 +137,7 @@ public class PlayerStrigoi : Player
                 break;
 
             case 2:
-                if (!GameManager.instance.GCD(true))
+                if (!stunned && !GameManager.instance.GCD(true))
                 {
                     bullet = 0;
                     BatSwarm();

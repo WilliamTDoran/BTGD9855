@@ -53,6 +53,7 @@ public class RemoteAttack : Attack
             hitboxMesh.enabled = false;
         }
         gameObject.SetActive(false);
+        EndSwing();
     }
 
     private void StartFire()
