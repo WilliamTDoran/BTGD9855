@@ -2687,8 +2687,8 @@ MonoBehaviour:
   knockbackAmount: 5
   hitstunDuration: 0
   pushbackAmount: 0
-  returnDrag: 0
-  drag: 25
+  returnDrag: 10
+  drag: 20
   wallPushbackScalar: 0
   forceStill: 0
   floatDistance: 0
