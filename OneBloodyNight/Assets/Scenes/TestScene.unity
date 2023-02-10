@@ -3073,7 +3073,22 @@ MonoBehaviour:
       - {fileID: 3111108264678135816, guid: 865eaccaf9b23134fb6e77f99f9caff0, type: 3}
     Corner:
       offSet: {x: 12, y: 12, z: 0}
-      Sprites: []
+      Sprites:
+      - {fileID: 3111108264678135816, guid: 683681e394852804e97cbf6d68214cf3, type: 3}
+      - {fileID: 3111108264678135816, guid: 8acda8b8d71dbcf47b6855d3281be635, type: 3}
+      - {fileID: 3111108264678135816, guid: 2ff69d28dfb64ed4d9f2645afd466630, type: 3}
+      - {fileID: 3111108264678135816, guid: a05beb7186819b442aca6002f1570371, type: 3}
+      - {fileID: 3111108264678135816, guid: 9a6a392e98b3e0c429f730677a1bfec0, type: 3}
+      - {fileID: 3111108264678135816, guid: 23c0caf5564e5024ba5f52035a152503, type: 3}
+      - {fileID: 3111108264678135816, guid: 918692a8ac482474bbef4a2b43b1a6c8, type: 3}
+      - {fileID: 3111108264678135816, guid: 2ff69d28dfb64ed4d9f2645afd466630, type: 3}
+      - {fileID: 3111108264678135816, guid: 9a6a392e98b3e0c429f730677a1bfec0, type: 3}
+      - {fileID: 3111108264678135816, guid: 05c8ee2075c6f9e479f13d29ac0eab09, type: 3}
+      - {fileID: 3111108264678135816, guid: fbbf7e58d9a74c6438ecd22282bd53db, type: 3}
+      - {fileID: 3111108264678135816, guid: 4ae10961adfb04645a271c8014b024c0, type: 3}
+      - {fileID: 3111108264678135816, guid: d23de4974a612c44eaf2417c6d22f406, type: 3}
+      - {fileID: 3111108264678135816, guid: 4ae10961adfb04645a271c8014b024c0, type: 3}
+      - {fileID: 3111108264678135816, guid: ec215e026c6599541b39c858324d3aa6, type: 3}
   - colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
     wallsRemoved: 150
     maxCellDifficulty: 10

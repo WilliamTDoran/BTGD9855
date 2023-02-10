@@ -48,10 +48,10 @@ public class Cell : MonoBehaviour
         biome = b;
     }
 
-    void Update()
+    /*void Update()
     {
         //floor.GetComponent<Renderer>().material.color = Maze.m.biomeVariables[(int)biome].colour;
-    }
+    }*/
 
     public bool isInMaze()
     {
