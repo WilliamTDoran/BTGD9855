@@ -4494,8 +4494,8 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   damage: 20
-  knockbackAmount: 1600
-  hitstunDuration: 0.3
+  knockbackAmount: 1800
+  hitstunDuration: 0.4
   pushbackAmount: 150
   returnDrag: 10
   drag: 20
