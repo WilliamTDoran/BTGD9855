@@ -3024,6 +3024,7 @@ MonoBehaviour:
     width: 21
     height: 21
     scale: 16
+    betweenCells: 8
     CharacterBiome: 0
   mazeSeed: -1
   sampleRow: {fileID: 3985245215676089212, guid: ee78c11f6f19f724b84ac746fcad03bf, type: 3}
@@ -3033,30 +3034,45 @@ MonoBehaviour:
     maxCellDifficulty: 0
     objects: []
     North:
-      offSet: 4
+      offSet: {x: 4, y: 0, z: 0}
       Sprites:
       - {fileID: 3111108264678135816, guid: 83f44c9c754e9fe438a0dd0ac03839a4, type: 3}
     East:
-      offSet: 4
+      offSet: {x: 0, y: 4, z: 0}
       Sprites:
       - {fileID: 3111108264678135816, guid: 83f44c9c754e9fe438a0dd0ac03839a4, type: 3}
     Corner:
-      offSet: 0
-      Sprites: []
+      offSet: {x: 0, y: 0, z: 0}
+      Sprites:
+      - {fileID: 3111108264678135816, guid: 683681e394852804e97cbf6d68214cf3, type: 3}
+      - {fileID: 3111108264678135816, guid: 8acda8b8d71dbcf47b6855d3281be635, type: 3}
+      - {fileID: 3111108264678135816, guid: 2ff69d28dfb64ed4d9f2645afd466630, type: 3}
+      - {fileID: 3111108264678135816, guid: a05beb7186819b442aca6002f1570371, type: 3}
+      - {fileID: 3111108264678135816, guid: 9a6a392e98b3e0c429f730677a1bfec0, type: 3}
+      - {fileID: 3111108264678135816, guid: 23c0caf5564e5024ba5f52035a152503, type: 3}
+      - {fileID: 3111108264678135816, guid: 918692a8ac482474bbef4a2b43b1a6c8, type: 3}
+      - {fileID: 3111108264678135816, guid: 2ff69d28dfb64ed4d9f2645afd466630, type: 3}
+      - {fileID: 3111108264678135816, guid: 9a6a392e98b3e0c429f730677a1bfec0, type: 3}
+      - {fileID: 3111108264678135816, guid: 05c8ee2075c6f9e479f13d29ac0eab09, type: 3}
+      - {fileID: 3111108264678135816, guid: fbbf7e58d9a74c6438ecd22282bd53db, type: 3}
+      - {fileID: 3111108264678135816, guid: 4ae10961adfb04645a271c8014b024c0, type: 3}
+      - {fileID: 3111108264678135816, guid: d23de4974a612c44eaf2417c6d22f406, type: 3}
+      - {fileID: 3111108264678135816, guid: 4ae10961adfb04645a271c8014b024c0, type: 3}
+      - {fileID: 3111108264678135816, guid: ec215e026c6599541b39c858324d3aa6, type: 3}
   - colour: {r: 0.6415094, g: 0, b: 0, a: 1}
     wallsRemoved: 15
     maxCellDifficulty: 1
     objects: []
     North:
-      offSet: 4
+      offSet: {x: 4, y: 0, z: 0}
       Sprites:
       - {fileID: 3111108264678135816, guid: 83f44c9c754e9fe438a0dd0ac03839a4, type: 3}
     East:
-      offSet: 4
+      offSet: {x: 0, y: 4, z: 0}
       Sprites:
       - {fileID: 3111108264678135816, guid: 865eaccaf9b23134fb6e77f99f9caff0, type: 3}
     Corner:
-      offSet: 0
+      offSet: {x: 0, y: 0, z: 0}
       Sprites: []
   - colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
     wallsRemoved: 150
@@ -3123,7 +3139,7 @@ MonoBehaviour:
       maxPlaced: 18
       minPlaced: 10
     North:
-      offSet: 4
+      offSet: {x: 4, y: 0, z: 0}
       Sprites:
       - {fileID: 3111108264678135816, guid: 83f44c9c754e9fe438a0dd0ac03839a4, type: 3}
       - {fileID: 3111108264678135816, guid: 588a373411c00f047b8c4e37bebac1ae, type: 3}
@@ -3142,28 +3158,28 @@ MonoBehaviour:
       - {fileID: 3111108264678135816, guid: 8d7a92b38b43adf4a8e2c15aaad281e4, type: 3}
       - {fileID: 3111108264678135816, guid: 81b26c1f5c82e26419945689b98c54bf, type: 3}
     East:
-      offSet: 4
+      offSet: {x: 0, y: 4, z: 0}
       Sprites:
       - {fileID: 3111108264678135816, guid: 865eaccaf9b23134fb6e77f99f9caff0, type: 3}
       - {fileID: 3111108264678135816, guid: a836778a2792839479788f2bdb2fe31b, type: 3}
     Corner:
-      offSet: 8
+      offSet: {x: 12, y: 12, z: 0}
       Sprites:
-      - {fileID: 3111108264678135816, guid: cc63bd3b9cdf598458f488455d873009, type: 3}
-      - {fileID: 3111108264678135816, guid: cc63bd3b9cdf598458f488455d873009, type: 3}
-      - {fileID: 3111108264678135816, guid: 8fc91f6f659d5b44383e8d56b01a947f, type: 3}
-      - {fileID: 3111108264678135816, guid: cc63bd3b9cdf598458f488455d873009, type: 3}
-      - {fileID: 3111108264678135816, guid: 42d3fe8e94e67354f90f2945bf6b2c8e, type: 3}
-      - {fileID: 3111108264678135816, guid: 865eaccaf9b23134fb6e77f99f9caff0, type: 3}
+      - {fileID: 3111108264678135816, guid: 683681e394852804e97cbf6d68214cf3, type: 3}
+      - {fileID: 3111108264678135816, guid: 8acda8b8d71dbcf47b6855d3281be635, type: 3}
+      - {fileID: 3111108264678135816, guid: 2ff69d28dfb64ed4d9f2645afd466630, type: 3}
+      - {fileID: 3111108264678135816, guid: a05beb7186819b442aca6002f1570371, type: 3}
+      - {fileID: 3111108264678135816, guid: 9a6a392e98b3e0c429f730677a1bfec0, type: 3}
+      - {fileID: 3111108264678135816, guid: 23c0caf5564e5024ba5f52035a152503, type: 3}
+      - {fileID: 3111108264678135816, guid: 918692a8ac482474bbef4a2b43b1a6c8, type: 3}
+      - {fileID: 3111108264678135816, guid: 2ff69d28dfb64ed4d9f2645afd466630, type: 3}
+      - {fileID: 3111108264678135816, guid: 9a6a392e98b3e0c429f730677a1bfec0, type: 3}
+      - {fileID: 3111108264678135816, guid: 05c8ee2075c6f9e479f13d29ac0eab09, type: 3}
+      - {fileID: 3111108264678135816, guid: fbbf7e58d9a74c6438ecd22282bd53db, type: 3}
+      - {fileID: 3111108264678135816, guid: 4ae10961adfb04645a271c8014b024c0, type: 3}
       - {fileID: 3111108264678135816, guid: d23de4974a612c44eaf2417c6d22f406, type: 3}
-      - {fileID: 3111108264678135816, guid: 8fc91f6f659d5b44383e8d56b01a947f, type: 3}
-      - {fileID: 3111108264678135816, guid: 42d3fe8e94e67354f90f2945bf6b2c8e, type: 3}
-      - {fileID: 3111108264678135816, guid: ad0aacc139ac6b0468fc9659f8e9864c, type: 3}
-      - {fileID: 3111108264678135816, guid: d23de4974a612c44eaf2417c6d22f406, type: 3}
-      - {fileID: 3111108264678135816, guid: 4ff8b95aa62738d43af970f2f8a588ff, type: 3}
-      - {fileID: 3111108264678135816, guid: c5ce5156c5cee3741adaf8aaff3d966f, type: 3}
-      - {fileID: 3111108264678135816, guid: 4ff8b95aa62738d43af970f2f8a588ff, type: 3}
-      - {fileID: 3111108264678135816, guid: 4ff8b95aa62738d43af970f2f8a588ff, type: 3}
+      - {fileID: 3111108264678135816, guid: 4ae10961adfb04645a271c8014b024c0, type: 3}
+      - {fileID: 3111108264678135816, guid: ec215e026c6599541b39c858324d3aa6, type: 3}
 --- !u!4 &750604040
 Transform:
   m_ObjectHideFlags: 0

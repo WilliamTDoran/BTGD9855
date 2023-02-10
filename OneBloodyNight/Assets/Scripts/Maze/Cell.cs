@@ -139,9 +139,9 @@ public class Cell : MonoBehaviour
         walls[(int)Wall.wLocation.north].placeNorthSprites(getBiome());
         walls[(int)Wall.wLocation.east].placeEastSprites(getBiome());
         CornerType corner = Corner();
-        if (Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites.Length > (int)corner)
+        if (Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites.Length > (int)corner && Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[(int)corner] != null)
         {
-            GameObject temp = Instantiate(Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[(int)corner], new Vector3(transform.position.x + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet, transform.position.y + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet, Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[(int)corner].transform.position.z), Quaternion.identity, transform);
+            GameObject temp = Instantiate(Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[(int)corner], new Vector3(transform.position.x + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.x, transform.position.y + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.y, Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[(int)corner].transform.position.z), Quaternion.identity, transform);
         }
         if (walls[(int)Wall.wLocation.west].edge())
         {
@@ -151,10 +151,10 @@ public class Cell : MonoBehaviour
         {
             walls[(int)Wall.wLocation.south].placeNorthSprites(getBiome());
         }
-        if (getBiome() == Biome.yara)
+        /*if (getBiome() == Biome.yara)
         {
             transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().color = Color.cyan;
-        }
+        }*/
     }
 
     internal CornerType Corner()
