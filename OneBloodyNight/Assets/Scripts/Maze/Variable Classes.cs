@@ -40,7 +40,7 @@ public class MazeVariables
     public int width;
     public int height;
     public float scale;
-    //public float forceCloser;
+    public float betweenCells;
     public Biome CharacterBiome;
 }
 
@@ -75,7 +75,7 @@ public class PlacableObject
 [System.Serializable]
 public class ArtVars
 {
-    public int offSet;
+    public Vector3 offSet;
     public GameObject[] Sprites;
 }
 

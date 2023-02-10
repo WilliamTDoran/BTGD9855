@@ -53,31 +53,35 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    /*private void OnTriggerExit(Collider other)
     {
 
         if (other.tag == "Player")
         {
             unload();
         }
-    }
+    }*/
 
     private void load()
     {
         //Debug.Log("Collision enter! " + other.gameObject.name);
-            //Debug.Log("in");
-            if (spawns == null)
-            {
-                return;
-            }
-            //Load spawns in
-            foreach (Spawn s in spawns)
-            {
+        //Debug.Log("in");
+        if (spawns == null)
+        {
+            return;
+        }
+        //Load spawns in
+        foreach (Spawn s in spawns)
+        {
             //Debug.Log(s.obj.name + " just moved from " + s.obj.transform.position.x + ", " + s.obj.transform.position.y + " to ");
-                s.obj.transform.position = new Vector3(s.x - Maze.m.width() / 2.0f * Maze.m.traits.scale, s.y + 2 * Maze.m.traits.scale, s.obj.transform.position.z);
-                //Debug.Log(s.obj.transform.position.x + ", " + s.obj.transform.position.y + " to ");
-                s.obj.SetActive(true);
+            //s.obj.transform.position = new Vector3(s.x - Maze.m.width() / 2.0f * Maze.m.traits.scale, s.y + 2 * Maze.m.traits.scale, s.obj.transform.position.z);
+            if (!s.obj.gameObject.activeInHierarchy)
+            {
+                s.obj.transform.position = new Vector3(transform.position.x + s.x, transform.position.y + s.y, s.obj.transform.position.z);
             }
+            //Debug.Log(s.obj.transform.position.x + ", " + s.obj.transform.position.y + " to ");
+            s.obj.SetActive(true);
+        }
     }
 
 
