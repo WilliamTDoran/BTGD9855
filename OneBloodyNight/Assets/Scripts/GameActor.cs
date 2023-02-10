@@ -11,18 +11,10 @@ using UnityEngine;
 /// 
 /// Version 1.0 (1/10/2023), Will Doran
 /// Version 1.1 (2/8/2023),  Will Doran
+/// Version 1.2 (2/10/2023), Will Doran
 /// </summary>
 public class GameActor : MonoBehaviour
 {
-    private GameObject controllerObj; //gameObject with the playercontroller script on it
-    protected PlayerController controller; //said playercontroller script
-
-    protected bool interactDown;
-    protected bool basicAttackDown;
-    protected bool advancedAttackDown;
-    protected bool load1Down;
-    protected bool load2Down;
-
     protected float facingAngle; //the direction the actor is 'facing' in degrees (has no inherent bearing on the object's actual transform rotation)
     public float FacingAngle { get { return facingAngle; } }
 
@@ -74,23 +66,21 @@ public class GameActor : MonoBehaviour
     }
 
     /// <summary>
-    /// Standard start, getting references to useful objects.
+    /// Standard start. 
+    /// Used to hold code related to getting control input, but after certain aspects of the monster code changed it no longer made sense to put it here
     /// </summary>
     protected virtual void Start()
     {
-        controllerObj = GameObject.Find("PlayerController");
-        controller = controllerObj.GetComponent<PlayerController>();
-
-        Debug.Assert(controller != null, "No controller set on: " + gameObject.name);
+        
     }
 
+    /// <summary>
+    /// Standard update. 
+    /// Used to hold code related to getting control input, but after certain aspects of the monster code changed it no longer made sense to put it here
+    /// </summary>
     protected virtual void Update()
     {
-        interactDown = controller.InteractDown;
-        basicAttackDown = controller.BasicFireDown;
-        advancedAttackDown = controller.AdvancedFireDown;
-        load1Down = controller.Load1Down;
-        load2Down = controller.Load2Down;
+
     }
 
     //These are basically just here serving the same function as an interface cause I don't want to double up on both virtual inherited classes and also interfaces

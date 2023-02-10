@@ -47,9 +47,6 @@ public class Monster : GameActor
 
         //Debug.Log(gameObject.name + " " + curHitPoints);
 
-        facingAngle = Vector3.SignedAngle(Vector3.right, controller.IntendedDirection, Vector3.forward);
-        facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
-
         if (CurHitPoints <= 0)
         {
             Bloodmeter.instance.bloodmeter.value += bloodOnKill;
