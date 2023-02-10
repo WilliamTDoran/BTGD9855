@@ -7,10 +7,11 @@ using UnityEngine;
 /// This is a parent class that handles all activated attacks and hit-boxed abilities.
 /// 
 /// Version 1.0 (1/24/2023), Will Doran
+/// Version 1.1 (2/8/2023),  Will Doran
 /// </summary>
 public class Attack : GameActor
 {
-    private string attackerGrantedCode; 
+    private string attackerGrantedCode; //A unique ID that gets passed between attacker and attack. Used for activating functions that key off of moments in particular attacks
     private string swingTrigger = "Swing"; //Literally just a string for referencing the animator trigger
     private Vector3 attackerFacingDirection; //The direction the attacker is facing, as determined by the most recent direction they've moved
 

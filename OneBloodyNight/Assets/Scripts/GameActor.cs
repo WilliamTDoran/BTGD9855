@@ -6,10 +6,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
-/// All active gameObjects in scene inherit from this parent class, which holds a number of crucial variables that almost every attribute needs
-/// This facilitates easy access and communication between discrete objects, and avoids repetition of shared attributes various entity types.
+/// All active GameObjects in scene inherit from this parent class, which holds a number of crucial variables that almost every actor needs
+/// This facilitates easy access and communication between discrete objects, and avoids repetition of shared attributes among various entity types.
 /// 
 /// Version 1.0 (1/10/2023), Will Doran
+/// Version 1.1 (2/8/2023),  Will Doran
 /// </summary>
 public class GameActor : MonoBehaviour
 {
@@ -22,12 +23,12 @@ public class GameActor : MonoBehaviour
     protected bool load1Down;
     protected bool load2Down;
 
-    protected float facingAngle;
+    protected float facingAngle; //the direction the actor is 'facing' in degrees (has no inherent bearing on the object's actual transform rotation)
     public float FacingAngle { get { return facingAngle; } }
 
-    protected Rigidbody rb;
+    protected Rigidbody rb; //the rigidbody attached the actor's gameObject
     public Rigidbody Rb { get { return rb; } }
-    protected Collider col;
+    protected Collider col; //the collider attached to the actor's gameObject
 
     protected bool canMove; //whether the actor can (willingly) move
     public bool CanMove { get { return canMove; } set { canMove = value; } }
@@ -41,7 +42,7 @@ public class GameActor : MonoBehaviour
     protected bool immune; //whether the actor can take damage
     public bool Immune { get { return immune; } set { immune = value; } }
 
-    private int curHitPoints;
+    private int curHitPoints; //current hit points of the actor, if applicable. Only relevant for monsters and bosses
     public int CurHitPoints { get { return curHitPoints; } set { curHitPoints = value; } }
 
     /* Exposed Variables */
@@ -60,6 +61,9 @@ public class GameActor : MonoBehaviour
     public int MaxHitPoints { get { return maxHitPoints; } set { maxHitPoints = value; } }
     /* -~-~-~-~-~-~-~-~- */
 
+    /// <summary>
+    /// Standard awake, getting references to key components
+    /// </summary>
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -69,6 +73,9 @@ public class GameActor : MonoBehaviour
         Debug.Assert(col != null, "No collider set on: " + gameObject.name);
     }
 
+    /// <summary>
+    /// Standard start, getting references to useful objects.
+    /// </summary>
     protected virtual void Start()
     {
         controllerObj = GameObject.Find("PlayerController");

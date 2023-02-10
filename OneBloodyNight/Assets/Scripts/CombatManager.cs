@@ -8,6 +8,7 @@ using UnityEngine.UI;
 /// Primarily damage and knockback; pushback is handled individually
 /// 
 /// Version 1.0 (2/2/2023), Will Doran
+/// Version 1.1 (2/8/2023), Will Doran
 /// </summary>
 public class CombatManager : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class CombatManager : MonoBehaviour
 
             return false;
         }
-        else if (target.CompareTag("Monster")) //Spins off damage and knockback functions for monsters
+        else if (target.CompareTag("Monster")) //Spins off damage, knockback, immunity, and hitstun functions for monsters (and bosses, even though they aren't *technically* monsters)
         {
             HarmMonster(attacker, targetActor.gameObject.GetComponent<GameActor>(), damageAmount);
             ApplyKnockback(attacker, targetActor, knockbackAmount);
@@ -66,7 +67,7 @@ public class CombatManager : MonoBehaviour
 
             return true;
         }
-        else if (target.CompareTag("Player")) //Reduces blood meter and spins off knockback for players
+        else if (target.CompareTag("Player")) //Reduces blood meter and spins off knockback, immunity, and hitstun for players
         {
             Bloodmeter.instance.changeBlood(-damageAmount);
             ApplyKnockback(attacker, targetActor, knockbackAmount);
@@ -76,7 +77,7 @@ public class CombatManager : MonoBehaviour
             return true;
         }
 
-        return false; //Should never be reached
+        return false; //Should never be reached. Only here to avoid a compile-time error
     }
     
     /// <summary>
@@ -146,6 +147,7 @@ public class CombatManager : MonoBehaviour
     }
 
 
+    //~~The Coroutine Section~~
     private void StartImmuneCountdown(GameActor target, float immuneDuration)
     {
         immuneCoroutine = ImmuneCountdown(target, immuneDuration);
