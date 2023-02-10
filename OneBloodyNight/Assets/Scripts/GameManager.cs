@@ -11,22 +11,28 @@ using TMPro;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
-    internal static GameManager instance;
+    internal static GameManager instance; //static reference
 
-    private static bool globalCooldownVar = false;
-    private IEnumerator gcdCoroutine;
+    private static bool globalCooldownVar = false; //whether the global cooldown is active. true means it is active
+    private IEnumerator gcdCoroutine; //coroutine to drive gcd
 
     /* Exposed Variables */
     [Tooltip("The duration in seconds of the global cooldown")]
     [SerializeField]
     private float globalCooldownDuration = 0.1f;
 
+    [Tooltip("The canvas containing debug text")]
     [SerializeField]
     private GameObject debugCanvas;
+
+    [Tooltip("The debug text for indicating gcd activity")]
     [SerializeField]
     private TextMeshProUGUI gcdDebugText;
     /*~~~~~~~~~~~~~~~~~~~*/
 
+    /// <summary>
+    /// Standard awake, just used for creating a static reference.
+    /// </summary>
     private void Awake()
     {
         if (instance != null & instance != this)
@@ -39,16 +45,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Standard Update. Handles debug stuff.
+    /// </summary>
     private void Update()
     {
         gcdDebugText.text = globalCooldownVar + "";
 
-        if (Input.GetKeyDown(KeyCode.F1))
+        if (Input.GetKeyDown(KeyCode.F1)) //debug text is toggleable
         {
             debugCanvas.SetActive(!debugCanvas.activeInHierarchy);
         }
     }
 
+    /// <summary>
+    /// Runs the global cooldown countdown. Doesn't actually *do* anything on its own other than 'be a timer'
+    /// </summary>
+    /// <returns>Functional IEnumerator return</returns>
     private IEnumerator GlobalCooldown()
     {
         globalCooldownVar = true;
@@ -56,17 +69,25 @@ public class GameManager : MonoBehaviour
         globalCooldownVar = false;
     }
 
+    /// <summary>
+    /// Accessible call to the GCD, which also runs it if called for.
+    /// </summary>
+    /// <param name="start">Whether this call should activate the GCD if it's not already active. True is yes it should</param>
+    /// <returns>Whether the GCD is active at call-time (so if wasn't active, and this function starts it, it still returns false)</returns>
     internal bool GCD(bool start)
     {
         if ((!globalCooldownVar) && start)
         {
-            StartGlobalCooldown();
+            StartGlobalCooldown(); //If called for, this function both starts the GCD and returns its call-time state.
             return false;
         }
 
         return globalCooldownVar;
     }
 
+    /// <summary>
+    /// Currently not used, but this is here in case anything is added which clears the GCD time.
+    /// </summary>
     internal void ResetGCD()
     {
         StopGlobalCooldown();
@@ -75,7 +96,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-
+    //~~The Coroutine Section~~
     private void StartGlobalCooldown()
     {
         gcdCoroutine = GlobalCooldown();

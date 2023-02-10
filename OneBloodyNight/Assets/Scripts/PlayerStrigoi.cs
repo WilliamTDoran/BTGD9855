@@ -16,7 +16,7 @@ using UnityEngine;
 /// </summary>
 public class PlayerStrigoi : Player
 {
-    private string basicCode = "basic";
+    private string basicCode = "basic"; //see Attack comments for attackerGrantedCode
     private string batCode = "bat";
 
     private IEnumerator berserkCoroutine; //runs bloodthirst
@@ -91,6 +91,9 @@ public class PlayerStrigoi : Player
     private int batSwarmDuration = 20;
     /*~~~~~~~~~~~~~~~~~~~*/
 
+    /// <summary>
+    /// Standard Start function. Sets some values needed for berserk
+    /// </summary>
     protected override void Start()
     {
         base.Start();
@@ -107,11 +110,11 @@ public class PlayerStrigoi : Player
     {
         base.Update();
 
-        if (basicAttackDown && canAttack && !stunned && !GameManager.instance.GCD(false))
+        if (basicAttackDown && canAttack && !stunned && !GameManager.instance.GCD(false)) //bit messy all these checks, but it gets the job done and makes it actually pretty airtight
         {
             basicAttack.StartSwing(basicCode);
             canAttack = false;
-            StopInvisible();
+            StopInvisible(); //attacking cancels invisibility
         }
 
         canAttackDebugText.text = canAttack + "";
@@ -119,36 +122,44 @@ public class PlayerStrigoi : Player
         berserkSpeedDebugText.text = speed + "";
     }
 
+    /// <summary>
+    /// Launches advanced fire when called. Takes an int parameter that represents which, if any, of the strigoi's special attacks are loaded.
+    /// This gets a bit redundant since each player type needs essentially this exact code, but just calling different functions, but for only 3 player types it's not the worst.
+    /// </summary>
+    /// <param name="bullet">Which advanced ability is loaded. 0 for none, 1 for invisibility, 2 for bat swarm.</param>
     protected override void AdvancedFire(ref int bullet)
     {
         base.AdvancedFire(ref bullet);
 
         switch(bullet)
         {
-            case 0:
+            case 0: //no bullet is loaded
                 break;
 
-            case 1:
+            case 1: //invisibility is loaded
                 if (!stunned && !GameManager.instance.GCD(true))
                 {
-                    bullet = 0;
+                    bullet = 0; //resets the bullet after firing. if you can't fire, the bullet stays loaded. this might change in future
                     Invisibility();
                 }
                 break;
 
-            case 2:
+            case 2: //bat swarm is loaded
                 if (!stunned && !GameManager.instance.GCD(true))
                 {
-                    bullet = 0;
+                    bullet = 0; //resets the bullet after firing. if you can't fire, the bullet stays loaded. this might change in future
                     BatSwarm();
                 }
                 break;
 
-            default:
+            default: //this should never happen
                 break;
         }
     }
 
+    /// <summary>
+    /// Drains the appropriate amount of blood then calls up the invisibility coroutine.
+    /// </summary>
     private void Invisibility()
     {
         Bloodmeter.instance.changeBlood(-abilityOneCost);

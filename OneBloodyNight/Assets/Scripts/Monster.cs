@@ -9,9 +9,9 @@ using UnityEngine;
 /// </summary>
 public class Monster : GameActor
 {
-    private Player player;
+    private Player player; //reference to the player. kind of antequated since its from before Player.cs had static reference, but whatever
 
-    private string refCode1 = "basic";
+    private string refCode1 = "basic"; //See Attack comments on attackerGrantedCode
 
     /* Exposed Variables */
     [Tooltip("A reference to the monster's basic attack object")]
@@ -27,6 +27,10 @@ public class Monster : GameActor
     private bool debugFollow;
     /*~~~~~~~~~~~~~~~~~~~*/
 
+    /// <summary>
+    /// Standard Start function. Initializes important values and gets references.
+    /// Currently also starts the shitty basic attack timing that's just used for testing.
+    /// </summary>
     protected override void Start()
     {
         base.Start();
@@ -41,6 +45,9 @@ public class Monster : GameActor
         player = Player.plr;
     }
 
+    /// <summary>
+    /// Standard Update function. Drives death.
+    /// </summary>
     protected override void Update()
     {
         base.Update();
@@ -54,6 +61,9 @@ public class Monster : GameActor
         }
     }
 
+    /// <summary>
+    /// Standard FixedUpdate function. Drives monster movement
+    /// </summary>
     private void FixedUpdate()
     {
         if (debugFollow && player.Visible)
@@ -62,6 +72,10 @@ public class Monster : GameActor
         }
     }
 
+    /// <summary>
+    /// A called-to function to drive things that happen at the end of an attack. Used for resetting canAttack
+    /// </summary>
+    /// <param name="code">the granted code to identify which attack is ending</param>
     internal override void OnAttackEnd(string code)
     {
         base.OnAttackEnd(code);
@@ -70,6 +84,10 @@ public class Monster : GameActor
         Debug.Log("Werewolf Swing Done");
     }
 
+    /// <summary>
+    /// A temporary function for a rudimentary attack cycle. Will be replaced.
+    /// </summary>
+    /// <returns>Functional IEnumerator return</returns>
     private IEnumerator DebugAttackCycle()
     {
         while (true)
@@ -84,6 +102,9 @@ public class Monster : GameActor
         }
     }
 
+    /// <summary>
+    /// A temporary function for a rudimentary monster chasing ai. Will be replaced.
+    /// </summary>
     private void DebugCharge()
     {
         if (canMove && !player.Immune)
