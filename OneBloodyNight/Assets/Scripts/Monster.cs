@@ -97,8 +97,11 @@ public class Monster : GameActor
             facingAngle = Vector3.SignedAngle(Vector3.right, (player.Rb.position - rb.position), Vector3.forward);
             facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
 
-            if (canAttack && !Stunned) { basicAttack.StartSwing(refCode1); }
-            canAttack = false;
+            if (canAttack && !Stunned) 
+            { 
+                basicAttack.StartSwing(refCode1);
+                canAttack = false;
+            }
         }
     }
 
