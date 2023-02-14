@@ -173,7 +173,7 @@ public class CombatManager : MonoBehaviour
         Vector3 targetPosition = target.Rb.position;
         Vector3 direction = targetPosition - attackerPosition;
 
-        int layerMask = 1 << 3;
+        int layerMask = 1 << 6;
 
         return Physics.Raycast(attacker.Rb.position, direction, direction.magnitude, layerMask);
     }
