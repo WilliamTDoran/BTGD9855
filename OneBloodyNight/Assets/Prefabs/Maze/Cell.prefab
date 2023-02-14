@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9148206519383269817}
   - component: {fileID: 1023450959969118866}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Texture (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -742,7 +742,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4492775949542441957}
   - component: {fileID: 7328389363215842442}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Texture (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1048,7 +1048,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3801751059530992802}
   - component: {fileID: 2328859622455810908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilesheet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1134,12 +1134,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1460250183825578106, guid: a41e1c470294d1c4b81b1ba36a5ef91a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1460250183825578106, guid: a41e1c470294d1c4b81b1ba36a5ef91a, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3275213643913388252, guid: a41e1c470294d1c4b81b1ba36a5ef91a, type: 3}
       propertyPath: m_Name
       value: South Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275213643913388252, guid: a41e1c470294d1c4b81b1ba36a5ef91a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3275213643913388252, guid: a41e1c470294d1c4b81b1ba36a5ef91a, type: 3}
       propertyPath: m_TagString
@@ -1243,8 +1251,16 @@ PrefabInstance:
       value: East Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1590194693726434557, guid: e5bd546971a24e047aa2872cd464cd30, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590194693726434557, guid: e5bd546971a24e047aa2872cd464cd30, type: 3}
       propertyPath: m_TagString
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396203526024678491, guid: e5bd546971a24e047aa2872cd464cd30, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3781722302387940813, guid: e5bd546971a24e047aa2872cd464cd30, type: 3}
       propertyPath: m_Enabled
@@ -1428,6 +1444,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4668963021827009260, guid: 08c5e402d6f87014d9a1f1a182e5c165, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668963021827009260, guid: 08c5e402d6f87014d9a1f1a182e5c165, type: 3}
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
@@ -1446,6 +1466,10 @@ PrefabInstance:
     - target: {fileID: 7107134182704935900, guid: 08c5e402d6f87014d9a1f1a182e5c165, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8789691233657803338, guid: 08c5e402d6f87014d9a1f1a182e5c165, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08c5e402d6f87014d9a1f1a182e5c165, type: 3}
@@ -1521,8 +1545,16 @@ PrefabInstance:
       value: Texture
       objectReference: {fileID: 0}
     - target: {fileID: 3111108264678135816, guid: 83f44c9c754e9fe438a0dd0ac03839a4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3111108264678135816, guid: 83f44c9c754e9fe438a0dd0ac03839a4, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876532844520515497, guid: 83f44c9c754e9fe438a0dd0ac03839a4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83f44c9c754e9fe438a0dd0ac03839a4, type: 3}
@@ -1533,6 +1565,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8464197219554758243}
     m_Modifications:
+    - target: {fileID: 72095198174600293, guid: 69306ff7e055c7c469210b81afbb4afd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1899110887752826355, guid: 69306ff7e055c7c469210b81afbb4afd, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1540,6 +1576,10 @@ PrefabInstance:
     - target: {fileID: 4048769641044141251, guid: 69306ff7e055c7c469210b81afbb4afd, type: 3}
       propertyPath: m_Name
       value: North Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048769641044141251, guid: 69306ff7e055c7c469210b81afbb4afd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4048769641044141251, guid: 69306ff7e055c7c469210b81afbb4afd, type: 3}
       propertyPath: m_TagString
