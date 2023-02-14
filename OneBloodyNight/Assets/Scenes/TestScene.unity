@@ -2696,6 +2696,7 @@ MonoBehaviour:
   - Player
   - Wall
   - Floor
+  checkForWalls: 1
   attacker: {fileID: 1692689746}
   animator: {fileID: 666666511}
   showHitbox: 1
@@ -3380,7 +3381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 792007579}
   - component: {fileID: 792007580}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4505,6 +4506,7 @@ MonoBehaviour:
   untargetableTags:
   - Player
   - Floor
+  checkForWalls: 1
   attacker: {fileID: 1692689746}
   animator: {fileID: 1181192923}
   showHitbox: 1
