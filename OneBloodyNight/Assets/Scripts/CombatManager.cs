@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,6 +61,14 @@ public class CombatManager : MonoBehaviour
         }
         else if (target.CompareTag("Monster")) //Spins off damage, knockback, immunity, and hitstun functions for monsters (and bosses, even though they aren't *technically* monsters)
         {
+            if (used.CheckForWalls)
+            {
+                if (WallCheck(attacker, targetActor))
+                {
+                    return false;
+                }
+            }
+
             HarmMonster(attacker, targetActor.gameObject.GetComponent<GameActor>(), damageAmount);
             ApplyKnockback(attacker, targetActor, knockbackAmount);
             StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
@@ -69,6 +78,14 @@ public class CombatManager : MonoBehaviour
         }
         else if (target.CompareTag("Player")) //Reduces blood meter and spins off knockback, immunity, and hitstun for players
         {
+            if (used.CheckForWalls)
+            {
+                if (WallCheck(attacker, targetActor))
+                {
+                    return false;
+                }
+            }
+
             Bloodmeter.instance.changeBlood(-damageAmount);
             ApplyKnockback(attacker, targetActor, knockbackAmount);
             StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
@@ -144,6 +161,21 @@ public class CombatManager : MonoBehaviour
         yield return new WaitForSeconds(hitstunDuration);
 
         target.Stunned = false;
+    }
+
+    /// <summary>
+    /// Checks whether there is a wall inbetween the target and the attacker by raycasting
+    /// </summary>
+    /// <returns>True for interrupted by wall, false otherwise</returns>
+    private bool WallCheck(GameActor attacker, GameActor target)
+    {
+        Vector3 attackerPosition = attacker.Rb.position;
+        Vector3 targetPosition = target.Rb.position;
+        Vector3 direction = targetPosition - attackerPosition;
+
+        int layerMask = 1 << 3;
+
+        return Physics.Raycast(attacker.Rb.position, direction, direction.magnitude, layerMask);
     }
 
 

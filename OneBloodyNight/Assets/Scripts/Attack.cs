@@ -65,6 +65,11 @@ public class Attack : GameActor
     [Tooltip("List of ignored attack tags. Essentially, anything that this attack *shouldn't* be able to hit.")]
     [SerializeField]
     private string[] untargetableTags; //used to dictate what things this attack is capable of hitting; monsters shouldn't hit other monsters, for example
+
+    [Tooltip("Whether this attack should check for walls interrupting its line of effect")]
+    [SerializeField]
+    private bool checkForWalls = true;
+    public bool CheckForWalls { get { return checkForWalls; } }
     /*~~~~~~~~~~~~~~~~~~~~*/
     [Header("References")]
 
