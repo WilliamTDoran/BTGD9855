@@ -13,6 +13,8 @@ public class Monster : GameActor
 
     private string refCode1 = "basic"; //See Attack comments on attackerGrantedCode
 
+    private bool chasing;
+
     /* Exposed Variables */
     [Tooltip("A reference to the monster's basic attack object")]
     [SerializeField]

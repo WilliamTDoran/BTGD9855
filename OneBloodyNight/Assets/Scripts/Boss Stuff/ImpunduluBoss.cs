@@ -6,6 +6,7 @@ using System;
 public class ImpunduluBoss : Boss
 {
     private IEnumerator spinAttackCoroutine;
+    private IEnumerator diveAttackCoroutine;
     private IEnumerator randomBehaviorCoroutine;
     private IEnumerator randomAttackingCoroutine;
 
@@ -22,11 +23,30 @@ public class ImpunduluBoss : Boss
     [SerializeField]
     private float timeBetweenFeathers = 0.6f;
 
+    [SerializeField]
+    private Camera cam;
+
+    [Header("Dive Timings")]
+    [SerializeField]
+    private float initialPositionTime = 1.0f;
+
+    [SerializeField]
+    private float threatenTime = 0.75f;
+
+    [SerializeField]
+    private float diveSpeed = 3000;
+
+    [SerializeField]
+    private float stopTime = 0.4f;
+
+    [SerializeField]
+    private float recoverTime = 0.3f;
+
     protected override void Start()
     {
         base.Start();
-
-        StartRandomBehavior();
+        //StartRandomBehavior();
+        StartDiveAttack();
     }
 
     private void FixedUpdate()
@@ -53,6 +73,60 @@ public class ImpunduluBoss : Boss
 
         canMove = true;
         StartRandomBehavior();
+    }
+
+    private IEnumerator DiveAttack()
+    {
+        Vector3 returnPos = rb.position;
+        canMove = false;
+        //StopRandomBehavior();
+
+        float genTimer = 0.0f;
+
+        while (genTimer <= initialPositionTime)
+        {
+            Vector3 cameraRightsidePoint = cam.ViewportToWorldPoint(new Vector3(0.95f, 0.52f, rb.position.z));
+
+            Vector3 targetPos = new Vector3(cameraRightsidePoint.x, Player.plr.Rb.position.y, rb.position.z);
+
+            rb.position = Vector3.Lerp(returnPos, targetPos, genTimer / initialPositionTime);
+            rb.position = new Vector3(rb.position.x, targetPos.y, rb.position.z);
+
+            genTimer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        genTimer = 0.0f;
+
+        while (genTimer <= threatenTime)
+        {
+            rb.position = cam.ViewportToWorldPoint(new Vector3(0.95f, 0.52f, rb.position.z));
+
+            genTimer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+
+        genTimer = 0.0f;
+        Vector3 cameraOffPoint = cam.ViewportToWorldPoint(new Vector3(-0.1f, 0.52f, rb.position.z));
+
+        while (rb.position.x > cameraOffPoint.x)
+        {
+            rb.position -= new Vector3(diveSpeed * Time.deltaTime, 0, 0);
+            cameraOffPoint = cam.ViewportToWorldPoint(new Vector3(-0.1f, 0.52f, rb.position.z));
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        yield return new WaitForSeconds(stopTime);
+        Vector3 endPos = rb.position;
+
+        while (genTimer <= recoverTime)
+        {
+            rb.position = Vector3.Lerp(endPos, returnPos, genTimer / recoverTime);
+
+            genTimer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     private IEnumerator RandomBehavior()
@@ -108,6 +182,18 @@ public class ImpunduluBoss : Boss
     {
         StopCoroutine(spinAttackCoroutine);
         spinAttackCoroutine = null;
+    }
+
+    private void StartDiveAttack()
+    {
+        diveAttackCoroutine = DiveAttack();
+        StartCoroutine(diveAttackCoroutine);
+    }
+
+    private void StopDiveAttack()
+    {
+        StopCoroutine(diveAttackCoroutine);
+        diveAttackCoroutine = null;
     }
 
     private void StartRandomBehavior()
