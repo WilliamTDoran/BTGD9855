@@ -37,14 +37,14 @@ public class Monster : GameActor
     {
         base.Start();
 
+        player = Player.plr;
+
         CurHitPoints = MaxHitPoints;
         canAttack = true;
         canMove = true;
         facingAngle = 0;
 
         StartCoroutine(DebugAttackCycle());
-
-        player = Player.plr;
     }
 
     /// <summary>
@@ -94,15 +94,22 @@ public class Monster : GameActor
     {
         while (true)
         {
-            yield return new WaitForSeconds(2);
+            if (Vector3.Distance(player.Rb.position, rb.position) < 5)
+            {
+                facingAngle = Vector3.SignedAngle(Vector3.right, (player.Rb.position - rb.position), Vector3.forward);
+                facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
 
-            facingAngle = Vector3.SignedAngle(Vector3.right, (player.Rb.position - rb.position), Vector3.forward);
-            facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
+                if (canAttack && !Stunned)
+                {
+                    basicAttack.StartSwing(refCode1);
+                    canAttack = false;
+                }
 
-            if (canAttack && !Stunned) 
-            { 
-                basicAttack.StartSwing(refCode1);
-                canAttack = false;
+                yield return new WaitForSeconds(2);
+            }
+            else
+            {
+                yield return new WaitForEndOfFrame();
             }
         }
     }
