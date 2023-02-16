@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,14 +15,6 @@ public class NavMeshGenerator : MonoBehaviour
     {
         navMeshElements.Clear();
         navMeshElements.AddRange(values);
-    }
-
-    private void Awake()
-    {
-        if (navMeshRoot == null)
-        { 
-            navMeshRoot = new GameObject("NavMeshRoot"); 
-        }
     }
 
     public void BuildNavMesh()
@@ -41,7 +34,7 @@ public class NavMeshGenerator : MonoBehaviour
         for (int i = 0; i < agentTypeCount; ++i)
         {
             NavMeshBuildSettings settings = NavMesh.GetSettingsByIndex(i);
-            NavMeshSurface navMeshSurface = environment.AddComponent<NavMeshSurface>();
+            NavMeshSurface navMeshSurface = navMeshRoot.AddComponent<NavMeshSurface>();
             navMeshSurface.agentTypeID = settings.agentTypeID;
 
             NavMeshBuildSettings actualSettings = navMeshSurface.GetBuildSettings();
