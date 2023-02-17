@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Grass
-  m_Shader: {fileID: 4800000, guid: 2000ba8044af37542aa2ace9bfa3fa8d, type: 3}
+  m_Shader: {fileID: 4800000, guid: cefef9f39a5f7f049818f85e49d34de5, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _GLOSSYREFLECTIONS_OFF
