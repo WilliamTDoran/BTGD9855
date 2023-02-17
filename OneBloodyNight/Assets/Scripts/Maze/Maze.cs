@@ -77,13 +77,13 @@ public class Maze : MonoBehaviour
     void initMaze()
     {
         //scales up the maze to scale size for easy conversion
-        transform.localScale = new Vector3(traits.scale, traits.scale, 1);
+        transform.localScale = new Vector3(traits.scale, 1, traits.scale);
         //create a bunch of rows
         rows = new Row[traits.height];
         deadEnds = new List<Cell>();
         for (int i = 0; i < rows.Length; i++) 
         {
-            GameObject temp = Instantiate(sampleRow, transform.position+new Vector3(transform.position.x, -1*i* traits.scale-traits.betweenCells * i, 0), Quaternion.identity, transform);
+            GameObject temp = Instantiate(sampleRow, transform.position+new Vector3(transform.position.x, 0, -1 * i * traits.scale - traits.betweenCells * i), Quaternion.identity, transform);
             temp.name = "Row " + i;
             rows[i] = temp.GetComponent<Row>();
             if (i > 0) 
@@ -97,8 +97,8 @@ public class Maze : MonoBehaviour
         
         //runs the maze generation algorithm
         generateMaze();
-        transform.position = new Vector3(-1 * traits.scale * (traits.width / 2), traits.scale * (traits.height / 2), 0.001f);
-        Player.plr.transform.position = new Vector3(getCell(traits.width/2, traits.height/ 2).transform.position.x, getCell(traits.width / 2, traits.height / 2).transform.position.y, Player.plr.transform.position.z);
+        transform.position = new Vector3(-1 * traits.scale * (traits.width / 2), 0.001f, traits.scale * (traits.height / 2));
+        Player.plr.transform.position = new Vector3(getCell(traits.width/2, traits.height/ 2).transform.position.x, Player.plr.transform.position.y, getCell(traits.width / 2, traits.height / 2).transform.position.z);
     }
 
     public void generateMaze()
