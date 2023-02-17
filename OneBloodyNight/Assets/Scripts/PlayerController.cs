@@ -51,9 +51,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 CheckDirection()
     {
         float xDirection = Input.GetAxisRaw("Horizontal");
-        float yDirection = Input.GetAxisRaw("Vertical");
+        float zDirection = Input.GetAxisRaw("Vertical");
 
-        Vector3 newDirection = new Vector3(xDirection, yDirection, 0);
+        Vector3 newDirection = new Vector3(xDirection, 0, zDirection);
 
         if (newDirection.magnitude > 1) { newDirection.Normalize(); } //Normalizes only if needed
 

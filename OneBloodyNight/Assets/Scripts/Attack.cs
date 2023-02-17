@@ -120,11 +120,11 @@ public class Attack : GameActor
     protected virtual void PositionAttack()
     {
         //Determines the angle the attack is facing, with 0 being screen-right, 90 being screen-down
-        Quaternion facingAngleRotation = Quaternion.Euler(0, 0, attacker.FacingAngle + 90f); //Adding 90f is silly, but it works to align the numbers. Partially antiquated.
+        Quaternion facingAngleRotation = Quaternion.Euler(0, attacker.FacingAngle + 90f, 0); //Adding 90f is silly, but it works to align the numbers. Partially antiquated.
 
         //Extracts the attacker's current facing direction
         Vector3 v3Facing = facingAngleRotation * Vector3.down;
-        Vector3 attackerFacingDirection = new Vector3(v3Facing.x, v3Facing.y, 0);
+        Vector3 attackerFacingDirection = new Vector3(v3Facing.x, 0, v3Facing.z);
 
         attackerFacingDirection.Normalize();
 
