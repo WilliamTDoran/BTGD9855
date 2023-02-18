@@ -45,8 +45,8 @@ public class ImpunduluBoss : Boss
     protected override void Start()
     {
         base.Start();
-        //StartRandomBehavior();
-        StartDiveAttack();
+        StartRandomBehavior();
+        StartSpinAttack();
     }
 
     private void FixedUpdate()
@@ -79,7 +79,7 @@ public class ImpunduluBoss : Boss
     {
         Vector3 returnPos = rb.position;
         canMove = false;
-        //StopRandomBehavior();
+        StopRandomBehavior();
 
         float genTimer = 0.0f;
 
@@ -87,7 +87,7 @@ public class ImpunduluBoss : Boss
         {
             Vector3 cameraRightsidePoint = cam.ViewportToWorldPoint(new Vector3(0.95f, 0.52f, rb.position.z));
 
-            Vector3 targetPos = new Vector3(cameraRightsidePoint.x, Player.plr.Rb.position.y, rb.position.z);
+            Vector3 targetPos = new Vector3(cameraRightsidePoint.x, rb.position.y, Player.plr.Rb.position.z);
 
             rb.position = Vector3.Lerp(returnPos, targetPos, genTimer / initialPositionTime);
             rb.position = new Vector3(rb.position.x, targetPos.y, rb.position.z);
@@ -127,6 +127,8 @@ public class ImpunduluBoss : Boss
             genTimer += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+
+        StartRandomBehavior();
     }
 
     private IEnumerator RandomBehavior()
@@ -146,7 +148,7 @@ public class ImpunduluBoss : Boss
 
     private Vector3 PickDirection()
     {
-        Vector3 direction = new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f), 0);
+        Vector3 direction = new Vector3(UnityEngine.Random.Range(-1f, 1f), 0, UnityEngine.Random.Range(-1f, 1f));
         direction.Normalize();
         return direction;
     }
@@ -155,18 +157,24 @@ public class ImpunduluBoss : Boss
     {
         yield return new WaitForSeconds(UnityEngine.Random.Range(1.5f, 4.0f));
 
-        if (UnityEngine.Random.Range(-1.0f,1.0f) < 0)
-        {
-            StartSpinAttack();
-        }
-        else
-        {
-            lightnings[lightningCycle].Initiate(Player.plr.Rb.position);
+        int check = (int)UnityEngine.Random.Range(0, 2.99999999f);
 
-            lightningCycle = lightningCycle > 2 ? 0 : lightningCycle + 1;
+        switch (check)
+        {
+            case 0:
+                StartSpinAttack();
+                break;
+            case 1:
+                lightnings[lightningCycle].Initiate(Player.plr.Rb.position);
 
-            StopRandomBehavior();
-            StartRandomBehavior();
+                lightningCycle = lightningCycle > 1 ? 0 : lightningCycle + 1;
+
+                StopRandomBehavior();
+                StartRandomBehavior();
+                break;
+            case 2:
+                StartDiveAttack();
+                break;
         }
     }
 

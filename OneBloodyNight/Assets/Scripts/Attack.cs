@@ -60,7 +60,7 @@ public class Attack : GameActor
 
     [Tooltip("Scalar that defines how far from the player the attack hitbox is")]
     [SerializeField]
-    private float floatDistance; //1 is approximately directly adjacent
+    protected float floatDistance; //1 is approximately directly adjacent
 
     [Tooltip("List of ignored attack tags. Essentially, anything that this attack *shouldn't* be able to hit.")]
     [SerializeField]
@@ -75,7 +75,7 @@ public class Attack : GameActor
 
     [Tooltip("The GameActor who is making the attack")]
     [SerializeField]
-    private GameActor attacker;
+    protected GameActor attacker;
 
     [Tooltip("The attack's own animator")]
     [SerializeField]
@@ -124,7 +124,7 @@ public class Attack : GameActor
 
         //Extracts the attacker's current facing direction
         Vector3 v3Facing = facingAngleRotation * Vector3.forward;
-        Vector3 attackerFacingDirection = new Vector3(v3Facing.x, v3Facing.z);
+        Vector3 attackerFacingDirection = new Vector3(v3Facing.x, v3Facing.z, 0);
 
         attackerFacingDirection.Normalize();
 

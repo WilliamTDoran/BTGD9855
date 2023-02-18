@@ -30,7 +30,7 @@ public class RemoteAttack : Attack
 
     private void Target(Vector3 targetPoint)
     {
-        this.gameObject.transform.position = targetPoint + new Vector3(0,0.001f,0);
+        this.gameObject.transform.position = targetPoint + new Vector3(0,0,0.0001f);
         debugTargetPreview.enabled = true;
     }
 
