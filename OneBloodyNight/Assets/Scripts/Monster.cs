@@ -96,7 +96,7 @@ public class Monster : GameActor
         {
             if (Vector3.Distance(player.Rb.position, rb.position) < 5)
             {
-                facingAngle = Vector3.SignedAngle(Vector3.right, (player.Rb.position - rb.position), Vector3.forward);
+                facingAngle = Vector3.SignedAngle(Vector3.right, (player.Rb.position - rb.position), Vector3.up);
                 facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
 
                 if (canAttack && !Stunned)

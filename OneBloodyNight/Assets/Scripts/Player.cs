@@ -117,7 +117,7 @@ public class Player : GameActor
         //sets the facing direction based on control direction (just a variable that measures rotation in degrees; doesn't do anything to the transform yet)
         if (controller.IntendedDirection != Vector3.zero && canMove)
         {
-            facingAngle = Vector3.SignedAngle(Vector3.right, controller.IntendedDirection, Vector3.forward);
+            facingAngle = Vector3.SignedAngle(Vector3.right, controller.IntendedDirection, Vector3.up);
             facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
         }
 
