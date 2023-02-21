@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.Animations;
 
 /// <summary>
 /// Parent class for all monster types. Some monsters can be driven just from this, complex ones inherit their own classes
@@ -14,6 +17,10 @@ public class Monster : GameActor
     private string refCode1 = "basic"; //See Attack comments on attackerGrantedCode
 
     private bool chasing;
+    private int nextPoint;
+    private NavMeshPath path;
+    private IEnumerator aiTickCoroutine;
+    private const float AI_TICK_TIME = 0.2f;
 
     /* Exposed Variables */
     [Tooltip("A reference to the monster's basic attack object")]
@@ -42,9 +49,13 @@ public class Monster : GameActor
         CurHitPoints = MaxHitPoints;
         canAttack = true;
         canMove = true;
+        chasing = true;
         facingAngle = 0;
 
+        path = new NavMeshPath();
+
         StartCoroutine(DebugAttackCycle());
+        StartAITick();
     }
 
     /// <summary>
@@ -86,6 +97,26 @@ public class Monster : GameActor
         Debug.Log("Werewolf Swing Done");
     }
 
+    private IEnumerator AITick()
+    { 
+        while (true)
+        {
+            if (chasing)
+            {
+                if (NavMesh.CalculatePath(rb.position, player.Rb.position, -1, path))
+                {
+                    nextPoint = 1;
+                }
+                else
+                {
+                    Debug.Log(gameObject.name + " can't find player!");
+                }
+            }
+
+            yield return new WaitForSeconds(AI_TICK_TIME);
+        }
+    }
+
     /// <summary>
     /// A temporary function for a rudimentary attack cycle. Will be replaced.
     /// </summary>
@@ -119,12 +150,31 @@ public class Monster : GameActor
     /// </summary>
     private void DebugCharge()
     {
+        if ((path.corners[nextPoint] - rb.position).magnitude <= 2)
+        {
+            nextPoint++;
+        }
+
         if (canMove && !player.Immune && !Stunned)
         {
-            Vector3 direction = player.Rb.position - rb.position;
+            Vector3 direction = path.corners[nextPoint] - rb.position;
             direction.Normalize();
 
             rb.AddForce(direction * speed, ForceMode.Force);
         }
+    }
+
+
+
+    private void StartAITick()
+    {
+        aiTickCoroutine = AITick();
+        StartCoroutine(aiTickCoroutine);
+    }
+
+    private void StopAITick()
+    {
+        StopCoroutine(aiTickCoroutine);
+        aiTickCoroutine = null;
     }
 }
