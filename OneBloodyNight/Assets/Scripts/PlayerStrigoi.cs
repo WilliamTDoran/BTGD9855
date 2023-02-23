@@ -114,7 +114,7 @@ public class PlayerStrigoi : Player
         {
             basicAttack.StartSwing(basicCode);
             canAttack = false;
-            StopInvisible(); //attacking cancels invisibility
+            if (invisibilityCoroutine != null) StopInvisible(); //attacking cancels invisibility
         }
 
         canAttackDebugText.text = canAttack + "";

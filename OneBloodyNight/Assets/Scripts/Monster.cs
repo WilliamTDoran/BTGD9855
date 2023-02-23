@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations;
@@ -17,10 +19,11 @@ public class Monster : GameActor
     private string refCode1 = "basic"; //See Attack comments on attackerGrantedCode
 
     private bool chasing;
+    public bool Chasing { set { chasing = value; } }
     private int nextPoint;
     private NavMeshPath path;
-    private IEnumerator aiTickCoroutine;
-    private const float AI_TICK_TIME = 0.2f;
+    private IEnumerator pathTickCoroutine;
+    private const float PATHING_TICK_TIME = 0.2f;
 
     /* Exposed Variables */
     [Tooltip("A reference to the monster's basic attack object")]
@@ -31,9 +34,6 @@ public class Monster : GameActor
     [SerializeField]
     public float bloodOnKill = 50.0f;
     public float BloodOnKill { get { return bloodOnKill; } }
-
-    [SerializeField]
-    private bool debugFollow;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     /// <summary>
@@ -49,7 +49,6 @@ public class Monster : GameActor
         CurHitPoints = MaxHitPoints;
         canAttack = true;
         canMove = true;
-        chasing = true;
         facingAngle = 0;
 
         path = new NavMeshPath();
@@ -79,29 +78,18 @@ public class Monster : GameActor
     /// </summary>
     private void FixedUpdate()
     {
-        if (debugFollow && player.Visible)
+        if (player.Visible && chasing)
         {
-            DebugCharge();
+            Chase();
         }
-    }
-
-    /// <summary>
-    /// A called-to function to drive things that happen at the end of an attack. Used for resetting canAttack
-    /// </summary>
-    /// <param name="code">the granted code to identify which attack is ending</param>
-    internal override void OnAttackEnd(string code)
-    {
-        base.OnAttackEnd(code);
-
-        canAttack = true;
-        Debug.Log("Werewolf Swing Done");
     }
 
     private IEnumerator AITick()
     { 
         while (true)
         {
-            if (chasing)
+
+            if (player.Visible && chasing)
             {
                 if (NavMesh.CalculatePath(rb.position, player.Rb.position, -1, path))
                 {
@@ -113,12 +101,25 @@ public class Monster : GameActor
                 }
             }
 
-            yield return new WaitForSeconds(AI_TICK_TIME);
+            yield return new WaitForSeconds(PATHING_TICK_TIME);
         }
     }
 
     /// <summary>
-    /// A temporary function for a rudimentary attack cycle. Will be replaced.
+    /// Simple helper function that uses a raycast to check if there's a wall between the monster and the player.
+    /// </summary>
+    /// <returns>True if a wall blocks them, false otherwise</returns>
+    public bool WallCheck()
+    {
+        Vector3 direction = player.Rb.position - rb.position;
+
+        int layerMask = 1 << 6;
+
+        return Physics.Raycast(rb.position, direction, direction.magnitude, layerMask);
+    }
+
+    /// <summary>
+    /// Drives the monster's attack cycle based on a paramaterized time.
     /// </summary>
     /// <returns>Functional IEnumerator return</returns>
     private IEnumerator DebugAttackCycle()
@@ -146,9 +147,21 @@ public class Monster : GameActor
     }
 
     /// <summary>
-    /// A temporary function for a rudimentary monster chasing ai. Will be replaced.
+    /// An event-driven function to handle things that happen at the end of an attack. Used for resetting canAttack
     /// </summary>
-    private void DebugCharge()
+    /// <param name="code">the granted code to identify which attack is ending</param>
+    internal override void OnAttackEnd(string code)
+    {
+        base.OnAttackEnd(code);
+
+        canAttack = true;
+        Debug.Log(gameObject.name + " Swing Done");
+    }
+
+    /// <summary>
+    /// Drives the monster following the player based on the NavMesh determined path
+    /// </summary>
+    private void Chase()
     {
         if ((path.corners[nextPoint] - rb.position).magnitude <= 2)
         {
@@ -165,16 +178,16 @@ public class Monster : GameActor
     }
 
 
-
+    //~~The Coroutine Section~~
     private void StartAITick()
     {
-        aiTickCoroutine = AITick();
-        StartCoroutine(aiTickCoroutine);
+        pathTickCoroutine = AITick();
+        StartCoroutine(pathTickCoroutine);
     }
 
     private void StopAITick()
     {
-        StopCoroutine(aiTickCoroutine);
-        aiTickCoroutine = null;
+        StopCoroutine(pathTickCoroutine);
+        pathTickCoroutine = null;
     }
 }
