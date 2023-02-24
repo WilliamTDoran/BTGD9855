@@ -2814,6 +2814,7 @@ MonoBehaviour:
   speed: 0
   immuneDuration: 0
   maxHitPoints: 0
+  walkAnim: 0
   damage: 5
   knockbackAmount: 130
   hitstunDuration: 0.05
@@ -4381,6 +4382,7 @@ MonoBehaviour:
   speed: 0
   immuneDuration: 0
   maxHitPoints: 0
+  walkAnim: 0
   damage: 20
   knockbackAmount: 1800
   hitstunDuration: 0.4
@@ -6220,6 +6222,7 @@ MonoBehaviour:
   speed: 120
   immuneDuration: 0.2
   maxHitPoints: 0
+  walkAnim: 1
   spriteRenderer: {fileID: 1692689748}
   abilityOneCost: 60
   abilityTwoCost: 80
@@ -7533,6 +7536,7 @@ MonoBehaviour:
   speed: 5000
   immuneDuration: 0.5
   maxHitPoints: 160
+  walkAnim: 1
   basicAttack: {fileID: 3237701249505274891}
   bloodOnKill: 45
 --- !u!54 &2134576187938719618
@@ -7581,6 +7585,7 @@ MonoBehaviour:
   speed: 0
   immuneDuration: 0
   maxHitPoints: 0
+  walkAnim: 0
   damage: 40
   knockbackAmount: 40
   hitstunDuration: 0.2
@@ -7893,11 +7898,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4564198035872626234}
-  - component: {fileID: 6656247482414754926}
   - component: {fileID: 5345197473796769216}
   - component: {fileID: 2134576187938719618}
   - component: {fileID: 532517230274815347}
   - component: {fileID: 1590936594}
+  - component: {fileID: 6656247482414754926}
   - component: {fileID: 6075898002866773891}
   m_Layer: 0
   m_Name: Werewolf

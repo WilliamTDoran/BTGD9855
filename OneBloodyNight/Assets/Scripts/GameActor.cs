@@ -18,6 +18,9 @@ public class GameActor : MonoBehaviour
     protected Animator animator;
     protected SpriteRenderer render;
 
+    private float actualVelocity;
+    private float clampedVelocity;
+
     protected float facingAngle; //the direction the actor is 'facing' in degrees (has no inherent bearing on the object's actual transform rotation)
     public float FacingAngle { get { return facingAngle; } }
 
@@ -54,6 +57,10 @@ public class GameActor : MonoBehaviour
     [SerializeField]
     private int maxHitPoints;
     public int MaxHitPoints { get { return maxHitPoints; } set { maxHitPoints = value; } }
+
+    [Tooltip("Whether this GameActor has a walking animation")]
+    [SerializeField]
+    private bool walkAnim = false;
     /* -~-~-~-~-~-~-~-~- */
 
     /// <summary>
@@ -85,6 +92,25 @@ public class GameActor : MonoBehaviour
     protected virtual void Update()
     {
 
+    }
+
+    private void LateUpdate()
+    {
+        if (walkAnim)
+        {
+            actualVelocity = rb.velocity.magnitude;
+            clampedVelocity = actualVelocity > 1f ? 1f : actualVelocity;
+            animator.SetFloat("Speed", clampedVelocity);
+
+            if (rb.velocity.x < 0)
+            {
+                render.flipX = true;
+            }
+            else
+            {
+                render.flipX = false;
+            }
+        }
     }
 
     //These are basically just here serving the same function as an interface cause I don't want to double up on both virtual inherited classes and also interfaces
