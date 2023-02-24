@@ -15,6 +15,9 @@ using UnityEngine;
 /// </summary>
 public class GameActor : MonoBehaviour
 {
+    protected Animator animator;
+    protected SpriteRenderer render;
+
     protected float facingAngle; //the direction the actor is 'facing' in degrees (has no inherent bearing on the object's actual transform rotation)
     public float FacingAngle { get { return facingAngle; } }
 
@@ -71,7 +74,8 @@ public class GameActor : MonoBehaviour
     /// </summary>
     protected virtual void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        render = GetComponent<SpriteRenderer>();
     }
 
     /// <summary>

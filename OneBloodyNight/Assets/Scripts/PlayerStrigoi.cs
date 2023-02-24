@@ -19,6 +19,9 @@ public class PlayerStrigoi : Player
     private string basicCode = "basic"; //see Attack comments for attackerGrantedCode
     private string batCode = "bat";
 
+    private float actualVelocity;
+    private float clampedVelocity;
+
     private IEnumerator berserkCoroutine; //runs bloodthirst
     private IEnumerator invisibilityCoroutine; //runs invisibility duration
     private IEnumerator batSwarmCoroutine; //runs swarm
@@ -120,6 +123,22 @@ public class PlayerStrigoi : Player
         canAttackDebugText.text = canAttack + "";
         berserkDamageDebugText.text = basicAttack.Damage + "";
         berserkSpeedDebugText.text = speed + "";
+    }
+
+    private void LateUpdate()
+    {
+        actualVelocity = rb.velocity.magnitude;
+        clampedVelocity = actualVelocity > 10f ? 10f : actualVelocity;
+        animator.SetFloat("Speed", clampedVelocity);
+
+        if (facingAngle + 90f >= 180)
+        {
+            render.flipX = true;
+        }
+        else
+        {
+            render.flipX = false;
+        }
     }
 
     /// <summary>
