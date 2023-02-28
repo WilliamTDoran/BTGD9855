@@ -25,7 +25,7 @@ public class BossPortal : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D col)
     {
-
+        
         StartCoroutine(StartBoss());
     }
     void OnTriggerExit2D(Collider2D col)/////////Stops transition
