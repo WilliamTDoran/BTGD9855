@@ -89,27 +89,29 @@ public class Wall : MonoBehaviour
         }
     }
 
-    internal void placeNorthSprites(Biome b)
+    internal void placeNorthSprites(Biome b, Vector3 position)
     {
+        Debug.Log("Position :" + position.x + " " + position.y + " " + position.z + " ");
         GameObject[] allSprites = Maze.m.biomeVariables[(int)b].North.Sprites;
         if (allSprites.Length >= 1)
         {
             int picked = Random.Range(0, allSprites.Length);
-            GameObject temp = Instantiate(allSprites[picked], new Vector3(transform.position.x + Maze.m.biomeVariables[(int)b].North.offSet.x, transform.position.y, allSprites[picked].transform.position.z), Quaternion.identity, transform);
+            GameObject temp = Instantiate(allSprites[picked], new Vector3(position.x + Maze.m.biomeVariables[(int)b].North.offSet.x, position.y, transform.position.z), Quaternion.Euler(90, 0, 0), transform);
+            Debug.Log(temp.transform.rotation.eulerAngles.x);
             picked = Random.Range(0, allSprites.Length);
-            temp = Instantiate(allSprites[picked], new Vector3(transform.position.x - Maze.m.biomeVariables[(int)b].North.offSet.x, transform.position.y, allSprites[picked].transform.position.z), Quaternion.identity, transform);
+            temp = Instantiate(allSprites[picked], new Vector3(position.x - Maze.m.biomeVariables[(int)b].North.offSet.x, position.y, transform.position.z), Quaternion.Euler(90, 0, 0), transform);
         }
     }
 
-    internal void placeEastSprites(Biome b)
+    internal void placeEastSprites(Biome b, Vector3 position)
     {
         GameObject[] allSprites = Maze.m.biomeVariables[(int)b].East.Sprites;
         if (allSprites.Length >= 1)
         {
-            int picked = Random.Range(0, allSprites.Length);
-            GameObject temp = Instantiate(allSprites[picked], new Vector3(transform.position.x, transform.position.y + Maze.m.biomeVariables[(int)b].East.offSet.y, allSprites[picked].transform.position.z), Quaternion.identity, transform);
+            int picked = Random.Range(0, allSprites.Length); // + Maze.m.biomeVariables[(int)b].East.offSet.y
+            GameObject temp = Instantiate(allSprites[picked], new Vector3(transform.position.x/* - Maze.m.biomeVariables[(int)b].North.offSet.x*/, position.y, transform.position.z + Maze.m.biomeVariables[(int)b].East.offSet.y), Quaternion.Euler(90, 0, 0), transform);
             picked = Random.Range(0, allSprites.Length);
-            temp = Instantiate(allSprites[picked], new Vector3(transform.position.x, transform.position.y - Maze.m.biomeVariables[(int)b].East.offSet.y, allSprites[picked].transform.position.z), Quaternion.identity, transform);
+            temp = Instantiate(allSprites[picked], new Vector3(transform.position.x/* - Maze.m.biomeVariables[(int)b].North.offSet.x*/, position.y, transform.position.z - Maze.m.biomeVariables[(int)b].East.offSet.y), Quaternion.Euler(90, 0, 0), transform);
         }
     }
 

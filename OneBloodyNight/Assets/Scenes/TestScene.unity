@@ -2864,6 +2864,7 @@ MonoBehaviour:
   speed: 0
   immuneDuration: 0
   maxHitPoints: 0
+  walkAnim: 0
   damage: 5
   knockbackAmount: 130
   hitstunDuration: 0.05
@@ -3389,8 +3390,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750604038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -130, y: 130, z: 0.001}
-  m_LocalScale: {x: 13, y: 13, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4675,6 +4676,7 @@ MonoBehaviour:
   speed: 0
   immuneDuration: 0
   maxHitPoints: 0
+  walkAnim: 0
   damage: 20
   knockbackAmount: 1800
   hitstunDuration: 0.4
@@ -6393,6 +6395,7 @@ MonoBehaviour:
   speed: 120
   immuneDuration: 0.2
   maxHitPoints: 0
+  walkAnim: 0
   spriteRenderer: {fileID: 1692689748}
   abilityOneCost: 60
   abilityTwoCost: 80

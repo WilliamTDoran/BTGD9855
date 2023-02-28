@@ -34,7 +34,8 @@ public class PlaceObject
         int x;
         int y;
         cell(b, obj.cellDifficulty, out x, out y);
-        GameObject placed = GameObject.Instantiate(obj.formation, Maze.m.transform.position+new Vector3(obj.formation.transform.position.x, obj.formation.transform.position.y, obj.formation.transform.position.z), new Quaternion());
+        Cell c = Maze.m.getCell(x, y);
+        GameObject placed = GameObject.Instantiate(obj.formation, Maze.m.transform.position+new Vector3(c.transform.position.x + Random.Range(-Maze.m.traits.scale*0.4f, Maze.m.traits.scale * 0.4f), c.transform.position.y, c.transform.position.z), Quaternion.Euler(90, 0, 0));
         //Debug.Log("Object placed in cell "+x+", "+y+", biome colour: "+Maze.m.getCell(x,y).getBiome());
         //Maze.m.getCell(x, y).transform.GetChild(0).gameObject.SetActive(true);
         Maze.m.getCell(x, y).transform.GetChild(0).GetComponent<Spawner>().addSpawnLocations(placed);

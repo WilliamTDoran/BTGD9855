@@ -42,7 +42,7 @@ public class Spawner : MonoBehaviour
             spawns = s;
         }
 
-        unload();
+        //unload();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -77,7 +77,7 @@ public class Spawner : MonoBehaviour
             //s.obj.transform.position = new Vector3(s.x - Maze.m.width() / 2.0f * Maze.m.traits.scale, s.y + 2 * Maze.m.traits.scale, s.obj.transform.position.z);
             if (!s.obj.gameObject.activeInHierarchy)
             {
-                s.obj.transform.position = new Vector3(transform.position.x /*+ s.x*/, transform.position.y+10, transform.position.z /*+ s.y*/);
+                s.obj.transform.position = new Vector3(s.x, s.y, 0);
             }
             //Debug.Log(s.obj.transform.position.x + ", " + s.obj.transform.position.y + " to ");
             s.obj.SetActive(true);

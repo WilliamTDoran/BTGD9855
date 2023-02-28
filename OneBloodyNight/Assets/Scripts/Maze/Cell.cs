@@ -136,20 +136,23 @@ public class Cell : MonoBehaviour
 
     internal void drawWalls()
     {
-        walls[(int)Wall.wLocation.north].placeNorthSprites(getBiome());
-        walls[(int)Wall.wLocation.east].placeEastSprites(getBiome());
+        Debug.Log("Pos of "+gameObject.name + ": "+transform.position.x+" " + transform.position.y + " " + transform.position.z + " ");
+        walls[(int)Wall.wLocation.north].placeNorthSprites(getBiome(), transform.position);
+        walls[(int)Wall.wLocation.east].placeEastSprites(getBiome(), transform.position);
+
+        //corners
         CornerType corner = Corner();
         if (Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites.Length > (int)corner && Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[(int)corner] != null)
         {
-            GameObject temp = Instantiate(Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[(int)corner], new Vector3(transform.position.x + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.x, transform.position.y + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.y, Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[(int)corner].transform.position.z), Quaternion.identity, transform);
+            GameObject temp = Instantiate(Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[(int)corner], new Vector3(transform.position.x + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.x, transform.position.y, transform.position.z + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.y), Quaternion.Euler(90, 0, 0), transform);
         }
         if (walls[(int)Wall.wLocation.west].edge())
         {
-            walls[(int)Wall.wLocation.west].placeEastSprites(getBiome());
+            walls[(int)Wall.wLocation.west].placeEastSprites(getBiome(), transform.position);
         }
         if (walls[(int)Wall.wLocation.south].edge())
         {
-            walls[(int)Wall.wLocation.south].placeNorthSprites(getBiome());
+            walls[(int)Wall.wLocation.south].placeNorthSprites(getBiome(), transform.position);
         }
         /*if (getBiome() == Biome.yara)
         {
