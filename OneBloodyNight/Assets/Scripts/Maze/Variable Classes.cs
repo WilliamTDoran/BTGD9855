@@ -51,12 +51,25 @@ public class BiomeVariables
     public Color colour;
     public float wallsRemoved;
     public int maxCellDifficulty;
+    [Tooltip("Coming Soon!")]
+    public GameObject[] SetPieces;
     [Tooltip("Array of the objects to be placed in the maze")]
     public PlacableObject[] objects;
     public ArtVars North;
     public ArtVars East;
     [Tooltip("Use the following order: All, missingNorth, missingEast, missingSouth, missingWest, lineVertical, lineHorizontal, cornerNorthWest, cornerNorthEast, cornerSouthEast, cornerSouthWest, endNorth, endEast, endSouth, endWest, None")]
     public ArtVars Corner;
+}
+
+[System.Serializable]
+public class EnemySpawnVars
+{
+
+}
+
+public class ObjectSpawnVars
+{
+
 }
 
 
