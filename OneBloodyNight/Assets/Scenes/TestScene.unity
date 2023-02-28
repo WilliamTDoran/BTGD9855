@@ -3209,12 +3209,14 @@ MonoBehaviour:
     scale: 16
     betweenCells: 8
     CharacterBiome: 0
+    bossPortal: {fileID: 3505505689596641723, guid: 9df13bf0a1b3ba3448ef6d87397cd563, type: 3}
   mazeSeed: -1
   sampleRow: {fileID: 3985245215676089212, guid: ee78c11f6f19f724b84ac746fcad03bf, type: 3}
   biomeVariables:
   - colour: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
     wallsRemoved: 0
     maxCellDifficulty: 0
+    SetPieces: []
     objects: []
     North:
       offSet: {x: 4, y: 0, z: 0}
@@ -3245,6 +3247,7 @@ MonoBehaviour:
   - colour: {r: 0.6415094, g: 0, b: 0, a: 1}
     wallsRemoved: 15
     maxCellDifficulty: 1
+    SetPieces: []
     objects: []
     North:
       offSet: {x: 4, y: 0, z: 0}
@@ -3275,6 +3278,7 @@ MonoBehaviour:
   - colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
     wallsRemoved: 150
     maxCellDifficulty: 10
+    SetPieces: []
     objects:
     - formation: {fileID: 1216559942331405162, guid: 8a2f415d56b154e4880a5929ed331b68, type: 3}
       cellDifficulty: 0

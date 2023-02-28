@@ -41,6 +41,24 @@ public class PlaceObject
         Maze.m.getCell(x, y).transform.GetChild(0).GetComponent<Spawner>().addSpawnLocations(placed);
     }
 
+    internal static void placePortal(Biome B)
+    {
+        //Maze.m.deadEnds;
+        bool placed = false;
+        Cell c;
+        do
+        {
+            int i = Random.Range(0, Maze.m.deadEnds.Count);
+            c = Maze.m.deadEnds[i];
+            if (B == c.getBiome()) {
+                Maze.m.deadEnds.RemoveAt(i);
+                placed = true;
+                c.setPiece = true;
+            }
+        } while (!placed);
+        GameObject temp = GameObject.Instantiate(Maze.m.traits.bossPortal, new Vector3(c.transform.position.x,c.transform.position.y, c.transform.position.z), Quaternion.Euler(90, 0, 0), c.transform);
+    }
+
     public static void cell(Biome b, float diff, out int x, out int y)
     {
         Cell c;

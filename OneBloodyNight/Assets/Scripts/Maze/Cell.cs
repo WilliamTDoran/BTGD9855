@@ -12,6 +12,7 @@ public class Cell : MonoBehaviour
     [SerializeField]
     private Biome biome = Biome.length;
     internal short difficulty;
+    internal bool setPiece = false;
     //internal short placed;
 
     private bool inMaze = false;

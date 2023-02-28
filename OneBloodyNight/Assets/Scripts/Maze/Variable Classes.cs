@@ -9,7 +9,8 @@ public enum Biome
     strgoi,
     yara,
     impundulu,
-    length
+    length,
+    setPiece
 }
 
 
@@ -42,6 +43,7 @@ public class MazeVariables
     public float scale;
     public float betweenCells;
     public Biome CharacterBiome;
+    public GameObject bossPortal;
 }
 
 

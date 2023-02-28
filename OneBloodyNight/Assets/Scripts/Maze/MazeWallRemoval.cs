@@ -33,7 +33,7 @@ public class MazeWallRemoval
                 //Debug.Log(matchChosen+ ", "+ match.Count);
                 for (int j = 1; j < match[matchChosen].walls.Length; j++)
                 {
-                    if (match[matchChosen].walls[j].getState() != Wall.wState.interior && match[matchChosen].getBiome() == match[matchChosen].walls[j].getLink().getCell().getBiome())
+                    if (match[matchChosen].walls[j].getState() != Wall.wState.interior && match[matchChosen].getBiome() == match[matchChosen].walls[j].getLink().getCell().getBiome() && !match[matchChosen].walls[j].getLink().getCell().setPiece)
                     {
                         maxAvailable++;
                     }
@@ -44,7 +44,7 @@ public class MazeWallRemoval
                     Wall w = null;
                     for (int j = 0; j < match[matchChosen].walls.Length; j++)
                     {
-                        if (match[matchChosen].walls[j].getState() != Wall.wState.interior && match[matchChosen].getBiome() == match[matchChosen].walls[j].getLink().getCell().getBiome()) continue;
+                        if (match[matchChosen].walls[j].getState() != Wall.wState.interior && match[matchChosen].getBiome() == match[matchChosen].walls[j].getLink().getCell().getBiome() && !match[matchChosen].walls[j].getLink().getCell().setPiece) continue;
                         maxAvailable--;
                         if (maxAvailable == 0)
                         {
