@@ -12,9 +12,6 @@ public class Maze : MonoBehaviour
     [SerializeField]
     internal MazeVariables traits;
 
-    //[SerializeField]
-    //int toRemove = 5;
-
     [SerializeField]
     [Tooltip("-1 for random")]
     private int mazeSeed = -1;

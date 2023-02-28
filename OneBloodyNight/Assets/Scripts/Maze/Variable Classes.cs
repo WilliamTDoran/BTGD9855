@@ -48,8 +48,6 @@ public class MazeVariables
 [System.Serializable]
 public class BiomeVariables
 {
-    //public float NextCellChance; // Not implemented
-    //public float RandomCellChance; // not implemented
     public Color colour;
     public float wallsRemoved;
     public int maxCellDifficulty;
