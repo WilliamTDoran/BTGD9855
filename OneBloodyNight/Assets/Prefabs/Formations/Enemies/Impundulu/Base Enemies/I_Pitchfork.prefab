@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3308542684186556959}
   - component: {fileID: 1506505331822888184}
   - component: {fileID: 2771159159247393256}
+  - component: {fileID: -7706961463846350019}
   m_Layer: 0
   m_Name: I_Pitchfork
   m_TagString: Monster
@@ -133,9 +134,9 @@ MonoBehaviour:
   speed: 3000
   immuneDuration: 0.5
   maxHitPoints: 50
+  walkAnim: 0
   basicAttack: {fileID: 8342049976024423553}
   bloodOnKill: 20
-  debugFollow: 1
 --- !u!95 &2771159159247393256
 Animator:
   serializedVersion: 4
@@ -156,6 +157,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-7706961463846350019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529972682658337596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22b15fd05c2a60c4f97ed0a2f8658ffe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 0}
+  atk: {fileID: 0}
+  monster: {fileID: 0}
 --- !u!1 &877845514278036326
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +298,7 @@ Animator:
   m_GameObject: {fileID: 877845514278036326}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 704fd771a355aa64fa1dd9dbafb820e7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2b420bc784153c54e9b2e01df4254f3d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -307,6 +323,7 @@ MonoBehaviour:
   speed: 0
   immuneDuration: 0
   maxHitPoints: 0
+  walkAnim: 0
   damage: 20
   knockbackAmount: 300
   hitstunDuration: 0.3

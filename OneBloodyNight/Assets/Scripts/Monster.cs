@@ -34,6 +34,8 @@ public class Monster : GameActor
     [SerializeField]
     public float bloodOnKill = 50.0f;
     public float BloodOnKill { get { return bloodOnKill; } }
+
+    private Animator animator;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     /// <summary>
@@ -42,6 +44,8 @@ public class Monster : GameActor
     /// </summary>
     protected override void Start()
     {
+        animator = GetComponent<Animator>();
+
         base.Start();
 
         player = Player.plr;
@@ -80,6 +84,8 @@ public class Monster : GameActor
     {
         if (player.Visible && chasing)
         {
+            //animator.SetTrigger("Walk");
+            
             Chase();
         }
     }

@@ -98,6 +98,7 @@ public class Attack : GameActor
     public void StartSwing(string code)
     {
         attackerGrantedCode = code;
+        
 
         if (attackerGrantedCode != "bat") { PositionAttack(); }//The attack hitbox always exists, and needs to have its relative position to the attacker updated each time. The bats thing is a hacky workaround that will likely get improved later
 
@@ -110,6 +111,8 @@ public class Attack : GameActor
         if (animator != null) //projectiles don't need an animator
         {
             animator.SetTrigger(swingTrigger); //Each attack has its own animation controller that is used to dictate its windup and active time
+            animator.SetTrigger("Attack");
+
         }
     }
 
