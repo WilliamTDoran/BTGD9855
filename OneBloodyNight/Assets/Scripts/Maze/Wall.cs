@@ -91,13 +91,13 @@ public class Wall : MonoBehaviour
 
     internal void placeNorthSprites(Biome b, Vector3 position)
     {
-        Debug.Log("Position :" + position.x + " " + position.y + " " + position.z + " ");
+        //Debug.Log("Position :" + position.x + " " + position.y + " " + position.z + " ");
         GameObject[] allSprites = Maze.m.biomeVariables[(int)b].North.Sprites;
         if (allSprites.Length >= 1)
         {
             int picked = Random.Range(0, allSprites.Length);
             GameObject temp = Instantiate(allSprites[picked], new Vector3(position.x + Maze.m.biomeVariables[(int)b].North.offSet.x, position.y, transform.position.z), Quaternion.Euler(90, 0, 0), transform);
-            Debug.Log(temp.transform.rotation.eulerAngles.x);
+            //Debug.Log(temp.transform.rotation.eulerAngles.x);
             picked = Random.Range(0, allSprites.Length);
             temp = Instantiate(allSprites[picked], new Vector3(position.x - Maze.m.biomeVariables[(int)b].North.offSet.x, position.y, transform.position.z), Quaternion.Euler(90, 0, 0), transform);
         }

@@ -67,7 +67,6 @@ public class MazeWallRemoval
                 Cell other = w.getLink().getCell();
                 if (c.getBiome() == other.getBiome() && c != other)
                 {
-                    Debug.Log("Wall removed. #" + i);
                     w.remove(false);
                 }
             }

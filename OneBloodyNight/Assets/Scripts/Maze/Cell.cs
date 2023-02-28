@@ -136,7 +136,7 @@ public class Cell : MonoBehaviour
 
     internal void drawWalls()
     {
-        Debug.Log("Pos of "+gameObject.name + ": "+transform.position.x+" " + transform.position.y + " " + transform.position.z + " ");
+        //Debug.Log("Pos of "+gameObject.name + ": "+transform.position.x+" " + transform.position.y + " " + transform.position.z + " ");
         walls[(int)Wall.wLocation.north].placeNorthSprites(getBiome(), transform.position);
         walls[(int)Wall.wLocation.east].placeEastSprites(getBiome(), transform.position);
 
