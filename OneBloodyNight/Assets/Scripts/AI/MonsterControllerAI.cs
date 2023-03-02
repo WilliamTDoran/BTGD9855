@@ -81,8 +81,8 @@ public class MonsterControllerAI : AdvancedFSM
 
         if (CurrentState != null)
         {
-            CurrentState.Reason(playerTransform, transform);
-            CurrentState.Act(playerTransform, transform);
+            //CurrentState.Reason(playerTransform, transform);
+            //CurrentState.Act(playerTransform, transform); at the moment, act does nothing
         }
     }
 

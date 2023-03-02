@@ -22,8 +22,9 @@ public class Monster : GameActor
     public bool Chasing { set { chasing = value; } }
     private int nextPoint;
     private NavMeshPath path;
-    private IEnumerator pathTickCoroutine;
-    private const float PATHING_TICK_TIME = 0.2f;
+    private IEnumerator AITickCoroutine;
+    private const float AI_TICK_TIME = 0.25f;
+    private MonsterControllerAI aiController;
 
     /* Exposed Variables */
     [Tooltip("A reference to the monster's basic attack object")]
@@ -34,17 +35,14 @@ public class Monster : GameActor
     [SerializeField]
     public float bloodOnKill = 50.0f;
     public float BloodOnKill { get { return bloodOnKill; } }
-
-    private Animator animator;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     /// <summary>
     /// Standard Start function. Initializes important values and gets references.
-    /// Currently also starts the shitty basic attack timing that's just used for testing.
     /// </summary>
     protected override void Start()
     {
-        animator = GetComponent<Animator>();
+        aiController = GetComponent<MonsterControllerAI>();
 
         base.Start();
 
@@ -94,6 +92,10 @@ public class Monster : GameActor
     { 
         while (true)
         {
+            if (aiController.CurrentState != null)
+            {
+                aiController.CurrentState.Reason(player.transform, gameObject.transform);
+            }
 
             if (player.Visible && chasing)
             {
@@ -107,7 +109,7 @@ public class Monster : GameActor
                 }
             }
 
-            yield return new WaitForSeconds(PATHING_TICK_TIME);
+            yield return new WaitForSeconds(AI_TICK_TIME);
         }
     }
 
@@ -147,7 +149,7 @@ public class Monster : GameActor
             }
             else
             {
-                yield return new WaitForEndOfFrame();
+                yield return new WaitForSeconds(AI_TICK_TIME);
             }
         }
     }
@@ -169,17 +171,20 @@ public class Monster : GameActor
     /// </summary>
     private void Chase()
     {
-        if ((path.corners[nextPoint] - rb.position).magnitude <= 2)
+        if (path.corners.Length > 0)
         {
-            nextPoint++;
-        }
+            if (canMove && !player.Immune && !Stunned)
+            {
+                Vector3 direction = path.corners[nextPoint] - rb.position;
+                direction.Normalize();
 
-        if (canMove && !player.Immune && !Stunned)
-        {
-            Vector3 direction = path.corners[nextPoint] - rb.position;
-            direction.Normalize();
+                rb.AddForce(direction * speed, ForceMode.Force);
+            }
 
-            rb.AddForce(direction * speed, ForceMode.Force);
+            if ((path.corners[nextPoint] - rb.position).magnitude <= 2)
+            {
+                nextPoint++;
+            }
         }
     }
 
@@ -187,13 +192,13 @@ public class Monster : GameActor
     //~~The Coroutine Section~~
     private void StartAITick()
     {
-        pathTickCoroutine = AITick();
-        StartCoroutine(pathTickCoroutine);
+        AITickCoroutine = AITick();
+        StartCoroutine(AITickCoroutine);
     }
 
     private void StopAITick()
     {
-        StopCoroutine(pathTickCoroutine);
-        pathTickCoroutine = null;
+        StopCoroutine(AITickCoroutine);
+        AITickCoroutine = null;
     }
 }

@@ -26,7 +26,7 @@ public class ChaseState : FSMState
     {
         Debug.Log(npc.gameObject.name + " is chasing " + player.gameObject.name);
 
-        if (universalAIProperties.host.WallCheck())
+        if (!universalAIProperties.seeThroughWalls && universalAIProperties.host.WallCheck())
         {
             monster.PerformTransition(Transition.LoseSight);
         }

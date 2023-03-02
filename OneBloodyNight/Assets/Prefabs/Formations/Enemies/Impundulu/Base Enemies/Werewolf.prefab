@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 2134576186914213716}
   - component: {fileID: 532517229150989733}
   - component: {fileID: 6075898001845311317}
+  - component: {fileID: 6250998436232743288}
   m_Layer: 0
   m_Name: Werewolf
   m_TagString: Monster
@@ -218,9 +219,9 @@ MonoBehaviour:
   speed: 5000
   immuneDuration: 0.5
   maxHitPoints: 160
+  walkAnim: 1
   basicAttack: {fileID: 3237701248447046877}
   bloodOnKill: 45
-  debugFollow: 1
 --- !u!95 &6075898001845311317
 Animator:
   serializedVersion: 4
@@ -241,6 +242,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6250998436232743288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157727617279695231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0005331c45f6a284e97465e32892dbe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  universalAIProperties:
+    engagementDistance: 0
+    seeThroughWalls: 0
+    host: {fileID: 532517229150989733}
+  lostAIProperties:
+    timeTilLoseSight: 0.5
 --- !u!1 &8340665572391856303
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,6 +391,7 @@ MonoBehaviour:
   speed: 0
   immuneDuration: 0
   maxHitPoints: 0
+  walkAnim: 0
   damage: 40
   knockbackAmount: 40
   hitstunDuration: 0.2

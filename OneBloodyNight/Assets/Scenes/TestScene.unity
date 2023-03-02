@@ -11268,7 +11268,7 @@ MonoBehaviour:
   speed: 120
   immuneDuration: 0.2
   maxHitPoints: 0
-  walkAnim: 0
+  walkAnim: 1
   spriteRenderer: {fileID: 1692689748}
   abilityOneCost: 60
   abilityTwoCost: 80

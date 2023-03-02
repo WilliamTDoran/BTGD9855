@@ -98,7 +98,6 @@ public class GameActor : MonoBehaviour
     {
         if (walkAnim)
         {
-            animator.SetTrigger("Walk");
             actualVelocity = rb.velocity.magnitude;
             clampedVelocity = actualVelocity > 1f ? 1f : actualVelocity;
             animator.SetFloat("Speed", clampedVelocity);

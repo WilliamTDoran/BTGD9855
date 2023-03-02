@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1208114523041030929}
   - component: {fileID: 5324353294964050627}
   - component: {fileID: 9131724393955719762}
+  - component: {fileID: 4135061390879084643}
   m_Layer: 0
   m_Name: I_Archer
   m_TagString: Monster
@@ -164,9 +165,9 @@ MonoBehaviour:
   speed: 3500
   immuneDuration: 0.5
   maxHitPoints: 40
+  walkAnim: 0
   basicAttack: {fileID: 0}
   bloodOnKill: 20
-  debugFollow: 0
 --- !u!95 &9131724393955719762
 Animator:
   serializedVersion: 4
@@ -187,3 +188,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4135061390879084643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8621432289928506362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0005331c45f6a284e97465e32892dbe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  universalAIProperties:
+    engagementDistance: 0
+    seeThroughWalls: 1
+    host: {fileID: 5324353294964050627}
+  lostAIProperties:
+    timeTilLoseSight: 0.5
