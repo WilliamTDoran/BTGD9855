@@ -111,8 +111,6 @@ public class Attack : GameActor
         if (animator != null) //projectiles don't need an animator
         {
             animator.SetTrigger(swingTrigger); //Each attack has its own animation controller that is used to dictate its windup and active time
-            animator.SetTrigger("Attack");
-
         }
     }
 
