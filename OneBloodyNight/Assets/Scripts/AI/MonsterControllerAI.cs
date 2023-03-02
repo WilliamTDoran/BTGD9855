@@ -28,11 +28,6 @@ public class PatrolAIProperties : AIProperties
 }
 
 [System.Serializable]
-public class AlertAIProperties : AIProperties
-{
-}
-
-[System.Serializable]
 public class ChaseAIProperties : AIProperties
 {
 
@@ -61,8 +56,6 @@ public class MonsterControllerAI : AdvancedFSM
     [SerializeField]
     private PatrolAIProperties patrolAIProperties;
     [SerializeField]
-    private AlertAIProperties alertAIProperties;
-    [SerializeField]
     private ChaseAIProperties chaseAIProperties;
     [SerializeField]
     private LostAIProperties lostAIProperties;
@@ -82,7 +75,7 @@ public class MonsterControllerAI : AdvancedFSM
         if (CurrentState != null)
         {
             //CurrentState.Reason(playerTransform, transform);
-            //CurrentState.Act(playerTransform, transform); at the moment, act does nothing
+            CurrentState.Act(playerTransform, transform);
         }
     }
 
@@ -121,7 +114,6 @@ public class MonsterControllerAI : AdvancedFSM
 
     private IEnumerator LoseSight()
     {
-        lostAIProperties.lost = false;
         yield return new WaitForSeconds(lostAIProperties.timeTilLoseSight);
         universalAIProperties.host.Chasing = false;
         lostAIProperties.lost = true;

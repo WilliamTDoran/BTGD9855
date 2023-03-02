@@ -23,14 +23,16 @@ public class PatrolState : FSMState
 
     public override void Reason(Transform player, Transform npc)
     {
-        if (universalAIProperties.seeThroughWalls && Player.plr.Visible)
+        if (Player.plr.Visible && universalAIProperties.seeThroughWalls)
         {
             monster.PerformTransition(Transition.Spot);
+            return;
         }
 
-        if (!universalAIProperties.host.WallCheck() && Player.plr.Visible)
+        if (Player.plr.Visible && !universalAIProperties.host.WallCheck())
         {
             monster.PerformTransition(Transition.Spot);
+            return;
         }
     }
 

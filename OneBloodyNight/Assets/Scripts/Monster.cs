@@ -92,6 +92,8 @@ public class Monster : GameActor
     { 
         while (true)
         {
+            yield return new WaitForSeconds(AI_TICK_TIME);
+
             if (aiController.CurrentState != null)
             {
                 aiController.CurrentState.Reason(player.transform, gameObject.transform);
@@ -108,8 +110,6 @@ public class Monster : GameActor
                     Debug.Log(gameObject.name + " can't find player!");
                 }
             }
-
-            yield return new WaitForSeconds(AI_TICK_TIME);
         }
     }
 

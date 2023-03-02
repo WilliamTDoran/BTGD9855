@@ -20,6 +20,7 @@ public class LostState : FSMState
 
     public override void EnterStateInit(Transform player, Transform npc)
     {
+        //chasing is deliberately NOT changed here; it's done by the LoseSight coroutine
         lostAIProperties.lost = false;
         monster.StartLoseSight();
     }
@@ -28,16 +29,18 @@ public class LostState : FSMState
     {
         Debug.Log(npc.gameObject.name + " has lost sight of " + player.gameObject.name);
 
-        if (!universalAIProperties.host.WallCheck())
+        if (Player.plr.Visible && !universalAIProperties.host.WallCheck())
         {
             monster.StopLoseSight();
             monster.PerformTransition(Transition.Spot);
+            return;
         }
 
         if (lostAIProperties.lost)
         {
             monster.StopLoseSight();
             monster.PerformTransition(Transition.GiveUp);
+            return;
         }
     }
 

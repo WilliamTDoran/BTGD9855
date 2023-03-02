@@ -30,6 +30,7 @@ public class AttackState : FSMState
         if (true)
         {
             monster.PerformTransition(Transition.TooFar);
+            return;
         }
 
 

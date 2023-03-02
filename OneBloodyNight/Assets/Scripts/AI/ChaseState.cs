@@ -29,11 +29,13 @@ public class ChaseState : FSMState
         if (!universalAIProperties.seeThroughWalls && universalAIProperties.host.WallCheck())
         {
             monster.PerformTransition(Transition.LoseSight);
+            return;
         }
 
         if (IsInCurrentRange(npc, player.position, universalAIProperties.engagementDistance))
         {
             monster.PerformTransition(Transition.Reach);
+            return;
         }
     }
 
