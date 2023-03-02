@@ -20,6 +20,7 @@ public class LostState : FSMState
 
     public override void EnterStateInit(Transform player, Transform npc)
     {
+        lostAIProperties.lost = false;
         monster.StartLoseSight();
     }
 
