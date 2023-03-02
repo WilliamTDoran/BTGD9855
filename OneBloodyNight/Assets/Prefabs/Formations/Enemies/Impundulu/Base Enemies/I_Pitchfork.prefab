@@ -135,7 +135,7 @@ MonoBehaviour:
   speed: 3000
   immuneDuration: 0.5
   maxHitPoints: 50
-  walkAnim: 0
+  walkAnim: 1
   basicAttack: {fileID: 8342049976024423553}
   bloodOnKill: 20
 --- !u!95 &2771159159247393256

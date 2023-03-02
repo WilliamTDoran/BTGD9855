@@ -171,7 +171,7 @@ public class Monster : GameActor
     /// </summary>
     private void Chase()
     {
-        if (path.corners.Length > 0)
+        if (path.corners.Length > 0 && nextPoint < path.corners.Length)
         {
             if (canMove && !player.Immune && !Stunned)
             {
