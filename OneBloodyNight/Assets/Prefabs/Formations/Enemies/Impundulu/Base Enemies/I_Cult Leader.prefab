@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2518543072169705319}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -114,9 +114,9 @@ MonoBehaviour:
   speed: 2500
   immuneDuration: 0.5
   maxHitPoints: 50
+  walkAnim: 0
   basicAttack: {fileID: 0}
   bloodOnKill: 15
-  debugFollow: 1
 --- !u!54 &7587878168658356176
 Rigidbody:
   m_ObjectHideFlags: 0
