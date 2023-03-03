@@ -530,15 +530,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab777ea75c20254989dbe063fc1817f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeStartSpawning: 2
-  minSpawningDistance: 1
-  maxSpawningDistance: 20
+  timeStartSpawning: 3
+  minSpawningDistance: 30
+  maxSpawningDistance: 50
   vars:
-    minAttempts: 3
-    maxAttempts: 5
-    maxCount: 100
-    baseChance: 0.7
-    steepness: 1.7
+    minAttempts: 1
+    maxAttempts: 3
+    maxCount: 60
+    baseChance: 0.5
+    steepness: 2.15
 --- !u!65 &2242715887265903012
 BoxCollider:
   m_ObjectHideFlags: 0

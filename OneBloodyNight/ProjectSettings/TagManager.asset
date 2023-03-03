@@ -60,9 +60,9 @@ TagManager:
   - name: Enemies
     uniqueID: 4023064477
     locked: 0
-  - name: Blood Splatter
-    uniqueID: 2131791757
-    locked: 0
   - name: Player
     uniqueID: 1953289611
+    locked: 0
+  - name: Blood Splatter
+    uniqueID: 2131791757
     locked: 0
