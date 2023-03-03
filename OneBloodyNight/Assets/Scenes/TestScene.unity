@@ -7750,7 +7750,6 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 1692689746}
-  animator: {fileID: 666666511}
   showHitbox: 1
   hitboxMesh: {fileID: 666666515}
 --- !u!136 &666666518
@@ -8088,6 +8087,11 @@ MonoBehaviour:
     maxCellDifficulty: 0
     SetPieces: []
     objects: []
+    enemies:
+    - {fileID: 8258326494958717592, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
+    - {fileID: 8258326494958717592, guid: 9a9d96e3f819a2245a1d6d98af4e85dd, type: 3}
+    - {fileID: 8258326494958717592, guid: 1bba256061924674e8f8aa460f504244, type: 3}
+    - {fileID: 8258326494958717592, guid: d1e5d37eedb4e1043a1a4d8073e8361c, type: 3}
     North:
       offSet: {x: 4, y: 0, z: 0}
       Sprites:
@@ -8119,6 +8123,11 @@ MonoBehaviour:
     maxCellDifficulty: 1
     SetPieces: []
     objects: []
+    enemies:
+    - {fileID: 8258326494958717592, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
+    - {fileID: 8258326494958717592, guid: 9a9d96e3f819a2245a1d6d98af4e85dd, type: 3}
+    - {fileID: 8258326494958717592, guid: 1bba256061924674e8f8aa460f504244, type: 3}
+    - {fileID: 8258326494958717592, guid: d1e5d37eedb4e1043a1a4d8073e8361c, type: 3}
     North:
       offSet: {x: 4, y: 0, z: 0}
       Sprites:
@@ -8214,6 +8223,11 @@ MonoBehaviour:
       cellDifficulty: 10
       maxPlaced: 18
       minPlaced: 10
+    enemies:
+    - {fileID: 8258326494958717592, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
+    - {fileID: 8258326494958717592, guid: 9a9d96e3f819a2245a1d6d98af4e85dd, type: 3}
+    - {fileID: 8258326494958717592, guid: 1bba256061924674e8f8aa460f504244, type: 3}
+    - {fileID: 8258326494958717592, guid: d1e5d37eedb4e1043a1a4d8073e8361c, type: 3}
     North:
       offSet: {x: 4, y: 0, z: 0}
       Sprites:
@@ -9564,7 +9578,6 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 1692689746}
-  animator: {fileID: 1181192923}
   showHitbox: 1
   hitboxMesh: {fileID: 1181192920}
 --- !u!95 &1181192923

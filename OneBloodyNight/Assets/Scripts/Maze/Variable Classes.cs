@@ -46,6 +46,21 @@ public class MazeVariables
     public GameObject bossPortal;
 }
 
+[System.Serializable]
+public class spawnerVars
+{
+    [Tooltip("min_spawn_attempts")]
+    public int minAttempts;
+    [Tooltip("max_spawn_attempts")]
+    public int maxAttempts;
+    [Tooltip("max_enemies")]
+    public int maxCount;
+    [Tooltip("base_chance")]
+    public float baseChance = 0.7f;
+    [Tooltip("spawn_steepness")]
+    public float steepness = 1.7f;
+}
+
 
 [System.Serializable]
 public class BiomeVariables
@@ -57,6 +72,7 @@ public class BiomeVariables
     public GameObject[] SetPieces;
     [Tooltip("Array of the objects to be placed in the maze")]
     public PlacableObject[] objects;
+    public GameObject[] enemies;
     public ArtVars North;
     public ArtVars East;
     [Tooltip("Use the following order: All, missingNorth, missingEast, missingSouth, missingWest, lineVertical, lineHorizontal, cornerNorthWest, cornerNorthEast, cornerSouthEast, cornerSouthWest, endNorth, endEast, endSouth, endWest, None")]

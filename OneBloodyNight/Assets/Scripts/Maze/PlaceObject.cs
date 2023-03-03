@@ -9,7 +9,7 @@ public class PlaceObject
 
     public static void placeAll(Biome startBiome)
     {
-        BiomeVariables[] bv = Maze.m.biomeVariables;
+        /*BiomeVariables[] bv = Maze.m.biomeVariables;
         for (int b = 0; b<(int)Biome.length; b++)
         {
             if (b == (int)startBiome) continue;
@@ -17,7 +17,7 @@ public class PlaceObject
             {
                 massPlace((Biome)b, bv[b].objects[i]);
             }
-        }
+        }*/
     }
 
     public static void massPlace(Biome b, PlacableObject obj)
@@ -38,7 +38,7 @@ public class PlaceObject
         GameObject placed = GameObject.Instantiate(obj.formation, Maze.m.transform.position+new Vector3(c.transform.position.x + Random.Range(-Maze.m.traits.scale*0.4f, Maze.m.traits.scale * 0.4f), c.transform.position.y, c.transform.position.z), Quaternion.Euler(90, 0, 0));
         //Debug.Log("Object placed in cell "+x+", "+y+", biome colour: "+Maze.m.getCell(x,y).getBiome());
         //Maze.m.getCell(x, y).transform.GetChild(0).gameObject.SetActive(true);
-        Maze.m.getCell(x, y).transform.GetChild(0).GetComponent<Spawner>().addSpawnLocations(placed);
+        //Maze.m.getCell(x, y).transform.GetChild(0).GetComponent<Spawner>().addSpawnLocations(placed);
     }
 
     internal static void placePortal(Biome B)
