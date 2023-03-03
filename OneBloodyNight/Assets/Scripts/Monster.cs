@@ -18,13 +18,16 @@ public class Monster : GameActor
 
     private string refCode1 = "basic"; //See Attack comments on attackerGrantedCode
 
+    private const float AI_TICK_TIME = 0.25f;
+    private MonsterControllerAI aiController;
+
     private bool chasing;
     public bool Chasing { set { chasing = value; } }
     private int nextPoint;
     private NavMeshPath path;
+
     private IEnumerator AITickCoroutine;
-    private const float AI_TICK_TIME = 0.25f;
-    private MonsterControllerAI aiController;
+    private IEnumerator attackCycleCoroutine;
 
     /* Exposed Variables */
     [Tooltip("A reference to the monster's basic attack object")]
@@ -55,7 +58,6 @@ public class Monster : GameActor
 
         path = new NavMeshPath();
 
-        StartCoroutine(DebugAttackCycle());
         StartAITick();
     }
 
@@ -97,6 +99,7 @@ public class Monster : GameActor
             if (aiController.CurrentState != null)
             {
                 aiController.CurrentState.Reason(player.transform, gameObject.transform);
+                aiController.CurrentState.Act(player.transform, gameObject.transform);
             }
 
             if (player.Visible && chasing)
@@ -126,32 +129,34 @@ public class Monster : GameActor
         return Physics.Raycast(rb.position, direction, direction.magnitude, layerMask);
     }
 
+    internal void Aggress()
+    {
+        AttackShuffle();
+
+        if (canAttack)
+        {
+            StartAttackCycle();
+        }
+    }
+
+    private void AttackShuffle()
+    {
+
+    }
+
     /// <summary>
     /// Drives the monster's attack cycle based on a paramaterized time.
     /// </summary>
     /// <returns>Functional IEnumerator return</returns>
-    private IEnumerator DebugAttackCycle()
+    private IEnumerator AttackCycle()
     {
-        while (true)
-        {
-            if (Vector3.Distance(player.Rb.position, rb.position) < 5)
-            {
-                facingAngle = Vector3.SignedAngle(Vector3.right, (player.Rb.position - rb.position), Vector3.up);
-                facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
+        facingAngle = Vector3.SignedAngle(Vector3.right, (player.Rb.position - rb.position), Vector3.up);
+        facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
 
-                if (canAttack && !Stunned)
-                {
-                    basicAttack.StartSwing(refCode1);
-                    canAttack = false;
-                }
+        basicAttack.StartSwing(refCode1);
+        canAttack = false;
 
-                yield return new WaitForSeconds(2);
-            }
-            else
-            {
-                yield return new WaitForSeconds(AI_TICK_TIME);
-            }
-        }
+        yield return new WaitForSeconds(2);
     }
 
     /// <summary>
@@ -200,5 +205,17 @@ public class Monster : GameActor
     {
         StopCoroutine(AITickCoroutine);
         AITickCoroutine = null;
+    }
+
+    private void StartAttackCycle()
+    {
+        attackCycleCoroutine = AttackCycle();
+        StartCoroutine(attackCycleCoroutine);
+    }
+
+    private void StopAttackCycle()
+    {
+        StopCoroutine(attackCycleCoroutine);
+        attackCycleCoroutine = null;
     }
 }

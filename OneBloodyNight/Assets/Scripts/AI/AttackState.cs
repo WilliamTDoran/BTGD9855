@@ -32,8 +32,6 @@ public class AttackState : FSMState
             monster.PerformTransition(Transition.TooFar);
             return;
         }
-
-
     }
 
     public override void Act(Transform player, Transform npc)

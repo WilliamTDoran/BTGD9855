@@ -76,10 +76,6 @@ public class Attack : GameActor
     [Tooltip("The GameActor who is making the attack")]
     [SerializeField]
     protected GameActor attacker;
-
-    [Tooltip("The attack's own animator")]
-    [SerializeField]
-    private Animator animator;
     /*~~~~~~~~~~~~~~~~~~~~*/
     [Header("Debug")]
 
