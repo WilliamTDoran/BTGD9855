@@ -72,6 +72,7 @@ public class Monster : GameActor
 
         if (CurHitPoints <= 0)
         {
+            Spawner.enemKilled();
             Bloodmeter.instance.bloodmeter.value += bloodOnKill;
             gameObject.SetActive(false);
         }
