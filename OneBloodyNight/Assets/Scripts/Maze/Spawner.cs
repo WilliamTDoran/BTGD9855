@@ -105,7 +105,7 @@ public class Spawner : MonoBehaviour
             GameObject[] enemies = Maze.m.biomeVariables[(int)c.getBiome()].enemies;
             int enem = Random.Range(0, enemies.Length);
             Debug.Log("Spawning enemy number " + enem +" in cell "+ c.name);
-            GameObject placed = GameObject.Instantiate(enemies[enem], /*Maze.m.transform.position + */new Vector3(c.transform.position.x, c.transform.position.y, c.transform.position.z), Quaternion.Euler(90, 0, 0));
+            GameObject placed = GameObject.Instantiate(enemies[enem], /*Maze.m.transform.position + */new Vector3(c.transform.position.x, enemies[enem].transform.position.y, c.transform.position.z), Quaternion.Euler(90, 0, 0));
             Debug.Log("Enemy spawned at "+ placed.transform.position.x+" " + placed.transform.position.y + " " + placed.transform.position.z + " ");
         }
     }
