@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   universalAIProperties:
-    engagementDistance: 0
+    engagementDistance: 10
     seeThroughWalls: 0
     host: {fileID: 532517229150989733}
   lostAIProperties:
@@ -407,7 +407,6 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 532517229150989733}
-  animator: {fileID: 6923590393604019625}
   showHitbox: 1
   hitboxMesh: {fileID: 6696822652906178980}
 --- !u!95 &6923590393604019625

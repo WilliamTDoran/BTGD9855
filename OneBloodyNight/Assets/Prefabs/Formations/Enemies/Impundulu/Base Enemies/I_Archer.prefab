@@ -201,8 +201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   universalAIProperties:
-    engagementDistance: 0
-    seeThroughWalls: 1
+    engagementDistance: 5
+    seeThroughWalls: 0
     host: {fileID: 5324353294964050627}
   lostAIProperties:
-    timeTilLoseSight: 0.5
+    timeTilLoseSight: 2.5

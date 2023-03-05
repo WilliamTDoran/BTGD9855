@@ -531,12 +531,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeStartSpawning: 3
-  minSpawningDistance: 30
+  minSpawningDistance: 35
   maxSpawningDistance: 50
   vars:
     minAttempts: 1
-    maxAttempts: 3
-    maxCount: 60
+    maxAttempts: 2
+    maxCount: 70
     baseChance: 0.5
     steepness: 2.15
 --- !u!65 &2242715887265903012
