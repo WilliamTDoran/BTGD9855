@@ -1893,7 +1893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3000
   immuneDuration: 0
-  maxHitPoints: 200
+  maxHitPoints: 1000
   walkAnim: 0
   phases:
   - {fileID: 1466547971}
@@ -1911,7 +1911,7 @@ MonoBehaviour:
   - {fileID: 532537194}
   - {fileID: 606353820}
   - {fileID: 1611556331}
-  timeBetweenFeathers: 0.4
+  timeBetweenFeathers: 0.2
   cam: {fileID: 1517027049}
   initialPositionTime: 1.5
   threatenTime: 1.5
