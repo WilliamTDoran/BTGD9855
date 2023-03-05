@@ -142,7 +142,7 @@ public class Monster : GameActor
 
     private void AttackShuffle()
     {
-
+        Vector3 direction = new Vector3(0, rb.position.y, 0);
     }
 
     /// <summary>

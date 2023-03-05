@@ -950,7 +950,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1953289611
-  m_SortingLayer: 7
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8deefd8732e19244eab2ed41ef2e611a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2830,7 +2830,6 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 1692689746}
-  animator: {fileID: 666666511}
   showHitbox: 1
   hitboxMesh: {fileID: 666666515}
 --- !u!136 &666666518
@@ -4397,7 +4396,6 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 1692689746}
-  animator: {fileID: 1181192923}
   showHitbox: 1
   hitboxMesh: {fileID: 1181192920}
 --- !u!95 &1181192923
@@ -5878,7 +5876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   universalAIProperties:
-    engagementDistance: 0
+    engagementDistance: 5
     seeThroughWalls: 0
     host: {fileID: 532517230274815347}
   lostAIProperties:
@@ -6300,7 +6298,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1953289611
-  m_SortingLayer: 7
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c8b76421ecab6cf4f8462465f826f53d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7662,7 +7660,6 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 532517230274815347}
-  animator: {fileID: 6923590394694131071}
   showHitbox: 1
   hitboxMesh: {fileID: 6696822653964829042}
 --- !u!4 &4564198035872626234
