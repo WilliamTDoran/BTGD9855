@@ -4461,7 +4461,7 @@ MonoBehaviour:
   bloodmeter: {fileID: 1084522853}
   AbilityCost: 50
   damage: 0
-  bloodLossRate: 0.6
+  bloodLossRate: 0.4
 --- !u!114 &1084522853
 MonoBehaviour:
   m_ObjectHideFlags: 0

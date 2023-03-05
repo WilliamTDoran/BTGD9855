@@ -221,7 +221,7 @@ MonoBehaviour:
   maxHitPoints: 160
   walkAnim: 1
   basicAttack: {fileID: 3237701248447046877}
-  bloodOnKill: 45
+  bloodOnKill: 60
 --- !u!95 &6075898001845311317
 Animator:
   serializedVersion: 4
