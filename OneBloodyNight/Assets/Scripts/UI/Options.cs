@@ -8,6 +8,10 @@ public class Options : MonoBehaviour
 {
     public AudioMixer mixer;
     public Slider master;
+
+    [SerializeField]
+    private GameObject optionScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +37,10 @@ public class Options : MonoBehaviour
     public void SetMaster(float sliderValue)
     {
         mixer.SetFloat("EXMaster", Mathf.Log10(sliderValue) * 20);
+    }
+
+    public void Back()
+    {
+        optionScreen.SetActive(false);
     }
 }
