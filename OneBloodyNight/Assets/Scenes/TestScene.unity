@@ -3406,7 +3406,8 @@ MonoBehaviour:
   - colour: {r: 0.6415094, g: 0, b: 0, a: 1}
     wallsRemoved: 15
     maxCellDifficulty: 1
-    SetPieces: []
+    SetPieces:
+    - {fileID: 3462578440953639072, guid: fc0942543b21b424b9eae9255c87108c, type: 3}
     objects: []
     enemies:
     - {fileID: 8258326494958717592, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
@@ -3446,7 +3447,8 @@ MonoBehaviour:
   - colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
     wallsRemoved: 150
     maxCellDifficulty: 10
-    SetPieces: []
+    SetPieces:
+    - {fileID: 3462578440953639072, guid: fc0942543b21b424b9eae9255c87108c, type: 3}
     objects:
     - formation: {fileID: 1216559942331405162, guid: 8a2f415d56b154e4880a5929ed331b68, type: 3}
       cellDifficulty: 0

@@ -124,7 +124,8 @@ public class LocationSpawner
                 //Debug.Log("Set piece able to be placed!");
             }
 
-            // if yes, place it
+            // if yes, place it!
+            //Placing walls
             for (int i = 0; i < setPiece.Length && placeable; i++)
             {
                 for (int j = 0; j < setPiece[i].Length; j++)
@@ -164,6 +165,8 @@ public class LocationSpawner
 
                 }
             }
+            //placing objects
+
         }
     }
 }
