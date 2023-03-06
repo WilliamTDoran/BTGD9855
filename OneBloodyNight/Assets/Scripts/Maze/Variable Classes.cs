@@ -9,8 +9,7 @@ public enum Biome
     strgoi,
     yara,
     impundulu,
-    length,
-    setPiece
+    length
 }
 
 

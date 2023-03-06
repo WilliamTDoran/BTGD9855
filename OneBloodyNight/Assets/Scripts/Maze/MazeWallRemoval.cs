@@ -22,7 +22,7 @@ public class MazeWallRemoval
         {
             if (c.getBiome() == b) match.Add(c); 
         }
-        Debug.Log("Biome "+b+" contains "+match.Count+" dead ends");
+        //Debug.Log("Biome "+b+" contains "+match.Count+" dead ends");
         for (int i=0; i<traits.wallsRemoved; i++)
         {
             if (match.Count > 1)
@@ -49,7 +49,7 @@ public class MazeWallRemoval
                         if (maxAvailable == 0)
                         {
                             w = match[matchChosen].walls[j];
-                            Debug.Log("Cell " + match[matchChosen].name + " removed the " + w.name +" "+ i);
+                            //Debug.Log("Cell " + match[matchChosen].name + " removed the " + w.name +" "+ i);
                             break;
                         }
 

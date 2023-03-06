@@ -11,10 +11,12 @@ public class Cell : MonoBehaviour
 
     [SerializeField]
     private Biome biome = Biome.length;
-    internal short difficulty;
+    //internal short difficulty;
+    [SerializeField]
     internal bool setPiece = false;
     //internal short placed;
 
+    [SerializeField]
     private bool inMaze = false;
 
     [SerializeField]
@@ -59,6 +61,11 @@ public class Cell : MonoBehaviour
         return inMaze;
     }
 
+    public void putInMaze()
+    {
+        inMaze = true;
+    }
+
     //helper function to help setup the maze. Connects this cell to the cell on the left
     public void leftCell(Cell l)
     {
@@ -91,7 +98,7 @@ public class Cell : MonoBehaviour
     public void generateMaze()
     {
         inMaze = true;
-        difficulty = 0;
+        //difficulty = 0;
         //pick a cell around it.
         Cell nextCell;
         int dir;
@@ -102,7 +109,7 @@ public class Cell : MonoBehaviour
             //Make sure it's in the maze. If not select a new cell
             for (int i = 0; i < 4; i++)
             {
-                if (!nextCell.isInMaze() && nextCell.getBiome() == biome)
+                if (!nextCell.isInMaze() && nextCell.getBiome() == biome /*&& !nextCell.setPiece*/)
                 {
                     break;
                 }

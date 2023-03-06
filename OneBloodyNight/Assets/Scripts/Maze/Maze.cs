@@ -110,6 +110,10 @@ public class Maze : MonoBehaviour
         mid.setBiome(traits.CharacterBiome);
         biomeGen.generateBiomes((int)traits.width / 2, (int)traits.height / 2);
 
+        //Set pieces
+        LocationSpawner.placeLocation(Biome.impundulu, 5);
+        LocationSpawner.placeLocation(Biome.yara, 5);
+
         //Maze generation
         getCell((int)traits.width / 2 + 1, (int)traits.height / 2).generateMaze();
         getCell((int)traits.width / 2 - 1, (int)traits.height / 2).generateMaze();
@@ -118,7 +122,7 @@ public class Maze : MonoBehaviour
 
         //Wall removal
         //extraRemoval(toRemove);
-        Debug.Log("There are: " + deadEnds.Count + "Dead ends");
+        //Debug.Log("There are: " + deadEnds.Count + "Dead ends");
         PlaceObject.placePortal(Biome.impundulu);
         PlaceObject.placePortal(Biome.yara);
 

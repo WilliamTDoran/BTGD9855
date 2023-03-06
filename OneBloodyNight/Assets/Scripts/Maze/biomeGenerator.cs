@@ -50,9 +50,9 @@ public class BiomeGenerator
         //set up biome generator
         Cell next = Maze.m.getCell(centerX, centerY);
         int one = (((int)next.getBiome()) + 1) % 3;
-        Debug.Log(one);
+        //Debug.Log(one);
         int two = (((int)next.getBiome()) + 2) % 3;
-        Debug.Log(two);
+        //Debug.Log(two);
         addToList(one, next.getWall((int)Wall.wLocation.east));
         addToList(two, next.getWall((int)Wall.wLocation.west));
         
