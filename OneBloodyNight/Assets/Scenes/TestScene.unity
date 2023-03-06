@@ -3207,6 +3207,7 @@ MonoBehaviour:
     height: 21
     scale: 16
     betweenCells: 8
+    hubObjects: []
     CharacterBiome: 0
     bossPortal: {fileID: 3505505689596641723, guid: 9df13bf0a1b3ba3448ef6d87397cd563, type: 3}
   mazeSeed: -1

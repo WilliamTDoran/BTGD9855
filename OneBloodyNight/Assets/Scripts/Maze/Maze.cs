@@ -95,7 +95,12 @@ public class Maze : MonoBehaviour
         //runs the maze generation algorithm
         generateMaze();
         transform.position = new Vector3(-1 * traits.scale * (traits.width / 2), 0.001f, traits.scale * (traits.height / 2));
-        Player.plr.transform.position = new Vector3(getCell(traits.width/2, traits.height/ 2).transform.position.x, Player.plr.transform.position.y, getCell(traits.width / 2, traits.height / 2).transform.position.z);
+        Vector3 hub = new Vector3(getCell(traits.width / 2, traits.height / 2).transform.position.x, Player.plr.transform.position.y, getCell(traits.width / 2, traits.height / 2).transform.position.z);
+        Player.plr.transform.position = hub;
+        for (int i=0; i<traits.hubObjects.Length; i++)
+        {
+            GameObject temp = GameObject.Instantiate(Maze.m.traits.hubObjects[i], hub, Quaternion.Euler(90, 0, 0), getCell(traits.width / 2, traits.height / 2).transform);
+        }
     }
 
     public void generateMaze()

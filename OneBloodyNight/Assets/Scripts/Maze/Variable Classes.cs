@@ -42,6 +42,7 @@ public class MazeVariables
     public int height;
     public float scale;
     public float betweenCells;
+    public GameObject[] hubObjects;
     public Biome CharacterBiome;
     public GameObject bossPortal;
 }
