@@ -85,23 +85,13 @@ public class LocationSpawner
 
             // pick a location in the biome for the formation
             Vector2 setPieceLocation = new Vector2(Random.Range(0, Maze.m.width()), Random.Range(0, Maze.m.height()));
-            Debug.Log("Set piece attempted to place at location " + setPieceLocation.x + ", " + setPieceLocation.y);
+            //Debug.Log("Set piece attempted to place at location " + setPieceLocation.x + ", " + setPieceLocation.y);
             bool placeable = true;
             // check if the formation fits within the confines of the maze & biome
             for (int i=0; i<setPiece.Length && placeable; i++)
             {
                 for (int j=0; j<setPiece[i].Length; j++)
                 {
-                    /*
-                     * (setPiece[i][j] != null && 
-                     * (int)setPieceLocation.x + i < Maze.m.width() && 
-                     * (int)setPieceLocation.y + j < Maze.m.height() && 
-                     * Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getBiome() != b && 
-                     * !Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).setPiece) || 
-                     * (setPiece[i][j] != null && 
-                     * ((int)setPieceLocation.x + i > Maze.m.width() || 
-                     * (int)setPieceLocation.y + j > Maze.m.height()))
-                     */
                     if (setPiece[i][j] != null) // if cell ij is in setpiece
                     {
                         if ((int)setPieceLocation.x + i < Maze.m.width() && (int)setPieceLocation.y + j < Maze.m.height()) //if cell in setpiece is in maze
@@ -124,14 +114,14 @@ public class LocationSpawner
                     }
                 }
             }
-            Debug.Log("Test");
+            //Debug.Log("Test");
             if (!placeable)
             {
-                Debug.Log("No set piece!");
+                //Debug.Log("No set piece!");
                 continue;
             } else
             {
-                Debug.Log("Set piece able to be placed!");
+                //Debug.Log("Set piece able to be placed!");
             }
 
             // if yes, place it
@@ -141,20 +131,34 @@ public class LocationSpawner
                 {
                     if (setPiece[i][j] == null)
                     {
-                        Debug.Log("Maze cell at " + ((int)setPieceLocation.x + i) + ", " + ((int)setPieceLocation.y + j) + " not included in set piece");
                         continue;
                     }
                     // Set walls in maze equal to walls in cell, only inside the formation
-                    /*if (j - 1 >= 0 && setPiece[i][j - 1] != null && !setPiece[i][j].getWall((int)Wall.wLocation.north).gameObject.activeSelf) 
+                    if (j - 1 >= 0 && setPiece[i][j - 1] != null && !setPiece[i][j].getWall((int)Wall.wLocation.north).gameObject.activeInHierarchy)
                     {
-                        //Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.north).remove(false);
-
+                        Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.north).remove(false);
                     }
-                    if (i + 1 < setPiece[i].Length && setPiece[i + 1][j] != null && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeSelf) 
+                    else if (j == 0 && !setPiece[i][j].getWall((int)Wall.wLocation.north).gameObject.activeInHierarchy) 
                     {
-                        //Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.east).remove(false);
-                    }*/
-                    Debug.Log("Maze cell at "+ ((int)setPieceLocation.x + i)+", "+((int)setPieceLocation.y + j)+" placed in set piece");
+                        Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.north).remove(false);
+                    }
+                    if (i + 1 < setPiece[i].Length && setPiece[i + 1][j] != null && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeInHierarchy) 
+                    {
+                        Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.east).remove(false);
+                    } else if (i + 1 == setPiece[i].Length && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeInHierarchy)
+                    {
+                        Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.east).remove(false);
+                    }
+
+                    if (i==0 && !setPiece[i][j].getWall((int)Wall.wLocation.west).gameObject.activeInHierarchy)
+                    {
+                        Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.west).remove(false);
+                    }
+                    if (j + 1 == setPiece.Length && !setPiece[i][j].getWall((int)Wall.wLocation.south).gameObject.activeInHierarchy)
+                    {
+                        Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.south).remove(false);
+                    }
+
                     Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).setPiece = true;
                     Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).putInMaze();
 

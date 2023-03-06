@@ -33,7 +33,7 @@ public class MazeWallRemoval
                 //Debug.Log(matchChosen+ ", "+ match.Count);
                 for (int j = 1; j < match[matchChosen].walls.Length; j++)
                 {
-                    if (match[matchChosen].walls[j].getState() != Wall.wState.interior && match[matchChosen].getBiome() == match[matchChosen].walls[j].getLink().getCell().getBiome() && !match[matchChosen].walls[j].getLink().getCell().setPiece)
+                    if (match[matchChosen].walls[j].getState() != Wall.wState.interior && match[matchChosen].getBiome() == match[matchChosen].walls[j].getLink().getCell().getBiome() && !match[matchChosen].walls[j].getLink().getCell().setPiece && !match[matchChosen].setPiece)
                     {
                         maxAvailable++;
                     }
@@ -44,7 +44,7 @@ public class MazeWallRemoval
                     Wall w = null;
                     for (int j = 0; j < match[matchChosen].walls.Length; j++)
                     {
-                        if (match[matchChosen].walls[j].getState() != Wall.wState.interior && match[matchChosen].getBiome() == match[matchChosen].walls[j].getLink().getCell().getBiome() && !match[matchChosen].walls[j].getLink().getCell().setPiece) continue;
+                        if (match[matchChosen].walls[j].getState() != Wall.wState.interior && match[matchChosen].getBiome() == match[matchChosen].walls[j].getLink().getCell().getBiome() && !match[matchChosen].walls[j].getLink().getCell().setPiece && !match[matchChosen].setPiece) continue;
                         maxAvailable--;
                         if (maxAvailable == 0)
                         {
@@ -65,7 +65,7 @@ public class MazeWallRemoval
                 int wallRemoved = Random.Range(0, 4);
                 Wall w = c.getWall(wallRemoved);
                 Cell other = w.getLink().getCell();
-                if (c.getBiome() == other.getBiome() && c != other)
+                if (c.getBiome() == other.getBiome() && c != other && !c.setPiece && !other.setPiece)
                 {
                     w.remove(false);
                 }
