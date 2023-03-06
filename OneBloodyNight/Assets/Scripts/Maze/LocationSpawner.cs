@@ -166,7 +166,11 @@ public class LocationSpawner
                 }
             }
             //placing objects
-
+            Transform props = setPieceGO.transform.GetChild(0);
+            for (int i=0; i< props.childCount; i++)
+            {
+                GameObject.Instantiate(props.GetChild(i).gameObject, Maze.m.getCell((int)setPieceLocation.x, (int)setPieceLocation.y).transform.position+ props.GetChild(i).position, Quaternion.Euler(90, 0, 0), Maze.m.getCell((int)setPieceLocation.x, (int)setPieceLocation.y).transform);
+            }
         }
     }
 }
