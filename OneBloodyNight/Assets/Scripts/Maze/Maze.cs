@@ -131,7 +131,7 @@ public class Maze : MonoBehaviour
 
         //Object Placer
         //PlaceObject.place(Biome.yara, biomeVariables[(int)Biome.yara].objects[0]);
-        PlaceObject.placeAll(traits.CharacterBiome);
+        //PlaceObject.placeAll(traits.CharacterBiome);
     }
 
     //helper function, return cell (x,y) from the maze.

@@ -155,10 +155,18 @@ public class Cell : MonoBehaviour
         {
             walls[(int)Wall.wLocation.south].placeNorthSprites(getBiome(), transform.position);
         }
-        /*if (getBiome() == Biome.yara)
+
+        //floors
+        GameObject[] floorSprites = Maze.m.biomeVariables[(int)getBiome()].floors.Sprites;
+        for (int i=0; i<9; i++)
         {
-            transform.GetChild(0).GetChild(0).GetComponent<SpriteRenderer>().color = Color.cyan;
-        }*/
+            if (floorSprites.Length >= 1)
+            {
+                int picked = Random.Range(0, floorSprites.Length);
+                Vector3 offset = Maze.m.biomeVariables[(int)getBiome()].floors.offSet;
+                GameObject temp = Instantiate(floorSprites[picked], new Vector3(transform.position.x - offset.x + (i % 3) * offset.x, floorSprites[picked].transform.position.y, transform.position.z - offset.z + (i / 3) * offset.z), Quaternion.Euler(90, 0, 0), transform);
+            }
+        }
     }
 
     internal CornerType Corner()

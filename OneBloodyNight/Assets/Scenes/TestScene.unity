@@ -3249,6 +3249,10 @@ MonoBehaviour:
       - {fileID: 3111108264678135816, guid: 98debe59952970a42acd1fe0031ef950, type: 3}
       - {fileID: 3111108264678135816, guid: b85a76b5a864f55449cb11e1a1ca9eb5, type: 3}
       - {fileID: 3111108264678135816, guid: a3f677480755c434c9c96812ac63fc78, type: 3}
+    floors:
+      offSet: {x: -8, y: 0, z: -8}
+      Sprites:
+      - {fileID: 8826861024925891624, guid: 013f1186d7d0c9145afa9b389f7ed9a3, type: 3}
   - colour: {r: 0.6415094, g: 0, b: 0, a: 1}
     wallsRemoved: 15
     maxCellDifficulty: 1
@@ -3285,6 +3289,10 @@ MonoBehaviour:
       - {fileID: 3111108264678135816, guid: 437bbb0dac60c194a86b4cf3e7803333, type: 3}
       - {fileID: 3111108264678135816, guid: be41a7c25f2eb4240a36ff24e41c4fb7, type: 3}
       - {fileID: 3111108264678135816, guid: 0906339c9b4be0f40b06c091a8326064, type: 3}
+    floors:
+      offSet: {x: -8, y: 0, z: -8}
+      Sprites:
+      - {fileID: 8826861024925891624, guid: 3cf195785e097784ebce913069149158, type: 3}
   - colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
     wallsRemoved: 150
     maxCellDifficulty: 10
@@ -3407,6 +3415,10 @@ MonoBehaviour:
       - {fileID: 3111108264678135816, guid: d23de4974a612c44eaf2417c6d22f406, type: 3}
       - {fileID: 3111108264678135816, guid: 8e4d489318a72a143b7699668c24d3c7, type: 3}
       - {fileID: 3111108264678135816, guid: ec215e026c6599541b39c858324d3aa6, type: 3}
+    floors:
+      offSet: {x: -8, y: 0, z: -8}
+      Sprites:
+      - {fileID: 8826861024925891624, guid: 671a2e68423554b4188f23eeed7d4954, type: 3}
 --- !u!4 &750604040
 Transform:
   m_ObjectHideFlags: 0

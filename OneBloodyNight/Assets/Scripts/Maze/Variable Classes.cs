@@ -77,6 +77,7 @@ public class BiomeVariables
     public ArtVars East;
     [Tooltip("Use the following order: All, missingNorth, missingEast, missingSouth, missingWest, lineVertical, lineHorizontal, cornerNorthWest, cornerNorthEast, cornerSouthEast, cornerSouthWest, endNorth, endEast, endSouth, endWest, None")]
     public ArtVars Corner;
+    public ArtVars floors;
 }
 
 [System.Serializable]
