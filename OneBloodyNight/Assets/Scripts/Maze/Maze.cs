@@ -111,8 +111,8 @@ public class Maze : MonoBehaviour
         biomeGen.generateBiomes((int)traits.width / 2, (int)traits.height / 2);
 
         //Set pieces
-        LocationSpawner.placeLocation(Biome.impundulu, 5);
-        LocationSpawner.placeLocation(Biome.yara, 5);
+        //LocationSpawner.placeLocation(Biome.impundulu, 5);
+        //LocationSpawner.placeLocation(Biome.yara, 5);
 
         //Maze generation
         getCell((int)traits.width / 2 + 1, (int)traits.height / 2).generateMaze();
