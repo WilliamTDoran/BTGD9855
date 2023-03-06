@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class Options : MonoBehaviour
 {
     public AudioMixer mixer;
+    public Slider master;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class Options : MonoBehaviour
 
     public void SetSFX(float sliderValue)
     {
-        mixer.SetFloat("EXSFX", Mathf.Log10(sliderValue) * 20);
+        mixer.SetFloat("EXSFX", master.value);
     }
 
     public void SetMusic(float sliderValue)
