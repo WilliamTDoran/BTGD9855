@@ -27,7 +27,18 @@ public class GameOver : MonoBehaviour
             Victory();
         }
 
-            if (bloodmeter.bloodmeter.value <= 0)
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Application.LoadLevel("TestScene");
+        }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            Application.Quit();
+        }
+
+
+        if (bloodmeter.bloodmeter.value <= 0)
         {
             //screen1.SetActive(true);
         }
@@ -36,6 +47,7 @@ public class GameOver : MonoBehaviour
     public void yes()
     {
         Application.LoadLevel("TestScene");
+        Debug.Log("working");
 
     }
 
@@ -44,12 +56,24 @@ public class GameOver : MonoBehaviour
         Application.Quit();
     }
 
-    private void Victory()
+    public void Victory()
     {
         screen2.SetActive(true);
         Time.timeScale = 0f;
         audioSource.Play();
     }
+
+    public void NO()
+    {
+        Application.Quit();
+    }
+
+    public void YES()
+    {
+        Application.LoadLevel("TestScene");
+    }
+
+
 
     /*private IEnumerator Timer()
     {
