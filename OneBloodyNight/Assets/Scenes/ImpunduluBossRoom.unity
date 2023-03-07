@@ -3690,9 +3690,10 @@ MonoBehaviour:
   - Monster
   - Floor
   checkForWalls: 1
-  attacker: {fileID: 127064945}
+  attacker: {fileID: 335686671}
   showHitbox: 0
   hitboxMesh: {fileID: 335686672}
+  shooter: {fileID: 127064945}
 --- !u!23 &335686672
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4359,6 +4360,7 @@ MonoBehaviour:
   attacker: {fileID: 414111549}
   showHitbox: 0
   hitboxMesh: {fileID: 414111551}
+  shooter: {fileID: 127064945}
 --- !u!33 &414111550
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5848,9 +5850,10 @@ MonoBehaviour:
   - Monster
   - Floor
   checkForWalls: 1
-  attacker: {fileID: 127064945}
+  attacker: {fileID: 556239793}
   showHitbox: 0
   hitboxMesh: {fileID: 556239794}
+  shooter: {fileID: 127064945}
 --- !u!23 &556239794
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5996,9 +5999,10 @@ MonoBehaviour:
   - Monster
   - Floor
   checkForWalls: 1
-  attacker: {fileID: 127064945}
+  attacker: {fileID: 556438433}
   showHitbox: 0
   hitboxMesh: {fileID: 556438434}
+  shooter: {fileID: 127064945}
 --- !u!23 &556438434
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6666,9 +6670,10 @@ MonoBehaviour:
   - Monster
   - Floor
   checkForWalls: 1
-  attacker: {fileID: 127064945}
+  attacker: {fileID: 616608123}
   showHitbox: 0
   hitboxMesh: {fileID: 616608124}
+  shooter: {fileID: 127064945}
 --- !u!23 &616608124
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9811,9 +9816,10 @@ MonoBehaviour:
   - Monster
   - Floor
   checkForWalls: 1
-  attacker: {fileID: 127064945}
+  attacker: {fileID: 1013497824}
   showHitbox: 0
   hitboxMesh: {fileID: 1013497825}
+  shooter: {fileID: 127064945}
 --- !u!23 &1013497825
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12789,9 +12795,10 @@ MonoBehaviour:
   - Monster
   - Floor
   checkForWalls: 1
-  attacker: {fileID: 127064945}
+  attacker: {fileID: 1367510906}
   showHitbox: 0
   hitboxMesh: {fileID: 1367510907}
+  shooter: {fileID: 127064945}
 --- !u!23 &1367510907
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13831,9 +13838,10 @@ MonoBehaviour:
   - Monster
   - Floor
   checkForWalls: 1
-  attacker: {fileID: 127064945}
+  attacker: {fileID: 1489522189}
   showHitbox: 0
   hitboxMesh: {fileID: 1489522190}
+  shooter: {fileID: 127064945}
 --- !u!23 &1489522190
 MeshRenderer:
   m_ObjectHideFlags: 0

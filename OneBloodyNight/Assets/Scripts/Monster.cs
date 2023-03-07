@@ -42,7 +42,7 @@ public class Monster : GameActor
     /* Exposed Variables */
     [Tooltip("A reference to the monster's basic attack object")]
     [SerializeField]
-    private Attack basicAttack;
+    protected Attack basicAttack;
 
     [Tooltip("The amount of blood the player recovers when killing the enemy")]
     [SerializeField]
@@ -149,11 +149,17 @@ public class Monster : GameActor
 
     internal void Aggress(float engagementDistance, float attackRange, float avoidanceRange)
     {
-        AttackShuffle(engagementDistance, attackRange, avoidanceRange);
-
-        if (distanceToPlayer <= engagementDistance && canAttack)
+        if (!Stunned && player.Visible)
         {
-            StartAttackCycle();
+            if (canMove)
+            {
+                AttackShuffle(engagementDistance, attackRange, avoidanceRange);
+            }
+
+            if (distanceToPlayer <= engagementDistance && canAttack)
+            {
+                StartAttackCycle();
+            }
         }
     }
 
@@ -210,6 +216,7 @@ public class Monster : GameActor
         facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
 
         basicAttack.StartSwing(refCode1);
+        animator.SetTrigger("Fire");
         canAttack = false;
 
         yield return new WaitForSeconds(attackTimer);
@@ -225,6 +232,13 @@ public class Monster : GameActor
         base.OnAttackEnd(code);
 
         Debug.Log(gameObject.name + " Swing Done");
+    }
+
+    internal override void OnReceiveHit()
+    {
+        base.OnReceiveHit();
+
+        animator.SetTrigger("Owie");
     }
 
     /// <summary>

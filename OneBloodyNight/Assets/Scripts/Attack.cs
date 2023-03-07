@@ -227,4 +227,7 @@ public class Attack : GameActor
         attacker.Rb.AddForce(direction, ForceMode.Impulse); //Applies the calculated force
         attacker.Rb.drag = drag; //sets the drag to a higher parameterized value until the end of the attack. Prevents attackers with low base drag (aka player) from sliding backward icily.
     }
+
+    internal virtual void Fire() { }
+    internal virtual void OnHitPlayer() { }
 }

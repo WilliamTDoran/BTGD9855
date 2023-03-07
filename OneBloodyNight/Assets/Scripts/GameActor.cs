@@ -128,4 +128,9 @@ public class GameActor : MonoBehaviour
     {
 
     }
+
+    internal virtual void OnReceiveHit()
+    {
+
+    }
 }

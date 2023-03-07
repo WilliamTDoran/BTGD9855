@@ -73,6 +73,7 @@ public class CombatManager : MonoBehaviour
             ApplyKnockback(attacker, targetActor, knockbackAmount);
             StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
             StartHitstun(targetActor, used.HitstunDuration);
+            targetActor.OnReceiveHit();
 
             return true;
         }
@@ -90,6 +91,8 @@ public class CombatManager : MonoBehaviour
             ApplyKnockback(attacker, targetActor, knockbackAmount);
             StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
             StartHitstun(targetActor, used.HitstunDuration);
+            used.OnHitPlayer();
+            targetActor.OnReceiveHit();
 
             return true;
         }
