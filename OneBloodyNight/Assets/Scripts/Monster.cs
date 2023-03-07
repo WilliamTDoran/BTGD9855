@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations;
@@ -224,12 +225,23 @@ public class Monster : GameActor
         facingAngle = Vector3.SignedAngle(Vector3.right, (player.Rb.position - rb.position), Vector3.up);
         facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
 
-        basicAttack.StartSwing(refCode1);
         animator.SetTrigger("Fire");
+
+        if (basicAttack.ForceStill) //Some attacks force the attacker to stand still
+        {
+            canMove = false;
+            rb.velocity = Vector3.zero; //need this otherwise you tokyo drift from momentum
+        }
+
         canAttack = false;
 
         yield return new WaitForSeconds(attackTimer);
         canAttack = true;
+    }
+
+    public void MeleeUse()
+    {
+        basicAttack.StartSwing(refCode1);
     }
 
     /// <summary>

@@ -94,15 +94,8 @@ public class Attack : GameActor
     public void StartSwing(string code)
     {
         attackerGrantedCode = code;
-        
 
         if (attackerGrantedCode != "bat") { PositionAttack(); }//The attack hitbox always exists, and needs to have its relative position to the attacker updated each time. The bats thing is a hacky workaround that will likely get improved later
-
-        if (forceStill) //Some attacks force the attacker to stand still
-        {
-            attacker.CanMove = false;
-            attacker.Rb.velocity = Vector3.zero; //need this otherwise you tokyo drift from momentum
-        }
 
         if (animator != null) //projectiles don't need an animator
         {
