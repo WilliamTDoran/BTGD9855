@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6508840380672653048}
   - component: {fileID: 3772204163437256020}
   m_Layer: 0
-  m_Name: Texture 55
+  m_Name: Texture 60
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -1349275955
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1917620487, guid: 80ce161c747bddd4b98ed80722fe5260, type: 3}
+  m_Sprite: {fileID: 1522744263, guid: 80ce161c747bddd4b98ed80722fe5260, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
