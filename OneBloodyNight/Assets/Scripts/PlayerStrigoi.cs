@@ -16,6 +16,16 @@ using UnityEngine;
 /// </summary>
 public class PlayerStrigoi : Player
 {
+    //Sound
+    public AudioSource audioSource;
+
+    public AudioClip Walk;
+    public AudioClip Ability1;
+    public AudioClip Ability2;
+    public AudioClip Attack;
+    public AudioClip Hurt;
+    /// /////////////////////////////////////////////////////////
+    /// 
     private string basicCode = "basic"; //see Attack comments for attackerGrantedCode
     private string batCode = "bat";
 
@@ -112,7 +122,9 @@ public class PlayerStrigoi : Player
 
         if (basicAttackDown && canAttack && !stunned && !GameManager.instance.GCD(false)) //bit messy all these checks, but it gets the job done and makes it actually pretty airtight
         {
+            
             basicAttack.StartSwing(basicCode);
+            audioSource.PlayOneShot(Attack);
             canAttack = false;
             if (invisibilityCoroutine != null) StopInvisible(); //attacking cancels invisibility
         }
@@ -140,6 +152,7 @@ public class PlayerStrigoi : Player
                 if (!stunned && !GameManager.instance.GCD(true) && Bloodmeter.instance.bloodmeter.value > abilityOneCost)
                 {
                     bullet = 0; //resets the bullet after firing. if you can't fire, the bullet stays loaded. this might change in future
+                    audioSource.PlayOneShot(Ability1);
                     Invisibility();
                 }
                 break;
@@ -148,6 +161,7 @@ public class PlayerStrigoi : Player
                 if (!stunned && !GameManager.instance.GCD(true) && Bloodmeter.instance.bloodmeter.value > abilityTwoCost)
                 {
                     bullet = 0; //resets the bullet after firing. if you can't fire, the bullet stays loaded. this might change in future
+                    audioSource.PlayOneShot(Ability2);
                     BatSwarm();
                 }
                 break;
