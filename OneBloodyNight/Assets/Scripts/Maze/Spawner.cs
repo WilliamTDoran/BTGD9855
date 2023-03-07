@@ -35,8 +35,10 @@ public class Spawner : MonoBehaviour
         {
             c.spawner = this;
         }
-
-        StartCoroutine(startSpawning());
+        if (!transform.parent.GetComponent<Cell>().setPiece)
+        {
+            StartCoroutine(startSpawning());
+        }
     }
 
     /// <summary>
