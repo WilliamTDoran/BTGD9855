@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    public AudioSource audioSource;
     //Buttons
 
     //Screens
@@ -30,7 +31,8 @@ public class Menu : MonoBehaviour
 
     public void StartGame()
     {
-        Application.LoadLevel("TestScene");
+        StartCoroutine("Starter");
+        //Application.LoadLevel("TestScene");
 
     }
 
@@ -67,4 +69,10 @@ public class Menu : MonoBehaviour
         loreScreen.SetActive(false);
     }
 
+    private IEnumerator Starter()
+    {
+        audioSource.Play();
+        yield return new WaitForSeconds(2f);
+        Application.LoadLevel("TestScene");
+    }
 }
