@@ -152,7 +152,7 @@ MonoBehaviour:
   walkAnim: 1
   basicAttack: {fileID: 8342049976024423553}
   bloodOnKill: 25
-  attackTimer: 2
+  attackTimer: 4
 --- !u!95 &2771159159247393256
 Animator:
   serializedVersion: 4
