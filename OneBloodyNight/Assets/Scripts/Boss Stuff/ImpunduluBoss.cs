@@ -5,6 +5,16 @@ using System;
 
 public class ImpunduluBoss : Boss
 {
+    //Sound
+    public AudioSource audioSource;
+
+    public AudioClip Dive;
+    public AudioClip Lightning;
+    public AudioClip feather;
+    public AudioClip Flap;
+    public AudioClip Intro;
+    /// /////////////////////////////////////////////////////////
+
     private IEnumerator spinAttackCoroutine;
     private IEnumerator diveAttackCoroutine;
     private IEnumerator randomBehaviorCoroutine;
@@ -44,10 +54,12 @@ public class ImpunduluBoss : Boss
 
     protected override void Start()
     {
+        //audioSource.PlayOneShot(Intro,2f);
         base.Start();
         StartRandomBehavior();
         StartSpinAttack();
     }
+
 
     private void FixedUpdate()
     {
@@ -68,6 +80,7 @@ public class ImpunduluBoss : Boss
 
             facingAngle = -45f * i;
             feathers[i].gameObject.SetActive(true);
+            audioSource.PlayOneShot(feather);
             feathers[i].Fire();
         }
 
@@ -168,6 +181,7 @@ public class ImpunduluBoss : Boss
                 lightnings[lightningCycle].Initiate(Player.plr.Rb.position);
 
                 lightningCycle = lightningCycle > 1 ? 0 : lightningCycle + 1;
+                audioSource.PlayOneShot(Lightning);
 
                 StopRandomBehavior();
                 StartRandomBehavior();
@@ -195,6 +209,7 @@ public class ImpunduluBoss : Boss
     private void StartDiveAttack()
     {
         diveAttackCoroutine = DiveAttack();
+        audioSource.PlayOneShot(Dive);
         StartCoroutine(diveAttackCoroutine);
     }
 
