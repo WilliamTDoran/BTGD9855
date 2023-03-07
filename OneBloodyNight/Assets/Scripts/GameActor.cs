@@ -43,6 +43,8 @@ public class GameActor : MonoBehaviour
     private int curHitPoints; //current hit points of the actor, if applicable. Only relevant for monsters and bosses
     public int CurHitPoints { get { return curHitPoints; } set { curHitPoints = value; } }
 
+    protected bool dead = false;
+
     /* Exposed Variables */
     [Tooltip("Maximum movement speed - IRRELEVANT FOR NON-MOVING ENTITIES")]
     [SerializeField]

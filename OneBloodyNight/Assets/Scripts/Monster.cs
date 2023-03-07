@@ -87,11 +87,20 @@ public class Monster : GameActor
 
         distanceToPlayer = (player.Rb.position - rb.position).magnitude;
 
-        if (CurHitPoints <= 0)
+        if (CurHitPoints <= 0 && !dead)
         {
             Spawner.enemKilled();
             Bloodmeter.instance.bloodmeter.value += bloodOnKill;
-            gameObject.SetActive(false);
+
+            dead = true;
+            animator.SetTrigger("Die");
+            StopAllCoroutines();
+            canMove = false;
+            canAttack = false;
+            Stunned = true;
+            col.enabled = false;
+            basicAttack.StopAllCoroutines();
+            basicAttack.gameObject.SetActive(false);
         }
     }
 
