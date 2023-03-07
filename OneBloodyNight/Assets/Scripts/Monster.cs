@@ -46,8 +46,12 @@ public class Monster : GameActor
 
     [Tooltip("The amount of blood the player recovers when killing the enemy")]
     [SerializeField]
-    public float bloodOnKill = 50.0f;
+    private float bloodOnKill = 50.0f;
     public float BloodOnKill { get { return bloodOnKill; } }
+
+    [Tooltip("How frequently the monster attacks (specifically, the time in seconds between each attack)")]
+    [SerializeField]
+    private float attackTimer = 2.0f;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     /// <summary>
@@ -160,7 +164,7 @@ public class Monster : GameActor
         float usedRange = attackRange + hoverDistanceScale;
         Vector3 proPlayer = player.Rb.position - rb.position;
         Vector3 retroPlayer = rb.position - player.Rb.position;
-        float distanceToIdeal = distanceToPlayer - attackRange;
+        float distanceToIdeal = distanceToPlayer - usedRange;
 
         if (distanceToIdeal > 0.5f)
         {
@@ -193,7 +197,7 @@ public class Monster : GameActor
     {
         yield return new WaitForSeconds(UnityEngine.Random.Range(0.25f, 5.0f));
         hoverDistanceScale += UnityEngine.Random.Range(-0.2f, 0.2f);
-        hoverDistanceScale = Math.Clamp(hoverDistanceScale, -0.25f, 0.25f);
+        hoverDistanceScale = Math.Clamp(hoverDistanceScale, -0.50f, 1.25f);
     }
 
     /// <summary>

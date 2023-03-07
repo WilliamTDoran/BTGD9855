@@ -152,6 +152,7 @@ MonoBehaviour:
   walkAnim: 1
   basicAttack: {fileID: 8342049976024423553}
   bloodOnKill: 25
+  attackTimer: 2
 --- !u!95 &2771159159247393256
 Animator:
   serializedVersion: 4
@@ -200,11 +201,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   universalAIProperties:
-    engagementDistance: 5
+    engagementDistance: 12
     seeThroughWalls: 1
     host: {fileID: 1506505331822888184}
   lostAIProperties:
     timeTilLoseSight: 2
+  attackAIProperties:
+    attackRange: 6
+    avoidanceRange: 0
 --- !u!1 &877845514278036326
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,8 +239,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877845514278036326}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.19, y: 1.54132, z: 0}
-  m_LocalScale: {x: 0.9379804, y: 3.64805, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5276966131897054383}

@@ -28,7 +28,7 @@ public class SkillTree : MonoBehaviour
 
     private void BloodRegen()
     {
-        Enemy.bloodOnKill += 10;
+        //Enemy.BloodOnKill += 10;
     }
 
     private void BloodUse()

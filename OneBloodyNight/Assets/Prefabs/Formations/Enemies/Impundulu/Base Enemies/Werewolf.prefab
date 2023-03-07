@@ -222,6 +222,7 @@ MonoBehaviour:
   walkAnim: 1
   basicAttack: {fileID: 3237701248447046877}
   bloodOnKill: 60
+  attackTimer: 2
 --- !u!95 &6075898001845311317
 Animator:
   serializedVersion: 4
@@ -260,6 +261,9 @@ MonoBehaviour:
     host: {fileID: 532517229150989733}
   lostAIProperties:
     timeTilLoseSight: 0.5
+  attackAIProperties:
+    attackRange: 4
+    avoidanceRange: 0
 --- !u!1 &8340665572391856303
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +295,7 @@ Transform:
   m_GameObject: {fileID: 8340665572391856303}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.25, y: -0.29, z: 0}
-  m_LocalScale: {x: 1.67418, y: 1.67418, z: 0.55806}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4564198034848022252}
@@ -400,7 +404,7 @@ MonoBehaviour:
   drag: 25
   wallPushbackScalar: 2
   forceStill: 1
-  floatDistance: 2.7
+  floatDistance: 3.2
   untargetableTags:
   - Wall
   - Monster
