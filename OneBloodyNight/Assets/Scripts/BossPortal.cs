@@ -23,14 +23,18 @@ public class BossPortal : MonoBehaviour
         Application.LoadLevel("ImpunduluBossRoom");
 
     }
-    void OnTriggerEnter2D(Collider2D col)
+    public void OnTriggerEnter(Collider col)
     {
-        
-        StartCoroutine(StartBoss());
+        Debug.Log("Contact");
+        if (col.gameObject.tag == "Player")
+        {
+            Application.LoadLevel("ImpunduluBossRoom");
+        }
+        //StartCoroutine(StartBoss());
     }
     void OnTriggerExit2D(Collider2D col)/////////Stops transition
     {
 
-        StopCoroutine(StartBoss());
+        //StopCoroutine(StartBoss());
     }
 }
