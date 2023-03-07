@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     public AudioSource audioSource;
+    public AudioSource audioSource1;
+
+
+
     //Buttons
 
     //Screens
@@ -71,7 +75,9 @@ public class Menu : MonoBehaviour
 
     private IEnumerator Starter()
     {
+        audioSource1.Stop();
         audioSource.Play();
+        
         yield return new WaitForSeconds(2f);
         Application.LoadLevel("TestScene");
     }

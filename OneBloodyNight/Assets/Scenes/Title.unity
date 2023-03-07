@@ -2715,6 +2715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1598459354}
+  audioSource1: {fileID: 2047388287}
   optionScreen: {fileID: 1225002809}
   loreScreen: {fileID: 343098950}
 --- !u!82 &1598459354
@@ -3561,6 +3562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
+  audioSource1: {fileID: 0}
   optionScreen: {fileID: 1225002809}
   loreScreen: {fileID: 343098950}
 --- !u!114 &1912462277
