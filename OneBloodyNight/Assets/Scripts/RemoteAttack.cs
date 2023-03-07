@@ -34,7 +34,7 @@ public class RemoteAttack : Attack
         debugTargetPreview.enabled = true;
     }
 
-    private IEnumerator Fire()
+    private IEnumerator FireMe()
     {
         yield return new WaitForSeconds(delay);
 
@@ -58,7 +58,7 @@ public class RemoteAttack : Attack
 
     private void StartFire()
     {
-        fireCoroutine = Fire();
+        fireCoroutine = FireMe();
         StartCoroutine(fireCoroutine);
     }
 

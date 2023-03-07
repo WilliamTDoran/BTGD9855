@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView; //archer base speed 3500
+//using UnityEditor.Experimental.GraphView; //archer base speed 3500
 using UnityEngine;
 
 public class Projectile : Attack
