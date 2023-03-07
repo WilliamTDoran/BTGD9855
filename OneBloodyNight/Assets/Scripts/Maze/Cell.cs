@@ -152,7 +152,7 @@ public class Cell : MonoBehaviour
         CornerType corner = Corner();
         if (Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites.Length > (int)corner && Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[(int)corner] != null)
         {
-            GameObject temp = Instantiate(Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[(int)corner], new Vector3(transform.position.x + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.x, transform.position.y, transform.position.z + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.y), Quaternion.Euler(90, 0, 0), transform);
+            GameObject temp = Instantiate(Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[(int)corner], new Vector3(transform.position.x + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.x, transform.position.y + 1, transform.position.z + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.y), Quaternion.Euler(90, 0, 0), transform);
         }
         if (walls[(int)Wall.wLocation.west].edge())
         {

@@ -96,7 +96,7 @@ public class Wall : MonoBehaviour
         if (allSprites.Length >= 1)
         {
             int picked = Random.Range(0, allSprites.Length);
-            GameObject temp = Instantiate(allSprites[picked], new Vector3(position.x + Maze.m.biomeVariables[(int)b].North.offSet.x, position.y, transform.position.z), Quaternion.Euler(90, 0, 0), transform);
+            GameObject temp = Instantiate(allSprites[picked], new Vector3(position.x + Maze.m.biomeVariables[(int)b].North.offSet.x, position.y + 1, transform.position.z), Quaternion.Euler(90, 0, 0), transform);
             /*if (Random.Range(0, 2) == 1)
             {
                 Vector3 tempScale = temp.transform.localScale;
@@ -105,7 +105,7 @@ public class Wall : MonoBehaviour
             }*/
             //Debug.Log(temp.transform.rotation.eulerAngles.x);
             picked = Random.Range(0, allSprites.Length);
-            temp = Instantiate(allSprites[picked], new Vector3(position.x - Maze.m.biomeVariables[(int)b].North.offSet.x, position.y, transform.position.z), Quaternion.Euler(90, 0, 0), transform);
+            temp = Instantiate(allSprites[picked], new Vector3(position.x - Maze.m.biomeVariables[(int)b].North.offSet.x, position.y + 1, transform.position.z), Quaternion.Euler(90, 0, 0), transform);
             /*if (Random.Range(0, 2) == 1)
             {
                 Vector3 tempScale = temp.transform.localScale;
@@ -121,7 +121,7 @@ public class Wall : MonoBehaviour
         if (allSprites.Length >= 1)
         {
             int picked = Random.Range(0, allSprites.Length); // + Maze.m.biomeVariables[(int)b].East.offSet.y
-            GameObject temp = Instantiate(allSprites[picked], new Vector3(transform.position.x/* - Maze.m.biomeVariables[(int)b].North.offSet.x*/, position.y, transform.position.z + Maze.m.biomeVariables[(int)b].East.offSet.y), Quaternion.Euler(90, 0, 0), transform);
+            GameObject temp = Instantiate(allSprites[picked], new Vector3(transform.position.x/* - Maze.m.biomeVariables[(int)b].North.offSet.x*/, position.y + 1, transform.position.z + Maze.m.biomeVariables[(int)b].East.offSet.y), Quaternion.Euler(90, 0, 0), transform);
             /*if (Random.Range(0, 2) == 1)
             {
                 Vector3 tempScale = temp.transform.localScale;
@@ -135,7 +135,7 @@ public class Wall : MonoBehaviour
                 temp.transform.localScale = tempScale;
             }*/
             picked = Random.Range(0, allSprites.Length);
-            temp = Instantiate(allSprites[picked], new Vector3(transform.position.x/* - Maze.m.biomeVariables[(int)b].North.offSet.x*/, position.y, transform.position.z - Maze.m.biomeVariables[(int)b].East.offSet.y), Quaternion.Euler(90, 0, 0), transform);
+            temp = Instantiate(allSprites[picked], new Vector3(transform.position.x/* - Maze.m.biomeVariables[(int)b].North.offSet.x*/, position.y + 1, transform.position.z - Maze.m.biomeVariables[(int)b].East.offSet.y), Quaternion.Euler(90, 0, 0), transform);
             /*if (Random.Range(0, 2) == 1)
             {
                 Vector3 tempScale = temp.transform.localScale;
