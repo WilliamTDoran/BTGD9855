@@ -86,6 +86,9 @@ public class Attack : GameActor
     [Tooltip("Reference to the hitbox renderer. Must be not null to show hitbox")]
     [SerializeField]
     protected MeshRenderer hitboxMesh;
+
+    [SerializeField]
+    protected Animator nonsense;
     /*~~~~~~~~~~~~~~~~~~~~*/
 
     /// <summary>
@@ -100,6 +103,11 @@ public class Attack : GameActor
         if (animator != null) //projectiles don't need an animator
         {
             animator.SetTrigger(swingTrigger); //Each attack has its own animation controller that is used to dictate its windup and active time
+        }
+
+        if (nonsense != null)
+        {
+            nonsense.SetTrigger(swingTrigger);
         }
     }
 

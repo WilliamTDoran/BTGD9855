@@ -122,9 +122,14 @@ public class PlayerStrigoi : Player
 
         if (basicAttackDown && canAttack && !stunned && !GameManager.instance.GCD(false)) //bit messy all these checks, but it gets the job done and makes it actually pretty airtight
         {
-            
-            basicAttack.StartSwing(basicCode);
-            audioSource.PlayOneShot(Attack);
+            animator.SetTrigger("Attack");
+
+            if (basicAttack.ForceStill) //Some attacks force the attacker to stand still
+            {
+                canMove = false;
+                rb.velocity = Vector3.zero; //need this otherwise you tokyo drift from momentum
+            }
+
             canAttack = false;
             if (invisibilityCoroutine != null) StopInvisible(); //attacking cancels invisibility
         }
@@ -132,6 +137,11 @@ public class PlayerStrigoi : Player
         canAttackDebugText.text = canAttack + "";
         berserkDamageDebugText.text = basicAttack.Damage + "";
         berserkSpeedDebugText.text = speed + "";
+    }
+
+    public void MeleeUse()
+    {
+        basicAttack.StartSwing(basicCode);
     }
 
     /// <summary>
