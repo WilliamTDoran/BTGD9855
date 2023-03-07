@@ -135,7 +135,7 @@ public class LocationSpawner
                         continue;
                     }
                     // Set walls in maze equal to walls in cell, only inside the formation
-                    if (j - 1 >= 0 && setPiece[i][j - 1] != null && !setPiece[i][j].getWall((int)Wall.wLocation.north).gameObject.activeInHierarchy)
+                    if (j - 1 >= 0 && setPiece[i][j - 1] != null && !setPiece[i][j].getWall((int)Wall.wLocation.north).gameObject.activeSelf)
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.north).remove(false);
                     }
@@ -143,7 +143,7 @@ public class LocationSpawner
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.north).remove(false);
                     }
-                    if (i + 1 < setPiece[i].Length && setPiece[i + 1][j] != null && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeInHierarchy) 
+                    if (i + 1 < setPiece[i].Length && setPiece[i + 1][j] != null && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeSelf) 
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.east).remove(false);
                     } else if (i + 1 == setPiece[i].Length && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeSelf)
