@@ -212,7 +212,7 @@ public class Monster : GameActor
         basicAttack.StartSwing(refCode1);
         canAttack = false;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(attackTimer);
         canAttack = true;
     }
 

@@ -15,7 +15,7 @@ public class Projectile : Attack
         }
     }
 
-    internal void Fire()
+    public void Fire()
     {
         PositionAttack();
 
