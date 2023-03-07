@@ -453,7 +453,7 @@ MonoBehaviour:
   vars:
     minAttempts: 1
     maxAttempts: 2
-    maxCount: 70
+    maxCount: 40
     baseChance: 0.5
     steepness: 2.15
 --- !u!65 &2242715887265903012
@@ -941,6 +941,8 @@ MonoBehaviour:
   - {fileID: 5861558938470000786}
   - {fileID: 388657356781550237}
   biome: 3
+  setPiece: 0
+  inMaze: 0
   floor: {fileID: 4572668078304398934}
 --- !u!1 &8495269721536630366
 GameObject:
