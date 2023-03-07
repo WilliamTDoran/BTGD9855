@@ -121,7 +121,7 @@ public class LocationSpawner
                 continue;
             } else
             {
-                //Debug.Log("Set piece able to be placed!");
+                Debug.Log("Set piece " + setPieceGO.name + " placed at location " + setPieceLocation.x + ", " + setPieceLocation.y);
             }
 
             // if yes, place it!
@@ -139,23 +139,23 @@ public class LocationSpawner
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.north).remove(false);
                     }
-                    else if (j == 0 && !setPiece[i][j].getWall((int)Wall.wLocation.north).gameObject.activeInHierarchy) 
+                    else if (j == 0 && !setPiece[i][j].getWall((int)Wall.wLocation.north).gameObject.activeSelf) 
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.north).remove(false);
                     }
                     if (i + 1 < setPiece[i].Length && setPiece[i + 1][j] != null && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeInHierarchy) 
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.east).remove(false);
-                    } else if (i + 1 == setPiece[i].Length && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeInHierarchy)
+                    } else if (i + 1 == setPiece[i].Length && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeSelf)
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.east).remove(false);
                     }
 
-                    if (i==0 && !setPiece[i][j].getWall((int)Wall.wLocation.west).gameObject.activeInHierarchy)
+                    if (i==0 && !setPiece[i][j].getWall((int)Wall.wLocation.west).gameObject.activeSelf)
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.west).remove(false);
                     }
-                    if (j + 1 == setPiece.Length && !setPiece[i][j].getWall((int)Wall.wLocation.south).gameObject.activeInHierarchy)
+                    if (j + 1 == setPiece.Length && !setPiece[i][j].getWall((int)Wall.wLocation.south).gameObject.activeSelf)
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.south).remove(false);
                     }
