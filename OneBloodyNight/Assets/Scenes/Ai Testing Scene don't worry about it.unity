@@ -5876,11 +5876,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   universalAIProperties:
-    engagementDistance: 5
+    engagementDistance: 10
     seeThroughWalls: 0
     host: {fileID: 532517230274815347}
   lostAIProperties:
     timeTilLoseSight: 0.5
+  attackAIProperties:
+    attackRange: 4
+    avoidanceRange: 0
 --- !u!1 &1656322270
 GameObject:
   m_ObjectHideFlags: 0
@@ -6618,13 +6621,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4674736862792261214, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
+      propertyPath: attackAIProperties.attackRange
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4674736862792261214, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
+      propertyPath: universalAIProperties.engagementDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836072635732192790, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
+      propertyPath: attackAIProperties.attackRange
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836072635732192790, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
+      propertyPath: universalAIProperties.engagementDistance
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7231607746312133733, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 704fd771a355aa64fa1dd9dbafb820e7, type: 2}
+    - target: {fileID: 7625643906343389171, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
+      propertyPath: attackAIProperties.attackRange
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625643906343389171, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
+      propertyPath: universalAIProperties.engagementDistance
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8258326494958717592, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
       propertyPath: m_Name
       value: N_EnemyFormation 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8258326494958717592, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342060312282935473, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
+      propertyPath: attackAIProperties.attackRange
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342060312282935473, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
+      propertyPath: universalAIProperties.engagementDistance
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
@@ -7623,7 +7662,7 @@ Transform:
   m_GameObject: {fileID: 8340665573513945209}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.25, y: -0.29, z: 0}
-  m_LocalScale: {x: 1.67418, y: 1.67418, z: 1.67418}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4564198035872626234}
@@ -7646,14 +7685,14 @@ MonoBehaviour:
   maxHitPoints: 0
   walkAnim: 0
   damage: 40
-  knockbackAmount: 40
-  hitstunDuration: 0.2
+  knockbackAmount: 200
+  hitstunDuration: 0.4
   pushbackAmount: 2
   returnDrag: 18
   drag: 25
   wallPushbackScalar: 2
-  forceStill: 1
-  floatDistance: 2.7
+  forceStill: 0
+  floatDistance: 3.5
   untargetableTags:
   - Wall
   - Monster

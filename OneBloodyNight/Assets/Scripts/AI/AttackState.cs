@@ -27,7 +27,7 @@ public class AttackState : FSMState
     {
         Debug.Log(npc.gameObject.name + " is attacking " + player.gameObject.name);
 
-        if (!IsInCurrentRange(npc, player.position, universalAIProperties.engagementDistance * 1.5f))
+        if ((Player.plr.Rb.position - universalAIProperties.host.Rb.position).magnitude > (universalAIProperties.engagementDistance * 1.5f))
         {
             monster.PerformTransition(Transition.TooFar);
             return;
@@ -39,7 +39,7 @@ public class AttackState : FSMState
             return;
         }
 
-        if (!universalAIProperties.host.WallCheck())
+        if (universalAIProperties.host.WallCheck())
         {
             monster.PerformTransition(Transition.TooFar);
         }
@@ -47,6 +47,6 @@ public class AttackState : FSMState
 
     public override void Act(Transform player, Transform npc)
     {
-        universalAIProperties.host.Aggress();
+        universalAIProperties.host.Aggress(universalAIProperties.engagementDistance, attackAIProperties.attackRange, attackAIProperties.avoidanceRange);
     }
 }

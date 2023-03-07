@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations;
@@ -25,6 +27,14 @@ public class Monster : GameActor
     public bool Chasing { set { chasing = value; } }
     private int nextPoint;
     private NavMeshPath path;
+
+    private float distanceToPlayer;
+
+    private IEnumerator hoverDistanceSwapCoroutine;
+    private float hoverDistanceScale = 0.5f;
+
+    private IEnumerator shuffleDirectionSwapCoroutine;
+    private int shuffleDirection = 1;
 
     private IEnumerator AITickCoroutine;
     private IEnumerator attackCycleCoroutine;
@@ -59,6 +69,7 @@ public class Monster : GameActor
         path = new NavMeshPath();
 
         StartAITick();
+        StartShuffleDirectionSwap();
     }
 
     /// <summary>
@@ -69,6 +80,8 @@ public class Monster : GameActor
         base.Update();
 
         //Debug.Log(gameObject.name + " " + curHitPoints);
+
+        distanceToPlayer = (player.Rb.position - rb.position).magnitude;
 
         if (CurHitPoints <= 0)
         {
@@ -100,7 +113,7 @@ public class Monster : GameActor
             if (aiController.CurrentState != null)
             {
                 aiController.CurrentState.Reason(player.transform, gameObject.transform);
-                aiController.CurrentState.Act(player.transform, gameObject.transform);
+                //aiController.CurrentState.Act(player.transform, gameObject.transform);
             }
 
             if (player.Visible && chasing)
@@ -130,19 +143,57 @@ public class Monster : GameActor
         return Physics.Raycast(rb.position, direction, direction.magnitude, layerMask);
     }
 
-    internal void Aggress()
+    internal void Aggress(float engagementDistance, float attackRange, float avoidanceRange)
     {
-        AttackShuffle();
+        AttackShuffle(engagementDistance, attackRange, avoidanceRange);
 
-        if (canAttack)
+        if (distanceToPlayer <= engagementDistance && canAttack)
         {
             StartAttackCycle();
         }
     }
 
-    private void AttackShuffle()
+    private void AttackShuffle(float engagementDistance, float attackRange, float avoidanceRange)
     {
-        Vector3 direction = new Vector3(0, rb.position.y, 0);
+        Vector3 direction = Vector3.zero;
+
+        float usedRange = attackRange + hoverDistanceScale;
+        Vector3 proPlayer = player.Rb.position - rb.position;
+        Vector3 retroPlayer = rb.position - player.Rb.position;
+        float distanceToIdeal = distanceToPlayer - attackRange;
+
+        if (distanceToIdeal > 0.5f)
+        {
+            direction += proPlayer;
+        }
+        else if (distanceToIdeal < -0.5f)
+        {
+            direction += retroPlayer;
+        }
+
+        if (Math.Abs(distanceToPlayer - attackRange) < 5)
+        {
+            direction += Vector3.Cross(proPlayer, Vector3.up) * shuffleDirection;
+        }
+
+        Debug.DrawRay(rb.position, direction.normalized * 10);
+        rb.AddForce(direction.normalized * speed * 0.8f, ForceMode.Force);
+    }
+
+    private IEnumerator ShuffleDirectionSwap()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(UnityEngine.Random.Range(0.5f, 5.0f));
+            shuffleDirection *= -1;
+        }
+    }
+
+    private IEnumerator HoverDistanceSwap()
+    {
+        yield return new WaitForSeconds(UnityEngine.Random.Range(0.25f, 5.0f));
+        hoverDistanceScale += UnityEngine.Random.Range(-0.2f, 0.2f);
+        hoverDistanceScale = Math.Clamp(hoverDistanceScale, -0.25f, 0.25f);
     }
 
     /// <summary>
@@ -158,6 +209,7 @@ public class Monster : GameActor
         canAttack = false;
 
         yield return new WaitForSeconds(2);
+        canAttack = true;
     }
 
     /// <summary>
@@ -168,7 +220,6 @@ public class Monster : GameActor
     {
         base.OnAttackEnd(code);
 
-        canAttack = true;
         Debug.Log(gameObject.name + " Swing Done");
     }
 
@@ -218,5 +269,29 @@ public class Monster : GameActor
     {
         StopCoroutine(attackCycleCoroutine);
         attackCycleCoroutine = null;
+    }
+
+    private void StartShuffleDirectionSwap()
+    {
+        shuffleDirectionSwapCoroutine = ShuffleDirectionSwap();
+        StartCoroutine(shuffleDirectionSwapCoroutine);
+    }
+
+    private void StopShuffleDirectionSwap()
+    {
+        StopCoroutine(shuffleDirectionSwapCoroutine);
+        shuffleDirectionSwapCoroutine = null;
+    }
+
+    private void StartHoverDistanceSwap()
+    {
+        hoverDistanceSwapCoroutine = HoverDistanceSwap();
+        StartCoroutine(hoverDistanceSwapCoroutine);
+    }
+
+    private void StopHoverDistanceSwap()
+    {
+        StopCoroutine(hoverDistanceSwapCoroutine);
+        hoverDistanceSwapCoroutine = null;
     }
 }

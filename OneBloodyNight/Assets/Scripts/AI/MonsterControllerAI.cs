@@ -11,7 +11,7 @@ public abstract class AIProperties
 [System.Serializable]
 public class UniversalAIProperties : AIProperties
 {
-    [Tooltip("How far the monster will try to stay from the player while attacking")]
+    [Tooltip("How far the monster will swap to attacking from")]
     public float engagementDistance;
 
     [Tooltip("Whether the monster will attempt to locate the player even if it can't see them")]
@@ -44,7 +44,12 @@ public class LostAIProperties : AIProperties
 
 [System.Serializable]
 public class AttackAIProperties : AIProperties
-{ 
+{
+    [Tooltip("How close the monster needs to get to attack")]
+    public float attackRange;
+
+    [Tooltip("How far the monster will try to stay away from its comrades")]
+    public float avoidanceRange;
 }
 
 public class MonsterControllerAI : AdvancedFSM
@@ -75,7 +80,7 @@ public class MonsterControllerAI : AdvancedFSM
         if (CurrentState != null)
         {
             //CurrentState.Reason(playerTransform, transform);
-            //CurrentState.Act(playerTransform, transform);
+            CurrentState.Act(playerTransform, transform);
         }
     }
 
