@@ -14,6 +14,8 @@ public class Bloodmeter : MonoBehaviour
     [SerializeField]
     private float bloodLossRate;
 
+    public float bloodGainRate;
+
     internal static Bloodmeter instance;
 
     private void Awake()
@@ -63,5 +65,16 @@ public class Bloodmeter : MonoBehaviour
         targetValue = Math.Clamp(targetValue + difference, 0, bloodmeter.maxValue);
 
         bloodmeter.value = targetValue;
+    }
+
+    private IEnumerator Gain()
+    {
+
+        while (bloodmeter.value > bloodmeter.minValue)
+        {
+            bloodmeter.value = bloodmeter.value + bloodGainRate;//takes 1 blood per second
+            yield return new WaitForSeconds(0.03f);//slows down the damage rate
+        }
+        yield return null;//Player is dead
     }
 }
