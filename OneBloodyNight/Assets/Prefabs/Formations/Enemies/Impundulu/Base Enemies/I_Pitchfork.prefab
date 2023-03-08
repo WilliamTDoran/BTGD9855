@@ -201,13 +201,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   universalAIProperties:
-    engagementDistance: 12
-    seeThroughWalls: 1
+    engagementDistance: 14
+    seeThroughWalls: 0
     host: {fileID: 1506505331822888184}
   lostAIProperties:
-    timeTilLoseSight: 2
+    timeTilLoseSight: 3
   attackAIProperties:
-    attackRange: 6
+    attackRange: 1
     avoidanceRange: 0
 --- !u!1 &877845514278036326
 GameObject:
@@ -378,3 +378,4 @@ MonoBehaviour:
   attacker: {fileID: 1506505331822888184}
   showHitbox: 1
   hitboxMesh: {fileID: 8537159268307554861}
+  nonsense: {fileID: 0}

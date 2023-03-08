@@ -5597,7 +5597,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -8087430814354431941, guid: 0139094e69f8d2d47905c00d116a4572, type: 2}
   m_audioClip: {fileID: 8300000, guid: 74f149cf5bbd88d4ea62f21499307294, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.44
+  m_Volume: 0.45
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6093,7 +6093,7 @@ MonoBehaviour:
   bloodmeter: {fileID: 1084522853}
   AbilityCost: 50
   damage: 0
-  bloodLossRate: 0.4
+  bloodLossRate: 0.5
   bloodGainRate: 0
 --- !u!114 &1084522853
 MonoBehaviour:
