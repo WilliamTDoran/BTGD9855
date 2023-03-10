@@ -111,6 +111,24 @@ public class Attack : GameActor
         }
     }
 
+    protected override void Update()
+    {
+        base.Update();
+
+        if (nonsense != null)
+        {
+            if (attacker.FacingAngle + 90f > 180 && attacker.FacingAngle + 90f <= 360)
+            {
+                nonsense.GetComponent<SpriteRenderer>().flipY = true;
+            }
+            else
+            {
+                nonsense.GetComponent<SpriteRenderer>().flipY = false;
+            }
+        }
+
+    }
+
     /// <summary>
     /// Positions the attack somewhere in a 360 degree circle around the attacker. 
     /// Determined by finding the correct normalized position, then applying a distance scalar
