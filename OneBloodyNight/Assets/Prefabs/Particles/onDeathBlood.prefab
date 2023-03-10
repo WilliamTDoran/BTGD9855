@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2328862544438848964}
   - component: {fileID: 2328862544438848987}
   m_Layer: 0
-  m_Name: BloodSplatter
+  m_Name: onDeathBlood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -608,7 +608,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
