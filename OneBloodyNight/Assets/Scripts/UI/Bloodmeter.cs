@@ -10,6 +10,7 @@ public class Bloodmeter : MonoBehaviour
     private int currentBlood;
     public int AbilityCost;
     public int damage;
+    public Slider residual;
 
     [SerializeField]
     private float bloodLossRate;
@@ -34,6 +35,7 @@ public class Bloodmeter : MonoBehaviour
     private void Start()
     {
         bloodmeter.value = bloodmeter.maxValue;
+        residual.value = bloodmeter.minValue;
         Debug.Log("Done");
         StartCoroutine("DMG");
     }
@@ -53,9 +55,24 @@ public class Bloodmeter : MonoBehaviour
         while (bloodmeter.value > bloodmeter.minValue)
         {
             bloodmeter.value = bloodmeter.value - bloodLossRate;//takes 1 blood per second
+            
             yield return new WaitForSeconds(0.03f);//slows down the damage rate
+            
         }
         yield return null;//Player is dead
+    }
+
+    private IEnumerator Rez()
+    {
+        residual.value = bloodmeter.value;
+        
+        while(residual.value != bloodmeter.value)
+        {
+            residual.value = residual.value - 1;
+            yield return new WaitForSeconds(0.1f);
+        }
+        residual.value = bloodmeter.value;
+
     }
 
     internal void changeBlood(float difference)
@@ -65,6 +82,8 @@ public class Bloodmeter : MonoBehaviour
         targetValue = Math.Clamp(targetValue + difference, 0, bloodmeter.maxValue);
 
         bloodmeter.value = targetValue;
+
+        //StartCoroutine("Rez");
     }
 
     private IEnumerator Gain()
