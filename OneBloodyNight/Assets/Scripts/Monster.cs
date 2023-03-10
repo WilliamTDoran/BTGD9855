@@ -17,6 +17,8 @@ using UnityEngine.Animations;
 /// </summary>
 public class Monster : GameActor
 {
+
+    public ParticleSystem blood;
     private Player player; //reference to the player. kind of antequated since its from before Player.cs had static reference, but whatever
 
     private string refCode1 = "basic"; //See Attack comments on attackerGrantedCode
@@ -259,6 +261,7 @@ public class Monster : GameActor
     {
         base.OnReceiveHit();
 
+        blood.Play();
         animator.SetTrigger("Owie");
     }
 
