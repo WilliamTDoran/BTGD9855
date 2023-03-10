@@ -266,7 +266,7 @@ MonoBehaviour:
   lostAIProperties:
     timeTilLoseSight: 0.5
   attackAIProperties:
-    attackRange: 4
+    attackRange: 3
     avoidanceRange: 0
 --- !u!1 &8340665572391856303
 GameObject:
@@ -408,7 +408,7 @@ MonoBehaviour:
   drag: 25
   wallPushbackScalar: 2
   forceStill: 1
-  floatDistance: 3.2
+  floatDistance: 2.8
   untargetableTags:
   - Wall
   - Monster

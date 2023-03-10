@@ -3174,8 +3174,8 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.65882355, g: 0.65882355, b: 0.65882355, a: 1}
-  m_Intensity: 1.4
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.2
   m_Range: 128.72
   m_SpotAngle: 135.2
   m_InnerSpotAngle: 1
@@ -4531,8 +4531,7 @@ MonoBehaviour:
     wallsRemoved: 150
     maxCellDifficulty: 10
     SetPieces:
-    - {fileID: 3462578440953639072, guid: 02982c99c33e6aa4f863a6993f62f3a5, type: 3}
-    - {fileID: 3462578440953639072, guid: 46a2834bf1b6a224cbf722b64b7bd249, type: 3}
+    - {fileID: 3462578440953639072, guid: e686bb01e5410ba459b5904d1608b7b1, type: 3}
     objects:
     - formation: {fileID: 1216559942331405162, guid: 8a2f415d56b154e4880a5929ed331b68, type: 3}
       cellDifficulty: 0
