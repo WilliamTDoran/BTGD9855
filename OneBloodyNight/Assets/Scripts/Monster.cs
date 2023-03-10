@@ -17,7 +17,7 @@ using UnityEngine.Animations;
 /// </summary>
 public class Monster : GameActor
 {
-
+    public ParticleSystem DeathPart;
     public ParticleSystem blood;
     private Player player; //reference to the player. kind of antequated since its from before Player.cs had static reference, but whatever
 
@@ -97,6 +97,7 @@ public class Monster : GameActor
 
             dead = true;
             animator.SetTrigger("Die");
+            DeathPart.Play();
             StopAllCoroutines();
             canMove = false;
             canAttack = false;
@@ -104,6 +105,7 @@ public class Monster : GameActor
             col.enabled = false;
             basicAttack.StopAllCoroutines();
             basicAttack.gameObject.SetActive(false);
+            StartCoroutine("DeathTimer");
         }
     }
 
@@ -118,6 +120,12 @@ public class Monster : GameActor
             
             Chase();
         }
+    }
+
+    private IEnumerator DeathTimer()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
     }
 
     private IEnumerator AITick()
