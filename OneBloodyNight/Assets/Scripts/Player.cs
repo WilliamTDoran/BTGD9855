@@ -158,6 +158,14 @@ public class Player : GameActor
         }
     }
 
+    internal override void OnReceiveHit()
+    {
+        base.OnReceiveHit();
+
+        animator.SetTrigger("Owie");
+    }
+
+
     //Like in GameActor, these are mostly just being used an impromptu interface since I don't want to double up on both virtual methods and interfaces
     protected virtual void AdvancedFire(ref int bullet)
     {
