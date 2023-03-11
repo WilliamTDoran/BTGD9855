@@ -2830,9 +2830,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 1692689746}
+  spriteAnimator: {fileID: 0}
   showHitbox: 1
   hitboxMesh: {fileID: 666666515}
-  nonsense: {fileID: 0}
 --- !u!136 &666666518
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4464,6 +4464,7 @@ MonoBehaviour:
   bloodmeter: {fileID: 1084522853}
   AbilityCost: 50
   damage: 0
+  residual: {fileID: 0}
   bloodLossRate: 0.5
   bloodGainRate: 0
 --- !u!114 &1084522853
@@ -4743,9 +4744,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 1692689746}
+  spriteAnimator: {fileID: 1743471388}
   showHitbox: 0
   hitboxMesh: {fileID: 0}
-  nonsense: {fileID: 1743471388}
 --- !u!95 &1181192923
 Animator:
   serializedVersion: 4
@@ -8143,6 +8144,8 @@ MonoBehaviour:
   immuneDuration: 0.5
   maxHitPoints: 50
   walkAnim: 1
+  DeathPart: {fileID: 0}
+  blood: {fileID: 0}
   basicAttack: {fileID: 0}
   bloodOnKill: 30
   attackTimer: 6

@@ -57,7 +57,7 @@ public class ImpunduluBoss : Boss
         //audioSource.PlayOneShot(Intro,2f);
         base.Start();
         StartRandomBehavior();
-        StartSpinAttack();
+        //StartSpinAttack();
     }
 
 
