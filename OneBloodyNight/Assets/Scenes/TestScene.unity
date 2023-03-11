@@ -4614,6 +4614,7 @@ MonoBehaviour:
     - {fileID: 7827793329945432230, guid: 914bb515ae1488949a6509e6a89ac75a, type: 3}
     - {fileID: 7827793329945432230, guid: 70ec3aa08d209df44955d43ced03d093, type: 3}
     - {fileID: 7827793329945432230, guid: 922fc2f3d4df0884b896a3da8fda98c1, type: 3}
+    - {fileID: 529972682658337596, guid: 1d80dc8da5009974bbd5074371e4612d, type: 3}
     North:
       offSet: {x: 4, y: 0, z: 0}
       Sprites:
