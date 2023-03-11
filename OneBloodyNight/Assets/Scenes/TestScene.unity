@@ -4098,9 +4098,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 1692689746}
+  spriteAnimator: {fileID: 0}
   showHitbox: 1
   hitboxMesh: {fileID: 666666515}
-  nonsense: {fileID: 0}
 --- !u!136 &666666518
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5392,9 +5392,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 1692689746}
+  spriteAnimator: {fileID: 0}
   showHitbox: 0
   hitboxMesh: {fileID: 0}
-  nonsense: {fileID: 541694866}
 --- !u!4 &944247955
 Transform:
   m_ObjectHideFlags: 0
