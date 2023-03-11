@@ -18,8 +18,8 @@ public class GameActor : MonoBehaviour
     protected Animator animator;
     protected SpriteRenderer render;
 
-    private float actualVelocity;
-    private float clampedVelocity;
+    private float actualVelocity; //the real, measured velocity of the rigidbody
+    private float clampedVelocity; //the velocity clamped to a max of 1, used for setting animation
 
     protected float facingAngle; //the direction the actor is 'facing' in degrees (has no inherent bearing on the object's actual transform rotation)
     public float FacingAngle { get { return facingAngle; } }
@@ -89,13 +89,14 @@ public class GameActor : MonoBehaviour
 
     /// <summary>
     /// Standard update. 
-    /// Used to hold code related to getting control input, but after certain aspects of the monster code changed it no longer made sense to put it here
+    /// Used to hold code related to getting control input, but after certain aspects of the monster code changed it no longer made sense to put it here. Now just a virtual.
+    /// Arguably could be removed but I reason that at some point I might need it again and I don't want to go through and un-override all sub-class's Updates only to redo them later
     /// </summary>
-    protected virtual void Update()
-    {
+    protected virtual void Update() {}
 
-    }
-
+    /// <summary>
+    /// Sets an animation parameter called speed which modifies a blend tree, driving the transition between idle and walk animations. Also flips left and right based on heading.
+    /// </summary>
     private void LateUpdate()
     {
         if (walkAnim)
@@ -104,6 +105,7 @@ public class GameActor : MonoBehaviour
             clampedVelocity = actualVelocity > 1f ? 1f : actualVelocity;
             animator.SetFloat("Speed", clampedVelocity);
 
+            //This is clumsy and causes awkward stuttering when moving vertically or near-vertically. Should ideally be replaced
             if (rb.velocity.x < 0)
             {
                 render.flipX = true;
@@ -116,23 +118,11 @@ public class GameActor : MonoBehaviour
     }
 
     //These are basically just here serving the same function as an interface cause I don't want to double up on both virtual inherited classes and also interfaces
-    internal virtual void OnAttackEnd(string code)
-    {
+    internal virtual void OnAttackEnd(string code) {}
 
-    }
+    internal virtual void OnSuccessfulAttack(string code) {}
 
-    internal virtual void OnSuccessfulAttack(string code)
-    {
+    internal virtual void OnHitWall() {}
 
-    }
-
-    internal virtual void OnHitWall()
-    {
-
-    }
-
-    internal virtual void OnReceiveHit()
-    {
-
-    }
+    internal virtual void OnReceiveHit() {}
 }

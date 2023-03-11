@@ -13,10 +13,11 @@ using UnityEngine;
 /// Version 1.0 (1/20/23), Will Doran
 /// Version 1.1 (2/3/23),  Will Doran
 /// Version 2.0 (2/7/23),  Will Doran
+/// Version 2.1 (3/6/23),  Will Doran, Taria Tuuri
 /// </summary>
 public class PlayerStrigoi : Player
 {
-    //Sound
+    /* Sound */
     public AudioSource audioSource;
 
     public AudioClip Walk;
@@ -24,8 +25,8 @@ public class PlayerStrigoi : Player
     public AudioClip Ability2;
     public AudioClip Attack;
     public AudioClip Hurt;
-    /// /////////////////////////////////////////////////////////
-    /// 
+    /*~~~~~~~*/
+
     private string basicCode = "basic"; //see Attack comments for attackerGrantedCode
     private string batCode = "bat";
 
@@ -61,6 +62,7 @@ public class PlayerStrigoi : Player
     [SerializeField]
     private Material invisibleMaterial;
 
+    //Debug texts that can be brought up with F1
     [Header("Debug")]
     [SerializeField]
     protected TextMeshProUGUI berserkUpDebugText;

@@ -69,6 +69,7 @@ public class CombatManager : MonoBehaviour
                 }
             }
 
+            //Spins off various reactive functions
             HarmMonster(attacker, targetActor.gameObject.GetComponent<GameActor>(), damageAmount);
             ApplyKnockback(attacker, targetActor, knockbackAmount);
             StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
@@ -87,6 +88,7 @@ public class CombatManager : MonoBehaviour
                 }
             }
 
+            //Spins off various reactive functions
             Bloodmeter.instance.changeBlood(-damageAmount);
             ApplyKnockback(attacker, targetActor, knockbackAmount);
             StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);

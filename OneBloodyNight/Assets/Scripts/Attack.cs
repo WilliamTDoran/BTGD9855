@@ -8,6 +8,7 @@ using UnityEngine;
 /// 
 /// Version 1.0 (1/24/2023), Will Doran
 /// Version 1.1 (2/8/2023),  Will Doran
+/// Version 1.2 (3/7/2023),  Will Doran
 /// </summary>
 public class Attack : GameActor
 {
@@ -76,6 +77,10 @@ public class Attack : GameActor
     [Tooltip("The GameActor who is making the attack")]
     [SerializeField]
     protected GameActor attacker;
+
+    [Tooltip("The game object which holds the visual animation")]
+    [SerializeField]
+    protected Animator spriteAnimator;
     /*~~~~~~~~~~~~~~~~~~~~*/
     [Header("Debug")]
 
@@ -86,10 +91,29 @@ public class Attack : GameActor
     [Tooltip("Reference to the hitbox renderer. Must be not null to show hitbox")]
     [SerializeField]
     protected MeshRenderer hitboxMesh;
-
-    [SerializeField]
-    protected Animator nonsense;
     /*~~~~~~~~~~~~~~~~~~~~*/
+
+    /// <summary>
+    /// A standard Update function.
+    /// Clumsy and might soon be deprecated, but it ensures that the attack swish is oriented correctly regardless of where the attacker is facing
+    /// </summary>
+    protected override void Update()
+    {
+        base.Update();
+
+        if (spriteAnimator != null)
+        {
+            if (attacker.FacingAngle + 90f > 180 && attacker.FacingAngle + 90f <= 360) //I'm so sure there's a way to do this without && but I can't think of it
+            {
+                spriteAnimator.GetComponent<SpriteRenderer>().flipY = true;
+            }
+            else
+            {
+                spriteAnimator.GetComponent<SpriteRenderer>().flipY = false;
+            }
+        }
+
+    }
 
     /// <summary>
     /// A publically accessible method used to initiate the attack. Called by the attack, and spins off the animator and some helper functions
@@ -105,28 +129,10 @@ public class Attack : GameActor
             animator.SetTrigger(swingTrigger); //Each attack has its own animation controller that is used to dictate its windup and active time
         }
 
-        if (nonsense != null)
+        if (spriteAnimator != null)
         {
-            nonsense.SetTrigger(swingTrigger);
+            spriteAnimator.SetTrigger(swingTrigger); //The visual 'swish' effect operates on its own child object because it wasn't working otherwise
         }
-    }
-
-    protected override void Update()
-    {
-        base.Update();
-
-        if (nonsense != null)
-        {
-            if (attacker.FacingAngle + 90f > 180 && attacker.FacingAngle + 90f <= 360)
-            {
-                nonsense.GetComponent<SpriteRenderer>().flipY = true;
-            }
-            else
-            {
-                nonsense.GetComponent<SpriteRenderer>().flipY = false;
-            }
-        }
-
     }
 
     /// <summary>
@@ -247,6 +253,7 @@ public class Attack : GameActor
         attacker.Rb.drag = drag; //sets the drag to a higher parameterized value until the end of the attack. Prevents attackers with low base drag (aka player) from sliding backward icily.
     }
 
+    //Used like an interface
     internal virtual void Fire() { }
     internal virtual void OnHitPlayer() { }
 }

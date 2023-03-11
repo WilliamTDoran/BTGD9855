@@ -13,33 +13,36 @@ using UnityEngine.Animations;
 /// <summary>
 /// Parent class for all monster types. Some monsters can be driven just from this, complex ones inherit their own classes
 /// 
-/// Version 1.0 (1/20/23), William Doran
+/// Version 1.0   (1/20/23), Will Doran
+/// Version 2.0   (3/7/23),  Will Doran
+/// Version 2.0.1 (3/10/23), Will Doran, Taria Tuuri
 /// </summary>
 public class Monster : GameActor
 {
-    public ParticleSystem DeathPart;
-    public ParticleSystem blood;
     private Player player; //reference to the player. kind of antequated since its from before Player.cs had static reference, but whatever
+
+    public ParticleSystem DeathPart; //particles
+    public ParticleSystem blood;
 
     private string refCode1 = "basic"; //See Attack comments on attackerGrantedCode
 
-    private const float AI_TICK_TIME = 0.25f;
-    private MonsterControllerAI aiController;
+    private const float AI_TICK_TIME = 0.25f; //Time in seconds between each ai tick
+    private MonsterControllerAI aiController; 
 
-    private bool chasing;
+    private bool chasing; //Whether the monster is actively pursuing the player (as in at a distance with maze-solving)
     public bool Chasing { set { chasing = value; } }
-    private int nextPoint;
-    private NavMeshPath path;
+    private int nextPoint; //The index of the next point in NavMeshPath corners for the monster to pursue
+    private NavMeshPath path; //Runs the maze-solving
 
-    private float distanceToPlayer;
+    private float distanceToPlayer; //Distance between this.rb and player.Rb
 
-    private IEnumerator hoverDistanceSwapCoroutine;
-    private float hoverDistanceScale = 0.5f;
+    private IEnumerator hoverDistanceSwapCoroutine; //Randomly alters attack range while attackshuffling
+    private float hoverDistanceScale = 0.5f; //A modifier to attack range that gets randomly altered to cause the monster to strafe in and out of combat periodically
 
-    private IEnumerator shuffleDirectionSwapCoroutine;
-    private int shuffleDirection = 1;
+    private IEnumerator shuffleDirectionSwapCoroutine; //Randomly alters strafe direction while attackshuffling
+    private int shuffleDirection = 1; //1 for clockwise, -1 for count-clockwise. Use no other values
 
-    private IEnumerator AITickCoroutine;
+    private IEnumerator AITickCoroutine; //Runs the pathfinding and FSM reasoning a couple times per second; mainly for lag reduction (pathfinding involves raycasting which can get costly).
     private IEnumerator attackCycleCoroutine;
 
     /* Exposed Variables */
