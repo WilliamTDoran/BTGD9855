@@ -123,8 +123,8 @@ public class Maze : MonoBehaviour
         //Wall removal
         //extraRemoval(toRemove);
         //Debug.Log("There are: " + deadEnds.Count + "Dead ends");
-        PlaceObject.placePortal((Biome)((((int)mid.getBiome()) + 1) % 3));
-        PlaceObject.placePortal((Biome)((((int)mid.getBiome()) + 2) % 3));
+        PlaceObject.placePortal((Biome)((((int)mid.getBiome()) + 1) % 3), 60);
+        PlaceObject.placePortal((Biome)((((int)mid.getBiome()) + 2) % 3), 60);
 
         MazeWallRemoval removal = new MazeWallRemoval();
         removal.removeWalls((Biome)((((int)mid.getBiome()) + 1) % 3));

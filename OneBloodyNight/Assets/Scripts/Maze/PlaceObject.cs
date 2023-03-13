@@ -41,7 +41,7 @@ public class PlaceObject
         //Maze.m.getCell(x, y).transform.GetChild(0).GetComponent<Spawner>().addSpawnLocations(placed);
     }*/
 
-    internal static void placePortal(Biome B)
+    internal static void placePortal(Biome B, int minDis)
     {
         //Maze.m.deadEnds;
         bool placed = false;
@@ -50,11 +50,16 @@ public class PlaceObject
         {
             int i = Random.Range(0, Maze.m.deadEnds.Count);
             c = Maze.m.deadEnds[i];
-            if (B == c.getBiome()) {
-                Maze.m.deadEnds.RemoveAt(i);
-                placed = true;
-                c.setPiece = true;
+            if (Vector3.Distance(c.transform.position, Maze.m.getCell((int)Mathf.Floor(Maze.m.width()*0.5f), (int)Mathf.Floor(Maze.m.height()*0.5f)).transform.position ) > minDis)
+            {
+                if (B == c.getBiome())
+                {
+                    Maze.m.deadEnds.RemoveAt(i);
+                    placed = true;
+                    c.setPiece = true;
+                }
             }
+            
         } while (!placed);
         GameObject temp = GameObject.Instantiate(Maze.m.traits.bossPortal, new Vector3(c.transform.position.x,c.transform.position.y, c.transform.position.z), Quaternion.Euler(90, 0, 0), c.transform);
     }
