@@ -107,7 +107,14 @@ public class Maze : MonoBehaviour
     {
         //Biomes
         Cell mid = getCell((int)traits.width / 2, (int)traits.height / 2);
-        mid.setBiome(traits.CharacterBiome);
+        //mid.setBiome(traits.CharacterBiome);
+        for (int i=-1; i<=1; i++)
+        {
+            for (int j = -1; j <= 1; j++)
+            {
+                getCell((int)traits.width / 2 + i, (int)traits.height / 2 + j).setBiome(traits.CharacterBiome); ;
+            }
+        }
         biomeGen.generateBiomes((int)traits.width / 2, (int)traits.height / 2);
 
         //Set pieces
@@ -115,10 +122,22 @@ public class Maze : MonoBehaviour
         LocationSpawner.placeLocation((Biome)((((int)mid.getBiome()) + 2) % 3), 3);
 
         //Maze generation
-        getCell((int)traits.width / 2 + 1, (int)traits.height / 2).generateMaze();
-        getCell((int)traits.width / 2 - 1, (int)traits.height / 2).generateMaze();
+        getCell((int)traits.width / 2 + 2, (int)traits.height / 2).generateMaze();
+        getCell((int)traits.width / 2 - 2, (int)traits.height / 2).generateMaze();
         mid.getWall((int)Wall.wLocation.east).remove(false);
         mid.getWall((int)Wall.wLocation.west).remove(false);
+        mid.getWall((int)Wall.wLocation.north).remove(false);
+        mid.getWall((int)Wall.wLocation.south).remove(false);
+        getCell((int)traits.width / 2 + 1, (int)traits.height / 2).getWall((int)Wall.wLocation.north).remove(false);
+        getCell((int)traits.width / 2 + 1, (int)traits.height / 2).getWall((int)Wall.wLocation.south).remove(false);
+        getCell((int)traits.width / 2 + 1, (int)traits.height / 2).getWall((int)Wall.wLocation.east).remove(false);
+        getCell((int)traits.width / 2 - 1, (int)traits.height / 2).getWall((int)Wall.wLocation.north).remove(false);
+        getCell((int)traits.width / 2 - 1, (int)traits.height / 2).getWall((int)Wall.wLocation.south).remove(false);
+        getCell((int)traits.width / 2 - 1, (int)traits.height / 2).getWall((int)Wall.wLocation.west).remove(false);
+        getCell((int)traits.width / 2, (int)traits.height / 2 + 1).getWall((int)Wall.wLocation.east).remove(false);
+        getCell((int)traits.width / 2, (int)traits.height / 2 + 1).getWall((int)Wall.wLocation.west).remove(false);
+        getCell((int)traits.width / 2, (int)traits.height / 2 - 1).getWall((int)Wall.wLocation.east).remove(false);
+        getCell((int)traits.width / 2, (int)traits.height / 2 - 1).getWall((int)Wall.wLocation.west).remove(false);
 
         //Wall removal
         //extraRemoval(toRemove);

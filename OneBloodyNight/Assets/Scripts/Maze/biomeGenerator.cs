@@ -53,8 +53,8 @@ public class BiomeGenerator
         //Debug.Log(one);
         int two = (((int)next.getBiome()) + 2) % 3;
         //Debug.Log(two);
-        addToList(one, next.getWall((int)Wall.wLocation.east));
-        addToList(two, next.getWall((int)Wall.wLocation.west));
+        addToList(one, next.getWall((int)Wall.wLocation.east).getLink().getCell().getWall((int)Wall.wLocation.east));
+        addToList(two, next.getWall((int)Wall.wLocation.west).getLink().getCell().getWall((int)Wall.wLocation.west));
         
         //generating biomes
         for (int done = 1; done < biomesAdding.Length; done += 0)
