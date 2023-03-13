@@ -208,7 +208,7 @@ public class Cell : MonoBehaviour
             {
                 int picked = Random.Range(0, floorSprites.Length);
                 Vector3 offset = Maze.m.biomeVariables[(int)getBiome()].floors.offSet;
-                GameObject temp = Instantiate(floorSprites[picked], new Vector3(transform.position.x - offset.x + (i % 3) * offset.x, floorSprites[picked].transform.position.y, transform.position.z - offset.z + (i / 3) * offset.z), Quaternion.Euler(90, 0, 0), transform);
+                GameObject temp = Instantiate(floorSprites[picked], new Vector3(transform.position.x - offset.x + (i % 3) * offset.x, floorSprites[picked].transform.position.y, transform.position.z - offset.z + (i / 3) * offset.z), Quaternion.Euler(90, 180, 0), transform);
             }
         }
     }
