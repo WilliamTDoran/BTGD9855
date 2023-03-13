@@ -145,6 +145,7 @@ public class Cell : MonoBehaviour
     internal void drawWalls()
     {
         //Debug.Log("Pos of "+gameObject.name + ": "+transform.position.x+" " + transform.position.y + " " + transform.position.z + " ");
+        //general case
         walls[(int)Wall.wLocation.north].placeNorthSprites(getBiome(), transform.position);
         walls[(int)Wall.wLocation.east].placeEastSprites(getBiome(), transform.position);
 
@@ -154,6 +155,8 @@ public class Cell : MonoBehaviour
         {
             GameObject temp = Instantiate(Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[(int)corner], new Vector3(transform.position.x + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.x, transform.position.y + 1, transform.position.z + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.y), Quaternion.Euler(90, 0, 0), transform);
         }
+
+        //edge cases
         if (walls[(int)Wall.wLocation.west].edge())
         {
             walls[(int)Wall.wLocation.west].placeEastSprites(getBiome(), transform.position);
@@ -161,6 +164,40 @@ public class Cell : MonoBehaviour
         if (walls[(int)Wall.wLocation.south].edge())
         {
             walls[(int)Wall.wLocation.south].placeNorthSprites(getBiome(), transform.position);
+        }
+        if (transform.position.x == Maze.m.getCell(0, 0).transform.position.x)
+        {
+            if (transform.position.z == Maze.m.getCell(0, 0).transform.position.z)
+            {
+                GameObject temp = Instantiate(Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[9], new Vector3(transform.position.x - Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.x, transform.position.y + 1, transform.position.z + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.y), Quaternion.Euler(90, 0, 0), transform);
+            }
+            else if (walls[(int)Wall.wLocation.north].getState() == Wall.wState.destroyed)
+            {
+                GameObject temp = Instantiate(Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[5], new Vector3(transform.position.x - Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.x, transform.position.y + 1, transform.position.z + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.y), Quaternion.Euler(90, 0, 0), transform);
+            }
+            else
+            {
+                GameObject temp = Instantiate(Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[4], new Vector3(transform.position.x - Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.x, transform.position.y + 1, transform.position.z + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.y), Quaternion.Euler(90, 0, 0), transform);
+            }
+        }
+        if (transform.position.z == Maze.m.getCell(0, Maze.m.height()-1).transform.position.z)
+        {
+            if (transform.position.x == Maze.m.getCell(0, 0).transform.position.x)
+            {
+                GameObject temp = Instantiate(Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[8], new Vector3(transform.position.x - Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.x, transform.position.y + 1, transform.position.z - Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.y), Quaternion.Euler(90, 0, 0), transform);
+            }
+            if (transform.position.x == Maze.m.getCell(Maze.m.width()-1, 0).transform.position.x)
+            {
+                GameObject temp = Instantiate(Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[7], new Vector3(transform.position.x + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.x, transform.position.y + 1, transform.position.z - Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.y), Quaternion.Euler(90, 0, 0), transform);
+            }
+            else if (walls[(int)Wall.wLocation.east].getState() == Wall.wState.destroyed)
+            {
+                GameObject temp = Instantiate(Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[6], new Vector3(transform.position.x + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.x, transform.position.y + 1, transform.position.z - Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.y), Quaternion.Euler(90, 0, 0), transform);
+            }
+            else
+            {
+                GameObject temp = Instantiate(Maze.m.biomeVariables[(int)getBiome()].Corner.Sprites[3], new Vector3(transform.position.x + Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.x, transform.position.y + 1, transform.position.z - Maze.m.biomeVariables[(int)getBiome()].Corner.offSet.y), Quaternion.Euler(90, 0, 0), transform);
+            }
         }
 
         //floors

@@ -130,6 +130,7 @@ public class Maze : MonoBehaviour
         removal.removeWalls((Biome)((((int)mid.getBiome()) + 1) % 3));
         removal.removeWalls((Biome)((((int)mid.getBiome()) + 2) % 3));
 
+        //drawing walls
         for (int i=0; i<width(); i++)
         { 
             for (int j = 0; j < height(); j++)
