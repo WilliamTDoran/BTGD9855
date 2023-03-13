@@ -4528,6 +4528,10 @@ MonoBehaviour:
     floors:
       offSet: {x: -8, y: 0, z: -8}
       Sprites:
+      - {fileID: 8826861024925891624, guid: dae55cfd2bd2f774da3ccafde4cb2675, type: 3}
+      - {fileID: 8826861024925891624, guid: 3cf195785e097784ebce913069149158, type: 3}
+      - {fileID: 8826861024925891624, guid: 3cf195785e097784ebce913069149158, type: 3}
+      - {fileID: 8826861024925891624, guid: 3cf195785e097784ebce913069149158, type: 3}
       - {fileID: 8826861024925891624, guid: 3cf195785e097784ebce913069149158, type: 3}
   - colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
     wallsRemoved: 150
@@ -4663,6 +4667,11 @@ MonoBehaviour:
     floors:
       offSet: {x: -8, y: 0, z: -8}
       Sprites:
+      - {fileID: 8826861024925891624, guid: f11bd23ca4ec6d240b12309b29cf22e7, type: 3}
+      - {fileID: 8826861024925891624, guid: 671a2e68423554b4188f23eeed7d4954, type: 3}
+      - {fileID: 8826861024925891624, guid: 671a2e68423554b4188f23eeed7d4954, type: 3}
+      - {fileID: 8826861024925891624, guid: 671a2e68423554b4188f23eeed7d4954, type: 3}
+      - {fileID: 8826861024925891624, guid: 671a2e68423554b4188f23eeed7d4954, type: 3}
       - {fileID: 8826861024925891624, guid: 671a2e68423554b4188f23eeed7d4954, type: 3}
 --- !u!4 &750604040
 Transform:
