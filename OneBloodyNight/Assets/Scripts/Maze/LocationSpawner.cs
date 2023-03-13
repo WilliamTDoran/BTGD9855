@@ -12,8 +12,9 @@ public class LocationSpawner
     internal static void placeLocation(Biome b, int attempts)
     {
         Cell[][] setPiece;
+        int setPiecesPlaced = 0;
         // attempt to place one 3 times
-        for (int a=0; a<attempts; a++)
+        for (int a=0; a<attempts || (setPiecesPlaced < 1 && a < 100); a++)
         {
             // pick a random formation
             int val = Random.Range(0, Maze.m.biomeVariables[(int)b].SetPieces.Length);
@@ -121,6 +122,7 @@ public class LocationSpawner
                 continue;
             } else
             {
+                setPiecesPlaced++;
                 Debug.Log("Set piece " + setPieceGO.name + " placed at location " + setPieceLocation.x + ", " + setPieceLocation.y);
             }
 
@@ -143,7 +145,7 @@ public class LocationSpawner
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.north).remove(false);
                     }
-                    if (i + 1 < setPiece[i].Length && setPiece[i + 1][j] != null && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeSelf) 
+                    if (i + 1 < setPiece.Length && setPiece[i + 1][j] != null && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeSelf) 
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.east).remove(false);
                     } else if (i + 1 == setPiece[i].Length && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeSelf)

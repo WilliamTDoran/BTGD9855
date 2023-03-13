@@ -4442,7 +4442,7 @@ MonoBehaviour:
     hubObjects: []
     CharacterBiome: 0
     bossPortal: {fileID: 3505505689596641723, guid: 9df13bf0a1b3ba3448ef6d87397cd563, type: 3}
-  mazeSeed: 945915542
+  mazeSeed: -1
   sampleRow: {fileID: 3985245215676089212, guid: ee78c11f6f19f724b84ac746fcad03bf, type: 3}
   biomeVariables:
   - colour: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
@@ -4490,7 +4490,7 @@ MonoBehaviour:
     wallsRemoved: 15
     maxCellDifficulty: 1
     SetPieces:
-    - {fileID: 3462578440953639072, guid: fc0942543b21b424b9eae9255c87108c, type: 3}
+    - {fileID: 3462578440953639072, guid: 539200ee38177a244bdb354de985f00b, type: 3}
     objects: []
     enemies:
     - {fileID: 8258326494958717592, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
