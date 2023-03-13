@@ -4449,7 +4449,8 @@ MonoBehaviour:
     wallsRemoved: 0
     maxCellDifficulty: 0
     SetPieces:
-    - {fileID: 3462578440953639072, guid: fc0942543b21b424b9eae9255c87108c, type: 3}
+    - {fileID: 3462578440953639072, guid: e686bb01e5410ba459b5904d1608b7b1, type: 3}
+    - {fileID: 3462578440953639072, guid: 46a2834bf1b6a224cbf722b64b7bd249, type: 3}
     objects: []
     enemies:
     - {fileID: 8258326494958717592, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
@@ -4491,6 +4492,7 @@ MonoBehaviour:
     maxCellDifficulty: 1
     SetPieces:
     - {fileID: 3462578440953639072, guid: 539200ee38177a244bdb354de985f00b, type: 3}
+    - {fileID: 3462578440953639072, guid: 46a2834bf1b6a224cbf722b64b7bd249, type: 3}
     objects: []
     enemies:
     - {fileID: 8258326494958717592, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
@@ -4531,7 +4533,9 @@ MonoBehaviour:
     wallsRemoved: 150
     maxCellDifficulty: 10
     SetPieces:
-    - {fileID: 3462578440953639072, guid: e686bb01e5410ba459b5904d1608b7b1, type: 3}
+    - {fileID: 3462578440953639072, guid: 02982c99c33e6aa4f863a6993f62f3a5, type: 3}
+    - {fileID: 3462578440953639072, guid: 46a2834bf1b6a224cbf722b64b7bd249, type: 3}
+    - {fileID: 3462578440953639072, guid: 97c19f6c57996bd48befdb52545f4113, type: 3}
     objects:
     - formation: {fileID: 1216559942331405162, guid: 8a2f415d56b154e4880a5929ed331b68, type: 3}
       cellDifficulty: 0
