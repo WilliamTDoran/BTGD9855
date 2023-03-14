@@ -1506,7 +1506,7 @@ MonoBehaviour:
   - {fileID: 606353820}
   - {fileID: 1611556331}
   timeBetweenFeathers: 0.2
-  cam: {fileID: 0}
+  cam: {fileID: 1281391462}
   initialPositionTime: 1.5
   threatenTime: 1.5
   diveSpeed: 45
