@@ -28,6 +28,8 @@ public class PlayerStrigoi : Player
     /*~~~~~~~*/
 
     private string basicCode = "basic"; //see Attack comments for attackerGrantedCode
+    private string basic2Code = "basic2";
+    private string basic3Code = "walnut";
     private string batCode = "bat";
 
     private IEnumerator berserkCoroutine; //runs bloodthirst
@@ -185,6 +187,16 @@ public class PlayerStrigoi : Player
         basicAttackOne.StartSwing(basicCode);
     }
 
+    public void MeleeUse2()
+    {
+        basicAttackTwo.StartSwing(basic2Code);
+    }
+
+    public void MeleeUse3()
+    {
+        basicAttackThree.StartSwing(basic3Code);
+    }
+
     /// <summary>
     /// Launches advanced fire when called. Takes an int parameter that represents which, if any, of the strigoi's special attacks are loaded.
     /// This gets a bit redundant since each player type needs essentially this exact code, but just calling different functions, but for only 3 player types it's not the worst.
@@ -270,9 +282,9 @@ public class PlayerStrigoi : Player
     {
         base.OnAttackEnd(code);
 
-        if (code == basicCode)
+        if (code == basic3Code)
         {
-            canAttack = true;
+            animator.ResetTrigger("Attack");
         }
         else if (code == batCode)
         {
