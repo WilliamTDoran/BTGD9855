@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ImpunduluBossRoom.unity
     guid: 297dc33ae2c397d429d513022007f352
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: f06839a4ba4efbf4a872f395fa49283e
   m_configObjects: {}
