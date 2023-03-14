@@ -254,7 +254,7 @@ public class Attack : GameActor
     {
         //Causes pushback on the attacker when you strike something. Vector points halfway between attacker facing and the line between the attacker and the struck target
         Vector3 direction = attacker.Rb.position - other.ClosestPoint(attacker.Rb.position);
-        direction.z = 0;
+        direction.y = 0;
         direction.Normalize();
         direction -= attackerFacingDirection;
         direction.Normalize();
