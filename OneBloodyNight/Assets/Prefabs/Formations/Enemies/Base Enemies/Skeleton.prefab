@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e643940dec982a41b1528d60b0a084c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4000
+  speed: 7000
   immuneDuration: 0.5
   maxHitPoints: 5
   walkAnim: 1

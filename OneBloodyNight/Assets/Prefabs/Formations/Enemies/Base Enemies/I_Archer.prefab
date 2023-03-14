@@ -312,7 +312,7 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
-  damage: 10
+  damage: 40
   knockbackAmount: 50
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -325,9 +325,9 @@ MonoBehaviour:
   - Monster
   checkForWalls: 1
   attacker: {fileID: 6537208050856354513}
+  spriteAnimator: {fileID: 0}
   showHitbox: 0
   hitboxMesh: {fileID: 0}
-  nonsense: {fileID: 0}
   shooter: {fileID: 6013204197218851667}
 --- !u!1 &8621432289928506362
 GameObject:

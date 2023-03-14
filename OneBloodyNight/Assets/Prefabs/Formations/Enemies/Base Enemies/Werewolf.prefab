@@ -220,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5000
   immuneDuration: 0.5
-  maxHitPoints: 160
+  maxHitPoints: 140
   walkAnim: 1
   DeathPart: {fileID: 6481191564942972682}
   blood: {fileID: 7150320926583223067}
@@ -415,9 +415,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 532517229150989733}
+  spriteAnimator: {fileID: 0}
   showHitbox: 1
   hitboxMesh: {fileID: 6696822652906178980}
-  nonsense: {fileID: 0}
 --- !u!95 &6923590393604019625
 Animator:
   serializedVersion: 4
