@@ -48,11 +48,20 @@ public class Bloodmeter : MonoBehaviour
     
     private void Update()
     {
+
         if (bloodmeter.value <= 0)
         {
             gameover.SetActive(true);
             Time.timeScale = 0f;
         }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            //StopCoroutine("DMG");
+            StartCoroutine("Gainer");
+        }
+
+
     } 
     
 
@@ -111,5 +120,16 @@ public class Bloodmeter : MonoBehaviour
             yield return new WaitForSeconds(0.03f);//slows down the damage rate
         }
         yield return null;//Player is dead
+    }
+
+    private IEnumerator Gainer()
+    {
+
+        while(bloodmeter.value < bloodmeter.maxValue)
+        { 
+            bloodmeter.value = bloodmeter.value + 10;//takes 1 blood per second
+            yield return new WaitForSeconds(0.03f);//slows down the damage rate
+        }
+  
     }
 }

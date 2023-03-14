@@ -1345,7 +1345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127064942}
   m_LocalRotation: {x: 0.7070799, y: 0.006170608, z: -0.006170608, w: 0.7070799}
-  m_LocalPosition: {x: -85.8, y: 0.13, z: 25.3}
+  m_LocalPosition: {x: -85.8, y: 0.13, z: 21.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10213,7 +10213,9 @@ MonoBehaviour:
   Ability2: {fileID: 8300000, guid: 02175565f3818a0478038a45f71576ee, type: 3}
   Attack: {fileID: 8300000, guid: 653740d25a2fd6141a9464b227cd5fef, type: 3}
   Hurt: {fileID: 8300000, guid: 437e001eb1fcb4a4cabcf452411234c1, type: 3}
-  basicAttack: {fileID: 1058262818}
+  basicAttackOne: {fileID: 0}
+  basicAttackTwo: {fileID: 0}
+  basicAttackThree: {fileID: 0}
   swarmAttack: {fileID: 2066546306}
   basicMaterial: {fileID: 2100000, guid: 053872da44d313045b55ece660ff3209, type: 2}
   invisibleMaterial: {fileID: 2100000, guid: 64b0d744dccde5f458fa051eb3da40cd, type: 2}

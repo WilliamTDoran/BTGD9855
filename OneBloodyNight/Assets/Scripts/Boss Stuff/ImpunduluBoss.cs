@@ -52,15 +52,26 @@ public class ImpunduluBoss : Boss
     [SerializeField]
     private float recoverTime = 0.3f;
 
+    
+
     protected override void Start()
     {
         //audioSource.PlayOneShot(Intro,2f);
         base.Start();
-        StartRandomBehavior();
+        animator.SetTrigger("start");
+        StartCoroutine("startanim");
+        //StartRandomBehavior();
         //StartSpinAttack();
     }
 
 
+    private IEnumerator startanim()
+    {
+        yield return new WaitForSeconds(5f);
+        StartRandomBehavior();
+        animator.ResetTrigger("start");
+
+    }
     private void FixedUpdate()
     {
         if (canMove)
@@ -85,6 +96,7 @@ public class ImpunduluBoss : Boss
         }
 
         canMove = true;
+        animator.ResetTrigger("spin");
         StartRandomBehavior();
     }
 
@@ -96,6 +108,7 @@ public class ImpunduluBoss : Boss
 
         float genTimer = 0.0f;
 
+        animator.SetTrigger("swoop");
         while (genTimer <= initialPositionTime)
         {
             Vector3 cameraRightsidePoint = cam.ViewportToWorldPoint(new Vector3(0.95f, 0.52f, rb.position.z));
@@ -140,7 +153,7 @@ public class ImpunduluBoss : Boss
             genTimer += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-
+        animator.ResetTrigger("spin");
         StartRandomBehavior();
     }
 
@@ -150,6 +163,7 @@ public class ImpunduluBoss : Boss
 
         while (true)
         {
+            animator.SetTrigger("walk");
             canMove = true;
             faceDirection = PickDirection() * speed;
             yield return new WaitForSeconds(UnityEngine.Random.Range(0.8f, 1.5f));
@@ -176,17 +190,20 @@ public class ImpunduluBoss : Boss
         {
             case 0:
                 StartSpinAttack();
+                animator.SetTrigger("spin");
+                
                 break;
             case 1:
                 lightnings[lightningCycle].Initiate(Player.plr.Rb.position);
 
                 lightningCycle = lightningCycle > 1 ? 0 : lightningCycle + 1;
                 audioSource.PlayOneShot(Lightning);
-
+                animator.ResetTrigger("spin");
                 StopRandomBehavior();
                 StartRandomBehavior();
                 break;
             case 2:
+                animator.ResetTrigger("spin");
                 StartDiveAttack();
                 break;
         }
@@ -198,12 +215,14 @@ public class ImpunduluBoss : Boss
     {
         spinAttackCoroutine = SpinAttack();
         StartCoroutine(spinAttackCoroutine);
+        
     }
     
     private void StopSpinAttack()
     {
         StopCoroutine(spinAttackCoroutine);
         spinAttackCoroutine = null;
+        animator.SetTrigger("walk");
     }
 
     private void StartDiveAttack()
@@ -217,6 +236,7 @@ public class ImpunduluBoss : Boss
     {
         StopCoroutine(diveAttackCoroutine);
         diveAttackCoroutine = null;
+        animator.SetTrigger("walk");
     }
 
     private void StartRandomBehavior()
