@@ -79,6 +79,6 @@ public class Menu : MonoBehaviour
         audioSource.Play();
         
         yield return new WaitForSeconds(2f);
-        Application.LoadLevel("TestScene");
+        Application.LoadLevel("Tutorial");
     }
 }
