@@ -1448,7 +1448,7 @@ BoxCollider:
   m_GameObject: {fileID: 312158870}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2, y: 3, z: 1.25}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4679,7 +4679,7 @@ BoxCollider:
   m_GameObject: {fileID: 1014643623}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2, y: 3, z: 1.25}
   m_Center: {x: 0, y: 0, z: 0}
@@ -5157,7 +5157,7 @@ BoxCollider:
   m_GameObject: {fileID: 1181192916}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2, y: 3, z: 1.25}
   m_Center: {x: 0, y: 0, z: 0}
@@ -7545,7 +7545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8258326494958717592, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8342060312282935473, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
       propertyPath: attackAIProperties.attackRange
