@@ -4142,7 +4142,6 @@ MonoBehaviour:
     - {fileID: 7827793329945432230, guid: 914bb515ae1488949a6509e6a89ac75a, type: 3}
     - {fileID: 7827793329945432230, guid: 70ec3aa08d209df44955d43ced03d093, type: 3}
     - {fileID: 7827793329945432230, guid: 922fc2f3d4df0884b896a3da8fda98c1, type: 3}
-    - {fileID: 529972682658337596, guid: 1d80dc8da5009974bbd5074371e4612d, type: 3}
     North:
       offSet: {x: 4, y: 0, z: 0}
       Sprites:
@@ -13275,6 +13274,10 @@ PrefabInstance:
     - target: {fileID: 2249110078326297002, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
       propertyPath: m_Name
       value: Player Strigoi
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249110078326297011, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
