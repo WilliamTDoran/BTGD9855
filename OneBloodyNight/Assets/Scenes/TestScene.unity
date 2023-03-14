@@ -3902,8 +3902,8 @@ MonoBehaviour:
   maxHitPoints: 0
   walkAnim: 0
   damage: 20
-  knockbackAmount: 2500
-  hitstunDuration: 0.8
+  knockbackAmount: 2000
+  hitstunDuration: 1.2
   pushbackAmount: 150
   returnDrag: 10
   drag: 20
@@ -6858,9 +6858,9 @@ MonoBehaviour:
   maxHitPoints: 0
   walkAnim: 0
   damage: 20
-  knockbackAmount: 0
-  hitstunDuration: 0.8
-  pushbackAmount: 150
+  knockbackAmount: 100
+  hitstunDuration: 1
+  pushbackAmount: 100
   returnDrag: 10
   drag: 20
   wallPushbackScalar: 2
@@ -14670,9 +14670,9 @@ MonoBehaviour:
   maxHitPoints: 0
   walkAnim: 0
   damage: 20
-  knockbackAmount: 0
-  hitstunDuration: 0.8
-  pushbackAmount: 150
+  knockbackAmount: 100
+  hitstunDuration: 1
+  pushbackAmount: 100
   returnDrag: 10
   drag: 20
   wallPushbackScalar: 2
