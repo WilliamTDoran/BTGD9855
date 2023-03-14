@@ -12,6 +12,8 @@ public class Bloodmeter : MonoBehaviour
     public int damage;
     public Slider residual;
 
+    public GameObject gameover;
+
     [SerializeField]
     private float bloodLossRate;
 
@@ -29,16 +31,30 @@ public class Bloodmeter : MonoBehaviour
         {
             instance = this;
         }
+
+        
     }
 
     // Start is called before the first frame update
     private void Start()
     {
+        
         bloodmeter.value = bloodmeter.maxValue;
         residual.value = bloodmeter.minValue;
         Debug.Log("Done");
         StartCoroutine("DMG");
+        gameover.SetActive(false);
     }
+    
+    private void Update()
+    {
+        if (bloodmeter.value <= 0)
+        {
+            gameover.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    } 
+    
 
     // Update is called once per frame
     /*private void Update()

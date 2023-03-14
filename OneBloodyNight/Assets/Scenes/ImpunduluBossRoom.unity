@@ -2218,6 +2218,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &219063949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7513940321277536315, guid: 15539104564be914199bd67c4847788f, type: 3}
+  m_PrefabInstance: {fileID: 1797100789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &220965211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,9 +2774,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 335686671}
+  spriteAnimator: {fileID: 0}
   showHitbox: 0
   hitboxMesh: {fileID: 335686672}
-  nonsense: {fileID: 0}
   shooter: {fileID: 127064945}
 --- !u!23 &335686672
 MeshRenderer:
@@ -3248,9 +3253,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 414111549}
+  spriteAnimator: {fileID: 0}
   showHitbox: 0
   hitboxMesh: {fileID: 414111551}
-  nonsense: {fileID: 0}
   shooter: {fileID: 127064945}
 --- !u!33 &414111550
 MeshFilter:
@@ -4059,9 +4064,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 532537194}
+  spriteAnimator: {fileID: 0}
   showHitbox: 1
   hitboxMesh: {fileID: 532537197}
-  nonsense: {fileID: 0}
   delay: 1
   activeTime: 1
   debugTargetPreview: {fileID: 1336825650}
@@ -4362,9 +4367,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 556239793}
+  spriteAnimator: {fileID: 0}
   showHitbox: 0
   hitboxMesh: {fileID: 556239794}
-  nonsense: {fileID: 0}
   shooter: {fileID: 127064945}
 --- !u!23 &556239794
 MeshRenderer:
@@ -4512,9 +4517,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 556438433}
+  spriteAnimator: {fileID: 0}
   showHitbox: 0
   hitboxMesh: {fileID: 556438434}
-  nonsense: {fileID: 0}
   shooter: {fileID: 127064945}
 --- !u!23 &556438434
 MeshRenderer:
@@ -4947,9 +4952,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 606353820}
+  spriteAnimator: {fileID: 0}
   showHitbox: 1
   hitboxMesh: {fileID: 606353822}
-  nonsense: {fileID: 0}
   delay: 1
   activeTime: 1
   debugTargetPreview: {fileID: 516769125}
@@ -5100,9 +5105,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 616608123}
+  spriteAnimator: {fileID: 0}
   showHitbox: 0
   hitboxMesh: {fileID: 616608124}
-  nonsense: {fileID: 0}
   shooter: {fileID: 127064945}
 --- !u!23 &616608124
 MeshRenderer:
@@ -6831,9 +6836,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 1013497824}
+  spriteAnimator: {fileID: 0}
   showHitbox: 0
   hitboxMesh: {fileID: 1013497825}
-  nonsense: {fileID: 0}
   shooter: {fileID: 127064945}
 --- !u!23 &1013497825
 MeshRenderer:
@@ -7357,9 +7362,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 1493320255}
+  spriteAnimator: {fileID: 0}
   showHitbox: 0
   hitboxMesh: {fileID: 0}
-  nonsense: {fileID: 495004981}
 --- !u!4 &1058262819
 Transform:
   m_ObjectHideFlags: 0
@@ -8763,6 +8768,8 @@ MonoBehaviour:
   bloodmeter: {fileID: 1263255955}
   AbilityCost: 50
   damage: 0
+  residual: {fileID: 0}
+  gameover: {fileID: 219063949}
   bloodLossRate: 0.5
   bloodGainRate: 0.75
 --- !u!114 &1263255955
@@ -9206,9 +9213,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 1367510906}
+  spriteAnimator: {fileID: 0}
   showHitbox: 0
   hitboxMesh: {fileID: 1367510907}
-  nonsense: {fileID: 0}
   shooter: {fileID: 127064945}
 --- !u!23 &1367510907
 MeshRenderer:
@@ -9890,9 +9897,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 1489522189}
+  spriteAnimator: {fileID: 0}
   showHitbox: 0
   hitboxMesh: {fileID: 1489522190}
-  nonsense: {fileID: 0}
   shooter: {fileID: 127064945}
 --- !u!23 &1489522190
 MeshRenderer:
@@ -11085,9 +11092,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 1611556331}
+  spriteAnimator: {fileID: 0}
   showHitbox: 1
   hitboxMesh: {fileID: 1611556333}
-  nonsense: {fileID: 0}
   delay: 1
   activeTime: 1
   debugTargetPreview: {fileID: 1370872650}
@@ -12712,7 +12719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7513940319791799865, guid: 15539104564be914199bd67c4847788f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7513940319791799866, guid: 15539104564be914199bd67c4847788f, type: 3}
       propertyPath: m_RootOrder
@@ -12760,7 +12767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7513940321277536315, guid: 15539104564be914199bd67c4847788f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15539104564be914199bd67c4847788f, type: 3}
@@ -14621,9 +14628,9 @@ MonoBehaviour:
   - Floor
   checkForWalls: 1
   attacker: {fileID: 1493320255}
+  spriteAnimator: {fileID: 0}
   showHitbox: 1
   hitboxMesh: {fileID: 2066546307}
-  nonsense: {fileID: 0}
 --- !u!23 &2066546307
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15561,9 +15568,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -8087430814354431941, guid: 0139094e69f8d2d47905c00d116a4572, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 785a77e24bfd2f647ba530fd0511f8f5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 82ed249e3bdad184eae64ae1f915f3e1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.28
+  m_Volume: 0.12
   m_Pitch: 1
   Loop: 1
   Mute: 0
