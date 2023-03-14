@@ -33,6 +33,7 @@ public class PlayerStrigoi : Player
     private IEnumerator berserkCoroutine; //runs bloodthirst
     private IEnumerator invisibilityCoroutine; //runs invisibility duration
     private IEnumerator batSwarmCoroutine; //runs swarm
+    private IEnumerator attackRegisterCoroutine; //runs the complexities of the basic attack
 
     private float berserkCounter; //current berserk time, reset on call
     private float berserkUptime; //true berserk time, used for calculating incremental buffs
@@ -42,6 +43,8 @@ public class PlayerStrigoi : Player
     private int basicAttackBaseDamage; //used for returning to default after berserk
     private float baseSpeed; //used for returning to default after berserk
     public float BaseSpeed { get { return baseSpeed; } set { baseSpeed = value; } }
+
+    private int attackRegister = 0; //0 for not attacking, 1 for on first, 2 for on second, 3 for on third
 
     /* Exposed Variables */
     [Header("Strigoi Exclusive")]
@@ -124,6 +127,7 @@ public class PlayerStrigoi : Player
 
         if (basicAttackDown && canAttack && !stunned && !GameManager.instance.GCD(false)) //bit messy all these checks, but it gets the job done and makes it actually pretty airtight
         {
+            AttackAttempt();
             animator.SetTrigger("Attack");
 
             if (basicAttack.ForceStill) //Some attacks force the attacker to stand still
@@ -139,6 +143,33 @@ public class PlayerStrigoi : Player
         canAttackDebugText.text = canAttack + "";
         berserkDamageDebugText.text = basicAttack.Damage + "";
         berserkSpeedDebugText.text = speed + "";
+    }
+
+    private void AttackAttempt()
+    {
+        switch(attackRegister)
+        {
+            case 0:
+                {
+                    break;
+                }
+            case 1:
+                {
+                    break;
+                }
+            case 2:
+                {
+                    break;
+                }
+            case 3:
+                {
+                    break;
+                }
+            default:
+                {
+                    break;
+                }
+        }
     }
 
     public void MeleeUse()
