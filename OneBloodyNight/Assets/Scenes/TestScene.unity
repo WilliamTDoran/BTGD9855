@@ -4541,6 +4541,9 @@ MonoBehaviour:
     floors:
       offSet: {x: -8, y: 0, z: -8}
       Sprites:
+      - {fileID: 8826861024925891624, guid: 081e034b64ca6334fbd1e554759675b6, type: 3}
+      - {fileID: 8826861024925891624, guid: 013f1186d7d0c9145afa9b389f7ed9a3, type: 3}
+      - {fileID: 8826861024925891624, guid: 013f1186d7d0c9145afa9b389f7ed9a3, type: 3}
       - {fileID: 8826861024925891624, guid: 013f1186d7d0c9145afa9b389f7ed9a3, type: 3}
   - colour: {r: 0.6415094, g: 0, b: 0, a: 1}
     wallsRemoved: 15
