@@ -18,6 +18,8 @@ public class Attack : GameActor
 
     private List<Collider> hitThisSwing = new List<Collider>(); //A list of everything already hit during this attack. Used to avoid double-hitting the same collider
 
+    private Quaternion baseAnimRotation;
+
     /* Exposed Variables */
     [Header("Attack Statistics")]
 
@@ -93,6 +95,13 @@ public class Attack : GameActor
     protected MeshRenderer hitboxMesh;
     /*~~~~~~~~~~~~~~~~~~~~*/
 
+    protected override void Start()
+    {
+        base.Start();
+
+        baseAnimRotation = spriteAnimator.transform.localRotation;
+    }
+
     /// <summary>
     /// A standard Update function.
     /// Clumsy and might soon be deprecated, but it ensures that the attack swish is oriented correctly regardless of where the attacker is facing
@@ -105,11 +114,13 @@ public class Attack : GameActor
         {
             if (attacker.FacingAngle + 90f > 180 && attacker.FacingAngle + 90f <= 360) //I'm so sure there's a way to do this without && but I can't think of it
             {
-                spriteAnimator.GetComponent<SpriteRenderer>().flipY = true;
+                spriteAnimator.GetComponent<SpriteRenderer>().flipX = true;
+                spriteAnimator.transform.localRotation = Quaternion.Euler(90f, facingAngle + 110f, 0);
             }
             else
             {
-                spriteAnimator.GetComponent<SpriteRenderer>().flipY = false;
+                spriteAnimator.GetComponent<SpriteRenderer>().flipX = false;
+                spriteAnimator.transform.localRotation = baseAnimRotation;
             }
         }
 
