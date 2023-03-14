@@ -136,7 +136,7 @@ public class PlayerStrigoi : Player
                 rb.velocity = Vector3.zero; //need this otherwise you tokyo drift from momentum
             }
 
-            canAttack = false;
+            //canAttack = false;
             if (invisibilityCoroutine != null) StopInvisible(); //attacking cancels invisibility
         }
 

@@ -106,13 +106,16 @@ public class GameActor : MonoBehaviour
             animator.SetFloat("Speed", clampedVelocity);
 
             //This is clumsy and causes awkward stuttering when moving vertically or near-vertically. Should ideally be replaced
-            if (rb.velocity.x < 0)
+            if (rb.velocity.magnitude > 0.1)
             {
-                render.flipX = true;
-            }
-            else
-            {
-                render.flipX = false;
+                if (rb.velocity.x < 0)
+                {
+                    render.flipX = true;
+                }
+                else
+                {
+                    render.flipX = false;
+                }
             }
         }
     }
