@@ -4516,6 +4516,19 @@ MonoBehaviour:
       offSet: {x: 4, y: 0, z: 0}
       Sprites:
       - {fileID: 3111108264678135816, guid: 3ef92c23e23f75f439e3fe4aa4d7592e, type: 3}
+      - {fileID: 3111108264678135816, guid: 8f08342ef3302b54e816e4fc24d6b6c3, type: 3}
+      - {fileID: 3111108264678135816, guid: 5fd4d33c3fb2a2d4dbbc27c95334cf8d, type: 3}
+      - {fileID: 3111108264678135816, guid: 24e872375b4ad464a93331bfd9e10319, type: 3}
+      - {fileID: 3111108264678135816, guid: 0c19060f40bec774fb64ef62aecd1952, type: 3}
+      - {fileID: 3111108264678135816, guid: a45c9fbdd172d324d9a4ffa7fe8dc403, type: 3}
+      - {fileID: 3111108264678135816, guid: b448958f44f91184f95ca6ee807deafc, type: 3}
+      - {fileID: 3111108264678135816, guid: 9afcb6c0a9a1bd749a45bb49f13d65f7, type: 3}
+      - {fileID: 3111108264678135816, guid: 0d8a42634a226804fa2bd0fecddf93be, type: 3}
+      - {fileID: 3111108264678135816, guid: 5341ddafc166de6439f8022917b57f7d, type: 3}
+      - {fileID: 3111108264678135816, guid: 72edb2c2b66ef36409259175b821f2f4, type: 3}
+      - {fileID: 3111108264678135816, guid: a2b22419a43257046b3ce89a482cedfb, type: 3}
+      - {fileID: 3111108264678135816, guid: 3306fab502380ad4eb710f3624ae66d7, type: 3}
+      - {fileID: 3111108264678135816, guid: 7eb5132136c9c81409d3d46891d0e689, type: 3}
     East:
       offSet: {x: 0, y: 4, z: 0}
       Sprites:
