@@ -211,7 +211,7 @@ MonoBehaviour:
   lostAIProperties:
     timeTilLoseSight: 3
   attackAIProperties:
-    attackRange: 1
+    attackRange: 6
     avoidanceRange: 0
 --- !u!1 &877845514278036326
 GameObject:
@@ -380,9 +380,9 @@ MonoBehaviour:
   - Monster
   checkForWalls: 1
   attacker: {fileID: 1506505331822888184}
+  spriteAnimator: {fileID: 0}
   showHitbox: 1
   hitboxMesh: {fileID: 8537159268307554861}
-  nonsense: {fileID: 0}
 --- !u!1001 &3462329237973345723
 PrefabInstance:
   m_ObjectHideFlags: 0
