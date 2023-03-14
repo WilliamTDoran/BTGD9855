@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StrigoiBasicAttack 2
+  m_Name: StrigoiBasicThree
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Swing
@@ -148,7 +148,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6c9b9633fe4280546a8af3331a5c95c6, type: 2}
+  m_Motion: {fileID: 7400000, guid: 99443b525e55965448ddad0681159a6e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

@@ -51,7 +51,15 @@ public class PlayerStrigoi : Player
     [Header("References")]
     [Tooltip("A reference to the strigoi's basic attack object")]
     [SerializeField]
-    private Attack basicAttack;
+    private Attack basicAttackOne;
+
+    [Tooltip("A reference to the strigoi's basic attack object")]
+    [SerializeField]
+    private Attack basicAttackTwo;
+
+    [Tooltip("A reference to the strigoi's basic attack object")]
+    [SerializeField]
+    private Attack basicAttackThree;
 
     [Tooltip("A reference to the attack hitbox for the bat swarm")]
     [SerializeField]
@@ -113,7 +121,7 @@ public class PlayerStrigoi : Player
     {
         base.Start();
 
-        basicAttackBaseDamage = basicAttack.Damage;
+        basicAttackBaseDamage = basicAttackOne.Damage;
         baseSpeed = speed;
     }
 
@@ -130,7 +138,7 @@ public class PlayerStrigoi : Player
             AttackAttempt();
             animator.SetTrigger("Attack");
 
-            if (basicAttack.ForceStill) //Some attacks force the attacker to stand still
+            if (basicAttackOne.ForceStill) //Some attacks force the attacker to stand still
             {
                 canMove = false;
                 rb.velocity = Vector3.zero; //need this otherwise you tokyo drift from momentum
@@ -141,7 +149,7 @@ public class PlayerStrigoi : Player
         }
 
         canAttackDebugText.text = canAttack + "";
-        berserkDamageDebugText.text = basicAttack.Damage + "";
+        berserkDamageDebugText.text = basicAttackOne.Damage + "";
         berserkSpeedDebugText.text = speed + "";
     }
 
@@ -174,7 +182,7 @@ public class PlayerStrigoi : Player
 
     public void MeleeUse()
     {
-        basicAttack.StartSwing(basicCode);
+        basicAttackOne.StartSwing(basicCode);
     }
 
     /// <summary>
@@ -241,7 +249,7 @@ public class PlayerStrigoi : Player
             berserkCounter -= Time.deltaTime;
             berserkUptime += Time.deltaTime;
 
-            basicAttack.Damage = basicAttackBaseDamage + (int)(berserkUptime * damageUpPerSecond);
+            basicAttackOne.Damage = basicAttackBaseDamage + (int)(berserkUptime * damageUpPerSecond);
             speed = baseSpeed + (int)(berserkUptime * speedUpPerSecond);
 
             berserkUpDebugText.text = "True";
@@ -249,7 +257,7 @@ public class PlayerStrigoi : Player
             berserkUptimeDebugText.text = berserkUptime + "";
         }
 
-        basicAttack.Damage = basicAttackBaseDamage;
+        basicAttackOne.Damage = basicAttackBaseDamage;
         speed = baseSpeed;
         berserkUptime = 0;
 

@@ -7012,7 +7012,9 @@ MonoBehaviour:
   Ability2: {fileID: 0}
   Attack: {fileID: 0}
   Hurt: {fileID: 0}
-  basicAttack: {fileID: 1181192922}
+  basicAttackOne: {fileID: 1181192922}
+  basicAttackTwo: {fileID: 1014643628}
+  basicAttackThree: {fileID: 312158875}
   swarmAttack: {fileID: 666666517}
   basicMaterial: {fileID: 2100000, guid: 053872da44d313045b55ece660ff3209, type: 2}
   invisibleMaterial: {fileID: 2100000, guid: 64b0d744dccde5f458fa051eb3da40cd, type: 2}
