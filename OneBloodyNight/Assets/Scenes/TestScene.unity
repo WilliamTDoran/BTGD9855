@@ -5427,7 +5427,7 @@ MonoBehaviour:
   damage: 0
   residual: {fileID: 1141502781}
   gameover: {fileID: 280444779}
-  bloodLossRate: 0.5
+  bloodLossRate: 0.4
   bloodGainRate: 0
 --- !u!114 &1084522853
 MonoBehaviour:
@@ -13279,6 +13279,34 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: facingDebugText
+      value: 
+      objectReference: {fileID: 1378920225}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: berserkUpDebugText
+      value: 
+      objectReference: {fileID: 134647538}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: canAttackDebugText
+      value: 
+      objectReference: {fileID: 561208345}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: berserkSpeedDebugText
+      value: 
+      objectReference: {fileID: 1893677678}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: berserkDamageDebugText
+      value: 
+      objectReference: {fileID: 986233609}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: berserkUptimeDebugText
+      value: 
+      objectReference: {fileID: 236630519}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: berserkCounterDebugText
+      value: 
+      objectReference: {fileID: 1200952460}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
 --- !u!1 &1969523623

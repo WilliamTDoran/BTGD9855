@@ -59,7 +59,7 @@ MonoBehaviour:
   returnDrag: 10
   drag: 20
   wallPushbackScalar: 2
-  forceStill: 1
+  forceStill: 0
   floatDistance: 1
   untargetableTags:
   - Player
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 120
-  immuneDuration: 0.2
+  immuneDuration: 0.4
   maxHitPoints: 0
   walkAnim: 1
   spriteRenderer: {fileID: 2249110078326297011}
@@ -1328,7 +1328,7 @@ MonoBehaviour:
   returnDrag: 10
   drag: 20
   wallPushbackScalar: 2
-  forceStill: 1
+  forceStill: 0
   floatDistance: 1
   untargetableTags:
   - Player

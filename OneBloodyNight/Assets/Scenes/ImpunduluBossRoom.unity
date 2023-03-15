@@ -1458,7 +1458,7 @@ MonoBehaviour:
   - {fileID: 606353820}
   - {fileID: 1611556331}
   timeBetweenFeathers: 0.2
-  cam: {fileID: 0}
+  cam: {fileID: 1236102455}
   initialPositionTime: 1.5
   threatenTime: 1.5
   diveSpeed: 45
@@ -8295,6 +8295,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220450049}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!20 &1236102455 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2249110079459465620, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+  m_PrefabInstance: {fileID: 60626322}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1236953050
 GameObject:
   m_ObjectHideFlags: 0
