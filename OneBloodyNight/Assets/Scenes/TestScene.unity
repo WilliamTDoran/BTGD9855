@@ -3937,8 +3937,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traits:
-    width: 21
-    height: 21
+    width: 17
+    height: 17
     scale: 16
     betweenCells: 8
     minLocation: 3

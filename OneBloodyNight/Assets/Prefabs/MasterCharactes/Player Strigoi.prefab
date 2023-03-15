@@ -316,7 +316,7 @@ MonoBehaviour:
   walkAnim: 1
   spriteRenderer: {fileID: 2249110078326297011}
   abilityOneCost: 50
-  abilityTwoCost: 100
+  abilityTwoCost: 80
   facingDebugText: {fileID: 0}
   canAttackDebugText: {fileID: 0}
   audioSource: {fileID: 4969506907686277825, guid: bdcae22de74674d4685e2dd582014605, type: 3}
@@ -337,8 +337,8 @@ MonoBehaviour:
   berserkDamageDebugText: {fileID: 0}
   berserkSpeedDebugText: {fileID: 0}
   berserkMaxTime: 2.4
-  damageUpPerSecond: 4
-  speedUpPerSecond: 1
+  damageUpPerSecond: 2
+  speedUpPerSecond: 2
   invisibilityDuration: 4
 --- !u!212 &2249110078326297011
 SpriteRenderer:
