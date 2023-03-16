@@ -154,7 +154,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1349275955
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 102567205d48a784d9ebd876b3b25058, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -449,11 +449,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeStartSpawning: 3
   minSpawningDistance: 35
-  maxSpawningDistance: 50
+  maxSpawningDistance: 40
   vars:
     minAttempts: 1
     maxAttempts: 2
-    maxCount: 40
+    maxCount: 30
     baseChance: 0.5
     steepness: 2.15
 --- !u!65 &2242715887265903012
@@ -789,7 +789,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1349275955
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 102567205d48a784d9ebd876b3b25058, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1098,7 +1098,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1349275955
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 1356606403, guid: 74261aa3c649e214097920627eb62d92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
