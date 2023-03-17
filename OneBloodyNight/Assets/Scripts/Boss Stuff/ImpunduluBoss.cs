@@ -109,14 +109,18 @@ public class ImpunduluBoss : Boss
         canMove = false;
         StopRandomBehavior();
 
+        bool leftStart = UnityEngine.Random.Range(0.0f, 1.0f) > 0.5f;
+
         float genTimer = 0.0f;
+
+        if (!leftStart) { render.flipX = true; }
 
         animator.SetTrigger("swoop");
         while (genTimer <= initialPositionTime)
         {
-            Vector3 cameraRightsidePoint = cam.ViewportToWorldPoint(new Vector3(0.95f, 0.52f, rb.position.z));
-
-            Vector3 targetPos = new Vector3(cameraRightsidePoint.x, rb.position.y, Player.plr.Rb.position.z);
+            Vector3 cameraSidePoint = leftStart ? cam.ViewportToWorldPoint(new Vector3(0.05f, 0.52f, rb.position.z)) : cam.ViewportToWorldPoint(new Vector3(0.95f, 0.52f, rb.position.z));
+            
+            Vector3 targetPos = new Vector3(cameraSidePoint.x, rb.position.y, Player.plr.Rb.position.z);
 
             rb.position = Vector3.Lerp(returnPos, targetPos, genTimer / initialPositionTime);
             rb.position = new Vector3(rb.position.x, targetPos.y, rb.position.z);
@@ -129,27 +133,44 @@ public class ImpunduluBoss : Boss
 
         while (genTimer <= threatenTime)
         {
-            rb.position = cam.ViewportToWorldPoint(new Vector3(0.95f, 0.52f, rb.position.z));
+            rb.position = leftStart ? cam.ViewportToWorldPoint(new Vector3(0.05f, 0.52f, rb.position.z)) : cam.ViewportToWorldPoint(new Vector3(0.95f, 0.52f, rb.position.z));
 
             genTimer += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
 
         genTimer = 0.0f;
-        Vector3 cameraOffPoint = cam.ViewportToWorldPoint(new Vector3(-0.1f, 0.52f, rb.position.z));
+        Vector3 cameraOffPoint = leftStart ? cam.ViewportToWorldPoint(new Vector3(1.1f, 0.52f, rb.position.z)) : cam.ViewportToWorldPoint(new Vector3(-0.1f, 0.52f, rb.position.z));
         swoopBox.gameObject.GetComponent<BoxCollider>().enabled = true;
-
-        while (rb.position.x > cameraOffPoint.x)
+        
+        if (leftStart)
         {
-            rb.position -= new Vector3(diveSpeed * Time.deltaTime, 0, 0);
-            cameraOffPoint = cam.ViewportToWorldPoint(new Vector3(-0.1f, 0.52f, rb.position.z));
+            while (rb.position.x < cameraOffPoint.x)
+            {
+                rb.position += new Vector3(diveSpeed * Time.deltaTime, 0, 0);
+                cameraOffPoint = cam.ViewportToWorldPoint(new Vector3(1.1f, 0.52f, rb.position.z));
 
-            yield return new WaitForEndOfFrame();
+                yield return new WaitForEndOfFrame();
+            }
         }
+        else
+        {
+            while (rb.position.x > cameraOffPoint.x)
+            {
+                rb.position -= new Vector3(diveSpeed * Time.deltaTime, 0, 0);
+                cameraOffPoint = cam.ViewportToWorldPoint(new Vector3(-0.1f, 0.52f, rb.position.z));
+
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
+        if (!leftStart) { render.flipX = false; }
+        
 
         yield return new WaitForSeconds(stopTime);
         Vector3 endPos = rb.position;
         swoopBox.gameObject.GetComponent<BoxCollider>().enabled = false;
+        swoopBox.EndSwing();
 
         while (genTimer <= recoverTime)
         {

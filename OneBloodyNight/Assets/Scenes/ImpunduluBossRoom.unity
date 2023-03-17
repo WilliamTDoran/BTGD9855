@@ -619,6 +619,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Strigoi
       objectReference: {fileID: 0}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: facingDebugText
+      value: 
+      objectReference: {fileID: 1717331784}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: berserkUpDebugText
+      value: 
+      objectReference: {fileID: 1627378236}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: canAttackDebugText
+      value: 
+      objectReference: {fileID: 2016150653}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: berserkSpeedDebugText
+      value: 
+      objectReference: {fileID: 37407446}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: berserkDamageDebugText
+      value: 
+      objectReference: {fileID: 1831853549}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: berserkUptimeDebugText
+      value: 
+      objectReference: {fileID: 1585906584}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: berserkCounterDebugText
+      value: 
+      objectReference: {fileID: 1961624643}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
 --- !u!1 &74340235
@@ -5896,12 +5924,14 @@ MonoBehaviour:
   knockbackAmount: 600
   hitstunDuration: 0.3
   pushbackAmount: 0
-  returnDrag: 0
+  returnDrag: 18
   drag: 20
   wallPushbackScalar: 0
   forceStill: 0
   floatDistance: 0
-  untargetableTags: []
+  untargetableTags:
+  - Monster
+  - Wall
   checkForWalls: 1
   attacker: {fileID: 127064945}
   spriteAnimator: {fileID: 0}
