@@ -71,7 +71,10 @@ public class CombatManager : MonoBehaviour
 
             //Spins off various reactive functions
             HarmMonster(attacker, targetActor.gameObject.GetComponent<GameActor>(), damageAmount);
-            ApplyKnockback(attacker, targetActor, knockbackAmount);
+            if (targetActor.CurHitPoints > 0)
+            {
+                ApplyKnockback(attacker, targetActor, knockbackAmount);
+            }
             StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
             StartHitstun(targetActor, used.HitstunDuration);
             targetActor.OnReceiveHit();
