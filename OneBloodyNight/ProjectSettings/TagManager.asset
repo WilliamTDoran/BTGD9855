@@ -45,6 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: MiniMapGround
+    uniqueID: 1366119633
+    locked: 0
   - name: MiniMapWalls
     uniqueID: 979896435
     locked: 0
