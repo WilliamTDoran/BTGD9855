@@ -331,10 +331,12 @@ MonoBehaviour:
     engagementDistance: 30
     seeThroughWalls: 0
     host: {fileID: 6013204197218851667}
+  patrolAIProperties:
+    spottyDistance: 25
   lostAIProperties:
     timeTilLoseSight: 2.5
   attackAIProperties:
-    attackRange: 12
+    attackRange: 22
     avoidanceRange: 0
 --- !u!95 &6013204197218851676
 Animator:

@@ -1068,7 +1068,7 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
-  damage: 5
+  damage: 2
   knockbackAmount: 130
   hitstunDuration: 0.05
   pushbackAmount: 0

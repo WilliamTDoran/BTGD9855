@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3000
-  immuneDuration: 0.5
+  immuneDuration: 0
   maxHitPoints: 50
   walkAnim: 1
   DeathPart: {fileID: 8332078841455388088}
@@ -207,13 +207,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   universalAIProperties:
-    engagementDistance: 14
+    engagementDistance: 6
     seeThroughWalls: 0
     host: {fileID: 1506505331822888184}
+  patrolAIProperties:
+    spottyDistance: 30
   lostAIProperties:
     timeTilLoseSight: 3
   attackAIProperties:
-    attackRange: 6
+    attackRange: 5
     avoidanceRange: 0
 --- !u!1 &877845514278036326
 GameObject:
