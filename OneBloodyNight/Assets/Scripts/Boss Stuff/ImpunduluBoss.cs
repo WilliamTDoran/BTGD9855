@@ -5,7 +5,7 @@ using System;
 
 public class ImpunduluBoss : Boss
 {
-    //Sound
+    /* Sound */
     public AudioSource audioSource;
 
     public AudioClip Dive;
@@ -13,7 +13,7 @@ public class ImpunduluBoss : Boss
     public AudioClip feather;
     public AudioClip Flap;
     public AudioClip Intro;
-    /// /////////////////////////////////////////////////////////
+    /*~~~~~~~*/
 
     private IEnumerator spinAttackCoroutine;
     private IEnumerator diveAttackCoroutine;
@@ -36,7 +36,10 @@ public class ImpunduluBoss : Boss
     [SerializeField]
     private Camera cam;
 
-    [Header("Dive Timings")]
+    [Header("Dive")]
+    [SerializeField]
+    private Attack swoopBox;
+
     [SerializeField]
     private float initialPositionTime = 1.0f;
 
@@ -134,6 +137,7 @@ public class ImpunduluBoss : Boss
 
         genTimer = 0.0f;
         Vector3 cameraOffPoint = cam.ViewportToWorldPoint(new Vector3(-0.1f, 0.52f, rb.position.z));
+        swoopBox.gameObject.GetComponent<BoxCollider>().enabled = true;
 
         while (rb.position.x > cameraOffPoint.x)
         {
@@ -145,6 +149,7 @@ public class ImpunduluBoss : Boss
 
         yield return new WaitForSeconds(stopTime);
         Vector3 endPos = rb.position;
+        swoopBox.gameObject.GetComponent<BoxCollider>().enabled = false;
 
         while (genTimer <= recoverTime)
         {
