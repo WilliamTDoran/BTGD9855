@@ -48,12 +48,12 @@ public class Bloodmeter : MonoBehaviour
     
     private void Update()
     {
-
+        /*
         if (bloodmeter.value <= 0)
         {
             gameover.SetActive(true);
             Time.timeScale = 0f;
-        }
+        } */
 
         if (Input.GetKeyDown(KeyCode.I))
         {

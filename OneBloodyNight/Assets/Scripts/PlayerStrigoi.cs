@@ -153,6 +153,11 @@ public class PlayerStrigoi : Player
         canAttackDebugText.text = canAttack + "";
         berserkDamageDebugText.text = basicAttackOne.Damage + "";
         berserkSpeedDebugText.text = speed + "";
+
+        if(Bloodmeter.instance.bloodmeter.value <= 0)
+        {
+            StartCoroutine("PlayerDeath");
+        }
     }
 
     private void AttackAttempt()
@@ -347,5 +352,14 @@ public class PlayerStrigoi : Player
     {
         StopCoroutine(berserkCoroutine);
         berserkCoroutine = null;
+    }
+
+    private IEnumerator PlayerDeath()
+    {
+
+        animator.SetTrigger("Die");
+        yield return new WaitForSeconds(3f);
+        animator.ResetTrigger("Die");
+        
     }
 }
