@@ -86,7 +86,6 @@ public class Spawner : MonoBehaviour
                     }
                     //start spawning coroutine for enemy offset
                 }
-                spawned = true;
             }
         }
     }
@@ -109,7 +108,15 @@ public class Spawner : MonoBehaviour
             Debug.Log("Spawning enemy number " + enem +" in cell "+ c.name);
             GameObject placed = GameObject.Instantiate(enemies[enem], /*Maze.m.transform.position + */new Vector3(c.transform.position.x, enemies[enem].transform.position.y, c.transform.position.z), Quaternion.Euler(90, 0, 0));
             Debug.Log("Enemy spawned at "+ placed.transform.position.x+" " + placed.transform.position.y + " " + placed.transform.position.z + " ");
+            StartCoroutine(reEnableSpawning());
+            spawned = true;
         }
+    }
+
+    private IEnumerator reEnableSpawning()
+    {
+        yield return new WaitForSeconds(Random.Range(10.0f, 30.0f));
+        spawned = false;
     }
 
     
