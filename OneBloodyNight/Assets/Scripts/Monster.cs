@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 //using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations;
+using UnityEngine.UI;
 
 /// <summary>
 /// Parent class for all monster types. Some monsters can be driven just from this, complex ones inherit their own classes
@@ -23,6 +25,8 @@ public class Monster : GameActor
 
     public ParticleSystem DeathPart; //particles
     public ParticleSystem blood;
+
+    private TextMeshPro healthDebugText;
 
     private string refCode1 = "basic"; //See Attack comments on attackerGrantedCode
 
@@ -58,6 +62,10 @@ public class Monster : GameActor
     [Tooltip("How frequently the monster attacks (specifically, the time in seconds between each attack)")]
     [SerializeField]
     private float attackTimer = 2.0f;
+
+    [Tooltip("The object of the health bar")]
+    [SerializeField]
+    private GameObject healthBarObject;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     /// <summary>
@@ -70,6 +78,7 @@ public class Monster : GameActor
         base.Start();
 
         player = Player.plr;
+        healthDebugText = healthBarObject.GetComponent<TextMeshPro>();
 
         CurHitPoints = MaxHitPoints;
         canAttack = true;
@@ -109,6 +118,16 @@ public class Monster : GameActor
             basicAttack.StopAllCoroutines();
             basicAttack.gameObject.SetActive(false);
             StartCoroutine("DeathTimer");
+        }
+
+        if (GameManager.instance.DebugTextStatus)
+        {
+            healthBarObject.SetActive(true);
+            healthDebugText.text = CurHitPoints + "/" + MaxHitPoints;
+        }
+        else
+        {
+            healthBarObject.SetActive(false);
         }
     }
 

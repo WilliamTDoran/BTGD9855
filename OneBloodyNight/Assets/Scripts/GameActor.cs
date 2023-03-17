@@ -37,7 +37,7 @@ public class GameActor : MonoBehaviour
     protected bool stunned; //whether the actor is affected by hitstun
     public bool Stunned { get { return stunned; } set { stunned = value; } }
 
-    protected bool immune; //whether the actor can take damage
+    protected bool immune = false; //whether the actor can take damage
     public bool Immune { get { return immune; } set { immune = value; } }
 
     private int curHitPoints; //current hit points of the actor, if applicable. Only relevant for monsters and bosses

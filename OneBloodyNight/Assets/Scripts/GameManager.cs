@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
 {
     internal static GameManager instance; //static reference
 
+    private bool debugTextStatus = false;
+    public bool DebugTextStatus { get { return debugTextStatus; } }
+
     private static bool globalCooldownVar = false; //whether the global cooldown is active. true means it is active
     private IEnumerator gcdCoroutine; //coroutine to drive gcd
 
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F1)) //debug text is toggleable
         {
             debugCanvas.SetActive(!debugCanvas.activeInHierarchy);
+            debugTextStatus = !debugTextStatus;
         }
     }
 

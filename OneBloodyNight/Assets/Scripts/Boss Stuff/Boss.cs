@@ -21,7 +21,6 @@ public class Boss : GameActor
     {
         base.Awake();
 
-        immune = false;
         CurHitPoints = MaxHitPoints;
 
         Transition(currentPhase);

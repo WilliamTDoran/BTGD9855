@@ -70,14 +70,18 @@ public class CombatManager : MonoBehaviour
             }
 
             //Spins off various reactive functions
-            HarmMonster(attacker, targetActor.gameObject.GetComponent<GameActor>(), damageAmount);
-            if (targetActor.CurHitPoints > 0)
+            if (!targetActor.Immune)
             {
-                ApplyKnockback(attacker, targetActor, knockbackAmount);
+                HarmMonster(attacker, targetActor.gameObject.GetComponent<GameActor>(), damageAmount);
+                if (targetActor.CurHitPoints > 0)
+                {
+                    ApplyKnockback(attacker, targetActor, knockbackAmount);
+                }
+                StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
+                StartHitstun(targetActor, used.HitstunDuration);
+                targetActor.OnReceiveHit();
             }
-            StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
-            StartHitstun(targetActor, used.HitstunDuration);
-            targetActor.OnReceiveHit();
+                
 
             return true;
         }
@@ -92,12 +96,15 @@ public class CombatManager : MonoBehaviour
             }
 
             //Spins off various reactive functions
-            Bloodmeter.instance.changeBlood(-damageAmount);
-            ApplyKnockback(attacker, targetActor, knockbackAmount);
-            StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
-            StartHitstun(targetActor, used.HitstunDuration);
-            used.OnHitPlayer();
-            targetActor.OnReceiveHit();
+            if (!targetActor.Immune)
+            {
+                Bloodmeter.instance.changeBlood(-damageAmount);
+                ApplyKnockback(attacker, targetActor, knockbackAmount);
+                StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
+                StartHitstun(targetActor, used.HitstunDuration);
+                used.OnHitPlayer();
+                targetActor.OnReceiveHit();
+            }
 
             return true;
         }
@@ -113,11 +120,10 @@ public class CombatManager : MonoBehaviour
     /// <param name="amount">the amount to reduce curHitPoints</param>
     private void HarmMonster(GameActor attacker, GameActor target, int amount)
     {
-        if (!target.Immune) //can't damage an immune target
-        {
-            target.CurHitPoints -= amount;
-            Debug.Log("Send Damage to " + target.gameObject.name + " from " + attacker.gameObject.name);
-        }
+        
+        target.CurHitPoints -= amount;
+        Debug.Log("Send Damage to " + target.gameObject.name + " from " + attacker.gameObject.name);
+        
     }
 
     /// <summary>
