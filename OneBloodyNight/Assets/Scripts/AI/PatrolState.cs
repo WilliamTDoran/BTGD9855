@@ -29,7 +29,7 @@ public class PatrolState : FSMState
             return;
         }
 
-        if (Player.plr.Visible && !universalAIProperties.host.WallCheck())
+        if (Player.plr.Visible && !universalAIProperties.host.WallCheck() && ((Player.plr.Rb.position - universalAIProperties.host.Rb.position).magnitude < patrolAIProperties.spottyDistance))
         {
             monster.PerformTransition(Transition.Spot);
             return;

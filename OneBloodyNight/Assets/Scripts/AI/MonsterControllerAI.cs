@@ -24,7 +24,7 @@ public class UniversalAIProperties : AIProperties
 [System.Serializable]
 public class PatrolAIProperties : AIProperties
 {
-
+    public float spottyDistance;
 }
 
 [System.Serializable]
