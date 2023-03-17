@@ -99,7 +99,10 @@ public class Attack : GameActor
     {
         base.Start();
 
-        baseAnimRotation = spriteAnimator.transform.localRotation;
+        if (spriteAnimator != null)
+        {
+            baseAnimRotation = spriteAnimator.transform.localRotation;
+        }
     }
 
     /// <summary>

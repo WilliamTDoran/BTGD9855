@@ -69,10 +69,11 @@ public class BiomeVariables
     public Color colour;
     public float wallsRemoved;
     public int maxCellDifficulty;
-    [Tooltip("Coming Soon!")]
+    [Tooltip("Chance of spawning an object. (1 = 100%)")]
+    public float chanceObject;
     public GameObject[] SetPieces;
     [Tooltip("Array of the objects to be placed in the maze")]
-    public PlacableObject[] objects;
+    public GameObject[] objects;
     public GameObject[] enemies;
     public ArtVars North;
     public ArtVars East;
@@ -90,16 +91,6 @@ public class EnemySpawnVars
 public class ObjectSpawnVars
 {
 
-}
-
-
-[System.Serializable]
-public class PlacableObject
-{
-    public GameObject formation;
-    public float cellDifficulty; // cells can't weigh more than maxCellDifficulty
-    public int maxPlaced;
-    public float minPlaced;
 }
 
 
