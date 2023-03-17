@@ -7,39 +7,34 @@ using Random = UnityEngine.Random;
 public class PlaceObject
 {
 
-    /*public static void placeAll(Biome startBiome)
+    internal static void placeObjects()
     {
-        BiomeVariables[] bv = Maze.m.biomeVariables;
-        for (int b = 0; b<(int)Biome.length; b++)
+        Cell c;
+        for (int i=0; i<Maze.m.width(); i++)
         {
-            if (b == (int)startBiome) continue;
-            for (int i=0; i < bv[b].objects.Length; i++)
+            for (int j=0; j<Maze.m.height(); j++)
             {
-                massPlace((Biome)b, bv[b].objects[i]);
+                c = Maze.m.getCell(i, j);
+                //place 4 decore / cell
+                BiomeVariables bv = Maze.m.biomeVariables[(int)c.getBiome()];
+                if (bv.chanceObject <= Random.Range(0, 1.0f) && bv.objects.Length > 0)
+                {
+                    GameObject temp = GameObject.Instantiate(bv.objects[Random.Range(0, bv.objects.Length)], c.transform.position + new Vector3((0.25f + Random.Range(-0.15f, 0.15f))* Maze.m.traits.scale, 0, (0.25f + Random.Range(-0.15f, 0.15f)) * Maze.m.traits.scale), Quaternion.Euler(90, 0, 0), c.transform);
+                if (bv.chanceObject <= Random.Range(0, 1.0f) && bv.objects.Length > 0)
+                {
+                    GameObject temp = GameObject.Instantiate(bv.objects[Random.Range(0, bv.objects.Length)], c.transform.position + new Vector3((-0.25f + Random.Range(-0.15f, 0.15f)) * Maze.m.traits.scale, 0, (0.25f + Random.Range(-0.15f, 0.15f)) * Maze.m.traits.scale), Quaternion.Euler(90, 0, 0), c.transform);
+                }
+                if (bv.chanceObject <= Random.Range(0, 1.0f) && bv.objects.Length > 0)
+                {
+                    GameObject temp = GameObject.Instantiate(bv.objects[Random.Range(0, bv.objects.Length)], c.transform.position + new Vector3((0.25f + Random.Range(-0.15f, 0.15f)) * Maze.m.traits.scale, 0, (-0.25f + Random.Range(-0.15f, 0.15f)) * Maze.m.traits.scale), Quaternion.Euler(90, 0, 0), c.transform);
+                }
+                if (bv.chanceObject <= Random.Range(0, 1.0f) && bv.objects.Length > 0)
+                {
+                    GameObject temp = GameObject.Instantiate(bv.objects[Random.Range(0, bv.objects.Length)], c.transform.position + new Vector3((-0.25f + Random.Range(-0.15f, 0.15f)) * Maze.m.traits.scale, 0, (-0.25f + Random.Range(-0.15f, 0.15f)) * Maze.m.traits.scale), Quaternion.Euler(90, 0, 0), c.transform);
+                }
             }
         }
     }
-
-    public static void massPlace(Biome b, PlacableObject obj)
-    {
-        int max = (int)Math.Floor(Random.Range(obj.minPlaced, obj.maxPlaced));
-        for(int i=0; i<max; i++)
-        {
-            place(b, obj);
-        }
-    }
-
-    public static void place(Biome b, PlacableObject obj)
-    {
-        int x;
-        int y;
-        cell(b, obj.cellDifficulty, out x, out y);
-        Cell c = Maze.m.getCell(x, y);
-        GameObject placed = GameObject.Instantiate(obj.formation, Maze.m.transform.position+new Vector3(c.transform.position.x + Random.Range(-Maze.m.traits.scale*0.4f, Maze.m.traits.scale * 0.4f), c.transform.position.y, c.transform.position.z), Quaternion.Euler(90, 0, 0));
-        //Debug.Log("Object placed in cell "+x+", "+y+", biome colour: "+Maze.m.getCell(x,y).getBiome());
-        //Maze.m.getCell(x, y).transform.GetChild(0).gameObject.SetActive(true);
-        //Maze.m.getCell(x, y).transform.GetChild(0).GetComponent<Spawner>().addSpawnLocations(placed);
-    }*/
 
     internal static void placePortal(Biome B, int minDis)
     {
