@@ -166,6 +166,7 @@ public class ImpunduluBoss : Boss
 
         if (!leftStart) { render.flipX = false; }
         
+        if (leftStart) { render.flipX = true; }
 
         yield return new WaitForSeconds(stopTime);
         Vector3 endPos = rb.position;
@@ -180,6 +181,9 @@ public class ImpunduluBoss : Boss
             yield return new WaitForEndOfFrame();
         }
         animator.ResetTrigger("spin");
+
+        if (leftStart) { render.flipX = false; }
+
         StartRandomBehavior();
     }
 
