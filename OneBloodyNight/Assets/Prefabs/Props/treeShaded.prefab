@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3535487176939560351}
   - component: {fileID: 932038497045988655}
   - component: {fileID: 2591831593079715293}
+  - component: {fileID: 6222037099264402350}
   m_Layer: 0
   m_Name: treeShaded
-  m_TagString: Untagged
+  m_TagString: SpriteTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 403998635
-  m_SortingLayer: 4
+  m_SortingLayerID: 1953289611
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: aa77b4ea992ffa74183caeeb168d2bcd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -92,9 +93,22 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3325191705321573381}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9ae7e0c6c81f03b4fb53f7abf282b8f2, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2560258, y: 2.1282668, z: 0.2}
-  m_Center: {x: 0.8170254, y: -2.456022, z: 0}
+  m_Size: {x: 3.5614955, y: 2.1282668, z: 8}
+  m_Center: {x: 0.25918734, y: -2.456022, z: -6.4804695e-15}
+--- !u!65 &6222037099264402350
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3325191705321573381}
+  m_Material: {fileID: 13400000, guid: 9ae7e0c6c81f03b4fb53f7abf282b8f2, type: 2}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.980928, y: 9.4301, z: 8}
+  m_Center: {x: 0.042391777, y: 2.0377812, z: 5.3691047e-16}

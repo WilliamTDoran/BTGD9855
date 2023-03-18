@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8985676305441991817}
   m_Layer: 0
   m_Name: BossPortalImpundulu
-  m_TagString: Untagged
+  m_TagString: SpriteTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

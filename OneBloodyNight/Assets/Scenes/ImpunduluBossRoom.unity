@@ -647,7 +647,8 @@ PrefabInstance:
       propertyPath: berserkCounterDebugText
       value: 
       objectReference: {fileID: 1961624643}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7123780776732770733, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
 --- !u!1 &74340235
 GameObject:

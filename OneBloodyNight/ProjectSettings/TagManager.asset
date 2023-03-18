@@ -8,6 +8,7 @@ TagManager:
   - Loaded
   - Monster
   - Floor
+  - SpriteTrigger
   layers:
   - Default
   - TransparentFX
@@ -66,12 +67,12 @@ TagManager:
   - name: Props but over the walls
     uniqueID: 403998635
     locked: 0
-  - name: Enemies
+  - name: Enemies (Not used anymore)
     uniqueID: 4023064477
-    locked: 0
-  - name: Player
-    uniqueID: 1953289611
     locked: 0
   - name: Blood Splatter
     uniqueID: 2131791757
+    locked: 0
+  - name: SpriteSorting
+    uniqueID: 1953289611
     locked: 0

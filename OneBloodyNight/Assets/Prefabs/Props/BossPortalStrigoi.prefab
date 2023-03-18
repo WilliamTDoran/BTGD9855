@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 3393825086447709751}
   - component: {fileID: 6005103991287181451}
   - component: {fileID: 2638801012502946081}
-  - component: {fileID: 6264740016780271581}
   - component: {fileID: 6111014953117024453}
+  - component: {fileID: 3148884850188683301}
   m_Layer: 0
   m_Name: BossPortalStrigoi
-  m_TagString: Untagged
+  m_TagString: SpriteTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,32 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ef4bf7d9293cd4884c84ceb85959c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &6264740016780271581
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3505505689596641723}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2265625, y: 0.23828125}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
-  m_EdgeRadius: 0
 --- !u!95 &6111014953117024453
 Animator:
   serializedVersion: 4
@@ -145,3 +119,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &3148884850188683301
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505505689596641723}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.052702922
+  m_Height: 1.8
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -0.17999995}
