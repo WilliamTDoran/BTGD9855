@@ -42,8 +42,10 @@ public class PlayerStrigoi : Player
 
     private int swarmCounter = 0; //current number of swarm ticks used
 
-    private int basicAttackBaseDamage; //used for returning to default after berserk
-    private float baseSpeed; //used for returning to default after berserk
+    private int   basicAttackOneBaseDamage; //used for returning to default after berserk
+    private int   basicAttackTwoBaseDamage;
+    private int   basicAttackThreeBaseDamage;
+    private float baseSpeed; 
     public float BaseSpeed { get { return baseSpeed; } set { baseSpeed = value; } }
 
     private int attackRegister = 0; //0 for not attacking, 1 for on first, 2 for on second, 3 for on third
@@ -123,7 +125,9 @@ public class PlayerStrigoi : Player
     {
         base.Start();
 
-        basicAttackBaseDamage = basicAttackOne.Damage;
+        basicAttackOneBaseDamage =   basicAttackOne.Damage;
+        basicAttackTwoBaseDamage =   basicAttackTwo.Damage;
+        basicAttackThreeBaseDamage = basicAttackThree.Damage;
         baseSpeed = speed;
     }
 
@@ -153,11 +157,6 @@ public class PlayerStrigoi : Player
         canAttackDebugText.text = canAttack + "";
         berserkDamageDebugText.text = basicAttackOne.Damage + "";
         berserkSpeedDebugText.text = speed + "";
-
-        if(Bloodmeter.instance.bloodmeter.value <= 0)
-        {
-            StartCoroutine("PlayerDeath");
-        }
     }
 
     private void AttackAttempt()
@@ -266,7 +265,9 @@ public class PlayerStrigoi : Player
             berserkCounter -= Time.deltaTime;
             berserkUptime += Time.deltaTime;
 
-            basicAttackOne.Damage = basicAttackBaseDamage + (int)(berserkUptime * damageUpPerSecond);
+            basicAttackOne.Damage =   basicAttackOneBaseDamage +   (int)(berserkUptime * damageUpPerSecond);
+            basicAttackTwo.Damage =   basicAttackTwoBaseDamage +   (int)(berserkUptime * damageUpPerSecond);
+            basicAttackThree.Damage = basicAttackThreeBaseDamage + (int)(berserkUptime * damageUpPerSecond);
             speed = baseSpeed + (int)(berserkUptime * speedUpPerSecond);
 
             berserkUpDebugText.text = "True";
@@ -274,7 +275,9 @@ public class PlayerStrigoi : Player
             berserkUptimeDebugText.text = berserkUptime + "";
         }
 
-        basicAttackOne.Damage = basicAttackBaseDamage;
+        basicAttackOne.Damage =   basicAttackOneBaseDamage;
+        basicAttackTwo.Damage =   basicAttackTwoBaseDamage;
+        basicAttackThree.Damage = basicAttackThreeBaseDamage;
         speed = baseSpeed;
         berserkUptime = 0;
 
@@ -352,14 +355,5 @@ public class PlayerStrigoi : Player
     {
         StopCoroutine(berserkCoroutine);
         berserkCoroutine = null;
-    }
-
-    private IEnumerator PlayerDeath()
-    {
-
-        animator.SetTrigger("Die");
-        yield return new WaitForSeconds(3f);
-        animator.ResetTrigger("Die");
-        
     }
 }
