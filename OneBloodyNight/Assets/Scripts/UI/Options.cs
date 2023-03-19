@@ -24,19 +24,19 @@ public class Options : MonoBehaviour
         
     }
 
-    public void SetSFX(float sliderValue)
+    public void SetSFX(float sfx_)
     {
-        mixer.SetFloat("EXSFX", master.value);
+        mixer.SetFloat("EXSFX", sfx_);
     }
 
-    public void SetMusic(float sliderValue)
+    public void SetMusic(float music)
     {
-        mixer.SetFloat("EXMusic", Mathf.Log10(sliderValue) * 20);
+        mixer.SetFloat("EXMusic", music);
     }
 
-    public void SetMaster(float sliderValue)
+    public void SetMaster(float master)
     {
-        mixer.SetFloat("EXMaster", Mathf.Log10(sliderValue) * 20);
+        mixer.SetFloat("EXMaster", master);
     }
 
     public void Back()
