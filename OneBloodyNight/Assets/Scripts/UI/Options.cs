@@ -36,7 +36,7 @@ public class Options : MonoBehaviour
 
     public void SetMaster(float master)
     {
-        mixer.SetFloat("EXMaster", master);
+        mixer.SetFloat("SFXMaster", master);
     }
 
     public void Back()
