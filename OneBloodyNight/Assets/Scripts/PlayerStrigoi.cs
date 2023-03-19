@@ -27,6 +27,9 @@ public class PlayerStrigoi : Player
     public AudioClip Hurt;
     /*~~~~~~~*/
 
+    private bool StartDeath = false;
+    public GameObject GameOver;
+
     private string basicCode = "basic"; //see Attack comments for attackerGrantedCode
     private string basic2Code = "basic2";
     private string basic3Code = "walnut";
@@ -129,6 +132,8 @@ public class PlayerStrigoi : Player
         basicAttackTwoBaseDamage =   basicAttackTwo.Damage;
         basicAttackThreeBaseDamage = basicAttackThree.Damage;
         baseSpeed = speed;
+
+        GameOver.SetActive(false);
     }
 
     /// <summary>
@@ -157,6 +162,21 @@ public class PlayerStrigoi : Player
         canAttackDebugText.text = canAttack + "";
         berserkDamageDebugText.text = basicAttackOne.Damage + "";
         berserkSpeedDebugText.text = speed + "";
+
+        if((Bloodmeter.instance.bloodmeter.value <= 0) && (StartDeath == false))
+        {
+            StartDeath = true;
+            StartCoroutine("Dead");
+        } 
+    }
+
+    private IEnumerator Dead()
+    {
+
+        animator.SetTrigger("Die");
+        yield return new WaitForSeconds(2f);
+        GameOver.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     private void AttackAttempt()
