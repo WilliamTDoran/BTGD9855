@@ -13221,6 +13221,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: GameOver
+      value: 
+      objectReference: {fileID: 280444779}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
       propertyPath: facingDebugText
       value: 
       objectReference: {fileID: 1378920225}
