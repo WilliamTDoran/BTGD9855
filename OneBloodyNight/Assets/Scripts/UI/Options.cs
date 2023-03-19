@@ -15,21 +15,27 @@ public class Options : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gets
-        float LoadedSfx = PlayerPrefs.GetFloat(SFX);
-        float LoadedMusic = PlayerPrefs.GetFloat(Music);
-        float LoadedMaster = PlayerPrefs.GetFloat(Master);
 
-        //sets
-        mixer.SetFloat("EXSFX", LoadedSfx);
-        mixer.SetFloat("EXSFX", LoadedMusic);
-        mixer.SetFloat("EXSFX", LoadedMaster);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void Load()
+    {
+        //float LoadedSfx = PlayerPrefs.GetFloat(SFX);
+        //float LoadedMusic = PlayerPrefs.GetFloat(Music);
+        //float LoadedMaster = PlayerPrefs.GetFloat(Master);
+    }
+
+    private void Set()
+    {
+        //mixer.SetFloat("EXSFX", LoadedSfx);
+        //mixer.SetFloat("EXSFX", LoadedMusic);
+        //mixer.SetFloat("EXSFX", LoadedMaster);
     }
 
     public void SetSFX(float sfx_)
