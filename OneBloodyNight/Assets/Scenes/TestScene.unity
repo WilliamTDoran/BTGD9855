@@ -4057,7 +4057,7 @@ MonoBehaviour:
   - colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
     wallsRemoved: 150
     maxCellDifficulty: 10
-    chanceObject: 1
+    chanceObject: 0.5
     SetPieces:
     - {fileID: 3462578440953639072, guid: 02982c99c33e6aa4f863a6993f62f3a5, type: 3}
     - {fileID: 3462578440953639072, guid: 46a2834bf1b6a224cbf722b64b7bd249, type: 3}
@@ -4069,6 +4069,7 @@ MonoBehaviour:
     - {fileID: 5497687525376946307, guid: 9d2b27379f6c4d04fb353a6397f97d56, type: 3}
     - {fileID: 5271325139786336067, guid: 9c47686b9f44021489ceafb4f3d76365, type: 3}
     - {fileID: 7177762433684976189, guid: f3e0a66ea69490247a156acd3ce8c97d, type: 3}
+    - {fileID: 3325191705321573381, guid: e2944d5c91114cc469228a257ba2ff2e, type: 3}
     enemies:
     - {fileID: 5831821545081226382, guid: 77671a9461b7bf941902b3fc074fdbc1, type: 3}
     - {fileID: 5831821545081226382, guid: afd32af6ae09ba94299970c66dcbc95b, type: 3}
@@ -13324,10 +13325,6 @@ PrefabInstance:
       propertyPath: berserkCounterDebugText
       value: 
       objectReference: {fileID: 1200952460}
-    - target: {fileID: 2249110079459465620, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 767
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
 --- !u!1 &1969523623

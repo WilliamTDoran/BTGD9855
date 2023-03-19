@@ -212,9 +212,9 @@ MonoBehaviour:
     seeThroughWalls: 0
     host: {fileID: 1506505331822888184}
   patrolAIProperties:
-    spottyDistance: 30
+    spottyDistance: 40
   lostAIProperties:
-    timeTilLoseSight: 4
+    timeTilLoseSight: 5
   attackAIProperties:
     attackRange: 5
     avoidanceRange: 0

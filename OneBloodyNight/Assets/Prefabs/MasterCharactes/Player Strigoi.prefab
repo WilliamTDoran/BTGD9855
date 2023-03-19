@@ -328,6 +328,7 @@ MonoBehaviour:
   Ability2: {fileID: 8300000, guid: 02175565f3818a0478038a45f71576ee, type: 3}
   Attack: {fileID: 8300000, guid: 653740d25a2fd6141a9464b227cd5fef, type: 3}
   Hurt: {fileID: 8300000, guid: 437e001eb1fcb4a4cabcf452411234c1, type: 3}
+  GameOver: {fileID: 0}
   basicAttackOne: {fileID: 2249110077764019773}
   basicAttackTwo: {fileID: 2249110079544332107}
   basicAttackThree: {fileID: 2249110079026273916}
@@ -1279,7 +1280,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 255
+    m_Bits: 767
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

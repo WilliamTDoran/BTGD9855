@@ -399,7 +399,7 @@ MonoBehaviour:
   DeathPart: {fileID: 6481191564942972682}
   blood: {fileID: 7150320926583223067}
   basicAttack: {fileID: 3237701248447046877}
-  bloodOnKill: 80
+  bloodOnKill: 60
   attackTimer: 2
   healthBarObject: {fileID: 3507703436389947380}
 --- !u!95 &6075898001845311317
@@ -441,7 +441,7 @@ MonoBehaviour:
   patrolAIProperties:
     spottyDistance: 20
   lostAIProperties:
-    timeTilLoseSight: 1
+    timeTilLoseSight: 2
   attackAIProperties:
     attackRange: 3
     avoidanceRange: 0
