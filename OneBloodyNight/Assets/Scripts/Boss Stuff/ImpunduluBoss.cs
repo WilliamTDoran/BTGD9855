@@ -20,6 +20,7 @@ public class ImpunduluBoss : Boss
 
     private IEnumerator spinAttackCoroutine;
     private IEnumerator diveAttackCoroutine;
+    private IEnumerator homingAttackCoroutine;
     private IEnumerator randomBehaviorCoroutine;
     private IEnumerator randomAttackingCoroutine;
     private IEnumerator phaseCheckCoroutine;
@@ -277,6 +278,9 @@ public class ImpunduluBoss : Boss
                 break;
 
             case 3:
+                yield return new WaitForSeconds(timeBeforeHoming);
+
+                StartHomingAttack();
                 break;
 
             case 4:
@@ -304,6 +308,11 @@ public class ImpunduluBoss : Boss
                 currentPhase++;
             }
         }
+    }
+
+    private IEnumerator HomingAttack()
+    {
+        throw new NotImplementedException();
     }
 
 
@@ -369,5 +378,17 @@ public class ImpunduluBoss : Boss
     {
         StopCoroutine(phaseCheckCoroutine);
         phaseCheckCoroutine = null;
+    }
+
+    private void StartHomingAttack()
+    {
+        homingAttackCoroutine = HomingAttack();
+        StartCoroutine(homingAttackCoroutine);
+    }
+
+    private void StopHomingAttack()
+    {
+        StopCoroutine(homingAttackCoroutine);
+        homingAttackCoroutine = null;
     }
 }

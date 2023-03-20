@@ -1491,6 +1491,8 @@ MonoBehaviour:
   timeBeforeFeathers: 1
   timeBeforeLightning: 2
   timeBeforeSwoop: 3
+  timeBeforeHoming: 2
+  timeBeforeBeam: 2
   swoopBox: {fileID: 794072271}
   initialPositionTime: 1.5
   threatenTime: 1.5
