@@ -1463,7 +1463,9 @@ MonoBehaviour:
   maxHitPoints: 1000
   walkAnim: 0
   phases:
-  - 0
+  - 1
+  - 0.8
+  - 0.4
   currentPhase: 0
   audioSource: {fileID: 127064949}
   Dive: {fileID: 8300000, guid: 12af29bb2aceaa749a8ebe589286be45, type: 3}
@@ -1486,6 +1488,9 @@ MonoBehaviour:
   - {fileID: 1611556331}
   timeBetweenFeathers: 0.2
   cam: {fileID: 1236102455}
+  timeBeforeFeathers: 1
+  timeBeforeLightning: 2
+  timeBeforeSwoop: 3
   swoopBox: {fileID: 794072271}
   initialPositionTime: 1.5
   threatenTime: 1.5
