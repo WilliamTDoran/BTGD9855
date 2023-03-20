@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1099643848884731324}
   - component: {fileID: 1244304559353080797}
   - component: {fileID: -1296626417823257960}
+  - component: {fileID: -1709732412516849869}
   m_Layer: 0
   m_Name: Texture 10
-  m_TagString: Untagged
+  m_TagString: SpriteTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1349275955
-  m_SortingLayer: 6
+  m_SortingLayerID: 1953289611
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 1239477837, guid: b8dff2f4cb901bb4abe427f3d93f335d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -106,6 +107,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &-1709732412516849869
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3111108264678135816}
+  m_Material: {fileID: 13400000, guid: 9ae7e0c6c81f03b4fb53f7abf282b8f2, type: 2}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.11790739, z: 6}
+  m_Center: {x: 0, y: 0.066046305, z: 0}
 --- !u!1 &7897120314296646593
 GameObject:
   m_ObjectHideFlags: 0
