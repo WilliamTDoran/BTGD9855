@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 3203651031723334503}
   m_Layer: 0
   m_Name: Texture 54
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

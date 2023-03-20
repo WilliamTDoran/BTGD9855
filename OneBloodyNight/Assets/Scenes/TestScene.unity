@@ -3937,8 +3937,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   traits:
-    width: 17
-    height: 17
+    width: 21
+    height: 21
     scale: 16
     betweenCells: 8
     minLocation: 3
@@ -3951,11 +3951,12 @@ MonoBehaviour:
   - colour: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
     wallsRemoved: 0
     maxCellDifficulty: 0
-    chanceObject: 0
+    chanceObject: 0.1
     SetPieces:
     - {fileID: 3462578440953639072, guid: e686bb01e5410ba459b5904d1608b7b1, type: 3}
     - {fileID: 3462578440953639072, guid: 46a2834bf1b6a224cbf722b64b7bd249, type: 3}
-    objects: []
+    objects:
+    - {fileID: 3896362361821221946, guid: 5f8a499f2d159f24586ee1845ae4df3f, type: 3}
     enemies:
     - {fileID: 8258326494958717592, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
     - {fileID: 8258326494958717592, guid: 9a9d96e3f819a2245a1d6d98af4e85dd, type: 3}
@@ -4070,6 +4071,12 @@ MonoBehaviour:
     - {fileID: 5271325139786336067, guid: 9c47686b9f44021489ceafb4f3d76365, type: 3}
     - {fileID: 7177762433684976189, guid: f3e0a66ea69490247a156acd3ce8c97d, type: 3}
     - {fileID: 3325191705321573381, guid: e2944d5c91114cc469228a257ba2ff2e, type: 3}
+    - {fileID: 3896362361821221946, guid: dfc2e14bc59102c42aa0d0698c612056, type: 3}
+    - {fileID: 3896362361821221946, guid: 9f882245e21c4bb4c8c5ce3d8b41b277, type: 3}
+    - {fileID: 3896362361821221946, guid: b73f8efe66fc25241a16da5b906ea02d, type: 3}
+    - {fileID: 3896362361821221946, guid: 7dcbc7b626062bb42812e35b6b2c41a0, type: 3}
+    - {fileID: 3896362361821221946, guid: 3bb5e1e4abda6b34fba966af758509b9, type: 3}
+    - {fileID: 3896362361821221946, guid: ab91e400c459c664da8f4b7a55bca8a4, type: 3}
     enemies:
     - {fileID: 5831821545081226382, guid: 77671a9461b7bf941902b3fc074fdbc1, type: 3}
     - {fileID: 5831821545081226382, guid: afd32af6ae09ba94299970c66dcbc95b, type: 3}
