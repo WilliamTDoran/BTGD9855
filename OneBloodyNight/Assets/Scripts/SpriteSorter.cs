@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SpriteSorter : MonoBehaviour
 {
-    public int defaultSortingOrder = 1;
+    public int defaultSortingOrder = 20;
     public int triggeredSortingOrder = -1;
+    public int propSortingOrder = 10;
 
     private int triggerCount = 0;
     private SpriteRenderer spriteRenderer;
@@ -26,11 +27,20 @@ public class SpriteSorter : MonoBehaviour
                 spriteRenderer.sortingOrder = triggeredSortingOrder;
             }
         }
+
+        if (other.CompareTag("PropSpriteTrigger"))
+        {
+            triggerCount++;
+            if (triggerCount > 0)
+            {
+                spriteRenderer.sortingOrder = propSortingOrder;
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("SpriteTrigger"))
+        if (other.CompareTag("SpriteTrigger") || other.CompareTag("PropSpriteTrigger"))
         {
             triggerCount--;
             if (triggerCount <= 0)
@@ -39,4 +49,6 @@ public class SpriteSorter : MonoBehaviour
             }
         }
     }
+
+
 }

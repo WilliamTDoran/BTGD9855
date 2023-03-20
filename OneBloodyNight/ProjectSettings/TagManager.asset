@@ -9,6 +9,7 @@ TagManager:
   - Monster
   - Floor
   - SpriteTrigger
+  - PropSpriteTrigger
   layers:
   - Default
   - TransparentFX

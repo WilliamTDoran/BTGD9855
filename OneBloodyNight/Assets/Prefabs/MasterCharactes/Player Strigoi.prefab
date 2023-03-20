@@ -537,8 +537,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c4bb3584af81f43abe85c29632edb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSortingOrder: 1
+  defaultSortingOrder: 20
   triggeredSortingOrder: -1
+  propSortingOrder: 10
 --- !u!1 &2249110078690589064
 GameObject:
   m_ObjectHideFlags: 0
