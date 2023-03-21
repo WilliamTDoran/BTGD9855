@@ -16,6 +16,7 @@ public class UpgradeTotemHUD : MonoBehaviour
     internal UpgradeVars moveSpeedUpgrade;
     internal bool topUpgrade;
     internal bool rightUpgrade;
+    internal bool bottomUpgrade;
     /*
     enum upgrades
     {
@@ -73,6 +74,7 @@ public class UpgradeTotemHUD : MonoBehaviour
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
             {
                 Player.plr.GetComponent<PlayerStrigoi>().BaseSpeed = Player.plr.GetComponent<PlayerStrigoi>().BaseSpeed * moveSpeedUpgrade.multiplier;
+                Player.plr.GetComponent<PlayerStrigoi>().increaseSpeed(moveSpeedUpgrade.multiplier);
             }
             else
             {
@@ -90,6 +92,22 @@ public class UpgradeTotemHUD : MonoBehaviour
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
             {
                 Player.plr.GetComponent<PlayerStrigoi>().upgradedSwarm = true;
+            }
+            else
+            {
+                Debug.Log("Upgrade not implemented for this character");
+            }
+        }
+        gameObject.SetActive(false);
+    }
+    public void upgradeBottomSpecial()
+    {
+        if (!bottomUpgrade)
+        {
+            bottomUpgrade = true;
+            if (Player.plr.GetComponent<PlayerStrigoi>() != null)
+            {
+                Player.plr.GetComponent<PlayerStrigoi>().upgradedBackstab = true;
             }
             else
             {

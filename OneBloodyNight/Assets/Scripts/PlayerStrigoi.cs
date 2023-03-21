@@ -55,6 +55,9 @@ public class PlayerStrigoi : Player
 
     private int attackRegister = 0; //0 for not attacking, 1 for on first, 2 for on second, 3 for on third
 
+    internal bool upgradedBackstab;
+    internal bool backstab;
+
     /* Exposed Variables */
     [Header("Strigoi Exclusive")]
     [Header("References")]
@@ -332,6 +335,12 @@ public class PlayerStrigoi : Player
     {
         base.OnSuccessfulAttack(code);
 
+        if (upgradedBackstab && backstab)
+        {
+            upgradeAttacks(0.5f);
+            backstab = false;
+        }
+
         berserkCounter = berserkMaxTime;
 
         if (berserkUptime <= 0)
@@ -356,6 +365,11 @@ public class PlayerStrigoi : Player
     {
         invisibilityCoroutine = Invisible();
         StartCoroutine(invisibilityCoroutine);
+        if (upgradedBackstab && !backstab)
+        {
+            upgradeAttacks(2);
+            backstab = true;
+        }
     }
 
     private void StopInvisible()
@@ -386,5 +400,10 @@ public class PlayerStrigoi : Player
         basicAttackTwoBaseDamage = (int)Mathf.Floor(dmg * basicAttackTwoBaseDamage);
 
         basicAttackThreeBaseDamage = (int)Mathf.Floor(dmg * basicAttackThreeBaseDamage);
+    }
+
+    internal void increaseSpeed(float mul)
+    {
+        speed *= mul;
     }
 }
