@@ -78,6 +78,7 @@ public class CombatManager : MonoBehaviour
                 }
                 targetActor.StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
                 targetActor.StartHitstun(targetActor, used.HitstunDuration);
+                used.OnHitMonster();
                 targetActor.OnReceiveHit();
             }
                 

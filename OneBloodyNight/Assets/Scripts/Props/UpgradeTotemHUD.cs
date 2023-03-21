@@ -14,6 +14,7 @@ public class UpgradeTotemHUD : MonoBehaviour
     internal UpgradeVars bloodRegenUpgrade;
     [SerializeField]
     internal UpgradeVars moveSpeedUpgrade;
+    internal bool topUpgrade;
     /*
     enum upgrades
     {
@@ -71,6 +72,23 @@ public class UpgradeTotemHUD : MonoBehaviour
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
             {
                 Player.plr.GetComponent<PlayerStrigoi>().BaseSpeed = Player.plr.GetComponent<PlayerStrigoi>().BaseSpeed * moveSpeedUpgrade.multiplier;
+            }
+            else
+            {
+                Debug.Log("Upgrade not implemented for this character");
+            }
+        }
+        gameObject.SetActive(false);
+    }
+
+    public void upgradeTopSpecial()
+    {
+        if (!topUpgrade)
+        {
+            topUpgrade = true;
+            if (Player.plr.GetComponent<PlayerStrigoi>() != null)
+            {
+                Player.plr.GetComponent<PlayerStrigoi>().upgradedSwarm = true;
             }
             else
             {

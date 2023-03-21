@@ -44,6 +44,8 @@ public class PlayerStrigoi : Player
     private float berserkUptime; //true berserk time, used for calculating incremental buffs
 
     private int swarmCounter = 0; //current number of swarm ticks used
+    internal bool upgradedSwarm;  //Bool for if teh swarm's been upgraded
+    internal void swarmHit() { if (upgradedSwarm) swarmCounter--; }
 
     private int   basicAttackOneBaseDamage; //used for returning to default after berserk
     private int   basicAttackTwoBaseDamage;
