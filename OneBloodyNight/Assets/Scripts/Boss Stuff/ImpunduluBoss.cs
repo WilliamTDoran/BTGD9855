@@ -112,6 +112,16 @@ public class ImpunduluBoss : Boss
         //StartSpinAttack();
     }
 
+    protected override void Update()
+    {
+        base.Update();
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            animator.StartPlayback();
+        }
+    }
+
 
     private IEnumerator startanim()
     {

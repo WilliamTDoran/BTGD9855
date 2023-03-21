@@ -4253,6 +4253,7 @@ GameObject:
   - component: {fileID: 531132821}
   - component: {fileID: 531132823}
   - component: {fileID: 531132822}
+  - component: {fileID: 531132824}
   m_Layer: 0
   m_Name: RaincloudSprite
   m_TagString: Untagged
@@ -4347,6 +4348,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &531132824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531132820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e0893e204a8fe46aae576643f911d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  root: {fileID: 1911597313}
 --- !u!1 &532537192
 GameObject:
   m_ObjectHideFlags: 0
@@ -13765,7 +13779,8 @@ GameObject:
   - component: {fileID: 1911597312}
   - component: {fileID: 1911597311}
   m_Layer: 0
-  m_Name: Raincloud
+  m_Name: Raincloud (My hitbox needs to be larger than it would seem because of how
+    I detect hits)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

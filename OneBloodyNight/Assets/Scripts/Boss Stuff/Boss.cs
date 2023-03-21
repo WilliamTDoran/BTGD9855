@@ -20,8 +20,6 @@ public class Boss : GameActor
         base.Awake();
 
         CurHitPoints = MaxHitPoints;
-
-        Transition(currentPhase);
     }
 
     protected override void Update()
@@ -32,10 +30,5 @@ public class Boss : GameActor
         {
             Destroy(gameObject);
         }
-    }
-
-    internal void Transition(int targetPhase)
-    {
-        currentPhase = targetPhase;
     }
 }
