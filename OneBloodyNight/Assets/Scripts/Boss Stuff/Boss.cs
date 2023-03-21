@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Boss : GameActor
 {
+    protected System.Random rnd;
+    protected int rndCap = 3;
+
+    internal static Boss instance;
+
     /* Exposed Variables */
     [Header("Boss")]
     [Tooltip("The number of phases. The value of each should be the health percent when the boss will ENTER the phase")]
@@ -20,6 +25,23 @@ public class Boss : GameActor
         base.Awake();
 
         CurHitPoints = MaxHitPoints;
+
+        if (instance != null & instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
+    protected override void Start()
+    {
+        base.Start();
+
+        rnd = new System.Random();
+        StartCoroutine(PhaseCheck());
     }
 
     protected override void Update()
@@ -29,6 +51,20 @@ public class Boss : GameActor
         if (CurHitPoints <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private IEnumerator PhaseCheck()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+
+            float healthPercent = (float)CurHitPoints / (float)MaxHitPoints;
+            if (currentPhase + 1 < phases.Length && healthPercent <= phases[currentPhase + 1])
+            {
+                currentPhase++;
+            }
         }
     }
 }
