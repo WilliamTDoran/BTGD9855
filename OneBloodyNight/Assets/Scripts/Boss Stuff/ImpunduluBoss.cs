@@ -54,6 +54,18 @@ public class ImpunduluBoss : Boss
     [SerializeField]
     private GameObject beams;
 
+    [Tooltip("Reference to individual beamsprites")]
+    [SerializeField]
+    private Animator[] beamSpriteAnimators;
+
+    [Tooltip("Reference to the beam sprite animation")]
+    [SerializeField]
+    private AnimationClip beamimation;
+
+    [Tooltip("Literally just the same value as BeamLightning's playback speed in the animator")]
+    [SerializeField]
+    private float beamPlaybackSpeedModifier;
+
     [Tooltip("Time between individual feathers")]
     [SerializeField]
     private float timeBetweenFeathers = 0.6f;
@@ -114,6 +126,11 @@ public class ImpunduluBoss : Boss
     [Tooltip("How long the homing projectiles will chase for")]
     [SerializeField]
     private float homingChaseTime = 4.0f;
+
+    [Header("Beams")]
+    [Tooltip("Rotation speed in degrees per second")]
+    [SerializeField]
+    private float beamRotationSpeed = 30;
     /*~~~~~~~~~~~~~~*/
 
 
@@ -132,10 +149,11 @@ public class ImpunduluBoss : Boss
 
     private IEnumerator startanim()
     {
+        Player.plr.Stunned = true;
         yield return new WaitForSeconds(5f);
         StartRandomBehavior();
         animator.ResetTrigger("start");
-
+        Player.plr.Stunned = false;
     }
 
     protected override void Update()
@@ -326,9 +344,7 @@ public class ImpunduluBoss : Boss
             case 5:
                 yield return new WaitForSeconds(timeBeforeBeam * timeModifier);
 
-                StopRandomBehavior();
-                Debug.Log("cum");
-                StartRandomBehavior();
+                StartBeams();
                 break;
 
             default:
@@ -402,7 +418,28 @@ public class ImpunduluBoss : Boss
 
     private IEnumerator Beams()
     {
-        throw new NotImplementedException();
+        StopRandomBehavior();
+        canMove = false;
+
+        beams.transform.position = rb.position;
+        beams.SetActive(true);
+        float hTimer = 0.0f;
+
+        for (int i = 0; i < 4; i++)
+        {
+            beamSpriteAnimators[i].SetTrigger("ActivateJamali");
+        }
+
+        while (hTimer <= beamimation.length / beamPlaybackSpeedModifier)
+        {
+            yield return new WaitForEndOfFrame();
+            hTimer += Time.deltaTime;
+
+            beams.transform.Rotate(new Vector3(0, beamRotationSpeed * Time.deltaTime / timeModifier, 0));
+        }
+
+        beams.SetActive(false);
+        StartRandomBehavior();
     }
 
 
