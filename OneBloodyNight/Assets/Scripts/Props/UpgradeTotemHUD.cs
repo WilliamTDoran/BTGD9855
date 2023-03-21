@@ -48,7 +48,7 @@ public class UpgradeTotemHUD : MonoBehaviour
             attackDmgUpgrade.upgraded = true;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
             {
-                Player.plr.GetComponent<PlayerStrigoi>().upgradeAttacks(attackDmgUpgrade.multiplier);
+                Player.plr.GetComponent<PlayerStrigoi>().upgradeAttacks(attackDmgUpgrade.multiplier, true);
             } else {
                 Debug.Log("Upgrade not implemented for this character");
             }

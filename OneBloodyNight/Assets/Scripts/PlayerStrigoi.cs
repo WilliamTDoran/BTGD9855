@@ -337,7 +337,7 @@ public class PlayerStrigoi : Player
 
         if (upgradedBackstab && backstab)
         {
-            upgradeAttacks(0.5f);
+            upgradeAttacks(0.5f, false);
             backstab = false;
         }
 
@@ -367,7 +367,7 @@ public class PlayerStrigoi : Player
         StartCoroutine(invisibilityCoroutine);
         if (upgradedBackstab && !backstab)
         {
-            upgradeAttacks(2);
+            upgradeAttacks(2, false);
             backstab = true;
         }
     }
@@ -393,13 +393,19 @@ public class PlayerStrigoi : Player
         berserkCoroutine = null;
     }
 
-    internal void upgradeAttacks(float dmg)
+    internal void upgradeAttacks(float dmg, bool permenant)
     {
-        basicAttackOneBaseDamage = (int)Mathf.Floor(dmg * basicAttackOneBaseDamage);
+        basicAttackOne.Damage = (int)Mathf.Floor(dmg * basicAttackOne.Damage);
 
-        basicAttackTwoBaseDamage = (int)Mathf.Floor(dmg * basicAttackTwoBaseDamage);
+        basicAttackTwo.Damage = (int)Mathf.Floor(dmg * basicAttackTwo.Damage);
 
-        basicAttackThreeBaseDamage = (int)Mathf.Floor(dmg * basicAttackThreeBaseDamage);
+        basicAttackThree.Damage = (int)Mathf.Floor(dmg * basicAttackThree.Damage);
+        if (permenant)
+        {
+            basicAttackOneBaseDamage = (int)Mathf.Floor(dmg * basicAttackOneBaseDamage);
+            basicAttackTwoBaseDamage = (int)Mathf.Floor(dmg * basicAttackTwoBaseDamage);
+            basicAttackThreeBaseDamage = (int)Mathf.Floor(dmg * basicAttackThreeBaseDamage);
+        }
     }
 
     internal void increaseSpeed(float mul)
