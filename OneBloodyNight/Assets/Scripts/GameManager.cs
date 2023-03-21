@@ -72,6 +72,11 @@ public class GameManager : MonoBehaviour
                 raincloud.gameObject.SetActive(true);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Application.LoadLevel("ImpunduluBossRoom");
+        }
     }
 
     /// <summary>
