@@ -15,6 +15,7 @@ public class UpgradeTotemHUD : MonoBehaviour
     [SerializeField]
     internal UpgradeVars moveSpeedUpgrade;
     internal bool topUpgrade;
+    internal bool rightUpgrade;
     /*
     enum upgrades
     {
@@ -89,6 +90,23 @@ public class UpgradeTotemHUD : MonoBehaviour
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
             {
                 Player.plr.GetComponent<PlayerStrigoi>().upgradedSwarm = true;
+            }
+            else
+            {
+                Debug.Log("Upgrade not implemented for this character");
+            }
+        }
+        gameObject.SetActive(false);
+    }
+
+    public void upgradeRightSpecial()
+    {
+        if (!rightUpgrade)
+        {
+            rightUpgrade = true;
+            if (Player.plr.GetComponent<PlayerStrigoi>() != null)
+            {
+                Player.plr.abilityOneCost = 0;
             }
             else
             {

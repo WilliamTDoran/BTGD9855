@@ -34,11 +34,11 @@ public class Player : GameActor
     [SerializeField]
     protected SpriteRenderer spriteRenderer;
 
-    [Tooltip("The cost of Ability 1 (Q/LB)")]
+    [Tooltip("The cost of Ability 1 (Q/LB)")]//invis
     [SerializeField]
-    protected float abilityOneCost;
+    internal float abilityOneCost;
 
-    [Tooltip("The cost of Ability 2 (E/RB)")]
+    [Tooltip("The cost of Ability 2 (E/RB)")]//swarm
     [SerializeField]
     protected float abilityTwoCost;
 

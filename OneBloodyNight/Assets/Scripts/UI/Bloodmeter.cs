@@ -79,7 +79,12 @@ public class Bloodmeter : MonoBehaviour
 
         while (bloodmeter.value > bloodmeter.minValue)
         {
-            bloodmeter.value = bloodmeter.value - bloodLossRate;//takes 1 blood per second
+            float bloodLost = bloodLossRate;
+            if (Player.plr.GetComponent<PlayerStrigoi>() != null && Player.plr.abilityOneCost == 0 && !Player.plr.GetComponent<PlayerStrigoi>().Visible)
+            {
+                bloodLost *= 2;
+            }
+            bloodmeter.value = bloodmeter.value - bloodLost;//takes 1 blood per second
             
             yield return new WaitForSeconds(0.03f);//slows down the damage rate
             
