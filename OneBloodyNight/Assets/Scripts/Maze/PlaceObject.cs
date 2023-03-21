@@ -19,19 +19,19 @@ public class PlaceObject
                 BiomeVariables bv = Maze.m.biomeVariables[(int)c.getBiome()];
                 if (bv.chanceObject >= Random.Range(0, 1.0f) && bv.objects.Length > 0)
                 {
-                    GameObject temp = GameObject.Instantiate(bv.objects[Random.Range(0, bv.objects.Length)], c.transform.position + new Vector3((0.25f + Random.Range(-0.15f, 0.15f)) * Maze.m.traits.scale, 0, (0.25f + Random.Range(-0.15f, 0.15f)) * Maze.m.traits.scale), Quaternion.Euler(90, 0, 0), c.transform);
+                    GameObject temp = GameObject.Instantiate(bv.objects[Random.Range(0, bv.objects.Length)], c.transform.position + new Vector3((0.25f + Random.Range(-0.1f, 0.1f)) * Maze.m.traits.scale, 0, (0.25f + Random.Range(-0.1f, 0.1f)) * Maze.m.traits.scale), Quaternion.Euler(90, 0, 0), c.transform);
                 }
                 if (bv.chanceObject >= Random.Range(0, 1.0f) && bv.objects.Length > 0)
                 {
-                    GameObject temp = GameObject.Instantiate(bv.objects[Random.Range(0, bv.objects.Length)], c.transform.position + new Vector3((-0.25f + Random.Range(-0.15f, 0.15f)) * Maze.m.traits.scale, 0, (0.25f + Random.Range(-0.15f, 0.15f)) * Maze.m.traits.scale), Quaternion.Euler(90, 0, 0), c.transform);
+                    GameObject temp = GameObject.Instantiate(bv.objects[Random.Range(0, bv.objects.Length)], c.transform.position + new Vector3((-0.25f + Random.Range(-0.1f, 0.1f)) * Maze.m.traits.scale, 0, (0.25f + Random.Range(-0.1f, 0.1f)) * Maze.m.traits.scale), Quaternion.Euler(90, 0, 0), c.transform);
                 }
                 if (bv.chanceObject >= Random.Range(0, 1.0f) && bv.objects.Length > 0)
                 {
-                    GameObject temp = GameObject.Instantiate(bv.objects[Random.Range(0, bv.objects.Length)], c.transform.position + new Vector3((0.25f + Random.Range(-0.15f, 0.15f)) * Maze.m.traits.scale, 0, (-0.25f + Random.Range(-0.15f, 0.15f)) * Maze.m.traits.scale), Quaternion.Euler(90, 0, 0), c.transform);
+                    GameObject temp = GameObject.Instantiate(bv.objects[Random.Range(0, bv.objects.Length)], c.transform.position + new Vector3((0.25f + Random.Range(-0.1f, 0.1f)) * Maze.m.traits.scale, 0, (-0.25f + Random.Range(-0.1f, 0.1f)) * Maze.m.traits.scale), Quaternion.Euler(90, 0, 0), c.transform);
                 }
                 if (bv.chanceObject >= Random.Range(0, 1.0f) && bv.objects.Length > 0)
                 {
-                    GameObject temp = GameObject.Instantiate(bv.objects[Random.Range(0, bv.objects.Length)], c.transform.position + new Vector3((-0.25f + Random.Range(-0.15f, 0.15f)) * Maze.m.traits.scale, 0, (-0.25f + Random.Range(-0.15f, 0.15f)) * Maze.m.traits.scale), Quaternion.Euler(90, 0, 0), c.transform);
+                    GameObject temp = GameObject.Instantiate(bv.objects[Random.Range(0, bv.objects.Length)], c.transform.position + new Vector3((-0.25f + Random.Range(-0.1f, 0.1f)) * Maze.m.traits.scale, 0, (-0.25f + Random.Range(-0.1f, 0.1f)) * Maze.m.traits.scale), Quaternion.Euler(90, 0, 0), c.transform);
                 }
             }
         }
