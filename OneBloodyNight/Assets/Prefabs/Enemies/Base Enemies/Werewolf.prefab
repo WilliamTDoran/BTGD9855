@@ -398,6 +398,7 @@ MonoBehaviour:
   walkAnim: 1
   DeathPart: {fileID: 6481191564942972682}
   blood: {fileID: 7150320926583223067}
+  Bloody: {fileID: 0}
   basicAttack: {fileID: 3237701248447046877}
   bloodOnKill: 60
   attackTimer: 2
