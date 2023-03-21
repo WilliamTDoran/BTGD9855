@@ -24,6 +24,7 @@ public class ImpunduluBoss : Boss
     private IEnumerator diveAttackCoroutine;
     private IEnumerator homingAttackCoroutine;
     private IEnumerator homingFlightTimerCoroutine;
+    private IEnumerator beamsCoroutine;
     private IEnumerator randomBehaviorCoroutine;
     private IEnumerator randomAttackingCoroutine;
     private IEnumerator phaseCheckCoroutine;
@@ -48,6 +49,10 @@ public class ImpunduluBoss : Boss
     [Tooltip("Reference to raincloud")]
     [SerializeField]
     private Raincloud raincloud;
+
+    [Tooltip("Reference to beam basket")]
+    [SerializeField]
+    private GameObject beams;
 
     [Tooltip("Time between individual feathers")]
     [SerializeField]
@@ -140,7 +145,7 @@ public class ImpunduluBoss : Boss
 
     private void FixedUpdate()
     {
-        if (canMove)
+        if (canMove && !stunned)
         {
             rb.AddForce(faceDirection, ForceMode.Force);
         }
@@ -285,7 +290,6 @@ public class ImpunduluBoss : Boss
 
                 StartSpinAttack();
                 animator.SetTrigger("spin");
-
                 break;
 
             case 1:
@@ -328,11 +332,12 @@ public class ImpunduluBoss : Boss
                 break;
 
             default:
+                Debug.LogError(gameObject.name + "defaulted on RandomAttacking");
+
                 yield return new WaitForSeconds(timeBeforeFeathers * timeModifier);
 
                 StartSpinAttack();
                 animator.SetTrigger("spin");
-
                 break;
         }
     }
@@ -394,6 +399,12 @@ public class ImpunduluBoss : Boss
         raincloud.gameObject.SetActive(true);
         StartRandomBehavior();
     }
+
+    private IEnumerator Beams()
+    {
+        throw new NotImplementedException();
+    }
+
 
     
     private void StartSpinAttack()
@@ -482,5 +493,17 @@ public class ImpunduluBoss : Boss
     {
         StopCoroutine(homingFlightTimerCoroutine);
         homingFlightTimerCoroutine = null;
+    }
+
+    private void StartBeams()
+    {
+        beamsCoroutine = Beams();
+        StartCoroutine(beamsCoroutine);
+    }
+
+    private void StopBeams()
+    {
+        StopCoroutine(beamsCoroutine);
+        beamsCoroutine = null;
     }
 }
