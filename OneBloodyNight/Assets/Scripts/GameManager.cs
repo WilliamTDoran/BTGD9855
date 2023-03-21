@@ -31,6 +31,10 @@ public class GameManager : MonoBehaviour
     [Tooltip("The debug text for indicating gcd activity")]
     [SerializeField]
     private TextMeshProUGUI gcdDebugText;
+
+    [Tooltip("An impundulu boss raincloud")]
+    [SerializeField]
+    private Raincloud raincloud;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     /// <summary>
@@ -59,6 +63,14 @@ public class GameManager : MonoBehaviour
         {
             debugCanvas.SetActive(!debugCanvas.activeInHierarchy);
             debugTextStatus = !debugTextStatus;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (raincloud != null)
+            {
+                raincloud.gameObject.SetActive(true);
+            }
         }
     }
 

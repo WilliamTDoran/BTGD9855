@@ -1427,7 +1427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &127064944
 Transform:
   m_ObjectHideFlags: 0
@@ -1463,8 +1463,8 @@ MonoBehaviour:
   walkAnim: 0
   phases:
   - 1
-  - 0.8
-  - 0.4
+  - 0.99
+  - 0.98
   currentPhase: 0
   audioSource: {fileID: 127064949}
   Dive: {fileID: 8300000, guid: 12af29bb2aceaa749a8ebe589286be45, type: 3}
@@ -1489,12 +1489,14 @@ MonoBehaviour:
   - {fileID: 532537194}
   - {fileID: 606353820}
   - {fileID: 1611556331}
+  raincloud: {fileID: 1911597313}
   timeBetweenFeathers: 0.2
   cam: {fileID: 1236102455}
   timeBeforeFeathers: 1
   timeBeforeLightning: 2
   timeBeforeSwoop: 3
   timeBeforeHoming: 2
+  timeBeforeRain: 3
   timeBeforeBeam: 2
   swoopBox: {fileID: 794072271}
   initialPositionTime: 1.5
@@ -2533,6 +2535,7 @@ MonoBehaviour:
   globalCooldownDuration: 0.1
   debugCanvas: {fileID: 36522412}
   gcdDebugText: {fileID: 988525444}
+  raincloud: {fileID: 1911597313}
 --- !u!4 &234739516
 Transform:
   m_ObjectHideFlags: 0
@@ -4337,7 +4340,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e8ae01d7868301f4c937245d317f3bdc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b12980f9d9e69674ba623a67b95597d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13785,7 +13788,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1911597310
 Transform:
   m_ObjectHideFlags: 0
@@ -13843,10 +13846,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 902528be764858946b82e709486370be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 1
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  speedClamp: 0
+  spritenimator: {fileID: 531132822}
   rainTickInterval: 0.15
   damage: 20
 --- !u!1 &1923641020

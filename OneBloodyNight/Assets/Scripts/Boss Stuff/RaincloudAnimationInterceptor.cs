@@ -15,4 +15,9 @@ public class RaincloudAnimationInterceptor : MonoBehaviour
     {
         root.StopRainDamage();
     }
+
+    public void Close()
+    {
+        root.gameObject.SetActive(false);
+    }
 }

@@ -43,6 +43,10 @@ public class ImpunduluBoss : Boss
     [SerializeField]
     private RemoteAttack[] lightnings;
 
+    [Tooltip("Reference to raincloud")]
+    [SerializeField]
+    private Raincloud raincloud;
+
     [Tooltip("Time between individual feathers")]
     [SerializeField]
     private float timeBetweenFeathers = 0.6f;
@@ -63,6 +67,9 @@ public class ImpunduluBoss : Boss
 
     [SerializeField]
     private float timeBeforeHoming;
+
+    [SerializeField]
+    private float timeBeforeRain;
 
     [SerializeField]
     private float timeBeforeBeam;
@@ -111,17 +118,6 @@ public class ImpunduluBoss : Boss
         //StartRandomBehavior();
         //StartSpinAttack();
     }
-
-    protected override void Update()
-    {
-        base.Update();
-
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            animator.StartPlayback();
-        }
-    }
-
 
     private IEnumerator startanim()
     {
@@ -306,9 +302,15 @@ public class ImpunduluBoss : Boss
                 break;
 
             case 4:
+                yield return new WaitForSeconds(timeBeforeRain);
+
+                StartRaining();
                 break;
 
             case 5:
+                StopRandomBehavior();
+                Debug.Log("cum");
+                StartRandomBehavior();
                 break;
 
             default:
@@ -328,7 +330,7 @@ public class ImpunduluBoss : Boss
             yield return new WaitForSeconds(0.5f);
 
             float healthPercent = (float)CurHitPoints / (float)MaxHitPoints;
-            if (healthPercent <= phases[currentPhase + 1])
+            if (currentPhase + 1 < phases.Length && healthPercent <= phases[currentPhase + 1])
             {
                 currentPhase++;
             }
@@ -370,6 +372,13 @@ public class ImpunduluBoss : Boss
         {
             homings[i].FinishFlight();
         }
+    }
+
+    private void StartRaining()
+    {
+        StopRandomBehavior();
+        raincloud.gameObject.SetActive(true);
+        StartRandomBehavior();
     }
 
     
