@@ -77,3 +77,6 @@ TagManager:
   - name: SpriteSorting
     uniqueID: 1953289611
     locked: 0
+  - name: Fog
+    uniqueID: 896860427
+    locked: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: df5ac0729038b9c4e8b78a88114e4c63
+guid: 97bb73b884385f6438971167498c9a1c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,8 +43,8 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
-  spriteMeshType: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 128
@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 512
     resizeAlgorithm: 1
     textureFormat: 4
     textureCompression: 1
@@ -100,41 +100,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 1024
-    resizeAlgorithm: 1
-    textureFormat: 4
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 1024
-    resizeAlgorithm: 1
-    textureFormat: 4
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FogMoreAlpha_0
+      name: VolumeSliders_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 30
-        height: 14
+        x: 10
+        y: 25
+        width: 140
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d3f27633ef2e7d47ae975ddebcecb29
-      internalID: 2070592759
+      spriteID: 6eae750fc08969b43b52c115b0e23dbf
+      internalID: -1327577474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FogMoreAlpha_1
+      name: VolumeSliders_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 3
-        width: 13
-        height: 7
+        x: 170
+        y: 25
+        width: 140
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15b7d5137c370df4c9cd49e2231962ac
-      internalID: 685125252
+      spriteID: 67d60eeb859f296478dbca00141ef861
+      internalID: -1079963116
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FogMoreAlpha_2
+      name: VolumeSliders_2
       rect:
         serializedVersion: 2
-        x: 46
-        y: 1
-        width: 16
-        height: 14
+        x: 330
+        y: 25
+        width: 140
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab11a66cd0af3e84eaa1bf3c96e13941
-      internalID: 1591496528
+      spriteID: c4ba82abd5b10564bb6bf98f39e1a47e
+      internalID: 1804639661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FogMoreAlpha_3
+      name: VolumeSliders_3
       rect:
         serializedVersion: 2
-        x: 64
-        y: 3
-        width: 29
-        height: 12
+        x: 490
+        y: 25
+        width: 140
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b7de4cce4047214cbc92fd0e2fbd5a0
-      internalID: -754822655
+      spriteID: 772e5ea9cb70ff9499bd4d50eaa2c345
+      internalID: -1370336252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FogMoreAlpha_4
+      name: VolumeSliders_4
       rect:
         serializedVersion: 2
-        x: 95
-        y: 2
-        width: 30
-        height: 13
+        x: 650
+        y: 25
+        width: 140
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,8 +202,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de14a8d742c16bd4e93ad898f0043f9c
-      internalID: 1392169060
+      spriteID: f41dcc1582687a942ba646da26868f8f
+      internalID: 1720051483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VolumeSliders_5
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 25
+        width: 140
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1749417fc0d94fc45ada7fcd909f0b3d
+      internalID: 1959812465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VolumeSliders_6
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 25
+        width: 140
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07c2971e5efeda4bb72092793b99986
+      internalID: -901349522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VolumeSliders_7
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 25
+        width: 140
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a33c9f0129dd33459fec06de125efd8
+      internalID: 2069067845
       vertices: []
       indices: 
       edges: []
@@ -235,7 +274,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f7b6bcda3e003ce4b8a7391fba9a2b6a
+    spriteID: 53ec5d7ef5e4fd24191a4aa663a43c5e
     internalID: 0
     vertices: []
     indices: 
@@ -243,11 +282,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      FogMoreAlpha_4: 1392169060
-      FogMoreAlpha_0: 2070592759
-      FogMoreAlpha_2: 1591496528
-      FogMoreAlpha_3: -754822655
-      FogMoreAlpha_1: 685125252
+      VolumeSliders_1: -1079963116
+      VolumeSliders_6: -901349522
+      VolumeSliders_4: 1720051483
+      VolumeSliders_3: -1370336252
+      VolumeSliders_0: -1327577474
+      VolumeSliders_5: 1959812465
+      VolumeSliders_2: 1804639661
+      VolumeSliders_7: 2069067845
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
