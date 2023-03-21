@@ -15,9 +15,6 @@ public class ImpunduluBoss : Boss
     public AudioClip Intro;
     /*~~~~~~~*/
 
-    private System.Random rnd;
-    private int rndCap = 3;
-
     float timeModifier = 1.0f;
 
     private IEnumerator spinAttackCoroutine;
@@ -27,7 +24,6 @@ public class ImpunduluBoss : Boss
     private IEnumerator beamsCoroutine;
     private IEnumerator randomBehaviorCoroutine;
     private IEnumerator randomAttackingCoroutine;
-    private IEnumerator phaseCheckCoroutine;
 
     private Vector3 faceDirection;
 
@@ -136,9 +132,6 @@ public class ImpunduluBoss : Boss
 
     protected override void Start()
     {
-        rnd = new System.Random();
-        StartCoroutine(PhaseCheck());
-
         //audioSource.PlayOneShot(Intro,2f);
         base.Start();
         animator.SetTrigger("start");
@@ -358,20 +351,6 @@ public class ImpunduluBoss : Boss
         }
     }
 
-    private IEnumerator PhaseCheck()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(0.5f);
-
-            float healthPercent = (float)CurHitPoints / (float)MaxHitPoints;
-            if (currentPhase + 1 < phases.Length && healthPercent <= phases[currentPhase + 1])
-            {
-                currentPhase++;
-            }
-        }
-    }
-
     private IEnumerator HomingAttack()
     {
         if (homingFlightTimerCoroutine != null)
@@ -494,18 +473,6 @@ public class ImpunduluBoss : Boss
     {
         StopCoroutine(randomAttackingCoroutine);
         randomAttackingCoroutine = null;
-    }
-
-    private void StartPhaseCheck()
-    {
-        phaseCheckCoroutine = PhaseCheck();
-        StartCoroutine(phaseCheckCoroutine);
-    }
-
-    private void StopPhaseCheck()
-    {
-        StopCoroutine(phaseCheckCoroutine);
-        phaseCheckCoroutine = null;
     }
 
     private void StartHomingAttack()
