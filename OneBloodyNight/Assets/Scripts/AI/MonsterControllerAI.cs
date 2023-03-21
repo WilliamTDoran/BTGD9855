@@ -25,12 +25,13 @@ public class UniversalAIProperties : AIProperties
 public class PatrolAIProperties : AIProperties
 {
     public float spottyDistance;
+    public float despawnDistance;
 }
 
 [System.Serializable]
 public class ChaseAIProperties : AIProperties
 {
-
+    public float despawnDistance;
 }
 
 [System.Serializable]

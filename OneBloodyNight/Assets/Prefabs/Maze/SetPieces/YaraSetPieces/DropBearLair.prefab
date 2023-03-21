@@ -287,7 +287,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2131791757
-  m_SortingLayer: 7
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -606,6 +606,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name
       value: Werewolf (3)
@@ -913,6 +921,14 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name
@@ -1299,6 +1315,14 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name
@@ -1764,6 +1788,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name
       value: Werewolf (5)
@@ -1837,6 +1869,14 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name
@@ -1989,6 +2029,14 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name
@@ -2219,6 +2267,14 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name
@@ -2605,6 +2661,14 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name

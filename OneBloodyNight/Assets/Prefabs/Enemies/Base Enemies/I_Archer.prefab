@@ -334,6 +334,9 @@ MonoBehaviour:
     host: {fileID: 6013204197218851667}
   patrolAIProperties:
     spottyDistance: 40
+    despawnDistance: 100
+  chaseAIProperties:
+    despawnDistance: 100
   lostAIProperties:
     timeTilLoseSight: 2.5
   attackAIProperties:
@@ -523,6 +526,8 @@ MonoBehaviour:
   showHitbox: 0
   hitboxMesh: {fileID: 0}
   shooter: {fileID: 6013204197218851667}
+  homing: 0
+  homingRotSpeed: 0
 --- !u!1 &8621432289928506362
 GameObject:
   m_ObjectHideFlags: 0

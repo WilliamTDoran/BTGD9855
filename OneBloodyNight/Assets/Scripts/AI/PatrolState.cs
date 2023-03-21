@@ -34,6 +34,12 @@ public class PatrolState : FSMState
             monster.PerformTransition(Transition.Spot);
             return;
         }
+
+        if (patrolAIProperties.despawnDistance != -1 && (player.position - npc.position).magnitude > patrolAIProperties.despawnDistance)
+        {
+            Spawner.enemKilled();
+            npc.gameObject.SetActive(false);
+        }
     }
 
     public override void Act(Transform player, Transform npc)

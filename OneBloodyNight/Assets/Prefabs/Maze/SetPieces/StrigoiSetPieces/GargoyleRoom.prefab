@@ -239,6 +239,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name
       value: Werewolf (3)
@@ -629,6 +637,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name
       value: Werewolf (2)
@@ -785,6 +801,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name
       value: Werewolf (6)
@@ -859,6 +883,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name
       value: Werewolf (5)
@@ -932,6 +964,14 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name
@@ -1085,6 +1125,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name
       value: Werewolf
@@ -1158,6 +1206,14 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name
@@ -1388,6 +1444,14 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: chaseAIProperties.despawnDistance
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250998436232743288, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
+      propertyPath: patrolAIProperties.despawnDistance
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8157727617279695231, guid: be5d503335fc42843b1ad029fa51f0ae, type: 3}
       propertyPath: m_Name

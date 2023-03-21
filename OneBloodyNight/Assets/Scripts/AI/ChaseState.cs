@@ -37,6 +37,12 @@ public class ChaseState : FSMState
             monster.PerformTransition(Transition.Reach);
             return;
         }
+
+        if (chaseAIProperties.despawnDistance != -1 && (player.position - npc.position).magnitude > chaseAIProperties.despawnDistance)
+        {
+            Spawner.enemKilled();
+            npc.gameObject.SetActive(false);
+        }
     }
 
     public override void Act(Transform player, Transform npc)
