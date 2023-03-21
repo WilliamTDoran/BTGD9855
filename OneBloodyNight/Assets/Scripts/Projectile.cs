@@ -4,21 +4,44 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : Attack
-{
+{ 
     private Vector3 direction;
 
     /* Exposed Variables */
     [Tooltip("What would normally be called attacker")]
     [SerializeField]
     private GameActor shooter;
+
+    [Tooltip("Whether the projectile homes")]
+    [SerializeField]
+    private bool homing;
+
+    [Tooltip("Degrees per second maximum that the projectile can turn toward target when homing")]
+    [SerializeField]
+    private float homingRotSpeed;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     protected override void Update()
     {
+        if (homing)
+        {
+            facingAngle = Vector3.SignedAngle(Vector3.right, (Player.plr.Rb.position - rb.position), Vector3.up);
+            facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
+            facingAngle *= -1;
+
+            Quaternion target = Quaternion.Euler(90f, 0, facingAngle + 90f);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, target, homingRotSpeed * Time.deltaTime);
+        }
+
         if (canMove)
         {
             transform.Translate(direction * Time.deltaTime);
         }
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 
     internal override void Fire()

@@ -21,6 +21,7 @@ public class ImpunduluBoss : Boss
     private IEnumerator spinAttackCoroutine;
     private IEnumerator diveAttackCoroutine;
     private IEnumerator homingAttackCoroutine;
+    private IEnumerator homingFlightTimerCoroutine;
     private IEnumerator randomBehaviorCoroutine;
     private IEnumerator randomAttackingCoroutine;
     private IEnumerator phaseCheckCoroutine;
@@ -29,9 +30,14 @@ public class ImpunduluBoss : Boss
 
     private int lightningCycle = 0;
 
+    /* Exposed Variables */
     [Tooltip("Reference to all feather objects")]
     [SerializeField]
     private Projectile[] feathers;
+
+    [Tooltip("Reference to all homing feather objects")]
+    [SerializeField]
+    private Projectile[] homings;
 
     [Tooltip("Reference to all lightning objects")]
     [SerializeField]
@@ -86,7 +92,12 @@ public class ImpunduluBoss : Boss
     [SerializeField]
     private float recoverTime = 0.3f;
 
-    
+    [Header("Homing")]
+    [Tooltip("How long the homing projectiles will chase for")]
+    [SerializeField]
+    private float homingChaseTime = 4.0f;
+    /*~~~~~~~~~~~~~~*/
+
 
     protected override void Start()
     {
@@ -153,7 +164,7 @@ public class ImpunduluBoss : Boss
         while (genTimer <= initialPositionTime)
         {
             Vector3 cameraSidePoint = leftStart ? cam.ViewportToWorldPoint(new Vector3(0.05f, 0.52f, rb.position.z)) : cam.ViewportToWorldPoint(new Vector3(0.95f, 0.52f, rb.position.z));
-            
+
             Vector3 targetPos = new Vector3(cameraSidePoint.x, rb.position.y, Player.plr.Rb.position.z);
 
             rb.position = Vector3.Lerp(returnPos, targetPos, genTimer / initialPositionTime);
@@ -176,7 +187,7 @@ public class ImpunduluBoss : Boss
         genTimer = 0.0f;
         Vector3 cameraOffPoint = leftStart ? cam.ViewportToWorldPoint(new Vector3(1.1f, 0.52f, rb.position.z)) : cam.ViewportToWorldPoint(new Vector3(-0.1f, 0.52f, rb.position.z));
         swoopBox.gameObject.GetComponent<BoxCollider>().enabled = true;
-        
+
         if (leftStart)
         {
             while (rb.position.x < cameraOffPoint.x)
@@ -199,7 +210,7 @@ public class ImpunduluBoss : Boss
         }
 
         if (!leftStart) { render.flipX = false; }
-        
+
         if (leftStart) { render.flipX = true; }
 
         yield return new WaitForSeconds(stopTime);
@@ -246,7 +257,8 @@ public class ImpunduluBoss : Boss
 
     private IEnumerator RandomAttacking()
     {
-        int check = rnd.Next(0, rndCap + currentPhase);
+        int upperLimit = currentPhase == 2 ? rndCap + currentPhase + 1 : rndCap + currentPhase; //this is dumb as rocks but fuck if it don't work
+        int check = rnd.Next(0, upperLimit);
 
         switch (check)
         {
@@ -255,7 +267,7 @@ public class ImpunduluBoss : Boss
 
                 StartSpinAttack();
                 animator.SetTrigger("spin");
-                
+
                 break;
 
             case 1:
@@ -286,6 +298,9 @@ public class ImpunduluBoss : Boss
             case 4:
                 break;
 
+            case 5:
+                break;
+
             default:
                 yield return new WaitForSeconds(timeBeforeFeathers);
 
@@ -312,17 +327,49 @@ public class ImpunduluBoss : Boss
 
     private IEnumerator HomingAttack()
     {
-        throw new NotImplementedException();
+        if (homingFlightTimerCoroutine != null)
+        {
+            StopHomingFlightTimer();
+        }
+        StopRandomBehavior();
+        canMove = false;
+
+        for (int i = 0; i < 3; i++)
+        {
+            yield return new WaitForSeconds(timeBetweenFeathers);
+
+            facingAngle = Vector3.SignedAngle(Vector3.right, (Player.plr.Rb.position - rb.position), Vector3.up);
+            facingAngle += (1 - i) * 30;
+            facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
+            facingAngle *= -1;
+            homings[i].gameObject.SetActive(true);
+            audioSource.PlayOneShot(feather);
+            homings[i].Fire();
+        }
+
+        StartHomingFlightTimer();
+        canMove = true;
+        animator.ResetTrigger("spin");
+        StartRandomBehavior();
     }
 
+    private IEnumerator HomingFlightTimer()
+    {
+        yield return new WaitForSeconds(homingChaseTime);
+        for (int i = 0; i < 3; i++)
+        {
+            homings[i].FinishFlight();
+        }
+    }
 
+    
     private void StartSpinAttack()
     {
         spinAttackCoroutine = SpinAttack();
         StartCoroutine(spinAttackCoroutine);
-        
+
     }
-    
+
     private void StopSpinAttack()
     {
         StopCoroutine(spinAttackCoroutine);
@@ -390,5 +437,17 @@ public class ImpunduluBoss : Boss
     {
         StopCoroutine(homingAttackCoroutine);
         homingAttackCoroutine = null;
+    }
+
+    private void StartHomingFlightTimer()
+    {
+        homingFlightTimerCoroutine = HomingFlightTimer();
+        StartCoroutine(homingFlightTimerCoroutine);
+    }
+
+    private void StopHomingFlightTimer()
+    {
+        StopCoroutine(homingFlightTimerCoroutine);
+        homingFlightTimerCoroutine = null;
     }
 }
