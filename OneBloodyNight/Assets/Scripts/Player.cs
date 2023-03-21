@@ -51,6 +51,8 @@ public class Player : GameActor
     [SerializeField]
     protected TextMeshProUGUI canAttackDebugText;
     public TextMeshProUGUI CanAttackDebugText { get { return canAttackDebugText; } }
+
+    internal float bloodRegainMult = 1;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     /// <summary>

@@ -376,4 +376,13 @@ public class PlayerStrigoi : Player
         StopCoroutine(berserkCoroutine);
         berserkCoroutine = null;
     }
+
+    internal void upgradeAttacks(float dmg)
+    {
+        basicAttackOneBaseDamage = (int)Mathf.Floor(dmg * basicAttackOneBaseDamage);
+
+        basicAttackTwoBaseDamage = (int)Mathf.Floor(dmg * basicAttackTwoBaseDamage);
+
+        basicAttackThreeBaseDamage = (int)Mathf.Floor(dmg * basicAttackThreeBaseDamage);
+    }
 }

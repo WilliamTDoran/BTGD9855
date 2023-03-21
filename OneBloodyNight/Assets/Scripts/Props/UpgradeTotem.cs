@@ -5,9 +5,15 @@ using UnityEngine;
 public class UpgradeTotem : MonoBehaviour
 {
 
-    // Update is called once per frame
+    [SerializeField]
+    GameObject upgradeHUD;
+
+
     void Update()
     {
-        
+        if (Input.GetButtonDown("UpgradeHUD"))
+        {
+            upgradeHUD.SetActive(true);
+        }
     }
 }

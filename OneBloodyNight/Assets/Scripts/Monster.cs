@@ -106,7 +106,7 @@ public class Monster : GameActor
         if (CurHitPoints <= 0 && !dead)
         {
             Spawner.enemKilled();
-            Bloodmeter.instance.bloodmeter.value += bloodOnKill;
+            Bloodmeter.instance.bloodmeter.value += bloodOnKill * Player.plr.bloodRegainMult;
 
             dead = true;
             animator.SetTrigger("Die");

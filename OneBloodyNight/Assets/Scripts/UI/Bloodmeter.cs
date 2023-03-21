@@ -15,7 +15,7 @@ public class Bloodmeter : MonoBehaviour
     public GameObject gameover;
 
     [SerializeField]
-    private float bloodLossRate;
+    internal float bloodLossRate;
 
     public float bloodGainRate;
 
