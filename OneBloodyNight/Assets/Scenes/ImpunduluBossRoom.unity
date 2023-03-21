@@ -675,7 +675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2249110078326297001, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -86.19
+      value: -85.8
       objectReference: {fileID: 0}
     - target: {fileID: 2249110078326297001, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -683,7 +683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2249110078326297001, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.86
+      value: 15.9
       objectReference: {fileID: 0}
     - target: {fileID: 2249110078326297001, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1652,7 +1652,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127064942}
-  m_LocalRotation: {x: 0.7070799, y: 0.006170608, z: -0.006170608, w: 0.7070799}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -85.8, y: 0.13, z: 21.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1661,7 +1661,7 @@ Transform:
   - {fileID: 794072268}
   m_Father: {fileID: 0}
   m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 90, y: 1, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &127064945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1716,13 +1716,13 @@ MonoBehaviour:
   beamimation: {fileID: 7400000, guid: 2d72e18104aa9764fbf7eea5ec190583, type: 2}
   beamPlaybackSpeedModifier: 0.5
   timeBetweenFeathers: 0.2
-  timeShred: 0.9
+  timeShred: 0.8
   cam: {fileID: 1236102455}
-  timeBeforeFeathers: 1
-  timeBeforeLightning: 2
+  timeBeforeFeathers: 0.6
+  timeBeforeLightning: 1.6
   timeBeforeSwoop: 3
-  timeBeforeHoming: 2
-  timeBeforeRain: 3
+  timeBeforeHoming: 1
+  timeBeforeRain: 2
   timeBeforeBeam: 4
   swoopBox: {fileID: 794072271}
   initialPositionTime: 1.5
@@ -1778,7 +1778,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.9, y: 2.22}
+  m_Size: {x: 32, y: 32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3230,7 +3230,7 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
-  damage: 100
+  damage: 60
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -3554,7 +3554,7 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
-  damage: 100
+  damage: 80
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -4035,7 +4035,7 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
-  damage: 100
+  damage: 80
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -5165,7 +5165,7 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
-  damage: 100
+  damage: 80
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -5317,7 +5317,7 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
-  damage: 100
+  damage: 80
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -5907,7 +5907,7 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
-  damage: 100
+  damage: 80
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -6983,7 +6983,7 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
-  damage: 100
+  damage: 60
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -8100,7 +8100,7 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
-  damage: 100
+  damage: 80
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -9456,7 +9456,7 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
-  damage: 100
+  damage: 60
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -10708,7 +10708,7 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
-  damage: 100
+  damage: 80
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -11384,7 +11384,7 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
-  damage: 100
+  damage: 80
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
