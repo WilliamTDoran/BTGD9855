@@ -39,16 +39,20 @@ public class Projectile : Attack
         }
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-
     internal override void Fire()
     {
         PositionAttack();
 
         direction = new Vector3(0, -1, 0) * speed;
+
+        canMove = true;
+    }
+
+    internal void Fire(float timeModifier)
+    {
+        PositionAttack();
+
+        direction = new Vector3(0, -1, 0) * speed / timeModifier;
 
         canMove = true;
     }

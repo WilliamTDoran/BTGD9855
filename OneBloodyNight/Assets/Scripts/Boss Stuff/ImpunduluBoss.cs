@@ -18,6 +18,8 @@ public class ImpunduluBoss : Boss
     private System.Random rnd;
     private int rndCap = 3;
 
+    float timeModifier = 1.0f;
+
     private IEnumerator spinAttackCoroutine;
     private IEnumerator diveAttackCoroutine;
     private IEnumerator homingAttackCoroutine;
@@ -50,6 +52,10 @@ public class ImpunduluBoss : Boss
     [Tooltip("Time between individual feathers")]
     [SerializeField]
     private float timeBetweenFeathers = 0.6f;
+
+    [Tooltip("Multiplier applied to timings per phase")]
+    [SerializeField]
+    private float timeShred = 0.8f;
 
     [Tooltip("Reference to the main camera, used for swoop positioning")]
     [SerializeField]
@@ -126,6 +132,12 @@ public class ImpunduluBoss : Boss
         animator.ResetTrigger("start");
 
     }
+
+    protected override void Update()
+    {
+        timeModifier = Mathf.Pow(timeShred, currentPhase);
+    }
+
     private void FixedUpdate()
     {
         if (canMove)
@@ -141,12 +153,12 @@ public class ImpunduluBoss : Boss
 
         for (int i = 0; i < 8; i++)
         {
-            yield return new WaitForSeconds(timeBetweenFeathers);
+            yield return new WaitForSeconds(timeBetweenFeathers * timeModifier);
 
             facingAngle = -45f * i;
             feathers[i].gameObject.SetActive(true);
             audioSource.PlayOneShot(feather);
-            feathers[i].Fire();
+            feathers[i].Fire(timeModifier);
         }
 
         canMove = true;
@@ -167,13 +179,13 @@ public class ImpunduluBoss : Boss
         if (!leftStart) { render.flipX = true; }
 
         animator.SetTrigger("swoop");
-        while (genTimer <= initialPositionTime)
+        while (genTimer <= initialPositionTime * timeModifier)
         {
             Vector3 cameraSidePoint = leftStart ? cam.ViewportToWorldPoint(new Vector3(0.05f, 0.52f, rb.position.z)) : cam.ViewportToWorldPoint(new Vector3(0.95f, 0.52f, rb.position.z));
 
             Vector3 targetPos = new Vector3(cameraSidePoint.x, rb.position.y, Player.plr.Rb.position.z);
 
-            rb.position = Vector3.Lerp(returnPos, targetPos, genTimer / initialPositionTime);
+            rb.position = Vector3.Lerp(returnPos, targetPos, genTimer / (initialPositionTime * timeModifier));
             rb.position = new Vector3(rb.position.x, targetPos.y, rb.position.z);
 
             genTimer += Time.deltaTime;
@@ -182,7 +194,7 @@ public class ImpunduluBoss : Boss
 
         genTimer = 0.0f;
 
-        while (genTimer <= threatenTime)
+        while (genTimer <= threatenTime * timeModifier)
         {
             rb.position = leftStart ? cam.ViewportToWorldPoint(new Vector3(0.05f, 0.52f, rb.position.z)) : cam.ViewportToWorldPoint(new Vector3(0.95f, 0.52f, rb.position.z));
 
@@ -198,7 +210,7 @@ public class ImpunduluBoss : Boss
         {
             while (rb.position.x < cameraOffPoint.x)
             {
-                rb.position += new Vector3(diveSpeed * Time.deltaTime, 0, 0);
+                rb.position += new Vector3(diveSpeed * Time.deltaTime / timeModifier, 0, 0);
                 cameraOffPoint = cam.ViewportToWorldPoint(new Vector3(1.1f, 0.52f, rb.position.z));
 
                 yield return new WaitForEndOfFrame();
@@ -208,7 +220,7 @@ public class ImpunduluBoss : Boss
         {
             while (rb.position.x > cameraOffPoint.x)
             {
-                rb.position -= new Vector3(diveSpeed * Time.deltaTime, 0, 0);
+                rb.position -= new Vector3(diveSpeed * Time.deltaTime / timeModifier, 0, 0);
                 cameraOffPoint = cam.ViewportToWorldPoint(new Vector3(-0.1f, 0.52f, rb.position.z));
 
                 yield return new WaitForEndOfFrame();
@@ -219,14 +231,14 @@ public class ImpunduluBoss : Boss
 
         if (leftStart) { render.flipX = true; }
 
-        yield return new WaitForSeconds(stopTime);
+        yield return new WaitForSeconds(stopTime * timeModifier);
         Vector3 endPos = rb.position;
         swoopBox.gameObject.GetComponent<BoxCollider>().enabled = false;
         swoopBox.EndSwing();
 
-        while (genTimer <= recoverTime)
+        while (genTimer <= recoverTime * timeModifier)
         {
-            rb.position = Vector3.Lerp(endPos, returnPos, genTimer / recoverTime);
+            rb.position = Vector3.Lerp(endPos, returnPos, genTimer / (recoverTime * timeModifier));
 
             genTimer += Time.deltaTime;
             yield return new WaitForEndOfFrame();
@@ -246,7 +258,7 @@ public class ImpunduluBoss : Boss
         {
             animator.SetTrigger("walk");
             canMove = true;
-            faceDirection = PickDirection() * speed;
+            faceDirection = PickDirection() * speed / timeModifier;
             yield return new WaitForSeconds(UnityEngine.Random.Range(0.8f, 1.5f));
             canMove = false;
             rb.velocity = Vector3.zero;
@@ -269,7 +281,7 @@ public class ImpunduluBoss : Boss
         switch (check)
         {
             case 0:
-                yield return new WaitForSeconds(timeBeforeFeathers);
+                yield return new WaitForSeconds(timeBeforeFeathers * timeModifier);
 
                 StartSpinAttack();
                 animator.SetTrigger("spin");
@@ -277,7 +289,7 @@ public class ImpunduluBoss : Boss
                 break;
 
             case 1:
-                yield return new WaitForSeconds(timeBeforeLightning);
+                yield return new WaitForSeconds(timeBeforeLightning * timeModifier);
 
                 lightnings[lightningCycle].Initiate(Player.plr.Rb.position);
 
@@ -289,32 +301,34 @@ public class ImpunduluBoss : Boss
                 break;
 
             case 2:
-                yield return new WaitForSeconds(timeBeforeSwoop);
+                yield return new WaitForSeconds(timeBeforeSwoop * timeModifier);
 
                 animator.ResetTrigger("spin");
                 StartDiveAttack();
                 break;
 
             case 3:
-                yield return new WaitForSeconds(timeBeforeHoming);
+                yield return new WaitForSeconds(timeBeforeHoming * timeModifier);
 
                 StartHomingAttack();
                 break;
 
             case 4:
-                yield return new WaitForSeconds(timeBeforeRain);
+                yield return new WaitForSeconds(timeBeforeRain * timeModifier);
 
                 StartRaining();
                 break;
 
             case 5:
+                yield return new WaitForSeconds(timeBeforeBeam * timeModifier);
+
                 StopRandomBehavior();
                 Debug.Log("cum");
                 StartRandomBehavior();
                 break;
 
             default:
-                yield return new WaitForSeconds(timeBeforeFeathers);
+                yield return new WaitForSeconds(timeBeforeFeathers * timeModifier);
 
                 StartSpinAttack();
                 animator.SetTrigger("spin");
@@ -348,7 +362,7 @@ public class ImpunduluBoss : Boss
 
         for (int i = 0; i < 3; i++)
         {
-            yield return new WaitForSeconds(timeBetweenFeathers);
+            yield return new WaitForSeconds(timeBetweenFeathers * timeModifier);
 
             facingAngle = Vector3.SignedAngle(Vector3.right, (Player.plr.Rb.position - rb.position), Vector3.up);
             facingAngle += (1 - i) * 30;
@@ -356,7 +370,7 @@ public class ImpunduluBoss : Boss
             facingAngle *= -1;
             homings[i].gameObject.SetActive(true);
             audioSource.PlayOneShot(feather);
-            homings[i].Fire();
+            homings[i].Fire(timeModifier);
         }
 
         StartHomingFlightTimer();
