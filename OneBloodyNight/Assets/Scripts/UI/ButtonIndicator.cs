@@ -7,6 +7,8 @@ public class ButtonIndicator : MonoBehaviour, IPointerEnterHandler, IPointerExit
 {
     [SerializeField]
     private GameObject pointer;
+    [SerializeField]
+    private GameObject pointer1;
 
     public AudioSource audioSource;
 
@@ -14,6 +16,7 @@ public class ButtonIndicator : MonoBehaviour, IPointerEnterHandler, IPointerExit
     void Start()
     {
         pointer.SetActive(false);
+        pointer1.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,12 +28,14 @@ public class ButtonIndicator : MonoBehaviour, IPointerEnterHandler, IPointerExit
     public void OnPointerEnter(PointerEventData e)
     {
         pointer.SetActive(true);
+        pointer1.SetActive(true);
         audioSource.Play();
     }
 
     public void OnPointerExit(PointerEventData e)
     {
         pointer.SetActive(false);
+        pointer1.SetActive(false);
         audioSource.Stop();
 
     }
