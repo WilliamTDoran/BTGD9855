@@ -25,6 +25,7 @@ public class Monster : GameActor
 
     public ParticleSystem DeathPart; //particles
     public ParticleSystem blood;
+    public BloodSplatter Bloody;
 
     private TextMeshPro healthDebugText;
 
@@ -110,6 +111,7 @@ public class Monster : GameActor
             dead = true;
             animator.SetTrigger("Die");
             DeathPart.Play();
+            Bloody.Ded();
             StopAllCoroutines();
             canMove = false;
             canAttack = false;
