@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 8
+  spritePixelsToUnits: 6
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1810,11 +1810,11 @@ TextureImporter:
       ImpunduluSummon_56: -1616933356
       ImpunduluSummon_36: -365652680
       ImpunduluSummon_2: -1841372142
+      ImpunduluSummon_51: -922769801
       ImpunduluSummon_44: -1293137406
       ImpunduluSummon_46: 7064727
       ImpunduluSummon_42: 2006313769
       ImpunduluSummon_28: 1091887164
-      ImpunduluSummon_51: -922769801
       ImpunduluSummon_26: -1086611391
       ImpunduluSummon_22: 1769805923
       ImpunduluSummon_18: -162778114
