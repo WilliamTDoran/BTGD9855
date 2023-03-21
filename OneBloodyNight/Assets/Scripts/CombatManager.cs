@@ -13,8 +13,7 @@ using UnityEngine.UI;
 /// </summary>
 public class CombatManager : MonoBehaviour
 {
-    private IEnumerator immuneCoroutine; //drives i-frames
-    private IEnumerator hitstunCoroutine; //drives hitstun
+
 
     private static CombatManager instance; //static reference
     public static CombatManager Instance { get { return instance; } }
@@ -77,8 +76,8 @@ public class CombatManager : MonoBehaviour
                 {
                     ApplyKnockback(attacker, targetActor, knockbackAmount);
                 }
-                StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
-                StartHitstun(targetActor, used.HitstunDuration);
+                targetActor.StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
+                targetActor.StartHitstun(targetActor, used.HitstunDuration);
                 targetActor.OnReceiveHit();
             }
                 
@@ -100,8 +99,8 @@ public class CombatManager : MonoBehaviour
             {
                 Bloodmeter.instance.changeBlood(-damageAmount);
                 ApplyKnockback(attacker, targetActor, knockbackAmount);
-                StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
-                StartHitstun(targetActor, used.HitstunDuration);
+                targetActor.StartImmuneCountdown(targetActor, targetActor.ImmuneDuration);
+                targetActor.StartHitstun(targetActor, used.HitstunDuration);
                 used.OnHitPlayer();
                 targetActor.OnReceiveHit();
             }
@@ -149,33 +148,7 @@ public class CombatManager : MonoBehaviour
         targetRigidBody.AddForce(direction, ForceMode.Impulse); //applies force
     }
 
-    /// <summary>
-    /// Keeps the target immune for a certain duration after being attacked. Currently unimplemented
-    /// </summary>
-    /// <param name="target">The target to be made immune</param>
-    /// <param name="immuneDuration">How long the immunity lasts in seconds</param>
-    /// <returns>Functional return IEnumerator</returns>
-    private IEnumerator ImmuneCountdown(GameActor target, float immuneDuration)
-    {
-        target.Immune = true;
 
-        yield return new WaitForSeconds(immuneDuration);
-
-        target.Immune = false;
-    }
-
-    /// <summary>
-    /// Prevents the target from taking action after being hit for a certain time.
-    /// </summary>
-    /// <returns>Functional return IEnumerator</returns>
-    private IEnumerator Hitstun(GameActor target, float hitstunDuration)
-    {
-        target.Stunned = true;
-
-        yield return new WaitForSeconds(hitstunDuration);
-
-        target.Stunned = false;
-    }
 
     /// <summary>
     /// Checks whether there is a wall inbetween the target and the attacker by raycasting
@@ -194,27 +167,7 @@ public class CombatManager : MonoBehaviour
 
 
     //~~The Coroutine Section~~
-    private void StartImmuneCountdown(GameActor target, float immuneDuration)
-    {
-        immuneCoroutine = ImmuneCountdown(target, immuneDuration);
-        StartCoroutine(immuneCoroutine);
-    }
+    
 
-    private void StopImmuneCountdown()
-    {
-        StopCoroutine(immuneCoroutine);
-        immuneCoroutine = null;
-    }
 
-    private void StartHitstun(GameActor target, float hitstunDuration)
-    {
-        hitstunCoroutine = Hitstun(target, hitstunDuration);
-        StartCoroutine(hitstunCoroutine);
-    }
-
-    private void StopHitstun()
-    {
-        StopCoroutine(hitstunCoroutine);
-        hitstunCoroutine = null;
-    }
 }

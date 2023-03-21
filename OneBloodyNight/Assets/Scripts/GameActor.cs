@@ -15,6 +15,9 @@ using UnityEngine;
 /// </summary>
 public class GameActor : MonoBehaviour
 {
+    private IEnumerator immuneCoroutine; //drives i-frames
+    private IEnumerator hitstunCoroutine; //drives hitstun
+
     protected Animator animator;
     protected SpriteRenderer render;
 
@@ -27,6 +30,7 @@ public class GameActor : MonoBehaviour
     protected Rigidbody rb; //the rigidbody attached the actor's gameObject
     public Rigidbody Rb { get { return rb; } }
     protected Collider col; //the collider attached to the actor's gameObject
+    public Collider Col { get { return col; } }
 
     protected bool canMove; //whether the actor can (willingly) move
     public bool CanMove { get { return canMove; } set { canMove = value; } }
@@ -118,6 +122,58 @@ public class GameActor : MonoBehaviour
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// Keeps the target immune for a certain duration after being attacked.
+    /// </summary>
+    /// <param name="target">The target to be made immune</param>
+    /// <param name="immuneDuration">How long the immunity lasts in seconds</param>
+    /// <returns>Functional return IEnumerator</returns>
+    private IEnumerator ImmuneCountdown(GameActor target, float immuneDuration)
+    {
+        target.Immune = true;
+
+        yield return new WaitForSeconds(immuneDuration);
+
+        target.Immune = false;
+    }
+
+    /// <summary>
+    /// Prevents the target from taking action after being hit for a certain time.
+    /// </summary>
+    /// <returns>Functional return IEnumerator</returns>
+    private IEnumerator Hitstun(GameActor target, float hitstunDuration)
+    {
+        target.Stunned = true;
+
+        yield return new WaitForSeconds(hitstunDuration);
+
+        target.Stunned = false;
+    }
+
+    internal void StartImmuneCountdown(GameActor target, float immuneDuration)
+    {
+        immuneCoroutine = ImmuneCountdown(target, immuneDuration);
+        StartCoroutine(immuneCoroutine);
+    }
+
+    private void StopImmuneCountdown()
+    {
+        StopCoroutine(immuneCoroutine);
+        immuneCoroutine = null;
+    }
+
+    internal void StartHitstun(GameActor target, float hitstunDuration)
+    {
+        hitstunCoroutine = Hitstun(target, hitstunDuration);
+        StartCoroutine(hitstunCoroutine);
+    }
+
+    private void StopHitstun()
+    {
+        StopCoroutine(hitstunCoroutine);
+        hitstunCoroutine = null;
     }
 
     //These are basically just here serving the same function as an interface cause I don't want to double up on both virtual inherited classes and also interfaces
