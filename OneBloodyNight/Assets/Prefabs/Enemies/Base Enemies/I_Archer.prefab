@@ -172,6 +172,51 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4861223237053130624}
   m_maskType: 0
+--- !u!1 &5516367846309288343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7974292078203747034}
+  - component: {fileID: 8945016565812035934}
+  m_Layer: 0
+  m_Name: bloody
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7974292078203747034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5516367846309288343}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -1.1800005, z: -1.0500004}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1444941585499024743}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8945016565812035934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5516367846309288343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffdefafcbc0bf93469b92ddf245bf583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Blood: {fileID: 5272952776468489901, guid: 3fd7fc468fed13c44aafd4151890fbe9, type: 3}
 --- !u!1 &6515632594080795380
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +255,7 @@ Transform:
   - {fileID: 3990240579505590109}
   - {fileID: 4469217382885803799}
   - {fileID: 7009137291686941824}
+  - {fileID: 7974292078203747034}
   m_Father: {fileID: 4162488345206328425}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -308,12 +354,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3500
   immuneDuration: 0
-  maxHitPoints: 40
+  maxHitPoints: 50
   walkAnim: 1
   DeathPart: {fileID: 7009137291686941825}
   blood: {fileID: 4469217382885803798}
+  Bloody: {fileID: 8945016565812035934}
   basicAttack: {fileID: 6537208050856354513}
-  bloodOnKill: 20
+  bloodOnKill: 50
   attackTimer: 6
   healthBarObject: {fileID: 393623155723842940}
 --- !u!114 &1489538925786968429
@@ -505,12 +552,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76106d47db866c14db86de1a1c2c6c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 24
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
-  damage: 40
-  knockbackAmount: 50
+  damage: 50
+  knockbackAmount: 60
   hitstunDuration: 0.2
   pushbackAmount: 0
   returnDrag: 0

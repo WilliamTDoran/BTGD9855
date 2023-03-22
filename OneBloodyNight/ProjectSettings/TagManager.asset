@@ -59,6 +59,9 @@ TagManager:
   - name: Ground
     uniqueID: 2477664863
     locked: 0
+  - name: Blood Splatter
+    uniqueID: 2131791757
+    locked: 0
   - name: Props
     uniqueID: 3246859225
     locked: 0
@@ -70,9 +73,6 @@ TagManager:
     locked: 0
   - name: Enemies (Not used anymore)
     uniqueID: 4023064477
-    locked: 0
-  - name: Blood Splatter
-    uniqueID: 2131791757
     locked: 0
   - name: SpriteSorting
     uniqueID: 1953289611

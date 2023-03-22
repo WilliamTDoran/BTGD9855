@@ -153,14 +153,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3000
   immuneDuration: 0
-  maxHitPoints: 50
+  maxHitPoints: 70
   walkAnim: 1
   DeathPart: {fileID: 8332078841455388088}
   blood: {fileID: 1179206688203655295}
   Bloody: {fileID: 9069883950252341207}
   basicAttack: {fileID: 8342049976024423553}
-  bloodOnKill: 25
-  attackTimer: 4
+  bloodOnKill: 70
+  attackTimer: 5
   healthBarObject: {fileID: 6444965508750604975}
 --- !u!95 &2771159159247393256
 Animator:
@@ -390,7 +390,7 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
-  damage: 20
+  damage: 40
   knockbackAmount: 300
   hitstunDuration: 0.3
   pushbackAmount: 2

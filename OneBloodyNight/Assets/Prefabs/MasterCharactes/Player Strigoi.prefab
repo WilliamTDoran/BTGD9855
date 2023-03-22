@@ -340,10 +340,10 @@ MonoBehaviour:
   berserkUptimeDebugText: {fileID: 0}
   berserkDamageDebugText: {fileID: 0}
   berserkSpeedDebugText: {fileID: 0}
-  berserkMaxTime: 2.4
-  damageUpPerSecond: 2
-  speedUpPerSecond: 2
-  invisibilityDuration: 4
+  berserkMaxTime: 2
+  damageUpPerSecond: 3
+  speedUpPerSecond: 3
+  invisibilityDuration: 6
 --- !u!212 &2249110078326297011
 SpriteRenderer:
   m_ObjectHideFlags: 0

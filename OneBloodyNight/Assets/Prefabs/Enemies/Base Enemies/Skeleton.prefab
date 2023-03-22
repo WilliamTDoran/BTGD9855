@@ -38,6 +38,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6584839736122718086}
+  - {fileID: 2015230194579284128}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -153,6 +154,7 @@ MonoBehaviour:
   walkAnim: 1
   DeathPart: {fileID: 0}
   blood: {fileID: 0}
+  Bloody: {fileID: 7213602577125620163}
   basicAttack: {fileID: 0}
   bloodOnKill: 100
   attackTimer: 4
@@ -210,6 +212,9 @@ MonoBehaviour:
     host: {fileID: 1506505331822888184}
   patrolAIProperties:
     spottyDistance: 0
+    despawnDistance: 0
+  chaseAIProperties:
+    despawnDistance: 0
   lostAIProperties:
     timeTilLoseSight: 3
   attackAIProperties:
@@ -402,3 +407,48 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 4081044056624357544}
   m_maskType: 0
+--- !u!1 &3616622155990717942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2015230194579284128}
+  - component: {fileID: 7213602577125620163}
+  m_Layer: 0
+  m_Name: bloody
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2015230194579284128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3616622155990717942}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -1.1800002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5276966131897054383}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7213602577125620163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3616622155990717942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffdefafcbc0bf93469b92ddf245bf583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Blood: {fileID: 5272952776468489901, guid: 3fd7fc468fed13c44aafd4151890fbe9, type: 3}
