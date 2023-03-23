@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class YaraBoss : Boss
 {
-    
+    protected override void Start()
+    {
+        base.Start();
+
+        StartRandomBehavior();
+    }
 }
