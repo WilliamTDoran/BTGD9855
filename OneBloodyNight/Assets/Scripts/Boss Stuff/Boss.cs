@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Boss : GameActor
 {
+    
+
+
     protected System.Random rnd;
     protected int rndCap = 3;
 
@@ -23,7 +27,7 @@ public class Boss : GameActor
     protected override void Awake()
     {
         base.Awake();
-
+        
         CurHitPoints = MaxHitPoints;
 
         if (instance != null & instance != this)
@@ -47,10 +51,11 @@ public class Boss : GameActor
     protected override void Update()
     {
         base.Update();
-
+        
         if (CurHitPoints <= 0)
         {
-            Destroy(gameObject);
+            //StartCoroutine("Ded");
+            
         }
     }
 
@@ -67,4 +72,13 @@ public class Boss : GameActor
             }
         }
     }
+
+    private IEnumerator Ded()
+    {
+        yield return new WaitForSeconds(5f);
+        animator.SetTrigger("Die");
+        Destroy(gameObject);
+    }
+
+
 }

@@ -129,6 +129,7 @@ public class ImpunduluBoss : Boss
     private float beamRotationSpeed = 30;
     /*~~~~~~~~~~~~~~*/
 
+    private bool isDead;
 
     protected override void Start()
     {
@@ -136,6 +137,7 @@ public class ImpunduluBoss : Boss
         base.Start();
         animator.SetTrigger("start");
         StartCoroutine("startanim");
+        isDead = false;
         //StartRandomBehavior();
         //StartSpinAttack();
     }
@@ -151,6 +153,16 @@ public class ImpunduluBoss : Boss
 
     protected override void Update()
     {
+
+        if ((CurHitPoints <= 0) && (isDead == false))
+        {
+            isDead = true;
+            StopAllCoroutines();
+            StartCoroutine("Ded");
+
+        }
+
+        base.Update();
         timeModifier = Mathf.Pow(timeShred, currentPhase);
     }
 
@@ -509,5 +521,12 @@ public class ImpunduluBoss : Boss
     {
         StopCoroutine(beamsCoroutine);
         beamsCoroutine = null;
+    }
+
+    private IEnumerator Ded()
+    {
+        animator.SetTrigger("Die");
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
     }
 }

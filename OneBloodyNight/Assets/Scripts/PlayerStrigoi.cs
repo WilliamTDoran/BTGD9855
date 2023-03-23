@@ -147,6 +147,7 @@ public class PlayerStrigoi : Player
     /// </summary>
     protected override void Update()
     {
+
         base.Update();
 
         if (basicAttackDown && canAttack && !stunned && !GameManager.instance.GCD(false)) //bit messy all these checks, but it gets the job done and makes it actually pretty airtight
