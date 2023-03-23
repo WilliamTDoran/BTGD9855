@@ -22,10 +22,6 @@ public class ImpunduluBoss : Boss
     private IEnumerator homingAttackCoroutine;
     private IEnumerator homingFlightTimerCoroutine;
     private IEnumerator beamsCoroutine;
-    private IEnumerator randomBehaviorCoroutine;
-    private IEnumerator randomAttackingCoroutine;
-
-    private Vector3 faceDirection;
 
     private int lightningCycle = 0;
 
@@ -164,14 +160,6 @@ public class ImpunduluBoss : Boss
 
         base.Update();
         timeModifier = Mathf.Pow(timeShred, currentPhase);
-    }
-
-    private void FixedUpdate()
-    {
-        if (canMove && !stunned)
-        {
-            rb.AddForce(faceDirection, ForceMode.Force);
-        }
     }
 
     private IEnumerator SpinAttack()

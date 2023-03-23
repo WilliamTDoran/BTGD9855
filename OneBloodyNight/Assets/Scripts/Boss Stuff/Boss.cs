@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class Boss : GameActor
 {
-    
+    protected IEnumerator randomBehaviorCoroutine;
+    protected IEnumerator randomAttackingCoroutine;
 
+    protected Vector3 faceDirection;
 
     protected System.Random rnd;
     protected int rndCap = 3;
@@ -56,6 +58,14 @@ public class Boss : GameActor
         {
             //StartCoroutine("Ded");
             
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (canMove && !stunned)
+        {
+            rb.AddForce(faceDirection, ForceMode.Force);
         }
     }
 
