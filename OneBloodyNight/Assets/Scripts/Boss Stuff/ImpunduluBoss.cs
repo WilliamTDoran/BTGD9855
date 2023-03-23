@@ -151,6 +151,8 @@ public class ImpunduluBoss : Boss
 
     protected override void Update()
     {
+        base.Update();
+
         timeModifier = Mathf.Pow(timeShred, currentPhase);
     }
 
