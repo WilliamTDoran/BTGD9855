@@ -13,6 +13,8 @@ public class Boss : GameActor
     protected System.Random rnd;
     protected int rndCap = 3;
 
+    protected float timeModifier = 1.0f;
+
     internal static Boss instance;
 
     /* Exposed Variables */
@@ -24,6 +26,10 @@ public class Boss : GameActor
     [Tooltip("Current phase (Only change manually for testing, always change back afterward)")]
     [SerializeField]
     protected int currentPhase = 0;
+
+    [Tooltip("Multiplier applied to timings per phase")]
+    [SerializeField]
+    protected float timeShred = 0.8f;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     protected override void Awake()
@@ -53,12 +59,8 @@ public class Boss : GameActor
     protected override void Update()
     {
         base.Update();
-        
-        if (CurHitPoints <= 0)
-        {
-            //StartCoroutine("Ded");
-            
-        }
+
+        timeModifier = Mathf.Pow(timeShred, currentPhase);
     }
 
     private void FixedUpdate()
@@ -68,6 +70,24 @@ public class Boss : GameActor
             rb.AddForce(faceDirection, ForceMode.Force);
         }
     }
+
+    private IEnumerator RandomBehavior()
+    {
+        StartRandomAttacking();
+
+        while (true)
+        {
+            animator.SetTrigger("walk");
+            canMove = true;
+            faceDirection = PickDirection() * speed / timeModifier;
+            yield return new WaitForSeconds(UnityEngine.Random.Range(0.8f, 1.5f));
+            canMove = false;
+            rb.velocity = Vector3.zero;
+            yield return new WaitForSeconds(UnityEngine.Random.Range(0.2f, 0.8f));
+        }
+    }
+
+    protected virtual IEnumerator RandomAttacking() { yield return new WaitForEndOfFrame(); }
 
     private IEnumerator PhaseCheck()
     {
@@ -90,5 +110,35 @@ public class Boss : GameActor
         Destroy(gameObject);
     }
 
+    protected Vector3 PickDirection()
+    {
+        Vector3 direction = new Vector3(UnityEngine.Random.Range(-1f, 1f), 0, UnityEngine.Random.Range(-1f, 1f));
+        direction.Normalize();
+        return direction;
+    }
 
+
+    protected void StartRandomBehavior()
+    {
+        randomBehaviorCoroutine = RandomBehavior();
+        StartCoroutine(randomBehaviorCoroutine);
+    }
+
+    protected void StopRandomBehavior()
+    {
+        StopCoroutine(randomBehaviorCoroutine);
+        randomBehaviorCoroutine = null;
+    }
+
+    protected void StartRandomAttacking()
+    {
+        randomAttackingCoroutine = RandomAttacking();
+        StartCoroutine(randomAttackingCoroutine);
+    }
+
+    protected void StopRandomAttacking()
+    {
+        StopCoroutine(randomAttackingCoroutine);
+        randomAttackingCoroutine = null;
+    }
 }

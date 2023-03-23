@@ -15,8 +15,6 @@ public class ImpunduluBoss : Boss
     public AudioClip Intro;
     /*~~~~~~~*/
 
-    float timeModifier = 1.0f;
-
     private IEnumerator spinAttackCoroutine;
     private IEnumerator diveAttackCoroutine;
     private IEnumerator homingAttackCoroutine;
@@ -61,10 +59,6 @@ public class ImpunduluBoss : Boss
     [Tooltip("Time between individual feathers")]
     [SerializeField]
     private float timeBetweenFeathers = 0.6f;
-
-    [Tooltip("Multiplier applied to timings per phase")]
-    [SerializeField]
-    private float timeShred = 0.8f;
 
     [Tooltip("Reference to the main camera, used for swoop positioning")]
     [SerializeField]
@@ -159,7 +153,68 @@ public class ImpunduluBoss : Boss
         }
 
         base.Update();
-        timeModifier = Mathf.Pow(timeShred, currentPhase);
+    }
+
+    protected override IEnumerator RandomAttacking()
+    {
+        int upperLimit = currentPhase == 2 ? rndCap + currentPhase + 1 : rndCap + currentPhase; //this is dumb as rocks but fuck if it don't work
+        int check = rnd.Next(0, upperLimit);
+
+        switch (check)
+        {
+            case 0:
+                yield return new WaitForSeconds(timeBeforeFeathers * timeModifier);
+
+                StartSpinAttack();
+                animator.SetTrigger("spin");
+                break;
+
+            case 1:
+                yield return new WaitForSeconds(timeBeforeLightning * timeModifier);
+
+                lightnings[lightningCycle].Initiate(Player.plr.Rb.position);
+
+                lightningCycle = lightningCycle > 1 ? 0 : lightningCycle + 1;
+                audioSource.PlayOneShot(Lightning);
+                animator.ResetTrigger("spin");
+                StopRandomBehavior();
+                StartRandomBehavior();
+                break;
+
+            case 2:
+                yield return new WaitForSeconds(timeBeforeSwoop * timeModifier);
+
+                animator.ResetTrigger("spin");
+                StartDiveAttack();
+                break;
+
+            case 3:
+                yield return new WaitForSeconds(timeBeforeHoming * timeModifier);
+
+                StartHomingAttack();
+                break;
+
+            case 4:
+                yield return new WaitForSeconds(timeBeforeRain * timeModifier);
+
+                StartRaining();
+                break;
+
+            case 5:
+                yield return new WaitForSeconds(timeBeforeBeam * timeModifier);
+
+                StartBeams();
+                break;
+
+            default:
+                Debug.LogError(gameObject.name + "defaulted on RandomAttacking");
+
+                yield return new WaitForSeconds(timeBeforeFeathers * timeModifier);
+
+                StartSpinAttack();
+                animator.SetTrigger("spin");
+                break;
+        }
     }
 
     private IEnumerator SpinAttack()
@@ -266,91 +321,6 @@ public class ImpunduluBoss : Boss
         StartRandomBehavior();
     }
 
-    private IEnumerator RandomBehavior()
-    {
-        StartRandomAttacking();
-
-        while (true)
-        {
-            animator.SetTrigger("walk");
-            canMove = true;
-            faceDirection = PickDirection() * speed / timeModifier;
-            yield return new WaitForSeconds(UnityEngine.Random.Range(0.8f, 1.5f));
-            canMove = false;
-            rb.velocity = Vector3.zero;
-            yield return new WaitForSeconds(UnityEngine.Random.Range(0.2f, 0.8f));
-        }
-    }
-
-    private Vector3 PickDirection()
-    {
-        Vector3 direction = new Vector3(UnityEngine.Random.Range(-1f, 1f), 0, UnityEngine.Random.Range(-1f, 1f));
-        direction.Normalize();
-        return direction;
-    }
-
-    private IEnumerator RandomAttacking()
-    {
-        int upperLimit = currentPhase == 2 ? rndCap + currentPhase + 1 : rndCap + currentPhase; //this is dumb as rocks but fuck if it don't work
-        int check = rnd.Next(0, upperLimit);
-
-        switch (check)
-        {
-            case 0:
-                yield return new WaitForSeconds(timeBeforeFeathers * timeModifier);
-
-                StartSpinAttack();
-                animator.SetTrigger("spin");
-                break;
-
-            case 1:
-                yield return new WaitForSeconds(timeBeforeLightning * timeModifier);
-
-                lightnings[lightningCycle].Initiate(Player.plr.Rb.position);
-
-                lightningCycle = lightningCycle > 1 ? 0 : lightningCycle + 1;
-                audioSource.PlayOneShot(Lightning);
-                animator.ResetTrigger("spin");
-                StopRandomBehavior();
-                StartRandomBehavior();
-                break;
-
-            case 2:
-                yield return new WaitForSeconds(timeBeforeSwoop * timeModifier);
-
-                animator.ResetTrigger("spin");
-                StartDiveAttack();
-                break;
-
-            case 3:
-                yield return new WaitForSeconds(timeBeforeHoming * timeModifier);
-
-                StartHomingAttack();
-                break;
-
-            case 4:
-                yield return new WaitForSeconds(timeBeforeRain * timeModifier);
-
-                StartRaining();
-                break;
-
-            case 5:
-                yield return new WaitForSeconds(timeBeforeBeam * timeModifier);
-
-                StartBeams();
-                break;
-
-            default:
-                Debug.LogError(gameObject.name + "defaulted on RandomAttacking");
-
-                yield return new WaitForSeconds(timeBeforeFeathers * timeModifier);
-
-                StartSpinAttack();
-                animator.SetTrigger("spin");
-                break;
-        }
-    }
-
     private IEnumerator HomingAttack()
     {
         if (homingFlightTimerCoroutine != null)
@@ -449,30 +419,6 @@ public class ImpunduluBoss : Boss
         StopCoroutine(diveAttackCoroutine);
         diveAttackCoroutine = null;
         animator.SetTrigger("walk");
-    }
-
-    private void StartRandomBehavior()
-    {
-        randomBehaviorCoroutine = RandomBehavior();
-        StartCoroutine(randomBehaviorCoroutine);
-    }
-
-    private void StopRandomBehavior()
-    {
-        StopCoroutine(randomBehaviorCoroutine);
-        randomBehaviorCoroutine = null;
-    }
-
-    private void StartRandomAttacking()
-    {
-        randomAttackingCoroutine = RandomAttacking();
-        StartCoroutine(randomAttackingCoroutine);
-    }
-
-    private void StopRandomAttacking()
-    {
-        StopCoroutine(randomAttackingCoroutine);
-        randomAttackingCoroutine = null;
     }
 
     private void StartHomingAttack()
