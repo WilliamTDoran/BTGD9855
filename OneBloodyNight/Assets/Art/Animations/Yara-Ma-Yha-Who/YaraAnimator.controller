@@ -14,7 +14,7 @@ AnimatorStateMachine:
     m_Position: {x: 600, y: -100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4747244312363676781}
-    m_Position: {x: 0, y: 500, z: 0}
+    m_Position: {x: 0, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3620263315504669782}
     m_Position: {x: 600, y: 100, z: 0}
@@ -23,13 +23,13 @@ AnimatorStateMachine:
     m_Position: {x: 200, y: 400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6827722114365557992}
-    m_Position: {x: -200, y: 400, z: 0}
+    m_Position: {x: -200, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1714413714213809895}
-    m_Position: {x: 400, y: 500, z: 0}
+    m_Position: {x: 400, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4366693866384747950}
-    m_Position: {x: 600, y: 400, z: 0}
+    m_Position: {x: 600, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2326028957307292314}
     m_Position: {x: 200, y: 100, z: 0}
@@ -295,7 +295,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: YaraShockwaveSlam
-  m_Speed: 0.25
+  m_Speed: 0.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3247854487489233702}

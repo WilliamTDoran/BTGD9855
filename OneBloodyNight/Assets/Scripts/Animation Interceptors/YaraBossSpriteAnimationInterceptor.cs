@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using UnityEngine;
 
 public class YaraBossSpriteAnimationInterceptor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private YaraBoss root;
+
+    public void FireRocks()
     {
-        
+        root.ShockwaveFire();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void EndSlam()
     {
-        
+        root.ShockSlamRunning = false;
     }
 }

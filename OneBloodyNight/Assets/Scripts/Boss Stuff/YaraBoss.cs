@@ -9,7 +9,16 @@ using UnityEngine;
 /// </summary>
 public class YaraBoss : Boss
 {
+    private IEnumerator shockwaveSlamCoroutine;
+
+    private bool shockSlamRunning = false;
+    public bool ShockSlamRunning { set { shockSlamRunning = value;} }
+
     /* Exposed Variables */
+    [Tooltip("All 8 rocks for shockwave slam")]
+    [SerializeField]
+    private Shockrock[] shockrocks;
+
     [SerializeField]
     private Animator spanimator;
 
@@ -68,7 +77,7 @@ public class YaraBoss : Boss
         int upperLimit = rndCap + currentPhase;
         int check = rnd.Next(0, upperLimit);
 
-        switch (check)
+        switch (1)
         {
             case 0:
                 {
@@ -81,6 +90,7 @@ public class YaraBoss : Boss
                 {
                     //Shockwave Slam
                     yield return new WaitForSeconds(timeBeforeShockwave * timeModifier);
+                    StartShockwaveSlam();
                     break;
                 }
 
@@ -108,5 +118,46 @@ public class YaraBoss : Boss
             default:
                 goto case 0;
         }
+    }
+
+    private IEnumerator ShockwaveSlam()
+    {
+        StopRandomBehavior();
+        canMove = false;
+        immune = true;
+        shockSlamRunning = true;
+
+        spanimator.SetTrigger("ShockemRockem");
+
+        yield return new WaitUntil(() => !shockSlamRunning);
+
+        canMove = true;
+        immune = false;
+        StartRandomBehavior();
+    }
+
+    internal void ShockwaveFire()
+    {
+        for (int i = 0; i < 8; i++)
+        {
+            facingAngle = -45f * i;
+            shockrocks[i].gameObject.SetActive(true);
+            shockrocks[i].Fire(i, timeModifier);
+        }
+    }
+
+
+
+
+    private void StartShockwaveSlam()
+    {
+        shockwaveSlamCoroutine = ShockwaveSlam();
+        StartCoroutine(shockwaveSlamCoroutine);
+    }
+
+    private void StopShockwaveSlam()
+    {
+        StopCoroutine(shockwaveSlamCoroutine);
+        shockwaveSlamCoroutine = null;
     }
 }
