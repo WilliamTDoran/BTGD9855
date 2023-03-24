@@ -77,6 +77,7 @@ public class Boss : GameActor
 
         while (true)
         {
+            animator.SetTrigger("walk");
             canMove = true;
             faceDirection = PickDirection() * speed / timeModifier;
             yield return new WaitForSeconds(UnityEngine.Random.Range(0.8f, 1.5f));
