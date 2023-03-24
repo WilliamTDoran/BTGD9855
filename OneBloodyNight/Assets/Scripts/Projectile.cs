@@ -19,6 +19,14 @@ public class Projectile : Attack
     [Tooltip("Degrees per second maximum that the projectile can turn toward target when homing")]
     [SerializeField]
     private float homingRotSpeed;
+
+    [Tooltip("Whether this projectile should pierce creatures")]
+    [SerializeField]
+    private bool pierceActors = false;
+
+    [Tooltip("Whether this projectile should pierce walls")]
+    [SerializeField]
+    private bool pierceWalls = false;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     protected override void Update()
@@ -77,12 +85,18 @@ public class Projectile : Attack
     {
         base.OnHitWall();
 
-        FinishFlight();
+        if (!pierceWalls)
+        {
+            FinishFlight();
+        }
     }
 
     internal override void OnHitPlayer()
     {
-        FinishFlight();
+        if (!pierceActors)
+        {
+            FinishFlight();
+        }
     }
 
     internal void FinishFlight()

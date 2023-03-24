@@ -21,8 +21,8 @@ public class GameActor : MonoBehaviour
     protected Animator animator;
     protected SpriteRenderer render;
 
-    private float actualVelocity; //the real, measured velocity of the rigidbody
-    private float clampedVelocity; //the velocity clamped to a max of 1, used for setting animation
+    protected float actualVelocity; //the real, measured velocity of the rigidbody
+    protected float clampedVelocity; //the velocity clamped to a max of 1, used for setting animation
 
     protected float facingAngle; //the direction the actor is 'facing' in degrees (has no inherent bearing on the object's actual transform rotation)
     public float FacingAngle { get { return facingAngle; } }
@@ -66,7 +66,7 @@ public class GameActor : MonoBehaviour
 
     [Tooltip("Whether this GameActor has a walking animation")]
     [SerializeField]
-    private bool walkAnim = false;
+    protected bool walkAnim = false;
     /* -~-~-~-~-~-~-~-~- */
 
     /// <summary>

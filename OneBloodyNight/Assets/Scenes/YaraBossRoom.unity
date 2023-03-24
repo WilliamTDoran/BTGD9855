@@ -2295,6 +2295,76 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332683539}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &352329609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 352329611}
+  - component: {fileID: 352329610}
+  m_Layer: 0
+  m_Name: Shockrock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &352329610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352329609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76106d47db866c14db86de1a1c2c6c2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  immuneDuration: 0
+  maxHitPoints: 0
+  walkAnim: 0
+  damage: 50
+  knockbackAmount: 50
+  hitstunDuration: 0.5
+  pushbackAmount: 0
+  returnDrag: 0
+  drag: 20
+  wallPushbackScalar: 0
+  forceStill: 0
+  floatDistance: 0
+  untargetableTags:
+  - Monster
+  - Floor
+  checkForWalls: 1
+  attacker: {fileID: 352329610}
+  spriteAnimator: {fileID: 0}
+  showHitbox: 0
+  hitboxMesh: {fileID: 0}
+  shooter: {fileID: 0}
+  homing: 0
+  homingRotSpeed: 0
+  pierceActors: 0
+  pierceWalls: 0
+--- !u!4 &352329611
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352329609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -89.91775, y: 14.403577, z: 15.875104}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &371854760
 GameObject:
   m_ObjectHideFlags: 0
@@ -4404,13 +4474,15 @@ MonoBehaviour:
   speed: 3000
   immuneDuration: 0
   maxHitPoints: 1000
-  walkAnim: 0
+  walkAnim: 1
   phases:
   - 1
   - 0.8
   - 0.4
   currentPhase: 0
   timeShred: 0.8
+  spanimator: {fileID: 677486036}
+  sprender: {fileID: 677486037}
 --- !u!54 &879865973
 Rigidbody:
   m_ObjectHideFlags: 0
