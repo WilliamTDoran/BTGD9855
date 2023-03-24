@@ -4483,6 +4483,11 @@ MonoBehaviour:
   timeShred: 0.8
   spanimator: {fileID: 677486036}
   sprender: {fileID: 677486037}
+  timeBeforeBasic: 0
+  timeBeforeShockwave: 0
+  timeBeforeRegurgitate: 0
+  timeBeforePound: 0
+  timeBeforeBloodStrike: 0
 --- !u!54 &879865973
 Rigidbody:
   m_ObjectHideFlags: 0
