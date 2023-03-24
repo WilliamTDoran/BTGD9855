@@ -80,3 +80,6 @@ TagManager:
   - name: Fog
     uniqueID: 896860427
     locked: 0
+  - name: Lightning
+    uniqueID: 173520511
+    locked: 0
