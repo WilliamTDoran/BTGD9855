@@ -77,7 +77,10 @@ public class Boss : GameActor
 
         while (true)
         {
-            animator.SetTrigger("walk");
+            if (animator != null)
+            {
+                animator.SetTrigger("walk");
+            }
             canMove = true;
             faceDirection = PickDirection() * speed / timeModifier;
             yield return new WaitForSeconds(UnityEngine.Random.Range(0.8f, 1.5f));
@@ -106,7 +109,10 @@ public class Boss : GameActor
     private IEnumerator Ded()
     {
         yield return new WaitForSeconds(5f);
-        animator.SetTrigger("Die");
+        if (animator != null)
+        {
+            animator.SetTrigger("Die");
+        }
         Destroy(gameObject);
     }
 

@@ -101,7 +101,7 @@ public class GameActor : MonoBehaviour
     /// <summary>
     /// Sets an animation parameter called speed which modifies a blend tree, driving the transition between idle and walk animations. Also flips left and right based on heading.
     /// </summary>
-    private void LateUpdate()
+    protected virtual void LateUpdate()
     {
         if (walkAnim)
         {
