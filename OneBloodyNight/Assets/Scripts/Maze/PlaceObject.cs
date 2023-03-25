@@ -6,8 +6,26 @@ using Random = UnityEngine.Random;
 
 public class PlaceObject
 {
+    internal static void placePickups()
+    {
+        Cell c;
+        for (int i = 0; i < Maze.m.width(); i++)
+        {
+            for (int j = 0; j < Maze.m.height(); j++)
+            {
+                c = Maze.m.getCell(i, j);
+                if (c.getBiome() == Maze.m.traits.CharacterBiome || c.setPiece) continue;
+                if (Random.Range(0, 1.0f) < Maze.m.traits.chanceObj)
+                {
+                    GameObject[] pickups = Maze.m.traits.pickupsObjects;
+                    GameObject.Instantiate(pickups[Random.Range(0, pickups.Length)], c.transform.position + new Vector3(0, 0.1f, 0), Quaternion.Euler(90, 0, 0), c.transform);
+                }
+            }
+        }
+    }
 
-    internal static void placeObjects()
+
+    internal static void placeDecore()
     {
         Cell c;
         for (int i=0; i<Maze.m.width(); i++)

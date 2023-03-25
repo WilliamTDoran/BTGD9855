@@ -42,7 +42,10 @@ public class MazeVariables
     public float scale;
     public float betweenCells;
     public int minLocation = 1;
+    public float chanceObj;
     public GameObject[] hubObjects;
+    [Tooltip("Also include upgrade totem")]
+    public GameObject[] pickupsObjects;
     public Biome CharacterBiome;
     //public GameObject bossPortal;
 }

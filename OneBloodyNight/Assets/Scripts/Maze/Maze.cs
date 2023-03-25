@@ -159,7 +159,8 @@ public class Maze : MonoBehaviour
         }
 
         //Object Placer
-        PlaceObject.placeObjects();
+        PlaceObject.placeDecore();
+        PlaceObject.placePickups();
     }
 
     //helper function, return cell (x,y) from the maze.
