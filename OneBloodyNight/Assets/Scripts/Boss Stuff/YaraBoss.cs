@@ -25,11 +25,15 @@ public class YaraBoss : Boss
 
     [Tooltip("Reference to the regurgitate projectile")]
     [SerializeField]
-    private GurgeyProjectile gurgeyProjectile;
+    private GurgeyProjectile gurgectile;
 
     [Tooltip("Reference to the regurgitate spot")]
     [SerializeField]
     private RemoteAttack gurgeySpot;
+
+    [Tooltip("Reference to the regurgitate spot sprite animator (easier to do it all in one place)")]
+    [SerializeField]
+    private Animator gurgeyAnimator;
 
     [SerializeField]
     private Animator spanimator;
@@ -167,7 +171,18 @@ public class YaraBoss : Boss
 
     private IEnumerator Regurgitate()
     {
-        throw new System.NotImplementedException();
+        StopRandomBehavior();
+        canMove = false;
+        immune = true;
+        gurgeyRunning = true;
+
+        gurgeySpot.gameObject.SetActive(true);
+        gurgeyAnimator.Rebind();
+        gurgeyAnimator.Update(0f);
+        
+        spanimator.SetTrigger("Gurgey");
+
+        yield return new WaitUntil(() => !gurgeyRunning);
     }
 
 

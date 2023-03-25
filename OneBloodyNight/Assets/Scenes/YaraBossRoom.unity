@@ -4834,6 +4834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   root: {fileID: 879865972}
+  gurgectile: {fileID: 2058863734}
 --- !u!1 &713350592
 GameObject:
   m_ObjectHideFlags: 0
@@ -5736,8 +5737,9 @@ MonoBehaviour:
   - {fileID: 594385326}
   - {fileID: 23917228}
   - {fileID: 1729158201}
-  gurgeyProjectile: {fileID: 0}
-  gurgeySpot: {fileID: 0}
+  gurgectile: {fileID: 2058863734}
+  gurgeySpot: {fileID: 1212368872}
+  gurgeyAnimator: {fileID: 1958159519}
   spanimator: {fileID: 677486036}
   sprender: {fileID: 677486037}
   timeBeforeBasic: 3
@@ -7833,7 +7835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1212368869
 Transform:
   m_ObjectHideFlags: 0
@@ -7904,7 +7906,10 @@ MonoBehaviour:
   wallPushbackScalar: 0
   forceStill: 0
   floatDistance: 0
-  untargetableTags: []
+  untargetableTags:
+  - Floor
+  - Monster
+  - Wall
   checkForWalls: 1
   attacker: {fileID: 1212368872}
   spriteAnimator: {fileID: 0}
@@ -7913,7 +7918,8 @@ MonoBehaviour:
   delay: 0
   activeTime: 0.3
   debugTargetPreview: {fileID: 0}
-  conditionals: []
+  conditionals:
+  - {fileID: 2058863734}
 --- !u!1 &1213901059
 GameObject:
   m_ObjectHideFlags: 0
@@ -13677,7 +13683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2058863731
 Transform:
   m_ObjectHideFlags: 0
@@ -13735,7 +13741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bd728148c233ca4586d3e19644d6c50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0

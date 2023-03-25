@@ -6,6 +6,7 @@ using UnityEngine;
 public class YaraBossSpriteAnimationInterceptor : MonoBehaviour
 {
     [SerializeField] private YaraBoss root;
+    [SerializeField] private GurgeyProjectile gurgectile;
 
     public void FireRocks()
     {
@@ -19,6 +20,7 @@ public class YaraBossSpriteAnimationInterceptor : MonoBehaviour
 
     public void GurgeyItUp()
     {
-
+        gurgectile.gameObject.SetActive(true);
+        gurgectile.Shoot();
     }
 }
