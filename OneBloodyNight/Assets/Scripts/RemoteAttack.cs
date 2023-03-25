@@ -24,6 +24,13 @@ public class RemoteAttack : Attack
     [Tooltip("Any monobehaviours that contain variables needed for conditional remote")]
     [SerializeField]
     private GameActor[] conditionals;
+
+    [Header("Yara Boss gurgey only—anything else can and must ignore this")]
+    [SerializeField]
+    private bool yaraling = false;
+
+    [SerializeField]
+    private YaraBoss yara;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     internal void Initiate(Vector3 targetPoint)
@@ -70,8 +77,8 @@ public class RemoteAttack : Attack
         {
             hitboxMesh.enabled = false;
         }
-        gameObject.SetActive(false);
         EndSwing();
+        gameObject.SetActive(false);
     }
 
     private IEnumerator FireMeConditional()
@@ -82,6 +89,7 @@ public class RemoteAttack : Attack
         {
             debugTargetPreview.enabled = false;
         }
+        conditionals[0].RemoteCondition = false;
         col.enabled = true;
         if (showHitbox)
         {
@@ -90,13 +98,22 @@ public class RemoteAttack : Attack
 
         yield return new WaitUntil(() => conditionals[1].RemoteCondition);
 
+        conditionals[1].RemoteCondition = false;
         col.enabled = false;
         if (showHitbox)
         {
             hitboxMesh.enabled = false;
         }
-        gameObject.SetActive(false);
         EndSwing();
+        gameObject.SetActive(false);
+    }
+
+    internal override void OnHitPlayer()
+    {
+        if (yaraling)
+        {
+            yara.SpawnYaraling();
+        }
     }
 
 

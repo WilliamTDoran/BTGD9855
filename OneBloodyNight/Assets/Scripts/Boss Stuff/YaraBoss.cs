@@ -35,6 +35,10 @@ public class YaraBoss : Boss
     [SerializeField]
     private Animator gurgeyAnimator;
 
+    [Tooltip("As many yaralings as you want to be able to exist at once")]
+    [SerializeField]
+    private Yaraling[] lings;
+
     [SerializeField]
     private Animator spanimator;
 
@@ -190,6 +194,77 @@ public class YaraBoss : Boss
         canMove = true;
         immune = false;
         StartRandomBehavior();
+    }
+
+    internal void SpawnYaraling()
+    {
+        int want = rnd.Next(0, 3);
+        int tried = 0;
+
+        switch (want)
+        {
+            case 0:
+                if (tried == 3)
+                {
+                    goto default;
+                }
+
+                if (!lings[0].gameObject.activeInHierarchy)
+                {
+                    Vector3 spawnPoint = new Vector3(gurgeySpot.transform.position.x, lings[0].transform.position.y, gurgeySpot.transform.position.z);
+
+                    lings[0].gameObject.SetActive(true);
+                    lings[0].YaralingSpawn(spawnPoint);
+                }
+                else
+                {
+                    tried++;
+                    goto case 1;
+                }
+                break;
+
+            case 1:
+                if (tried == 3)
+                {
+                    goto default;
+                }
+
+                if (!lings[1].gameObject.activeInHierarchy)
+                {
+                    Vector3 spawnPoint = new Vector3(gurgeySpot.transform.position.x, lings[1].transform.position.y, gurgeySpot.transform.position.z);
+
+                    lings[0].gameObject.SetActive(true);
+                    lings[1].YaralingSpawn(spawnPoint);
+                }
+                else
+                {
+                    tried++;
+                    goto case 2;
+                }
+                break;
+
+            case 2:
+                if (tried == 3)
+                {
+                    goto default;
+                }
+
+                if (!lings[1].gameObject.activeInHierarchy)
+                {
+                    Vector3 spawnPoint = new Vector3(gurgeySpot.transform.position.x, lings[1].transform.position.y, gurgeySpot.transform.position.z);
+
+                    lings[0].gameObject.SetActive(true);
+                    lings[1].YaralingSpawn(spawnPoint);
+                }
+                else
+                {
+                    tried++;
+                    goto case 0;
+                }
+                break;
+
+            default: break;
+        }
     }
 
 

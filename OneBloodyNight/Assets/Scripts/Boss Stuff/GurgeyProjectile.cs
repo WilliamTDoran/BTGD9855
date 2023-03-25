@@ -45,6 +45,7 @@ public class GurgeyProjectile : GameActor
 
         if (RemoteCondition)
         {
+            RemoteCondition = false;
             gameObject.SetActive(false);
         }
     }
@@ -58,6 +59,9 @@ public class GurgeyProjectile : GameActor
         direction = (targetPosition - transform.position).normalized;
         direction = new Vector3(direction.x, 0, direction.z).normalized;
         transform.position += direction * 2;
+
+        prevDistance = 1000;
+        currentDistance = 1000;
 
         canMove = true;
     }
