@@ -177,6 +177,7 @@ public class YaraBoss : Boss
         gurgeyRunning = true;
 
         gurgeySpot.gameObject.SetActive(true);
+        gurgeySpot.InitiateConditional(Player.plr.Rb.position);
         gurgeyAnimator.Rebind();
         gurgeyAnimator.Update(0f);
         

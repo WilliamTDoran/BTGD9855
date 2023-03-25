@@ -10,6 +10,14 @@ public class GurgeyProjectile : GameActor
     private float prevDistance = 1000;
     private float currentDistance = 1000;
 
+    /* Exposed Variables */
+    [SerializeField]
+    private Animator spotAnimator;
+
+    [SerializeField]
+    private RemoteAttack spot;
+    /*~~~~~~~~~~~~~~~~~~~*/
+
     protected override void Update()
     {
         base.Update();
@@ -20,9 +28,12 @@ public class GurgeyProjectile : GameActor
         }
 
         prevDistance = currentDistance;
-        currentDistance = (targetPosition - transform.position).magnitude;
 
-        if (currentDistance > prevDistance || currentDistance <= 1.0f)
+        Vector3 yFlattenedTarget = new Vector3(targetPosition.x, transform.position.y, targetPosition.z);
+
+        currentDistance = (yFlattenedTarget - transform.position).magnitude;
+
+        if (currentDistance > prevDistance || currentDistance <= 2.0f)
         {
             Arrive();
         }
@@ -40,7 +51,7 @@ public class GurgeyProjectile : GameActor
 
     internal void Shoot()
     {
-        targetPosition = Player.plr.transform.position;
+        targetPosition = spot.transform.position;
         transform.position = Boss.instance.transform.position;
 
         direction = (targetPosition - transform.position).normalized;
@@ -53,6 +64,7 @@ public class GurgeyProjectile : GameActor
     private void Arrive()
     {
         canMove = false;
+        spotAnimator.SetTrigger("Arrive");
         RemoteCondition = true;
     }
 }
