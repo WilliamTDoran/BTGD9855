@@ -1,19 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GurgeyProjectile : GameActor
 {
     private Vector3 direction;
     private Vector3 targetPosition;
-    private float targetDistance;
-
-    protected override void Start()
-    {
-        base.Start();
-
-        canMove = false;
-    }
+    private float prevDistance = 1000;
+    private float currentDistance = 1000;
 
     protected override void Update()
     {
@@ -24,19 +19,33 @@ public class GurgeyProjectile : GameActor
             transform.Translate(direction.normalized * Time.deltaTime * speed);
         }
 
-        if ((targetPosition - rb.position).magnitude >= direction.magnitude)
+        prevDistance = currentDistance;
+        currentDistance = (targetPosition - transform.position).magnitude;
+
+        if (currentDistance > prevDistance || currentDistance <= 1.0f)
         {
             Arrive();
         }
     }
 
+    protected override void LateUpdate()
+    {
+        base.LateUpdate();
+
+        if (RemoteCondition)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     internal void Shoot()
     {
-        targetPosition = Player.plr.Rb.position;
-        rb.position = Boss.instance.Rb.position;
+        targetPosition = Player.plr.transform.position;
+        transform.position = Boss.instance.transform.position;
 
-        direction = targetPosition - rb.position;
-        targetDistance = direction.magnitude;
+        direction = (targetPosition - transform.position).normalized;
+        direction = new Vector3(direction.x, 0, direction.z).normalized;
+        transform.position += direction * 2;
 
         canMove = true;
     }
@@ -45,6 +54,5 @@ public class GurgeyProjectile : GameActor
     {
         canMove = false;
         RemoteCondition = true;
-        gameObject.SetActive(false);
     }
 }
