@@ -23,4 +23,9 @@ public class YaraBossSpriteAnimationInterceptor : MonoBehaviour
         gurgectile.gameObject.SetActive(true);
         gurgectile.Shoot();
     }
+
+    public void EndGurgey()
+    {
+        root.GurgeyRunning = false;
+    }
 }

@@ -176,6 +176,8 @@ public class YaraBoss : Boss
         immune = true;
         gurgeyRunning = true;
 
+        gurgectile.RemoteCondition = false;
+
         gurgeySpot.gameObject.SetActive(true);
         gurgeySpot.InitiateConditional(Player.plr.Rb.position);
         gurgeyAnimator.Rebind();
@@ -184,6 +186,10 @@ public class YaraBoss : Boss
         spanimator.SetTrigger("Gurgey");
 
         yield return new WaitUntil(() => !gurgeyRunning);
+
+        canMove = true;
+        immune = false;
+        StartRandomBehavior();
     }
 
 

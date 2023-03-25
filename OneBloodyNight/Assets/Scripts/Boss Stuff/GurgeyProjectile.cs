@@ -51,6 +51,7 @@ public class GurgeyProjectile : GameActor
 
     internal void Shoot()
     {
+        RemoteCondition = false;
         targetPosition = spot.transform.position;
         transform.position = Boss.instance.transform.position;
 
