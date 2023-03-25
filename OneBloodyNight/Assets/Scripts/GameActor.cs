@@ -184,4 +184,6 @@ public class GameActor : MonoBehaviour
     internal virtual void OnHitWall() {}
 
     internal virtual void OnReceiveHit() {}
+
+    internal virtual void OnHitPlayer() { }
 }

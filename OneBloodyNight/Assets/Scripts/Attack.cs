@@ -269,7 +269,6 @@ public class Attack : GameActor
 
     //Used like an interface
     internal virtual void Fire() { }
-    internal virtual void OnHitPlayer() { }
 
     internal virtual void OnHitMonster()
     {

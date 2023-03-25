@@ -16,12 +16,16 @@ public class Yaraling : GameActor
 
     [SerializeField]
     private SpriteRenderer sprender;
+
+    [SerializeField]
+    private Attack dangerous;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     protected override void Start()
     {
         base.Start();
 
+        canMove = true;
         CurHitPoints = MaxHitPoints;
     }
 
@@ -38,15 +42,28 @@ public class Yaraling : GameActor
             spanimator.SetTrigger("Die");
             StopAllCoroutines();
             canMove = false;
-            canAttack = false;
             Stunned = true;
             col.enabled = false;
+            dangerous.Col.enabled = false;
             StartCoroutine(PopAway());
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (canMove && !Stunned)
+        {
+            Vector3 direction = Player.plr.Rb.position - rb.position;
+            direction.Normalize();
+
+            rb.AddForce(direction * speed, ForceMode.Force);
         }
     }
 
     protected override void LateUpdate()
     {
+        dangerous.EndSwing();
+
         if (walkAnim)
         {
             actualVelocity = rb.velocity.magnitude;
@@ -72,6 +89,21 @@ public class Yaraling : GameActor
     {
         base.OnReceiveHit();
         spanimator.SetTrigger("Owie");
+    }
+
+    internal void YaralingSpawn(Vector3 pos)
+    {
+        {
+            spanimator.Rebind();
+            spanimator.Update(0f);
+        }
+        dead = false;
+        dangerous.Col.enabled = true;
+        transform.position = pos;
+        StopAllCoroutines();
+        canMove = true;
+        stunned = false;
+        col.enabled = true;
     }
 
     private IEnumerator PopAway()

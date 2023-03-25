@@ -1965,7 +1965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &188405372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1985,6 +1985,7 @@ MonoBehaviour:
   bloodOnKill: 50
   spanimator: {fileID: 2077848446}
   sprender: {fileID: 2077848447}
+  dangerous: {fileID: 1559011589}
 --- !u!4 &188405373
 Transform:
   m_ObjectHideFlags: 0
@@ -1998,6 +1999,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2077848449}
+  - {fileID: 1559011586}
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2595,6 +2597,103 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332683539}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &359843463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 359843467}
+  - component: {fileID: 359843464}
+  - component: {fileID: 359843466}
+  - component: {fileID: 359843465}
+  m_Layer: 0
+  m_Name: DangerZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &359843464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359843463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b9a14802aa44946bc3ec11c26ab924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  immuneDuration: 0
+  maxHitPoints: 0
+  walkAnim: 0
+  damage: 50
+  knockbackAmount: 200
+  hitstunDuration: 0.3
+  pushbackAmount: 0
+  returnDrag: 18
+  drag: 20
+  wallPushbackScalar: 0
+  forceStill: 0
+  floatDistance: 0
+  untargetableTags:
+  - Monster
+  - Floor
+  - Wall
+  checkForWalls: 0
+  attacker: {fileID: 399392669}
+  spriteAnimator: {fileID: 0}
+  showHitbox: 0
+  hitboxMesh: {fileID: 0}
+--- !u!54 &359843465
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359843463}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
+--- !u!65 &359843466
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359843463}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 10, z: 2.1}
+  m_Center: {x: 0, y: 0, z: -0.9}
+--- !u!4 &359843467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359843463}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 399392670}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &371854760
 GameObject:
   m_ObjectHideFlags: 0
@@ -2939,7 +3038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &399392669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2959,6 +3058,7 @@ MonoBehaviour:
   bloodOnKill: 50
   spanimator: {fileID: 856102397}
   sprender: {fileID: 856102398}
+  dangerous: {fileID: 359843464}
 --- !u!4 &399392670
 Transform:
   m_ObjectHideFlags: 0
@@ -2972,6 +3072,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 856102400}
+  - {fileID: 359843467}
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4547,7 +4648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &676722523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4567,6 +4668,7 @@ MonoBehaviour:
   bloodOnKill: 50
   spanimator: {fileID: 269195838}
   sprender: {fileID: 269195839}
+  dangerous: {fileID: 992037620}
 --- !u!4 &676722524
 Transform:
   m_ObjectHideFlags: 0
@@ -4580,6 +4682,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 269195837}
+  - {fileID: 992037617}
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4610,7 +4713,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7, y: 5, z: 1.8}
+  m_Size: {x: 1.6, y: 5, z: 1.7}
   m_Center: {x: 0, y: 0, z: -0.9}
 --- !u!1 &677486034
 GameObject:
@@ -6222,6 +6325,103 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988525442}
   m_CullTransparentMesh: 1
+--- !u!1 &992037616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 992037617}
+  - component: {fileID: 992037620}
+  - component: {fileID: 992037619}
+  - component: {fileID: 992037618}
+  m_Layer: 0
+  m_Name: DangerZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &992037617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992037616}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 676722524}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &992037618
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992037616}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
+--- !u!65 &992037619
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992037616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 10, z: 2.1}
+  m_Center: {x: 0, y: 0, z: -0.9}
+--- !u!114 &992037620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992037616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b9a14802aa44946bc3ec11c26ab924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  immuneDuration: 0
+  maxHitPoints: 0
+  walkAnim: 0
+  damage: 50
+  knockbackAmount: 200
+  hitstunDuration: 0.3
+  pushbackAmount: 0
+  returnDrag: 18
+  drag: 20
+  wallPushbackScalar: 0
+  forceStill: 0
+  floatDistance: 0
+  untargetableTags:
+  - Monster
+  - Floor
+  - Wall
+  checkForWalls: 0
+  attacker: {fileID: 676722523}
+  spriteAnimator: {fileID: 0}
+  showHitbox: 0
+  hitboxMesh: {fileID: 0}
 --- !u!1001 &1000807484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9109,6 +9309,103 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1559011585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1559011586}
+  - component: {fileID: 1559011589}
+  - component: {fileID: 1559011588}
+  - component: {fileID: 1559011587}
+  m_Layer: 0
+  m_Name: DangerZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1559011586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559011585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 188405373}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1559011587
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559011585}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
+--- !u!65 &1559011588
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559011585}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 10, z: 2.1}
+  m_Center: {x: 0, y: 0, z: -0.9}
+--- !u!114 &1559011589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559011585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b9a14802aa44946bc3ec11c26ab924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  immuneDuration: 0
+  maxHitPoints: 0
+  walkAnim: 0
+  damage: 50
+  knockbackAmount: 200
+  hitstunDuration: 0.3
+  pushbackAmount: 0
+  returnDrag: 18
+  drag: 20
+  wallPushbackScalar: 0
+  forceStill: 0
+  floatDistance: 0
+  untargetableTags:
+  - Monster
+  - Floor
+  - Wall
+  checkForWalls: 0
+  attacker: {fileID: 188405372}
+  spriteAnimator: {fileID: 0}
+  showHitbox: 0
+  hitboxMesh: {fileID: 0}
 --- !u!1 &1560146696
 GameObject:
   m_ObjectHideFlags: 0
