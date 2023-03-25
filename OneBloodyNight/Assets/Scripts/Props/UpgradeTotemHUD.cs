@@ -17,6 +17,7 @@ public class UpgradeTotemHUD : MonoBehaviour
     internal bool topUpgrade;
     internal bool rightUpgrade;
     internal bool bottomUpgrade;
+    internal bool leftUpgrade;
     /*
     enum upgrades
     {
@@ -125,6 +126,23 @@ public class UpgradeTotemHUD : MonoBehaviour
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
             {
                 Player.plr.abilityOneCost = 0;
+            }
+            else
+            {
+                Debug.Log("Upgrade not implemented for this character");
+            }
+        }
+        gameObject.SetActive(false);
+    }
+
+    public void upgradeLeftSpecial()
+    {
+        if (!leftUpgrade)
+        {
+            leftUpgrade = true;
+            if (Player.plr.GetComponent<PlayerStrigoi>() != null)
+            {
+                //Player.plr.abilityOneCost = 0;
             }
             else
             {

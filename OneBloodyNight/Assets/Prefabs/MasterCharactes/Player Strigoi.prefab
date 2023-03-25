@@ -329,6 +329,7 @@ MonoBehaviour:
   Attack: {fileID: 8300000, guid: 653740d25a2fd6141a9464b227cd5fef, type: 3}
   Hurt: {fileID: 8300000, guid: 437e001eb1fcb4a4cabcf452411234c1, type: 3}
   GameOver: {fileID: 0}
+  frenzyRegainHit: 50
   basicAttackOne: {fileID: 2249110077764019773}
   basicAttackTwo: {fileID: 2249110079544332107}
   basicAttackThree: {fileID: 2249110079026273916}
