@@ -15,6 +15,9 @@ using UnityEngine;
 /// </summary>
 public class GameActor : MonoBehaviour
 {
+    private bool remoteCondition = false;
+    public bool RemoteCondition { get { return remoteCondition; } set { remoteCondition = value; } }
+
     private IEnumerator immuneCoroutine; //drives i-frames
     private IEnumerator hitstunCoroutine; //drives hitstun
 

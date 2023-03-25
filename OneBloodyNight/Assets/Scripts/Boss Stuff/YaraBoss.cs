@@ -23,6 +23,14 @@ public class YaraBoss : Boss
     [SerializeField]
     private Shockrock[] shockrocks;
 
+    [Tooltip("Reference to the regurgitate projectile")]
+    [SerializeField]
+    private GurgeyProjectile gurgeyProjectile;
+
+    [Tooltip("Reference to the regurgitate spot")]
+    [SerializeField]
+    private RemoteAttack gurgeySpot;
+
     [SerializeField]
     private Animator spanimator;
 
@@ -87,7 +95,7 @@ public class YaraBoss : Boss
         int upperLimit = rndCap + currentPhase;
         int check = rnd.Next(0, upperLimit);
 
-        switch (1)
+        switch (2)
         {
             case 0:
                 {
@@ -108,6 +116,7 @@ public class YaraBoss : Boss
                 {
                     //Regurgitate
                     yield return new WaitForSeconds(timeBeforeRegurgitate * timeModifier);
+                    StartGurgey();
                     break;
                 }
 

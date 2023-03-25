@@ -23,7 +23,7 @@ public class RemoteAttack : Attack
 
     [Tooltip("Any monobehaviours that contain variables needed for conditional remote")]
     [SerializeField]
-    private MonoBehaviour[] conditionals;
+    private GameActor[] conditionals;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     internal void Initiate(Vector3 targetPoint)
@@ -76,7 +76,7 @@ public class RemoteAttack : Attack
 
     private IEnumerator FireMeConditional()
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitUntil(() => conditionals[0].RemoteCondition);
 
         if (debugTargetPreview != null)
         {
@@ -88,7 +88,7 @@ public class RemoteAttack : Attack
             hitboxMesh.enabled = true;
         }
 
-        yield return new WaitForSeconds(activeTime);
+        yield return new WaitUntil(() => conditionals[1].RemoteCondition);
 
         col.enabled = false;
         if (showHitbox)

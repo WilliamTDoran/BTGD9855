@@ -16,4 +16,9 @@ public class YaraBossSpriteAnimationInterceptor : MonoBehaviour
     {
         root.ShockSlamRunning = false;
     }
+
+    public void GurgeyItUp()
+    {
+
+    }
 }
