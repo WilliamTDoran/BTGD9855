@@ -151,6 +151,14 @@ public class UpgradeTotemHUD : MonoBehaviour
         }
         gameObject.SetActive(false);
     }
+
+    void Update()
+    {
+        if ((Input.GetButtonDown("Cancel") || Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical") || Input.GetButtonDown("Interact")) && gameObject.activeSelf)
+        {
+            gameObject.SetActive(false);
+        }
+    }
 }
 
 [System.Serializable]
