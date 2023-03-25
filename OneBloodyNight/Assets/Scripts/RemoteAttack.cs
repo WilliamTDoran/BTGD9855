@@ -5,6 +5,7 @@ using UnityEngine;
 public class RemoteAttack : Attack
 {
     private IEnumerator fireCoroutine;
+    private IEnumerator fireConditionalCoroutine;
 
     private Vector3 location;
     private int actualDamage;
@@ -19,6 +20,10 @@ public class RemoteAttack : Attack
 
     [SerializeField]
     private MeshRenderer debugTargetPreview;
+
+    [Tooltip("Any monobehaviours that contain variables needed for conditional remote")]
+    [SerializeField]
+    private MonoBehaviour[] conditionals;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     internal void Initiate(Vector3 targetPoint)
@@ -26,6 +31,13 @@ public class RemoteAttack : Attack
         gameObject.SetActive(true);
         Target(targetPoint);
         StartFire();
+    }
+
+    internal void InitiateConditional(Vector3 targetPoint)
+    {
+        gameObject.SetActive(true);
+        Target(targetPoint);
+        StartFireConditional();
     }
 
     private void Target(Vector3 targetPoint)
@@ -41,7 +53,10 @@ public class RemoteAttack : Attack
     {
         yield return new WaitForSeconds(delay);
 
-        debugTargetPreview.enabled = false;
+        if (debugTargetPreview != null)
+        {
+            debugTargetPreview.enabled = false;
+        }
         col.enabled = true;
         if (showHitbox)
         {
@@ -59,6 +74,34 @@ public class RemoteAttack : Attack
         EndSwing();
     }
 
+    private IEnumerator FireMeConditional()
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (debugTargetPreview != null)
+        {
+            debugTargetPreview.enabled = false;
+        }
+        col.enabled = true;
+        if (showHitbox)
+        {
+            hitboxMesh.enabled = true;
+        }
+
+        yield return new WaitForSeconds(activeTime);
+
+        col.enabled = false;
+        if (showHitbox)
+        {
+            hitboxMesh.enabled = false;
+        }
+        gameObject.SetActive(false);
+        EndSwing();
+    }
+
+
+
+
     private void StartFire()
     {
         fireCoroutine = FireMe();
@@ -71,8 +114,17 @@ public class RemoteAttack : Attack
         fireCoroutine = null;
     }
 
+    private void StartFireConditional()
+    {
+        fireConditionalCoroutine = FireMeConditional();
+        StartCoroutine(fireConditionalCoroutine);
+    }
 
-
+    private void StopFireConditional()
+    {
+        StopCoroutine(fireConditionalCoroutine);
+        fireConditionalCoroutine = null;
+    }
 
 
 
