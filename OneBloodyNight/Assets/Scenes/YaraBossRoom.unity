@@ -318,8 +318,8 @@ MonoBehaviour:
   maxHitPoints: 0
   walkAnim: 0
   damage: 50
-  knockbackAmount: 200
-  hitstunDuration: 0.4
+  knockbackAmount: 400
+  hitstunDuration: 0.5
   pushbackAmount: 0
   returnDrag: 0
   drag: 20
@@ -2960,8 +2960,8 @@ MonoBehaviour:
   maxHitPoints: 0
   walkAnim: 0
   damage: 50
-  knockbackAmount: 200
-  hitstunDuration: 0.4
+  knockbackAmount: 400
+  hitstunDuration: 0.5
   pushbackAmount: 0
   returnDrag: 0
   drag: 20
@@ -4171,8 +4171,8 @@ MonoBehaviour:
   maxHitPoints: 0
   walkAnim: 0
   damage: 50
-  knockbackAmount: 200
-  hitstunDuration: 0.4
+  knockbackAmount: 400
+  hitstunDuration: 0.5
   pushbackAmount: 0
   returnDrag: 0
   drag: 20
@@ -5684,7 +5684,7 @@ GameObject:
   - component: {fileID: 879865973}
   m_Layer: 0
   m_Name: YaraBoss
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8729,8 +8729,8 @@ MonoBehaviour:
   maxHitPoints: 0
   walkAnim: 0
   damage: 50
-  knockbackAmount: 200
-  hitstunDuration: 0.4
+  knockbackAmount: 400
+  hitstunDuration: 0.5
   pushbackAmount: 0
   returnDrag: 0
   drag: 20
@@ -9249,8 +9249,8 @@ MonoBehaviour:
   maxHitPoints: 0
   walkAnim: 0
   damage: 50
-  knockbackAmount: 200
-  hitstunDuration: 0.4
+  knockbackAmount: 400
+  hitstunDuration: 0.5
   pushbackAmount: 0
   returnDrag: 0
   drag: 20
@@ -10624,8 +10624,8 @@ MonoBehaviour:
   maxHitPoints: 0
   walkAnim: 0
   damage: 50
-  knockbackAmount: 200
-  hitstunDuration: 0.4
+  knockbackAmount: 400
+  hitstunDuration: 0.5
   pushbackAmount: 0
   returnDrag: 0
   drag: 20
@@ -12168,8 +12168,8 @@ MonoBehaviour:
   maxHitPoints: 0
   walkAnim: 0
   damage: 50
-  knockbackAmount: 200
-  hitstunDuration: 0.4
+  knockbackAmount: 400
+  hitstunDuration: 0.5
   pushbackAmount: 0
   returnDrag: 0
   drag: 20
@@ -12453,8 +12453,8 @@ MonoBehaviour:
   maxHitPoints: 0
   walkAnim: 0
   damage: 50
-  knockbackAmount: 200
-  hitstunDuration: 0.4
+  knockbackAmount: 400
+  hitstunDuration: 0.5
   pushbackAmount: 0
   returnDrag: 0
   drag: 20

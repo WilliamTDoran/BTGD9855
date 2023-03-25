@@ -10,9 +10,13 @@ using UnityEngine;
 public class YaraBoss : Boss
 {
     private IEnumerator shockwaveSlamCoroutine;
+    private IEnumerator gurgeyCoroutine;
 
     private bool shockSlamRunning = false;
-    public bool ShockSlamRunning { set { shockSlamRunning = value;} }
+    public bool ShockSlamRunning { set { shockSlamRunning = value; } }
+
+    private bool gurgeyRunning = false;
+    public bool GurgeyRunning { set { gurgeyRunning = value; } }
 
     /* Exposed Variables */
     [Tooltip("All 8 rocks for shockwave slam")]
@@ -72,12 +76,18 @@ public class YaraBoss : Boss
         }
     }
 
+    internal override void OnReceiveHit()
+    {
+        base.OnReceiveHit();
+        spanimator.SetTrigger("Owie");
+    }
+
     protected override IEnumerator RandomAttacking()
     {
         int upperLimit = rndCap + currentPhase;
         int check = rnd.Next(0, upperLimit);
 
-        switch (2)
+        switch (1)
         {
             case 0:
                 {
@@ -146,6 +156,11 @@ public class YaraBoss : Boss
         }
     }
 
+    private IEnumerator Regurgitate()
+    {
+        throw new System.NotImplementedException();
+    }
+
 
 
 
@@ -159,5 +174,17 @@ public class YaraBoss : Boss
     {
         StopCoroutine(shockwaveSlamCoroutine);
         shockwaveSlamCoroutine = null;
+    }
+
+    private void StartGurgey()
+    {
+        gurgeyCoroutine = Regurgitate();
+        StartCoroutine(gurgeyCoroutine);
+    }
+
+    private void StopGurgey()
+    {
+        StopCoroutine(gurgeyCoroutine);
+        gurgeyCoroutine = null;
     }
 }
