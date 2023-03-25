@@ -77,7 +77,7 @@ public class YaraBoss : Boss
         int upperLimit = rndCap + currentPhase;
         int check = rnd.Next(0, upperLimit);
 
-        switch (1)
+        switch (2)
         {
             case 0:
                 {
