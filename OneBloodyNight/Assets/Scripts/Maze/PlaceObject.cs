@@ -57,7 +57,7 @@ public class PlaceObject
             }
             
         } while (!placed);
-        GameObject temp = GameObject.Instantiate(Maze.m.traits.bossPortal, new Vector3(c.transform.position.x,c.transform.position.y, c.transform.position.z), Quaternion.Euler(90, 0, 0), c.transform);
+        GameObject temp = GameObject.Instantiate(Maze.m.biomeVariables[(int)B].bossPortal, new Vector3(c.transform.position.x,c.transform.position.y, c.transform.position.z), Quaternion.Euler(90, 0, 0), c.transform);
     }
 
     /*public static void cell(Biome b, float diff, out int x, out int y)

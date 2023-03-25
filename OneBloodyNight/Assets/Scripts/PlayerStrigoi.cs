@@ -351,7 +351,7 @@ public class PlayerStrigoi : Player
         if (berserkUptime <= 0)
         {
             StartBerserk();
-        } else
+        } else if (upgradedFrenzy) 
         {
             Bloodmeter.instance.changeBlood(frenzyRegainHit);
         }

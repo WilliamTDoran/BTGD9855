@@ -44,7 +44,7 @@ public class MazeVariables
     public int minLocation = 1;
     public GameObject[] hubObjects;
     public Biome CharacterBiome;
-    public GameObject bossPortal;
+    //public GameObject bossPortal;
 }
 
 [System.Serializable]
@@ -71,6 +71,7 @@ public class BiomeVariables
     public int maxCellDifficulty;
     [Tooltip("Chance of spawning an object. (1 = 100%)")]
     public float chanceObject;
+    public GameObject bossPortal;
     public GameObject[] SetPieces;
     [Tooltip("Array of the objects to be placed in the maze")]
     public GameObject[] objects;
