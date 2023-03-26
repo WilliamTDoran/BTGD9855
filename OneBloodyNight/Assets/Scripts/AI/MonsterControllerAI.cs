@@ -51,6 +51,9 @@ public class AttackAIProperties : AIProperties
 
     [Tooltip("How far the monster will try to stay away from its comrades")]
     public float avoidanceRange;
+
+    [Tooltip("The mask of objects that the enemy avoids")]
+    public LayerMask avoidanceMask;
 }
 
 public class MonsterControllerAI : AdvancedFSM

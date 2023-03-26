@@ -214,7 +214,7 @@ public class Attack : GameActor
     /// <param name="other">A collider being overlapped. Each overlapped collider calls this function once</param>
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hit Detected: " + other.gameObject.name);
+        //Debug.Log("Hit Detected: " + other.gameObject.name);
 
         bool proceed = true; //In many cases, a detected trigger shouldn't actually move forward to a full attack. This handles that
 

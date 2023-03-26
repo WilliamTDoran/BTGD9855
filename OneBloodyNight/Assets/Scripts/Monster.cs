@@ -191,13 +191,13 @@ public class Monster : GameActor
         return Physics.Raycast(rb.position, direction, direction.magnitude, layerMask);
     }
 
-    internal void Aggress(float engagementDistance, float attackRange, float avoidanceRange)
+    internal void Aggress(float engagementDistance, float attackRange, float avoidanceRange, LayerMask avoidanceMask)
     {
         if (!Stunned && player.Visible)
         {
             if (canMove)
             {
-                AttackShuffle(engagementDistance, attackRange, avoidanceRange);
+                AttackShuffle(engagementDistance, attackRange, avoidanceRange, avoidanceMask);
             }
 
             if (distanceToPlayer <= engagementDistance && canAttack)
@@ -207,7 +207,7 @@ public class Monster : GameActor
         }
     }
 
-    private void AttackShuffle(float engagementDistance, float attackRange, float avoidanceRange)
+    private void AttackShuffle(float engagementDistance, float attackRange, float avoidanceRange, LayerMask avoidanceMask)
     {
         Vector3 direction = Vector3.zero;
 
@@ -229,6 +229,37 @@ public class Monster : GameActor
         {
             direction += Vector3.Cross(proPlayer, Vector3.up) * shuffleDirection;
         }
+
+        /* - Anti - clumping script by Aidan - */
+        // vars
+        Vector3 sum = Vector3.zero; // sum of all vectors going into the direction
+        int count = 0;              // how many vectors went in (to find avg)
+        Collider[] hits = Physics.OverlapSphere(transform.position, avoidanceRange, avoidanceMask); // circlecast to find all enemies
+        //Debug.Log("There are: "+hits.Length+" hits on the circlecast");
+        //Sum all enemies to get a direction least wanting to go
+        foreach (Collider hit in hits)
+        {
+            //Debug.Log("Hit!");
+            //register hits on monsters, but not itself
+            if (hit.tag == "Monster" && hit.transform != transform)
+            {
+                //Debug.Log("Run away from "+ hit.name);
+                Vector3 difference = transform.position - hit.transform.position;
+                difference = difference.normalized / Mathf.Abs(difference.magnitude);
+                sum += difference;
+                count++;
+            }
+        }
+        //find average of sum
+        if (count > 0)
+        {
+            sum /= count;
+            sum *= 10f;
+            //sum = sum.normalized;
+        }
+
+        direction += sum;
+        /* - end of anti clumping - */
 
         Debug.DrawRay(rb.position, direction.normalized * 10);
         rb.AddForce(direction.normalized * speed * 0.8f, ForceMode.Force);

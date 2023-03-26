@@ -222,7 +222,10 @@ MonoBehaviour:
     timeTilLoseSight: 5
   attackAIProperties:
     attackRange: 5
-    avoidanceRange: 0
+    avoidanceRange: 15
+    avoidanceMask:
+      serializedVersion: 2
+      m_Bits: 1
 --- !u!114 &8073341074024995430
 MonoBehaviour:
   m_ObjectHideFlags: 0

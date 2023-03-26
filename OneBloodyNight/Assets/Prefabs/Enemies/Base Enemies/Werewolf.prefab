@@ -495,6 +495,9 @@ MonoBehaviour:
   attackAIProperties:
     attackRange: 3
     avoidanceRange: 0
+    avoidanceMask:
+      serializedVersion: 2
+      m_Bits: 1
 --- !u!114 &6981525957637314526
 MonoBehaviour:
   m_ObjectHideFlags: 0

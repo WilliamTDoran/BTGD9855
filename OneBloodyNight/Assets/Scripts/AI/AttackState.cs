@@ -47,6 +47,6 @@ public class AttackState : FSMState
 
     public override void Act(Transform player, Transform npc)
     {
-        universalAIProperties.host.Aggress(universalAIProperties.engagementDistance, attackAIProperties.attackRange, attackAIProperties.avoidanceRange);
+        universalAIProperties.host.Aggress(universalAIProperties.engagementDistance, attackAIProperties.attackRange, attackAIProperties.avoidanceRange, attackAIProperties.avoidanceMask);
     }
 }

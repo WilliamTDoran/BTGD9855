@@ -388,7 +388,10 @@ MonoBehaviour:
     timeTilLoseSight: 2.5
   attackAIProperties:
     attackRange: 22
-    avoidanceRange: 0
+    avoidanceRange: 5
+    avoidanceMask:
+      serializedVersion: 2
+      m_Bits: 1
 --- !u!95 &6013204197218851676
 Animator:
   serializedVersion: 4
@@ -575,6 +578,8 @@ MonoBehaviour:
   shooter: {fileID: 6013204197218851667}
   homing: 0
   homingRotSpeed: 0
+  pierceActors: 0
+  pierceWalls: 0
 --- !u!1 &8621432289928506362
 GameObject:
   m_ObjectHideFlags: 0
