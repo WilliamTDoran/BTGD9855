@@ -34,8 +34,7 @@ public class Yaraling : GameActor
         base.Update();
 
         if (CurHitPoints <= 0 && !dead)
-        {
-            Spawner.enemKilled();
+        { 
             Bloodmeter.instance.bloodmeter.value += bloodOnKill * Player.plr.bloodRegainMult;
 
             dead = true;
@@ -104,6 +103,8 @@ public class Yaraling : GameActor
         canMove = true;
         stunned = false;
         col.enabled = true;
+        CurHitPoints = MaxHitPoints;
+        immune = false;
     }
 
     private IEnumerator PopAway()

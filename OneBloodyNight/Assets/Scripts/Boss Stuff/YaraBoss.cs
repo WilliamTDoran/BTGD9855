@@ -103,10 +103,11 @@ public class YaraBoss : Boss
         int upperLimit = rndCap + currentPhase;
         int check = rnd.Next(0, upperLimit);
 
-        switch (2)
+        switch (check)
         {
             case 0:
                 {
+                    goto case 1;
                     //Boosted basic, I've been told to ignore this
                     yield return new WaitForSeconds(timeBeforeBasic * timeModifier);
                     break;
@@ -233,7 +234,7 @@ public class YaraBoss : Boss
                 {
                     Vector3 spawnPoint = new Vector3(gurgeySpot.transform.position.x, lings[1].transform.position.y, gurgeySpot.transform.position.z);
 
-                    lings[0].gameObject.SetActive(true);
+                    lings[1].gameObject.SetActive(true);
                     lings[1].YaralingSpawn(spawnPoint);
                 }
                 else
@@ -249,12 +250,12 @@ public class YaraBoss : Boss
                     goto default;
                 }
 
-                if (!lings[1].gameObject.activeInHierarchy)
+                if (!lings[2].gameObject.activeInHierarchy)
                 {
-                    Vector3 spawnPoint = new Vector3(gurgeySpot.transform.position.x, lings[1].transform.position.y, gurgeySpot.transform.position.z);
+                    Vector3 spawnPoint = new Vector3(gurgeySpot.transform.position.x, lings[2].transform.position.y, gurgeySpot.transform.position.z);
 
-                    lings[0].gameObject.SetActive(true);
-                    lings[1].YaralingSpawn(spawnPoint);
+                    lings[2].gameObject.SetActive(true);
+                    lings[2].YaralingSpawn(spawnPoint);
                 }
                 else
                 {
