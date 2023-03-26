@@ -62,6 +62,9 @@ public class YaraBoss : Boss
     private float timeBeforeBloodStrike;
     /*~~~~~~~~~~~~~~~~~~~*/
 
+    public Attack bitch;
+    public Animator bitchcake;
+
     protected override void Start()
     {
         base.Start();
@@ -133,11 +136,17 @@ public class YaraBoss : Boss
                 {
                     //Ground Pound
                     yield return new WaitForSeconds(timeBeforePound * timeModifier);
+                    StopRandomBehavior();
+                    bitch.gameObject.SetActive(true);
+                    bitchcake.Rebind();
+                    bitchcake.Update(0f);
+                    StartRandomBehavior();
                     break;
                 }
 
             case 4:
                 {
+                    goto case 1;
                     //Blood Pool Strike
                     yield return new WaitForSeconds(timeBeforeBloodStrike * timeModifier);
                     break;
