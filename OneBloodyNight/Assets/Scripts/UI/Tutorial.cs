@@ -19,7 +19,7 @@ public class Tutorial : MonoBehaviour
     public void StartGame()
     {
         
-        Application.LoadLevel("TestScene");
+        Application.LoadLevel("MazeScene");
 
     }
 }

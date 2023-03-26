@@ -28,12 +28,12 @@ public class BossPortal : MonoBehaviour
         Debug.Log("Contact");
         if (col.gameObject.tag == "Player")
         {
-            if (SceneManager.GetActiveScene().name == "TestScene") { 
+            if (SceneManager.GetActiveScene().name == "MazeScene") { 
             Application.LoadLevel("ImpunduluBossRoom");
             }
             else if (SceneManager.GetActiveScene().name == "ImpunduluBossRoom")
             {
-                Application.LoadLevel("TestScene");
+                Application.LoadLevel("MazeScene");
             }
         }
         //StartCoroutine(StartBoss());

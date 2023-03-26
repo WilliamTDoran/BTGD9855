@@ -275,6 +275,8 @@ MonoBehaviour:
   activeTime: 0.3
   debugTargetPreview: {fileID: 0}
   conditionals: []
+  yaraling: 0
+  yara: {fileID: 0}
 --- !u!95 &29422658
 Animator:
   serializedVersion: 4
@@ -1833,7 +1835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3000
   immuneDuration: 0
-  maxHitPoints: 1000
+  maxHitPoints: 20
   walkAnim: 0
   phases:
   - 1
@@ -4003,6 +4005,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2222148743124800989, guid: 0871b24d27454f74385e56a562633dda, type: 3}
   m_PrefabInstance: {fileID: 350632419}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &350632422 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2222148743124800986, guid: 0871b24d27454f74385e56a562633dda, type: 3}
+  m_PrefabInstance: {fileID: 350632419}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350632420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a718d2b351d3ed04a8091dde296142a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &371854760
 GameObject:
   m_ObjectHideFlags: 0
@@ -5001,7 +5014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0d0c9fad7fbf2e4b87e38b51034cb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodmeter: {fileID: 0}
+  bloodmeter: {fileID: 350632422}
 --- !u!1 &516769124
 GameObject:
   m_ObjectHideFlags: 0
@@ -5280,6 +5293,8 @@ MonoBehaviour:
   activeTime: 1
   debugTargetPreview: {fileID: 1336825650}
   conditionals: []
+  yaraling: 0
+  yara: {fileID: 0}
 --- !u!136 &532537195
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6177,6 +6192,8 @@ MonoBehaviour:
   activeTime: 1
   debugTargetPreview: {fileID: 516769125}
   conditionals: []
+  yaraling: 0
+  yara: {fileID: 0}
 --- !u!4 &606353821
 Transform:
   m_ObjectHideFlags: 0
@@ -9931,7 +9948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0d0c9fad7fbf2e4b87e38b51034cb0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodmeter: {fileID: 0}
+  bloodmeter: {fileID: 350632422}
 --- !u!1 &1152313178
 GameObject:
   m_ObjectHideFlags: 0
@@ -12957,6 +12974,8 @@ MonoBehaviour:
   activeTime: 1
   debugTargetPreview: {fileID: 1370872650}
   conditionals: []
+  yaraling: 0
+  yara: {fileID: 0}
 --- !u!4 &1611556332
 Transform:
   m_ObjectHideFlags: 0
@@ -13123,6 +13142,8 @@ MonoBehaviour:
   activeTime: 0.3
   debugTargetPreview: {fileID: 0}
   conditionals: []
+  yaraling: 0
+  yara: {fileID: 0}
 --- !u!95 &1614136844
 Animator:
   serializedVersion: 4
@@ -13853,6 +13874,8 @@ MonoBehaviour:
   activeTime: 0.3
   debugTargetPreview: {fileID: 0}
   conditionals: []
+  yaraling: 0
+  yara: {fileID: 0}
 --- !u!95 &1690544758
 Animator:
   serializedVersion: 4
