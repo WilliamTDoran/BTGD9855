@@ -6107,8 +6107,8 @@ MonoBehaviour:
   walkAnim: 1
   phases:
   - 1
-  - 0.99
-  - 0.98
+  - 0.7
+  - 0.4
   currentPhase: 0
   timeShred: 0.8
   audioSource: {fileID: 879865975}
@@ -16276,7 +16276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 80667733133338128, guid: 5b12b7aabee32004bb2c0fc28d1f5f0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -95.8
+      value: -102.18
       objectReference: {fileID: 0}
     - target: {fileID: 80667733133338128, guid: 5b12b7aabee32004bb2c0fc28d1f5f0f, type: 3}
       propertyPath: m_LocalPosition.y

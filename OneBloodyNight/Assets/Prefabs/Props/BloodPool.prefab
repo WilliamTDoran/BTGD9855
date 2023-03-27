@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 80667733133338128}
   - component: {fileID: 80667733133338129}
   - component: {fileID: 4793150996706466564}
+  - component: {fileID: 1860522851316984753}
   m_Layer: 0
   m_Name: BloodPool
   m_TagString: Untagged
@@ -98,3 +99,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodmeter: {fileID: 0}
+--- !u!136 &1860522851316984753
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80667733133338135}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.12
+  m_Height: 0.48
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.03, z: 0}
