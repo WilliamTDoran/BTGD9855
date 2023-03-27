@@ -147,9 +147,9 @@ public class YaraBoss : Boss
                 {
                     //Ground Pound
                     yield return new WaitForSeconds(timeBeforePound * timeModifier);
-                    StopRandomBehavior();
+                    /*StopRandomBehavior();
                     StartPoundRockslide(rockBaskets[0], poundRockMinTimes[0], poundRockMaxTimes[0]);
-                    StartRandomBehavior();
+                    StartRandomBehavior();*/
                     break;
                 }
 
@@ -196,7 +196,6 @@ public class YaraBoss : Boss
     {
         StopRandomBehavior();
         canMove = false;
-        immune = true;
         gurgeyRunning = true;
 
         gurgectile.RemoteCondition = false;
@@ -210,7 +209,6 @@ public class YaraBoss : Boss
         yield return new WaitUntil(() => !gurgeyRunning);
 
         canMove = true;
-        immune = false;
         StartRandomBehavior();
     }
 
