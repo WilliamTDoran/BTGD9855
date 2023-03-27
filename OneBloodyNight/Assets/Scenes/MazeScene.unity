@@ -4191,6 +4191,7 @@ MonoBehaviour:
     - {fileID: 1344671037}
     pickupsObjects:
     - {fileID: 1344671037}
+    - {fileID: 1924866634254403308, guid: cbc11f1c1ac338649b4ce9159b8197f8, type: 3}
     CharacterBiome: 0
   mazeSeed: -1
   sampleRow: {fileID: 3985245215676089212, guid: ee78c11f6f19f724b84ac746fcad03bf, type: 3}
@@ -7000,7 +7001,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344671037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.38, z: 500}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
