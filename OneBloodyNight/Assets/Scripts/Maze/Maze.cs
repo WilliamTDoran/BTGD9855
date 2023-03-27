@@ -99,7 +99,7 @@ public class Maze : MonoBehaviour
         Player.plr.transform.position = hub;
         for (int i=0; i<traits.hubObjects.Length; i++)
         {
-            GameObject temp = GameObject.Instantiate(Maze.m.traits.hubObjects[i], hub, Quaternion.Euler(90, 0, 0), getCell(traits.width / 2, traits.height / 2).transform);
+            GameObject temp = GameObject.Instantiate(Maze.m.traits.hubObjects[i], hub + Maze.m.traits.hubObjects[i].transform.position, Quaternion.Euler(90, 0, 0), getCell(traits.width / 2, traits.height / 2).transform);
         }
     }
 
