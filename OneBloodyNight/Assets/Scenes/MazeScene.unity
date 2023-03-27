@@ -4305,7 +4305,20 @@ MonoBehaviour:
     North:
       offSet: {x: 4, y: 0, z: 0}
       Sprites:
-      - {fileID: 3111108264678135816, guid: 3e53755ca832aec4282bf28966cabb9d, type: 3}
+      - {fileID: 3111108264678135816, guid: d51ffc63773615744a51057444430862, type: 3}
+      - {fileID: 3111108264678135816, guid: ec780688e0be5734a86afab016de752b, type: 3}
+      - {fileID: 3111108264678135816, guid: 343ac8e9e22bc574da31f3ef526b1581, type: 3}
+      - {fileID: 3111108264678135816, guid: cb845053d3394274bb3fdc24549cffe5, type: 3}
+      - {fileID: 3111108264678135816, guid: bd71212c08f76974cb7c51cb728eb43d, type: 3}
+      - {fileID: 3111108264678135816, guid: f453743915ec70e43931f8412cc590d7, type: 3}
+      - {fileID: 3111108264678135816, guid: 7005fc2feb3ce324e907413449343728, type: 3}
+      - {fileID: 3111108264678135816, guid: 42346b8b2ce33d34c80efeaebacb4678, type: 3}
+      - {fileID: 3111108264678135816, guid: c9ef111bbcea550439f4c76f72e133cb, type: 3}
+      - {fileID: 3111108264678135816, guid: 3edfeb85aa972af47922a75e6af7ced4, type: 3}
+      - {fileID: 3111108264678135816, guid: acb181d21a0e420418dad2a0dbf5ee8c, type: 3}
+      - {fileID: 3111108264678135816, guid: e5b46a4c1e51aee47ba388b7bc70dc09, type: 3}
+      - {fileID: 3111108264678135816, guid: 30b00265250d56744a65ea6769be77e0, type: 3}
+      - {fileID: 3111108264678135816, guid: 671e76642cb7b0943b7c797e05eca5be, type: 3}
     East:
       offSet: {x: 0, y: 4, z: 0}
       Sprites:
