@@ -32,7 +32,7 @@ public class LoreBooks : MonoBehaviour
         
     }
 
-    private void Back()
+    public void Back()
     {
         Lorebook1.SetActive(false);
         Lorebook2.SetActive(false);
@@ -46,6 +46,11 @@ public class LoreBooks : MonoBehaviour
     {
         
         Lorebook1.SetActive(true);
+    }
+    public void LorebookTwo()
+    {
+
+        Lorebook2.SetActive(true);
     }
 }
 
