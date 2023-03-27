@@ -634,13 +634,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodUsageUpgrade:
     upgraded: 0
-    multiplier: 0
+    multiplier: 0.6
   attackDmgUpgrade:
     upgraded: 0
     multiplier: 1.5
   bloodRegenUpgrade:
     upgraded: 0
-    multiplier: 0
+    multiplier: 1.4
   moveSpeedUpgrade:
     upgraded: 0
     multiplier: 1.4
