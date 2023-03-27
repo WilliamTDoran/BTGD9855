@@ -5220,7 +5220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &906332978
 Transform:
   m_ObjectHideFlags: 0
@@ -8604,6 +8604,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790805141}
   m_CullTransparentMesh: 1
+--- !u!95 &1814246035 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1839603844181473330, guid: 0871b24d27454f74385e56a562633dda, type: 3}
+  m_PrefabInstance: {fileID: 2222148744209257662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1824038690
 GameObject:
   m_ObjectHideFlags: 0
@@ -9571,6 +9576,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2222148743124800986, guid: 0871b24d27454f74385e56a562633dda, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1814246035}
     - target: {fileID: 2222148743124800986, guid: 0871b24d27454f74385e56a562633dda, type: 3}
       propertyPath: gameover
       value: 

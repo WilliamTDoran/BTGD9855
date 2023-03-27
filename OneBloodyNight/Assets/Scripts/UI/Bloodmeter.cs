@@ -12,6 +12,8 @@ public class Bloodmeter : MonoBehaviour
     public int damage;
     public Slider residual;
 
+    public Animator anim;
+
     public GameObject gameover;
 
     [SerializeField]
@@ -108,7 +110,7 @@ public class Bloodmeter : MonoBehaviour
     internal void changeBlood(float difference)
     {
         float targetValue = bloodmeter.value;
-        if(difference )
+        
 
         targetValue = Math.Clamp(targetValue + difference, 0, bloodmeter.maxValue);
 
@@ -140,6 +142,6 @@ public class Bloodmeter : MonoBehaviour
     }
     public void Hort()
     {
-        animator.SetTrigger("Hit");
+        anim.SetTrigger("Hit");
     }
 }

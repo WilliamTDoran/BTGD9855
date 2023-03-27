@@ -162,9 +162,11 @@ public class Player : GameActor
 
     internal override void OnReceiveHit()
     {
+        Bloodmeter.instance.Hort();
         base.OnReceiveHit();
-
+        
         animator.SetTrigger("Owie");
+        
     }
 
 
