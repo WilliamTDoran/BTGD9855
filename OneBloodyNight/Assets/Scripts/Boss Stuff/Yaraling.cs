@@ -55,7 +55,7 @@ public class Yaraling : GameActor
             Vector3 direction = Player.plr.Rb.position - rb.position;
             direction.Normalize();
 
-            rb.AddForce(direction * speed, ForceMode.Force);
+            rb.AddForce(direction * speed / Boss.instance.TimeModifier, ForceMode.Force);
         }
     }
 

@@ -18,7 +18,7 @@ public class Shockrock : Attack
 
         if (canMove)
         {
-            transform.Translate(direction * Time.deltaTime / root.TimeModifier);
+            transform.Translate(direction * Time.deltaTime);
         }
     }
 

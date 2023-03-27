@@ -18,6 +18,7 @@ using UnityEngine.UI;
 /// Version 1.0   (1/20/23), Will Doran
 /// Version 2.0   (3/7/23),  Will Doran
 /// Version 2.0.1 (3/10/23), Will Doran, Taria Tuuri
+/// Version 2.1   (3/26/23), Will Doran, Taria Tuuri, Aidan Chaplin
 /// </summary>
 public class Monster : GameActor
 {
