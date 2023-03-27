@@ -6011,6 +6011,7 @@ GameObject:
   - component: {fileID: 879865972}
   - component: {fileID: 879865974}
   - component: {fileID: 879865973}
+  - component: {fileID: 879865975}
   m_Layer: 0
   m_Name: YaraBoss
   m_TagString: Monster
@@ -6057,6 +6058,12 @@ MonoBehaviour:
   - 0.98
   currentPhase: 0
   timeShred: 0.8
+  audioSource: {fileID: 879865975}
+  Hurt: {fileID: 8300000, guid: b62666daee5be5b41bf884b93adea298, type: 3}
+  slam: {fileID: 8300000, guid: 7f1cc9bcfde90f34687b0073a9a5a760, type: 3}
+  Gurg: {fileID: 8300000, guid: 8e18f42502ddc4644a20abcd531c9b73, type: 3}
+  poundCity: {fileID: 8300000, guid: 0520f1ef37d54c349a84ff80a2ffc7e9, type: 3}
+  Death: {fileID: 0}
   shockrocks:
   - {fileID: 1421458867}
   - {fileID: 1530345391}
@@ -6117,6 +6124,102 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.4, y: 5, z: 5}
   m_Center: {x: 0.2, y: 0, z: -0.5}
+--- !u!82 &879865975
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879865970}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 2465802473941004613, guid: 0139094e69f8d2d47905c00d116a4572, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &885143807
 GameObject:
   m_ObjectHideFlags: 0
@@ -9568,24 +9671,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958a9500299ba37489c22474764d19d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remoteCondition: 0
-  animator: {fileID: 0}
-  render: {fileID: 0}
-  actualVelocity: 0
-  clampedVelocity: 0
-  facingAngle: 0
-  rb: {fileID: 0}
-  col: {fileID: 0}
-  canMove: 0
-  canAttack: 0
-  stunned: 0
-  immune: 0
-  curHitPoints: 0
-  dead: 0
-  speed: 0
-  immuneDuration: 0
-  maxHitPoints: 0
-  walkAnim: 0
 --- !u!1 &1474178314
 GameObject:
   m_ObjectHideFlags: 0
@@ -13563,24 +13648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958a9500299ba37489c22474764d19d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remoteCondition: 0
-  animator: {fileID: 0}
-  render: {fileID: 0}
-  actualVelocity: 0
-  clampedVelocity: 0
-  facingAngle: 0
-  rb: {fileID: 0}
-  col: {fileID: 0}
-  canMove: 0
-  canAttack: 0
-  stunned: 0
-  immune: 0
-  curHitPoints: 0
-  dead: 0
-  speed: 0
-  immuneDuration: 0
-  maxHitPoints: 0
-  walkAnim: 0
 --- !u!114 &1960849445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14372,24 +14439,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958a9500299ba37489c22474764d19d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remoteCondition: 0
-  animator: {fileID: 0}
-  render: {fileID: 0}
-  actualVelocity: 0
-  clampedVelocity: 0
-  facingAngle: 0
-  rb: {fileID: 0}
-  col: {fileID: 0}
-  canMove: 0
-  canAttack: 0
-  stunned: 0
-  immune: 0
-  curHitPoints: 0
-  dead: 0
-  speed: 0
-  immuneDuration: 0
-  maxHitPoints: 0
-  walkAnim: 0
 --- !u!114 &2044842194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15081,24 +15130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958a9500299ba37489c22474764d19d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  remoteCondition: 0
-  animator: {fileID: 0}
-  render: {fileID: 0}
-  actualVelocity: 0
-  clampedVelocity: 0
-  facingAngle: 0
-  rb: {fileID: 0}
-  col: {fileID: 0}
-  canMove: 0
-  canAttack: 0
-  stunned: 0
-  immune: 0
-  curHitPoints: 0
-  dead: 0
-  speed: 0
-  immuneDuration: 0
-  maxHitPoints: 0
-  walkAnim: 0
 --- !u!114 &2085465069
 MonoBehaviour:
   m_ObjectHideFlags: 0
