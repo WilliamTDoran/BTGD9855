@@ -10,6 +10,16 @@ using UnityEngine;
 /// </summary>
 public class YaraBoss : Boss
 {
+    /* Sound */
+    public AudioSource audioSource;
+
+    public AudioClip Hurt;
+    public AudioClip slam;
+    public AudioClip Gurg;
+    public AudioClip poundCity;
+    public AudioClip Death;
+    /*~~~~~~~*/
+
     private IEnumerator shockwaveSlamCoroutine;
     private IEnumerator gurgeyCoroutine;
     private IEnumerator groundPoundCoroutine;
@@ -126,6 +136,7 @@ public class YaraBoss : Boss
     {
         base.OnReceiveHit();
         spanimator.SetTrigger("Owie");
+        audioSource.PlayOneShot(Hurt);
     }
 
     protected override IEnumerator RandomAttacking()
@@ -196,8 +207,10 @@ public class YaraBoss : Boss
         shockSlamRunning = true;
 
         spanimator.SetTrigger("ShockemRockem");
+        
 
         yield return new WaitUntil(() => !shockSlamRunning);
+        audioSource.PlayOneShot(slam);
 
         canMove = true;
         immune = false;
@@ -227,6 +240,7 @@ public class YaraBoss : Boss
         ResetAnimation(gurgeyAnimator);
         
         spanimator.SetTrigger("Gurgey");
+        audioSource.PlayOneShot(Gurg);
 
         yield return new WaitUntil(() => !gurgeyRunning);
 
@@ -345,6 +359,7 @@ public class YaraBoss : Boss
         transform.position = targetPosition;
 
         spanimator.SetTrigger("PoundCity");
+        audioSource.PlayOneShot(poundCity);
         GroundPoundHit();
 
         yield return new WaitForEndOfFrame();
