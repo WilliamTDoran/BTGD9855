@@ -139,6 +139,12 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e27c15fdc7de1574c9b11188332ff316, type: 3}
   - {fileID: 21300000, guid: 68e45ade8dfc86d48bb14aef6283b997, type: 3}
   - {fileID: 21300000, guid: 378b0e3f958ba23468da59472c038afd, type: 3}
+  - {fileID: -459194011, guid: c693574f906aa0f4ba197d4e55dfe0c2, type: 3}
+  - {fileID: 342535625, guid: c693574f906aa0f4ba197d4e55dfe0c2, type: 3}
+  - {fileID: -320039823, guid: c693574f906aa0f4ba197d4e55dfe0c2, type: 3}
+  - {fileID: 372215311, guid: c693574f906aa0f4ba197d4e55dfe0c2, type: 3}
+  - {fileID: 1626636602, guid: c693574f906aa0f4ba197d4e55dfe0c2, type: 3}
+  - {fileID: 1286472438, guid: c693574f906aa0f4ba197d4e55dfe0c2, type: 3}
   - {fileID: 454070550, guid: 6999f97f75ae1f0459f7d5fdf666008e, type: 3}
   - {fileID: -1440343999, guid: 6999f97f75ae1f0459f7d5fdf666008e, type: 3}
   - {fileID: 1777822383, guid: 6999f97f75ae1f0459f7d5fdf666008e, type: 3}
@@ -243,6 +249,12 @@ SpriteAtlas:
   - Blood6
   - Blood12
   - LoreBook
+  - BloodVial_4
+  - BloodVial_5
+  - BloodVial_0
+  - BloodVial_1
+  - BloodVial_2
+  - BloodVial_3
   - PortalExport_2
   - PortalExport_3
   - PortalExport_0
