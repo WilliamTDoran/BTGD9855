@@ -94,9 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3393825086447709751}
   - component: {fileID: 6005103991287181451}
-  - component: {fileID: 2638801012502946081}
   - component: {fileID: 6111014953117024453}
   - component: {fileID: 3005739290893527411}
+  - component: {fileID: 6271995735394321811}
   m_Layer: 0
   m_Name: BossPortalYara
   m_TagString: SpriteTrigger
@@ -159,7 +159,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1048108071
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 1176538604, guid: 6999f97f75ae1f0459f7d5fdf666008e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -172,18 +172,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2638801012502946081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3505505689596641723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6ef4bf7d9293cd4884c84ceb85959c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &6111014953117024453
 Animator:
   serializedVersion: 4
@@ -218,3 +206,15 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: -0.17999995}
+--- !u!114 &6271995735394321811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505505689596641723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ae9f4ba5eaa944ba5f39a5483bd802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
