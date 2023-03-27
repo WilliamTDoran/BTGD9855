@@ -77,6 +77,10 @@ public class GameManager : MonoBehaviour
         {
             Application.LoadLevel("ImpunduluBossRoom");
         }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            Application.LoadLevel("YaraBossRoom");
+        }
     }
 
     /// <summary>
