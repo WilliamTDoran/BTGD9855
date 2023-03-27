@@ -11,6 +11,7 @@ public class YaraBoss : Boss
 {
     private IEnumerator shockwaveSlamCoroutine;
     private IEnumerator gurgeyCoroutine;
+    private IEnumerator poundRockslideCoroutine;
 
     private bool shockSlamRunning = false;
     public bool ShockSlamRunning { set { shockSlamRunning = value; } }
@@ -39,6 +40,18 @@ public class YaraBoss : Boss
     [SerializeField]
     private Yaraling[] lings;
 
+    [Tooltip("The rock basket patterns for groundpound. MUST BE THE SAME NUMBER OF ENTRIES AS THERE ARE MAXTIMES AND ROCKBASKETS")]
+    [SerializeField]
+    private GameObject[] rockBaskets;
+
+    [Tooltip("The minimum time possible between each rock's appearance during ground pound. MUST BE THE SAME NUMBER OF ENTRIES AS THERE ARE MAXTIMES AND ROCKBASKETS")]
+    [SerializeField]
+    private float[] poundRockMinTimes;
+
+    [Tooltip("The maximum time possible between each rock's appearance during ground pound. MUST BE THE SAME NUMBER OF ENTRIES AS THERE ARE MINTIMES AND ROCKBASKETS")]
+    [SerializeField]
+    private float[] poundRockMaxTimes;
+
     [SerializeField]
     private Animator spanimator;
 
@@ -55,15 +68,13 @@ public class YaraBoss : Boss
     [SerializeField]
     private float timeBeforeRegurgitate;
 
+    [Tooltip("This one should be high, comparatively")]
     [SerializeField]
     private float timeBeforePound;
 
     [SerializeField]
     private float timeBeforeBloodStrike;
     /*~~~~~~~~~~~~~~~~~~~*/
-
-    public Attack bitch;
-    public Animator bitchcake;
 
     protected override void Start()
     {
@@ -137,9 +148,7 @@ public class YaraBoss : Boss
                     //Ground Pound
                     yield return new WaitForSeconds(timeBeforePound * timeModifier);
                     StopRandomBehavior();
-                    bitch.gameObject.SetActive(true);
-                    bitchcake.Rebind();
-                    bitchcake.Update(0f);
+                    StartPoundRockslide(rockBaskets[0], poundRockMinTimes[0], poundRockMaxTimes[0]);
                     StartRandomBehavior();
                     break;
                 }
@@ -194,8 +203,7 @@ public class YaraBoss : Boss
 
         gurgeySpot.gameObject.SetActive(true);
         gurgeySpot.InitiateConditional(Player.plr.Rb.position);
-        gurgeyAnimator.Rebind();
-        gurgeyAnimator.Update(0f);
+        ResetAnimation(gurgeyAnimator);
         
         spanimator.SetTrigger("Gurgey");
 
@@ -277,6 +285,27 @@ public class YaraBoss : Boss
         }
     }
 
+    private IEnumerator PoundRockslide(GameObject center, float minTime, float maxTime)
+    {
+        Attack[] rockies = center.GetComponentsInChildren<Attack>(true);
+
+        foreach (Attack i in rockies)
+        {
+            yield return new WaitForSeconds(Random.Range(minTime, maxTime) * timeModifier);
+
+            i.gameObject.SetActive(true);
+
+            Animator iAnim = i.transform.GetChild(0).GetComponent<Animator>();
+            ResetAnimation(iAnim);
+        }
+    }
+
+    private void ResetAnimation(Animator inp)
+    {
+        inp.Rebind();
+        inp.Update(0f);
+    }
+
 
 
 
@@ -302,5 +331,17 @@ public class YaraBoss : Boss
     {
         StopCoroutine(gurgeyCoroutine);
         gurgeyCoroutine = null;
+    }
+
+    private void StartPoundRockslide(GameObject center, float minTime, float maxTime)
+    {
+        poundRockslideCoroutine = PoundRockslide(center, minTime, maxTime);
+        StartCoroutine(poundRockslideCoroutine);
+    }
+
+    private void StopPoundRockslide()
+    {
+        StopCoroutine(poundRockslideCoroutine);
+        poundRockslideCoroutine = null;
     }
 }

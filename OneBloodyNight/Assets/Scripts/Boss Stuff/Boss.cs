@@ -14,6 +14,7 @@ public class Boss : GameActor
     protected int rndCap = 3;
 
     protected float timeModifier = 1.0f;
+    public float TimeModifier { get { return timeModifier; } }
 
     internal static Boss instance;
 
