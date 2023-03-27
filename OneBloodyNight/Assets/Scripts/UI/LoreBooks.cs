@@ -42,7 +42,7 @@ public class LoreBooks : MonoBehaviour
         Lorebook6.SetActive(false);
     }
 
-    private void LorebookOne()
+    public void LorebookOne()
     {
         
         Lorebook1.SetActive(true);
