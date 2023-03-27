@@ -32,20 +32,20 @@ public class Bloodmeter : MonoBehaviour
             instance = this;
         }
 
-        
+
     }
 
     // Start is called before the first frame update
     private void Start()
     {
-        
+
         bloodmeter.value = bloodmeter.maxValue;
         residual.value = bloodmeter.minValue;
         Debug.Log("Done");
         StartCoroutine("DMG");
         gameover.SetActive(false);
     }
-    
+
     private void Update()
     {
         /*
@@ -62,8 +62,8 @@ public class Bloodmeter : MonoBehaviour
         }
 
 
-    } 
-    
+    }
+
 
     // Update is called once per frame
     /*private void Update()
@@ -85,9 +85,9 @@ public class Bloodmeter : MonoBehaviour
                 bloodLost *= 2;
             }
             bloodmeter.value = bloodmeter.value - bloodLost;//takes 1 blood per second
-            
+
             yield return new WaitForSeconds(0.03f);//slows down the damage rate
-            
+
         }
         yield return null;//Player is dead
     }
@@ -95,8 +95,8 @@ public class Bloodmeter : MonoBehaviour
     private IEnumerator Rez()
     {
         residual.value = bloodmeter.value;
-        
-        while(residual.value != bloodmeter.value)
+
+        while (residual.value != bloodmeter.value)
         {
             residual.value = residual.value - 1;
             yield return new WaitForSeconds(0.1f);
@@ -108,6 +108,7 @@ public class Bloodmeter : MonoBehaviour
     internal void changeBlood(float difference)
     {
         float targetValue = bloodmeter.value;
+        if(difference )
 
         targetValue = Math.Clamp(targetValue + difference, 0, bloodmeter.maxValue);
 
@@ -130,11 +131,15 @@ public class Bloodmeter : MonoBehaviour
     private IEnumerator Gainer()
     {
 
-        while(bloodmeter.value < bloodmeter.maxValue)
-        { 
+        while (bloodmeter.value < bloodmeter.maxValue)
+        {
             bloodmeter.value = bloodmeter.value + 10;//takes 1 blood per second
             yield return new WaitForSeconds(0.03f);//slows down the damage rate
         }
-  
+
+    }
+    public void Hort()
+    {
+        animator.SetTrigger("Hit");
     }
 }

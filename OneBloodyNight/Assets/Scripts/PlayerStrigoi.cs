@@ -183,7 +183,7 @@ public class PlayerStrigoi : Player
     {
 
         animator.SetTrigger("Die");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         GameOver.SetActive(true);
         Time.timeScale = 0f;
     }
