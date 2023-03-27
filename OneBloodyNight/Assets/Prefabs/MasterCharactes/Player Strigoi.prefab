@@ -336,6 +336,7 @@ MonoBehaviour:
   swarmAttack: {fileID: 2249110079347045106}
   basicMaterial: {fileID: 2100000, guid: 053872da44d313045b55ece660ff3209, type: 2}
   invisibleMaterial: {fileID: 2100000, guid: 64b0d744dccde5f458fa051eb3da40cd, type: 2}
+  batSwarmSpanimator: {fileID: 1264857596048874417}
   berserkUpDebugText: {fileID: 0}
   berserkCounterDebugText: {fileID: 0}
   berserkUptimeDebugText: {fileID: 0}
@@ -1117,7 +1118,7 @@ MonoBehaviour:
   checkForWalls: 1
   attacker: {fileID: 2249110078326297013}
   spriteAnimator: {fileID: 0}
-  showHitbox: 1
+  showHitbox: 0
   hitboxMesh: {fileID: 2249110079347045108}
 --- !u!33 &2249110079347045107
 MeshFilter:
@@ -1513,7 +1514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &309143385659107657
 Transform:
   m_ObjectHideFlags: 0

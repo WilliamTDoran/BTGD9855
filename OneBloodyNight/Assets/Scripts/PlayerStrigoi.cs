@@ -87,6 +87,9 @@ public class PlayerStrigoi : Player
     [SerializeField]
     private Material invisibleMaterial;
 
+    [SerializeField]
+    private Animator batSwarmSpanimator;
+
     //Debug texts that can be brought up with F1
     [Header("Debug")]
     [SerializeField]
@@ -254,6 +257,10 @@ public class PlayerStrigoi : Player
     {
         Bloodmeter.instance.changeBlood(-abilityTwoCost);
 
+        batSwarmSpanimator.gameObject.SetActive(true);
+        batSwarmSpanimator.Rebind();
+        batSwarmSpanimator.Update(0f);
+
         swarmCounter = 0;
         swarmAttack.ForceStill = true;
         swarmAttack.StartSwing(batCode);
@@ -304,6 +311,10 @@ public class PlayerStrigoi : Player
             {
                 swarmCounter++;
                 swarmAttack.StartSwing(batCode);
+            }
+            else
+            {
+                batSwarmSpanimator.gameObject.SetActive(false);
             }
         }
     }
