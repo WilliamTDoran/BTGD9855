@@ -634,16 +634,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodUsageUpgrade:
     upgraded: 0
-    multiplier: 0
+    multiplier: 0.6
   attackDmgUpgrade:
     upgraded: 0
-    multiplier: 1
+    multiplier: 1.5
   bloodRegenUpgrade:
     upgraded: 0
-    multiplier: 0
+    multiplier: 1.4
   moveSpeedUpgrade:
     upgraded: 0
-    multiplier: 2
+    multiplier: 1.4
 --- !u!224 &131833780
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4192,6 +4192,7 @@ MonoBehaviour:
     pickupsObjects:
     - {fileID: 1344671037}
     - {fileID: 1924866634254403308, guid: cbc11f1c1ac338649b4ce9159b8197f8, type: 3}
+    - {fileID: 6519528473584819870, guid: 7fd90efb59fb98b40bfb93519303d97b, type: 3}
     CharacterBiome: 0
   mazeSeed: -1
   sampleRow: {fileID: 3985245215676089212, guid: ee78c11f6f19f724b84ac746fcad03bf, type: 3}
