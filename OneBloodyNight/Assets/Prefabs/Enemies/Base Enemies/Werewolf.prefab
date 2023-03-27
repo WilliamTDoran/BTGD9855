@@ -317,6 +317,7 @@ GameObject:
   - component: {fileID: 6075898001845311317}
   - component: {fileID: 6250998436232743288}
   - component: {fileID: 6981525957637314526}
+  - component: {fileID: 6857394725249313914}
   m_Layer: 0
   m_Name: Werewolf
   m_TagString: Monster
@@ -442,6 +443,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 200
   walkAnim: 1
+  audioSource: {fileID: 6857394725249313914}
+  Attack: {fileID: 8300000, guid: dbb740a9f4d5a6f48aa250617ffffc35, type: 3}
+  Death: {fileID: 8300000, guid: 7eb6b39c1882b8d4da73801040737de7, type: 3}
+  Hurt: {fileID: 8300000, guid: 56659aad14c300643819914f9984f9e1, type: 3}
   DeathPart: {fileID: 6481191564942972682}
   blood: {fileID: 7150320926583223067}
   Bloody: {fileID: 6110766870736994439}
@@ -513,6 +518,102 @@ MonoBehaviour:
   defaultSortingOrder: 20
   triggeredSortingOrder: -1
   propSortingOrder: 10
+--- !u!82 &6857394725249313914
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157727617279695231}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 2465802473941004613, guid: 0139094e69f8d2d47905c00d116a4572, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8340665572391856303
 GameObject:
   m_ObjectHideFlags: 0

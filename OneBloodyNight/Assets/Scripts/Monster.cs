@@ -22,6 +22,15 @@ using UnityEngine.UI;
 /// </summary>
 public class Monster : GameActor
 {
+    //sound 
+    public AudioSource audioSource;
+
+    public AudioClip Attack;
+    public AudioClip Death;
+    public AudioClip Hurt;
+
+    //sound
+
     private Player player; //reference to the player. kind of antequated since its from before Player.cs had static reference, but whatever
 
     public ParticleSystem DeathPart; //particles
@@ -149,6 +158,7 @@ public class Monster : GameActor
 
     private IEnumerator DeathTimer()
     {
+        audioSource.PlayOneShot(Death);
         yield return new WaitForSeconds(5);
         Destroy(gameObject);
     }
@@ -292,6 +302,7 @@ public class Monster : GameActor
         facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
 
         animator.SetTrigger("Fire");
+        audioSource.PlayOneShot(Attack);
 
         if (basicAttack.ForceStill) //Some attacks force the attacker to stand still
         {
@@ -326,6 +337,7 @@ public class Monster : GameActor
         base.OnReceiveHit();
 
         blood.Play();
+        audioSource.PlayOneShot(Hurt);
         animator.SetTrigger("Owie");
     }
 
