@@ -188,13 +188,14 @@ public class YaraBoss : Boss
 
             case 4:
                 {
-                    goto case 1;
+                    goto case 3;
                     //Blood Pool Strike
                     yield return new WaitForSeconds(timeBeforeBloodStrike * timeModifier);
                     break;
                 }
 
             default:
+                Debug.LogError("Yara defaulted on attack choice");
                 goto case 0;
         }
     }
