@@ -29,7 +29,7 @@ public class GameOver : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            Application.LoadLevel("TestScene");
+            Application.LoadLevel("MazeScene");
         }
 
         if (Input.GetKeyDown(KeyCode.V))
@@ -44,17 +44,6 @@ public class GameOver : MonoBehaviour
         }
     }
 
-    public void yes()
-    {
-        Application.LoadLevel("TestScene");
-        Debug.Log("working");
-
-    }
-
-    public void no()
-    {
-        Application.Quit();
-    }
 
     public void Victory()
     {
@@ -70,7 +59,7 @@ public class GameOver : MonoBehaviour
 
     public void YES()
     {
-        Application.LoadLevel("TestScene");
+        Application.LoadLevel("MazeScene");
     }
 
 
