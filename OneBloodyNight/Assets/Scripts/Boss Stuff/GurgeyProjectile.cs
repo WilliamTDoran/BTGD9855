@@ -68,6 +68,7 @@ public class GurgeyProjectile : GameActor
 
     private void Arrive()
     {
+        transform.position = targetPosition;
         canMove = false;
         spotAnimator.SetTrigger("Arrive");
         RemoteCondition = true;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -11,13 +12,20 @@ public class YaraBoss : Boss
 {
     private IEnumerator shockwaveSlamCoroutine;
     private IEnumerator gurgeyCoroutine;
+    private IEnumerator groundPoundCoroutine;
     private IEnumerator poundRockslideCoroutine;
 
     private bool shockSlamRunning = false;
     public bool ShockSlamRunning { set { shockSlamRunning = value; } }
-
     private bool gurgeyRunning = false;
     public bool GurgeyRunning { set { gurgeyRunning = value; } }
+    private bool groundPoundRunning = false;
+    public bool GroundPoundRunning { set { groundPoundRunning = value; } }
+
+    private bool poundBegin = false;
+    public bool PoundBegin { set { poundBegin = value; } }
+    private bool poundDive = false;
+    public bool PoundDive { set { poundDive = value; } }
 
     /* Exposed Variables */
     [Tooltip("All 8 rocks for shockwave slam")]
@@ -39,6 +47,14 @@ public class YaraBoss : Boss
     [Tooltip("As many yaralings as you want to be able to exist at once")]
     [SerializeField]
     private Yaraling[] lings;
+
+    [Tooltip("Speed of Groudn Pound Dive")]
+    [SerializeField]
+    private float diveSpeed;
+
+    [Tooltip("Reference to the attack made when hitting the ground after GP")]
+    [SerializeField]
+    private Attack groundPoundImpact;
 
     [Tooltip("The rock basket patterns for groundpound. MUST BE THE SAME NUMBER OF ENTRIES AS THERE ARE MAXTIMES AND ROCKBASKETS")]
     [SerializeField]
@@ -117,7 +133,7 @@ public class YaraBoss : Boss
         int upperLimit = rndCap + currentPhase;
         int check = rnd.Next(0, upperLimit);
 
-        switch (3)
+        switch (check)
         {
             case 0:
                 {
@@ -147,9 +163,15 @@ public class YaraBoss : Boss
                 {
                     //Ground Pound
                     yield return new WaitForSeconds(timeBeforePound * timeModifier);
-                    /*StopRandomBehavior();
-                    StartPoundRockslide(rockBaskets[0], poundRockMinTimes[0], poundRockMaxTimes[0]);
-                    StartRandomBehavior();*/
+
+                    Vector3 playerDirection = (Player.plr.transform.position - transform.position).normalized;
+                    playerDirection = new Vector3(playerDirection.x, 0, playerDirection.z).normalized;
+                    if (System.Math.Abs(playerDirection.x) < System.Math.Abs(playerDirection.z))
+                    {
+                        goto case 2;
+                    }
+
+                    StartGroundPound();
                     break;
                 }
 
@@ -283,6 +305,71 @@ public class YaraBoss : Boss
         }
     }
 
+    private IEnumerator GroundPound()
+    {
+        StopRandomBehavior();
+        canMove = false;
+        immune = true;
+        groundPoundRunning = true;
+
+        col.enabled = false;
+
+        FacePlayer();
+        spanimator.SetTrigger("PoundTown");
+
+        yield return new WaitUntil(() => poundBegin);
+        poundBegin = false;
+
+        while (!poundDive)
+        {
+            transform.Translate(new Vector3(0, 0, 35 * Time.deltaTime));
+            yield return new WaitForEndOfFrame();
+        }
+        poundDive = false;
+
+        Vector3 targetPosition = Player.plr.transform.position;
+        Vector3 startPosition = transform.position;
+        float targetDistance = Vector3.Distance(startPosition, targetPosition);
+        Vector3 targetVector = (targetPosition - startPosition).normalized;
+        targetVector = new Vector3(targetVector.x, 0, targetVector.z).normalized;
+
+        FacePlayer();
+
+        while (Vector3.Distance(startPosition, transform.position) < targetDistance)
+        {
+            transform.Translate(targetVector * diveSpeed * Time.deltaTime / timeModifier);
+            yield return new WaitForEndOfFrame();
+        }
+
+        immune = false;
+        transform.position = targetPosition;
+
+        spanimator.SetTrigger("PoundCity");
+        GroundPoundHit();
+
+        yield return new WaitForEndOfFrame();
+        col.enabled = true;
+
+        yield return new WaitUntil(() => !groundPoundRunning);
+        groundPoundRunning = false;
+
+        groundPoundImpact.Col.enabled = false;
+        groundPoundImpact.EndSwing();
+
+        canMove = true;
+        StartRandomBehavior();
+    }
+
+    private void GroundPoundHit()
+    {
+        groundPoundImpact.Col.enabled = true;
+
+        int targetPattern = rnd.Next(0, rockBaskets.Length);
+        rockBaskets[targetPattern].transform.position = transform.position;
+
+        StartPoundRockslide(rockBaskets[targetPattern], poundRockMinTimes[targetPattern], poundRockMaxTimes[targetPattern]);
+    }
+
     private IEnumerator PoundRockslide(GameObject center, float minTime, float maxTime)
     {
         Attack[] rockies = center.GetComponentsInChildren<Attack>(true);
@@ -298,10 +385,26 @@ public class YaraBoss : Boss
         }
     }
 
+    /// <summary>
+    /// I have no idea what this actually *does*, I just know that if you apply it to an animator that's hit its exit, it'll restart it lmao
+    /// </summary>
+    /// <param name="inp">The animator to restart</param>
     private void ResetAnimation(Animator inp)
     {
         inp.Rebind();
         inp.Update(0f);
+    }
+
+    private void FacePlayer()
+    {
+        if (Player.plr.transform.position.x > transform.position.x)
+        {
+            sprender.flipX = false;
+        }
+        else
+        {
+            sprender.flipX = true;
+        }
     }
 
 
@@ -329,6 +432,18 @@ public class YaraBoss : Boss
     {
         StopCoroutine(gurgeyCoroutine);
         gurgeyCoroutine = null;
+    }
+
+    private void StartGroundPound()
+    {
+        groundPoundCoroutine = GroundPound();
+        StartCoroutine(groundPoundCoroutine);
+    }
+
+    private void StopGroundPound()
+    {
+        StopCoroutine(groundPoundCoroutine);
+        groundPoundCoroutine = null;
     }
 
     private void StartPoundRockslide(GameObject center, float minTime, float maxTime)
