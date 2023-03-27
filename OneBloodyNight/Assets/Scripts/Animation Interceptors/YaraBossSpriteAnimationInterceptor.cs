@@ -28,4 +28,19 @@ public class YaraBossSpriteAnimationInterceptor : MonoBehaviour
     {
         root.GurgeyRunning = false;
     }
+
+    public void StartPounding()
+    {
+        root.PoundBegin = true;
+    }
+
+    public void DiveTime()
+    {
+        root.PoundDive = true;
+    }
+
+    public void PoundDone()
+    {
+        root.GroundPoundRunning = false;
+    }
 }
