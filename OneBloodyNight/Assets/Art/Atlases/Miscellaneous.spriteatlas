@@ -137,6 +137,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 0fba696c9eabf6c4ab003146e4cc1b29, type: 3}
   - {fileID: 21300000, guid: 81077b7c63a44b64ca5ff7cbda61599d, type: 3}
   - {fileID: 21300000, guid: e27c15fdc7de1574c9b11188332ff316, type: 3}
+  - {fileID: 21300000, guid: 2e51575e6b5120a45b1ce3d10d8f275e, type: 3}
   - {fileID: 21300000, guid: 68e45ade8dfc86d48bb14aef6283b997, type: 3}
   - {fileID: 21300000, guid: 378b0e3f958ba23468da59472c038afd, type: 3}
   - {fileID: -459194011, guid: c693574f906aa0f4ba197d4e55dfe0c2, type: 3}
@@ -247,6 +248,7 @@ SpriteAtlas:
   - Blood7
   - ImpunduluBiomeFlowerPink
   - Blood6
+  - FigTree
   - Blood12
   - LoreBook
   - BloodVial_4

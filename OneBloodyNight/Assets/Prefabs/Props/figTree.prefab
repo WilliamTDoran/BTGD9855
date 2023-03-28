@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 932038497045988655}
   - component: {fileID: 2591831593079715293}
   m_Layer: 0
-  m_Name: treeShaded
+  m_Name: figTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +139,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 053872da44d313045b55ece660ff3209, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -160,7 +160,7 @@ SpriteRenderer:
   m_SortingLayerID: 1953289611
   m_SortingLayer: 10
   m_SortingOrder: 15
-  m_Sprite: {fileID: 21300000, guid: aa77b4ea992ffa74183caeeb168d2bcd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e51575e6b5120a45b1ce3d10d8f275e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

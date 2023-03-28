@@ -4,6 +4,13 @@ Shader "Sprites/Custom/Fuckyoushader"
 {
     Properties
     {
+
+        _MainTex("Albedo", 2D) = "white" {}
+
+        
+
+
+
         [PerRendererData] _MainTex("Sprite Texture", 2D) = "white" {}
         _Color("Tint", Color) = (1,1,1,1)
         [MaterialToggle] PixelSnap("Pixel snap", Float) = 0
@@ -12,10 +19,13 @@ Shader "Sprites/Custom/Fuckyoushader"
         [PerRendererData] _AlphaTex("External Alpha", 2D) = "white" {}
         [PerRendererData] _EnableExternalAlpha("Enable External Alpha", Float) = 0
             _Cutoff("Alpha Cutoff", Range(0,1)) = 0.5
+
+
     }
 
         SubShader
         {
+
             Tags
             {
                 "Queue" = "Transparent"
