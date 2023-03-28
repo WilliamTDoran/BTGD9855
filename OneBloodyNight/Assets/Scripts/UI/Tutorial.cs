@@ -6,13 +6,16 @@ public class Tutorial : MonoBehaviour
 {
     public GameObject controls;
     public GameObject blood;
+    public GameObject upgrade;
     public GameObject backbutton;
     public GameObject nextbutton;
+    private int count = 1;
     // Start is called before the first frame update
     void Start()
     {
         controls.SetActive(true);
         blood.SetActive(false);
+        upgrade.SetActive(false);
         backbutton.SetActive(false);
         nextbutton.SetActive(true);
     }
@@ -32,17 +35,47 @@ public class Tutorial : MonoBehaviour
 
     public void Next()
     {
-        controls.SetActive(false);
-        blood.SetActive(true);
-        backbutton.SetActive(true);
-        nextbutton.SetActive(false);
+        if(count == 1)//page 2
+        {
+            controls.SetActive(false);
+            blood.SetActive(true);
+            upgrade.SetActive(false);
+            backbutton.SetActive(true);
+            nextbutton.SetActive(true);
+            count++;
+        }
+        else if(count == 2)//page 3
+        {
+            controls.SetActive(false);
+            blood.SetActive(false);
+            upgrade.SetActive(true);
+            backbutton.SetActive(true);
+            nextbutton.SetActive(false);
+            count++;
+        }
+        
     }
 
     public void back()
     {
-        controls.SetActive(true);
-        blood.SetActive(false);
-        backbutton.SetActive(false);
-        nextbutton.SetActive(true);
+        if(count == 3)//page 2
+        {
+            controls.SetActive(false);
+            blood.SetActive(true);
+            upgrade.SetActive(false);
+            backbutton.SetActive(true);
+            nextbutton.SetActive(true);
+            count--;
+        }
+        else if(count == 2)//page 1
+        {
+            controls.SetActive(true);
+            blood.SetActive(false);
+            upgrade.SetActive(false);
+            backbutton.SetActive(false);
+            nextbutton.SetActive(true);
+            count--;
+        }
+        
     }
 }
