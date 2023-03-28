@@ -9151,10 +9151,6 @@ PrefabInstance:
       propertyPath: berserkCounterDebugText
       value: 
       objectReference: {fileID: 1200952460}
-    - target: {fileID: 2249110079459465620, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
-      propertyPath: m_HDR
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2249110079632568362, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 262
