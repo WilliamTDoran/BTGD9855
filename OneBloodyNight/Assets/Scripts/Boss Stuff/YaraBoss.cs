@@ -112,6 +112,18 @@ public class YaraBoss : Boss
         StartCoroutine("startanim");
         isDead = false;
     }
+    protected override void Update()
+    {
+
+        if ((CurHitPoints <= 0) && (isDead == false))
+        {
+            isDead = true;
+            StopAllCoroutines();
+            StartCoroutine("Ded");
+
+        }
+
+    }
 
     protected override void LateUpdate()
     {
@@ -489,5 +501,13 @@ public class YaraBoss : Boss
     {
         StopCoroutine(poundRockslideCoroutine);
         poundRockslideCoroutine = null;
+    }
+
+    private IEnumerator Ded()
+    {
+        spanimator.SetTrigger("Die");
+        
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
     }
 }

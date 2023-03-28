@@ -17,12 +17,7 @@ public class BossPortalYara : MonoBehaviour
         
     }
 
-    IEnumerator StartBoss()
-    {
-        yield return new WaitForSeconds(5);
-        Application.LoadLevel("ImpunduluBossRoom");
 
-    }
     public void OnTriggerEnter(Collider col)
     {
         Debug.Log("Contact");
@@ -31,7 +26,7 @@ public class BossPortalYara : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "MazeScene") { 
             Application.LoadLevel("YaraBossRoom");
             }
-            else if (SceneManager.GetActiveScene().name == "ImpunduluBossRoom")
+            else if (SceneManager.GetActiveScene().name == "YaraBossRoom")
             {
                 Application.LoadLevel("MazeScene");
             }
