@@ -24,6 +24,7 @@ public class Book : MonoBehaviour
         {
             bookNum++;
             PlayerPrefs.SetInt("LoreBooks", bookNum);
+            Debug.Log("hapenstances");
             Destroy(gameObject);
         }
         
