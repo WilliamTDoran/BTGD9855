@@ -13,12 +13,11 @@ public class Book : MonoBehaviour
 
     public void OnTriggerEnter(Collider col)
     {
-        Debug.Log("Contact");
-        if (col.gameObject.tag == "Player")
+        if (col.CompareTag("Player"))
         {
             bookNum++;
             PlayerPrefs.SetInt("LoreBooks", bookNum);
-            Debug.Log("hapenstances");
+            
             //PlayerPrefs.SetInt("LoreBooks", bookNum);
             Destroy(gameObject);
         }

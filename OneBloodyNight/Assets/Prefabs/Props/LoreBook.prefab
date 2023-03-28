@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 931022788949868219}
   - component: {fileID: 5572759232767483277}
   - component: {fileID: 5051357397789932308}
+  - component: {fileID: 247510976029457159}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -181,7 +182,19 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.1413679, y: 1, z: 11}
-  m_Center: {x: 1.3109777, y: 0.54895097, z: 1.1799088}
+  m_Center: {x: 0, y: 0, z: 1.1799088}
+--- !u!114 &247510976029457159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2511683107424993432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97fa2c8db286c24fae24a49312aeebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6519528473584819870
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +204,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3096335337480684394}
-  - component: {fileID: 1356175180978606926}
   m_Layer: 0
   m_Name: LoreBook
   m_TagString: Untagged
@@ -216,15 +228,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1356175180978606926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6519528473584819870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b97fa2c8db286c24fae24a49312aeebc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

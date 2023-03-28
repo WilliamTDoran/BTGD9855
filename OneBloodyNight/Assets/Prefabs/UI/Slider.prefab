@@ -299,6 +299,7 @@ MonoBehaviour:
   AbilityCost: 50
   damage: 0
   residual: {fileID: 0}
+  anim: {fileID: 0}
   gameover: {fileID: 0}
   bloodLossRate: 0.4
   bloodGainRate: 0

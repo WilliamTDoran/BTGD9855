@@ -546,7 +546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5000
   immuneDuration: 0
-  maxHitPoints: 200
+  maxHitPoints: 180
   walkAnim: 1
   audioSource: {fileID: 6857394725249313914}
   Attack: {fileID: 8300000, guid: dbb740a9f4d5a6f48aa250617ffffc35, type: 3}

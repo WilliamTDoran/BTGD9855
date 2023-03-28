@@ -39,6 +39,7 @@ public class UpgradeTotemHUD : MonoBehaviour
             bloodUsageUpgrade.upgraded = true;
             Bloodmeter.instance.bloodLossRate *= bloodUsageUpgrade.multiplier;
         }
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
 
@@ -54,6 +55,7 @@ public class UpgradeTotemHUD : MonoBehaviour
                 Debug.Log("Upgrade not implemented for this character");
             }
         }
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
 
@@ -64,6 +66,7 @@ public class UpgradeTotemHUD : MonoBehaviour
             bloodRegenUpgrade.upgraded = true;
             Player.plr.bloodRegainMult *= bloodRegenUpgrade.multiplier;
         }
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
 
@@ -82,6 +85,7 @@ public class UpgradeTotemHUD : MonoBehaviour
                 Debug.Log("Upgrade not implemented for this character");
             }
         }
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
 
@@ -99,6 +103,7 @@ public class UpgradeTotemHUD : MonoBehaviour
                 Debug.Log("Upgrade not implemented for this character");
             }
         }
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
     public void upgradeBottomSpecial()
@@ -115,6 +120,7 @@ public class UpgradeTotemHUD : MonoBehaviour
                 Debug.Log("Upgrade not implemented for this character");
             }
         }
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
 
@@ -132,6 +138,7 @@ public class UpgradeTotemHUD : MonoBehaviour
                 Debug.Log("Upgrade not implemented for this character");
             }
         }
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
 
@@ -149,6 +156,7 @@ public class UpgradeTotemHUD : MonoBehaviour
                 Debug.Log("Upgrade not implemented for this character");
             }
         }
+        Time.timeScale = 1f;
         gameObject.SetActive(false);
     }
 
@@ -156,6 +164,7 @@ public class UpgradeTotemHUD : MonoBehaviour
     {
         if ((Input.GetButtonDown("Cancel") || Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical") || Input.GetButtonDown("Interact")) && gameObject.activeSelf)
         {
+            Time.timeScale = 1f;
             gameObject.SetActive(false);
         }
     }
