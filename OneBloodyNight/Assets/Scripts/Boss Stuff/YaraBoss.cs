@@ -100,13 +100,17 @@ public class YaraBoss : Boss
 
     [SerializeField]
     private float timeBeforeBloodStrike;
+
+    private bool isDead;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     protected override void Start()
     {
         base.Start();
-
-        StartRandomBehavior();
+        
+        spanimator.SetTrigger("start");
+        StartCoroutine("startanim");
+        isDead = false;
     }
 
     protected override void LateUpdate()
@@ -130,6 +134,19 @@ public class YaraBoss : Boss
                 }
             }
         }
+    }
+    private IEnumerator starter()
+    {
+        yield return new WaitForSeconds(5f);
+    }
+
+    private IEnumerator startanim()
+    {
+        Player.plr.Stunned = true;
+        yield return new WaitForSeconds(7f);
+        StartRandomBehavior();
+        spanimator.ResetTrigger("start");
+        Player.plr.Stunned = false;
     }
 
     internal override void OnReceiveHit()

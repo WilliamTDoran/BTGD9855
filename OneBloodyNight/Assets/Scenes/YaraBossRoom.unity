@@ -753,6 +753,10 @@ PrefabInstance:
       propertyPath: berserkCounterDebugText
       value: 
       objectReference: {fileID: 1961624643}
+    - target: {fileID: 2249110079459465619, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2249110079632568363, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -9400,6 +9404,31 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390018951}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1392643723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2249110079459465622, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+  m_PrefabInstance: {fileID: 60626322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1392643727
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392643723}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a5ec054d00198bc4496e7acd1a6c5312, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1421458865
 GameObject:
   m_ObjectHideFlags: 0
@@ -14493,6 +14522,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8655085129258090219, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
+      propertyPath: PlrBlood
+      value: 
+      objectReference: {fileID: 1263255952}
     - target: {fileID: 8655085129258090219, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
       propertyPath: BossPortal
       value: 

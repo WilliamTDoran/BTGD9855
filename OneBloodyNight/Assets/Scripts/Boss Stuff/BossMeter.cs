@@ -19,10 +19,10 @@ public class BossMeter : MonoBehaviour
     }
     void Start()
     {
-        //Bossblood.SetActive(false);
-        //BossText.SetActive(false);
-        //PlrBlood.SetActive(false);
-        //StartCoroutine("Starter");
+        Bossblood.SetActive(false);
+        BossText.SetActive(false);
+        PlrBlood.SetActive(false);
+        StartCoroutine("Starter");
         BossPortal.SetActive(false);
         bloodmeter.value = bloodmeter.maxValue;
     }
@@ -40,7 +40,7 @@ public class BossMeter : MonoBehaviour
     private IEnumerator Starter()
     {
         
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(7);
         Bossblood.SetActive(true);
         BossText.SetActive(true);
         PlrBlood.SetActive(true);
