@@ -597,7 +597,7 @@ MonoBehaviour:
     host: {fileID: 532517229150989733}
   patrolAIProperties:
     spottyDistance: 20
-    despawnDistance: 100
+    despawnDistance: 60
   chaseAIProperties:
     despawnDistance: 100
   lostAIProperties:
@@ -635,7 +635,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 2465802473941004613, guid: 0139094e69f8d2d47905c00d116a4572, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.899
   m_Pitch: 1
   Loop: 0
   Mute: 0

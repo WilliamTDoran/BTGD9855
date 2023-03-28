@@ -190,7 +190,7 @@ MonoBehaviour:
     host: {fileID: 2177723955382218894}
   patrolAIProperties:
     spottyDistance: 30
-    despawnDistance: 100
+    despawnDistance: 60
   chaseAIProperties:
     despawnDistance: 100
   lostAIProperties:
