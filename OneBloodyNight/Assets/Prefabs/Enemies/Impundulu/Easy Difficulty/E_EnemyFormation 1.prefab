@@ -83,6 +83,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6013204197218851667, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: Hurt
+      value: 
+      objectReference: {fileID: 8300000, guid: b231d6ecb12365340b91896840631cc9, type: 3}
+    - target: {fileID: 6013204197218851667, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: Death
+      value: 
+      objectReference: {fileID: 8300000, guid: a3ecb65bcfeab0140bc8e7bb7fbf35b7, type: 3}
     - target: {fileID: 8621432289928506362, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: m_Name
       value: Archer

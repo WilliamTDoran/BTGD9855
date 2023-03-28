@@ -43,6 +43,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pitchfork
       objectReference: {fileID: 0}
+    - target: {fileID: 1506505331822888184, guid: a968d48f9e8f8194495a4d1d9084ce02, type: 3}
+      propertyPath: Hurt
+      value: 
+      objectReference: {fileID: 8300000, guid: 20f250b09b60e474d81cf19092227358, type: 3}
+    - target: {fileID: 1506505331822888184, guid: a968d48f9e8f8194495a4d1d9084ce02, type: 3}
+      propertyPath: Death
+      value: 
+      objectReference: {fileID: 8300000, guid: c74a541c4de2d5c49bd71e8ae558c353, type: 3}
     - target: {fileID: 5276966131897054383, guid: a968d48f9e8f8194495a4d1d9084ce02, type: 3}
       propertyPath: m_RootOrder
       value: 0
