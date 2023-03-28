@@ -127,8 +127,11 @@ public class Monster : GameActor
             canAttack = false;
             Stunned = true;
             col.enabled = false;
-            basicAttack.StopAllCoroutines();
-            basicAttack.gameObject.SetActive(false);
+            if (basicAttack != null)
+            {
+                basicAttack.StopAllCoroutines();
+                basicAttack.gameObject.SetActive(false);
+            }
             StartCoroutine("DeathTimer");
         }
 
