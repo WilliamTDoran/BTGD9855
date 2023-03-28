@@ -40,7 +40,7 @@ public class BossMeter : MonoBehaviour
     private IEnumerator Starter()
     {
         
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(6);
         Bossblood.SetActive(true);
         BossText.SetActive(true);
         PlrBlood.SetActive(true);
