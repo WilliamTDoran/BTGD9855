@@ -778,7 +778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &66121532
 Transform:
   m_ObjectHideFlags: 0
@@ -1557,7 +1557,7 @@ MonoBehaviour:
   maxHitPoints: 0
   walkAnim: 0
   damage: 50
-  knockbackAmount: 1000
+  knockbackAmount: 800
   hitstunDuration: 0.5
   pushbackAmount: 0
   returnDrag: 18
@@ -5147,7 +5147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &693545996
 Transform:
   m_ObjectHideFlags: 0
@@ -9236,7 +9236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1336903453
 Transform:
   m_ObjectHideFlags: 0
@@ -11442,7 +11442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1725670912
 Transform:
   m_ObjectHideFlags: 0
