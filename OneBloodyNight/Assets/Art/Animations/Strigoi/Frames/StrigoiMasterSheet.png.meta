@@ -66,11 +66,11 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 1
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 0
-    compressionQuality: 50
+    compressionQuality: 100
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -78,9 +78,9 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: 74
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -1475,9 +1475,9 @@ TextureImporter:
       StrigoiMasterSheet_47: -2061520338
       StrigoiMasterSheet_27: -365918591
       StrigoiMasterSheet_5: -269238220
-      StrigoiMasterSheet_20: -1310643905
       StrigoiMasterSheet_9: -1857832304
       StrigoiMasterSheet_32: 60394104
+      StrigoiMasterSheet_20: -1310643905
       StrigoiMasterSheet_53: 527911081
       StrigoiMasterSheet_38: -1036518671
       StrigoiMasterSheet_12: 513169290
