@@ -793,6 +793,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: maxHitPoints
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
       propertyPath: facingDebugText
       value: 
       objectReference: {fileID: 1717331784}
@@ -3525,11 +3529,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &326875381 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 80667733133338135, guid: 5b12b7aabee32004bb2c0fc28d1f5f0f, type: 3}
-  m_PrefabInstance: {fileID: 80667734274649444}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &332683539
 GameObject:
   m_ObjectHideFlags: 0
@@ -3774,6 +3773,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1511189795}
     m_Modifications:
+    - target: {fileID: 1839603844181473330, guid: 0871b24d27454f74385e56a562633dda, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2222148743070925048, guid: 0871b24d27454f74385e56a562633dda, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3785,7 +3788,7 @@ PrefabInstance:
     - target: {fileID: 2222148743124800986, guid: 0871b24d27454f74385e56a562633dda, type: 3}
       propertyPath: anim
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 350632423}
     - target: {fileID: 2222148743124800986, guid: 0871b24d27454f74385e56a562633dda, type: 3}
       propertyPath: gameover
       value: 
@@ -3901,6 +3904,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a718d2b351d3ed04a8091dde296142a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &350632423 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1839603844181473330, guid: 0871b24d27454f74385e56a562633dda, type: 3}
+  m_PrefabInstance: {fileID: 350632419}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &371854760
 GameObject:
   m_ObjectHideFlags: 0
@@ -4891,29 +4899,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49eb13ae666120845804d6f40b67285a, type: 3}
---- !u!1 &504856639 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 80667733133338135, guid: 5b12b7aabee32004bb2c0fc28d1f5f0f, type: 3}
-  m_PrefabInstance: {fileID: 2016706504}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &504856640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 80667733133338128, guid: 5b12b7aabee32004bb2c0fc28d1f5f0f, type: 3}
   m_PrefabInstance: {fileID: 2016706504}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &504856641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504856639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d0c9fad7fbf2e4b87e38b51034cb0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bloodmeter: {fileID: 350632422}
 --- !u!1 &516769124
 GameObject:
   m_ObjectHideFlags: 0
@@ -9527,19 +9517,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 80667733133338128, guid: 5b12b7aabee32004bb2c0fc28d1f5f0f, type: 3}
   m_PrefabInstance: {fileID: 80667734274649444}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1148783477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326875381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0d0c9fad7fbf2e4b87e38b51034cb0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bloodmeter: {fileID: 350632422}
 --- !u!1 &1152313178
 GameObject:
   m_ObjectHideFlags: 0
@@ -17227,6 +17204,10 @@ PrefabInstance:
     - target: {fileID: 8655085129738412767, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.2800002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8655085130047262153, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
+      propertyPath: m_Text
+      value: 'Avian Of Cataclysm: Impundulu'
       objectReference: {fileID: 0}
     - target: {fileID: 8655085131279807460, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
       propertyPath: m_AnchorMax.x
