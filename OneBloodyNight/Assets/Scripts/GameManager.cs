@@ -81,6 +81,15 @@ public class GameManager : MonoBehaviour
         {
             Application.LoadLevel("YaraBossRoom");
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Application.Quit();
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            Application.LoadLevel("MazeScene");
+        }
     }
 
     /// <summary>
