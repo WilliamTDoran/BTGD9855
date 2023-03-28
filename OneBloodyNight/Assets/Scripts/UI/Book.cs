@@ -11,12 +11,6 @@ public class Book : MonoBehaviour
         bookNum = PlayerPrefs.GetInt("loreBooks");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void OnTriggerEnter(Collider col)
     {
         Debug.Log("Contact");
@@ -25,6 +19,7 @@ public class Book : MonoBehaviour
             bookNum++;
             PlayerPrefs.SetInt("LoreBooks", bookNum);
             Debug.Log("hapenstances");
+            //PlayerPrefs.SetInt("LoreBooks", bookNum);
             Destroy(gameObject);
         }
         

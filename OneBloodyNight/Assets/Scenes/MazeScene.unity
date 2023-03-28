@@ -4304,6 +4304,8 @@ MonoBehaviour:
     - {fileID: 8258326494958717592, guid: 9a9d96e3f819a2245a1d6d98af4e85dd, type: 3}
     - {fileID: 8258326494958717592, guid: 1bba256061924674e8f8aa460f504244, type: 3}
     - {fileID: 8258326494958717592, guid: d1e5d37eedb4e1043a1a4d8073e8361c, type: 3}
+    - {fileID: 8157727617279695231, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
+    - {fileID: 8157727617279695231, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
     North:
       offSet: {x: 4, y: 0, z: 0}
       Sprites:
