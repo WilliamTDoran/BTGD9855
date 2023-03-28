@@ -322,7 +322,7 @@ MonoBehaviour:
   abilityTwoCost: 80
   facingDebugText: {fileID: 0}
   canAttackDebugText: {fileID: 0}
-  audioSource: {fileID: 4969506907686277825, guid: bdcae22de74674d4685e2dd582014605, type: 3}
+  audioSource: {fileID: 6193333498023850515}
   Walk: {fileID: 8300000, guid: 929d165fab361774d933ad0820ab2858, type: 3}
   Ability1: {fileID: 8300000, guid: 26539b924942e1c4b84e11e5e9509467, type: 3}
   Ability2: {fileID: 8300000, guid: 02175565f3818a0478038a45f71576ee, type: 3}
