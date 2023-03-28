@@ -114,6 +114,7 @@ public class YaraBoss : Boss
     }
     protected override void Update()
     {
+        base.Update();
 
         if ((CurHitPoints <= 0) && (isDead == false))
         {
