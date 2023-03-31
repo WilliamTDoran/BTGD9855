@@ -23,6 +23,8 @@ public class Bloodmeter : MonoBehaviour
 
     internal static Bloodmeter instance;
 
+    internal float invisLoss = 2;
+
     private void Awake()
     {
         if (instance != null & instance != this)

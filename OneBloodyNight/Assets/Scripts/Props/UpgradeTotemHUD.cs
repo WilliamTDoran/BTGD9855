@@ -14,10 +14,10 @@ public class UpgradeTotemHUD : MonoBehaviour
     internal UpgradeVars bloodRegenUpgrade;
     [SerializeField]
     internal UpgradeVars moveSpeedUpgrade;
-    internal bool topUpgrade;
-    internal bool rightUpgrade;
-    internal bool bottomUpgrade;
-    internal bool leftUpgrade;
+    internal int topUpgrade;
+    internal int rightUpgrade;
+    internal int bottomUpgrade;
+    internal int leftUpgrade;
     /*
     enum upgrades
     {
@@ -34,9 +34,9 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     internal void upgradeBloodUsage()
     {
-        if (!bloodUsageUpgrade.upgraded)
+        if (bloodUsageUpgrade.upgraded == 0 || bloodUsageUpgrade.upgraded == 1)
         {
-            bloodUsageUpgrade.upgraded = true;
+            bloodUsageUpgrade.upgraded++;
             Bloodmeter.instance.bloodLossRate *= bloodUsageUpgrade.multiplier;
         }
         Time.timeScale = 1f;
@@ -45,9 +45,9 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     public void upgradeAttackDmg()
     {
-        if (!attackDmgUpgrade.upgraded)
+        if (attackDmgUpgrade.upgraded <= 1)
         {
-            attackDmgUpgrade.upgraded = true;
+            attackDmgUpgrade.upgraded++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
             {
                 Player.plr.GetComponent<PlayerStrigoi>().upgradeAttacks(attackDmgUpgrade.multiplier, true);
@@ -61,9 +61,9 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     public void upgradeBloodRegen()
     {
-        if (!bloodRegenUpgrade.upgraded)
+        if (bloodRegenUpgrade.upgraded <= 1)
         {
-            bloodRegenUpgrade.upgraded = true;
+            bloodRegenUpgrade.upgraded++;
             Player.plr.bloodRegainMult *= bloodRegenUpgrade.multiplier;
         }
         Time.timeScale = 1f;
@@ -72,9 +72,9 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     public void upgradeMoveSpeed()
     {
-        if (!moveSpeedUpgrade.upgraded)
+        if (moveSpeedUpgrade.upgraded <= 1)
         {
-            moveSpeedUpgrade.upgraded = true;
+            moveSpeedUpgrade.upgraded++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
             {
                 Player.plr.GetComponent<PlayerStrigoi>().BaseSpeed = Player.plr.GetComponent<PlayerStrigoi>().BaseSpeed * moveSpeedUpgrade.multiplier;
@@ -91,12 +91,23 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     public void upgradeTopSpecial()
     {
-        if (!topUpgrade)
+        if (topUpgrade == 0)
         {
-            topUpgrade = true;
+            topUpgrade++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
             {
                 Player.plr.GetComponent<PlayerStrigoi>().upgradedSwarm = true;
+            }
+            else
+            {
+                Debug.Log("Upgrade not implemented for this character");
+            }
+        } else if (topUpgrade == 0)
+        {
+            topUpgrade++;
+            if (Player.plr.GetComponent<PlayerStrigoi>() != null)
+            {
+                Player.plr.GetComponent<PlayerStrigoi>().increaseSpeed(moveSpeedUpgrade.multiplier);
             }
             else
             {
@@ -108,12 +119,12 @@ public class UpgradeTotemHUD : MonoBehaviour
     }
     public void upgradeBottomSpecial()
     {
-        if (!bottomUpgrade)
+        if (bottomUpgrade <= 1)
         {
-            bottomUpgrade = true;
+            bottomUpgrade++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
             {
-                Player.plr.GetComponent<PlayerStrigoi>().upgradedBackstab = true;
+                Player.plr.GetComponent<PlayerStrigoi>().upgradedBackstab++;
             }
             else
             {
@@ -126,12 +137,24 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     public void upgradeRightSpecial()
     {
-        if (!rightUpgrade)
+        if (rightUpgrade == 0)
         {
-            rightUpgrade = true;
+            rightUpgrade++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
             {
                 Player.plr.abilityOneCost = 0;
+                Bloodmeter.instance.invisLoss = 2;
+            }
+            else
+            {
+                Debug.Log("Upgrade not implemented for this character");
+            }
+        } else if (rightUpgrade == 1)
+        {
+            rightUpgrade++;
+            if (Player.plr.GetComponent<PlayerStrigoi>() != null)
+            {
+                Bloodmeter.instance.invisLoss = 1.5f;
             }
             else
             {
@@ -144,12 +167,24 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     public void upgradeLeftSpecial()
     {
-        if (!leftUpgrade)
+        if (leftUpgrade == 0)
         {
-            leftUpgrade = true;
+            leftUpgrade++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
             {
-                //Player.plr.abilityOneCost = 0;
+                Player.plr.GetComponent<PlayerStrigoi>().upgradedFrenzy = true;
+                Player.plr.GetComponent<PlayerStrigoi>().frenzyRegainHit = 5;
+            }
+            else
+            {
+                Debug.Log("Upgrade not implemented for this character");
+            }
+        } else if (leftUpgrade == 1)
+        {
+            leftUpgrade++;
+            if (Player.plr.GetComponent<PlayerStrigoi>() != null)
+            {
+                Player.plr.GetComponent<PlayerStrigoi>().frenzyRegainHit = 10;
             }
             else
             {
@@ -173,6 +208,6 @@ public class UpgradeTotemHUD : MonoBehaviour
 [System.Serializable]
 internal class UpgradeVars
 {
-    public bool upgraded = false;
+    public int upgraded = 0;
     public float multiplier;
 }

@@ -53,11 +53,10 @@ public class PlayerStrigoi : Player
     private float baseSpeed; 
     public float BaseSpeed { get { return baseSpeed; } set { baseSpeed = value; } }
 
-    internal bool upgradedBackstab;
+    internal int upgradedBackstab;
     internal bool backstab;
 
     internal bool upgradedFrenzy;
-    [SerializeField]
     internal float frenzyRegainHit;
 
     /* Exposed Variables */
@@ -323,9 +322,10 @@ public class PlayerStrigoi : Player
     {
         base.OnSuccessfulAttack(code);
 
-        if (upgradedBackstab && backstab)
+        if (upgradedBackstab > 0 && backstab)
         {
             upgradeAttacks(0.5f, false);
+            if (upgradedBackstab == 2) upgradeAttacks(0.5f, false);
             backstab = false;
         }
 
@@ -356,9 +356,10 @@ public class PlayerStrigoi : Player
     {
         invisibilityCoroutine = Invisible();
         StartCoroutine(invisibilityCoroutine);
-        if (upgradedBackstab && !backstab)
+        if (upgradedBackstab > 0 && !backstab)
         {
             upgradeAttacks(2, false);
+            if (upgradedBackstab == 2) upgradeAttacks(2, false);
             backstab = true;
         }
     }
