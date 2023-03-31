@@ -24,6 +24,7 @@ public class YaraBoss : Boss
     private IEnumerator gurgeyCoroutine;
     private IEnumerator groundPoundCoroutine;
     private IEnumerator poundRockslideCoroutine;
+    private IEnumerator handSwipeCoroutine;
 
     private bool shockSlamRunning = false;
     public bool ShockSlamRunning { set { shockSlamRunning = value; } }
@@ -99,7 +100,7 @@ public class YaraBoss : Boss
     private float timeBeforePound;
 
     [SerializeField]
-    private float timeBeforeBloodStrike;
+    private float timeBeforeHandSwipe;
 
     private bool isDead;
     /*~~~~~~~~~~~~~~~~~~~*/
@@ -174,7 +175,7 @@ public class YaraBoss : Boss
         int upperLimit = rndCap + currentPhase;
         int check = rnd.Next(0, upperLimit);
 
-        switch (check)
+        switch (4)
         {
             case 0:
                 {
@@ -431,6 +432,11 @@ public class YaraBoss : Boss
         }
     }
 
+    private IEnumerator HandSwipe()
+    {
+        throw new System.NotImplementedException();
+    }
+
     /// <summary>
     /// I have no idea what this actually *does*, I just know that if you apply it to an animator that's hit its exit, it'll restart it lmao
     /// </summary>
@@ -502,6 +508,18 @@ public class YaraBoss : Boss
     {
         StopCoroutine(poundRockslideCoroutine);
         poundRockslideCoroutine = null;
+    }
+
+    private void StartHandSwipe()
+    {
+        handSwipeCoroutine = HandSwipe();
+        StartCoroutine(handSwipeCoroutine);
+    }
+
+    private void StopHandSwip()
+    {
+        StopCoroutine(handSwipeCoroutine);
+        handSwipeCoroutine = null;
     }
 
     private IEnumerator Ded()
