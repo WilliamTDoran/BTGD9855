@@ -79,6 +79,14 @@ public class YaraBoss : Boss
     [SerializeField]
     private float[] poundRockMaxTimes;
 
+    [Tooltip("The reference to the leftward-swiping hand")]
+    [SerializeField]
+    private RemoteAttack leftHand;
+
+    [Tooltip("The reference to the rightward-swiping hand")]
+    [SerializeField]
+    private RemoteAttack rightHand;
+
     [SerializeField]
     private Animator spanimator;
 
@@ -219,9 +227,9 @@ public class YaraBoss : Boss
 
             case 4:
                 {
-                    goto case 3;
-                    //Blood Pool Strike
-                    yield return new WaitForSeconds(timeBeforeBloodStrike * timeModifier);
+                    //Hand Swipe
+                    yield return new WaitForSeconds(timeBeforeHandSwipe * timeModifier);
+                    StartHandSwipe();
                     break;
                 }
 
@@ -434,6 +442,10 @@ public class YaraBoss : Boss
 
     private IEnumerator HandSwipe()
     {
+        canMove = false;
+
+        spanimator.SetTrigger("SwiperNoSwiping");
+
         throw new System.NotImplementedException();
     }
 

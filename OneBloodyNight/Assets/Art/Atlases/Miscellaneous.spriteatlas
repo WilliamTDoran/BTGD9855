@@ -104,6 +104,10 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 04bedb354a4b104488d7bddcad40578c, type: 3}
   - {fileID: 21300000, guid: 6296bb56c06fa6d4b93f0de47c659148, type: 3}
   - {fileID: 21300000, guid: 5a6bc9678e727474c974d8bd0bdbd7e0, type: 3}
+  - {fileID: -984592917, guid: 8e5d4fb704d3bc043b5f006d8ed6cb18, type: 3}
+  - {fileID: 1193176245, guid: 8e5d4fb704d3bc043b5f006d8ed6cb18, type: 3}
+  - {fileID: 1073001843, guid: 8e5d4fb704d3bc043b5f006d8ed6cb18, type: 3}
+  - {fileID: -1355000206, guid: 8e5d4fb704d3bc043b5f006d8ed6cb18, type: 3}
   - {fileID: 21300000, guid: 3c99d25802c036443977b742c865e4eb, type: 3}
   - {fileID: 21300000, guid: 45aa01390f2244c4ca75b2734aa7879c, type: 3}
   - {fileID: 21300000, guid: 5127b54983b7e0c47a392433fe8671be, type: 3}
@@ -127,6 +131,10 @@ SpriteAtlas:
   - {fileID: 1520758167, guid: f59d29992227a53449e8cc6d8535b489, type: 3}
   - {fileID: -492041766, guid: f59d29992227a53449e8cc6d8535b489, type: 3}
   - {fileID: -1458416663, guid: f59d29992227a53449e8cc6d8535b489, type: 3}
+  - {fileID: 1728073512, guid: 44307ca99534a454584df2f39966c52d, type: 3}
+  - {fileID: 866737983, guid: 44307ca99534a454584df2f39966c52d, type: 3}
+  - {fileID: -908129209, guid: 44307ca99534a454584df2f39966c52d, type: 3}
+  - {fileID: 1565851000, guid: 44307ca99534a454584df2f39966c52d, type: 3}
   - {fileID: 21300000, guid: a31644c9fdddc384a9493c680c5a3855, type: 3}
   - {fileID: 21300000, guid: 6e33ec3a1e40e8544b6b9654d51d21b4, type: 3}
   - {fileID: 21300000, guid: 9239828a0be601a4982ec9d8df7d7c29, type: 3}
@@ -215,6 +223,10 @@ SpriteAtlas:
   - Blood15
   - ImpunduluBiomeFlowerYellow
   - Blood16
+  - Muddles_2
+  - Muddles_3
+  - Muddles_0
+  - Muddles_1
   - ImpunduluBiomeFlowerRed
   - BloodPool
   - Blood5
@@ -238,6 +250,10 @@ SpriteAtlas:
   - Fireflies2_13
   - Fireflies2_14
   - Fireflies2_15
+  - Puddles_3
+  - Puddles_2
+  - Puddles_1
+  - Puddles_0
   - Blood10
   - Blood3
   - Blood1
