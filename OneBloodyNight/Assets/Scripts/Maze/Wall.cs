@@ -84,7 +84,7 @@ public class Wall : MonoBehaviour
             gameObject.SetActive(false);
             if (!extra && linked != null)
             {
-                Debug.Log("Wall removed: "+gameObject.name +", in cell "+transform.parent.gameObject.name);
+                //Debug.Log("Wall removed: "+gameObject.name +", in cell "+transform.parent.gameObject.name);
                 linked.remove(true);
             }
         }
