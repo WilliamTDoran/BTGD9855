@@ -33,7 +33,10 @@ public class MazeWallRemoval
                 //Debug.Log(matchChosen+ ", "+ match.Count);
                 for (int j = 1; j < match[matchChosen].walls.Length; j++)
                 {
-                    if (match[matchChosen].walls[j].getState() != Wall.wState.interior && match[matchChosen].getBiome() == match[matchChosen].walls[j].getLink().getCell().getBiome() && !match[matchChosen].walls[j].getLink().getCell().setPiece && !match[matchChosen].setPiece)
+                    if (match[matchChosen].walls[j].getState() != Wall.wState.interior && //if the wall's not an interior wall
+                        match[matchChosen].getBiome() == match[matchChosen].walls[j].getLink().getCell().getBiome() && //if the biomes match
+                        !match[matchChosen].walls[j].getLink().getCell().setPiece && //if the connected cell is not a setpiece
+                        !match[matchChosen].setPiece) //if this cell is not a setpiece
                     {
                         maxAvailable++;
                     }
@@ -44,12 +47,15 @@ public class MazeWallRemoval
                     Wall w = null;
                     for (int j = 0; j < match[matchChosen].walls.Length; j++)
                     {
-                        if (match[matchChosen].walls[j].getState() != Wall.wState.interior && match[matchChosen].getBiome() == match[matchChosen].walls[j].getLink().getCell().getBiome() && !match[matchChosen].walls[j].getLink().getCell().setPiece && !match[matchChosen].setPiece) continue;
+                        if (match[matchChosen].walls[j].getState() != Wall.wState.interior 
+                            && match[matchChosen].getBiome() == match[matchChosen].walls[j].getLink().getCell().getBiome() && 
+                            !match[matchChosen].walls[j].getLink().getCell().setPiece && 
+                            !match[matchChosen].setPiece) continue;
                         maxAvailable--;
                         if (maxAvailable == 0)
                         {
                             w = match[matchChosen].walls[j];
-                            //Debug.Log("Cell " + match[matchChosen].name + " removed the " + w.name +" "+ i);
+                            //Debug.Log("Cell " + match[matchChosen].name + " removed the " + w.name +" wall");
                             break;
                         }
 

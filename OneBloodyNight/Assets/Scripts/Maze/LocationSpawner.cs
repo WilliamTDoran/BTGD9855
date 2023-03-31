@@ -152,8 +152,7 @@ public class LocationSpawner
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.east).remove(false);
                     }
-
-                    if (i==0 && !setPiece[i][j].getWall((int)Wall.wLocation.west).gameObject.activeSelf)
+                    if (i == 0 && !setPiece[i][j].getWall((int)Wall.wLocation.west).gameObject.activeSelf && Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getBiome() == Maze.m.getCell((int)setPieceLocation.x + i - 1, (int)setPieceLocation.y + j).getBiome()) 
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.west).remove(false);
                     }

@@ -112,7 +112,9 @@ public class Maze : MonoBehaviour
         {
             for (int j = -1; j <= 1; j++)
             {
-                getCell((int)traits.width / 2 + i, (int)traits.height / 2 + j).setBiome(traits.CharacterBiome); ;
+                Cell c = getCell((int)traits.width / 2 + i, (int)traits.height / 2 + j);
+                c.setBiome(traits.CharacterBiome);
+                c.setPiece = true;
             }
         }
         biomeGen.generateBiomes((int)traits.width / 2, (int)traits.height / 2);
