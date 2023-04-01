@@ -306,9 +306,9 @@ public class Monster : GameActor
         facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
 
         animator.SetTrigger("Fire");
-        audioSource.PlayOneShot(Attack);
+        if (audioSource != null) { audioSource.PlayOneShot(Attack); }
 
-        if (basicAttack.ForceStill) //Some attacks force the attacker to stand still
+        if (basicAttack != null && basicAttack.ForceStill) //Some attacks force the attacker to stand still
         {
             canMove = false;
             rb.velocity = Vector3.zero; //need this otherwise you tokyo drift from momentum

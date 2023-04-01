@@ -90,6 +90,11 @@ public class GameManager : MonoBehaviour
         {
             Application.LoadLevel("MazeScene");
         }
+
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            Bloodmeter.instance.changeBlood(3000);
+        }
     }
 
     /// <summary>

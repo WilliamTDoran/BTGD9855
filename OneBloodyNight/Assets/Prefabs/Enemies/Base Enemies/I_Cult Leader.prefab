@@ -118,13 +118,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2518543072169705319}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e643940dec982a41b1528d60b0a084c, type: 3}
+  m_Script: {fileID: 11500000, guid: 812e0ba2200fdec46b8dc0cc0bc732d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2500
   immuneDuration: 0
   maxHitPoints: 40
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   audioSource: {fileID: 8028271674238632153}
   Attack: {fileID: 0}
   Death: {fileID: 0}
@@ -136,6 +138,11 @@ MonoBehaviour:
   bloodOnKill: 30
   attackTimer: 6
   healthBarObject: {fileID: 8018975264716387991}
+  maskydoo:
+    serializedVersion: 2
+    m_Bits: 1
+  range: 15
+  buffDuration: 3
 --- !u!54 &7587878168658356176
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -185,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   universalAIProperties:
-    engagementDistance: 0
+    engagementDistance: 10
     seeThroughWalls: 0
     host: {fileID: 2177723955382218894}
   patrolAIProperties:
@@ -196,7 +203,7 @@ MonoBehaviour:
   lostAIProperties:
     timeTilLoseSight: 2
   attackAIProperties:
-    attackRange: 15
+    attackRange: 8
     avoidanceRange: 0
     avoidanceMask:
       serializedVersion: 2
