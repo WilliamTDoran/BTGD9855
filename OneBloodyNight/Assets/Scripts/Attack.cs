@@ -203,7 +203,10 @@ public class Attack : GameActor
             hitboxMesh.enabled = false;
         }
 
-        attacker.Rb.drag = returnDrag; //Returns the drag to the starting position (no change if no pushback)
+        if (attacker.Rb != null)
+        {
+            attacker.Rb.drag = returnDrag; //Returns the drag to the starting position (no change if no pushback)
+        }
         hitThisSwing.Clear(); //Clears the list of Colliders hit (largely just a precaution)
         attacker.OnAttackEnd(attackerGrantedCode);
     }

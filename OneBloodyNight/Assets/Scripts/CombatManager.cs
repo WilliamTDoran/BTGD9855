@@ -139,9 +139,17 @@ public class CombatManager : MonoBehaviour
         //Gets reference to rigidbodies
         Rigidbody attackerRigidBody = attacker.Rb;
         Rigidbody targetRigidBody = target.Rb;
+        Vector3 direction;
 
         //Calculates the direction the knockback applies in based on the vector pointing from the attacker's centre to the target's centre
-        Vector3 direction = targetRigidBody.position - attackerRigidBody.position;
+        if (attackerRigidBody != null)
+        {
+            direction = targetRigidBody.position - attackerRigidBody.position;
+        }
+        else
+        {
+            direction = targetRigidBody.position - attacker.transform.position;
+        }
         direction.Normalize();
 
         direction *= amount; //scales the knockback

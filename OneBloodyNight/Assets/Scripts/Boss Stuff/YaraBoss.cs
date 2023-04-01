@@ -32,6 +32,8 @@ public class YaraBoss : Boss
     public bool GurgeyRunning { set { gurgeyRunning = value; } }
     private bool groundPoundRunning = false;
     public bool GroundPoundRunning { set { groundPoundRunning = value; } }
+    private bool handSwipeRunning = false;
+    public bool HandSwipeRunning { set { handSwipeRunning = value; } }
 
     private bool poundBegin = false;
     public bool PoundBegin { set { poundBegin = value; } }
@@ -78,14 +80,6 @@ public class YaraBoss : Boss
     [Tooltip("The maximum time possible between each rock's appearance during ground pound. MUST BE THE SAME NUMBER OF ENTRIES AS THERE ARE MINTIMES AND ROCKBASKETS")]
     [SerializeField]
     private float[] poundRockMaxTimes;
-
-    [Tooltip("The reference to the leftward-swiping hand")]
-    [SerializeField]
-    private RemoteAttack leftHand;
-
-    [Tooltip("The reference to the rightward-swiping hand")]
-    [SerializeField]
-    private RemoteAttack rightHand;
 
     [SerializeField]
     private Animator spanimator;
@@ -183,7 +177,7 @@ public class YaraBoss : Boss
         int upperLimit = rndCap + currentPhase;
         int check = rnd.Next(0, upperLimit);
 
-        switch (4)
+        switch (check)
         {
             case 0:
                 {
@@ -442,11 +436,16 @@ public class YaraBoss : Boss
 
     private IEnumerator HandSwipe()
     {
+        StopRandomBehavior();
         canMove = false;
+        handSwipeRunning = true;
 
         spanimator.SetTrigger("SwiperNoSwiping");
 
-        throw new System.NotImplementedException();
+        yield return new WaitUntil(() => !handSwipeRunning);
+
+        canMove = true;
+        StartRandomBehavior();
     }
 
     /// <summary>
