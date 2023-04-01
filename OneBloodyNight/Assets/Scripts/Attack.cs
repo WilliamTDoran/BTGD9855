@@ -20,6 +20,9 @@ public class Attack : GameActor
 
     private Quaternion baseAnimRotation;
 
+    private bool buffed = false;
+    public bool Buffed { get { return buffed; } set { buffed = value; } }
+
     /* Exposed Variables */
     [Header("Attack Statistics")]
 
@@ -27,6 +30,10 @@ public class Attack : GameActor
     [SerializeField]
     private int damage; //the amount of damage dealt by the attack
     public int Damage { get { return damage; } set { damage = value; } }
+
+    [Tooltip("Optional: the damage dealt when buffed. If left blank, it will default to the same as normal damage")]
+    [SerializeField]
+    private int buffedDamage;
 
     [Tooltip("The amount of knockback dealt by the attack")]
     [SerializeField]
@@ -102,6 +109,11 @@ public class Attack : GameActor
         if (spriteAnimator != null)
         {
             baseAnimRotation = spriteAnimator.transform.localRotation;
+        }
+
+        if (buffedDamage == 0)
+        {
+            buffedDamage = damage;
         }
     }
 
@@ -244,7 +256,7 @@ public class Attack : GameActor
             hitThisSwing.Add(other); //Records the detected collider as already hit by this attack
 
             //Calls to CombatManager to run the attack. Returns true if it hits a useful target, spinning off any requisite follower functions on attacker
-            if (CombatManager.Instance.Attack(attacker, this, other, damage, knockbackAmount)) 
+            if (CombatManager.Instance.Attack(attacker, this, other, buffed ? buffedDamage : damage, knockbackAmount)) 
             {
                 attacker.OnSuccessfulAttack(attackerGrantedCode);
             }

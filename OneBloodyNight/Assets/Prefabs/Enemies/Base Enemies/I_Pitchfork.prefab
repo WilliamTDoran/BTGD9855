@@ -156,6 +156,8 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 70
   walkAnim: 1
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   audioSource: {fileID: 4495840534385649335}
   Attack: {fileID: 0}
   Death: {fileID: 8300000, guid: c74a541c4de2d5c49bd71e8ae558c353, type: 3}
@@ -351,12 +353,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5364675453557516436}
+  - component: {fileID: 8342049976024423553}
   - component: {fileID: 5559834925391806361}
   - component: {fileID: 8537159268307554861}
   - component: {fileID: 1110573295112787877}
   - component: {fileID: 7665993112340159908}
   - component: {fileID: 4053888573749422174}
-  - component: {fileID: 8342049976024423553}
   m_Layer: 0
   m_Name: Basic Attack
   m_TagString: Untagged
@@ -380,6 +382,43 @@ Transform:
   m_Father: {fileID: 5276966131897054383}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8342049976024423553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877845514278036326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b9a14802aa44946bc3ec11c26ab924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  immuneDuration: 0
+  maxHitPoints: 0
+  walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
+  damage: 40
+  buffedDamage: 4000
+  knockbackAmount: 300
+  hitstunDuration: 0.3
+  pushbackAmount: 2
+  returnDrag: 18
+  drag: 23
+  wallPushbackScalar: 3
+  forceStill: 1
+  floatDistance: 4
+  untargetableTags:
+  - Wall
+  - Floor
+  - Monster
+  checkForWalls: 1
+  attacker: {fileID: 1506505331822888184}
+  spriteAnimator: {fileID: 1112925030360469251}
+  showHitbox: 0
+  hitboxMesh: {fileID: 8537159268307554861}
 --- !u!33 &5559834925391806361
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -479,40 +518,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8342049976024423553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 877845514278036326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06b9a14802aa44946bc3ec11c26ab924, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  immuneDuration: 0
-  maxHitPoints: 0
-  walkAnim: 0
-  damage: 40
-  knockbackAmount: 300
-  hitstunDuration: 0.3
-  pushbackAmount: 2
-  returnDrag: 18
-  drag: 23
-  wallPushbackScalar: 3
-  forceStill: 1
-  floatDistance: 4
-  untargetableTags:
-  - Wall
-  - Floor
-  - Monster
-  checkForWalls: 1
-  attacker: {fileID: 1506505331822888184}
-  spriteAnimator: {fileID: 1112925030360469251}
-  showHitbox: 0
-  hitboxMesh: {fileID: 8537159268307554861}
 --- !u!1 &3500404428674569980
 GameObject:
   m_ObjectHideFlags: 0

@@ -357,6 +357,8 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 50
   walkAnim: 1
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   audioSource: {fileID: 1456621162721188437}
   Attack: {fileID: 0}
   Death: {fileID: 8300000, guid: a3ecb65bcfeab0140bc8e7bb7fbf35b7, type: 3}
@@ -660,7 +662,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 50
+  buffedDamage: 1
   knockbackAmount: 60
   hitstunDuration: 0.2
   pushbackAmount: 0

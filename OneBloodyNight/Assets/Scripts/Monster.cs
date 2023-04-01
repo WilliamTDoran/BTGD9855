@@ -22,14 +22,13 @@ using UnityEngine.UI;
 /// </summary>
 public class Monster : GameActor
 {
-    //sound 
+    /* Sound */
     public AudioSource audioSource;
 
     public AudioClip Attack;
     public AudioClip Death;
     public AudioClip Hurt;
-
-    //sound
+    /*~~~~~~~*/
 
     private Player player; //reference to the player. kind of antequated since its from before Player.cs had static reference, but whatever
 
@@ -40,6 +39,7 @@ public class Monster : GameActor
     private TextMeshPro healthDebugText;
 
     private string refCode1 = "basic"; //See Attack comments on attackerGrantedCode
+    private IEnumerator priestBuffCoroutine;
 
     private const float AI_TICK_TIME = 0.25f; //Time in seconds between each ai tick
     private MonsterControllerAI aiController; 
@@ -127,6 +127,7 @@ public class Monster : GameActor
             canAttack = false;
             Stunned = true;
             col.enabled = false;
+            basicAttack.Buffed = false;
             if (basicAttack != null)
             {
                 basicAttack.StopAllCoroutines();
@@ -319,7 +320,7 @@ public class Monster : GameActor
         canAttack = true;
     }
 
-    public void MeleeUse()
+    public virtual void MeleeUse()
     {
         basicAttack.StartSwing(refCode1);
     }
@@ -364,6 +365,15 @@ public class Monster : GameActor
                 nextPoint++;
             }
         }
+    }
+
+    private IEnumerator PriestBuff(float duration)
+    {
+        basicAttack.Buffed = true;
+
+        yield return new WaitForSeconds(duration);
+
+        basicAttack.Buffed = false;
     }
 
 
@@ -414,5 +424,17 @@ public class Monster : GameActor
     {
         StopCoroutine(hoverDistanceSwapCoroutine);
         hoverDistanceSwapCoroutine = null;
+    }
+
+    public void StartPriestBuff(float duration)
+    {
+        priestBuffCoroutine = PriestBuff(duration);
+        StartCoroutine(priestBuffCoroutine);
+    }
+
+    private void StopPriestBuff()
+    {
+        StopCoroutine(priestBuffCoroutine);
+        priestBuffCoroutine = null;
     }
 }

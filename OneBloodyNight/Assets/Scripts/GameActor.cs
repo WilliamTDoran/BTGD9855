@@ -70,6 +70,14 @@ public class GameActor : MonoBehaviour
     [Tooltip("Whether this GameActor has a walking animation")]
     [SerializeField]
     protected bool walkAnim = false;
+
+    [Tooltip("Reference to the behind-sprite part of the buffing aura")]
+    [SerializeField]
+    internal SpriteRenderer backBuffAura;
+
+    [Tooltip("Reference to the afore-sprite part of the buffing aura")]
+    [SerializeField]
+    internal SpriteRenderer frontBuffAura;
     /* -~-~-~-~-~-~-~-~- */
 
     /// <summary>
