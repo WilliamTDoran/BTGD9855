@@ -403,7 +403,7 @@ MonoBehaviour:
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
   damage: 40
-  buffedDamage: 60
+  buffedDamage: 70
   knockbackAmount: 300
   hitstunDuration: 0.3
   pushbackAmount: 2
