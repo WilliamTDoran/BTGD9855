@@ -370,9 +370,25 @@ public class Monster : GameActor
     private IEnumerator PriestBuff(float duration)
     {
         basicAttack.Buffed = true;
+        if (backBuffAura != null)
+        {
+            backBuffAura.gameObject.SetActive(true);
+        }
+        if (frontBuffAura != null)
+        {
+            frontBuffAura.gameObject.SetActive(true);
+        }
 
         yield return new WaitForSeconds(duration);
 
+        if (backBuffAura != null)
+        {
+            backBuffAura.gameObject.SetActive(false);
+        }
+        if (frontBuffAura != null)
+        {
+            frontBuffAura.gameObject.SetActive(false);
+        }
         basicAttack.Buffed = false;
     }
 

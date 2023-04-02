@@ -62,7 +62,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1033097350109227087
 Transform:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7073954072315796346
 Transform:
   m_ObjectHideFlags: 0
@@ -760,8 +760,8 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 180
   walkAnim: 1
-  backBuffAura: {fileID: 0}
-  frontBuffAura: {fileID: 0}
+  backBuffAura: {fileID: 7064259802780987176}
+  frontBuffAura: {fileID: 2579101856657607974}
   audioSource: {fileID: 6857394725249313914}
   Attack: {fileID: 8300000, guid: dbb740a9f4d5a6f48aa250617ffffc35, type: 3}
   Death: {fileID: 8300000, guid: 7eb6b39c1882b8d4da73801040737de7, type: 3}
