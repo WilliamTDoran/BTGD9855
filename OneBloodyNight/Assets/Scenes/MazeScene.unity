@@ -4208,28 +4208,7 @@ MonoBehaviour:
     - {fileID: 3462578440953639072, guid: e686bb01e5410ba459b5904d1608b7b1, type: 3}
     - {fileID: 3462578440953639072, guid: 46a2834bf1b6a224cbf722b64b7bd249, type: 3}
     objects:
-    - {fileID: 3896362361821221946, guid: 5f8a499f2d159f24586ee1845ae4df3f, type: 3}
     - {fileID: 2280389014795570290, guid: 20d7ae02a484cfd4e96e619b4b537562, type: 3}
-    - {fileID: 2280389014795570290, guid: 20d7ae02a484cfd4e96e619b4b537562, type: 3}
-    - {fileID: 2280389014795570290, guid: 20d7ae02a484cfd4e96e619b4b537562, type: 3}
-    - {fileID: 2280389014795570290, guid: 20d7ae02a484cfd4e96e619b4b537562, type: 3}
-    - {fileID: 2280389014795570290, guid: 20d7ae02a484cfd4e96e619b4b537562, type: 3}
-    - {fileID: 3896362361821221946, guid: 32b1c0a842b186c45aff4ede0e4a6173, type: 3}
-    - {fileID: 3896362361821221946, guid: e70268d234825d546bdaa64bf3c279ad, type: 3}
-    - {fileID: 3896362361821221946, guid: ed2bed5523cca5b4f8e056d816e90303, type: 3}
-    - {fileID: 3896362361821221946, guid: df72a2e7fb386cc40859736d56ba0995, type: 3}
-    - {fileID: 3896362361821221946, guid: 526621463e6e85644a6a37834d74f448, type: 3}
-    - {fileID: 3896362361821221946, guid: 0ed7b6bdf8055e24dafdb2622a1b2806, type: 3}
-    - {fileID: 3896362361821221946, guid: 3679a105d17a0e145a49cdc840a194be, type: 3}
-    - {fileID: 3896362361821221946, guid: de936f162670e2a489ebd78ebde17e1b, type: 3}
-    - {fileID: 3896362361821221946, guid: b5356df1658c5ae4698a1e7fb96fa842, type: 3}
-    - {fileID: 3896362361821221946, guid: cc59ebbe478521c448605c1719e66aa6, type: 3}
-    - {fileID: 3896362361821221946, guid: caf89a1add3d9064e8daa57b0a1413a5, type: 3}
-    - {fileID: 3896362361821221946, guid: 082ca2a81953eaa4c9393af1975572e1, type: 3}
-    - {fileID: 3896362361821221946, guid: 93535f612f3b166439488081d43cfca5, type: 3}
-    - {fileID: 3896362361821221946, guid: 2f37e6ba43319c743ab9a336670717d8, type: 3}
-    - {fileID: 3896362361821221946, guid: 0eb36f3e00c21554cb4bed774e1c2e54, type: 3}
-    - {fileID: 3896362361821221946, guid: 0af3b58891535464db62c3790572d35a, type: 3}
     enemies:
     - {fileID: 8258326494958717592, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
     - {fileID: 8258326494958717592, guid: 9a9d96e3f819a2245a1d6d98af4e85dd, type: 3}
@@ -4281,12 +4260,13 @@ MonoBehaviour:
   - colour: {r: 0.6415094, g: 0, b: 0, a: 1}
     wallsRemoved: 15
     maxCellDifficulty: 1
-    chanceObject: 0.4
+    chanceObject: 0.7
     bossPortal: {fileID: 3505505689596641723, guid: dc1c394f737420a4a94f36101d14ce4c, type: 3}
     SetPieces:
     - {fileID: 3462578440953639072, guid: 539200ee38177a244bdb354de985f00b, type: 3}
     - {fileID: 3462578440953639072, guid: 46a2834bf1b6a224cbf722b64b7bd249, type: 3}
     objects:
+    - {fileID: 3325191705321573381, guid: c2f92ddfaaac7d147aad962854f22b8e, type: 3}
     - {fileID: 3896362361821221946, guid: 500c24737f865c34db3bf40abdd9980e, type: 3}
     - {fileID: 3896362361821221946, guid: 00657456cb16d604db97c318a7bc4587, type: 3}
     - {fileID: 3896362361821221946, guid: d44055dc1f9ec614b880138880e96537, type: 3}
@@ -4298,6 +4278,15 @@ MonoBehaviour:
     - {fileID: 3896362361821221946, guid: 3a1f399302efac54695db65bcd1adf46, type: 3}
     - {fileID: 3896362361821221946, guid: 8a78125eec9a00a448be1d39695dfec9, type: 3}
     - {fileID: 3896362361821221946, guid: e4dafe4ca7436c5448f333f38561ff40, type: 3}
+    - {fileID: 2280389014795570290, guid: 20d7ae02a484cfd4e96e619b4b537562, type: 3}
+    - {fileID: 3896362361821221946, guid: 32b1c0a842b186c45aff4ede0e4a6173, type: 3}
+    - {fileID: 3896362361821221946, guid: e70268d234825d546bdaa64bf3c279ad, type: 3}
+    - {fileID: 3896362361821221946, guid: ed2bed5523cca5b4f8e056d816e90303, type: 3}
+    - {fileID: 3896362361821221946, guid: df72a2e7fb386cc40859736d56ba0995, type: 3}
+    - {fileID: 3896362361821221946, guid: 526621463e6e85644a6a37834d74f448, type: 3}
+    - {fileID: 3896362361821221946, guid: 0ed7b6bdf8055e24dafdb2622a1b2806, type: 3}
+    - {fileID: 3896362361821221946, guid: 3679a105d17a0e145a49cdc840a194be, type: 3}
+    - {fileID: 3896362361821221946, guid: de936f162670e2a489ebd78ebde17e1b, type: 3}
     enemies:
     - {fileID: 8258326494958717592, guid: b2212645a32fe644bb2e5898176fc0e4, type: 3}
     - {fileID: 8258326494958717592, guid: 9a9d96e3f819a2245a1d6d98af4e85dd, type: 3}
@@ -4353,7 +4342,7 @@ MonoBehaviour:
   - colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
     wallsRemoved: 150
     maxCellDifficulty: 10
-    chanceObject: 0.5
+    chanceObject: 0.7
     bossPortal: {fileID: 3505505689596641723, guid: 9df13bf0a1b3ba3448ef6d87397cd563, type: 3}
     SetPieces:
     - {fileID: 3462578440953639072, guid: 02982c99c33e6aa4f863a6993f62f3a5, type: 3}
@@ -4375,6 +4364,15 @@ MonoBehaviour:
     - {fileID: 3896362361821221946, guid: ab91e400c459c664da8f4b7a55bca8a4, type: 3}
     - {fileID: 3896362361821221946, guid: 8a78125eec9a00a448be1d39695dfec9, type: 3}
     - {fileID: 3896362361821221946, guid: e4dafe4ca7436c5448f333f38561ff40, type: 3}
+    - {fileID: 2280389014795570290, guid: 20d7ae02a484cfd4e96e619b4b537562, type: 3}
+    - {fileID: 3896362361821221946, guid: b5356df1658c5ae4698a1e7fb96fa842, type: 3}
+    - {fileID: 3896362361821221946, guid: cc59ebbe478521c448605c1719e66aa6, type: 3}
+    - {fileID: 3896362361821221946, guid: caf89a1add3d9064e8daa57b0a1413a5, type: 3}
+    - {fileID: 3896362361821221946, guid: 082ca2a81953eaa4c9393af1975572e1, type: 3}
+    - {fileID: 3896362361821221946, guid: 93535f612f3b166439488081d43cfca5, type: 3}
+    - {fileID: 3896362361821221946, guid: 2f37e6ba43319c743ab9a336670717d8, type: 3}
+    - {fileID: 3896362361821221946, guid: 0eb36f3e00c21554cb4bed774e1c2e54, type: 3}
+    - {fileID: 3896362361821221946, guid: 0af3b58891535464db62c3790572d35a, type: 3}
     enemies:
     - {fileID: 5831821545081226382, guid: 77671a9461b7bf941902b3fc074fdbc1, type: 3}
     - {fileID: 5831821545081226382, guid: afd32af6ae09ba94299970c66dcbc95b, type: 3}
