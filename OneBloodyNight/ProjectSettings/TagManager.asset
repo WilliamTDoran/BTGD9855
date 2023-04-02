@@ -74,8 +74,14 @@ TagManager:
   - name: Enemies (Not used anymore)
     uniqueID: 4023064477
     locked: 0
+  - name: Back Buffs
+    uniqueID: 1182722929
+    locked: 0
   - name: SpriteSorting
     uniqueID: 1953289611
+    locked: 0
+  - name: Front Buffs
+    uniqueID: 2427554717
     locked: 0
   - name: Fog
     uniqueID: 896860427

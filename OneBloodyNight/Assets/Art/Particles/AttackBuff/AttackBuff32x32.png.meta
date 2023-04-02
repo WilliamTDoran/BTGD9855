@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8d6b344ae92654a40937da17ad3a1162
+guid: 3eb5aee25c495a44a8a7bb9c47ab5faa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 12
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AttackBuff64x64_0
+      name: AttackBuff32x32_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 64
-        height: 64
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6a7c5ff9e6620c46abadfb2af13f073
-      internalID: -233045710
+      spriteID: 35e277f8692a11d43951ae907b997890
+      internalID: 4643089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackBuff64x64_1
+      name: AttackBuff32x32_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
-        width: 64
-        height: 64
+        x: 48
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c970c61dbdcaad4a8b28d226b130c32
-      internalID: -1332353969
+      spriteID: ab0ce0523524898489914717be8fd70b
+      internalID: 51512410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackBuff64x64_2
+      name: AttackBuff32x32_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 96
-        width: 64
-        height: 64
+        x: 96
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4b0b757d55ac8a4eb351154ec60876f
-      internalID: 560477715
+      spriteID: e2c8d7dc00fca4a4b94d8fe10f0a37c7
+      internalID: 1114956401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackBuff64x64_3
+      name: AttackBuff32x32_3
       rect:
         serializedVersion: 2
-        x: 256
-        y: 96
-        width: 64
-        height: 64
+        x: 144
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,167 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29f8e3fd472180b4f943e0dbedaba003
-      internalID: 791262491
+      spriteID: 51a53cb8565e3ca4abe61d0ae6803d4a
+      internalID: 696610600
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackBuff64x64_4
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 96
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3af15c1951c00c64680a92c047bb2543
-      internalID: -1653171384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackBuff64x64_5
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 96
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba19e71facab81d438098a6526afac3a
-      internalID: -108235688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackBuff64x64_6
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 96
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c99e58857de376e41bfc4be285a914d5
-      internalID: 891244846
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackBuff64x64_7
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 96
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e7a418d7fc0ebee438f17e66a2eb0096
-      internalID: -485622092
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackBuff64x64_8
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 96
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 273729c00872a91448eb5e63ddeb0960
-      internalID: -373057965
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackBuff64x64_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3a3be2296de0794f99c6735d4b84696
-      internalID: -432098271
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackBuff64x64_10
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7745760ab0bf8af4aaf7446b8abadcf7
-      internalID: -1977799542
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackBuff64x64_11
+      name: AttackBuff32x32_4
       rect:
         serializedVersion: 2
         x: 192
-        y: 32
-        width: 64
-        height: 64
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcbdc870356a1664b955f290984f8faa
-      internalID: -20659966
+      spriteID: 98a341b976ba1e64595a23651173b18c
+      internalID: 130410210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackBuff64x64_12
+      name: AttackBuff32x32_5
       rect:
         serializedVersion: 2
-        x: 256
-        y: 32
-        width: 64
-        height: 64
+        x: 240
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,20 +223,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c174b2e042cc354e8174dd7d518dac3
-      internalID: -2007115949
+      spriteID: 3720089dc25f39246a08f5d4f0432e9c
+      internalID: 1461246410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackBuff64x64_13
+      name: AttackBuff32x32_6
       rect:
         serializedVersion: 2
-        x: 320
-        y: 32
-        width: 64
-        height: 64
+        x: 288
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,20 +244,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6a8e37672b118a4281e0f33445cce12
-      internalID: -1279284893
+      spriteID: eb015b4e4f4e8974c8970ca6f174c76a
+      internalID: 630953585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackBuff64x64_14
+      name: AttackBuff32x32_7
       rect:
         serializedVersion: 2
-        x: 384
-        y: 32
-        width: 64
-        height: 64
+        x: 336
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -412,20 +265,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 298b6a836aa2d734291de2e98257794c
-      internalID: -1813279394
+      spriteID: 96a3f04f786ff1a42aca8cd2ddc7c2e2
+      internalID: 1221680949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackBuff64x64_15
+      name: AttackBuff32x32_8
       rect:
         serializedVersion: 2
-        x: 448
-        y: 32
-        width: 64
-        height: 64
+        x: 0
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -433,20 +286,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f11a03b8a4856045b536e1a15416bbe
-      internalID: -1617465922
+      spriteID: 231d86b6dcfad384bb4c99066f40a721
+      internalID: -744490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackBuff64x64_16
+      name: AttackBuff32x32_9
       rect:
         serializedVersion: 2
-        x: 512
-        y: 32
-        width: 64
-        height: 64
+        x: 48
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -454,20 +307,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05975951d182fc14ebeb8612b3b2bb13
-      internalID: -1461215728
+      spriteID: fe2ec6516850ad04a8a88b768920ed4c
+      internalID: -64773385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackBuff64x64_17
+      name: AttackBuff32x32_10
       rect:
         serializedVersion: 2
-        x: 576
-        y: 32
-        width: 64
-        height: 64
+        x: 96
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,8 +328,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abe4b0aea5d4ef14db2b5686d702161e
-      internalID: 321756108
+      spriteID: b6803325f428b3b4fb51c7ca759de7c2
+      internalID: -567587386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttackBuff32x32_11
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa803b08dcdc6b458db453c0c597d43
+      internalID: 2009126557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttackBuff32x32_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b636b6627cf061243adfcc0b8def524a
+      internalID: 1017760801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttackBuff32x32_13
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd8f81548f662940a832a2e4703e61e
+      internalID: -150347480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttackBuff32x32_14
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06f88c22b4546844b56d82b744f72da
+      internalID: -2075743206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttackBuff32x32_15
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657ca6a82aaf79b45a43bb6b208b5880
+      internalID: 809522972
       vertices: []
       indices: 
       edges: []
@@ -484,7 +442,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0f9c2ab2683b5ae4ba0352c048a8ce11
+    spriteID: c477eb6c9748d764fb5e949a45b18660
     internalID: 0
     vertices: []
     indices: 
@@ -492,24 +450,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AttackBuff64x64_9: -432098271
-      AttackBuff64x64_3: 791262491
-      AttackBuff64x64_6: 891244846
-      AttackBuff64x64_10: -1977799542
-      AttackBuff64x64_8: -373057965
-      AttackBuff64x64_4: -1653171384
-      AttackBuff64x64_13: -1279284893
-      AttackBuff64x64_1: -1332353969
-      AttackBuff64x64_0: -233045710
-      AttackBuff64x64_12: -2007115949
-      AttackBuff64x64_15: -1617465922
-      AttackBuff64x64_2: 560477715
-      AttackBuff64x64_11: -20659966
-      AttackBuff64x64_5: -108235688
-      AttackBuff64x64_16: -1461215728
-      AttackBuff64x64_14: -1813279394
-      AttackBuff64x64_17: 321756108
-      AttackBuff64x64_7: -485622092
+      AttackBuff32x32_1: 51512410
+      AttackBuff32x32_2: 1114956401
+      AttackBuff32x32_15: 809522972
+      AttackBuff32x32_3: 696610600
+      AttackBuff32x32_0: 4643089
+      AttackBuff32x32_7: 1221680949
+      AttackBuff32x32_14: -2075743206
+      AttackBuff32x32_4: 130410210
+      AttackBuff32x32_8: -744490
+      AttackBuff32x32_10: -567587386
+      AttackBuff32x32_5: 1461246410
+      AttackBuff32x32_12: 1017760801
+      AttackBuff32x32_11: 2009126557
+      AttackBuff32x32_13: -150347480
+      AttackBuff32x32_9: -64773385
+      AttackBuff32x32_6: 630953585
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
