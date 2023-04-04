@@ -134,6 +134,7 @@ public class Maze : MonoBehaviour
         }
     }
 
+
     /// <summary>
     /// Generates a new maze. Maze sure initMaze() is called at directly prior
     /// </summary>
