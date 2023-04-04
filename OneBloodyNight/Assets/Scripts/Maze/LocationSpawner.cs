@@ -145,14 +145,15 @@ public class LocationSpawner
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.north).remove(false);
                     }
-                    if (i + 1 < setPiece.Length && setPiece[i + 1][j] != null && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeSelf) 
+                    if (i + 2 < setPiece.Length && setPiece[i + 1][j] != null && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeSelf) 
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.east).remove(false);
                     } else if (i + 1 == setPiece[i].Length && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeSelf)
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.east).remove(false);
                     }
-                    if (i == 0 && !setPiece[i][j].getWall((int)Wall.wLocation.west).gameObject.activeSelf && Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getBiome() == Maze.m.getCell((int)setPieceLocation.x + i - 1, (int)setPieceLocation.y + j).getBiome()) 
+                    if (i == 0 && !setPiece[i][j].getWall((int)Wall.wLocation.west).gameObject.activeSelf &&  ((int)setPieceLocation.x + i < Maze.m.width() && (int)setPieceLocation.y + j < Maze.m.height() && (int)setPieceLocation.x + i - 1 >= 0) &&
+                        Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getBiome() == Maze.m.getCell((int)setPieceLocation.x + i - 1, (int)setPieceLocation.y + j).getBiome()) 
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.west).remove(false);
                     }
