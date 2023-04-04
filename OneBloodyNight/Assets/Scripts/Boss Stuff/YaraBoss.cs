@@ -174,6 +174,7 @@ public class YaraBoss : Boss
 
     protected override IEnumerator RandomAttacking()
     {
+        spanimator.ResetTrigger("Owie");
         int upperLimit = rndCap + currentPhase;
         int check = rnd.Next(0, upperLimit);
 
