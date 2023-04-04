@@ -37,7 +37,7 @@ public class Row : MonoBehaviour
         cells = new Cell[width];
         for (int i = 0; i < cells.Length; i++) 
         {
-            GameObject temp = Instantiate(sampleCell, transform.position + new Vector3(i*scale+Maze.m.traits.betweenCells * i, 0, 0), Quaternion.Euler(90, 0, 0), transform);
+            GameObject temp = Instantiate(sampleCell, transform.position + new Vector3(i * scale + Maze.m.traits.betweenCells * i, 0, 0), Quaternion.Euler(90, 0, 0), transform);
             temp.name = "Cell (" + i + "," + y + ")";
             cells[i] = temp.GetComponent<Cell>();
             if (i > 0) 

@@ -3,45 +3,72 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
-
 public class Maze : MonoBehaviour
 {
+    //Static reference for maze
     internal static Maze m;
+    
 
+    //Variables!!!
+    [Header("Seeding the Maze")]
     [SerializeField]
+    [Tooltip("What seed within the list the maze will start at. -1 for a random seed")]
+    private int currSeed;
+    [SerializeField]
+    [Tooltip("List of seeds the maze will pick, starting at the current seed")]
+    private int[] mazeSeed;
+
+
+    [Header("Groups of Variables")]
+    [SerializeField]
+    [Tooltip("Variables for the entire maze")]
     internal MazeVariables traits;
 
+
     [SerializeField]
-    [Tooltip("length of 0 for random")]
-    private int[] mazeSeed;
-    [SerializeField]
-    [Tooltip("-1 for random")]
-    private int currSeed;
+    [Tooltip("Variables for the seperate biomes of the maze")]
+    internal BiomeVariables[] biomeVariables;
+
 
     //Just to store the rows
+    [Header("Prefabs")]
     [SerializeField]
+    [Tooltip("Drag the Row Prefab here!")]
     GameObject sampleRow;
 
-    [SerializeField]
-    internal BiomeVariables[] biomeVariables;
+
+    //width. Just how many cells across the maze is.
     internal int width() { return traits.width; }
+    //Height. How tall is the maze in cells?
     internal int height() { return traits.height; }
 
 
+    //Variable storing all the dead ends. Used for Portal spawning and wall removal
     [HideInInspector]
     internal List<Cell> deadEnds;
 
+
+    //Reference for the biome generator script
     BiomeGenerator biomeGen;
 
+
+    //Contains the rows for the maze
     Row[] rows;
 
+
+    /// <summary>
+    /// Sets stuff up. Must be called before even start starts.
+    /// </summary>
     void Awake()
     {
         m = this;
         seedRand();
     }
 
+
+    /// <summary>
+    /// Function that seeds the randomness if it's been programmed in
+    /// </summary>
     void seedRand()
     {
         if (mazeSeed.Length != 0 && currSeed != -1)
@@ -57,16 +84,10 @@ public class Maze : MonoBehaviour
         }
     }
 
-    /*internal int getWorldPosX(int x)
-    {
-        return (int)Mathf.Round(-1 * traits.scale * (traits.width / 2) + x * traits.scale);
-    }
-    internal int getWorldPosY(int y)
-    {
-        return -getWorldPosX(y);
-    }*/
 
-    //Hey! We need a maze here.
+    /// <summary>
+    /// Hey! We need a maze here.
+    /// </summary>
     void Start()
     {
         biomeGen = new BiomeGenerator();
@@ -74,11 +95,15 @@ public class Maze : MonoBehaviour
         initMaze();
     }
 
-    //Creates a grid of cells
+
+    /// <summary>
+    /// Sets up everything needed to generate a maze
+    /// </summary>
     void initMaze()
     {
         //scales up the maze to scale size for easy conversion
         transform.localScale = new Vector3(traits.scale, 1, traits.scale);
+
         //create a bunch of rows
         rows = new Row[traits.height];
         deadEnds = new List<Cell>();
@@ -98,6 +123,8 @@ public class Maze : MonoBehaviour
         
         //runs the maze generation algorithm
         generateMaze();
+
+        //aligns maze & sets up hub 
         transform.position = new Vector3(-1 * traits.scale * (traits.width / 2), 0.001f, traits.scale * (traits.height / 2));
         Vector3 hub = new Vector3(getCell(traits.width / 2, traits.height / 2).transform.position.x, Player.plr.transform.position.y, getCell(traits.width / 2, traits.height / 2).transform.position.z);
         Player.plr.transform.position = hub;
@@ -107,11 +134,13 @@ public class Maze : MonoBehaviour
         }
     }
 
-    public void generateMaze()
+    /// <summary>
+    /// Generates a new maze. Maze sure initMaze() is called at directly prior
+    /// </summary>
+    private void generateMaze()
     {
         //Biomes
         Cell mid = getCell((int)traits.width / 2, (int)traits.height / 2);
-        //mid.setBiome(traits.CharacterBiome);
         for (int i=-1; i<=1; i++)
         {
             for (int j = -1; j <= 1; j++)
@@ -145,17 +174,16 @@ public class Maze : MonoBehaviour
         getCell((int)traits.width / 2, (int)traits.height / 2 - 1).getWall((int)Wall.wLocation.east).remove(false);
         getCell((int)traits.width / 2, (int)traits.height / 2 - 1).getWall((int)Wall.wLocation.west).remove(false);
 
-        //Wall removal
-        //extraRemoval(toRemove);
-        //Debug.Log("There are: " + deadEnds.Count + "Dead ends");
+        //Boss portals
         PlaceObject.placePortal((Biome)((((int)mid.getBiome()) + 1) % 3), 60);
         PlaceObject.placePortal((Biome)((((int)mid.getBiome()) + 2) % 3), 60);
 
+        //Wall removal
         MazeWallRemoval removal = new MazeWallRemoval();
         removal.removeWalls((Biome)((((int)mid.getBiome()) + 1) % 3));
         removal.removeWalls((Biome)((((int)mid.getBiome()) + 2) % 3));
 
-        //drawing walls
+        //Spawn wall art in
         for (int i=0; i<width(); i++)
         { 
             for (int j = 0; j < height(); j++)
@@ -169,32 +197,22 @@ public class Maze : MonoBehaviour
         PlaceObject.placePickups();
     }
 
-    //helper function, return cell (x,y) from the maze.
-    public Cell getCell(int x, int y)
+
+    /// <summary>
+    /// helper function, return cell (x,y) from the maze.
+    /// </summary>
+    /// <param name="x">The x position of the cell you want in the maze.</param>
+    /// <param name="y">The y position of the cell you want in the maze.</param>
+    /// <returns></returns>
+    internal Cell getCell(int x, int y)
     {
         return rows[y].getCell(x);
     }
 
-    /*public void extraRemoval(int toRemove)
-    {
-        for (int i=0; i<toRemove; i++)
-        {
-            Cell c = getCell(Random.Range(0, traits.width), Random.Range(0, traits.height));
-            int wallRemoved = Random.Range(0, 4);
-            Wall w = c.getWall(wallRemoved);
-            Cell other = w.getLink().getCell();
-            if (c.getBiome() == other.getBiome() && c != other)
-            {
-                w.hit(false);
-            } 
-        }
-    }*/
 
-    internal void clearVars()
-    {
-        rows = null;
-    }
-
+    /// <summary>
+    /// Called when the G button is pressed. Destroys the old maze, then creates a new maze.
+    /// </summary>
     public void RegenMaze()
     {
         Debug.Log("New Maze time!");
@@ -215,6 +233,9 @@ public class Maze : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Update. Only used for maze regeneration
+    /// </summary>
     public void Update()
     {
         if (Input.GetButtonDown("RegenerateMaze"))

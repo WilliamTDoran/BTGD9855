@@ -4181,13 +4181,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006f41d4d1c74494ab03658669106c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currSeed: 0
+  mazeSeed: 4982e610
   traits:
     width: 21
     height: 21
     scale: 16
-    betweenCells: 8
+    CharacterBiome: 0
     minLocation: 3
     chanceObj: 0.01
+    betweenCells: 8
     hubObjects:
     - {fileID: 1344671037}
     - {fileID: 830710734}
@@ -4195,14 +4198,9 @@ MonoBehaviour:
     - {fileID: 1344671037}
     - {fileID: 1924866634254403308, guid: cbc11f1c1ac338649b4ce9159b8197f8, type: 3}
     - {fileID: 6519528473584819870, guid: 7fd90efb59fb98b40bfb93519303d97b, type: 3}
-    CharacterBiome: 0
-  mazeSeed: 
-  currSeed: 0
-  sampleRow: {fileID: 3985245215676089212, guid: ee78c11f6f19f724b84ac746fcad03bf, type: 3}
   biomeVariables:
   - colour: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
     wallsRemoved: 0
-    maxCellDifficulty: 0
     chanceObject: 0.4
     bossPortal: {fileID: 3505505689596641723, guid: b6ce0a617b4773541a2477bfc8fd0696, type: 3}
     SetPieces:
@@ -4260,7 +4258,6 @@ MonoBehaviour:
       - {fileID: 8826861024925891624, guid: 013f1186d7d0c9145afa9b389f7ed9a3, type: 3}
   - colour: {r: 0.6415094, g: 0, b: 0, a: 1}
     wallsRemoved: 15
-    maxCellDifficulty: 1
     chanceObject: 0.7
     bossPortal: {fileID: 3505505689596641723, guid: dc1c394f737420a4a94f36101d14ce4c, type: 3}
     SetPieces:
@@ -4342,7 +4339,6 @@ MonoBehaviour:
       - {fileID: 8826861024925891624, guid: 3cf195785e097784ebce913069149158, type: 3}
   - colour: {r: 0, g: 0.07219793, b: 0.45490196, a: 1}
     wallsRemoved: 150
-    maxCellDifficulty: 10
     chanceObject: 0.7
     bossPortal: {fileID: 3505505689596641723, guid: 9df13bf0a1b3ba3448ef6d87397cd563, type: 3}
     SetPieces:
@@ -4437,6 +4433,7 @@ MonoBehaviour:
       - {fileID: 8826861024925891624, guid: 671a2e68423554b4188f23eeed7d4954, type: 3}
       - {fileID: 8826861024925891624, guid: 671a2e68423554b4188f23eeed7d4954, type: 3}
       - {fileID: 8826861024925891624, guid: 671a2e68423554b4188f23eeed7d4954, type: 3}
+  sampleRow: {fileID: 3985245215676089212, guid: ee78c11f6f19f724b84ac746fcad03bf, type: 3}
 --- !u!4 &750604040
 Transform:
   m_ObjectHideFlags: 0
