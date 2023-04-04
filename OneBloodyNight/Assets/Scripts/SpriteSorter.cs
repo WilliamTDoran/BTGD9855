@@ -22,7 +22,7 @@ public class SpriteSorter : MonoBehaviour
         if (other.CompareTag("SpriteTrigger"))
         {
             triggerCount++;
-            if (triggerCount > 0)
+            if (triggerCount > 0 && spriteRenderer != null)
             {
                 spriteRenderer.sortingOrder = triggeredSortingOrder;
             }
@@ -31,7 +31,7 @@ public class SpriteSorter : MonoBehaviour
         if (other.CompareTag("PropSpriteTrigger"))
         {
             triggerCount++;
-            if (triggerCount > 0)
+            if (triggerCount > 0 && spriteRenderer != null)
             {
                 spriteRenderer.sortingOrder = propSortingOrder;
             }
