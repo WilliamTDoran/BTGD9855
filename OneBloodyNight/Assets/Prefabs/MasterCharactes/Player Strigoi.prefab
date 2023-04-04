@@ -52,7 +52,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 20
+  buffedDamage: 0
   knockbackAmount: 1000
   hitstunDuration: 0.8
   pushbackAmount: 150
@@ -190,7 +193,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1953289611
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 99f2a31c6b2d26f40a9c03413e86ddc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -317,6 +320,8 @@ MonoBehaviour:
   immuneDuration: 0.4
   maxHitPoints: 0
   walkAnim: 1
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   spriteRenderer: {fileID: 2249110078326297011}
   abilityOneCost: 50
   abilityTwoCost: 80
@@ -329,7 +334,6 @@ MonoBehaviour:
   Attack: {fileID: 8300000, guid: 653740d25a2fd6141a9464b227cd5fef, type: 3}
   Hurt: {fileID: 8300000, guid: 437e001eb1fcb4a4cabcf452411234c1, type: 3}
   GameOver: {fileID: 0}
-  frenzyRegainHit: 50
   basicAttackOne: {fileID: 2249110077764019773}
   basicAttackTwo: {fileID: 2249110079544332107}
   basicAttackThree: {fileID: 2249110079026273916}
@@ -385,7 +389,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1953289611
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 747289116, guid: 47baac1353fd0994685a6bb6127248e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -613,7 +617,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1953289611
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8deefd8732e19244eab2ed41ef2e611a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -678,7 +682,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 20
+  buffedDamage: 0
   knockbackAmount: 2500
   hitstunDuration: 0.8
   pushbackAmount: 150
@@ -816,7 +823,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1953289611
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 99f2a31c6b2d26f40a9c03413e86ddc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -921,7 +928,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1953289611
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 99f2a31c6b2d26f40a9c03413e86ddc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1102,7 +1109,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 2
+  buffedDamage: 0
   knockbackAmount: 130
   hitstunDuration: 0.05
   pushbackAmount: 0
@@ -1356,7 +1366,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 20
+  buffedDamage: 0
   knockbackAmount: 900
   hitstunDuration: 0.8
   pushbackAmount: 150
@@ -1569,7 +1582,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 896860427
-  m_SortingLayer: 11
+  m_SortingLayer: 13
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 8c95941e29717ce448dc3c05f0b45638, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
