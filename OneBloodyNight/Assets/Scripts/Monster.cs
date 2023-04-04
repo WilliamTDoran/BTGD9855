@@ -119,7 +119,6 @@ public class Monster : GameActor
             Bloodmeter.instance.bloodmeter.value += bloodOnKill * Player.plr.bloodRegainMult;
 
             dead = true;
-            animator.SetTrigger("Die");
             DeathPart.Play();
             Bloody.Ded();
             StopAllCoroutines();
@@ -145,6 +144,17 @@ public class Monster : GameActor
         {
             healthBarObject.SetActive(false);
         }
+    }
+
+    protected override void LateUpdate()
+    {
+        base.LateUpdate();
+
+        if (dead)
+        {
+            animator.SetTrigger("Die");
+        }
+        
     }
 
     /// <summary>

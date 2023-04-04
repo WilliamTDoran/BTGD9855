@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 29422659}
   - component: {fileID: 29422658}
   - component: {fileID: 29422657}
+  - component: {fileID: 29422660}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -256,7 +257,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 0
+  buffedDamage: 0
   knockbackAmount: 0
   hitstunDuration: 0
   pushbackAmount: 0
@@ -336,7 +340,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 173520511
-  m_SortingLayer: 12
+  m_SortingLayer: 14
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 34298e5b240b0454bbf403cefd74772a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -349,6 +353,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &29422660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29422655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44142419377a54a888bc02a1d67e01f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &36522412
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +698,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 50
+  buffedDamage: 0
   knockbackAmount: 500
   hitstunDuration: 0.6
   pushbackAmount: 0
@@ -1765,6 +1784,8 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 1000
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   phases:
   - 1
   - 0.7
@@ -1858,7 +1879,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1953289611
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: -1247888202, guid: ba356c851ec9bce48ae33e3dbad07c19, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2082,7 +2103,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 50
+  buffedDamage: 0
   knockbackAmount: 500
   hitstunDuration: 0.6
   pushbackAmount: 0
@@ -3328,7 +3352,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 60
+  buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -3649,7 +3676,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 80
+  buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -4291,7 +4321,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 80
+  buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -5164,7 +5197,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 50
+  buffedDamage: 0
   knockbackAmount: 600
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -5471,7 +5507,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 80
+  buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -5625,7 +5664,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 80
+  buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -6068,7 +6110,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 50
+  buffedDamage: 0
   knockbackAmount: 600
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -6226,7 +6271,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 80
+  buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -7183,7 +7231,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 80
+  buffedDamage: 0
   knockbackAmount: 600
   hitstunDuration: 0.3
   pushbackAmount: 0
@@ -7326,7 +7377,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 60
+  buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -8430,7 +8484,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 80
+  buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -9720,7 +9777,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 60
+  buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -10544,7 +10604,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 50
+  buffedDamage: 0
   knockbackAmount: 500
   hitstunDuration: 0.6
   pushbackAmount: 0
@@ -11032,7 +11095,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 80
+  buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -11673,7 +11739,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 80
+  buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -12028,7 +12097,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 50
+  buffedDamage: 0
   knockbackAmount: 500
   hitstunDuration: 0.6
   pushbackAmount: 0
@@ -12529,7 +12601,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 50
+  buffedDamage: 0
   knockbackAmount: 600
   hitstunDuration: 0.2
   pushbackAmount: 0
@@ -12662,6 +12737,7 @@ GameObject:
   - component: {fileID: 1614136845}
   - component: {fileID: 1614136844}
   - component: {fileID: 1614136843}
+  - component: {fileID: 1614136846}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -12700,7 +12776,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 0
+  buffedDamage: 0
   knockbackAmount: 0
   hitstunDuration: 0
   pushbackAmount: 0
@@ -12780,7 +12859,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 173520511
-  m_SortingLayer: 12
+  m_SortingLayer: 14
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 34298e5b240b0454bbf403cefd74772a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -12793,6 +12872,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1614136846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614136841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44142419377a54a888bc02a1d67e01f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1621765722
 GameObject:
   m_ObjectHideFlags: 0
@@ -13357,6 +13448,7 @@ GameObject:
   - component: {fileID: 1690544759}
   - component: {fileID: 1690544758}
   - component: {fileID: 1690544757}
+  - component: {fileID: 1690544760}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -13395,7 +13487,10 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   damage: 0
+  buffedDamage: 0
   knockbackAmount: 0
   hitstunDuration: 0
   pushbackAmount: 0
@@ -13475,7 +13570,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 173520511
-  m_SortingLayer: 12
+  m_SortingLayer: 14
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 34298e5b240b0454bbf403cefd74772a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -13488,6 +13583,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1690544760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690544755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44142419377a54a888bc02a1d67e01f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1717331782
 GameObject:
   m_ObjectHideFlags: 0
@@ -15103,6 +15210,8 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
   speedClamp: 10
   spritenimator: {fileID: 531132822}
   rainTickInterval: 0.15
