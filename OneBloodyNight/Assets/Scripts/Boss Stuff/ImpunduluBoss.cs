@@ -135,7 +135,7 @@ public class ImpunduluBoss : Boss
     private IEnumerator startanim()
     {
         Player.plr.Stunned = true;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(6.5f);
         StartRandomBehavior();
         animator.ResetTrigger("start");
         Player.plr.Stunned = false;
@@ -234,6 +234,7 @@ public class ImpunduluBoss : Boss
 
         canMove = true;
         animator.ResetTrigger("spin");
+        animator.ResetTrigger("Owie");
         StartRandomBehavior();
     }
 
@@ -315,14 +316,18 @@ public class ImpunduluBoss : Boss
             yield return new WaitForEndOfFrame();
         }
         animator.ResetTrigger("spin");
+        animator.ResetTrigger("Owie");
 
         if (leftStart) { render.flipX = false; }
+
+        animator.SetTrigger("SwoopEnd");
 
         StartRandomBehavior();
     }
 
     private IEnumerator HomingAttack()
     {
+        animator.SetTrigger("Swipe");
         if (homingFlightTimerCoroutine != null)
         {
             StopHomingFlightTimer();
@@ -346,6 +351,7 @@ public class ImpunduluBoss : Boss
         StartHomingFlightTimer();
         canMove = true;
         animator.ResetTrigger("spin");
+        animator.ResetTrigger("Owie");
         StartRandomBehavior();
     }
 
@@ -391,6 +397,11 @@ public class ImpunduluBoss : Boss
         StartRandomBehavior();
     }
 
+    internal override void OnReceiveHit()
+    {
+        animator.SetTrigger("Owie");
+    }
+
 
     
     private void StartSpinAttack()
@@ -404,7 +415,6 @@ public class ImpunduluBoss : Boss
     {
         StopCoroutine(spinAttackCoroutine);
         spinAttackCoroutine = null;
-        animator.SetTrigger("walk");
     }
 
     private void StartDiveAttack()
@@ -418,7 +428,6 @@ public class ImpunduluBoss : Boss
     {
         StopCoroutine(diveAttackCoroutine);
         diveAttackCoroutine = null;
-        animator.SetTrigger("walk");
     }
 
     private void StartHomingAttack()
