@@ -13,8 +13,11 @@ public class Maze : MonoBehaviour
     internal MazeVariables traits;
 
     [SerializeField]
+    [Tooltip("length of 0 for random")]
+    private int[] mazeSeed;
+    [SerializeField]
     [Tooltip("-1 for random")]
-    private int mazeSeed = -1;
+    private int currSeed;
 
     //Just to store the rows
     [SerializeField]
@@ -41,9 +44,10 @@ public class Maze : MonoBehaviour
 
     void seedRand()
     {
-        if (mazeSeed != -1)
+        if (mazeSeed.Length != 0 && currSeed != -1)
         {
-            Random.InitState(mazeSeed);
+            Random.InitState(mazeSeed[currSeed]);
+            currSeed = (currSeed + 1) % mazeSeed.Length;
         }
         else
         {
@@ -205,6 +209,7 @@ public class Maze : MonoBehaviour
         {
             biomeGen = new BiomeGenerator();
         }
+        seedRand();
         initMaze();
         Debug.Log("New Maze Generated!");
     }
