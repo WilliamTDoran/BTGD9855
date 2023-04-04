@@ -148,7 +148,7 @@ public class LocationSpawner
                     if (i + 2 < setPiece.Length && setPiece[i + 1][j] != null && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeSelf) 
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.east).remove(false);
-                    } else if (i + 1 == setPiece[i].Length && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeSelf)
+                    } else if ((i + 2 == setPiece[i].Length || i + 1 == setPiece[i].Length) && !setPiece[i][j].getWall((int)Wall.wLocation.east).gameObject.activeSelf)
                     {
                         Maze.m.getCell((int)setPieceLocation.x + i, (int)setPieceLocation.y + j).getWall((int)Wall.wLocation.east).remove(false);
                     }
