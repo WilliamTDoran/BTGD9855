@@ -726,8 +726,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.516922, y: 3.54, z: 9.1104965}
-  m_Center: {x: 0.031341553, y: -0.4262421, z: -3.454753}
+  m_Size: {x: 2.516922, y: 3.54, z: 14}
+  m_Center: {x: 0.031341553, y: -0.4262421, z: 0}
 --- !u!54 &2134576186914213716
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -771,7 +771,7 @@ MonoBehaviour:
   Bloody: {fileID: 6110766870736994439}
   basicAttack: {fileID: 3237701248447046877}
   bloodOnKill: 150
-  attackTimer: 2.5
+  attackTimer: 1
   healthBarObject: {fileID: 3507703436389947380}
 --- !u!95 &6075898001845311317
 Animator:
@@ -1071,13 +1071,13 @@ MonoBehaviour:
   damage: 100
   buffedDamage: 0
   knockbackAmount: 100
-  hitstunDuration: 0.3
+  hitstunDuration: 0.4
   pushbackAmount: 2
   returnDrag: 18
   drag: 25
   wallPushbackScalar: 2
   forceStill: 1
-  floatDistance: 2.8
+  floatDistance: 3.2
   untargetableTags:
   - Wall
   - Monster
