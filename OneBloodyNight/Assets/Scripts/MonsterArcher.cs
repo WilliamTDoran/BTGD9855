@@ -8,12 +8,15 @@ public class MonsterArcher : Monster
 
     public void ArrowUse()
     {
-        facingAngle = Vector3.SignedAngle(Vector3.right, (Player.plr.Rb.position - rb.position), Vector3.up);
-        facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
-        facingAngle += Random.Range(-10, 10);
-        facingAngle *= -1;
-        basicAttack.gameObject.SetActive(true);
-        basicAttack.Fire();
+        if (!Stunned && Player.plr.Visible)
+        {
+            facingAngle = Vector3.SignedAngle(Vector3.right, (Player.plr.Rb.position - rb.position), Vector3.up);
+            facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
+            facingAngle += Random.Range(-10, 10);
+            facingAngle *= -1;
+            basicAttack.gameObject.SetActive(true);
+            basicAttack.Fire();
+        }
     }
 
     public void ShootWaitDriver()
