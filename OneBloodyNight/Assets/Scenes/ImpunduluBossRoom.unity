@@ -816,6 +816,10 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: immuneDuration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
       propertyPath: facingDebugText
       value: 
       objectReference: {fileID: 1717331784}
@@ -1782,7 +1786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3000
   immuneDuration: 0
-  maxHitPoints: 1000
+  maxHitPoints: 1200
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
@@ -1827,11 +1831,11 @@ MonoBehaviour:
   timeBetweenFeathers: 0.2
   cam: {fileID: 1236102455}
   timeBeforeFeathers: 0.6
-  timeBeforeLightning: 1.6
-  timeBeforeSwoop: 3
+  timeBeforeLightning: 1
+  timeBeforeSwoop: 2
   timeBeforeHoming: 1
   timeBeforeRain: 2
-  timeBeforeBeam: 4
+  timeBeforeBeam: 3
   swoopBox: {fileID: 794072271}
   initialPositionTime: 1.5
   threatenTime: 1
