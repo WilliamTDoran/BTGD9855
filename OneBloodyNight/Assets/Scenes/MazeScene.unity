@@ -4181,8 +4181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006f41d4d1c74494ab03658669106c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currSeed: 0
-  mazeSeed: 4982e610
+  currSeed: 1
+  mazeSeed: 4982e6108839b06f
   traits:
     width: 21
     height: 21
