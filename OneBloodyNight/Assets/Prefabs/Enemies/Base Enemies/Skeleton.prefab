@@ -81,7 +81,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1953289611
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 3f126786ab60bca41914215499f3b76b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -105,8 +105,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1863441, y: 2.2181482, z: 8.767013}
-  m_Center: {x: 0.043481827, y: -0.09891796, z: -3.8164945}
+  m_Size: {x: 1.1863441, y: 2.2181482, z: 14}
+  m_Center: {x: 0.043481827, y: -0.09891796, z: 0}
 --- !u!135 &6034589431451522888
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -152,6 +152,12 @@ MonoBehaviour:
   immuneDuration: 0
   maxHitPoints: 5
   walkAnim: 1
+  backBuffAura: {fileID: 0}
+  frontBuffAura: {fileID: 0}
+  audioSource: {fileID: 0}
+  Attack: {fileID: 0}
+  Death: {fileID: 0}
+  Hurt: {fileID: 0}
   DeathPart: {fileID: 0}
   blood: {fileID: 0}
   Bloody: {fileID: 7213602577125620163}
@@ -220,6 +226,9 @@ MonoBehaviour:
   attackAIProperties:
     attackRange: 1
     avoidanceRange: 0
+    avoidanceMask:
+      serializedVersion: 2
+      m_Bits: 0
 --- !u!114 &4323220752588118720
 MonoBehaviour:
   m_ObjectHideFlags: 0

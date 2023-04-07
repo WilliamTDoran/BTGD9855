@@ -323,8 +323,8 @@ MonoBehaviour:
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
   spriteRenderer: {fileID: 2249110078326297011}
-  abilityOneCost: 50
-  abilityTwoCost: 80
+  abilityOneCost: 30
+  abilityTwoCost: 90
   facingDebugText: {fileID: 0}
   canAttackDebugText: {fileID: 0}
   audioSource: {fileID: 6193333498023850515}

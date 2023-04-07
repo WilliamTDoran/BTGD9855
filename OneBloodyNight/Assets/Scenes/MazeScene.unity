@@ -4263,6 +4263,9 @@ MonoBehaviour:
     SetPieces:
     - {fileID: 3462578440953639072, guid: 539200ee38177a244bdb354de985f00b, type: 3}
     - {fileID: 3462578440953639072, guid: 46a2834bf1b6a224cbf722b64b7bd249, type: 3}
+    - {fileID: 3462578440953639072, guid: b50fa6802543412419d933af511a4370, type: 3}
+    - {fileID: 3462578440953639072, guid: d731321d3419d1c4ebc1fdb6237800ed, type: 3}
+    - {fileID: 3462578440953639072, guid: 97c19f6c57996bd48befdb52545f4113, type: 3}
     objects:
     - {fileID: 3325191705321573381, guid: c2f92ddfaaac7d147aad962854f22b8e, type: 3}
     - {fileID: 3896362361821221946, guid: 500c24737f865c34db3bf40abdd9980e, type: 3}
@@ -4344,6 +4347,8 @@ MonoBehaviour:
     SetPieces:
     - {fileID: 3462578440953639072, guid: 02982c99c33e6aa4f863a6993f62f3a5, type: 3}
     - {fileID: 3462578440953639072, guid: 46a2834bf1b6a224cbf722b64b7bd249, type: 3}
+    - {fileID: 3462578440953639072, guid: b50fa6802543412419d933af511a4370, type: 3}
+    - {fileID: 3462578440953639072, guid: d731321d3419d1c4ebc1fdb6237800ed, type: 3}
     - {fileID: 3462578440953639072, guid: 97c19f6c57996bd48befdb52545f4113, type: 3}
     objects:
     - {fileID: 429449037080162900, guid: 903bc6f751d8aea45bf384db2ce25317, type: 3}

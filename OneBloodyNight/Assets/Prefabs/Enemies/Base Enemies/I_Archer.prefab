@@ -430,8 +430,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1490724, y: 2.7976363, z: 8.461373}
-  m_Center: {x: 0.118380904, y: -0.09207404, z: -3.339314}
+  m_Size: {x: 1.1490724, y: 2.7976363, z: 16}
+  m_Center: {x: 0.118380904, y: -0.09207404, z: 0}
 --- !u!54 &4399245451102519839
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -475,7 +475,7 @@ MonoBehaviour:
   Bloody: {fileID: 8945016565812035934}
   basicAttack: {fileID: 6537208050856354513}
   bloodOnKill: 50
-  attackTimer: 6
+  attackTimer: 4
   healthBarObject: {fileID: 393623155723842940}
 --- !u!114 &1489538925786968429
 MonoBehaviour:
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76106d47db866c14db86de1a1c2c6c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 24
+  speed: 18
   immuneDuration: 0
   maxHitPoints: 0
   walkAnim: 0
