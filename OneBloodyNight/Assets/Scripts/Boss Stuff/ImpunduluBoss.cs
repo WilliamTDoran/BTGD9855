@@ -375,6 +375,7 @@ public class ImpunduluBoss : Boss
     {
         StopRandomBehavior();
         canMove = false;
+        immune = true;
 
         beams.transform.position = rb.position;
         beams.SetActive(true);
@@ -393,6 +394,7 @@ public class ImpunduluBoss : Boss
             beams.transform.Rotate(new Vector3(0, beamRotationSpeed * Time.deltaTime / timeModifier, 0));
         }
 
+        immune = false;
         beams.SetActive(false);
         StartRandomBehavior();
     }
