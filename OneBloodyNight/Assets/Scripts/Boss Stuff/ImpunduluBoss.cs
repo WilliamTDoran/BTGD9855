@@ -240,7 +240,7 @@ public class ImpunduluBoss : Boss
 
     private IEnumerator DiveAttack()
     {
-        Vector3 returnPos = rb.position;
+        Vector3 returnPos = new Vector3(-85.8f, rb.position.y, 21.95f);
         canMove = false;
         StopRandomBehavior();
 
