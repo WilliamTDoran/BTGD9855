@@ -148,20 +148,28 @@ public class GameManager : MonoBehaviour
         gcdCoroutine= null;
     }
 
-    private void saveGame()
+    private void saveGame(int bloodUse, int attackdmg, int bloodRegen, int moveSpeed, int top, int left, int bottom, int right)
     {
-        PlayerPrefs.SetInt("myNumber", 100);
-        PlayerPrefs.SetInt("myNumber", 100);
-        PlayerPrefs.SetInt("myNumber", 100);
-        PlayerPrefs.SetInt("myNumber", 100);
-        PlayerPrefs.SetInt("myNumber", 100);
-        PlayerPrefs.SetInt("myNumber", 100);
-        PlayerPrefs.SetInt("myNumber", 100);
-        PlayerPrefs.SetInt("myNumber", 100);
+        PlayerPrefs.SetInt("one", bloodUse);
+        PlayerPrefs.SetInt("two", attackdmg);
+        PlayerPrefs.SetInt("three", bloodRegen);
+        PlayerPrefs.SetInt("four", moveSpeed);
+        PlayerPrefs.SetInt("five", top);
+        PlayerPrefs.SetInt("six", left);
+        PlayerPrefs.SetInt("seven", bottom);
+        PlayerPrefs.SetInt("eight", right);
 
     }
     private void loadGame()
     {
-        int loaded = PlayerPrefs.GetInt("myNumber");
+        int blooduse = PlayerPrefs.GetInt("one");
+        int attk = PlayerPrefs.GetInt("two");
+        int bloodregen =PlayerPrefs.GetInt("three");
+        int movespeed = PlayerPrefs.GetInt("four");
+        int Top = PlayerPrefs.GetInt("five");
+        int Left = PlayerPrefs.GetInt("six");
+        int Bottom = PlayerPrefs.GetInt("seven");
+        int Right = PlayerPrefs.GetInt("eight");
+        UpgradeTotemHUD.instance.loadSavedUpgrades(blooduse, attk, bloodregen, movespeed, Top, Left, Bottom, Right);
     }
 }

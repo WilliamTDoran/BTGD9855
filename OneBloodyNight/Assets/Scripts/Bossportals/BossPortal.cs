@@ -28,6 +28,7 @@ public class BossPortal : MonoBehaviour
         Debug.Log("Contact");
         if (col.gameObject.tag == "Player")
         {
+            UpgradeTotemHUD.instance.Saver();
             if (SceneManager.GetActiveScene().name == "MazeScene") { 
             Application.LoadLevel("ImpunduluBossRoom");
             }
