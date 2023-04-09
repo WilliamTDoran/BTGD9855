@@ -47,11 +47,15 @@ SpriteAtlas:
     - {fileID: 2800000, guid: b67cdfbd762bd3141b4d319072ebf293, type: 3}
     - {fileID: 2800000, guid: 80ce161c747bddd4b98ed80722fe5260, type: 3}
     - {fileID: 2800000, guid: b8dff2f4cb901bb4abe427f3d93f335d, type: 3}
+    - {fileID: 102900000, guid: 09c9cb879c23be445a3aa4439bd817bd, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: fa76de615ccee6d44974a5e947b26022, type: 3}
+  - {fileID: 21300000, guid: be3f4ff15204d074687ef48289a753d6, type: 3}
+  - {fileID: 21300000, guid: 125f8fd35a9b08241a1e03caa8363765, type: 3}
   - {fileID: 363189069, guid: b8dff2f4cb901bb4abe427f3d93f335d, type: 3}
   - {fileID: -1634247592, guid: b8dff2f4cb901bb4abe427f3d93f335d, type: 3}
   - {fileID: -2000438804, guid: b8dff2f4cb901bb4abe427f3d93f335d, type: 3}
@@ -108,6 +112,8 @@ SpriteAtlas:
   - {fileID: -601302329, guid: b8dff2f4cb901bb4abe427f3d93f335d, type: 3}
   - {fileID: -1187606263, guid: b8dff2f4cb901bb4abe427f3d93f335d, type: 3}
   - {fileID: -52749368, guid: b8dff2f4cb901bb4abe427f3d93f335d, type: 3}
+  - {fileID: 21300000, guid: 8030ea75b1f02b94e9befd9caf8e83dc, type: 3}
+  - {fileID: 21300000, guid: ebe4e46ab1a5e47488151906eef74f45, type: 3}
   - {fileID: -1917620487, guid: 80ce161c747bddd4b98ed80722fe5260, type: 3}
   - {fileID: 2110950124, guid: 80ce161c747bddd4b98ed80722fe5260, type: 3}
   - {fileID: 2136960409, guid: 80ce161c747bddd4b98ed80722fe5260, type: 3}
@@ -125,6 +131,7 @@ SpriteAtlas:
   - {fileID: 67893066, guid: 80ce161c747bddd4b98ed80722fe5260, type: 3}
   - {fileID: 2021412259, guid: 80ce161c747bddd4b98ed80722fe5260, type: 3}
   - {fileID: -2099604986, guid: 80ce161c747bddd4b98ed80722fe5260, type: 3}
+  - {fileID: 21300000, guid: 88e5695d76d64654a9a3943f559b4362, type: 3}
   - {fileID: 1024126417, guid: b67cdfbd762bd3141b4d319072ebf293, type: 3}
   - {fileID: 771857908, guid: b67cdfbd762bd3141b4d319072ebf293, type: 3}
   - {fileID: 1398054417, guid: b67cdfbd762bd3141b4d319072ebf293, type: 3}
@@ -187,7 +194,12 @@ SpriteAtlas:
   - {fileID: 44969011, guid: b67cdfbd762bd3141b4d319072ebf293, type: 3}
   - {fileID: -102342757, guid: b67cdfbd762bd3141b4d319072ebf293, type: 3}
   - {fileID: 1913692268, guid: b67cdfbd762bd3141b4d319072ebf293, type: 3}
+  - {fileID: 21300000, guid: 0f42354e5e2cf524a8d5cdd3e926c589, type: 3}
+  - {fileID: 21300000, guid: 17cd889e1ce3666458bc9a569a525045, type: 3}
   m_PackedSpriteNamesToIndex:
+  - Imp
+  - Yara
+  - YaraImpHorizontal
   - StrigoiTilesetWallsFinal_17
   - StrigoiTilesetWallsFinal_16
   - StrigoiTilesetWallsFinal_15
@@ -244,6 +256,8 @@ SpriteAtlas:
   - StrigoiTilesetWallsFinal_30
   - StrigoiTilesetWallsFinal_33
   - StrigoiTilesetWallsFinal_32
+  - YaraImpHorizontalFlip
+  - YaraFlip
   - YaramayhawhoTilesetRough_15
   - YaramayhawhoTilesetRough_14
   - YaramayhawhoTilesetRough_16
@@ -261,6 +275,7 @@ SpriteAtlas:
   - YaramayhawhoTilesetRough_1
   - YaramayhawhoTilesetRough_8
   - YaramayhawhoTilesetRough_9
+  - ImpFlip
   - ImpunduluTilesetNightWithShading_61
   - ImpunduluTilesetNightWithShading_60
   - ImpunduluTilesetNightWithShading_30
@@ -323,6 +338,8 @@ SpriteAtlas:
   - ImpunduluTilesetNightWithShading_4
   - ImpunduluTilesetNightWithShading_9
   - ImpunduluTilesetNightWithShading_8
+  - YaraImp
+  - YaraImpFlip
   m_RenderDataMap: {}
   m_Tag: Walls
   m_IsVariant: 0
