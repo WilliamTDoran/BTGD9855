@@ -6871,7 +6871,9 @@ MonoBehaviour:
   - {fileID: 110058842}
   poundRockMinTimes:
   - 0.4
+  - 0.4
   poundRockMaxTimes:
+  - 0.8
   - 0.8
   spanimator: {fileID: 677486036}
   sprender: {fileID: 677486037}
