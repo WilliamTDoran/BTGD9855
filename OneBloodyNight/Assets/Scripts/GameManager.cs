@@ -160,7 +160,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("eight", right);
 
     }
-    private void loadGame()
+    internal void loadGame()
     {
         int blooduse = PlayerPrefs.GetInt("one");
         int attk = PlayerPrefs.GetInt("two");
