@@ -2714,6 +2714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 234739516}
   - component: {fileID: 234739515}
+  - component: {fileID: 234739517}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2752,6 +2753,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &234739517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234739514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcbe4453cbce78f479974fca595b0022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodUsageUpgrade:
+    upgraded: 0
+    multiplier: 0.7
+  attackDmgUpgrade:
+    upgraded: 0
+    multiplier: 1.5
+  bloodRegenUpgrade:
+    upgraded: 0
+    multiplier: 1.4
+  moveSpeedUpgrade:
+    upgraded: 0
+    multiplier: 1.4
+  disableable: 0
 --- !u!1 &238849016
 GameObject:
   m_ObjectHideFlags: 0

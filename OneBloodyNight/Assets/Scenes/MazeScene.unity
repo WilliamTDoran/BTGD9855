@@ -760,6 +760,7 @@ MonoBehaviour:
   moveSpeedUpgrade:
     upgraded: 0
     multiplier: 1.4
+  disableable: 1
 --- !u!224 &131833780
 RectTransform:
   m_ObjectHideFlags: 0
