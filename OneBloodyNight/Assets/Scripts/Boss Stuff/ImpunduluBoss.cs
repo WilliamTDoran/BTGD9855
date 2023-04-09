@@ -241,6 +241,7 @@ public class ImpunduluBoss : Boss
     private IEnumerator DiveAttack()
     {
         Vector3 returnPos = new Vector3(-85.8f, rb.position.y, 21.95f);
+        Vector3 cumPos = rb.position;
         canMove = false;
         StopRandomBehavior();
 
@@ -257,7 +258,7 @@ public class ImpunduluBoss : Boss
 
             Vector3 targetPos = new Vector3(cameraSidePoint.x, rb.position.y, Player.plr.Rb.position.z);
 
-            rb.position = Vector3.Lerp(returnPos, targetPos, genTimer / (initialPositionTime * timeModifier));
+            rb.position = Vector3.Lerp(cumPos, targetPos, genTimer / (initialPositionTime * timeModifier));
             rb.position = new Vector3(rb.position.x, targetPos.y, rb.position.z);
 
             genTimer += Time.deltaTime;
