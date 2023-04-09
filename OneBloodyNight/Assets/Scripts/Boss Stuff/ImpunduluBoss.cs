@@ -248,8 +248,9 @@ public class ImpunduluBoss : Boss
         bool leftStart = UnityEngine.Random.Range(0.0f, 1.0f) > 0.5f;
 
         float genTimer = 0.0f;
+        facingOverride = true;
 
-        if (!leftStart) { render.flipX = true; }
+        if (!leftStart) { render.flipX = true; } else { render.flipX = false; }
 
         animator.SetTrigger("swoop");
         while (genTimer <= initialPositionTime * timeModifier)
@@ -300,9 +301,7 @@ public class ImpunduluBoss : Boss
             }
         }
 
-        if (!leftStart) { render.flipX = false; }
-
-        if (leftStart) { render.flipX = true; }
+        render.flipX = !render.flipX;
 
         yield return new WaitForSeconds(stopTime * timeModifier);
         Vector3 endPos = rb.position;
@@ -319,9 +318,8 @@ public class ImpunduluBoss : Boss
         animator.ResetTrigger("spin");
         animator.ResetTrigger("Owie");
 
-        if (leftStart) { render.flipX = false; }
-
         animator.SetTrigger("SwoopEnd");
+        facingOverride = false;
 
         StartRandomBehavior();
     }

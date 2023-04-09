@@ -26,6 +26,7 @@ public class GameActor : MonoBehaviour
 
     protected float actualVelocity; //the real, measured velocity of the rigidbody
     protected float clampedVelocity; //the velocity clamped to a max of 1, used for setting animation
+    protected bool facingOverride = false; //just don't worry about it.
 
     protected float facingAngle; //the direction the actor is 'facing' in degrees (has no inherent bearing on the object's actual transform rotation)
     public float FacingAngle { get { return facingAngle; } }
@@ -121,7 +122,7 @@ public class GameActor : MonoBehaviour
             animator.SetFloat("Speed", clampedVelocity);
 
             //This is clumsy and causes awkward stuttering when moving vertically or near-vertically. Should ideally be replaced
-            if (rb.velocity.magnitude > 0.1)
+            if (rb.velocity.magnitude > 0.1 && !facingOverride)
             {
                 if (rb.velocity.x < 0)
                 {
