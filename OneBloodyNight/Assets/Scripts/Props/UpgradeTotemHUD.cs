@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UpgradeTotemHUD : MonoBehaviour
 {
+    internal static UpgradeTotemHUD instance;
     //[SerializeField]
     //GameObject upgradeHUD;
     [SerializeField]
@@ -31,6 +32,14 @@ public class UpgradeTotemHUD : MonoBehaviour
         rightSpecial,
         LENGTH
     }*/
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     internal void upgradeBloodUsage()
     {
