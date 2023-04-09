@@ -204,36 +204,50 @@ public class UpgradeTotemHUD : MonoBehaviour
         }
     }
 
-
-    internal void loadSavedUpgrades(SavedUpgrades su)
+    /*
+     bloodUsage,
+        attackDmg,
+        bloodRegain,
+        movementSpeed,
+        topSpecial,
+        leftSpecial,
+        bottomSpecial,
+        rightSpecial,
+     
+     */
+    internal void loadSavedUpgrades(int bloodUsage, int attackDmg, int bloodRegain, int movementSpeed, int topSpecial, int leftSpecial, int bottomSpecial, int rightSpecial)
     {
-        for (int i=0; i<su.bloodUsageUpgrade; i++)
+        for (int i=0; i< bloodUsage; i++)
         {
             upgradeBloodUsage();
         }
-        for (int i = 0; i < su.attackDmgUpgrade; i++)
+        for (int i = 0; i < attackDmg; i++)
         {
             upgradeAttackDmg();
         }
-        for (int i = 0; i < su.bloodRegenUpgrade; i++)
+        for (int i = 0; i < bloodRegain; i++)
         {
             upgradeBloodRegen();
         }
-        for (int i = 0; i < su.moveSpeedUpgrade; i++)
+        for (int i = 0; i < movementSpeed; i++)
         {
             upgradeMoveSpeed();
         }
-        for (int i = 0; i < su.topUpgrade; i++)
+        for (int i = 0; i < topSpecial; i++)
         {
             upgradeTopSpecial();
         }
-        for (int i = 0; i < su.rightUpgrade; i++)
+        for (int i = 0; i < leftSpecial; i++)
+        {
+            upgradeLeftSpecial();
+        }
+        for (int i = 0; i < bottomSpecial; i++)
+        {
+            upgradeBottomSpecial();
+        }
+        for (int i = 0; i < rightSpecial; i++)
         {
             upgradeRightSpecial();
-        }
-        for (int i = 0; i < su.bottomUpgrade; i++)
-        {
-            upgradeBloodUsage();
         }
     }
 
@@ -244,16 +258,4 @@ internal class UpgradeVars
 {
     public int upgraded = 0;
     public float multiplier;
-}
-
-internal class SavedUpgrades 
-{
-    internal int bloodUsageUpgrade;
-    internal int attackDmgUpgrade;
-    internal int bloodRegenUpgrade;
-    internal int moveSpeedUpgrade;
-    internal int topUpgrade;
-    internal int rightUpgrade;
-    internal int bottomUpgrade;
-    internal int leftUpgrade;
 }
