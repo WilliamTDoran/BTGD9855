@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2864318965171328639}
   - component: {fileID: 2910219899906084587}
   m_Layer: 0
-  m_Name: StrigoiGround
+  m_Name: StrigoiGround 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 81f50e663a3f993488a35aae73635a0b, type: 2}
+  - {fileID: 2100000, guid: 4618a6d1d4f30d24aba7cc347f7145e9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
