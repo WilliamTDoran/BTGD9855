@@ -19,7 +19,7 @@ public class UpgradeTotemHUD : MonoBehaviour
     internal int rightUpgrade;
     internal int bottomUpgrade;
     internal int leftUpgrade;
-
+    [SerializeField]
     internal bool disableable;
     /*
     enum upgrades
