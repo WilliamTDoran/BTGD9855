@@ -203,6 +203,40 @@ public class UpgradeTotemHUD : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+
+    internal void loadSavedUpgrades(SavedUpgrades su)
+    {
+        for (int i=0; i<su.bloodUsageUpgrade; i++)
+        {
+            upgradeBloodUsage();
+        }
+        for (int i = 0; i < su.attackDmgUpgrade; i++)
+        {
+            upgradeAttackDmg();
+        }
+        for (int i = 0; i < su.bloodRegenUpgrade; i++)
+        {
+            upgradeBloodRegen();
+        }
+        for (int i = 0; i < su.moveSpeedUpgrade; i++)
+        {
+            upgradeMoveSpeed();
+        }
+        for (int i = 0; i < su.topUpgrade; i++)
+        {
+            upgradeTopSpecial();
+        }
+        for (int i = 0; i < su.rightUpgrade; i++)
+        {
+            upgradeRightSpecial();
+        }
+        for (int i = 0; i < su.bottomUpgrade; i++)
+        {
+            upgradeBloodUsage();
+        }
+    }
+
 }
 
 [System.Serializable]
@@ -210,4 +244,16 @@ internal class UpgradeVars
 {
     public int upgraded = 0;
     public float multiplier;
+}
+
+internal class SavedUpgrades 
+{
+    internal int bloodUsageUpgrade;
+    internal int attackDmgUpgrade;
+    internal int bloodRegenUpgrade;
+    internal int moveSpeedUpgrade;
+    internal int topUpgrade;
+    internal int rightUpgrade;
+    internal int bottomUpgrade;
+    internal int leftUpgrade;
 }
