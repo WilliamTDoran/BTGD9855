@@ -147,4 +147,21 @@ public class GameManager : MonoBehaviour
         StopCoroutine(gcdCoroutine);
         gcdCoroutine= null;
     }
+
+    private void saveGame()
+    {
+        PlayerPrefs.SetInt("myNumber", 100);
+        PlayerPrefs.SetInt("myNumber", 100);
+        PlayerPrefs.SetInt("myNumber", 100);
+        PlayerPrefs.SetInt("myNumber", 100);
+        PlayerPrefs.SetInt("myNumber", 100);
+        PlayerPrefs.SetInt("myNumber", 100);
+        PlayerPrefs.SetInt("myNumber", 100);
+        PlayerPrefs.SetInt("myNumber", 100);
+
+    }
+    private void loadGame()
+    {
+        int loaded = PlayerPrefs.GetInt("myNumber");
+    }
 }
