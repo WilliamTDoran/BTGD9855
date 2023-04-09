@@ -19,6 +19,8 @@ public class UpgradeTotemHUD : MonoBehaviour
     internal int rightUpgrade;
     internal int bottomUpgrade;
     internal int leftUpgrade;
+
+    internal bool disableable;
     /*
     enum upgrades
     {
@@ -48,8 +50,11 @@ public class UpgradeTotemHUD : MonoBehaviour
             bloodUsageUpgrade.upgraded++;
             Bloodmeter.instance.bloodLossRate *= bloodUsageUpgrade.multiplier;
         }
-        Time.timeScale = 1f;
-        gameObject.SetActive(false);
+        if (disableable)
+        {
+            Time.timeScale = 1f;
+            gameObject.SetActive(false);
+        }
     }
 
     public void upgradeAttackDmg()
@@ -64,8 +69,11 @@ public class UpgradeTotemHUD : MonoBehaviour
                 Debug.Log("Upgrade not implemented for this character");
             }
         }
-        Time.timeScale = 1f;
-        gameObject.SetActive(false);
+        if (disableable)
+        {
+            Time.timeScale = 1f;
+            gameObject.SetActive(false);
+        }
     }
 
     public void upgradeBloodRegen()
@@ -75,8 +83,11 @@ public class UpgradeTotemHUD : MonoBehaviour
             bloodRegenUpgrade.upgraded++;
             Player.plr.bloodRegainMult *= bloodRegenUpgrade.multiplier;
         }
-        Time.timeScale = 1f;
-        gameObject.SetActive(false);
+        if (disableable)
+        {
+            Time.timeScale = 1f;
+            gameObject.SetActive(false);
+        }
     }
 
     public void upgradeMoveSpeed()
@@ -94,8 +105,11 @@ public class UpgradeTotemHUD : MonoBehaviour
                 Debug.Log("Upgrade not implemented for this character");
             }
         }
-        Time.timeScale = 1f;
-        gameObject.SetActive(false);
+        if (disableable)
+        {
+            Time.timeScale = 1f;
+            gameObject.SetActive(false);
+        }
     }
 
     public void upgradeTopSpecial()
@@ -123,8 +137,11 @@ public class UpgradeTotemHUD : MonoBehaviour
                 Debug.Log("Upgrade not implemented for this character");
             }
         }
-        Time.timeScale = 1f;
-        gameObject.SetActive(false);
+        if (disableable)
+        {
+            Time.timeScale = 1f;
+            gameObject.SetActive(false);
+        }
     }
     public void upgradeBottomSpecial()
     {
@@ -140,8 +157,11 @@ public class UpgradeTotemHUD : MonoBehaviour
                 Debug.Log("Upgrade not implemented for this character");
             }
         }
-        Time.timeScale = 1f;
-        gameObject.SetActive(false);
+        if (disableable)
+        {
+            Time.timeScale = 1f;
+            gameObject.SetActive(false);
+        }
     }
 
     public void upgradeRightSpecial()
@@ -170,8 +190,11 @@ public class UpgradeTotemHUD : MonoBehaviour
                 Debug.Log("Upgrade not implemented for this character");
             }
         }
-        Time.timeScale = 1f;
-        gameObject.SetActive(false);
+        if (disableable)
+        {
+            Time.timeScale = 1f;
+            gameObject.SetActive(false);
+        }
     }
 
     public void upgradeLeftSpecial()
@@ -200,13 +223,16 @@ public class UpgradeTotemHUD : MonoBehaviour
                 Debug.Log("Upgrade not implemented for this character");
             }
         }
-        Time.timeScale = 1f;
-        gameObject.SetActive(false);
+        if (disableable)
+        {
+            Time.timeScale = 1f;
+            gameObject.SetActive(false);
+        }
     }
 
     void Update()
     {
-        if ((Input.GetButtonDown("Cancel") || Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical") || Input.GetButtonDown("Interact")) && gameObject.activeSelf)
+        if ((Input.GetButtonDown("Cancel") || Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical") || Input.GetButtonDown("Interact")) && gameObject.activeSelf && disableable)
         {
             Time.timeScale = 1f;
             gameObject.SetActive(false);
