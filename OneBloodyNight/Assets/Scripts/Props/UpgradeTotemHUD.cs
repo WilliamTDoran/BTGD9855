@@ -239,6 +239,14 @@ public class UpgradeTotemHUD : MonoBehaviour
         }
     }
 
+    internal void Saver()
+    {
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.saveGame(bloodUsageUpgrade.upgraded, attackDmgUpgrade.upgraded, bloodRegenUpgrade.upgraded, moveSpeedUpgrade.upgraded, topUpgrade, leftUpgrade, bottomUpgrade, rightUpgrade);
+        }
+    }
+
     /*
      bloodUsage,
         attackDmg,

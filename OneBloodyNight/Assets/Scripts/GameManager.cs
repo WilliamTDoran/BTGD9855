@@ -148,7 +148,7 @@ public class GameManager : MonoBehaviour
         gcdCoroutine= null;
     }
 
-    private void saveGame(int bloodUse, int attackdmg, int bloodRegen, int moveSpeed, int top, int left, int bottom, int right)
+    internal void saveGame(int bloodUse, int attackdmg, int bloodRegen, int moveSpeed, int top, int left, int bottom, int right)
     {
         PlayerPrefs.SetInt("one", bloodUse);
         PlayerPrefs.SetInt("two", attackdmg);
