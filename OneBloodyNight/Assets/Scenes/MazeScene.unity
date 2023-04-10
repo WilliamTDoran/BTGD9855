@@ -4185,7 +4185,6 @@ MonoBehaviour:
     floors:
       offSet: {x: -8, y: 0, z: -8}
       Sprites:
-      - {fileID: 8826861024925891624, guid: 013f1186d7d0c9145afa9b389f7ed9a3, type: 3}
       - {fileID: 8826861024925891624, guid: 794118026dac7b3419dbf8d0462efb0c, type: 3}
       - {fileID: 8826861024925891624, guid: 261c2d2c9b14ac844a2b11edba204395, type: 3}
       - {fileID: 8826861024925891624, guid: 4dfbb61ea6be7d44cb87970c1bf8e521, type: 3}
@@ -4193,6 +4192,13 @@ MonoBehaviour:
       - {fileID: 8826861024925891624, guid: b813b5ec275ac1944a9d9266f54dafb5, type: 3}
       - {fileID: 8826861024925891624, guid: 0ae82c7af61faea4ea6247ad37fbb873, type: 3}
       - {fileID: 8826861024925891624, guid: fdddbda538cfa384da861d6b394f8fcc, type: 3}
+      - {fileID: 8826861024925891624, guid: 013f1186d7d0c9145afa9b389f7ed9a3, type: 3}
+      - {fileID: 8826861024925891624, guid: 013f1186d7d0c9145afa9b389f7ed9a3, type: 3}
+      - {fileID: 8826861024925891624, guid: 013f1186d7d0c9145afa9b389f7ed9a3, type: 3}
+      - {fileID: 8826861024925891624, guid: 013f1186d7d0c9145afa9b389f7ed9a3, type: 3}
+      - {fileID: 8826861024925891624, guid: 013f1186d7d0c9145afa9b389f7ed9a3, type: 3}
+      - {fileID: 8826861024925891624, guid: 013f1186d7d0c9145afa9b389f7ed9a3, type: 3}
+      - {fileID: 8826861024925891624, guid: 013f1186d7d0c9145afa9b389f7ed9a3, type: 3}
   - colour: {r: 0.6415094, g: 0, b: 0, a: 1}
     wallsRemoved: 15
     chanceObject: 0.7

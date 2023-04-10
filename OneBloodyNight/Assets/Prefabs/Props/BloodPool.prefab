@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 80667733133338129}
   - component: {fileID: 4793150996706466564}
   - component: {fileID: 1860522851316984753}
+  - component: {fileID: 2421822353919416178}
   m_Layer: 0
   m_Name: BloodPool
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -1048108071
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2cdc42fa5d5858445ac415182831c182, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6824e9592262aba48af907b7cbb82373, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113,3 +114,23 @@ CapsuleCollider:
   m_Height: 0.48
   m_Direction: 0
   m_Center: {x: 0, y: 0.03, z: 0}
+--- !u!95 &2421822353919416178
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80667733133338135}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 169d6ced78239bd4789689e7bd85f798, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
