@@ -25,6 +25,7 @@ public class GameActor : MonoBehaviour
     protected SpriteRenderer render;
 
     protected float actualVelocity; //the real, measured velocity of the rigidbody
+    protected float scaledVelocity;
     protected float clampedVelocity; //the velocity clamped to a max of 1, used for setting animation
     protected bool facingOverride = false; //just don't worry about it.
 

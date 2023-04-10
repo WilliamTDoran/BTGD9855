@@ -181,6 +181,30 @@ public class PlayerStrigoi : Player
         } 
     }
 
+    protected override void LateUpdate()
+    {
+        if (walkAnim)
+        {
+            actualVelocity = rb.velocity.magnitude;
+            scaledVelocity = actualVelocity / 50f;
+            clampedVelocity = scaledVelocity > 1f ? 1f : scaledVelocity;
+            animator.SetFloat("Speed", clampedVelocity);
+
+            //This is clumsy and causes awkward stuttering when moving vertically or near-vertically. Should ideally be replaced
+            if (rb.velocity.magnitude > 0.1 && !facingOverride)
+            {
+                if (rb.velocity.x < 0)
+                {
+                    render.flipX = true;
+                }
+                else
+                {
+                    render.flipX = false;
+                }
+            }
+        }
+    }
+
     private IEnumerator Dead()
     {
 
