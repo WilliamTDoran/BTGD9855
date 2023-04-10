@@ -330,6 +330,14 @@ PrefabInstance:
       propertyPath: attackTimer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Size.z
+      value: 93.360176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Center.z
+      value: -46.11309
+      objectReference: {fileID: 0}
     - target: {fileID: 8621432289928506362, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: m_Name
       value: I_Archer (12)
@@ -494,6 +502,14 @@ PrefabInstance:
       propertyPath: attackTimer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Size.z
+      value: 93.360176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Center.z
+      value: -46.11309
+      objectReference: {fileID: 0}
     - target: {fileID: 8621432289928506362, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: m_Name
       value: I_Archer (10)
@@ -579,6 +595,14 @@ PrefabInstance:
     - target: {fileID: 6013204197218851667, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: attackTimer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Size.z
+      value: 93.360176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Center.z
+      value: -46.11309
       objectReference: {fileID: 0}
     - target: {fileID: 8621432289928506362, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: m_Name
@@ -666,6 +690,14 @@ PrefabInstance:
       propertyPath: attackTimer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Size.z
+      value: 93.360176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Center.z
+      value: -46.11309
+      objectReference: {fileID: 0}
     - target: {fileID: 8621432289928506362, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: m_Name
       value: I_Archer (7)
@@ -751,6 +783,14 @@ PrefabInstance:
     - target: {fileID: 6013204197218851667, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: attackTimer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Size.z
+      value: 93.360176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Center.z
+      value: -46.11309
       objectReference: {fileID: 0}
     - target: {fileID: 8621432289928506362, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: m_Name
@@ -838,6 +878,14 @@ PrefabInstance:
       propertyPath: attackTimer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Size.z
+      value: 93.360176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Center.z
+      value: -46.11309
+      objectReference: {fileID: 0}
     - target: {fileID: 8621432289928506362, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: m_Name
       value: I_Archer (2)
@@ -923,6 +971,14 @@ PrefabInstance:
     - target: {fileID: 6013204197218851667, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: attackTimer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Size.z
+      value: 93.360176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Center.z
+      value: -46.11309
       objectReference: {fileID: 0}
     - target: {fileID: 8621432289928506362, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: m_Name
@@ -1010,6 +1066,14 @@ PrefabInstance:
       propertyPath: attackTimer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Size.z
+      value: 93.360176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Center.z
+      value: -46.11309
+      objectReference: {fileID: 0}
     - target: {fileID: 8621432289928506362, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: m_Name
       value: I_Archer (11)
@@ -1095,6 +1159,14 @@ PrefabInstance:
     - target: {fileID: 6013204197218851667, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: attackTimer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Size.z
+      value: 93.360176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Center.z
+      value: -46.11309
       objectReference: {fileID: 0}
     - target: {fileID: 8621432289928506362, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: m_Name
@@ -1182,6 +1254,14 @@ PrefabInstance:
       propertyPath: attackTimer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Size.z
+      value: 93.360176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Center.z
+      value: -46.11309
+      objectReference: {fileID: 0}
     - target: {fileID: 8621432289928506362, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: m_Name
       value: I_Archer (6)
@@ -1267,6 +1347,14 @@ PrefabInstance:
     - target: {fileID: 6013204197218851667, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: attackTimer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Size.z
+      value: 93.360176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023305969007992477, guid: b6ec174870038b543bda8ac785535413, type: 3}
+      propertyPath: m_Center.z
+      value: -46.11309
       objectReference: {fileID: 0}
     - target: {fileID: 8621432289928506362, guid: b6ec174870038b543bda8ac785535413, type: 3}
       propertyPath: m_Name

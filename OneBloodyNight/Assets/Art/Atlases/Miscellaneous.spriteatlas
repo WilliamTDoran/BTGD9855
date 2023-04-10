@@ -161,7 +161,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: cb7ce21af6e2c304bab5a7e8a98b7437, type: 3}
   - {fileID: 21300000, guid: 6e33ec3a1e40e8544b6b9654d51d21b4, type: 3}
   - {fileID: 21300000, guid: 9239828a0be601a4982ec9d8df7d7c29, type: 3}
-  - {fileID: 21300000, guid: aa77b4ea992ffa74183caeeb168d2bcd, type: 3}
   - {fileID: 21300000, guid: 0d80f11b8dd93404cb2ea3da2dbb1713, type: 3}
   - {fileID: 21300000, guid: c8493cdb64b16a6448e138b127e29bcc, type: 3}
   - {fileID: 21300000, guid: 2b8b57fb2a30ca3448f057b0f376812e, type: 3}
@@ -200,6 +199,7 @@ SpriteAtlas:
   - {fileID: -2047794346, guid: 03e086df1e964334db016cf480a390bd, type: 3}
   - {fileID: 555701245, guid: 03e086df1e964334db016cf480a390bd, type: 3}
   - {fileID: -1642542332, guid: 03e086df1e964334db016cf480a390bd, type: 3}
+  - {fileID: 21300000, guid: ee9128ef6be542946878e7460ae41d5d, type: 3}
   m_PackedSpriteNamesToIndex:
   - BloodPoolAnimation3
   - Blood14
@@ -307,7 +307,6 @@ SpriteAtlas:
   - BloodPoolAnimation1
   - Blood3
   - Blood1
-  - treeShaded
   - BloodPoolAnimation4
   - BloodPoolAnimation3
   - BloodPoolAnimation9
@@ -346,6 +345,7 @@ SpriteAtlas:
   - UpgradeTotem_0
   - UpgradeTotem_3
   - UpgradeTotem_2
+  - treeShaded 1
   m_RenderDataMap: {}
   m_Tag: Miscellaneous
   m_IsVariant: 0
