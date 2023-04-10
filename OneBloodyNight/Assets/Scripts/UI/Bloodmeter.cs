@@ -12,6 +12,7 @@ public class Bloodmeter : MonoBehaviour
     public int damage;
     public Slider residual;
 
+
     public Animator anim;
 
     public GameObject gameover;
@@ -42,6 +43,7 @@ public class Bloodmeter : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        //cost1.SetActive(false);
 
         bloodmeter.value = bloodmeter.maxValue;
         residual.value = bloodmeter.minValue;
@@ -146,4 +148,6 @@ public class Bloodmeter : MonoBehaviour
     {
         anim.SetTrigger("Hit");
     }
+
+
 }
