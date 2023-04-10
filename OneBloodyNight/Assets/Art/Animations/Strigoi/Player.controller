@@ -209,7 +209,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Dosttacko
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3655066055194403345}
@@ -312,7 +312,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: e681edbe2a21679479ed386baf2b81cb, type: 2}
+    m_Motion: {fileID: 7400000, guid: ffd5ea47edadcb14bb17ca486b3fde46, type: 2}
     m_Threshold: 0.05
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -320,7 +320,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 835f084236123944c80f8a5cdb7de21a, type: 2}
+    m_Motion: {fileID: 7400000, guid: 33009dbb62514384a9793f05a2f52924, type: 2}
     m_Threshold: 0.9
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -410,7 +410,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Tresttacko
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4294517922347159202}
@@ -466,7 +466,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -6881339316928602943}
-    m_Position: {x: -130, y: 700, z: 0}
+    m_Position: {x: -150, y: 540, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3103449637611241697}
     m_Position: {x: 650, y: 320, z: 0}
@@ -548,7 +548,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Unottacko
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4552655932760481066}
