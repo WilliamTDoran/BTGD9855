@@ -131,7 +131,7 @@ public class Monster : GameActor
             canAttack = false;
             Stunned = true;
             col.enabled = false;
-            basicAttack.Buffed = false;
+            if (basicAttack != null) { basicAttack.Buffed = false; }
             if (backBuffAura != null) { backBuffAura.gameObject.SetActive(false); }
             if (frontBuffAura != null) { frontBuffAura.gameObject.SetActive(false); }
             if (basicAttack != null)
