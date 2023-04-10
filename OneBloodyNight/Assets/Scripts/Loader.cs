@@ -8,5 +8,6 @@ public class Loader : MonoBehaviour
     void Awake()
     {
         GameManager.instance.loadGame();
+        GameManager.instance.LoadPerm();
     }
 }

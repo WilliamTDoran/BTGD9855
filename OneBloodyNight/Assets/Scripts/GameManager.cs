@@ -172,4 +172,12 @@ public class GameManager : MonoBehaviour
         int Right = PlayerPrefs.GetInt("eight");
         UpgradeTotemHUD.instance.loadSavedUpgrades(blooduse, attk, bloodregen, movespeed, Top, Left, Bottom, Right);
     }
+
+    internal void LoadPerm()
+    {
+        int musicV = PlayerPrefs.GetInt("Music");
+        int masterV = PlayerPrefs.GetInt("Master");
+        int sfxV = PlayerPrefs.GetInt("SFX");
+        Options.instance.loadSound(musicV, masterV, sfxV);
+    }
 }

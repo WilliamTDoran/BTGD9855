@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Options : MonoBehaviour
 {
+    internal static Options instance;
     public AudioMixer mixer;
     public Slider master;
     public Toggle toggle;
@@ -72,5 +73,12 @@ public class Options : MonoBehaviour
         {
             toggle.isOn = true;
         }
+    }
+
+    public void loadSound(int music, int master, int sfx_)
+    {
+        PlayerPrefs.SetFloat("SFX", sfx_);
+        PlayerPrefs.SetFloat("Master", master);
+        PlayerPrefs.SetFloat("Music", music);
     }
 }
