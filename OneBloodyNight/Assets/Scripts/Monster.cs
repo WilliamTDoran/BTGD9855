@@ -35,6 +35,7 @@ public class Monster : GameActor
     public ParticleSystem DeathPart; //particles
     public ParticleSystem blood;
     public BloodSplatter Bloody;
+    private bool goshDang = false;
 
     private TextMeshPro healthDebugText;
 
@@ -119,6 +120,7 @@ public class Monster : GameActor
             Bloodmeter.instance.bloodmeter.value += bloodOnKill * Player.plr.bloodRegainMult;
 
             dead = true;
+            goshDang = true;
             DeathPart.Play();
             Bloody.Ded();
             StopAllCoroutines();
@@ -152,8 +154,9 @@ public class Monster : GameActor
     {
         base.LateUpdate();
 
-        if (dead)
+        if (dead && goshDang)
         {
+            goshDang = false;
             animator.SetTrigger("Die");
         }
         
