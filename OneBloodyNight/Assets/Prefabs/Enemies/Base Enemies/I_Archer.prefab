@@ -475,6 +475,7 @@ MonoBehaviour:
   Bloody: {fileID: 8945016565812035934}
   basicAttack: {fileID: 6537208050856354513}
   bloodOnKill: 50
+  despawnTime: 3
   attackTimer: 4
   healthBarObject: {fileID: 393623155723842940}
 --- !u!114 &1489538925786968429

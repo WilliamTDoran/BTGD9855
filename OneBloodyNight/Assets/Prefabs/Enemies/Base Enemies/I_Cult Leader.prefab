@@ -129,13 +129,14 @@ MonoBehaviour:
   frontBuffAura: {fileID: 0}
   audioSource: {fileID: 8028271674238632153}
   Attack: {fileID: 0}
-  Death: {fileID: 0}
+  Death: {fileID: 8300000, guid: a3ecb65bcfeab0140bc8e7bb7fbf35b7, type: 3}
   Hurt: {fileID: 8300000, guid: c088795fa293ec14995ac323c74dc168, type: 3}
   DeathPart: {fileID: 7535536480291691647}
   blood: {fileID: 2092941096496764735}
   Bloody: {fileID: 711038365137055395}
   basicAttack: {fileID: 0}
   bloodOnKill: 30
+  despawnTime: 3
   attackTimer: 6
   healthBarObject: {fileID: 8018975264716387991}
   maskydoo:

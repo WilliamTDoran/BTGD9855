@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5276966131897054383}
   - component: {fileID: 9050574013233219778}
   - component: {fileID: 4341806058427926357}
-  - component: {fileID: 6034589431451522888}
   - component: {fileID: 3308542684186556959}
   - component: {fileID: 1506505331822888184}
   - component: {fileID: 2771159159247393256}
@@ -113,19 +112,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1863441, y: 2.2181482, z: 8.767013}
   m_Center: {x: 0.043481827, y: -0.09891796, z: -3.8164945}
---- !u!135 &6034589431451522888
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529972682658337596}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 1.15
-  m_Center: {x: 0.02, y: -0.15, z: 0}
 --- !u!54 &3308542684186556959
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -169,7 +155,8 @@ MonoBehaviour:
   Bloody: {fileID: 9069883950252341207}
   basicAttack: {fileID: 8342049976024423553}
   bloodOnKill: 70
-  attackTimer: 5
+  despawnTime: 3
+  attackTimer: 4
   healthBarObject: {fileID: 6444965508750604975}
 --- !u!95 &2771159159247393256
 Animator:
