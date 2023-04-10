@@ -8,6 +8,7 @@ public class Options : MonoBehaviour
 {
     public AudioMixer mixer;
     public Slider master;
+    public Toggle toggle;
 
     [SerializeField]
     private GameObject optionScreen;
@@ -59,5 +60,17 @@ public class Options : MonoBehaviour
     public void Back()
     {
         optionScreen.SetActive(false);
+    }
+
+    public void tutorial()
+    {
+        if (toggle.isOn == true)
+        {
+            toggle.isOn = false;
+        }
+        else
+        {
+            toggle.isOn = true;
+        }
     }
 }
