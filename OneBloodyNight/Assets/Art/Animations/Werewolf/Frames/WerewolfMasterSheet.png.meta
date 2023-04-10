@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 1
     textureFormat: 4
     textureCompression: 1
@@ -108,7 +108,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 384
+        y: 480
         width: 128
         height: 96
       alignment: 0
@@ -129,7 +129,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 384
+        y: 480
         width: 128
         height: 96
       alignment: 0
@@ -150,7 +150,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 384
+        y: 480
         width: 128
         height: 96
       alignment: 0
@@ -171,7 +171,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 384
+        y: 480
         width: 128
         height: 96
       alignment: 0
@@ -192,7 +192,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 384
+        y: 480
         width: 128
         height: 96
       alignment: 0
@@ -213,7 +213,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 384
+        y: 480
         width: 128
         height: 96
       alignment: 0
@@ -234,7 +234,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 768
-        y: 384
+        y: 480
         width: 128
         height: 96
       alignment: 0
@@ -255,7 +255,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 896
-        y: 384
+        y: 480
         width: 128
         height: 96
       alignment: 0
@@ -276,7 +276,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 288
+        y: 384
         width: 128
         height: 96
       alignment: 0
@@ -297,7 +297,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 288
+        y: 384
         width: 128
         height: 96
       alignment: 0
@@ -318,7 +318,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 288
+        y: 384
         width: 128
         height: 96
       alignment: 0
@@ -339,7 +339,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 288
+        y: 384
         width: 128
         height: 96
       alignment: 0
@@ -360,7 +360,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 288
+        y: 384
         width: 128
         height: 96
       alignment: 0
@@ -381,7 +381,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 288
+        y: 384
         width: 128
         height: 96
       alignment: 0
@@ -402,7 +402,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 768
-        y: 288
+        y: 384
         width: 128
         height: 96
       alignment: 0
@@ -423,7 +423,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 896
-        y: 288
+        y: 384
         width: 128
         height: 96
       alignment: 0
@@ -444,7 +444,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -465,7 +465,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -486,7 +486,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -507,7 +507,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -528,7 +528,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -549,7 +549,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -570,7 +570,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 768
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -591,7 +591,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 896
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -612,7 +612,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1024
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -633,7 +633,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1152
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -654,7 +654,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1280
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -675,7 +675,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1408
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -696,7 +696,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1536
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -717,7 +717,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1664
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -738,7 +738,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1792
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -759,7 +759,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1920
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -780,7 +780,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2048
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -801,7 +801,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2176
-        y: 192
+        y: 288
         width: 128
         height: 96
       alignment: 0
@@ -822,7 +822,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 192
         width: 128
         height: 96
       alignment: 0
@@ -843,7 +843,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 96
+        y: 192
         width: 128
         height: 96
       alignment: 0
@@ -864,7 +864,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 96
+        y: 192
         width: 128
         height: 96
       alignment: 0
@@ -885,7 +885,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 96
         width: 128
         height: 96
       alignment: 0
@@ -906,7 +906,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 0
+        y: 96
         width: 128
         height: 96
       alignment: 0
@@ -927,7 +927,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 0
+        y: 96
         width: 128
         height: 96
       alignment: 0
@@ -948,7 +948,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 0
+        y: 96
         width: 128
         height: 96
       alignment: 0
@@ -969,7 +969,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 0
+        y: 96
         width: 128
         height: 96
       alignment: 0
@@ -990,7 +990,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 640
-        y: 0
+        y: 96
         width: 128
         height: 96
       alignment: 0
@@ -1011,7 +1011,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 768
-        y: 0
+        y: 96
         width: 128
         height: 96
       alignment: 0
@@ -1032,7 +1032,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 896
-        y: 0
+        y: 96
         width: 128
         height: 96
       alignment: 0
@@ -1053,7 +1053,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1024
-        y: 0
+        y: 96
         width: 128
         height: 96
       alignment: 0
@@ -1074,7 +1074,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1152
-        y: 0
+        y: 96
         width: 128
         height: 96
       alignment: 0
@@ -1095,7 +1095,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1280
-        y: 0
+        y: 96
         width: 128
         height: 96
       alignment: 0
@@ -1116,7 +1116,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1408
-        y: 0
+        y: 96
         width: 128
         height: 96
       alignment: 0
@@ -1137,7 +1137,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1536
-        y: 0
+        y: 96
         width: 128
         height: 96
       alignment: 0
@@ -1158,7 +1158,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1664
-        y: 0
+        y: 96
         width: 128
         height: 96
       alignment: 0
@@ -1179,7 +1179,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1792
-        y: 0
+        y: 96
         width: 128
         height: 96
       alignment: 0
@@ -1191,6 +1191,447 @@ TextureImporter:
       bones: []
       spriteID: 0b84f6eb22a10e34a95dcb87d5bb245d
       internalID: 1860720429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0983c095d0e22244abda6c0712940c05
+      internalID: 165063174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_53
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dbe92bc63017b84c9813c2a39cd03da
+      internalID: 341010905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_54
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2093da233487180418fae7ea37655521
+      internalID: -247272505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_55
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb01f91bdd3985940a8ce40da0e12600
+      internalID: -1592997800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_56
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abeff1524eac30147b6bdc36c5c53143
+      internalID: 1545983433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_57
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84adfb5a3b411b741a19b00bafabb9a7
+      internalID: 856836252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_58
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b592b7e67efc5248b643f1666be3114
+      internalID: 348050434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_59
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd45aed66b968c74a9c00661d878037a
+      internalID: 794194162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_60
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0288875a81b758c4985ac981891ce5ca
+      internalID: 1626509189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_61
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e13f01356af5d6a40b1618463a3d24f7
+      internalID: 1325629811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_62
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5a26eb822379ee40b659b5dabcd7aaa
+      internalID: 2095224083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_63
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1bee19be17d6b648a87dfd8e8b48b51
+      internalID: -572991638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_64
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42732a6f4dccad24d8bb1b451b85b014
+      internalID: 756751128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_65
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018a44b2882dbd342937f969e0985778
+      internalID: -1407574292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_66
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 372dab7182c9a2642a81b492c4c50444
+      internalID: -226150959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_67
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c7174914088627478f185b2e4ad0eae
+      internalID: 1496087577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_68
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe60fcee5372b9478d438c23c1c3616
+      internalID: 1367184751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_69
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1d3d61b4264254fa9ad6be2071d041
+      internalID: 24672079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_70
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ae4560046015843a55d2f98e6765c5
+      internalID: 819852179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_71
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace880d586e3da9498faf12bae7c1461
+      internalID: 1191412165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WerewolfMasterSheet_72
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6179400f7598f43b672e5b3ac7ca00
+      internalID: -1204902631
       vertices: []
       indices: 
       edges: []
@@ -1209,9 +1650,18 @@ TextureImporter:
       WerewolfMasterSheet_24: 1042783485
       WerewolfMasterSheet_38: 369501234
       WerewolfMasterSheet_8: -948396308
+      WerewolfMasterSheet_56: 1545983433
+      WerewolfMasterSheet_48: 151454971
+      WerewolfMasterSheet_70: 819852179
       WerewolfMasterSheet_16: 967257831
+      WerewolfMasterSheet_57: 856836252
+      WerewolfMasterSheet_55: -1592997800
       WerewolfMasterSheet_11: -1582787997
       WerewolfMasterSheet_39: -1214210755
+      WerewolfMasterSheet_53: 341010905
+      WerewolfMasterSheet_61: 1325629811
+      WerewolfMasterSheet_66: -226150959
+      WerewolfMasterSheet_72: -1204902631
       WerewolfMasterSheet_22: -1885841190
       WerewolfMasterSheet_41: -797013609
       WerewolfMasterSheet_21: 1196465565
@@ -1219,21 +1669,28 @@ TextureImporter:
       WerewolfMasterSheet_4: 1749806172
       WerewolfMasterSheet_47: -2062116182
       WerewolfMasterSheet_13: -1192481534
+      WerewolfMasterSheet_63: -572991638
       WerewolfMasterSheet_45: -210771079
       WerewolfMasterSheet_10: -625579424
       WerewolfMasterSheet_15: 1956934730
       WerewolfMasterSheet_7: 1890763517
+      WerewolfMasterSheet_64: 756751128
       WerewolfMasterSheet_31: -2000968204
       WerewolfMasterSheet_3: -1788497861
       WerewolfMasterSheet_36: -1387579851
+      WerewolfMasterSheet_71: 1191412165
       WerewolfMasterSheet_14: 296294399
+      WerewolfMasterSheet_54: -247272505
       WerewolfMasterSheet_25: 664506069
       WerewolfMasterSheet_5: 1069039127
       WerewolfMasterSheet_2: -1310009787
       WerewolfMasterSheet_9: 2028976576
       WerewolfMasterSheet_17: 2066100687
+      WerewolfMasterSheet_58: 348050434
       WerewolfMasterSheet_20: 1902914565
       WerewolfMasterSheet_33: -1420351474
+      WerewolfMasterSheet_67: 1496087577
+      WerewolfMasterSheet_59: 794194162
       WerewolfMasterSheet_6: -1572784689
       WerewolfMasterSheet_26: -1503430399
       WerewolfMasterSheet_49: 1705497208
@@ -1246,18 +1703,23 @@ TextureImporter:
       WerewolfMasterSheet_35: 1006449135
       WerewolfMasterSheet_18: -1488483944
       WerewolfMasterSheet_51: 1860720429
+      WerewolfMasterSheet_62: 2095224083
       WerewolfMasterSheet_37: -1573674599
       WerewolfMasterSheet_46: -1891292820
       WerewolfMasterSheet_1: 322974014
       WerewolfMasterSheet_23: -688837752
+      WerewolfMasterSheet_65: -1407574292
       WerewolfMasterSheet_30: 1325889726
       WerewolfMasterSheet_27: -1944274025
       WerewolfMasterSheet_28: 1470442953
       WerewolfMasterSheet_40: 475333847
       WerewolfMasterSheet_32: -2146391231
+      WerewolfMasterSheet_68: 1367184751
       WerewolfMasterSheet_44: 1084726245
       WerewolfMasterSheet_29: -1931183536
-      WerewolfMasterSheet_48: 151454971
+      WerewolfMasterSheet_69: 24672079
+      WerewolfMasterSheet_52: 165063174
+      WerewolfMasterSheet_60: 1626509189
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
