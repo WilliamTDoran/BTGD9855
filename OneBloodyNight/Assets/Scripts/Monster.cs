@@ -71,6 +71,9 @@ public class Monster : GameActor
     private float bloodOnKill = 50.0f;
     public float BloodOnKill { get { return bloodOnKill; } }
 
+    [SerializeField]
+    private float despawnTime = 5f;
+
     [Tooltip("How frequently the monster attacks (specifically, the time in seconds between each attack)")]
     [SerializeField]
     private float attackTimer = 2.0f;
@@ -178,7 +181,7 @@ public class Monster : GameActor
     private IEnumerator DeathTimer()
     {
         audioSource.PlayOneShot(Death);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(despawnTime);
         Destroy(gameObject);
     }
 
