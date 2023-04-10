@@ -1,19 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Tooltip : MonoBehaviour
+public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public string msg;
-    public void OnMouseEnter()
+    private bool show;
+    private bool thisGO;
+    // Enable the script when the mouse enters the game object
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("Entered the box!");
+        thisGO = true;
         ToolTipManager._instance.SetAndShowToolTip(msg);
     }
 
-    public void OnMouseExit()
+    // Disable the script when the mouse exits the game object
+    public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("Exited the box!");
-        ToolTipManager._instance.HideToolTip();
+        show = false;
+    }
+
+    private void Update()
+    {
+        if (EventSystem.current.IsPointerOverGameObject() && thisGO)
+        {
+            show = true;
+        }
+        if (thisGO && !show)
+        {
+            ToolTipManager._instance.HideToolTip();
+            thisGO = false;
+        }
     }
 }

@@ -736,7 +736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &131833779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,6 +762,14 @@ MonoBehaviour:
     upgraded: 0
     multiplier: 1.4
   disableable: 1
+  bloodUsageCost: 0
+  attackDmgCost: 0
+  bloodRegenCost: 0
+  moveSpeedCost: 0
+  topCost: 0
+  rightCost: 0
+  bottomCost: 0
+  leftCost: 0
 --- !u!224 &131833780
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1276,6 +1284,7 @@ GameObject:
   - component: {fileID: 234095183}
   - component: {fileID: 234095182}
   - component: {fileID: 234095181}
+  - component: {fileID: 234095184}
   m_Layer: 5
   m_Name: BottomSpecial
   m_TagString: Untagged
@@ -1398,6 +1407,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234095179}
   m_CullTransparentMesh: 1
+--- !u!114 &234095184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234095179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4883e1cff55332444b6d4bca22e24315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  msg: First attack after going invisible deals massive damage
 --- !u!1 &236630517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3636,6 +3658,7 @@ GameObject:
   - component: {fileID: 665535314}
   - component: {fileID: 665535313}
   - component: {fileID: 665535312}
+  - component: {fileID: 665535315}
   m_Layer: 5
   m_Name: AttackDmg
   m_TagString: Untagged
@@ -3758,6 +3781,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665535310}
   m_CullTransparentMesh: 1
+--- !u!114 &665535315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665535310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4883e1cff55332444b6d4bca22e24315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  msg: Increases the amount of damage your basic attack does
 --- !u!1 &667031182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4706,6 +4742,7 @@ GameObject:
   - component: {fileID: 847004404}
   - component: {fileID: 847004403}
   - component: {fileID: 847004402}
+  - component: {fileID: 847004405}
   m_Layer: 5
   m_Name: LeftSpecial
   m_TagString: Untagged
@@ -4828,6 +4865,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847004400}
   m_CullTransparentMesh: 1
+--- !u!114 &847004405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847004400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4883e1cff55332444b6d4bca22e24315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  msg: While in a frenzy, you heal a tiny bit on attack as well
 --- !u!1 &872770603
 GameObject:
   m_ObjectHideFlags: 0
@@ -6452,6 +6502,7 @@ GameObject:
   - component: {fileID: 1237110296}
   - component: {fileID: 1237110295}
   - component: {fileID: 1237110294}
+  - component: {fileID: 1237110297}
   m_Layer: 5
   m_Name: TopSpecial
   m_TagString: Untagged
@@ -6574,6 +6625,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237110292}
   m_CullTransparentMesh: 1
+--- !u!114 &1237110297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237110292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4883e1cff55332444b6d4bca22e24315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  msg: Swarm attack is aactive as long as there are enemies within
 --- !u!1 &1248746522
 GameObject:
   m_ObjectHideFlags: 0
@@ -6770,6 +6834,7 @@ GameObject:
   - component: {fileID: 1294053263}
   - component: {fileID: 1294053262}
   - component: {fileID: 1294053261}
+  - component: {fileID: 1294053264}
   m_Layer: 5
   m_Name: RightSpecial
   m_TagString: Untagged
@@ -6892,6 +6957,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294053259}
   m_CullTransparentMesh: 1
+--- !u!114 &1294053264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294053259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4883e1cff55332444b6d4bca22e24315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  msg: Invisibility doesn't cost blood to activate, but increases the speed at which
+    your blood drains while invisible
 --- !u!1 &1333120540
 GameObject:
   m_ObjectHideFlags: 0
@@ -8396,6 +8475,7 @@ GameObject:
   - component: {fileID: 1601020554}
   - component: {fileID: 1601020553}
   - component: {fileID: 1601020552}
+  - component: {fileID: 1601020555}
   m_Layer: 5
   m_Name: MoveSpeed
   m_TagString: Untagged
@@ -8518,6 +8598,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1601020550}
   m_CullTransparentMesh: 1
+--- !u!114 &1601020555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601020550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4883e1cff55332444b6d4bca22e24315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  msg: Increases your movement speed
 --- !u!1 &1645831003 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3111108264678135816, guid: cf5b4f4bee5daef4fb9f220665a0dbf4, type: 3}
@@ -9844,6 +9937,7 @@ GameObject:
   - component: {fileID: 2085743313}
   - component: {fileID: 2085743312}
   - component: {fileID: 2085743311}
+  - component: {fileID: 2085743314}
   m_Layer: 5
   m_Name: BloodRegen
   m_TagString: Untagged
@@ -9966,6 +10060,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085743309}
   m_CullTransparentMesh: 1
+--- !u!114 &2085743314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085743309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4883e1cff55332444b6d4bca22e24315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  msg: Increases the speed at which you gain blood
 --- !u!1 &2117144685
 GameObject:
   m_ObjectHideFlags: 0
@@ -9984,7 +10091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2117144686
 RectTransform:
   m_ObjectHideFlags: 0

@@ -80,9 +80,15 @@ public class UpgradeTotemHUD : MonoBehaviour
         }
         if (disableable)
         {
-            Time.timeScale = 1f;
-            gameObject.SetActive(false);
+            disableHUD();
         }
+    }
+
+    private void disableHUD()
+    {
+        Time.timeScale = 1f;
+        ToolTipManager._instance.HideToolTip();
+        gameObject.SetActive(false);
     }
 
     public void upgradeAttackDmg()
@@ -106,8 +112,7 @@ public class UpgradeTotemHUD : MonoBehaviour
         }
         if (disableable)
         {
-            Time.timeScale = 1f;
-            gameObject.SetActive(false);
+            disableHUD();
         }
     }
 
@@ -127,8 +132,7 @@ public class UpgradeTotemHUD : MonoBehaviour
         }
         if (disableable)
         {
-            Time.timeScale = 1f;
-            gameObject.SetActive(false);
+            disableHUD();
         }
     }
 
@@ -156,8 +160,7 @@ public class UpgradeTotemHUD : MonoBehaviour
         }
         if (disableable)
         {
-            Time.timeScale = 1f;
-            gameObject.SetActive(false);
+            disableHUD();
         }
     }
 
@@ -195,8 +198,7 @@ public class UpgradeTotemHUD : MonoBehaviour
         }
         if (disableable)
         {
-            Time.timeScale = 1f;
-            gameObject.SetActive(false);
+            disableHUD();
         }
     }
     public void upgradeBottomSpecial()
@@ -222,8 +224,7 @@ public class UpgradeTotemHUD : MonoBehaviour
         }
         if (disableable)
         {
-            Time.timeScale = 1f;
-            gameObject.SetActive(false);
+            disableHUD();
         }
     }
 
@@ -262,8 +263,7 @@ public class UpgradeTotemHUD : MonoBehaviour
         }
         if (disableable)
         {
-            Time.timeScale = 1f;
-            gameObject.SetActive(false);
+            disableHUD();
         }
     }
 
@@ -282,7 +282,7 @@ public class UpgradeTotemHUD : MonoBehaviour
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
             {
                 Player.plr.GetComponent<PlayerStrigoi>().upgradedFrenzy = true;
-                Player.plr.GetComponent<PlayerStrigoi>().frenzyRegainHit = 5;
+                Player.plr.GetComponent<PlayerStrigoi>().frenzyRegainHit = 1;
             }
             else
             {
@@ -293,7 +293,7 @@ public class UpgradeTotemHUD : MonoBehaviour
             leftUpgrade++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
             {
-                Player.plr.GetComponent<PlayerStrigoi>().frenzyRegainHit = 10;
+                Player.plr.GetComponent<PlayerStrigoi>().frenzyRegainHit = 2;
             }
             else
             {
@@ -302,8 +302,7 @@ public class UpgradeTotemHUD : MonoBehaviour
         }
         if (disableable)
         {
-            Time.timeScale = 1f;
-            gameObject.SetActive(false);
+            disableHUD();
         }
     }
 
@@ -311,8 +310,7 @@ public class UpgradeTotemHUD : MonoBehaviour
     {
         if ((Input.GetButtonDown("Cancel") || Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical") || Input.GetButtonDown("Interact")) && gameObject.activeSelf && disableable)
         {
-            Time.timeScale = 1f;
-            gameObject.SetActive(false);
+            disableHUD();
         }
     }
 
