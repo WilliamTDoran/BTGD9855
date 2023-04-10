@@ -132,8 +132,8 @@ public class Monster : GameActor
             Stunned = true;
             col.enabled = false;
             basicAttack.Buffed = false;
-            backBuffAura.gameObject.SetActive(false);
-            frontBuffAura.gameObject.SetActive(false);
+            if (backBuffAura != null { backBuffAura.gameObject.SetActive(false); }
+            if (frontBuffAura != null { frontBuffAura.gameObject.SetActive(false); }
             if (basicAttack != null)
             {
                 basicAttack.StopAllCoroutines();
