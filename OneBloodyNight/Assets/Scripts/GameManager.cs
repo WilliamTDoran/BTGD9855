@@ -179,5 +179,6 @@ public class GameManager : MonoBehaviour
         int masterV = PlayerPrefs.GetInt("Master");
         int sfxV = PlayerPrefs.GetInt("SFX");
         Options.instance.loadSound(musicV, masterV, sfxV);
+        int lorebook = PlayerPrefs.GetInt("LoreBooks");
     }
 }

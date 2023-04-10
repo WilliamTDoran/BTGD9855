@@ -14,12 +14,17 @@ public class Book : MonoBehaviour
     public void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("Player"))
-        {
+        { 
+            if (bookNum < 6)
+            {
             bookNum++;
             PlayerPrefs.SetInt("LoreBooks", bookNum);
             
             //PlayerPrefs.SetInt("LoreBooks", bookNum);
+            
+            } 
             Destroy(gameObject);
+
         }
         
     }
