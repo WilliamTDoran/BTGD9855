@@ -7,6 +7,7 @@ public class UpgradeTotemHUD : MonoBehaviour
     internal static UpgradeTotemHUD instance;
     //[SerializeField]
     //GameObject upgradeHUD;
+    [Header("Upgrade Variables")]
     [SerializeField]
     internal UpgradeVars bloodUsageUpgrade;
     [SerializeField]
@@ -21,6 +22,26 @@ public class UpgradeTotemHUD : MonoBehaviour
     internal int leftUpgrade;
     [SerializeField]
     internal bool disableable;
+
+    [Header("Costs")]
+    [SerializeField]
+    private float bloodUsageCost;
+    [SerializeField]
+    private float attackDmgCost;
+    [SerializeField]
+    private float bloodRegenCost;
+    [SerializeField]
+    private float moveSpeedCost;
+    [SerializeField]
+    private float topCost;
+    [SerializeField]
+    private float rightCost;
+    [SerializeField]
+    private float bottomCost;
+    [SerializeField]
+    private float leftCost;
+
+    private bool discount = false;
     /*
     enum upgrades
     {
@@ -45,7 +66,14 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     internal void upgradeBloodUsage()
     {
-        if (bloodUsageUpgrade.upgraded == 0 || bloodUsageUpgrade.upgraded == 1)
+        bool paid = false;
+        if (!discount && 0 < Bloodmeter.instance.bloodmeter.value - bloodUsageCost)
+        {
+            Bloodmeter.instance.changeBlood(-bloodUsageCost);
+            paid = true;
+        }
+        else if (discount) paid = true;
+        if ((bloodUsageUpgrade.upgraded == 0 || bloodUsageUpgrade.upgraded == 1) && paid)
         {
             bloodUsageUpgrade.upgraded++;
             Bloodmeter.instance.bloodLossRate *= bloodUsageUpgrade.multiplier;
@@ -59,6 +87,13 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     public void upgradeAttackDmg()
     {
+        bool paid = false;
+        if (!discount && 0 < Bloodmeter.instance.bloodmeter.value - attackDmgCost)
+        {
+            Bloodmeter.instance.changeBlood(-attackDmgCost);
+            paid = true;
+        }
+        else if (discount) paid = true;
         if (attackDmgUpgrade.upgraded <= 1)
         {
             attackDmgUpgrade.upgraded++;
@@ -66,7 +101,7 @@ public class UpgradeTotemHUD : MonoBehaviour
             {
                 Player.plr.GetComponent<PlayerStrigoi>().upgradeAttacks(attackDmgUpgrade.multiplier, true);
             } else {
-                Debug.Log("Upgrade not implemented for this character");
+                Debug.Log("Cost not implemented for this character");
             }
         }
         if (disableable)
@@ -78,7 +113,14 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     public void upgradeBloodRegen()
     {
-        if (bloodRegenUpgrade.upgraded <= 1)
+        bool paid = false;
+        if (!discount && 0 < Bloodmeter.instance.bloodmeter.value - bloodRegenCost)
+        {
+            Bloodmeter.instance.changeBlood(-bloodRegenCost);
+            paid = true;
+        }
+        else if (discount) paid = true;
+        if ((bloodRegenUpgrade.upgraded <= 1) && paid)
         {
             bloodRegenUpgrade.upgraded++;
             Player.plr.bloodRegainMult *= bloodRegenUpgrade.multiplier;
@@ -92,7 +134,14 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     public void upgradeMoveSpeed()
     {
-        if (moveSpeedUpgrade.upgraded <= 1)
+        bool paid = false;
+        if (!discount && 0 < Bloodmeter.instance.bloodmeter.value - moveSpeedCost)
+        {
+            Bloodmeter.instance.changeBlood(-moveSpeedCost);
+            paid = true;
+        }
+        else if (discount) paid = true;
+        if ((moveSpeedUpgrade.upgraded <= 1) && paid)
         {
             moveSpeedUpgrade.upgraded++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
@@ -114,7 +163,14 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     public void upgradeTopSpecial()
     {
-        if (topUpgrade == 0)
+        bool paid = false;
+        if (!discount && 0 < Bloodmeter.instance.bloodmeter.value - topCost)
+        {
+            Bloodmeter.instance.changeBlood(-topCost);
+            paid = true;
+        }
+        else if (discount) paid = true;
+        if ((topUpgrade == 0) && paid)
         {
             topUpgrade++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
@@ -125,7 +181,7 @@ public class UpgradeTotemHUD : MonoBehaviour
             {
                 Debug.Log("Upgrade not implemented for this character");
             }
-        } else if (topUpgrade == 0)
+        } else if ((topUpgrade == 0) && paid)
         {
             topUpgrade++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
@@ -145,7 +201,14 @@ public class UpgradeTotemHUD : MonoBehaviour
     }
     public void upgradeBottomSpecial()
     {
-        if (bottomUpgrade <= 1)
+        bool paid = false;
+        if (!discount && 0 < Bloodmeter.instance.bloodmeter.value - bottomCost)
+        {
+            Bloodmeter.instance.changeBlood(-bottomCost);
+            paid = true;
+        }
+        else if (discount) paid = true;
+        if ((bottomUpgrade <= 1) && paid)
         {
             bottomUpgrade++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
@@ -166,7 +229,14 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     public void upgradeRightSpecial()
     {
-        if (rightUpgrade == 0)
+        bool paid = false;
+        if (!discount && 0 < Bloodmeter.instance.bloodmeter.value - rightCost)
+        {
+            Bloodmeter.instance.changeBlood(-rightCost);
+            paid = true;
+        }
+        else if (discount) paid = true;
+        if ((rightUpgrade == 0) && paid)
         {
             rightUpgrade++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
@@ -178,7 +248,7 @@ public class UpgradeTotemHUD : MonoBehaviour
             {
                 Debug.Log("Upgrade not implemented for this character");
             }
-        } else if (rightUpgrade == 1)
+        } else if ((rightUpgrade == 1) && paid)
         {
             rightUpgrade++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
@@ -199,7 +269,14 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     public void upgradeLeftSpecial()
     {
-        if (leftUpgrade == 0)
+        bool paid = false;
+        if (!discount && 0 < Bloodmeter.instance.bloodmeter.value - leftCost)
+        {
+            Bloodmeter.instance.changeBlood(-leftCost);
+            paid = true;
+        }
+        else if (discount) paid = true;
+        if ((leftUpgrade == 0) && paid)
         {
             leftUpgrade++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
@@ -211,7 +288,7 @@ public class UpgradeTotemHUD : MonoBehaviour
             {
                 Debug.Log("Upgrade not implemented for this character");
             }
-        } else if (leftUpgrade == 1)
+        } else if ((leftUpgrade == 1) && paid)
         {
             leftUpgrade++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
@@ -260,6 +337,7 @@ public class UpgradeTotemHUD : MonoBehaviour
      */
     internal void loadSavedUpgrades(int bloodUsage, int attackDmg, int bloodRegain, int movementSpeed, int topSpecial, int leftSpecial, int bottomSpecial, int rightSpecial)
     {
+        discount = true;
         for (int i=0; i< bloodUsage; i++)
         {
             upgradeBloodUsage();
@@ -292,6 +370,7 @@ public class UpgradeTotemHUD : MonoBehaviour
         {
             upgradeRightSpecial();
         }
+        discount = false;
     }
 
 }
