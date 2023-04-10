@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1953289611
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 15
   m_Sprite: {fileID: 21300000, guid: cf17fa228491c9a43b2427649221a78a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,7 +98,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0749927, y: 0.8099231, z: 0.8875146}
+  m_Size: {x: 2.0749927, y: 2.39, z: 22.9}
   m_Center: {x: 0.2473925, y: -0.8442083, z: -0.05624272}
 --- !u!1 &6188666382093838621
 GameObject:
@@ -227,5 +227,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 161.80696, y: 12, z: 5.823632}
-  m_Center: {x: 0.3674889, y: 0, z: -2.1359482}
+  m_Size: {x: 161.80695, y: 40, z: 4.8244643}
+  m_Center: {x: 0.36748648, y: -0.0000014037976, z: -2.725048}
