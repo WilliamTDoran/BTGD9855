@@ -2778,6 +2778,14 @@ MonoBehaviour:
     upgraded: 0
     multiplier: 1.4
   disableable: 0
+  bloodUsageCost: 0
+  attackDmgCost: 0
+  bloodRegenCost: 0
+  moveSpeedCost: 0
+  topCost: 0
+  rightCost: 0
+  bottomCost: 0
+  leftCost: 0
 --- !u!1 &238849016
 GameObject:
   m_ObjectHideFlags: 0
@@ -17356,7 +17364,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -8087430814354431941, guid: 0139094e69f8d2d47905c00d116a4572, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 82ed249e3bdad184eae64ae1f915f3e1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a9b32ce74282abb42a6ae99b76bdeac0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.12
   m_Pitch: 1
