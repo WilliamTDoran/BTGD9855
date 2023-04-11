@@ -13,12 +13,9 @@ public class UIAnimHandler : MonoBehaviour
     private GameObject optionButton;
     [SerializeField]
     private GameObject quitButton;
-    [SerializeField]
-    private GameObject Credits;
     // Start is called before the first frame update
     void Start()
     {
-        Credits.SetActive(false);
         startButton.SetActive(false);
         LoreButton.SetActive(false);
         optionButton.SetActive(false);
@@ -33,7 +30,6 @@ public class UIAnimHandler : MonoBehaviour
 
     public void AnimationDone()
     {
-        Credits.SetActive(true);
         startButton.SetActive(true);
         LoreButton.SetActive(true);
         optionButton.SetActive(true);
