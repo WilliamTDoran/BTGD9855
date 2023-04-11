@@ -17,7 +17,7 @@ public class BossMeter : MonoBehaviour
     public int counter;
     void Awake()
     {
-        counter = PlayerPrefs.GetInt("Boss");
+        
     }
     void Start()
     {
@@ -35,11 +35,17 @@ public class BossMeter : MonoBehaviour
         bloodmeter.value = Boss.instance.CurHitPoints;
         if (Boss.instance.CurHitPoints <= 0)
         {
-            //if (SceneManager.GetActiveScene().name == "YaraBossRoom")
-           // {
-              //  GameOver.instance.Victory();
-           // }
-            BossPortal.SetActive(true);
+            int counter = PlayerPrefs.GetInt("Boss");
+            if(counter == 0)
+            {
+                BossPortal.SetActive(true);
+                PlayerPrefs.SetInt("Boss", 1);
+            }
+            else
+            {
+                GameOver.instance.Victory();
+            }
+            
             
         }
     }

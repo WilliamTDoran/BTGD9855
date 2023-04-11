@@ -39,7 +39,7 @@ public class Menu : MonoBehaviour
         optionScreen.SetActive(false);
         loreScreen.SetActive(false);
         Credit.SetActive(false);
-        GameManager.instance.save(0);
+        PlayerPrefs.SetInt("Boss", 0);
     }
 
     // Update is called once per frame
