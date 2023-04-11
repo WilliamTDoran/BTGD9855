@@ -89,6 +89,7 @@ public class UpgradeTotemHUD : MonoBehaviour
         Time.timeScale = 1f;
         ToolTipManager._instance.HideToolTip();
         gameObject.SetActive(false);
+        Player.plr.Stunned = false;
     }
 
     public void upgradeAttackDmg()

@@ -16,6 +16,7 @@ public class UpgradeTotem : MonoBehaviour
         {
             upgradeHUD.SetActive(true);
             Time.timeScale = 0f;
+            Player.plr.Stunned = true;
         }
     }
 }
