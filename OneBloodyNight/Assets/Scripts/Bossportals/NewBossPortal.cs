@@ -6,6 +6,7 @@ public class NewBossPortal : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject Victory;
+    public AudioSource Audio;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class NewBossPortal : MonoBehaviour
         Debug.Log("Contact");
         if (col.gameObject.tag == "Player")
         {
+            Audio.Play();
             Victory.SetActive(true);
         }
         //StartCoroutine(StartBoss());
