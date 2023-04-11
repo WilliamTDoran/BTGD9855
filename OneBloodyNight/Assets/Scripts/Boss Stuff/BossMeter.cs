@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossMeter : MonoBehaviour
 {
@@ -34,12 +35,10 @@ public class BossMeter : MonoBehaviour
         bloodmeter.value = Boss.instance.CurHitPoints;
         if (Boss.instance.CurHitPoints <= 0)
         {
-            counter++;
-            GameManager.instance.save(counter);
-            if(counter >= 2)
-            {
-                GameOver.instance.Victory();
-            }
+            //if (SceneManager.GetActiveScene().name == "YaraBossRoom")
+           // {
+              //  GameOver.instance.Victory();
+           // }
             BossPortal.SetActive(true);
             
         }
