@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Pause : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Pause : MonoBehaviour
 
     [SerializeField]
     private GameObject pause;
+
+    public GameObject firstPauseButton, firstOptionButton;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +36,8 @@ public class Pause : MonoBehaviour
                 Time.timeScale = 0f;
                 Player.plr.Stunned = true;
 
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(firstPauseButton);
             }
             else if (Time.timeScale == 0f)
             {
@@ -47,8 +52,10 @@ public class Pause : MonoBehaviour
 
     public void Options()
     {
-
         optionScreen.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstOptionButton);
     }
     public void Quit()
     {
