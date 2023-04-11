@@ -10,6 +10,7 @@ public class GameOver : MonoBehaviour
     public Bloodmeter bloodmeter;
     public AudioSource audioSource;
 
+    internal static GameOver instance;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,7 @@ public class GameOver : MonoBehaviour
         {
             //screen1.SetActive(true);
         }
+
     }
 
 

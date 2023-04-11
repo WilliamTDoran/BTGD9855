@@ -156,7 +156,7 @@ public class PlayerStrigoi : Player
 
         if (basicAttackDown && canAttack && !stunned && !GameManager.instance.GCD(false)) //bit messy all these checks, but it gets the job done and makes it actually pretty airtight
         {
-            audioSource.PlayOneShot(Attack); 
+             
             animator.SetTrigger("Attack");
             audioSource.PlayOneShot(Attack);
 
