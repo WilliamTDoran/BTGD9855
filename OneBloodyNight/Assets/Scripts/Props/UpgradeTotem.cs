@@ -14,7 +14,6 @@ public class UpgradeTotem : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact") && Vector3.Distance(Player.plr.transform.position, transform.position) < range) 
         {
-            Player.plr.Stunned = true;
             upgradeHUD.SetActive(true);
             Time.timeScale = 0f;
         }

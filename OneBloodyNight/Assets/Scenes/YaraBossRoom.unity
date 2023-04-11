@@ -2778,14 +2778,6 @@ MonoBehaviour:
     upgraded: 0
     multiplier: 1.4
   disableable: 0
-  bloodUsageCost: 0
-  attackDmgCost: 0
-  bloodRegenCost: 0
-  moveSpeedCost: 0
-  topCost: 0
-  rightCost: 0
-  bottomCost: 0
-  leftCost: 0
 --- !u!1 &238849016
 GameObject:
   m_ObjectHideFlags: 0
@@ -15977,15 +15969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8655085130047262153, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
       propertyPath: m_Text
-      value: 'Maw of Gluttony : Yara-Ma-Yha-Who'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8655085130047262153, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 8d057b8e9cdb7f64b91854b1f1e1516f, type: 3}
-    - target: {fileID: 8655085130047262153, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
-      propertyPath: m_FontData.m_FontStyle
-      value: 0
+      value: 'Maw of Gluttony : Yara-Ma-Ya-Who'
       objectReference: {fileID: 0}
     - target: {fileID: 8655085130660481134, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
       propertyPath: m_LocalScale.x
