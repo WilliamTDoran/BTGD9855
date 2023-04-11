@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using TMPro;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// The game manager, running a variety of miscellaneous functions and holding various references for ease of access
@@ -89,6 +90,22 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M))
         {
             Application.LoadLevel("MazeScene");
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            if (Time.timeScale == 1f)
+            {
+
+                Time.timeScale = 0f;
+            }
+
+            else if (Time.timeScale == 0f)
+            {
+                Time.timeScale = 1f;
+
+
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.F5))
