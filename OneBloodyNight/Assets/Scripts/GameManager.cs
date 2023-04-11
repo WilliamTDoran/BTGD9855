@@ -181,4 +181,13 @@ public class GameManager : MonoBehaviour
         Options.instance.loadSound(musicV, masterV, sfxV);
         int lorebook = PlayerPrefs.GetInt("LoreBooks");
     }
+
+    internal void save(int counter)
+    {
+        PlayerPrefs.SetInt("Boss", counter );
+    }
+    internal void load()
+    {
+        
+    }
 }
