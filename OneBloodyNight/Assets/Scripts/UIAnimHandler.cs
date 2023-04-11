@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UIAnimHandler : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class UIAnimHandler : MonoBehaviour
     private GameObject optionButton;
     [SerializeField]
     private GameObject quitButton;
+
+    public GameObject menuFirstButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,10 +34,13 @@ public class UIAnimHandler : MonoBehaviour
 
     public void AnimationDone()
     {
+
         startButton.SetActive(true);
         LoreButton.SetActive(true);
         optionButton.SetActive(true);
         quitButton.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(menuFirstButton);
     }
 
 }

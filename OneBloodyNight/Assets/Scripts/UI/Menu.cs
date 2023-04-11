@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Menu : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Menu : MonoBehaviour
     public AudioSource audioSource1;
 
     public Toggle toggle;
+
+    
 
     //Buttons
 
