@@ -86,6 +86,7 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     private void disableHUD()
     {
+        Player.plr.Stunned = false;
         Time.timeScale = 1f;
         ToolTipManager._instance.HideToolTip();
         gameObject.SetActive(false);
