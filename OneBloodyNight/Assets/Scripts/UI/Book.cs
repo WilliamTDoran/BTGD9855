@@ -5,6 +5,8 @@ using UnityEngine;
 public class Book : MonoBehaviour
 {
     private int bookNum;
+    public ParticleSystem effect;
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +24,18 @@ public class Book : MonoBehaviour
             
             //PlayerPrefs.SetInt("LoreBooks", bookNum);
             
-            } 
-            Destroy(gameObject);
+            }
+            StartCoroutine("booker");
 
         }
         
+    }
+
+    private IEnumerator booker()
+    {
+        effect.Play();
+        audioSource.Play();
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
     }
 }
