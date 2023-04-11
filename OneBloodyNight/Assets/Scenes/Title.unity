@@ -5013,10 +5013,12 @@ MonoBehaviour:
   audioSource: {fileID: 1598459354}
   audioSource1: {fileID: 2047388287}
   toggle: {fileID: 1812499668}
-  menuFirstButton: {fileID: 200098059}
   optionScreen: {fileID: 1225002809}
   loreScreen: {fileID: 343098950}
   Background: {fileID: 1861720606}
+  LoreFirstButton: {fileID: 1999720303}
+  OptionFirstButton: {fileID: 7797309991995120798}
+  menuFirstButton: {fileID: 200098059}
 --- !u!82 &1598459354
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5440,10 +5442,12 @@ MonoBehaviour:
   audioSource: {fileID: 1598459354}
   audioSource1: {fileID: 2047388287}
   toggle: {fileID: 1812499668}
-  menuFirstButton: {fileID: 200098059}
   optionScreen: {fileID: 1225002809}
   loreScreen: {fileID: 343098950}
   Background: {fileID: 1861720606}
+  LoreFirstButton: {fileID: 0}
+  OptionFirstButton: {fileID: 0}
+  menuFirstButton: {fileID: 0}
 --- !u!1 &1768565042
 GameObject:
   m_ObjectHideFlags: 0
@@ -5804,7 +5808,6 @@ MonoBehaviour:
   optionButton: {fileID: 922657753}
   quitButton: {fileID: 50207955}
   menuFirstButton: {fileID: 200098059}
-  e: {fileID: 691270970}
 --- !u!212 &1861720612
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6057,10 +6060,12 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   audioSource1: {fileID: 0}
   toggle: {fileID: 0}
-  menuFirstButton: {fileID: 0}
   optionScreen: {fileID: 1225002809}
   loreScreen: {fileID: 343098950}
   Background: {fileID: 0}
+  LoreFirstButton: {fileID: 0}
+  OptionFirstButton: {fileID: 0}
+  menuFirstButton: {fileID: 0}
 --- !u!114 &1912462277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6075,7 +6080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 0139094e69f8d2d47905c00d116a4572, type: 2}
   master: {fileID: 0}
-  toggle: {fileID: 0}
+  toggle: {fileID: 1812499668}
   optionScreen: {fileID: 2123710226}
 --- !u!1 &1931208056
 GameObject:
@@ -7424,5 +7429,10 @@ PrefabInstance:
 --- !u!224 &7797309991995120797 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8790024936459725560, guid: 82ce9c8766a4f1e43b77589192c7dca8, type: 3}
+  m_PrefabInstance: {fileID: 7797309991995120796}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7797309991995120798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7797309992724927405, guid: 82ce9c8766a4f1e43b77589192c7dca8, type: 3}
   m_PrefabInstance: {fileID: 7797309991995120796}
   m_PrefabAsset: {fileID: 0}

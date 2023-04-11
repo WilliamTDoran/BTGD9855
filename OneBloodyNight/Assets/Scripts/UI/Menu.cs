@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.EventSystems;
 
 public class Menu : MonoBehaviour
 {
@@ -23,6 +24,12 @@ public class Menu : MonoBehaviour
     private GameObject loreScreen;
     [SerializeField]
     private GameObject Background;
+    [SerializeField]
+    private GameObject Credit;
+
+    public GameObject LoreFirstButton;
+    public GameObject OptionFirstButton;
+    public GameObject menuFirstButton;
 
 
     // Start is called before the first frame update
@@ -31,6 +38,7 @@ public class Menu : MonoBehaviour
         Background.SetActive(true);
         optionScreen.SetActive(false);
         loreScreen.SetActive(false);
+        Credit.SetActive(false);
     }
 
     // Update is called once per frame
@@ -49,8 +57,11 @@ public class Menu : MonoBehaviour
     public void Options()
     {
         Background.SetActive(false);
+        Credit.SetActive(false);
         loreScreen.SetActive(false);
         optionScreen.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(OptionFirstButton);
     }
 
     public void Quit()
@@ -62,7 +73,10 @@ public class Menu : MonoBehaviour
     public void LoreBooks()
     {
         Background.SetActive(false);
+        Credit.SetActive(false);
         loreScreen.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(LoreFirstButton);
 
     }
 
@@ -81,6 +95,9 @@ public class Menu : MonoBehaviour
         Background.SetActive(true);
         optionScreen.SetActive(false);
         loreScreen.SetActive(false);
+        Credit.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(menuFirstButton);
     }
 
     private IEnumerator Starter()
@@ -97,6 +114,15 @@ public class Menu : MonoBehaviour
         {
             Application.LoadLevel("MazeScene");
         }
+        
+    }
+
+    public void Credits()
+    {
+        Background.SetActive(true);
+        optionScreen.SetActive(false);
+        loreScreen.SetActive(false);
+        Credit.SetActive(true);
         
     }
 }
