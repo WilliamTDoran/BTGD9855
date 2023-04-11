@@ -35,16 +35,8 @@ public class BossMeter : MonoBehaviour
         bloodmeter.value = Boss.instance.CurHitPoints;
         if (Boss.instance.CurHitPoints <= 0)
         {
-            int counter = PlayerPrefs.GetInt("Boss");
-            if(counter == 0)
-            {
-                BossPortal.SetActive(true);
-                PlayerPrefs.SetInt("Boss", 1);
-            }
-            else
-            {
-                GameOver.instance.Victory();
-            }
+            BossPortal.SetActive(true);
+
             
             
         }

@@ -61,6 +61,10 @@ public class UpgradeTotemHUD : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            if (disableable)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 
