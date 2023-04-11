@@ -31,6 +31,7 @@ public class Pause : MonoBehaviour
             {
                 pause.SetActive(true);
                 Time.timeScale = 0f;
+                Player.plr.Stunned = true;
 
             }
             else if (Time.timeScale == 0f)
@@ -38,7 +39,8 @@ public class Pause : MonoBehaviour
                 optionScreen.SetActive(false);
                 pause.SetActive(false);
                 Time.timeScale = 1f;
-                
+                Player.plr.Stunned = false;
+
             }
         }
     }
@@ -57,6 +59,14 @@ public class Pause : MonoBehaviour
     public void MainMenu()
     {
         Application.LoadLevel("Title");
+
+    }
+    public void Continue()
+    {
+        optionScreen.SetActive(false);
+        pause.SetActive(false);
+        Time.timeScale = 1f;
+        Player.plr.Stunned = false;
 
     }
 }
