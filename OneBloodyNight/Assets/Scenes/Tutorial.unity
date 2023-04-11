@@ -2231,7 +2231,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Press 'y' to activate ability
+  m_Text: Press 'Y' to activate ability
 --- !u!222 &809066343
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4725,7 +4725,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Press 'X' to attack
+  m_Text: Press 'A' to attack
 --- !u!222 &1734054054
 CanvasRenderer:
   m_ObjectHideFlags: 0
