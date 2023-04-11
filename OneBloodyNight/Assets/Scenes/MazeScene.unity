@@ -6523,6 +6523,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333120540}
   m_CullTransparentMesh: 1
+--- !u!1 &1341554804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4568647554044293301, guid: a27797b4f3eb8a24989d89b5c2383613, type: 3}
+  m_PrefabInstance: {fileID: 4568647554860703255}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1344671037
 GameObject:
   m_ObjectHideFlags: 0
@@ -8974,11 +8979,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &1917896828 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4568647554018645611, guid: a27797b4f3eb8a24989d89b5c2383613, type: 3}
-  m_PrefabInstance: {fileID: 4568647554860703255}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1931751713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10106,7 +10106,7 @@ PrefabInstance:
     - target: {fileID: 6775488496922314625, guid: 9362f0a7d114a844187bc38dac0f7aff, type: 3}
       propertyPath: optionScreen
       value: 
-      objectReference: {fileID: 1917896828}
+      objectReference: {fileID: 1341554804}
     - target: {fileID: 6775488496922314625, guid: 9362f0a7d114a844187bc38dac0f7aff, type: 3}
       propertyPath: firstPauseButton
       value: 

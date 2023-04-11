@@ -52,5 +52,25 @@ public class LoreBooks : MonoBehaviour
 
         Lorebook2.SetActive(true);
     }
+    public void Lorebookthree()
+    {
+
+        Lorebook3.SetActive(true);
+    }
+    public void Lorebookfour()
+    {
+
+        Lorebook4.SetActive(true);
+    }
+    public void Lorebookfive()
+    {
+
+        Lorebook5.SetActive(true);
+    }
+    public void Lorebooksix()
+    {
+
+        Lorebook6.SetActive(true);
+    }
 }
 
