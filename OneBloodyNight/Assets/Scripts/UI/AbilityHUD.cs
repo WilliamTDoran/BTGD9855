@@ -20,19 +20,19 @@ public class AbilityHUD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("Load2"))
         {
             
             Invis.SetActive(false);
             batSwarm.SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetButtonDown("Load1"))
         {
             
             batSwarm.SetActive(false);
             Invis.SetActive(true);
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetButtonDown("AdvancedFire"))
         {
            
             Empty.SetActive(true);

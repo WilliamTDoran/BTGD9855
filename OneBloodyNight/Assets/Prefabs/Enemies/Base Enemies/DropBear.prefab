@@ -772,7 +772,7 @@ MonoBehaviour:
   basicAttack: {fileID: 3237701248447046877}
   bloodOnKill: 150
   despawnTime: 3
-  attackTimer: 1
+  attackTimer: 2
   healthBarObject: {fileID: 3507703436389947380}
 --- !u!95 &6075898001845311317
 Animator:
@@ -964,7 +964,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8340665572391856303}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.61, y: -0.88, z: -0}
+  m_LocalPosition: {x: 1.9, y: -0.88, z: -0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1031,10 +1031,10 @@ BoxCollider:
   m_GameObject: {fileID: 8340665572391856303}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5199833, y: 1.238563, z: 1}
-  m_Center: {x: -0.078193955, y: -0.032854795, z: -2.283471e-16}
+  m_Size: {x: 1.1065086, y: 1.238563, z: 0.68435705}
+  m_Center: {x: 0.2217635, y: -0.032854833, z: -0.15782017}
 --- !u!54 &6216617256788226297
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1071,7 +1071,7 @@ MonoBehaviour:
   frontBuffAura: {fileID: 0}
   damage: 100
   buffedDamage: 0
-  knockbackAmount: 100
+  knockbackAmount: 500
   hitstunDuration: 0.4
   pushbackAmount: 2
   returnDrag: 18

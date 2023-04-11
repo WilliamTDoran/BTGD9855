@@ -323,7 +323,7 @@ MonoBehaviour:
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
   spriteRenderer: {fileID: 2249110078326297011}
-  abilityOneCost: 30
+  abilityOneCost: 60
   abilityTwoCost: 90
   facingDebugText: {fileID: 0}
   canAttackDebugText: {fileID: 0}
