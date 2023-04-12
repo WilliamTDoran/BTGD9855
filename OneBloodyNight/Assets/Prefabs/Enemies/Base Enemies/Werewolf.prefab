@@ -1069,7 +1069,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 60
+  damage: 45
   buffedDamage: 1
   knockbackAmount: 60
   hitstunDuration: 0.2

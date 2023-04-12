@@ -1990,8 +1990,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.622733, y: 3.0304704, z: 1}
-  m_Center: {x: 0.11027969, y: -0.6338103, z: -8.939249e-11}
+  m_Size: {x: 2.622733, y: 3.0304706, z: 1.6251249}
+  m_Center: {x: 0.11027968, y: -0.6338103, z: 0.31256253}
 --- !u!82 &127064949
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5498,7 +5498,7 @@ MonoBehaviour:
   showHitbox: 0
   hitboxMesh: {fileID: 532537197}
   delay: 1
-  activeTime: 1
+  activeTime: 0.2
   debugTargetPreview: {fileID: 1336825650}
   conditionals: []
   yaraling: 0
@@ -6406,7 +6406,7 @@ MonoBehaviour:
   showHitbox: 0
   hitboxMesh: {fileID: 606353822}
   delay: 1
-  activeTime: 1
+  activeTime: 0.2
   debugTargetPreview: {fileID: 516769125}
   conditionals: []
   yaraling: 0
@@ -9853,6 +9853,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117342987}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1125034046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6775488496624819487, guid: 9362f0a7d114a844187bc38dac0f7aff, type: 3}
+  m_PrefabInstance: {fileID: 1852179206}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1125266491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12911,7 +12916,7 @@ MonoBehaviour:
   showHitbox: 0
   hitboxMesh: {fileID: 1611556333}
   delay: 1
-  activeTime: 1
+  activeTime: 0.2
   debugTargetPreview: {fileID: 1370872650}
   conditionals: []
   yaraling: 0
@@ -13794,7 +13799,7 @@ MonoBehaviour:
   showHitbox: 0
   hitboxMesh: {fileID: 0}
   delay: 0
-  activeTime: 0.3
+  activeTime: 0
   debugTargetPreview: {fileID: 0}
   conditionals: []
   yaraling: 0
@@ -15283,7 +15288,7 @@ PrefabInstance:
     - target: {fileID: 6775488496922314625, guid: 9362f0a7d114a844187bc38dac0f7aff, type: 3}
       propertyPath: pause
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1125034046}
     - target: {fileID: 6775488496922314625, guid: 9362f0a7d114a844187bc38dac0f7aff, type: 3}
       propertyPath: optionScreen
       value: 
