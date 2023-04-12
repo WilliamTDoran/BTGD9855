@@ -9620,10 +9620,6 @@ PrefabInstance:
       propertyPath: bloodGainRate
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2222148743124800986, guid: 0871b24d27454f74385e56a562633dda, type: 3}
-      propertyPath: bloodLossRate
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 2222148743124800988, guid: 0871b24d27454f74385e56a562633dda, type: 3}
       propertyPath: m_Name
       value: Slider

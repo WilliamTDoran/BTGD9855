@@ -302,7 +302,7 @@ MonoBehaviour:
   residual: {fileID: 0}
   anim: {fileID: 0}
   gameover: {fileID: 0}
-  bloodLossRate: 0.4
+  bloodLossRate: 0.2
   bloodGainRate: 1
 --- !u!95 &1839603844181473330
 Animator:
