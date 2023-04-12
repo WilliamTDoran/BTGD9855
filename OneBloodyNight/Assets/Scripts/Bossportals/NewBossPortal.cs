@@ -18,8 +18,18 @@ public class NewBossPortal : MonoBehaviour
         Debug.Log("Contact");
         if (col.gameObject.tag == "Player")
         {
+            int Bossnum = PlayerPrefs.GetInt("Boss");
+            if (Bossnum == 0)
+            {
+                PlayerPrefs.SetInt("Boss", 1);
+                Application.LoadLevel("MazeScene");
+            }
+            else
+            {
             Audio.Play();
             Victory.SetActive(true);
+            }
+
         }
         //StartCoroutine(StartBoss());
     }

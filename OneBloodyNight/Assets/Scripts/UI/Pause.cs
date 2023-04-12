@@ -36,8 +36,8 @@ public class Pause : MonoBehaviour
                 Time.timeScale = 0f;
                 Player.plr.Stunned = true;
 
-                //EventSystem.current.SetSelectedGameObject(null);
-                //EventSystem.current.SetSelectedGameObject(firstPauseButton);
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(firstPauseButton);
             }
             else if (Time.timeScale == 0f)
             {
@@ -54,8 +54,8 @@ public class Pause : MonoBehaviour
     {
         optionScreen.SetActive(true);
 
-        //EventSystem.current.SetSelectedGameObject(null);
-        //EventSystem.current.SetSelectedGameObject(firstOptionButton);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstOptionButton);
     }
     public void Quit()
     {
