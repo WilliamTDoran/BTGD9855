@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    public GameObject screen1;
     public GameObject screen2;
-    public Bloodmeter bloodmeter;
+    //public Bloodmeter bloodmeter;
     public AudioSource audioSource;
 
     internal static GameOver instance;
@@ -23,7 +22,7 @@ public class GameOver : MonoBehaviour
     }
     void Start()
     {
-        screen1.SetActive(false);
+
         screen2.SetActive(false);
         //StartCoroutine("Timer");
     }
@@ -46,11 +45,6 @@ public class GameOver : MonoBehaviour
             Application.Quit();
         }
 
-
-        if (bloodmeter.bloodmeter.value <= 0)
-        {
-            //screen1.SetActive(true);
-        }
 
     }
 
