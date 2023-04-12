@@ -111,7 +111,6 @@ public class YaraBoss : Boss
     {
         base.Start();
         
-        spanimator.SetTrigger("start");
         StartCoroutine("startanim");
         isDead = false;
     }
@@ -161,7 +160,6 @@ public class YaraBoss : Boss
         Player.plr.Stunned = true;
         yield return new WaitForSeconds(7f);
         StartRandomBehavior();
-        spanimator.ResetTrigger("start");
         Player.plr.Stunned = false;
     }
 
