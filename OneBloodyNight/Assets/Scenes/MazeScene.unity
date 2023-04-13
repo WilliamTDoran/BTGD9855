@@ -10039,6 +10039,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4568647554810222540, guid: a27797b4f3eb8a24989d89b5c2383613, type: 3}
+      propertyPath: firstOptionButton
+      value: 
+      objectReference: {fileID: 6775488496685604297}
     - target: {fileID: 4568647554810222541, guid: a27797b4f3eb8a24989d89b5c2383613, type: 3}
       propertyPath: m_RootOrder
       value: 1

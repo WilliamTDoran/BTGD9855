@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Options : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Options : MonoBehaviour
     public AudioMixer mixer;
     public Slider master;
     public Toggle toggle;
+
+    public GameObject firstOptionButton;
 
     [SerializeField]
     private GameObject optionScreen;
@@ -61,6 +64,9 @@ public class Options : MonoBehaviour
     public void Back()
     {
         optionScreen.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstOptionButton);
+
     }
 
     public void tutorial()
