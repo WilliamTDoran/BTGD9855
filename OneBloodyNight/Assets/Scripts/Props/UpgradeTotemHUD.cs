@@ -161,6 +161,10 @@ public class UpgradeTotemHUD : MonoBehaviour
             bloodRegenUpgrade.upgraded++;
             Player.plr.bloodRegainMult *= bloodRegenUpgrade.multiplier;
         }
+        if (bloodUsageUpgrade.upgraded == 2)
+        {
+            bloodRegen.interactable = false;
+        }
         if (disableable)
         {
             disableHUD();
@@ -188,6 +192,10 @@ public class UpgradeTotemHUD : MonoBehaviour
             {
                 Debug.Log("Upgrade not implemented for this character");
             }
+        }
+        if (bloodUsageUpgrade.upgraded == 2)
+        {
+            moveSpeed.interactable = false;
         }
         if (disableable)
         {
