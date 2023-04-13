@@ -63,7 +63,7 @@ public class GameOver : MonoBehaviour
 
     public void YES()
     {
-        Application.LoadLevel("MazeScene");
+        Application.LoadLevel("Title");
     }
 
 
