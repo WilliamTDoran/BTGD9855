@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradeTotemHUD : MonoBehaviour
 {
@@ -40,6 +41,23 @@ public class UpgradeTotemHUD : MonoBehaviour
     private float bottomCost;
     [SerializeField]
     private float leftCost;
+
+    [SerializeField]
+    private Button bloodUsage;
+    [SerializeField]
+    private Button attackDmg;
+    [SerializeField]
+    private Button bloodRegen;
+    [SerializeField]
+    private Button moveSpeed;
+    [SerializeField]
+    private Button top;
+    [SerializeField]
+    private Button right;
+    [SerializeField]
+    private Button bottom;
+    [SerializeField]
+    private Button left;
 
     private bool discount = false;
     /*
@@ -82,6 +100,10 @@ public class UpgradeTotemHUD : MonoBehaviour
             bloodUsageUpgrade.upgraded++;
             Bloodmeter.instance.bloodLossRate *= bloodUsageUpgrade.multiplier;
         }
+        if(bloodUsageUpgrade.upgraded == 2)
+        {
+            bloodUsage.interactable = false;
+        }
         if (disableable)
         {
             disableHUD();
@@ -114,6 +136,10 @@ public class UpgradeTotemHUD : MonoBehaviour
             } else {
                 Debug.Log("Cost not implemented for this character");
             }
+        }
+        if (bloodUsageUpgrade.upgraded == 2)
+        {
+            attackDmg.interactable = false;
         }
         if (disableable)
         {
