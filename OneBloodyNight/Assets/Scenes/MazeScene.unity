@@ -3237,8 +3237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006f41d4d1c74494ab03658669106c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currSeed: 1
-  mazeSeed: 4982e6108839b06f
+  currSeed: 2
+  mazeSeed: 8839b06f5a1a0e1eeeca7556b072c250
   traits:
     width: 21
     height: 21
@@ -3380,7 +3380,6 @@ MonoBehaviour:
     - {fileID: 7827793329945432230, guid: 70ec3aa08d209df44955d43ced03d093, type: 3}
     - {fileID: 7827793329945432230, guid: 922fc2f3d4df0884b896a3da8fda98c1, type: 3}
     - {fileID: 5831821545081226382, guid: afd32af6ae09ba94299970c66dcbc95b, type: 3}
-    - {fileID: 5831821545081226382, guid: 5321e1d99a96a66439e1805570845d5b, type: 3}
     - {fileID: 5831821545081226382, guid: 77671a9461b7bf941902b3fc074fdbc1, type: 3}
     North:
       offSet: {x: 4, y: 0, z: 0}

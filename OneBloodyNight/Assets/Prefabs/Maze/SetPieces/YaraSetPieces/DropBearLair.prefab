@@ -394,15 +394,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -443,6 +443,10 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6250998436232743288, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: patrolAIProperties.despawnDistance
@@ -1096,15 +1100,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1145,6 +1149,10 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6250998436232743288, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: patrolAIProperties.despawnDistance
@@ -1720,15 +1728,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1769,6 +1777,10 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6250998436232743288, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: patrolAIProperties.despawnDistance
@@ -1876,15 +1888,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1925,6 +1937,10 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6250998436232743288, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: patrolAIProperties.despawnDistance
@@ -2032,15 +2048,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2081,6 +2097,10 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6250998436232743288, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: patrolAIProperties.despawnDistance
@@ -2422,15 +2442,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2471,6 +2491,10 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6250998436232743288, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: patrolAIProperties.despawnDistance
@@ -2652,15 +2676,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.0625
+      value: 0.09374999
       objectReference: {fileID: 0}
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2701,6 +2725,10 @@ PrefabInstance:
     - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564198034848022252, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6250998436232743288, guid: 5753d09d63da15748bb97d019d3a6f7f, type: 3}
       propertyPath: patrolAIProperties.despawnDistance
