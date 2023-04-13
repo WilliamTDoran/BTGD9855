@@ -113,11 +113,11 @@ public class Menu : MonoBehaviour
         yield return new WaitForSeconds(2f);
         if(toggle.isOn == true)
         {
-            Application.LoadLevel("Tutorial");
+            SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
         }
         else
         {
-            Application.LoadLevel("MazeScene");
+            SceneManager.LoadScene("MazeScene", LoadSceneMode.Single);
         }
         
     }

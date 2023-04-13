@@ -63,7 +63,8 @@ public class GameOver : MonoBehaviour
 
     public void YES()
     {
-        Application.LoadLevel("Title");
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("MazeScene", LoadSceneMode.Single);
     }
 
 
