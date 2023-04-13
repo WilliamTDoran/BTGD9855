@@ -163,7 +163,6 @@ public class Player : GameActor
     internal override void OnReceiveHit()
     {
         base.OnReceiveHit();
-        Bloodmeter.instance.Hort();
         
         animator.SetTrigger("Owie");
         

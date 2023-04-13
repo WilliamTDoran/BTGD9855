@@ -16,8 +16,6 @@ public class Bloodmeter : MonoBehaviour
     private float currentFrameBlood;
     private float previousframeBlood;
 
-    public Animator anim;
-
     public GameObject gameover;
 
     [SerializeField]
@@ -138,8 +136,5 @@ public class Bloodmeter : MonoBehaviour
         }
     }
 
-    public void Hort()
-    {
-        anim.SetTrigger("Hit");
-    }
+
 }

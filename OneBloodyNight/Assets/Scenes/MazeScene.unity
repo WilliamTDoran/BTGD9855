@@ -3237,7 +3237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006f41d4d1c74494ab03658669106c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currSeed: 2
+  currSeed: -1
   mazeSeed: 8839b06f5a1a0e1eeeca7556b072c250
   traits:
     width: 21
