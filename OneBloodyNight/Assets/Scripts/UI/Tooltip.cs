@@ -21,6 +21,18 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         show = false;
     }
 
+    public void OnSelect(BaseEventData eventData)
+    {
+        thisGO = true;
+        ToolTipManager._instance.SetAndShowToolTip(msg);
+
+    }
+
+    public void OnDeSelect(PointerEventData eventData)
+    {
+        show = false;
+    }
+
     private void Update()
     {
         if (EventSystem.current.IsPointerOverGameObject() && thisGO)
