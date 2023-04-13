@@ -3245,7 +3245,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059480902}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3255,8 +3255,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 192, y: -61}
-  m_SizeDelta: {x: 75.6581, y: 70.336}
+  m_AnchoredPosition: {x: 210, y: -25}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1059480904
 MonoBehaviour:
@@ -3495,12 +3495,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596435964}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 285, y: -62}
-  m_SizeDelta: {x: 75.658, y: 70.3423}
+  m_AnchoredPosition: {x: 310, y: -25}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1157199179
 MonoBehaviour:
@@ -3772,7 +3772,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 59}
+  m_AnchoredPosition: {x: 150, y: 75}
   m_SizeDelta: {x: 230, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1416801048
@@ -3808,8 +3808,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: You are the fearsome strigoi vampire, a rift in space and time has caused
-    vampires from other cultures to leak into your world.
+  m_Text: You are the fearsome strigoi vampire. A rift in space and time has caused
+    vampires from other parts of the world to leak into your domain.
 --- !u!222 &1416801049
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4823,7 +4823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1596435964
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4839,8 +4839,8 @@ RectTransform:
   - {fileID: 1416801047}
   - {fileID: 1529794056}
   - {fileID: 1059480903}
-  - {fileID: 1972361778}
   - {fileID: 1157199178}
+  - {fileID: 1972361778}
   m_Father: {fileID: 1499207709}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5366,11 +5366,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1596435964}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: -74}
+  m_AnchoredPosition: {x: 150, y: -170}
   m_SizeDelta: {x: 230, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1972361779
@@ -5406,8 +5406,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Find Boss Portals \n\n\n\n\n\nTo eliminate rival vampires and become the
-    last vampire standing"
+  m_Text: Find boss portals to eliminate rival vampires and become the last vampire
+    standing.
 --- !u!222 &1972361780
 CanvasRenderer:
   m_ObjectHideFlags: 0
