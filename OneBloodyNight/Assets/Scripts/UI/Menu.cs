@@ -54,8 +54,9 @@ public class Menu : MonoBehaviour
 
     public void StartGame()
     {
+        Time.timeScale = 1f;
         StartCoroutine("Starter");
-        //Application.LoadLevel("TestScene");
+        //Application.LoadLevel("MazeScene");
 
     }
 
@@ -111,7 +112,8 @@ public class Menu : MonoBehaviour
         audioSource.Play();
         
         yield return new WaitForSeconds(2f);
-        if(toggle.isOn == true)
+        
+        if (toggle.isOn == true)
         {
             SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
         }
