@@ -7,12 +7,14 @@ public class Tutorial : MonoBehaviour
     public GameObject controls;
     public GameObject blood;
     public GameObject upgrade;
+    public GameObject Intro;
     public GameObject backbutton;
     public GameObject nextbutton;
     private int count = 1;
     // Start is called before the first frame update
     void Start()
     {
+        Intro.SetActive(false);
         controls.SetActive(true);
         blood.SetActive(false);
         upgrade.SetActive(false);
@@ -42,6 +44,7 @@ public class Tutorial : MonoBehaviour
             upgrade.SetActive(false);
             backbutton.SetActive(true);
             nextbutton.SetActive(true);
+            Intro.SetActive(false);
             count++;
         }
         else if(count == 2)//page 3
@@ -50,7 +53,18 @@ public class Tutorial : MonoBehaviour
             blood.SetActive(false);
             upgrade.SetActive(true);
             backbutton.SetActive(true);
+            nextbutton.SetActive(true);
+            Intro.SetActive(false);
+            count++;
+        }
+        else if(count == 3)//page 4
+        {
+            controls.SetActive(false);
+            blood.SetActive(false);
+            upgrade.SetActive(false);
+            backbutton.SetActive(true);
             nextbutton.SetActive(false);
+            Intro.SetActive(true);
             count++;
         }
         
@@ -58,7 +72,17 @@ public class Tutorial : MonoBehaviour
 
     public void back()
     {
-        if(count == 3)//page 2
+        if(count == 4)//page 3
+        {
+            controls.SetActive(false);
+            blood.SetActive(false);
+            upgrade.SetActive(true);
+            backbutton.SetActive(true);
+            nextbutton.SetActive(true);
+            Intro.SetActive(false);
+            count--;
+        }
+        else if(count == 3)//page 2
         {
             controls.SetActive(false);
             blood.SetActive(true);
