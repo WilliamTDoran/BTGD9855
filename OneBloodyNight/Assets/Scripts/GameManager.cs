@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
     private static bool globalCooldownVar = false; //whether the global cooldown is active. true means it is active
     private IEnumerator gcdCoroutine; //coroutine to drive gcd
 
+    private float timeInSauce = 0.0f;
+    public float TimeInSauce { get { return timeInSauce; } }
+
     /* Exposed Variables */
     [Tooltip("The duration in seconds of the global cooldown")]
     [SerializeField]
@@ -111,6 +114,15 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F5))
         {
             Bloodmeter.instance.changeBlood(3000);
+        }
+
+        if (Bloodmeter.instance.healing)
+        {
+            timeInSauce += Time.deltaTime;
+        }
+        else
+        {
+            timeInSauce = 0f;
         }
     }
 

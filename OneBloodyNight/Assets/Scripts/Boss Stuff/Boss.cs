@@ -31,6 +31,10 @@ public class Boss : GameActor
     [Tooltip("Multiplier applied to timings per phase")]
     [SerializeField]
     protected float timeShred = 0.8f;
+
+    [Tooltip("How long is too long to hide in the sauce")]
+    [SerializeField]
+    protected float tooLong = 1.5f;
     /*~~~~~~~~~~~~~~~~~~~*/
 
     protected override void Awake()
