@@ -24,7 +24,7 @@ public class NewBossPortal : MonoBehaviour
                 PlayerPrefs.SetInt("Boss", 1);
                 Application.LoadLevel("MazeScene");
             }
-            else
+            else 
             {
             Audio.Play();
             Victory.SetActive(true);

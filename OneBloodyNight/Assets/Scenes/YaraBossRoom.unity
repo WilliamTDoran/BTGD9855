@@ -2787,6 +2787,14 @@ MonoBehaviour:
   rightCost: 0
   bottomCost: 0
   leftCost: 0
+  bloodUsage: {fileID: 0}
+  attackDmg: {fileID: 0}
+  bloodRegen: {fileID: 0}
+  moveSpeed: {fileID: 0}
+  top: {fileID: 0}
+  right: {fileID: 0}
+  bottom: {fileID: 0}
+  left: {fileID: 0}
 --- !u!1 &238849016
 GameObject:
   m_ObjectHideFlags: 0
@@ -6946,7 +6954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3400
   immuneDuration: 0
-  maxHitPoints: 10
+  maxHitPoints: 1600
   walkAnim: 1
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
@@ -6956,6 +6964,7 @@ MonoBehaviour:
   - 0.4
   currentPhase: 0
   timeShred: 0.7
+  tooLong: 1.5
   audioSource: {fileID: 879865975}
   Hurt: {fileID: 0}
   slam: {fileID: 8300000, guid: 7f1cc9bcfde90f34687b0073a9a5a760, type: 3}
