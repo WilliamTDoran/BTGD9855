@@ -7,11 +7,14 @@ using System;
 public class Bloodmeter : MonoBehaviour
 {
     public Slider bloodmeter;
-    private int currentBlood;
     public int AbilityCost;
     public int damage;
     public Slider residual;
 
+    internal bool healing;
+
+    private float currentFrameBlood;
+    private float previousframeBlood;
 
     public Animator anim;
 
@@ -36,8 +39,6 @@ public class Bloodmeter : MonoBehaviour
         {
             instance = this;
         }
-
-
     }
 
     // Start is called before the first frame update
@@ -50,31 +51,30 @@ public class Bloodmeter : MonoBehaviour
         Debug.Log("Done");
         StartCoroutine("DMG");
         gameover.SetActive(false);
+
+        previousframeBlood = bloodmeter.maxValue;
+        currentFrameBlood = bloodmeter.value;
     }
 
     private void Update()
     {
-        
-
-
         if (Input.GetKeyDown(KeyCode.I))
         {
             //StopCoroutine("DMG");
             StartCoroutine("Gainer");
         }
-
-
     }
 
-
-    // Update is called once per frame
-    /*private void Update()
+    private void LateUpdate()
     {
-        if (Input.GetButtonDown("AdvancedFire"))
-        {
-            bloodmeter.value = bloodmeter.value - AbilityCost;
-        }
-    }*/
+        previousframeBlood = currentFrameBlood;
+        currentFrameBlood = bloodmeter.value;
+    }
+
+    internal float DeltaBlood()
+    {
+        return currentFrameBlood - previousframeBlood;
+    }
 
     private IEnumerator DMG()
     {
@@ -121,7 +121,6 @@ public class Bloodmeter : MonoBehaviour
 
     private IEnumerator Gain()
     {
-
         while (bloodmeter.value > bloodmeter.minValue)
         {
             bloodmeter.value = bloodmeter.value + bloodGainRate;//takes 1 blood per second
@@ -132,18 +131,15 @@ public class Bloodmeter : MonoBehaviour
 
     private IEnumerator Gainer()
     {
-
         while (bloodmeter.value < bloodmeter.maxValue)
         {
             bloodmeter.value = bloodmeter.value + 10;//takes 1 blood per second
             yield return new WaitForSeconds(0.03f);//slows down the damage rate
         }
-
     }
+
     public void Hort()
     {
         anim.SetTrigger("Hit");
     }
-
-
 }

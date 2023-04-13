@@ -157,8 +157,13 @@ public class ImpunduluBoss : Boss
 
     protected override IEnumerator RandomAttacking()
     {
-        int upperLimit = currentPhase == 2 ? rndCap + currentPhase + 1 : rndCap + currentPhase; //this is dumb as rocks but fuck if it don't work
+        int upperLimit = ((currentPhase + 1) * 2);
         int check = rnd.Next(0, upperLimit);
+
+        if (GameManager.instance.TimeInSauce >= tooLong)
+        {
+            check = 1;
+        }
 
         switch (check)
         {
@@ -170,15 +175,9 @@ public class ImpunduluBoss : Boss
                 break;
 
             case 1:
-                yield return new WaitForSeconds(timeBeforeLightning * timeModifier);
+                yield return new WaitForSeconds(timeBeforeRain * timeModifier);
 
-                lightnings[lightningCycle].Initiate(Player.plr.Rb.position);
-
-                lightningCycle = lightningCycle > 1 ? 0 : lightningCycle + 1;
-                audioSource.PlayOneShot(Lightning);
-                animator.ResetTrigger("spin");
-                StopRandomBehavior();
-                StartRandomBehavior();
+                StartRaining();
                 break;
 
             case 2:
@@ -195,9 +194,15 @@ public class ImpunduluBoss : Boss
                 break;
 
             case 4:
-                yield return new WaitForSeconds(timeBeforeRain * timeModifier);
+                yield return new WaitForSeconds(timeBeforeLightning * timeModifier);
 
-                StartRaining();
+                lightnings[lightningCycle].Initiate(Player.plr.Rb.position);
+
+                lightningCycle = lightningCycle > 1 ? 0 : lightningCycle + 1;
+                audioSource.PlayOneShot(Lightning);
+                animator.ResetTrigger("spin");
+                StopRandomBehavior();
+                StartRandomBehavior();
                 break;
 
             case 5:
@@ -209,10 +214,7 @@ public class ImpunduluBoss : Boss
             default:
                 Debug.LogError(gameObject.name + "defaulted on RandomAttacking");
 
-                yield return new WaitForSeconds(timeBeforeFeathers * timeModifier);
-
-                StartSpinAttack();
-                animator.SetTrigger("spin");
+                goto case 0;
                 break;
         }
     }

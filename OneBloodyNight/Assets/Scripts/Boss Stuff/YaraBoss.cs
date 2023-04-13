@@ -176,6 +176,11 @@ public class YaraBoss : Boss
         int upperLimit = rndCap + currentPhase;
         int check = rnd.Next(0, upperLimit);
 
+        if (GameManager.instance.TimeInSauce >= tooLong)
+        {
+            check = 1;
+        }
+
         switch (check)
         {
             case 0:
@@ -188,9 +193,17 @@ public class YaraBoss : Boss
 
             case 1:
                 {
-                    //Shockwave Slam
-                    yield return new WaitForSeconds(timeBeforeShockwave * timeModifier);
-                    StartShockwaveSlam();
+                    //Ground Pound
+                    yield return new WaitForSeconds(timeBeforePound * timeModifier);
+
+                    Vector3 playerDirection = (Player.plr.transform.position - transform.position).normalized;
+                    playerDirection = new Vector3(playerDirection.x, 0, playerDirection.z).normalized;
+                    if (System.Math.Abs(playerDirection.x) < System.Math.Abs(playerDirection.z))
+                    {
+                        goto case 2;
+                    }
+
+                    StartGroundPound();
                     break;
                 }
 
@@ -204,17 +217,9 @@ public class YaraBoss : Boss
 
             case 3:
                 {
-                    //Ground Pound
-                    yield return new WaitForSeconds(timeBeforePound * timeModifier);
-
-                    Vector3 playerDirection = (Player.plr.transform.position - transform.position).normalized;
-                    playerDirection = new Vector3(playerDirection.x, 0, playerDirection.z).normalized;
-                    if (System.Math.Abs(playerDirection.x) < System.Math.Abs(playerDirection.z))
-                    {
-                        goto case 2;
-                    }
-
-                    StartGroundPound();
+                    //Shockwave Slam
+                    yield return new WaitForSeconds(timeBeforeShockwave * timeModifier);
+                    StartShockwaveSlam();
                     break;
                 }
 
