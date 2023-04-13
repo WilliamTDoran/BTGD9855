@@ -13,7 +13,7 @@ public class Menu : MonoBehaviour
 
     public Toggle toggle;
 
-    
+    //public GameObject menuFirstButton;
 
     //Buttons
 
@@ -41,6 +41,9 @@ public class Menu : MonoBehaviour
         loreScreen.SetActive(false);
         Credit.SetActive(false);
         PlayerPrefs.SetInt("Boss", 0);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(menuFirstButton);
     }
 
     // Update is called once per frame
