@@ -28,7 +28,7 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     }
 
-    public void OnDeSelect(PointerEventData eventData)
+    public void OnDeSelect(BaseEventData eventData)
     {
         show = false;
     }
