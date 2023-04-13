@@ -27,7 +27,6 @@ public class PlayerStrigoi : Player
     public AudioClip Hurt;
     /*~~~~~~~*/
 
-    private bool StartDeath = false;
     public GameObject GameOver;
 
     private string basicCode = "basic"; //see Attack comments for attackerGrantedCode
@@ -174,9 +173,23 @@ public class PlayerStrigoi : Player
         berserkDamageDebugText.text = basicAttackOne.Damage + "";
         berserkSpeedDebugText.text = speed + "";
 
-        if((Bloodmeter.instance.bloodmeter.value <= 0) && (StartDeath == false))
+        if((Bloodmeter.instance.bloodmeter.value <= 0) && (startDeath == false))
         {
-            StartDeath = true;
+            immune = true;
+            stunned = true;
+            StopAllCoroutines();
+            CombatManager.Instance.StopAllCoroutines();
+            basicAttackOne.EndSwing();
+            basicAttackTwo.EndSwing();
+            basicAttackThree.EndSwing();
+            basicAttackOne.gameObject.SetActive(false);
+            basicAttackTwo.gameObject.SetActive(false);
+            basicAttackThree.gameObject.SetActive(false);
+            swarmAttack.gameObject.SetActive(false);
+            Visible = true;
+            spriteRenderer.material = basicMaterial;
+
+            startDeath = true;
             StartCoroutine("Dead");
         } 
     }
@@ -207,7 +220,6 @@ public class PlayerStrigoi : Player
 
     private IEnumerator Dead()
     {
-
         animator.SetTrigger("Die");
         yield return new WaitForSeconds(3f);
         GameOver.SetActive(true);

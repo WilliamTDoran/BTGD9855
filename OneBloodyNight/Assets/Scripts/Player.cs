@@ -22,6 +22,8 @@ public class Player : GameActor
     protected bool load1Down;
     protected bool load2Down;
 
+    protected bool startDeath = false;
+
     internal static Player plr; //static reference
 
     private int loadedBullet = 0; //the currently prepared advanced attack. I use a 'loading special bullets in a gun, then pulling the trigger' analogy for how the advanced attacks work, hence the variable name
@@ -164,8 +166,10 @@ public class Player : GameActor
     {
         base.OnReceiveHit();
         
-        animator.SetTrigger("Owie");
-        
+        if (!startDeath)
+        {
+            animator.SetTrigger("Owie");
+        }
     }
 
 
@@ -180,3 +184,4 @@ public class Player : GameActor
         base.OnSuccessfulAttack(code);
     }
 }
+
