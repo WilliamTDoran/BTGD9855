@@ -1914,10 +1914,10 @@ MonoBehaviour:
   beamPlaybackSpeedModifier: 0.5
   timeBetweenFeathers: 0.2
   cam: {fileID: 1236102455}
-  timeBeforeFeathers: 0.6
+  timeBeforeFeathers: 1
   timeBeforeLightning: 1
   timeBeforeSwoop: 2
-  timeBeforeHoming: 1
+  timeBeforeHoming: 2.5
   timeBeforeRain: 2
   timeBeforeBeam: 3
   swoopBox: {fileID: 794072271}
@@ -1926,8 +1926,8 @@ MonoBehaviour:
   diveSpeed: 45
   stopTime: 0.8
   recoverTime: 1.5
-  homingChaseTime: 3
-  beamRotationSpeed: 40
+  homingChaseTime: 2
+  beamRotationSpeed: 45
 --- !u!212 &127064946
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3618,7 +3618,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 60
+  damage: 20
   buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
@@ -3942,7 +3942,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 80
+  damage: 70
   buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
@@ -4575,7 +4575,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 80
+  damage: 70
   buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
@@ -5510,7 +5510,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 50
+  damage: 80
   buffedDamage: 0
   knockbackAmount: 600
   hitstunDuration: 0.2
@@ -5820,7 +5820,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 80
+  damage: 70
   buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
@@ -5977,7 +5977,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 80
+  damage: 70
   buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
@@ -6418,7 +6418,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 50
+  damage: 80
   buffedDamage: 0
   knockbackAmount: 600
   hitstunDuration: 0.2
@@ -6579,7 +6579,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 80
+  damage: 70
   buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
@@ -7729,7 +7729,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 60
+  damage: 20
   buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
@@ -9022,7 +9022,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 80
+  damage: 70
   buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
@@ -10315,7 +10315,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 60
+  damage: 20
   buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
@@ -11576,7 +11576,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 80
+  damage: 70
   buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
@@ -12220,7 +12220,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 80
+  damage: 70
   buffedDamage: 0
   knockbackAmount: 250
   hitstunDuration: 0.2
@@ -13082,7 +13082,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 50
+  damage: 80
   buffedDamage: 0
   knockbackAmount: 600
   hitstunDuration: 0.2
@@ -15596,7 +15596,7 @@ MonoBehaviour:
   speedClamp: 10
   spritenimator: {fileID: 531132822}
   rainTickInterval: 0.15
-  damage: 20
+  damage: 15
 --- !u!1 &1923641020
 GameObject:
   m_ObjectHideFlags: 0
