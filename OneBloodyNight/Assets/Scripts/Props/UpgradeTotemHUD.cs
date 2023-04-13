@@ -137,7 +137,7 @@ public class UpgradeTotemHUD : MonoBehaviour
                 Debug.Log("Cost not implemented for this character");
             }
         }
-        if (bloodUsageUpgrade.upgraded == 2)
+        if (attackDmgUpgrade.upgraded == 2)
         {
             attackDmg.interactable = false;
         }
@@ -187,13 +187,14 @@ public class UpgradeTotemHUD : MonoBehaviour
             {
                 Player.plr.GetComponent<PlayerStrigoi>().BaseSpeed = Player.plr.GetComponent<PlayerStrigoi>().BaseSpeed * moveSpeedUpgrade.multiplier;
                 Player.plr.GetComponent<PlayerStrigoi>().increaseSpeed(moveSpeedUpgrade.multiplier);
+                //moveSpeed.interactable = false;
             }
             else
             {
                 Debug.Log("Upgrade not implemented for this character");
             }
         }
-        if (bloodUsageUpgrade.upgraded == 2)
+        if (moveSpeedUpgrade.upgraded == 2)
         {
             moveSpeed.interactable = false;
         }
@@ -223,7 +224,7 @@ public class UpgradeTotemHUD : MonoBehaviour
             {
                 Debug.Log("Upgrade not implemented for this character");
             }
-        } else if ((topUpgrade == 0) && paid)
+        } else if ((topUpgrade == 1) && paid)
         {
             topUpgrade++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
@@ -234,6 +235,10 @@ public class UpgradeTotemHUD : MonoBehaviour
             {
                 Debug.Log("Upgrade not implemented for this character");
             }
+        }
+        if (topUpgrade == 2)
+        {
+            top.interactable = false;
         }
         if (disableable)
         {
@@ -260,6 +265,10 @@ public class UpgradeTotemHUD : MonoBehaviour
             {
                 Debug.Log("Upgrade not implemented for this character");
             }
+        }
+        if (bottomUpgrade == 2)
+        {
+            bottom.interactable = false;
         }
         if (disableable)
         {
@@ -300,6 +309,10 @@ public class UpgradeTotemHUD : MonoBehaviour
                 Debug.Log("Upgrade not implemented for this character");
             }
         }
+        if (rightUpgrade == 2)
+        {
+            right.interactable = false;
+        }
         if (disableable)
         {
             disableHUD();
@@ -322,6 +335,7 @@ public class UpgradeTotemHUD : MonoBehaviour
             {
                 Player.plr.GetComponent<PlayerStrigoi>().upgradedFrenzy = true;
                 Player.plr.GetComponent<PlayerStrigoi>().frenzyRegainHit = 1;
+                
             }
             else
             {
@@ -333,11 +347,16 @@ public class UpgradeTotemHUD : MonoBehaviour
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
             {
                 Player.plr.GetComponent<PlayerStrigoi>().frenzyRegainHit = 2;
+                left.interactable = false;
             }
             else
             {
                 Debug.Log("Upgrade not implemented for this character");
             }
+        }
+        if (leftUpgrade == 2)
+        {
+            left.interactable = false;
         }
         if (disableable)
         {

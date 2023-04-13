@@ -641,10 +641,10 @@ MonoBehaviour:
   attackDmg: {fileID: 665535312}
   bloodRegen: {fileID: 2085743311}
   moveSpeed: {fileID: 1601020552}
-  top: {fileID: 0}
-  right: {fileID: 0}
-  bottom: {fileID: 0}
-  left: {fileID: 0}
+  top: {fileID: 1237110294}
+  right: {fileID: 1294053261}
+  bottom: {fileID: 234095181}
+  left: {fileID: 847004402}
 --- !u!224 &131833780
 RectTransform:
   m_ObjectHideFlags: 0
