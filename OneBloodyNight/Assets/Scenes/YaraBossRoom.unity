@@ -9507,7 +9507,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 0
+  damage: 50
   buffedDamage: 0
   knockbackAmount: 300
   hitstunDuration: 0

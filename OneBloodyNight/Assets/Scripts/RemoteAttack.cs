@@ -95,6 +95,10 @@ public class RemoteAttack : Attack
         {
             hitboxMesh.enabled = true;
         }
+        if (yaraling)
+        {
+            yara.SpawnYaraling();
+        }
 
         yield return new WaitUntil(() => conditionals[1].RemoteCondition);
 
@@ -107,17 +111,6 @@ public class RemoteAttack : Attack
         EndSwing();
         gameObject.SetActive(false);
     }
-
-    internal override void OnHitPlayer()
-    {
-        if (yaraling)
-        {
-            yara.SpawnYaraling();
-        }
-    }
-
-
-
 
     private void StartFire()
     {
