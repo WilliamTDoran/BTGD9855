@@ -188,6 +188,7 @@ public class PlayerStrigoi : Player
             swarmAttack.gameObject.SetActive(false);
             Visible = true;
             spriteRenderer.material = basicMaterial;
+            col.enabled = false;
 
             startDeath = true;
             StartCoroutine("Dead");

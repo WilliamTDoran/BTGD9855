@@ -165,7 +165,7 @@ public class ImpunduluBoss : Boss
             check = 1;
         }
 
-        switch (check)
+        switch (5)
         {
             case 0:
                 yield return new WaitForSeconds(timeBeforeFeathers * timeModifier);
@@ -377,6 +377,8 @@ public class ImpunduluBoss : Boss
         StopRandomBehavior();
         canMove = false;
         immune = true;
+        RigidbodyConstraints standardConstraints = rb.constraints;
+        rb.constraints = RigidbodyConstraints.FreezeAll;
 
         beams.transform.position = rb.position;
         beams.SetActive(true);
@@ -395,6 +397,7 @@ public class ImpunduluBoss : Boss
             beams.transform.Rotate(new Vector3(0, beamRotationSpeed * Time.deltaTime / timeModifier, 0));
         }
 
+        rb.constraints = standardConstraints;
         immune = false;
         beams.SetActive(false);
         StartRandomBehavior();
