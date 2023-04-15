@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4883e1cff55332444b6d4bca22e24315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  msg: First attack after going invisible deals massive damage
+  msg: Attacking while invisible deals massive damage.
 --- !u!1 &236630517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1920,7 +1920,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Backstab
+  m_Text: Sneak Attack
 --- !u!222 &366886015
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2226,6 +2226,86 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6775488495820019617, guid: 9362f0a7d114a844187bc38dac0f7aff, type: 3}
   m_PrefabInstance: {fileID: 6775488496685604296}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &534406640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 534406641}
+  - component: {fileID: 534406643}
+  - component: {fileID: 534406642}
+  m_Layer: 2
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &534406641
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534406640}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2117144686}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.0024871826, y: -0.00023651123}
+  m_SizeDelta: {x: 466.65, y: 233.33}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &534406642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534406640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.764151, g: 0.14057496, b: 0.14057496, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 604fa10b86347c04db330cced122dc4f, type: 3}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 200
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 0.6
+  m_Text: New Text
+--- !u!222 &534406643
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534406640}
+  m_CullTransparentMesh: 1
 --- !u!1001 &543822964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2927,7 +3007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4883e1cff55332444b6d4bca22e24315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  msg: Increases the amount of damage your basic attack does
+  msg: Increases your basic attack damage.
 --- !u!1 &667031182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4000,7 +4080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4883e1cff55332444b6d4bca22e24315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  msg: While in a frenzy, you heal a tiny bit on attack as well
+  msg: While in a frenzy, you also heal per hit.
 --- !u!1 &872770603
 GameObject:
   m_ObjectHideFlags: 0
@@ -5963,7 +6043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4883e1cff55332444b6d4bca22e24315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  msg: Swarm attack is aactive as long as there are enemies within
+  msg: Swarm is active as long as there are enemies in range.
 --- !u!1 &1248746522
 GameObject:
   m_ObjectHideFlags: 0
@@ -6296,8 +6376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4883e1cff55332444b6d4bca22e24315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  msg: Invisibility doesn't cost blood to activate, but increases the speed at which
-    your blood drains while invisible
+  msg: Invisibility no longer costs blood to activate but, increases blood drain.
 --- !u!1 &1333120540
 GameObject:
   m_ObjectHideFlags: 0
@@ -7412,7 +7491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1498779529
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7949,7 +8028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4883e1cff55332444b6d4bca22e24315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  msg: Increases your movement speed
+  msg: Increases your movement speed.
 --- !u!1 &1645831003 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3111108264678135816, guid: cf5b4f4bee5daef4fb9f220665a0dbf4, type: 3}
@@ -9774,7 +9853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4883e1cff55332444b6d4bca22e24315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  msg: Increases the speed at which you gain blood
+  msg: Increases the speed at which you gain blood.
 --- !u!114 &2101483491 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6004007070193936084, guid: a27797b4f3eb8a24989d89b5c2383613, type: 3}
@@ -9819,13 +9898,14 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1498779529}
+  - {fileID: 534406641}
   m_Father: {fileID: 131833780}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 150.00009, y: -99.91449}
-  m_SizeDelta: {x: 200, y: 100}
+  m_SizeDelta: {x: 200, y: 115}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &2117144687
 MonoBehaviour:
@@ -9839,7 +9919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1fab24a3f53f542b87baa6a9bb2d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 1498779530}
+  textComponent: {fileID: 534406642}
 --- !u!114 &2117144688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9853,7 +9933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0.89411765}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public string msg;
     private bool show;
     private bool thisGO;
+
     // Enable the script when the mouse enters the game object
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -44,5 +46,7 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             ToolTipManager._instance.HideToolTip();
             thisGO = false;
         }
+
+
     }
 }

@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class ToolTipManager : MonoBehaviour
 {
     internal static ToolTipManager _instance;
     [SerializeField]
-    private TextMeshProUGUI textComponent;
+    private Text textComponent;
 
     private void Awake()
     {
