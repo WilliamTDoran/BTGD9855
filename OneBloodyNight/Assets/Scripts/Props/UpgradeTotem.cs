@@ -16,7 +16,7 @@ public class UpgradeTotem : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(Player.plr.transform.position, transform.position) < range) 
+        if (Vector3.Distance(Player.plr.transform.position, transform.position) < range && Time.timeScale > 0) 
         {
             Player.plr.enableInteractToolTip();
             nearThis = true;
@@ -25,7 +25,7 @@ public class UpgradeTotem : MonoBehaviour
                 upgradeHUD.SetActive(true);
                 Time.timeScale = 0f;
                 Player.plr.Stunned = true;
-
+                Player.plr.disableInteractToolTip();
                 EventSystem.current.SetSelectedGameObject(null);
                 EventSystem.current.SetSelectedGameObject(firstTreeButton);
             }

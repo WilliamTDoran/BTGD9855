@@ -20,7 +20,7 @@ public class BloodVial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(Player.plr.transform.position, transform.position) < range)
+        if (Vector3.Distance(Player.plr.transform.position, transform.position) < range && Time.timeScale > 0)
         {
             nearThis = true;
             Player.plr.enableInteractToolTip();
