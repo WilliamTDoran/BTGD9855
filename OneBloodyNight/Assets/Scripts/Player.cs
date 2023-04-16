@@ -54,6 +54,10 @@ public class Player : GameActor
     protected TextMeshProUGUI canAttackDebugText;
     public TextMeshProUGUI CanAttackDebugText { get { return canAttackDebugText; } }
 
+    [Tooltip("Tooltip goes here")]
+    [SerializeField]
+    private GameObject toolTip;
+
     internal float bloodRegainMult = 1;
     /*~~~~~~~~~~~~~~~~~~~*/
 
@@ -182,6 +186,16 @@ public class Player : GameActor
     internal override void OnSuccessfulAttack(string code)
     {
         base.OnSuccessfulAttack(code);
+    }
+
+    internal void enableInteractToolTip()
+    {
+        toolTip.SetActive(true);
+    }
+
+    internal void disableInteractToolTip()
+    {
+        toolTip.SetActive(false);
     }
 }
 

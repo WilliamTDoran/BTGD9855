@@ -10,19 +10,29 @@ public class UpgradeTotem : MonoBehaviour
     GameObject upgradeHUD;
     [SerializeField]
     float range;
+    private bool nearThis;
 
     public GameObject firstTreeButton;
 
     void Update()
     {
-        if (Input.GetButtonDown("Interact") && Vector3.Distance(Player.plr.transform.position, transform.position) < range) 
+        if (Vector3.Distance(Player.plr.transform.position, transform.position) < range) 
         {
-            upgradeHUD.SetActive(true);
-            Time.timeScale = 0f;
-            Player.plr.Stunned = true;
+            Player.plr.enableInteractToolTip();
+            nearThis = true;
+            if (Input.GetButtonDown("Interact"))
+            {
+                upgradeHUD.SetActive(true);
+                Time.timeScale = 0f;
+                Player.plr.Stunned = true;
 
-            EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(firstTreeButton);
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(firstTreeButton);
+            }
+        } else if (nearThis)
+        {
+            nearThis = false;
+            Player.plr.disableInteractToolTip();
         }
     }
 }
