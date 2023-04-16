@@ -165,7 +165,7 @@ public class ImpunduluBoss : Boss
             check = 1;
         }
 
-        switch (check)
+        switch (5)
         {
             case 0:
                 yield return new WaitForSeconds(timeBeforeFeathers * timeModifier);
@@ -383,6 +383,8 @@ public class ImpunduluBoss : Boss
         beams.transform.position = rb.position;
         beams.SetActive(true);
         float hTimer = 0.0f;
+
+        animator.SetTrigger("MeatSpin");
 
         for (int i = 0; i < 4; i++)
         {
