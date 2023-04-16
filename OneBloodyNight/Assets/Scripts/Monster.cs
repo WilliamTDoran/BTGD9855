@@ -358,6 +358,11 @@ public class Monster : GameActor
     {
         base.OnReceiveHit();
 
+        if (basicAttack.ForceStill)
+        {
+            canMove = true;
+        }
+
         blood.Play();
         audioSource.PlayOneShot(Hurt);
         animator.SetTrigger("Owie");
