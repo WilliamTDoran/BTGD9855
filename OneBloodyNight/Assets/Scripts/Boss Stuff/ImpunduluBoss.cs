@@ -165,7 +165,7 @@ public class ImpunduluBoss : Boss
             check = 1;
         }
 
-        switch (5)
+        switch (switch)
         {
             case 0:
                 yield return new WaitForSeconds(timeBeforeFeathers * timeModifier);
