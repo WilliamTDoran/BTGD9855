@@ -366,7 +366,7 @@ public class UpgradeTotemHUD : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetButtonDown("Cancel") || Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical") || Input.GetButtonDown("Interact")) && gameObject.activeSelf && disableable)
+        if ((Input.GetButtonDown("Pause") || Input.GetButtonDown("Cancel") || Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical") || Input.GetButtonDown("Interact")) && gameObject.activeSelf && disableable)
         {
             disableHUD();
         }
@@ -393,6 +393,8 @@ public class UpgradeTotemHUD : MonoBehaviour
      */
     internal void loadSavedUpgrades(int bloodUsage, int attackDmg, int bloodRegain, int movementSpeed, int topSpecial, int leftSpecial, int bottomSpecial, int rightSpecial)
     {
+        bool dis = disableable;
+        disableable = false;
         discount = true;
         for (int i=0; i< bloodUsage; i++)
         {
@@ -427,6 +429,11 @@ public class UpgradeTotemHUD : MonoBehaviour
             upgradeRightSpecial();
         }
         discount = false;
+        disableable = dis;
+        if (disableable)
+        {
+            disableHUD();
+        }
     }
 
 }
