@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class LoreBooks : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class LoreBooks : MonoBehaviour
 
     public GameObject LoreScreen;
 
+    public GameObject Back1, Back2, Back3, Back4, Back5, Back6;
+
+    public GameObject BACK;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +29,7 @@ public class LoreBooks : MonoBehaviour
         Lorebook6.SetActive(false);
 
         LoreScreen.SetActive(true);
+        BACK.SetActive(true);
     }
 
     // Update is called once per frame
@@ -40,37 +46,62 @@ public class LoreBooks : MonoBehaviour
         Lorebook4.SetActive(false);
         Lorebook5.SetActive(false);
         Lorebook6.SetActive(false);
+        BACK.SetActive(true);
     }
 
     public void LorebookOne()
     {
         
         Lorebook1.SetActive(true);
+        BACK.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(Back1);
     }
     public void LorebookTwo()
     {
 
         Lorebook2.SetActive(true);
+        BACK.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(Back2);
     }
     public void Lorebookthree()
     {
 
         Lorebook3.SetActive(true);
+        BACK.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(Back3);
     }
     public void Lorebookfour()
     {
 
         Lorebook4.SetActive(true);
+        BACK.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(Back4);
     }
     public void Lorebookfive()
     {
 
         Lorebook5.SetActive(true);
+        BACK.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(Back5);
     }
     public void Lorebooksix()
     {
 
         Lorebook6.SetActive(true);
+        BACK.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(Back6);
     }
 }
 
