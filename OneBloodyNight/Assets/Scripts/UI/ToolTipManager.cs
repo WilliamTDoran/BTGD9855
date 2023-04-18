@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ToolTipManager : MonoBehaviour
 {
     internal static ToolTipManager _instance;
     [SerializeField]
     private Text textComponent;
+
 
     private void Awake()
     {
@@ -31,6 +33,11 @@ public class ToolTipManager : MonoBehaviour
     void Update()
     {
         transform.position = Input.mousePosition;
+
+        if (EventSystem.current.IsPointerOverGameObject() == false)
+        {
+            transform.position = Tooltip.toolTipPosStatic.transform.position;
+        }
     }
 
     internal void SetAndShowToolTip(string msg)

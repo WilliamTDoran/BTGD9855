@@ -15,6 +15,10 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
     [SerializeField]
     private GameObject cost250;
 
+    [SerializeField]
+    private GameObject toolTipPos;
+    internal static GameObject toolTipPosStatic;
+
 
     // Enable the script when the mouse enters the game object
     public void OnPointerEnter(PointerEventData eventData)
@@ -43,14 +47,27 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
 
     public void OnSelect(BaseEventData eventData)
     {
+        toolTipPosStatic = this.toolTipPos;
         thisGO = true;
         ToolTipManager._instance.SetAndShowToolTip(msg);
 
+        if (this.tag == "Cost150")
+        {
+            cost150.SetActive(true);
+            cost250.SetActive(false);
+        }
+        if (this.tag == "Cost250")
+        {
+            cost250.SetActive(true);
+            cost150.SetActive(false);
+        }
     }
 
     public void OnDeSelect(BaseEventData eventData)
     {
         show = false;
+
+        
     }
 
     private void Update()
@@ -59,10 +76,16 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
         {
             show = true;
         }
+        if (thisGO && EventSystem.current.currentSelectedGameObject)
+        {
+
+            show = true;
+        }
         if (thisGO && !show)
         {
             ToolTipManager._instance.HideToolTip();
             thisGO = false;
+
         }
 
 
