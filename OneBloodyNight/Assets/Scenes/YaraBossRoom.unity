@@ -2572,7 +2572,7 @@ MonoBehaviour:
   walkAnim: 1
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  bloodOnKill: 60
+  bloodOnKill: 40
   spanimator: {fileID: 2077848446}
   sprender: {fileID: 2077848447}
   dangerous: {fileID: 1559011589}
@@ -3362,7 +3362,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 40
+  damage: 50
   buffedDamage: 0
   knockbackAmount: 200
   hitstunDuration: 0.3
@@ -3792,7 +3792,7 @@ MonoBehaviour:
   walkAnim: 1
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  bloodOnKill: 60
+  bloodOnKill: 40
   spanimator: {fileID: 856102397}
   sprender: {fileID: 856102398}
   dangerous: {fileID: 359843464}
@@ -5610,7 +5610,7 @@ MonoBehaviour:
   walkAnim: 1
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  bloodOnKill: 60
+  bloodOnKill: 40
   spanimator: {fileID: 269195838}
   sprender: {fileID: 269195839}
   dangerous: {fileID: 992037620}
@@ -8088,7 +8088,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 40
+  damage: 50
   buffedDamage: 0
   knockbackAmount: 200
   hitstunDuration: 0.3
@@ -11611,7 +11611,7 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 40
+  damage: 50
   buffedDamage: 0
   knockbackAmount: 200
   hitstunDuration: 0.3
