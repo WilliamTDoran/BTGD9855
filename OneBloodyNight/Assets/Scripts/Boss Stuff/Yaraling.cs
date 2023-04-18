@@ -50,7 +50,7 @@ public class Yaraling : GameActor
 
     private void FixedUpdate()
     {
-        if (canMove && !Stunned)
+        if (canMove && !Stunned && Player.plr.Visible)
         {
             Vector3 direction = Player.plr.Rb.position - rb.position;
             direction.Normalize();
