@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class NewBossPortal : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject Victory;
     public AudioSource Audio;
+
+    //controller
+    public GameObject firstPauseButton;
+    ///
 
     void Start()
     {
@@ -28,6 +33,8 @@ public class NewBossPortal : MonoBehaviour
             {
             Audio.Play();
             Victory.SetActive(true);
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(firstPauseButton);
             }
 
         }

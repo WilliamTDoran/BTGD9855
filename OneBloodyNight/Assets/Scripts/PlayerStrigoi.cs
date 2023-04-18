@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// This class drives the Strigoi character. 
@@ -26,6 +27,9 @@ public class PlayerStrigoi : Player
     public AudioClip Attack;
     public AudioClip Hurt;
     /*~~~~~~~*/
+    //controller
+    public GameObject firstPauseButton;
+    ///
 
     public GameObject GameOver;
 
@@ -225,6 +229,8 @@ public class PlayerStrigoi : Player
         yield return new WaitForSeconds(3f);
         GameOver.SetActive(true);
         Time.timeScale = 0f;
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstPauseButton);
     }
 
     public void MeleeUse()

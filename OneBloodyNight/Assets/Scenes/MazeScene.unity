@@ -9366,6 +9366,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1378920225}
     - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
+      propertyPath: firstPauseButton
+      value: 
+      objectReference: {fileID: 8229776601739557931}
+    - target: {fileID: 2249110078326297013, guid: 0ee21e2dfea58164eaf0607ca418e65a, type: 3}
       propertyPath: berserkUpDebugText
       value: 
       objectReference: {fileID: 134647538}
@@ -10792,3 +10796,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15539104564be914199bd67c4847788f, type: 3}
+--- !u!1 &8229776601739557931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8229776601723600340, guid: 15539104564be914199bd67c4847788f, type: 3}
+  m_PrefabInstance: {fileID: 8229776601739557930}
+  m_PrefabAsset: {fileID: 0}
