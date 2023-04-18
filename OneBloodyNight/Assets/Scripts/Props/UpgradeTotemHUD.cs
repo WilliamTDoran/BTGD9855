@@ -59,6 +59,11 @@ public class UpgradeTotemHUD : MonoBehaviour
     [SerializeField]
     private Button left;
 
+    [SerializeField]
+    private GameObject cost150;
+    [SerializeField]
+    private GameObject cost250;
+
     private bool discount = false;
     /*
     enum upgrades
@@ -116,6 +121,8 @@ public class UpgradeTotemHUD : MonoBehaviour
         ToolTipManager._instance.HideToolTip();
         gameObject.SetActive(false);
         Player.plr.Stunned = false;
+        cost150.SetActive(false);
+        cost250.SetActive(false);
     }
 
     public void upgradeAttackDmg()

@@ -645,6 +645,8 @@ MonoBehaviour:
   right: {fileID: 1294053261}
   bottom: {fileID: 234095181}
   left: {fileID: 847004402}
+  cost150: {fileID: 2140897679}
+  cost250: {fileID: 960509616}
 --- !u!224 &131833780
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1017,7 +1019,7 @@ GameObject:
   - component: {fileID: 234095184}
   m_Layer: 5
   m_Name: BottomSpecial
-  m_TagString: Untagged
+  m_TagString: Cost250
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1151,6 +1153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   msg: Attacking while invisible deals massive damage.
+  cost150: {fileID: 2140897679}
+  cost250: {fileID: 960509616}
 --- !u!1 &236630517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2874,7 +2878,7 @@ GameObject:
   - component: {fileID: 665535315}
   m_Layer: 5
   m_Name: AttackDmg
-  m_TagString: Untagged
+  m_TagString: Cost150
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3008,6 +3012,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   msg: Increases your basic attack damage.
+  cost150: {fileID: 2140897679}
+  cost250: {fileID: 960509616}
 --- !u!1 &667031182
 GameObject:
   m_ObjectHideFlags: 0
@@ -3947,7 +3953,7 @@ GameObject:
   - component: {fileID: 847004405}
   m_Layer: 5
   m_Name: LeftSpecial
-  m_TagString: Untagged
+  m_TagString: Cost250
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4081,6 +4087,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   msg: While in a frenzy, you also heal per hit.
+  cost150: {fileID: 2140897679}
+  cost250: {fileID: 960509616}
 --- !u!1 &872770603
 GameObject:
   m_ObjectHideFlags: 0
@@ -4768,6 +4776,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952006532}
   m_CullTransparentMesh: 1
+--- !u!1 &960509616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2497970086443791426, guid: 0871b24d27454f74385e56a562633dda, type: 3}
+  m_PrefabInstance: {fileID: 2222148744209257662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &981966337
 GameObject:
   m_ObjectHideFlags: 0
@@ -5910,7 +5923,7 @@ GameObject:
   - component: {fileID: 1237110297}
   m_Layer: 5
   m_Name: TopSpecial
-  m_TagString: Untagged
+  m_TagString: Cost250
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6044,6 +6057,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   msg: Swarm is active as long as there are enemies in range.
+  cost150: {fileID: 2140897679}
+  cost250: {fileID: 960509616}
 --- !u!1 &1248746522
 GameObject:
   m_ObjectHideFlags: 0
@@ -6243,7 +6258,7 @@ GameObject:
   - component: {fileID: 1294053264}
   m_Layer: 5
   m_Name: RightSpecial
-  m_TagString: Untagged
+  m_TagString: Cost250
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6377,6 +6392,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   msg: Invisibility no longer costs blood to activate but, increases blood drain.
+  cost150: {fileID: 2140897679}
+  cost250: {fileID: 960509616}
 --- !u!1 &1333120540
 GameObject:
   m_ObjectHideFlags: 0
@@ -7895,7 +7912,7 @@ GameObject:
   - component: {fileID: 1601020555}
   m_Layer: 5
   m_Name: MoveSpeed
-  m_TagString: Untagged
+  m_TagString: Cost150
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8029,6 +8046,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   msg: Increases your movement speed.
+  cost150: {fileID: 2140897679}
+  cost250: {fileID: 960509616}
 --- !u!1 &1645831003 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3111108264678135816, guid: cf5b4f4bee5daef4fb9f220665a0dbf4, type: 3}
@@ -9020,7 +9039,7 @@ GameObject:
   - component: {fileID: 1897621135}
   m_Layer: 5
   m_Name: BloodUsage
-  m_TagString: Untagged
+  m_TagString: Cost150
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9154,6 +9173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   msg: Decreases speed at which blood drains.
+  cost150: {fileID: 2140897679}
+  cost250: {fileID: 960509616}
 --- !u!61 &1897621135
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9720,7 +9741,7 @@ GameObject:
   - component: {fileID: 2085743314}
   m_Layer: 5
   m_Name: BloodRegen
-  m_TagString: Untagged
+  m_TagString: Cost150
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9854,6 +9875,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   msg: Increases the speed at which you gain blood.
+  cost150: {fileID: 2140897679}
+  cost250: {fileID: 960509616}
 --- !u!114 &2101483491 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6004007070193936084, guid: a27797b4f3eb8a24989d89b5c2383613, type: 3}
@@ -9970,6 +9993,11 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!1 &2140897679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5520663310678882035, guid: 0871b24d27454f74385e56a562633dda, type: 3}
+  m_PrefabInstance: {fileID: 2222148744209257662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2222148744209257662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9999,6 +10027,10 @@ PrefabInstance:
       objectReference: {fileID: 1141502781}
     - target: {fileID: 2222148743124800986, guid: 0871b24d27454f74385e56a562633dda, type: 3}
       propertyPath: bloodGainRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222148743124800987, guid: 0871b24d27454f74385e56a562633dda, type: 3}
+      propertyPath: m_Value
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2222148743124800988, guid: 0871b24d27454f74385e56a562633dda, type: 3}
@@ -10087,6 +10119,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2222148743124800989, guid: 0871b24d27454f74385e56a562633dda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2497970086443791426, guid: 0871b24d27454f74385e56a562633dda, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520663310678882035, guid: 0871b24d27454f74385e56a562633dda, type: 3}
+      propertyPath: m_Name
+      value: Cost150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520663310678882035, guid: 0871b24d27454f74385e56a562633dda, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

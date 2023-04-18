@@ -10,6 +10,8 @@ TagManager:
   - Floor
   - SpriteTrigger
   - PropSpriteTrigger
+  - Cost150
+  - Cost250
   layers:
   - Default
   - TransparentFX

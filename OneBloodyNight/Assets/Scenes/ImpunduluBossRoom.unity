@@ -3333,6 +3333,8 @@ MonoBehaviour:
   right: {fileID: 0}
   bottom: {fileID: 0}
   left: {fileID: 0}
+  cost150: {fileID: 0}
+  cost250: {fileID: 0}
 --- !u!1 &238849016
 GameObject:
   m_ObjectHideFlags: 0
@@ -4208,6 +4210,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2222148743124800989, guid: 0871b24d27454f74385e56a562633dda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2497970086443791426, guid: 0871b24d27454f74385e56a562633dda, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520663310678882035, guid: 0871b24d27454f74385e56a562633dda, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
