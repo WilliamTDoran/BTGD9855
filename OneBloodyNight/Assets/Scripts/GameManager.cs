@@ -95,6 +95,15 @@ public class GameManager : MonoBehaviour
             Application.LoadLevel("MazeScene");
         }
 
+        if (Input.GetKeyDown(KeyCode.Keypad0))
+        {
+            Application.LoadLevel("DemoScene");
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            Application.LoadLevel("Title");
+        }
+
         if (Input.GetKeyDown(KeyCode.O))
         {
             if (Time.timeScale == 1f)
