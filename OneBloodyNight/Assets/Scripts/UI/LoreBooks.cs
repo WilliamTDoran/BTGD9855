@@ -15,6 +15,7 @@ public class LoreBooks : MonoBehaviour
     public GameObject LoreScreen;
 
     public GameObject Back1, Back2, Back3, Back4, Back5, Back6;
+    public GameObject FirstButton;
 
     public GameObject BACK;
 
@@ -47,6 +48,8 @@ public class LoreBooks : MonoBehaviour
         Lorebook5.SetActive(false);
         Lorebook6.SetActive(false);
         BACK.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(FirstButton);
     }
 
     public void LorebookOne()
