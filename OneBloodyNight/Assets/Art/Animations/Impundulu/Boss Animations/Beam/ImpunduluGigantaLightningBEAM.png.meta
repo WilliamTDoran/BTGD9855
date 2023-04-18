@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 1
     textureFormat: 4
     textureCompression: 1
@@ -107,12 +107,12 @@ TextureImporter:
       name: ImpunduluGigantaLightningBEAM_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 8
         y: 0
-        width: 96
-        height: 260
+        width: 88
+        height: 904
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -128,12 +128,12 @@ TextureImporter:
       name: ImpunduluGigantaLightningBEAM_1
       rect:
         serializedVersion: 2
-        x: 96
+        x: 104
         y: 0
-        width: 96
-        height: 260
+        width: 88
+        height: 904
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -149,12 +149,12 @@ TextureImporter:
       name: ImpunduluGigantaLightningBEAM_2
       rect:
         serializedVersion: 2
-        x: 192
+        x: 200
         y: 0
-        width: 96
-        height: 260
+        width: 88
+        height: 904
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,12 +170,12 @@ TextureImporter:
       name: ImpunduluGigantaLightningBEAM_3
       rect:
         serializedVersion: 2
-        x: 288
+        x: 296
         y: 0
-        width: 96
-        height: 260
+        width: 88
+        height: 904
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -191,12 +191,12 @@ TextureImporter:
       name: ImpunduluGigantaLightningBEAM_4
       rect:
         serializedVersion: 2
-        x: 384
+        x: 392
         y: 0
-        width: 96
-        height: 260
+        width: 88
+        height: 904
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -212,12 +212,12 @@ TextureImporter:
       name: ImpunduluGigantaLightningBEAM_5
       rect:
         serializedVersion: 2
-        x: 480
+        x: 488
         y: 0
-        width: 96
-        height: 260
+        width: 88
+        height: 904
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
