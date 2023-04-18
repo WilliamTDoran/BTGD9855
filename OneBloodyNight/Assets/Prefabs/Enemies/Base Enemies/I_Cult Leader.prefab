@@ -124,7 +124,7 @@ MonoBehaviour:
   speed: 2500
   immuneDuration: 0
   maxHitPoints: 40
-  walkAnim: 0
+  walkAnim: 1
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
   audioSource: {fileID: 8028271674238632153}
