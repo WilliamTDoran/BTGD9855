@@ -6,6 +6,7 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 public class Raincloud : GameActor
 {
     private IEnumerator rainDamageCoroutine;
+    private Vector3 direction;
 
     /* Exposed Variables */
     [Tooltip("Be cautious when playing with me")]
@@ -26,12 +27,16 @@ public class Raincloud : GameActor
     protected void OnEnable()
     {
         rb.velocity = Vector3.zero;
+        direction = Player.plr.Rb.position - rb.position;
         spritenimator.SetTrigger("RainOnEm");
     }
 
     private void FixedUpdate()
     {
-        Vector3 direction = Player.plr.Rb.position - rb.position;
+        if (Player.plr.Visible)
+        {
+            direction = Player.plr.Rb.position - rb.position;
+        }
         rb.AddForce(direction.normalized * speed, ForceMode.Impulse);
         rb.velocity = Vector3.ClampMagnitude(rb.velocity, 10);
     }

@@ -31,7 +31,7 @@ public class Projectile : Attack
 
     protected override void Update()
     {
-        if (homing)
+        if (homing && Player.plr.Visible)
         {
             facingAngle = Vector3.SignedAngle(Vector3.right, (Player.plr.Rb.position - rb.position), Vector3.up);
             facingAngle = facingAngle < 0 ? facingAngle + 360 : facingAngle;
