@@ -170,6 +170,13 @@ public class ImpunduluBoss : Boss
             case 0:
                 yield return new WaitForSeconds(timeBeforeFeathers * timeModifier);
 
+                if (!Player.plr.Visible)
+                {
+                    StopRandomBehavior();
+                    StartRandomBehavior();
+                    break;
+                }
+
                 StartSpinAttack();
                 animator.SetTrigger("spin");
                 break;
@@ -177,11 +184,25 @@ public class ImpunduluBoss : Boss
             case 1:
                 yield return new WaitForSeconds(timeBeforeRain * timeModifier);
 
+                if (!Player.plr.Visible)
+                {
+                    StopRandomBehavior();
+                    StartRandomBehavior();
+                    break;
+                }
+
                 StartRaining();
                 break;
 
             case 2:
                 yield return new WaitForSeconds(timeBeforeSwoop * timeModifier);
+
+                if (!Player.plr.Visible)
+                {
+                    StopRandomBehavior();
+                    StartRandomBehavior();
+                    break;
+                }
 
                 animator.ResetTrigger("spin");
                 StartDiveAttack();
@@ -190,11 +211,25 @@ public class ImpunduluBoss : Boss
             case 3:
                 yield return new WaitForSeconds(timeBeforeHoming * timeModifier);
 
+                if (!Player.plr.Visible)
+                {
+                    StopRandomBehavior();
+                    StartRandomBehavior();
+                    break;
+                }
+
                 StartHomingAttack();
                 break;
 
             case 4:
                 yield return new WaitForSeconds(timeBeforeLightning * timeModifier);
+
+                if (!Player.plr.Visible)
+                {
+                    StopRandomBehavior();
+                    StartRandomBehavior();
+                    break;
+                }
 
                 lightnings[lightningCycle].Initiate(Player.plr.Rb.position);
 
@@ -207,6 +242,13 @@ public class ImpunduluBoss : Boss
 
             case 5:
                 yield return new WaitForSeconds(timeBeforeBeam * timeModifier);
+
+                if (!Player.plr.Visible)
+                {
+                    StopRandomBehavior();
+                    StartRandomBehavior();
+                    break;
+                }
 
                 StartBeams();
                 break;

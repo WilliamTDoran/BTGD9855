@@ -196,6 +196,13 @@ public class YaraBoss : Boss
                     //Ground Pound
                     yield return new WaitForSeconds(timeBeforePound * timeModifier);
 
+                    if (!Player.plr.Visible)
+                    {
+                        StopRandomBehavior();
+                        StartRandomBehavior();
+                        break;
+                    }
+
                     Vector3 playerDirection = (Player.plr.transform.position - transform.position).normalized;
                     playerDirection = new Vector3(playerDirection.x, 0, playerDirection.z).normalized;
                     if (System.Math.Abs(playerDirection.x) < System.Math.Abs(playerDirection.z))
@@ -211,6 +218,14 @@ public class YaraBoss : Boss
                 {
                     //Regurgitate
                     yield return new WaitForSeconds(timeBeforeRegurgitate * timeModifier);
+
+                    if (!Player.plr.Visible)
+                    {
+                        StopRandomBehavior();
+                        StartRandomBehavior();
+                        break;
+                    }
+
                     StartGurgey();
                     break;
                 }
@@ -219,6 +234,14 @@ public class YaraBoss : Boss
                 {
                     //Shockwave Slam
                     yield return new WaitForSeconds(timeBeforeShockwave * timeModifier);
+
+                    if (!Player.plr.Visible)
+                    {
+                        StopRandomBehavior();
+                        StartRandomBehavior();
+                        break;
+                    }
+
                     StartShockwaveSlam();
                     break;
                 }
@@ -227,6 +250,14 @@ public class YaraBoss : Boss
                 {
                     //Hand Swipe
                     yield return new WaitForSeconds(timeBeforeHandSwipe * timeModifier);
+
+                    if (!Player.plr.Visible)
+                    {
+                        StopRandomBehavior();
+                        StartRandomBehavior();
+                        break;
+                    }
+
                     StartHandSwipe();
                     break;
                 }
