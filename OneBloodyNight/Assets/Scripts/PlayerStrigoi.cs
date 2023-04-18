@@ -257,7 +257,7 @@ public class PlayerStrigoi : Player
                 break;
 
             case 1: //invisibility is loaded
-                if (!stunned && !GameManager.instance.GCD(true) && Bloodmeter.instance.bloodmeter.value > abilityOneCost)
+                if (!GameManager.instance.GCD(true) && Bloodmeter.instance.bloodmeter.value > abilityOneCost)
                 {
                     bullet = 0; //resets the bullet after firing. if you can't fire, the bullet stays loaded. this might change in future
                     audioSource.PlayOneShot(Ability1);
@@ -266,7 +266,7 @@ public class PlayerStrigoi : Player
                 break;
 
             case 2: //bat swarm is loaded
-                if (!stunned && !GameManager.instance.GCD(true) && Bloodmeter.instance.bloodmeter.value > abilityTwoCost)
+                if (!GameManager.instance.GCD(true) && Bloodmeter.instance.bloodmeter.value > abilityTwoCost)
                 {
                     bullet = 0; //resets the bullet after firing. if you can't fire, the bullet stays loaded. this might change in future
                     audioSource.PlayOneShot(Ability2);
