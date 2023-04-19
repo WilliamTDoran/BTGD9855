@@ -95,11 +95,11 @@ public class GameManager : MonoBehaviour
             Application.LoadLevel("MazeScene");
         }
 
-        if (Input.GetKeyDown(KeyCode.Keypad0))
+        if (Input.GetKeyDown(KeyCode.H))
         {
             Application.LoadLevel("DemoScene");
         }
-        if (Input.GetKeyDown(KeyCode.Keypad1))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             Application.LoadLevel("Title");
         }
