@@ -12,6 +12,9 @@ public class Pause : MonoBehaviour
     private GameObject optionScreen;
 
     [SerializeField]
+    private GameObject Totem;
+
+    [SerializeField]
     private GameObject pause;
 
     public GameObject firstPauseButton, firstOptionButton;
@@ -32,6 +35,7 @@ public class Pause : MonoBehaviour
         {
             if (Time.timeScale == 1f)
             {
+                Totem.SetActive(false);
                 pause.SetActive(true);
                 Time.timeScale = 0f;
                 Player.plr.Stunned = true;
@@ -41,6 +45,7 @@ public class Pause : MonoBehaviour
             }
             else if (Time.timeScale == 0f)
             {
+                Totem.SetActive(false);
                 optionScreen.SetActive(false);
                 pause.SetActive(false);
                 Time.timeScale = 1f;

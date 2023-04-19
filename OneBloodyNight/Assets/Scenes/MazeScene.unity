@@ -10950,6 +10950,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6775488496922314625, guid: 9362f0a7d114a844187bc38dac0f7aff, type: 3}
+      propertyPath: Totem
+      value: 
+      objectReference: {fileID: 131833778}
+    - target: {fileID: 6775488496922314625, guid: 9362f0a7d114a844187bc38dac0f7aff, type: 3}
       propertyPath: pause
       value: 
       objectReference: {fileID: 510638495}
