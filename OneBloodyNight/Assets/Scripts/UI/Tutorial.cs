@@ -13,6 +13,10 @@ public class Tutorial : MonoBehaviour
     private int count = 1;
     public bool hasNext;
     public bool hasBack;
+
+    private bool canInputNext = true;
+    private bool canInputBack = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,21 +39,27 @@ public class Tutorial : MonoBehaviour
             
             StartGame();
         }
-        if(Input.GetAxis("LeftTrigger") == -1 && hasBack == true)
+        if(Input.GetAxis("LeftTrigger") == -1 && hasBack == true && canInputBack)
         {
+            canInputBack = false;
             back();
             StartCoroutine("waiter");
         }
-        if( Input.GetAxis("RightTrigger") == 1 && hasNext == true)
+        if( Input.GetAxis("RightTrigger") == 1 && hasNext == true && canInputNext)
         {
+            canInputNext = false;
             Next();
             StartCoroutine("waiter");
+            
         }
     }
 
     IEnumerator waiter()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(.5f);
+
+        canInputBack = true;
+        canInputNext = true;
     }
 
     public void StartGame()
