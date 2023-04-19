@@ -11,6 +11,8 @@ public class Tutorial : MonoBehaviour
     public GameObject backbutton;
     public GameObject nextbutton;
     private int count = 1;
+    public bool hasNext;
+    public bool hasBack;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,16 +22,23 @@ public class Tutorial : MonoBehaviour
         upgrade.SetActive(false);
         backbutton.SetActive(false);
         nextbutton.SetActive(true);
+
+        hasBack = false;
+        hasNext = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Start"))
+        {
+            StartGame();
+        }
     }
 
     public void StartGame()
     {
+        
         
         Application.LoadLevel("MazeScene");
 
@@ -46,6 +55,9 @@ public class Tutorial : MonoBehaviour
             nextbutton.SetActive(true);
             Intro.SetActive(false);
             count++;
+
+            hasNext = true;
+            hasBack = true;
         }
         else if(count == 2)//page 3
         {
@@ -56,6 +68,9 @@ public class Tutorial : MonoBehaviour
             nextbutton.SetActive(true);
             Intro.SetActive(false);
             count++;
+
+            hasNext = true;
+            hasBack = true;
         }
         else if(count == 3)//page 4
         {
@@ -66,6 +81,9 @@ public class Tutorial : MonoBehaviour
             nextbutton.SetActive(false);
             Intro.SetActive(true);
             count++;
+
+            hasNext = false;
+            hasBack = true;
         }
         
     }
@@ -81,6 +99,9 @@ public class Tutorial : MonoBehaviour
             nextbutton.SetActive(true);
             Intro.SetActive(false);
             count--;
+
+            hasNext = true;
+            hasBack = true;
         }
         else if(count == 3)//page 2
         {
@@ -90,6 +111,9 @@ public class Tutorial : MonoBehaviour
             backbutton.SetActive(true);
             nextbutton.SetActive(true);
             count--;
+
+            hasNext = true;
+            hasBack = true;
         }
         else if(count == 2)//page 1
         {
@@ -99,6 +123,9 @@ public class Tutorial : MonoBehaviour
             backbutton.SetActive(false);
             nextbutton.SetActive(true);
             count--;
+
+            hasNext = true;
+            hasBack = false;
         }
         
     }
