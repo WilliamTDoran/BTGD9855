@@ -2572,11 +2572,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3000
   immuneDuration: 0
-  maxHitPoints: 60
+  maxHitPoints: 50
   walkAnim: 1
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  bloodOnKill: 30
+  bloodOnKill: 40
   spanimator: {fileID: 2077848446}
   sprender: {fileID: 2077848447}
   dangerous: {fileID: 1559011589}
@@ -3368,10 +3368,10 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 60
+  damage: 50
   buffedDamage: 0
-  knockbackAmount: 200
-  hitstunDuration: 0.3
+  knockbackAmount: 300
+  hitstunDuration: 0.2
   pushbackAmount: 0
   returnDrag: 18
   drag: 20
@@ -3794,11 +3794,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3000
   immuneDuration: 0
-  maxHitPoints: 60
+  maxHitPoints: 50
   walkAnim: 1
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  bloodOnKill: 30
+  bloodOnKill: 40
   spanimator: {fileID: 856102397}
   sprender: {fileID: 856102398}
   dangerous: {fileID: 359843464}
@@ -5612,11 +5612,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3000
   immuneDuration: 0
-  maxHitPoints: 60
+  maxHitPoints: 50
   walkAnim: 1
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  bloodOnKill: 30
+  bloodOnKill: 40
   spanimator: {fileID: 269195838}
   sprender: {fileID: 269195839}
   dangerous: {fileID: 992037620}
@@ -6969,7 +6969,7 @@ MonoBehaviour:
   - 0.7
   - 0.4
   currentPhase: 0
-  timeShred: 0.65
+  timeShred: 0.7
   tooLong: 1.5
   audioSource: {fileID: 879865975}
   Hurt: {fileID: 0}
@@ -7009,7 +7009,7 @@ MonoBehaviour:
   timeBeforeBasic: 1
   timeBeforeShockwave: 1.8
   timeBeforeRegurgitate: 1.4
-  timeBeforePound: 1.6
+  timeBeforePound: 2
   timeBeforeHandSwipe: 0.8
 --- !u!54 &879865973
 Rigidbody:
@@ -8094,10 +8094,10 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 60
+  damage: 50
   buffedDamage: 0
-  knockbackAmount: 200
-  hitstunDuration: 0.3
+  knockbackAmount: 300
+  hitstunDuration: 0.2
   pushbackAmount: 0
   returnDrag: 18
   drag: 20
@@ -11627,10 +11627,10 @@ MonoBehaviour:
   walkAnim: 0
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
-  damage: 60
+  damage: 50
   buffedDamage: 0
-  knockbackAmount: 200
-  hitstunDuration: 0.3
+  knockbackAmount: 300
+  hitstunDuration: 0.2
   pushbackAmount: 0
   returnDrag: 18
   drag: 20
