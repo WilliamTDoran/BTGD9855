@@ -35,11 +35,11 @@ public class Tutorial : MonoBehaviour
             
             StartGame();
         }
-        if(hasBack && Input.GetAxis("LeftTrigger"))
+        if(Input.GetAxis("LeftTrigger") == 1 && hasBack == true)
         {
             back();
         }
-        if(hasNext && Input.GetAxis("RightTrigger"))
+        if( Input.GetAxis("RightTrigger") == 1 && hasNext == true)
         {
             Next();
         }
