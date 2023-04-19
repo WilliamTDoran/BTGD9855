@@ -35,7 +35,7 @@ public class Tutorial : MonoBehaviour
             
             StartGame();
         }
-        if(Input.GetAxis("LeftTrigger") == 1 && hasBack == true)
+        if(Input.GetAxis("LeftTrigger") == -1 && hasBack == true)
         {
             back();
         }
