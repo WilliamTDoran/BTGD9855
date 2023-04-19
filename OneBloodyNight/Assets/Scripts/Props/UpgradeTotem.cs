@@ -34,5 +34,14 @@ public class UpgradeTotem : MonoBehaviour
             nearThis = false;
             Player.plr.disableInteractToolTip();
         }
+
+      /*  if (Input.GetButtonDown("Pause")){
+            if (Time.timeScale == 0f)
+            {
+                Time.timeScale = 1f;
+                upgradeHUD.SetActive(false);
+                Player.plr.Stunned = false;
+            }
+        } */
     }
 }
