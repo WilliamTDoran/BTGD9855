@@ -462,7 +462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3500
   immuneDuration: 0
-  maxHitPoints: 50
+  maxHitPoints: 40
   walkAnim: 1
   backBuffAura: {fileID: 553563945290552757}
   frontBuffAura: {fileID: 1043780316748145371}
