@@ -35,9 +35,13 @@ public class Tutorial : MonoBehaviour
             
             StartGame();
         }
-        if(hasBack && Input.GetButtonDown("LeftTrigger"))
+        if(hasBack && Input.GetAxis("LeftTrigger"))
         {
             back();
+        }
+        if(hasNext && Input.GetAxis("RightTrigger"))
+        {
+            Next();
         }
     }
 

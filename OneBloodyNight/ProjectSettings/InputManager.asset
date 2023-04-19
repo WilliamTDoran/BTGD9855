@@ -400,7 +400,7 @@ InputManager:
     gravity: 1000
     dead: 0.1
     sensitivity: 1000
-    snap: 0
+    snap: 1
     invert: 0
     type: 2
     axis: 9
@@ -416,7 +416,7 @@ InputManager:
     gravity: 1000
     dead: 0.1
     sensitivity: 1000
-    snap: 0
+    snap: 1
     invert: 0
     type: 2
     axis: 8
