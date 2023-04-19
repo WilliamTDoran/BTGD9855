@@ -32,7 +32,12 @@ public class Tutorial : MonoBehaviour
     {
         if (Input.GetButtonDown("Start"))
         {
+            
             StartGame();
+        }
+        if(hasBack && Input.GetButtonDown("LeftTrigger"))
+        {
+            back();
         }
     }
 
