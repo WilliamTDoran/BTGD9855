@@ -38,11 +38,18 @@ public class Tutorial : MonoBehaviour
         if(Input.GetAxis("LeftTrigger") == -1 && hasBack == true)
         {
             back();
+            StartCoroutine("waiter");
         }
         if( Input.GetAxis("RightTrigger") == 1 && hasNext == true)
         {
             Next();
+            StartCoroutine("waiter");
         }
+    }
+
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(0.5f);
     }
 
     public void StartGame()
