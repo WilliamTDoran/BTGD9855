@@ -1898,7 +1898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3000
   immuneDuration: 0
-  maxHitPoints: 1200
+  maxHitPoints: 20
   walkAnim: 1
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
@@ -11658,7 +11658,8 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnRight
       value: 
       objectReference: {fileID: 1437662023}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 535869391246911630, guid: c895dfe314d2e36408f14be70048994c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c895dfe314d2e36408f14be70048994c, type: 3}
 --- !u!1 &1336847430 stripped
 GameObject:

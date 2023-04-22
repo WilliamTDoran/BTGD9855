@@ -128,7 +128,7 @@ MonoBehaviour:
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
   audioSource: {fileID: 8028271674238632153}
-  Attack: {fileID: 0}
+  Attack: {fileID: 8300000, guid: ab8dc0eb32308a54da5fa2500f49d79e, type: 3}
   Death: {fileID: 8300000, guid: a3ecb65bcfeab0140bc8e7bb7fbf35b7, type: 3}
   Hurt: {fileID: 8300000, guid: c088795fa293ec14995ac323c74dc168, type: 3}
   DeathPart: {fileID: 7535536480291691647}

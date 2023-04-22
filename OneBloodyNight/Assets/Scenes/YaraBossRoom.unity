@@ -3370,7 +3370,7 @@ MonoBehaviour:
   frontBuffAura: {fileID: 0}
   damage: 40
   buffedDamage: 0
-  knockbackAmount: 300
+  knockbackAmount: 400
   hitstunDuration: 0.2
   pushbackAmount: 0
   returnDrag: 18
@@ -6442,7 +6442,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4304106964328818769, guid: 49eb13ae666120845804d6f40b67285a, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4304106964328818769, guid: 49eb13ae666120845804d6f40b67285a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6960,7 +6960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3400
   immuneDuration: 0
-  maxHitPoints: 1600
+  maxHitPoints: 20
   walkAnim: 1
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
@@ -8096,7 +8096,7 @@ MonoBehaviour:
   frontBuffAura: {fileID: 0}
   damage: 40
   buffedDamage: 0
-  knockbackAmount: 300
+  knockbackAmount: 400
   hitstunDuration: 0.2
   pushbackAmount: 0
   returnDrag: 18
@@ -9715,7 +9715,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8229776601322190144, guid: 15539104564be914199bd67c4847788f, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8229776601322190144, guid: 15539104564be914199bd67c4847788f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11629,7 +11629,7 @@ MonoBehaviour:
   frontBuffAura: {fileID: 0}
   damage: 40
   buffedDamage: 0
-  knockbackAmount: 300
+  knockbackAmount: 400
   hitstunDuration: 0.2
   pushbackAmount: 0
   returnDrag: 18
