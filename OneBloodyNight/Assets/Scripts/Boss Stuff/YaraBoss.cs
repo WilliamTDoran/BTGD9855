@@ -121,6 +121,7 @@ public class YaraBoss : Boss
         if ((CurHitPoints <= 0) && (isDead == false))
         {
             isDead = true;
+            col.enabled = false;
             PlayerPrefs.SetInt("Yara", 0);
             StopAllCoroutines();
             StartCoroutine("Ded");

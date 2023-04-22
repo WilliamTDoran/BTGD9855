@@ -147,6 +147,7 @@ public class ImpunduluBoss : Boss
         if ((CurHitPoints <= 0) && (isDead == false))
         {
             isDead = true;
+            col.enabled = false;
             StopAllCoroutines();
             StartCoroutine("Ded");
 
