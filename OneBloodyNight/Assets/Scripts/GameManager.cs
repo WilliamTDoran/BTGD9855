@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         gcdDebugText.text = globalCooldownVar + "";
-
+/*
         if (Input.GetKeyDown(KeyCode.F1)) //debug text is toggleable
         {
             debugCanvas.SetActive(!debugCanvas.activeInHierarchy);
@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour
             Application.LoadLevel("Title");
         }
 
+
         if (Input.GetKeyDown(KeyCode.O))
         {
             if (Time.timeScale == 1f)
@@ -124,6 +125,7 @@ public class GameManager : MonoBehaviour
         {
             Bloodmeter.instance.changeBlood(3000);
         }
+*/
 
         if (Bloodmeter.instance.healing)
         {
