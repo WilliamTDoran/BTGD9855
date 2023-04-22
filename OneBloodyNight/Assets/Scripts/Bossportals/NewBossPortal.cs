@@ -33,6 +33,7 @@ public class NewBossPortal : MonoBehaviour
             {
             Audio.Play();
             Victory.SetActive(true);
+
                 EventSystem.current.SetSelectedGameObject(null);
                 EventSystem.current.SetSelectedGameObject(firstPauseButton);
             }
