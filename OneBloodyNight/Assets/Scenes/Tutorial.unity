@@ -1744,7 +1744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &649561038
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3464,7 +3464,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Players may spend blood from thier bloodmeter on upgrades to better eliminate
+  m_Text: Players may spend blood from their bloodmeter on upgrades to better eliminate
     enemies.
 --- !u!222 &1133773699
 CanvasRenderer:
@@ -5447,8 +5447,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Find boss portals to eliminate rival vampires and become the last vampire
-    standing.
+  m_Text: Find the boss portal in each biome to eliminate rival vampires and become
+    the last vampire standing.
 --- !u!222 &1972361780
 CanvasRenderer:
   m_ObjectHideFlags: 0
