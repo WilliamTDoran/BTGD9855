@@ -110,7 +110,10 @@ public class Menu : MonoBehaviour
     {
         audioSource1.Stop();
         audioSource.Play();
-        
+
+        PlayerPrefs.SetInt("Yara", 1);
+        PlayerPrefs.SetInt("Imp", 1);
+
         yield return new WaitForSeconds(2f);
         
         if (toggle.isOn == true)

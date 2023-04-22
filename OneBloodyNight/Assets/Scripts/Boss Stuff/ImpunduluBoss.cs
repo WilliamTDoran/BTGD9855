@@ -519,6 +519,7 @@ public class ImpunduluBoss : Boss
     private IEnumerator Ded()
     {
         animator.SetTrigger("Die");
+        PlayerPrefs.SetInt("Imp", 0);
         yield return new WaitForSeconds(5f);
         Destroy(gameObject);
     }
