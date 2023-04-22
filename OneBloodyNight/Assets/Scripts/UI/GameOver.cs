@@ -64,6 +64,7 @@ public class GameOver : MonoBehaviour
     public void YES()
     {
         PlayerPrefs.DeleteAll();
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MazeScene", LoadSceneMode.Single);
     }
 

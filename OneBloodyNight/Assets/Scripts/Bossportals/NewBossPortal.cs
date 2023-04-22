@@ -31,8 +31,9 @@ public class NewBossPortal : MonoBehaviour
             }
             else 
             {
-            Audio.Play();
-            Victory.SetActive(true);
+                Player.plr.Stunned = true;
+                Audio.Play();
+                Victory.SetActive(true);
 
                 EventSystem.current.SetSelectedGameObject(null);
                 EventSystem.current.SetSelectedGameObject(firstPauseButton);

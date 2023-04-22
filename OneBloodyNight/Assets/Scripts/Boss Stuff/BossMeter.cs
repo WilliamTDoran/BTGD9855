@@ -35,6 +35,7 @@ public class BossMeter : MonoBehaviour
         bloodmeter.value = Boss.instance.CurHitPoints;
         if (Boss.instance.CurHitPoints <= 0)
         {
+            StartCoroutine("waiter");
             BossPortal.SetActive(true);
 
             
@@ -49,5 +50,12 @@ public class BossMeter : MonoBehaviour
         Bossblood.SetActive(true);
         BossText.SetActive(true);
         PlrBlood.SetActive(true);
+    }
+
+    private IEnumerator waiter()
+    {
+
+        yield return new WaitForSeconds(3);
+        BossPortal.SetActive(true);
     }
 }
