@@ -10,6 +10,8 @@ public class Boss : GameActor
 
     protected Vector3 faceDirection;
 
+    protected Vector3[] cardinals = { new Vector3(1, 0, 0), new Vector3(-1, 0, 0), new Vector3(0, 0, 1), new Vector3(0, 0, -1) };
+
     protected System.Random rnd;
     protected int rndCap = 3;
 
@@ -83,6 +85,7 @@ public class Boss : GameActor
         while (true)
         {
             canMove = true;
+            yield return new WaitForFixedUpdate();
             faceDirection = PickDirection() * speed / timeModifier;
             yield return new WaitForSeconds(UnityEngine.Random.Range(0.8f, 1.5f));
             canMove = false;
@@ -120,8 +123,31 @@ public class Boss : GameActor
     protected Vector3 PickDirection()
     {
         Vector3 direction = new Vector3(UnityEngine.Random.Range(-1f, 1f), 0, UnityEngine.Random.Range(-1f, 1f));
+
+        foreach (Vector3 i in cardinals)
+        {
+            float distToWall = WallMeasurement(i);
+            if (distToWall > 10.0f)
+            {
+                direction += i * 2;
+            }
+        }
+
         direction.Normalize();
         return direction;
+    }
+
+    private float WallMeasurement(Vector3 direction)
+    {
+        int layerMask = 1 << 6;
+        RaycastHit info = new RaycastHit();
+
+        if (Physics.Raycast(rb.position, direction, out info, 1000, layerMask))
+        {
+            return info.distance;
+        }
+
+        return 1000f;
     }
 
 

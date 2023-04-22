@@ -282,7 +282,8 @@ public class YaraBoss : Boss
 
         yield return new WaitUntil(() => !shockSlamRunning);
         audioSource.PlayOneShot(slam);
-
+        groundPoundImpact.Col.enabled = false;
+        groundPoundImpact.EndSwing();
         canMove = true;
         immune = false;
         StartRandomBehavior();
@@ -290,6 +291,7 @@ public class YaraBoss : Boss
 
     internal void ShockwaveFire()
     {
+        groundPoundImpact.Col.enabled = true;
         for (int i = 0; i < 8; i++)
         {
             facingAngle = -45f * i;

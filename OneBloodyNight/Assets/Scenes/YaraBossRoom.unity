@@ -1004,7 +1004,7 @@ GameObject:
   - component: {fileID: 76680294}
   - component: {fileID: 76680295}
   - component: {fileID: 76680296}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HitboxWall (3)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2231,7 +2231,7 @@ GameObject:
   - component: {fileID: 181142736}
   - component: {fileID: 181142737}
   - component: {fileID: 181142738}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HitboxWall (2)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2812,7 +2812,7 @@ GameObject:
   - component: {fileID: 238849017}
   - component: {fileID: 238849018}
   - component: {fileID: 238849019}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HitboxWall (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -10843,7 +10843,7 @@ GameObject:
   - component: {fileID: 1474178315}
   - component: {fileID: 1474178316}
   - component: {fileID: 1474178317}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HitboxWall
   m_TagString: Wall
   m_Icon: {fileID: 0}
