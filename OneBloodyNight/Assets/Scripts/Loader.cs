@@ -5,7 +5,7 @@ using UnityEngine;
 public class Loader : MonoBehaviour
 {
 
-    void Awake()
+    void Start()
     {
         GameManager.instance.loadGame();
         GameManager.instance.LoadPerm();

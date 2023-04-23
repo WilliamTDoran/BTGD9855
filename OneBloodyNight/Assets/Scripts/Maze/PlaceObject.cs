@@ -39,7 +39,7 @@ public class PlaceObject
                 {
                     GameObject temp = GameObject.Instantiate(bv.objects[Random.Range(0, bv.objects.Length)], c.transform.position + new Vector3((0.25f + Random.Range(-0.1f, 0.1f)) * Maze.m.traits.scale, 0, (0.25f + Random.Range(-0.1f, 0.1f)) * Maze.m.traits.scale), Quaternion.Euler(90, 0, 0), c.transform);
                     temp.transform.position = new Vector3(temp.transform.position.x, temp.transform.position.y + 0.0001f * temp.transform.position.z, temp.transform.position.z);
-                    Debug.Log(temp.transform.localPosition.y+" "+ temp.transform.localPosition.z);
+                    //Debug.Log(temp.transform.localPosition.y+" "+ temp.transform.localPosition.z);
                 }
                 if (bv.chanceObject >= Random.Range(0, 1.0f) && bv.objects.Length > 0)
                 {

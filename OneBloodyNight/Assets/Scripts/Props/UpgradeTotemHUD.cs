@@ -134,7 +134,7 @@ public class UpgradeTotemHUD : MonoBehaviour
             paid = true;
         }
         else if (discount) paid = true;
-        if (attackDmgUpgrade.upgraded <= 1)
+        if (attackDmgUpgrade.upgraded <= 1 && paid)
         {
             attackDmgUpgrade.upgraded++;
             if (Player.plr.GetComponent<PlayerStrigoi>() != null)
