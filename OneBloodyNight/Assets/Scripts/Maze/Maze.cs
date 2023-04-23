@@ -176,21 +176,22 @@ public class Maze : MonoBehaviour
         getCell((int)traits.width / 2, (int)traits.height / 2 - 1).getWall((int)Wall.wLocation.west).remove(false);
 
         //Boss portals
-        PlaceObject.placePortal((Biome)((((int)mid.getBiome()) + 1) % 3), 60);
-        PlaceObject.placePortal((Biome)((((int)mid.getBiome()) + 2) % 3), 60);
-
-        //Wall removal
-        MazeWallRemoval removal = new MazeWallRemoval();
         int y = PlayerPrefs.GetInt("Yara");
         if (y != 0)
         {
-            removal.removeWalls((Biome)((((int)mid.getBiome()) + 1) % 3));
+            PlaceObject.placePortal((Biome)((((int)mid.getBiome()) + 1) % 3), 60);
         }
         y = PlayerPrefs.GetInt("Imp");
         if (y != 0)
         {
-            removal.removeWalls((Biome)((((int)mid.getBiome()) + 2) % 3));
+            PlaceObject.placePortal((Biome)((((int)mid.getBiome()) + 2) % 3), 60);
         }
+
+        //Wall removal
+        MazeWallRemoval removal = new MazeWallRemoval();
+        removal.removeWalls((Biome)((((int)mid.getBiome()) + 1) % 3));
+        removal.removeWalls((Biome)((((int)mid.getBiome()) + 2) % 3));
+        
 
         //Spawn wall art in
         for (int i=0; i<width(); i++)
