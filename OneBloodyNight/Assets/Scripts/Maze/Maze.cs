@@ -181,8 +181,16 @@ public class Maze : MonoBehaviour
 
         //Wall removal
         MazeWallRemoval removal = new MazeWallRemoval();
-        removal.removeWalls((Biome)((((int)mid.getBiome()) + 1) % 3));
-        removal.removeWalls((Biome)((((int)mid.getBiome()) + 2) % 3));
+        int y = PlayerPrefs.GetInt("Yara");
+        if (y != 0)
+        {
+            removal.removeWalls((Biome)((((int)mid.getBiome()) + 1) % 3));
+        }
+        y = PlayerPrefs.GetInt("Imp");
+        if (y != 0)
+        {
+            removal.removeWalls((Biome)((((int)mid.getBiome()) + 2) % 3));
+        }
 
         //Spawn wall art in
         for (int i=0; i<width(); i++)
@@ -233,7 +241,7 @@ public class Maze : MonoBehaviour
         Debug.Log("New Maze Generated!");
     }
 
-
+    /*
     /// <summary>
     /// Update. Only used for maze regeneration
     /// </summary>
@@ -243,5 +251,5 @@ public class Maze : MonoBehaviour
         {
             RegenMaze();
         }
-    }
+    }*/
 }
