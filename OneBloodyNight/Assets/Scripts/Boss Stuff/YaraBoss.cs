@@ -1,4 +1,7 @@
 using System.Collections;
+using UnityEngine;
+
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,7 +16,7 @@ public class YaraBoss : Boss
     /* Sound */
     public AudioSource audioSource;
 
-    public AudioClip Hurt;
+    public AudioClip Swiper;
     public AudioClip slam;
     public AudioClip Gurg;
     public AudioClip poundCity;
@@ -169,7 +172,7 @@ public class YaraBoss : Boss
     {
         base.OnReceiveHit();
         spanimator.SetTrigger("Owie");
-        audioSource.PlayOneShot(Hurt);
+        
     }
 
     protected override IEnumerator RandomAttacking()
@@ -480,11 +483,19 @@ public class YaraBoss : Boss
         handSwipeRunning = true;
 
         spanimator.SetTrigger("SwiperNoSwiping");
+        StartCoroutine("SoundWait");
 
         yield return new WaitUntil(() => !handSwipeRunning);
 
         canMove = true;
         StartRandomBehavior();
+    }
+
+    private IEnumerator SoundWait()
+    {
+        yield return new WaitForSeconds(1.8f);
+        audioSource.PlayOneShot(Swiper);
+
     }
 
     /// <summary>
