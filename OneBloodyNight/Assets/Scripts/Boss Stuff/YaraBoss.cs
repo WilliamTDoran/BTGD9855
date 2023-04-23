@@ -493,7 +493,7 @@ public class YaraBoss : Boss
 
     private IEnumerator SoundWait()
     {
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSeconds(1.75f);
         audioSource.PlayOneShot(Swiper);
 
     }
