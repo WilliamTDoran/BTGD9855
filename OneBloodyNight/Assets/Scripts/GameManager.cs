@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
                 raincloud.gameObject.SetActive(true);
             }
         }
-*/
+
 
         if (Input.GetKeyDown(KeyCode.B))
         {
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
         {
             Application.LoadLevel("YaraBossRoom");
         }
-/*
+
         
         if (Input.GetKeyDown(KeyCode.P))
         {

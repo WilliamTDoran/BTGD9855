@@ -6960,7 +6960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3400
   immuneDuration: 0
-  maxHitPoints: 20
+  maxHitPoints: 1600
   walkAnim: 1
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
@@ -16416,11 +16416,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8655085130047262153, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
       propertyPath: m_Text
-      value: 'Maw of Gluttony : Yara-Ma-Ya-Who'
+      value: 'Maw of Gluttony : Yara-Ma-Yha-Who'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8655085130047262153, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8655085130047262153, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
       propertyPath: m_FontData.m_FontStyle
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8655085130660481134, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
       propertyPath: m_LocalScale.x

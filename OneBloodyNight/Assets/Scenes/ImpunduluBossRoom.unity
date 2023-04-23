@@ -1902,7 +1902,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3000
   immuneDuration: 0
-  maxHitPoints: 20
+  maxHitPoints: 1200
   walkAnim: 1
   backBuffAura: {fileID: 0}
   frontBuffAura: {fileID: 0}
@@ -17808,13 +17808,21 @@ PrefabInstance:
       propertyPath: m_MaxValue
       value: 1200
       objectReference: {fileID: 0}
+    - target: {fileID: 8655085130047262152, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8655085130047262153, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
       propertyPath: m_Text
       value: 'Avian Of Cataclysm: Impundulu'
       objectReference: {fileID: 0}
     - target: {fileID: 8655085130047262153, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8655085130047262153, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
       propertyPath: m_FontData.m_FontStyle
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8655085131279807460, guid: 2061a81705d7a184a87da19bdb66fcb6, type: 3}
       propertyPath: m_AnchorMax.x
