@@ -36,7 +36,7 @@ public class BossMeter : MonoBehaviour
         if (Boss.instance.CurHitPoints <= 0)
         {
             StartCoroutine("waiter");
-            BossPortal.SetActive(true);
+            //BossPortal.SetActive(true);
 
             
             
@@ -55,7 +55,7 @@ public class BossMeter : MonoBehaviour
     private IEnumerator waiter()
     {
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         BossPortal.SetActive(true);
     }
 }
